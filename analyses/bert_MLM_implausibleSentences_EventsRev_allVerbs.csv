@@ -1,0 +1,267 @@
+SentenceNum,InputSent,PredictedSeq,PredictedToken,PredictedTokenId,Score,IsVerb
+1,The criminal is <mask> the cop.,The criminal is blaming the cop.,blaming,15249,0.05602741613984108,1
+1,The criminal is <mask> the cop.,The criminal is suing the cop.,suing,15449,0.05586026981472969,1
+1,The criminal is <mask> the cop.,The criminal is killing the cop.,killing,2429,0.04241899400949478,1
+3,The child is <mask> the babysitter.,The child is suing the babysitter.,suing,15449,0.10015608370304108,1
+3,The child is <mask> the babysitter.,The child is assisting the babysitter.,assisting,13390,0.04004541411995888,1
+3,The child is <mask> the babysitter.,The child is helping the babysitter.,helping,1903,0.019678765907883644,1
+3,The child is <mask> the babysitter.,The child is blaming the babysitter.,blaming,15249,0.01563243567943573,1
+3,The child is <mask> the babysitter.,The child is being the babysitter.,being,145,0.014720873907208443,1
+5,The patient is <mask> a stethoscope on the doctor.,The patient is performing a stethoscope on the doctor.,performing,4655,0.2677396833896637,1
+5,The patient is <mask> a stethoscope on the doctor.,The patient is placing a stethoscope on the doctor.,placing,9405,0.13041523098945618,1
+5,The patient is <mask> a stethoscope on the doctor.,The patient is putting a stethoscope on the doctor.,putting,2057,0.08475087583065033,1
+5,The patient is <mask> a stethoscope on the doctor.,The patient is awaiting a stethoscope on the doctor.,awaiting,10254,0.05185877904295921,1
+5,The patient is <mask> a stethoscope on the doctor.,The patient is keeping a stethoscope on the doctor.,keeping,2396,0.05073792487382889,1
+5,The patient is <mask> a stethoscope on the doctor.,The patient is wearing a stethoscope on the doctor.,wearing,2498,0.04567452147603035,1
+5,The patient is <mask> a stethoscope on the doctor.,The patient is having a stethoscope on the doctor.,having,519,0.02245156466960907,1
+5,The patient is <mask> a stethoscope on the doctor.,The patient is displaying a stethoscope on the doctor.,displaying,18534,0.015733353793621063,1
+5,The patient is <mask> a stethoscope on the doctor.,The patient is getting a stethoscope on the doctor.,getting,562,0.013841759413480759,1
+5,The patient is <mask> a stethoscope on the doctor.,The patient is passing a stethoscope on the doctor.,passing,3133,0.01152647566050291,1
+7,The grandmother is <mask> the fireman.,The grandmother is assisting the fireman.,assisting,13390,0.45129936933517456,1
+7,The grandmother is <mask> the fireman.,The grandmother is helping the fireman.,helping,1903,0.06496309489011765,1
+7,The grandmother is <mask> the fireman.,The grandmother is interviewing the fireman.,interviewing,21514,0.03878117725253105,1
+7,The grandmother is <mask> the fireman.,The grandmother is comforting the fireman.,comforting,29090,0.02014162205159664,1
+7,The grandmother is <mask> the fireman.,The grandmother is accompanying the fireman.,accompanying,14539,0.010010012425482273,1
+7,The grandmother is <mask> the fireman.,The grandmother is advising the fireman.,advising,16442,0.009752399288117886,1
+9,The patient is <mask> the dentist.,The patient is suing the dentist.,suing,15449,0.31291988492012024,1
+9,The patient is <mask> the dentist.,The patient is visiting the dentist.,visiting,3918,0.07068075239658356,1
+9,The patient is <mask> the dentist.,The patient is seeing the dentist.,seeing,1782,0.054928917437791824,1
+9,The patient is <mask> the dentist.,The patient is calling the dentist.,calling,1765,0.040703628212213516,1
+9,The patient is <mask> the dentist.,The patient is approaching the dentist.,approaching,8955,0.030163763090968132,1
+9,The patient is <mask> the dentist.,The patient is awaiting the dentist.,awaiting,10254,0.029678480699658394,1
+9,The patient is <mask> the dentist.,The patient is contacting the dentist.,contacting,20896,0.026576105505228043,1
+9,The patient is <mask> the dentist.,The patient is called the dentist.,called,373,0.02222154103219509,1
+11,The girl is <mask> the ghost.,The girl is chasing the ghost.,chasing,11277,0.05163570120930672,1
+11,The girl is <mask> the ghost.,The girl is playing the ghost.,playing,816,0.04833851382136345,1
+11,The girl is <mask> the ghost.,The girl is fighting the ghost.,fighting,2190,0.0309342872351408,1
+13,The baby is <mask> the mother.,The baby is killing the mother.,killing,2429,0.018772665411233902,1
+13,The baby is <mask> the mother.,The baby is mourning the mother.,mourning,19293,0.016559142619371414,1
+13,The baby is <mask> the mother.,The baby is expecting the mother.,expecting,4804,0.014553823508322239,1
+13,The baby is <mask> the mother.,The baby is protecting the mother.,protecting,6244,0.01447855494916439,1
+15,The businessman is <mask> the artist.,The businessman is suing the artist.,suing,15449,0.4093344211578369,1
+15,The businessman is <mask> the artist.,The businessman is assisting the artist.,assisting,13390,0.05694734305143356,1
+15,The businessman is <mask> the artist.,The businessman is representing the artist.,representing,4561,0.03775274381041527,1
+15,The businessman is <mask> the artist.,The businessman is sponsoring the artist.,sponsoring,25205,0.02852165326476097,1
+15,The businessman is <mask> the artist.,The businessman is supporting the artist.,supporting,3117,0.018160874024033546,1
+15,The businessman is <mask> the artist.,The businessman is accompanying the artist.,accompanying,14539,0.017373358830809593,1
+17,The bride is <mask> the groom.,The bride is marrying the groom.,marrying,27372,0.02492925524711609,1
+17,The bride is <mask> the groom.,The bride is considered the groom.,considered,1687,0.020621245726943016,1
+19,The king is <mask> the jester.,The king is crowned the jester.,crowned,19061,0.02176930010318756,1
+19,The king is <mask> the jester.,The king is becoming the jester.,becoming,1959,0.01681596413254738,1
+19,The king is <mask> the jester.,The king is called the jester.,called,373,0.016783008351922035,1
+21,The Safari guide <mask> pouncing on the lion.,The Safari guide recommends pouncing on the lion.,recommends,10827,0.19269944727420807,1
+21,The Safari guide <mask> pouncing on the lion.,The Safari guide advises pouncing on the lion.,advises,18192,0.1285189837217331,1
+21,The Safari guide <mask> pouncing on the lion.,The Safari guide begins pouncing on the lion.,begins,3772,0.09248668700456619,1
+21,The Safari guide <mask> pouncing on the lion.,The Safari guide starts pouncing on the lion.,starts,2012,0.039970219135284424,1
+21,The Safari guide <mask> pouncing on the lion.,The Safari guide keeps pouncing on the lion.,keeps,4719,0.03533861041069031,1
+21,The Safari guide <mask> pouncing on the lion.,The Safari guide suggests pouncing on the lion.,suggests,3649,0.03181571513414383,1
+21,The Safari guide <mask> pouncing on the lion.,The Safari guide describes pouncing on the lion.,describes,7448,0.027540775015950203,1
+21,The Safari guide <mask> pouncing on the lion.,The Safari guide enjoys pouncing on the lion.,enjoys,11952,0.022978896275162697,1
+21,The Safari guide <mask> pouncing on the lion.,The Safari guide involves pouncing on the lion.,involves,6890,0.019728921353816986,1
+23,The model is <mask> a picture of the photographer.,The model is taking a picture of the photographer.,taking,602,0.08212966471910477,1
+23,The model is <mask> a picture of the photographer.,The model is shown a picture of the photographer.,shown,2343,0.07653223723173141,1
+23,The model is <mask> a picture of the photographer.,The model is holding a picture of the photographer.,holding,1826,0.034180428832769394,1
+23,The model is <mask> a picture of the photographer.,The model is showing a picture of the photographer.,showing,2018,0.03177488222718239,1
+23,The model is <mask> a picture of the photographer.,The model is sharing a picture of the photographer.,sharing,3565,0.030408155173063278,1
+23,The model is <mask> a picture of the photographer.,The model is snapping a picture of the photographer.,snapping,23285,0.02715422213077545,1
+23,The model is <mask> a picture of the photographer.,The model is given a picture of the photographer.,given,576,0.025411909446120262,1
+25,The princess is <mask> the pirate.,The princess is playing the pirate.,playing,816,0.031707823276519775,1
+25,The princess is <mask> the pirate.,The princess is fighting the pirate.,fighting,2190,0.01799926348030567,1
+25,The princess is <mask> the pirate.,The princess is chasing the pirate.,chasing,11277,0.017924781888723373,1
+27,The bride is <mask> the priest.,The bride is marrying the priest.,marrying,27372,0.0899047702550888,1
+27,The bride is <mask> the priest.,The bride is called the priest.,called,373,0.03254232183098793,1
+27,The bride is <mask> the priest.,The bride is baptized the priest.,baptized,42836,0.027213629335165024,1
+29,The snorkeler is <mask> the shark.,The snorkeler is circling the shark.,circling,33633,0.09422863274812698,1
+29,The snorkeler is <mask> the shark.,The snorkeler is chasing the shark.,chasing,11277,0.08508212864398956,1
+29,The snorkeler is <mask> the shark.,The snorkeler is stalking the shark.,stalking,27795,0.06453845649957657,1
+29,The snorkeler is <mask> the shark.,The snorkeler is eating the shark.,eating,4441,0.05449583753943443,1
+29,The snorkeler is <mask> the shark.,The snorkeler is feeding the shark.,feeding,10943,0.04763262718915939,1
+29,The snorkeler is <mask> the shark.,The snorkeler is biting the shark.,biting,25609,0.024852054193615913,1
+29,The snorkeler is <mask> the shark.,The snorkeler is protecting the shark.,protecting,6244,0.021839085966348648,1
+29,The snorkeler is <mask> the shark.,The snorkeler is attacking the shark.,attacking,6666,0.020391259342432022,1
+29,The snorkeler is <mask> the shark.,The snorkeler is riding the shark.,riding,5793,0.017318120226264,1
+31,The student is <mask> to the professor.,The student is reporting to the professor.,reporting,2207,0.12175780534744263,1
+31,The student is <mask> to the professor.,The student is assigned to the professor.,assigned,5530,0.083330437541008,1
+31,The student is <mask> to the professor.,The student is referred to the professor.,referred,4997,0.06372024863958359,1
+31,The student is <mask> to the professor.,The student is referring to the professor.,referring,5056,0.06310372054576874,1
+31,The student is <mask> to the professor.,The student is transferred to the professor.,transferred,7225,0.04490450769662857,1
+31,The student is <mask> to the professor.,The student is talking to the professor.,talking,1686,0.0314028300344944,1
+31,The student is <mask> to the professor.,The student is introduced to the professor.,introduced,2942,0.025722041726112366,1
+31,The student is <mask> to the professor.,The student is addressed to the professor.,addressed,4873,0.018541475757956505,1
+31,The student is <mask> to the professor.,The student is reported to the professor.,reported,431,0.017811089754104614,1
+33,The woman is <mask> the vampire.,The woman is killing the vampire.,killing,2429,0.02913092076778412,1
+33,The woman is <mask> the vampire.,The woman is playing the vampire.,playing,816,0.024796005338430405,1
+33,The woman is <mask> the vampire.,The woman is fighting the vampire.,fighting,2190,0.02136913500726223,1
+33,The woman is <mask> the vampire.,The woman is protecting the vampire.,protecting,6244,0.017823463305830956,1
+33,The woman is <mask> the vampire.,The woman is holding the vampire.,holding,1826,0.017649512737989426,1
+33,The woman is <mask> the vampire.,The woman is chasing the vampire.,chasing,11277,0.017553748562932014,1
+35,The customer is <mask> the waiter.,The customer is thanking the waiter.,thanking,22787,0.044248953461647034,1
+35,The customer is <mask> the waiter.,The customer is ignoring the waiter.,ignoring,15515,0.018310822546482086,1
+35,The customer is <mask> the waiter.,The customer is assisting the waiter.,assisting,13390,0.01627475582063198,1
+37,The beggar is <mask> money to the lawyer.,The beggar is donating money to the lawyer.,donating,16831,0.20039846003055573,1
+37,The beggar is <mask> money to the lawyer.,The beggar is sending money to the lawyer.,sending,3981,0.16418620944023132,1
+37,The beggar is <mask> money to the lawyer.,The beggar is giving money to the lawyer.,giving,1311,0.13962210714817047,1
+37,The beggar is <mask> money to the lawyer.,The beggar is handing money to the lawyer.,handing,12785,0.07462507486343384,1
+37,The beggar is <mask> money to the lawyer.,The beggar is directing money to the lawyer.,directing,13062,0.045259375125169754,1
+37,The beggar is <mask> money to the lawyer.,The beggar is lending money to the lawyer.,lending,6946,0.04521786794066429,1
+37,The beggar is <mask> money to the lawyer.,The beggar is offering money to the lawyer.,offering,1839,0.04117463901638985,1
+37,The beggar is <mask> money to the lawyer.,The beggar is paying money to the lawyer.,paying,2746,0.02025267481803894,1
+37,The beggar is <mask> money to the lawyer.,The beggar is owed money to the lawyer.,owed,12942,0.019655829295516014,1
+37,The beggar is <mask> money to the lawyer.,The beggar is owing money to the lawyer.,owing,14395,0.01843135617673397,1
+39,The lady is <mask> for the chef.,The lady is waiting for the chef.,waiting,2445,0.7041049003601074,1
+39,The lady is <mask> for the chef.,The lady is looking for the chef.,looking,546,0.04410260170698166,1
+39,The lady is <mask> for the chef.,The lady is searching for the chef.,searching,6062,0.025033514946699142,1
+39,The lady is <mask> for the chef.,The lady is cheering for the chef.,cheering,16765,0.00842471793293953,1
+39,The lady is <mask> for the chef.,The lady is cooking for the chef.,cooking,6836,0.008093515411019325,1
+39,The lady is <mask> for the chef.,The lady is rooting for the chef.,rooting,27123,0.007925347425043583,1
+39,The lady is <mask> for the chef.,The lady is caring for the chef.,caring,10837,0.007181529887020588,1
+39,The lady is <mask> for the chef.,The lady is praying for the chef.,praying,17587,0.006743656937032938,1
+39,The lady is <mask> for the chef.,The lady is translating for the chef.,translating,33042,0.00601907167583704,1
+41,The grandpa is <mask> for the ballerina.,The grandpa is waiting for the ballerina.,waiting,2445,0.32826903462409973,1
+41,The grandpa is <mask> for the ballerina.,The grandpa is rooting for the ballerina.,rooting,27123,0.11306364089250565,1
+41,The grandpa is <mask> for the ballerina.,The grandpa is looking for the ballerina.,looking,546,0.04360654577612877,1
+41,The grandpa is <mask> for the ballerina.,The grandpa is cheering for the ballerina.,cheering,16765,0.034973178058862686,1
+41,The grandpa is <mask> for the ballerina.,The grandpa is heading for the ballerina.,heading,3393,0.02433636039495468,1
+41,The grandpa is <mask> for the ballerina.,The grandpa is preparing for the ballerina.,preparing,4568,0.020165471360087395,1
+41,The grandpa is <mask> for the ballerina.,The grandpa is destined for the ballerina.,destined,19083,0.0199931301176548,1
+41,The grandpa is <mask> for the ballerina.,The grandpa is headed for the ballerina.,headed,3475,0.019590092822909355,1
+41,The grandpa is <mask> for the ballerina.,The grandpa is aiming for the ballerina.,aiming,9998,0.019489020109176636,1
+43,The sportsstar is <mask> the journalist.,The sportsstar is suing the journalist.,suing,15449,0.1023995503783226,1
+43,The sportsstar is <mask> the journalist.,The sportsstar is interviewing the journalist.,interviewing,21514,0.08956054598093033,1
+43,The sportsstar is <mask> the journalist.,The sportsstar is replacing the journalist.,replacing,8119,0.04152843356132507,1
+43,The sportsstar is <mask> the journalist.,The sportsstar is defending the journalist.,defending,5261,0.03768768534064293,1
+43,The sportsstar is <mask> the journalist.,The sportsstar is backing the journalist.,backing,6027,0.025541311129927635,1
+43,The sportsstar is <mask> the journalist.,The sportsstar is assisting the journalist.,assisting,13390,0.022277232259511948,1
+43,The sportsstar is <mask> the journalist.,The sportsstar is quoting the journalist.,quoting,17977,0.02081962861120701,1
+45,The criminal is <mask> the judge.,The criminal is suing the judge.,suing,15449,0.6551716923713684,1
+45,The criminal is <mask> the judge.,The criminal is representing the judge.,representing,4561,0.04033615440130234,1
+45,The criminal is <mask> the judge.,The criminal is assisting the judge.,assisting,13390,0.030650563538074493,1
+45,The criminal is <mask> the judge.,The criminal is awaiting the judge.,awaiting,10254,0.012446152977645397,1
+45,The criminal is <mask> the judge.,The criminal is appealing the judge.,appealing,9364,0.009069970808923244,1
+45,The criminal is <mask> the judge.,The criminal is informing the judge.,informing,21835,0.008290672674775124,1
+45,The criminal is <mask> the judge.,The criminal is contacting the judge.,contacting,20896,0.007999284192919731,1
+45,The criminal is <mask> the judge.,The criminal is advising the judge.,advising,16442,0.007789963390678167,1
+47,The child is <mask> the father on the sled.,The child is accompanying the father on the sled.,accompanying,14539,0.23518800735473633,1
+47,The child is <mask> the father on the sled.,The child is assisting the father on the sled.,assisting,13390,0.17740635573863983,1
+47,The child is <mask> the father on the sled.,The child is helping the father on the sled.,helping,1903,0.08123122155666351,1
+47,The child is <mask> the father on the sled.,The child is following the father on the sled.,following,511,0.03896353766322136,1
+47,The child is <mask> the father on the sled.,The child is carrying the father on the sled.,carrying,3406,0.03198814392089844,1
+47,The child is <mask> the father on the sled.,The child is joining the father on the sled.,joining,3736,0.03154641017317772,1
+47,The child is <mask> the father on the sled.,The child is chasing the father on the sled.,chasing,11277,0.02075011283159256,1
+49,The girl is <mask> Santa a present.,The girl is giving Santa a present.,giving,1311,0.5940099358558655,1
+49,The girl is <mask> Santa a present.,The girl is sending Santa a present.,sending,3981,0.083502858877182,1
+49,The girl is <mask> Santa a present.,The girl is offering Santa a present.,offering,1839,0.06868141889572144,1
+49,The girl is <mask> Santa a present.,The girl is buying Santa a present.,buying,2159,0.05226442590355873,1
+49,The girl is <mask> Santa a present.,The girl is getting Santa a present.,getting,562,0.04539460688829422,1
+49,The girl is <mask> Santa a present.,The girl is bringing Santa a present.,bringing,2406,0.02250550501048565,1
+49,The girl is <mask> Santa a present.,The girl is wishing Santa a present.,wishing,17802,0.01873406581580639,1
+49,The girl is <mask> Santa a present.,The girl is handing Santa a present.,handing,12785,0.01695244014263153,1
+49,The girl is <mask> Santa a present.,The girl is showing Santa a present.,showing,2018,0.013362509198486805,1
+49,The girl is <mask> Santa a present.,The girl is leaving Santa a present.,leaving,1618,0.00708650890737772,1
+51,The queen is <mask> to the peasant.,The queen is sacrificed to the peasant.,sacrificed,26936,0.03574598953127861,1
+51,The queen is <mask> to the peasant.,The queen is chained to the peasant.,chained,38938,0.02023075893521309,1
+51,The queen is <mask> to the peasant.,The queen is tending to the peasant.,tending,36528,0.014948884956538677,1
+51,The queen is <mask> to the peasant.,The queen is presented to the peasant.,presented,2633,0.013054040260612965,1
+53,The athlete is <mask> the lad.,The athlete is chasing the lad.,chasing,11277,0.03378136083483696,1
+53,The athlete is <mask> the lad.,The athlete is protecting the lad.,protecting,6244,0.015738418325781822,1
+53,The athlete is <mask> the lad.,The athlete is hugging the lad.,hugging,31164,0.015146174468100071,1
+53,The athlete is <mask> the lad.,The athlete is blaming the lad.,blaming,15249,0.012945588678121567,1
+55,The son is <mask> the father's shoes.,The son is wearing the father's shoes.,wearing,2498,0.38877227902412415,1
+55,The son is <mask> the father's shoes.,The son is washing the father's shoes.,washing,14784,0.0457371287047863,1
+55,The son is <mask> the father's shoes.,The son is tying the father's shoes.,tying,13024,0.03989666700363159,1
+55,The son is <mask> the father's shoes.,The son is carrying the father's shoes.,carrying,3406,0.03105875663459301,1
+55,The son is <mask> the father's shoes.,The son is taking the father's shoes.,taking,602,0.028629563748836517,1
+55,The son is <mask> the father's shoes.,The son is repairing the father's shoes.,repairing,26643,0.025963855907320976,1
+55,The son is <mask> the father's shoes.,The son is cleaning the father's shoes.,cleaning,8143,0.025757480412721634,1
+55,The son is <mask> the father's shoes.,The son is replacing the father's shoes.,replacing,8119,0.015933582559227943,1
+57,The grandma is <mask> the purse from the thief.,The grandma is retrieving the purse from the thief.,retrieving,43175,0.2106863409280777,1
+57,The grandma is <mask> the purse from the thief.,The grandma is stealing the purse from the thief.,stealing,9460,0.2010616958141327,1
+57,The grandma is <mask> the purse from the thief.,The grandma is recovering the purse from the thief.,recovering,7979,0.1314835250377655,1
+57,The grandma is <mask> the purse from the thief.,The grandma is taking the purse from the thief.,taking,602,0.12970010936260223,1
+57,The grandma is <mask> the purse from the thief.,The grandma is demanding the purse from the thief.,demanding,5783,0.034944016486406326,1
+57,The grandma is <mask> the purse from the thief.,The grandma is protecting the purse from the thief.,protecting,6244,0.024128634482622147,1
+57,The grandma is <mask> the purse from the thief.,The grandma is saving the purse from the thief.,saving,6549,0.02247852459549904,1
+57,The grandma is <mask> the purse from the thief.,The grandma is getting the purse from the thief.,getting,562,0.018475346267223358,1
+57,The grandma is <mask> the purse from the thief.,The grandma is collecting the purse from the thief.,collecting,8664,0.018222039565443993,1
+57,The grandma is <mask> the purse from the thief.,The grandma is keeping the purse from the thief.,keeping,2396,0.01809762418270111,1
+59,The mouse is <mask> the cat.,The mouse is chasing the cat.,chasing,11277,0.1355348825454712,1
+59,The mouse is <mask> the cat.,The mouse is eating the cat.,eating,4441,0.041426610201597214,1
+59,The mouse is <mask> the cat.,The mouse is stalking the cat.,stalking,27795,0.02793697454035282,1
+59,The mouse is <mask> the cat.,The mouse is feeding the cat.,feeding,10943,0.024636149406433105,1
+59,The mouse is <mask> the cat.,The mouse is killing the cat.,killing,2429,0.021912889555096626,1
+59,The mouse is <mask> the cat.,The mouse is biting the cat.,biting,25609,0.018556781113147736,1
+61,The patient is <mask> the visitor.,The patient is assisting the visitor.,assisting,13390,0.028504757210612297,1
+61,The patient is <mask> the visitor.,The patient is accompanying the visitor.,accompanying,14539,0.023640742525458336,1
+61,The patient is <mask> the visitor.,The patient is visiting the visitor.,visiting,3918,0.016827384009957314,1
+61,The patient is <mask> the visitor.,The patient is greeting the visitor.,greeting,25801,0.01342856977134943,1
+63,The patient is <mask> flowers to the relative.,The patient is delivering flowers to the relative.,delivering,5830,0.1567174792289734,1
+63,The patient is <mask> flowers to the relative.,The patient is giving flowers to the relative.,giving,1311,0.10825727880001068,1
+63,The patient is <mask> flowers to the relative.,The patient is bringing flowers to the relative.,bringing,2406,0.09734838455915451,1
+63,The patient is <mask> flowers to the relative.,The patient is offering flowers to the relative.,offering,1839,0.08730747550725937,1
+63,The patient is <mask> flowers to the relative.,The patient is handing flowers to the relative.,handing,12785,0.0692998543381691,1
+63,The patient is <mask> flowers to the relative.,The patient is tending flowers to the relative.,tending,36528,0.0679246112704277,1
+63,The patient is <mask> flowers to the relative.,The patient is distributing flowers to the relative.,distributing,20566,0.064657062292099,1
+63,The patient is <mask> flowers to the relative.,The patient is sending flowers to the relative.,sending,3981,0.0608079619705677,1
+63,The patient is <mask> flowers to the relative.,The patient is passing flowers to the relative.,passing,3133,0.03108232095837593,1
+63,The patient is <mask> flowers to the relative.,The patient is donating flowers to the relative.,donating,16831,0.030380895361304283,1
+65,The worker is <mask> at the boss.,The worker is yelling at the boss.,yelling,16600,0.21668025851249695,1
+65,The worker is <mask> at the boss.,The worker is shouting at the boss.,shouting,14487,0.14050176739692688,1
+65,The worker is <mask> at the boss.,The worker is screaming at the boss.,screaming,11347,0.10004522651433945,1
+65,The worker is <mask> at the boss.,The worker is laughing at the boss.,laughing,11339,0.05151940509676933,1
+65,The worker is <mask> at the boss.,The worker is staring at the boss.,staring,19311,0.039537928998470306,1
+65,The worker is <mask> at the boss.,The worker is smiling at the boss.,smiling,12382,0.03577763959765434,1
+65,The worker is <mask> at the boss.,The worker is cursing at the boss.,cursing,41142,0.031743817031383514,1
+65,The worker is <mask> at the boss.,The worker is looking at the boss.,looking,546,0.02345726080238819,1
+67,The blind person <mask> leading the dog.,The blind person begins leading the dog.,begins,3772,0.005064042285084724,1
+67,The blind person <mask> leading the dog.,The blind person keeps leading the dog.,keeps,4719,0.004320221953094006,1
+67,The blind person <mask> leading the dog.,The blind person enjoys leading the dog.,enjoys,11952,0.004083042964339256,1
+67,The blind person <mask> leading the dog.,The blind person appears leading the dog.,appears,2092,0.003929223865270615,1
+69,The woman is <mask> the bouncer from entering.,The woman is blocking the bouncer from entering.,blocking,8890,0.44445762038230896,1
+69,The woman is <mask> the bouncer from entering.,The woman is preventing the bouncer from entering.,preventing,9107,0.3499997854232788,1
+69,The woman is <mask> the bouncer from entering.,The woman is stopping the bouncer from entering.,stopping,8197,0.07431656867265701,1
+69,The woman is <mask> the bouncer from entering.,The woman is restraining the bouncer from entering.,restraining,17817,0.03680986166000366,1
+69,The woman is <mask> the bouncer from entering.,The woman is keeping the bouncer from entering.,keeping,2396,0.028925422579050064,1
+69,The woman is <mask> the bouncer from entering.,The woman is barring the bouncer from entering.,barring,20108,0.02086159586906433,1
+69,The woman is <mask> the bouncer from entering.,The woman is discouraging the bouncer from entering.,discouraging,33408,0.010064946487545967,1
+69,The woman is <mask> the bouncer from entering.,The woman is banning the bouncer from entering.,banning,13241,0.006705249659717083,1
+69,The woman is <mask> the bouncer from entering.,The woman is prohibiting the bouncer from entering.,prohibiting,27043,0.005202945321798325,1
+69,The woman is <mask> the bouncer from entering.,The woman is resisting the bouncer from entering.,resisting,18907,0.004140876699239016,1
+71,The girl is <mask> the dog on the face.,The girl is slapping the dog on the face.,slapping,33640,0.398560106754303,1
+71,The girl is <mask> the dog on the face.,The girl is biting the dog on the face.,biting,25609,0.11297943443059921,1
+71,The girl is <mask> the dog on the face.,The girl is licking the dog on the face.,licking,41167,0.10145971179008484,1
+71,The girl is <mask> the dog on the face.,The girl is punching the dog on the face.,punching,20752,0.07606884837150574,1
+71,The girl is <mask> the dog on the face.,The girl is kissing the dog on the face.,kissing,20479,0.06824193149805069,1
+71,The girl is <mask> the dog on the face.,The girl is staring the dog on the face.,staring,19311,0.05440773069858551,1
+71,The girl is <mask> the dog on the face.,The girl is hitting the dog on the face.,hitting,3022,0.05014866590499878,1
+71,The girl is <mask> the dog on the face.,The girl is kicking the dog on the face.,kicking,10720,0.024236252531409264,1
+71,The girl is <mask> the dog on the face.,The girl is tapping the dog on the face.,tapping,18802,0.017011303454637527,1
+71,The girl is <mask> the dog on the face.,The girl is striking the dog on the face.,striking,5690,0.00849966425448656,1
+73,The woman is <mask> to the man.,The woman is handcuffed to the man.,handcuffed,27706,0.11944068968296051,1
+73,The woman is <mask> to the man.,The woman is tending to the man.,tending,36528,0.049928367137908936,1
+73,The woman is <mask> to the man.,The woman is talking to the man.,talking,1686,0.039902109652757645,1
+73,The woman is <mask> to the man.,The woman is referring to the man.,referring,5056,0.027709877118468285,1
+73,The woman is <mask> to the man.,The woman is chained to the man.,chained,38938,0.024080153554677963,1
+73,The woman is <mask> to the man.,The woman is bound to the man.,bound,8191,0.01997046172618866,1
+73,The woman is <mask> to the man.,The woman is tied to the man.,tied,3016,0.019559970125555992,1
+75,The princess is <mask> the tailor.,The princess is assisting the tailor.,assisting,13390,0.0463651604950428,1
+75,The princess is <mask> the tailor.,The princess is helping the tailor.,helping,1903,0.0428135059773922,1
+75,The princess is <mask> the tailor.,The princess is wearing the tailor.,wearing,2498,0.0191168412566185,1
+75,The princess is <mask> the tailor.,The princess is playing the tailor.,playing,816,0.018607813864946365,1
+75,The princess is <mask> the tailor.,The princess is accompanying the tailor.,accompanying,14539,0.014607320539653301,1
+77,The grandmother is <mask> the lifeguard.,The grandmother is assisting the lifeguard.,assisting,13390,0.32921603322029114,1
+77,The grandmother is <mask> the lifeguard.,The grandmother is helping the lifeguard.,helping,1903,0.028587443754076958,1
+77,The grandmother is <mask> the lifeguard.,The grandmother is called the lifeguard.,called,373,0.02443286031484604,1
+77,The grandmother is <mask> the lifeguard.,The grandmother is accompanying the lifeguard.,accompanying,14539,0.018364978954195976,1
+77,The grandmother is <mask> the lifeguard.,The grandmother is named the lifeguard.,named,1440,0.013340091332793236,1
+77,The grandmother is <mask> the lifeguard.,The grandmother is wearing the lifeguard.,wearing,2498,0.01260518841445446,1
+77,The grandmother is <mask> the lifeguard.,The grandmother is carrying the lifeguard.,carrying,3406,0.010697629302740097,1
+79,The lady is <mask> the door for the chauffeur.,The lady is opening the door for the chauffeur.,opening,1273,0.2508529722690582,1
+79,The lady is <mask> the door for the chauffeur.,The lady is closing the door for the chauffeur.,closing,3172,0.22166724503040314,1
+79,The lady is <mask> the door for the chauffeur.,The lady is unlocking the door for the chauffeur.,unlocking,33653,0.1683296114206314,1
+79,The lady is <mask> the door for the chauffeur.,The lady is locking the door for the chauffeur.,locking,22678,0.09539027512073517,1
+79,The lady is <mask> the door for the chauffeur.,The lady is answering the door for the chauffeur.,answering,15635,0.029985154047608376,1
+79,The lady is <mask> the door for the chauffeur.,The lady is shutting the door for the chauffeur.,shutting,16099,0.025869783014059067,1
+79,The lady is <mask> the door for the chauffeur.,The lady is holding the door for the chauffeur.,holding,1826,0.02245163358747959,1
+79,The lady is <mask> the door for the chauffeur.,The lady is guarding the door for the chauffeur.,guarding,29454,0.021208668127655983,1
+79,The lady is <mask> the door for the chauffeur.,The lady is blocking the door for the chauffeur.,blocking,8890,0.01835191249847412,1
+79,The lady is <mask> the door for the chauffeur.,The lady is slamming the door for the chauffeur.,slamming,26963,0.01474583800882101,1
