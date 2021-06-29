@@ -1,0 +1,80 @@
+1	the cop is arresting the criminal	Implausible	1.708333333
+0	the criminal is arresting the cop	Plausible	6.8125
+3	the babysitter is scolding the child	Implausible	2.770833333
+2	the child is scolding the babysitter	Plausible	6.551020408
+5	the doctor is using a stethoscope on the patient	Implausible	2.367346939
+4	the patient is using a stethoscope on the doctor	Plausible	6.8125
+7	the fireman is rescuing the grandmother	Implausible	1.638297872
+6	the grandmother is rescuing the fireman	Plausible	6.755102041
+9	the dentist is treating the patient	Implausible	1.4375
+8	the patient is treating the dentist	Plausible	6.897959184
+11	the ghost is frightening the girl	Implausible	2.06122449
+10	the girl is frightening the ghost	Plausible	5.916666667
+13	the mother is feeding the baby	Implausible	1.75
+12	the baby is feeding the mother	Plausible	6.836734694
+15	the artist is painting the businessman	Implausible	2.306122449
+14	the businessman is painting the artist	Plausible	5.9375
+17	the groom is carrying the bride	Implausible	2.9375
+16	the bride is carrying the groom	Plausible	6.770833333
+19	the jester is entertaining the king	Implausible	2.083333333
+18	the king is entertaining the jester	Plausible	6.791666667
+21	the lion is pouncing on the safari guide	Implausible	1.795918367
+20	the safari guide is pouncing on the lion	Plausible	6.333333333
+23	the photographer is taking a picture of the model	Implausible	2.25
+22	the model is taking a picture of the photographer	Plausible	6.795918367
+25	the pirate is kidnapping the princess	Implausible	1.897959184
+24	the princess is kidnapping the pirate	Plausible	6.4375
+27	the priest is blessing the bride	Implausible	2.1875
+26	the bride is blessing the priest	Plausible	6.632653061
+29	the shark is biting the snorkeler	Implausible	1.571428571
+28	the snorkeler is biting the shark	Plausible	6.541666667
+31	the professor is lecturing to the student	Implausible	2.333333333
+30	the student is lecturing to the professor	Plausible	6.918367347
+33	the vampire is biting the woman	Implausible	2.06122449
+32	the woman is biting the vampire	Plausible	6.333333333
+35	the waiter is serving the customer	Implausible	1.479166667
+34	the customer is serving the waiter	Plausible	6.612244898
+37	the lawyer is giving money to the beggar	Implausible	2.224489796
+36	the beggar is giving money to the lawyer	Plausible	5.958333333
+39	the chef is cooking for the lady	Implausible	3.6875
+38	the lady is cooking for the chef	Plausible	6.652173913
+41	the ballerina is dancing for the grandpa	Implausible	2.666666667
+40	the grandpa is dancing for the ballerina	Plausible	6.571428571
+43	the journalist is interviewing the sportsstar	Implausible	2.183673469
+42	the sportsstar is interviewing the journalist	Plausible	6.708333333
+45	the judge is sentencing the criminal	Implausible	1.479166667
+44	the criminal is sentencing the judge	Plausible	6.918367347
+47	the father is pulling the child on the sled	Implausible	2.836734694
+46	the child is pulling the father on the sled	Plausible	6.595744681
+49	santa is giving the girl a present	Implausible	2.729166667
+48	the girl is giving santa a present	Plausible	6.530612245
+51	the peasant is bowing to the queen	Implausible	2.1875
+50	the queen is bowing to the peasant	Plausible	6.604166667
+53	the lady is applauding the athlete	Implausible	4.208333333
+52	the athlete is applauding the lad	Plausible	6.708333333
+55	the father is tying the son's shoes	Implausible	4.836734694
+54	the son is tying the father's shoes	Plausible	6.541666667
+57	the thief is stealing the purse from the grandma	Implausible	1.791666667
+56	the grandma is stealing the purse from the thief	Plausible	6.816326531
+59	the cat is chasing the mouse	Implausible	1.957446809
+58	the mouse is chasing the cat	Plausible	6.653061224
+61	the visitor is pushing the patient	Implausible	2.510204082
+60	the patient is pushing the visitor	Plausible	5.5625
+63	the relative is bringing flowers to the patient	Implausible	3.854166667
+62	the patient is bringing flowers to the relative	Plausible	6.816326531
+65	the boss is yelling at the worker	Implausible	4.387755102
+64	the worker is yelling at the boss	Plausible	6.645833333
+67	the dog is leading the blind person	Implausible	2.021276596
+66	the blind person is leading the dog	Plausible	6.836734694
+69	the bouncer is preventing the woman from entering	Implausible	2.102040816
+68	the woman is preventing the bouncer from entering	Plausible	6.708333333
+71	the dog is licking the girl on the face	Implausible	3.104166667
+70	the girl is licking the dog on the face	Plausible	6.744680851
+73	the man is proposing to the woman	Implausible	4.936170213
+72	the woman is proposing to the man	Plausible	6.854166667
+75	the tailor is measuring the princess	Implausible	1.958333333
+74	the princess is measuring the tailor	Plausible	6.693877551
+77	the lifeguard is saving the grandmother	Implausible	1.875
+76	the grandmother is saving the lifeguard	Plausible	6.6875
+79	the chauffeur is opening the door for the lady	Implausible	3.25
+78	the lady is opening the door for the chauffeur	Plausible	6.625
