@@ -1,0 +1,80 @@
+0	0	The cop is arresting the criminal	Plausible	cop:nsubj arrest:root criminal:obj 	15.301145491383146
+1	1	The criminal is arresting the cop	Implausible	criminal:nsubj arrest:root cop:obj 	6.9396838855363985
+2	2	The babysitter is scolding the child	Plausible	babysitter:nsubj scold:root child:obj 	21.352883658655315
+3	3	The child is scolding the babysitter	Implausible	child:nsubj scold:root babysitter:obj 	15.263814777572527
+4	4	The doctor is using a stethoscope on the patient	Plausible	doctor:nsubj use:root stethoscope:obj patient:obl 	15.45279147690779
+5	5	The patient is using a stethoscope on the doctor	Implausible	patient:nsubj use:root stethoscope:obj doctor:obl 	11.699241173622026
+6	6	The fireman is rescuing the grandmother	Plausible	fireman:nsubj rescue:root grandmother:obj 	11.354281277981714
+7	7	The grandmother is rescuing the fireman	Implausible	grandmother:nsubj rescue:root fireman:obj 	8.745328405381898
+8	8	The dentist is treating the patient	Plausible	dentist:nsubj treat:root patient:obj 	13.995794795894392
+9	9	The patient is treating the dentist	Implausible	patient:nsubj treat:root dentist:obj 	1.6774973383872478
+10	10	The ghost is frightening the girl	Plausible	ghost:nsubj frighten:root girl:obj 	13.870225585953607
+11	11	The girl is frightening the ghost	Implausible	girl:nsubj frighten:root ghost:obj 	7.676099839895363
+12	12	The mother is feeding the baby	Plausible	mother:nsubj feed:root baby:obj 	9.777803195891837
+13	13	The baby is feeding the mother	Implausible	baby:nsubj feed:root mother:obj 	6.9055950313367775
+14	14	The artist is painting the businessman	Plausible	artist:nsubj paint:root businessman:obj 	9.597022201764494
+15	15	The businessman is painting the artist	Implausible	businessman:nsubj paint:root artist:obj 	3.5206067518622586
+16	16	The groom is carrying the bride	Plausible	groom:nsubj carry:root bride:obj 	6.194019789181312
+17	17	The bride is carrying the groom	Implausible	bride:nsubj carry:root groom:obj 	2.8385998786916518
+18	18	The jester is entertaining the king	Plausible	jester:nsubj entertain:root king:obj 	16.657646128616488
+19	19	The king is entertaining the jester	Implausible	king:nsubj entertain:root jester:obj 	12.026120104654007
+20	20	The lion is pouncing on the Safari guide	Plausible	lion:nsubj pounce:root guide:obl 	22.05954170966889
+21	21	The Safari guide is pouncing on the lion	Implausible	guide:nsubj pounce:root lion:obl 	19.205544473547587
+22	22	The photographer is taking a picture of the model	Plausible	photographer:nsubj take:root picture:obj 	6.638740410456193
+23	23	The model is taking a picture of the photographer	Implausible	model:nsubj take:root picture:obj 	3.729602711877864
+24	24	The pirate is kidnapping the princess	Plausible	pirate:nsubj kidnap:root princess:obj 	18.80676705818314
+25	25	The princess is kidnapping the pirate	Implausible	princess:nsubj kidnap:root pirate:obj 	9.404696386414274
+26	26	The priest is blessing the bride	Plausible	priest:nsubj bless:root bride:obj 	16.66765223291733
+27	27	The bride is blessing the priest	Implausible	bride:nsubj bless:root priest:obj 	7.65694485577308
+28	28	The shark is biting the snorkeler	Plausible	shark:nsubj bite:root snorkeler:obj 	25.839629451792145
+29	29	The snorkeler is biting the shark	Implausible	snorkeler:nsubj bite:root shark:obj 	16.52790639833087
+30	30	The professor is lecturing to the student	Plausible	professor:nsubj lecture:root student:obl 	16.542429539422823
+31	31	The student is lecturing to the professor	Implausible	student:nsubj lecture:root professor:obl 	9.348083868513925
+32	32	The vampire is biting the woman	Plausible	vampire:nsubj bite:root woman:obj 	11.663247344845756
+33	33	The woman is biting the vampire	Implausible	woman:nsubj bite:root vampire:obj 	7.038804677428423
+34	34	The waiter is serving the customer	Plausible	waiter:nsubj serve:root customer:obj 	10.672900132035833
+35	35	The customer is serving the waiter	Implausible	customer:nsubj serve:root waiter:obj 	1.6177566009693671
+36	36	The lawyer is giving money to the beggar	Plausible	lawyer:nsubj give:root money:obj beggar:obl 	13.199758288441265
+37	37	The beggar is giving money to the lawyer	Implausible	beggar:nsubj give:root money:obj lawyer:obl 	10.53435884850202
+38	38	The chef is cooking for the lady	Plausible	chef:nsubj cook:root lady:obl 	17.449463960184374
+39	39	The lady is cooking for the chef	Implausible	lady:nsubj cook:root chef:obl 	13.261027989344964
+40	40	The ballerina is dancing for the grandpa	Plausible	ballerina:nsubj dance:root grandpa:obl 	31.704119246096862
+41	41	The grandpa is dancing for the ballerina	Implausible	grandpa:nsubj dance:root ballerina:obl 	26.783522111002632
+42	42	The journalist is interviewing the sportsstar	Plausible	journalist:nsubj interview:root sportsstar:obj 	21.699680803764764
+43	43	The sportsstar is interviewing the journalist	Implausible	sportsstar:nsubj interview:root journalist:obj 	21.90256715630332
+44	44	The judge is sentencing the criminal	Plausible	judge:nsubj sentence:root criminal:obj 	16.762258737575312
+45	45	The criminal is sentencing the judge	Implausible	criminal:nsubj sentence:root judge:obj 	10.483129346149315
+46	46	The father is pulling the child on the sled	Plausible	father:nsubj pull:root child:obj sled:obl 	14.778452431694644
+47	47	The child is pulling the father on the sled	Implausible	child:nsubj pull:root father:obj sled:obl 	14.152810255775854
+48	48	Santa is giving the girl a present	Plausible	santa:nsubj give:root present:obj 	7.887079965939486
+49	49	The girl is giving Santa a present	Implausible	girl:nsubj give:root present:obj 	5.349329348672924
+50	50	The peasant is bowing to the queen	Plausible	peasant:nsubj bow:root queen:obl 	17.37544255559961
+51	51	The queen is bowing to the peasant	Implausible	queen:nsubj bow:root peasant:obl 	14.462805729585217
+52	52	The lady is applauding the athlete	Plausible	lady:nsubj applaud:root athlete:obj 	6.47897523468606
+53	53	The athlete is applauding the lad	Implausible	athlete:nsubj applaud:root lad:obj 	8.519143757637433
+54	54	The father is tying the son's shoes	Plausible	father:nsubj ty:root shoe:obj 	7.397726351469407
+55	55	The son is tying the father's shoes	Implausible	son:nsubj ty:root shoe:obj 	6.801036867533204
+56	56	The thief is stealing the purse from the grandma	Plausible	thief:nsubj steal:root purse:obj grandma:obl 	34.605507912162274
+57	57	The grandma is stealing the purse from the thief	Implausible	grandma:nsubj steal:root purse:obj thief:obl 	24.870656434328385
+58	58	The cat is chasing the mouse	Plausible	cat:nsubj chase:root mouse:obj 	14.217320422775057
+59	59	The mouse is chasing the cat	Implausible	mouse:nsubj chase:root cat:obj 	10.41439877992349
+60	60	The visitor is pushing the patient	Plausible	visitor:nsubj push:root patient:obj 	3.091126299972553
+61	61	The patient is pushing the visitor	Implausible	patient:nsubj push:root visitor:obj 	1.2997218942139472
+62	62	The relative is bringing flowers to the patient	Plausible	relative:nsubj bring:root flower:obj patient:obl 	9.71742646006248
+63	63	The patient is bringing flowers to the relative	Implausible	patient:nsubj bring:root flower:obj relative:obl 	6.745981042753713
+64	64	The boss is yelling at the worker	Plausible	boss:nsubj yell:root worker:obl 	19.938975520063142
+65	65	The worker is yelling at the boss	Implausible	worker:nsubj yell:root boss:obl 	15.548751197861721
+66	66	The dog is leading the blind person	Plausible	dog:nsubj lead:root person:obj 	2.254145354730269
+67	67	The blind person is leading the dog	Implausible	person:nsubj lead:root dog:obj 	0.6582380887845789
+68	68	The bouncer is preventing the woman from entering	Plausible	bouncer:nsubj prevent:root woman:obj 	6.453616395083237
+69	69	The woman is preventing the bouncer from entering	Implausible	woman:nsubj prevent:root bouncer:obj 	2.856137537113417
+70	70	The dog is licking the girl on the face	Plausible	dog:nsubj lick:root girl:obj face:obl 	28.023609598661746
+71	71	The girl is licking the dog on the face	Implausible	girl:nsubj lick:root dog:obj face:obl 	23.33050913909115
+72	72	The man is proposing to the woman	Plausible	man:nsubj propose:root woman:obl 	7.7899853870294065
+73	73	The woman is proposing to the man	Implausible	woman:nsubj propose:root man:obl 	6.599370932223092
+74	74	The tailor is measuring the princess	Plausible	tailor:nsubj measure:root princess:obj 	5.170186672274917
+75	75	The princess is measuring the tailor	Implausible	princess:nsubj measure:root tailor:obj 	3.779519432913885
+76	76	The lifeguard is saving the grandmother	Plausible	lifeguard:nsubj save:root grandmother:obj 	10.004088725784724
+77	77	The grandmother is saving the lifeguard	Implausible	grandmother:nsubj save:root lifeguard:obj 	6.0467709153379765
+78	78	The chauffeur is opening the door for the lady	Plausible	chauffeur:nsubj open:root door:obj lady:obl 	20.194261232402283
+79	79	The lady is opening the door for the chauffeur	Implausible	lady:nsubj open:root door:obj chauffeur:obl 	20.80749421549148

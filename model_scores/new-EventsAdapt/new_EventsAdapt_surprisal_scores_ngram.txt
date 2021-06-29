@@ -1,0 +1,1648 @@
+The raider caught the illness.	the raider caught the illness . </s>	active	plausible	81.92657	nounk
+The illness caught the raider.	the illness caught the raider . </s>	active	implausible	79.47868	nounk
+The illness was caught by the raider.	the illness was caught by the raider . </s>	passive	plausible	84.25173000000001	nounk
+The raider was caught by the illness.	the raider was caught by the illness . </s>	passive	implausible	89.56225	nounk
+The marauder contracted the disease.	the <unk> contracted the disease . </s>	active	plausible	57.53046	unk
+The disease contracted the marauder.	the disease contracted the <unk> . </s>	active	implausible	73.90495999999999	unk
+The disease was contracted by the marauder.	the disease was contracted by the <unk> . </s>	passive	plausible	76.45645	unk
+The marauder was contracted by the disease.	the <unk> was contracted by the disease . </s>	passive	implausible	69.31374	unk
+The convict dreaded the prison.	the convict dreaded the prison . </s>	active	plausible	87.81684	nounk
+The prison dreaded the convict.	the prison dreaded the convict . </s>	active	implausible	84.21585	nounk
+The prison was dreaded by the convict.	the prison was dreaded by the convict . </s>	passive	plausible	94.14835000000001	nounk
+The convict was dreaded by the prison.	the convict was dreaded by the prison . </s>	passive	implausible	100.78011	nounk
+The criminal feared the jail.	the criminal feared the jail . </s>	active	plausible	80.25942	nounk
+The jail feared the criminal.	the jail feared the criminal . </s>	active	implausible	81.78243	nounk
+The jail was feared by the criminal.	the jail was feared by the criminal . </s>	passive	plausible	89.36229	nounk
+The criminal was feared by the jail.	the criminal was feared by the jail . </s>	passive	implausible	93.89888	nounk
+The prostitute squandered the cash.	the prostitute squandered the cash . </s>	active	plausible	86.7666	nounk
+The cash squandered the prostitute.	the cash squandered the prostitute . </s>	active	implausible	84.71498	nounk
+The cash was squandered by the prostitute.	the cash was squandered by the prostitute . </s>	passive	plausible	103.12064	nounk
+The prostitute was squandered by the cash.	the prostitute was squandered by the cash . </s>	passive	implausible	102.47415	nounk
+The call girl wasted the money.	the call girl wasted the money . </s>	active	plausible	92.90381	nounk
+The money wasted the call girl.	the money wasted the call girl . </s>	active	implausible	83.99509	nounk
+The money was wasted by the call girl.	the money was wasted by the call girl . </s>	passive	plausible	92.26375999999999	nounk
+The call girl was wasted by the money.	the call girl was wasted by the money . </s>	passive	implausible	102.93189	nounk
+The adventurer requested the beverage.	the adventurer requested the beverage . </s>	active	plausible	84.40847	nounk
+The beverage requested the adventurer.	the beverage requested the adventurer . </s>	active	implausible	84.04905	nounk
+The beverage was requested by the adventurer.	the beverage was requested by the adventurer . </s>	passive	plausible	85.28824	nounk
+The adventurer was requested by the beverage.	the adventurer was requested by the beverage . </s>	passive	implausible	90.5524	nounk
+The undertaker prepared the funeral.	the undertaker prepared the funeral . </s>	active	plausible	84.84340999999999	nounk
+The funeral prepared the undertaker.	the funeral prepared the undertaker . </s>	active	implausible	80.76525000000001	nounk
+The funeral was prepared by the undertaker.	the funeral was prepared by the undertaker . </s>	passive	plausible	81.00736	nounk
+The undertaker was prepared by the funeral.	the undertaker was prepared by the funeral . </s>	passive	implausible	88.45843	nounk
+The mortician arranged the burial.	the <unk> arranged the burial . </s>	active	plausible	69.79234	unk
+The burial arranged the mortician.	the burial arranged the <unk> . </s>	active	implausible	83.47129000000001	unk
+The burial was arranged by the mortician.	the burial was arranged by the <unk> . </s>	passive	plausible	81.68939	unk
+The mortician was arranged by the burial.	the <unk> was arranged by the burial . </s>	passive	implausible	75.46571	unk
+The supervisor supplied the liquor.	the supervisor supplied the liquor . </s>	active	plausible	81.76165	nounk
+The liquor supplied the supervisor.	the liquor supplied the supervisor . </s>	active	implausible	86.24293	nounk
+The liquor was supplied by the supervisor.	the liquor was supplied by the supervisor . </s>	passive	plausible	91.86175000000001	nounk
+The supervisor was supplied by the liquor.	the supervisor was supplied by the liquor . </s>	passive	implausible	86.19348	nounk
+The overseer provided the alcohol.	the overseer provided the alcohol . </s>	active	plausible	81.81443	nounk
+The alcohol provided the overseer.	the alcohol provided the overseer . </s>	active	implausible	81.39178	nounk
+The alcohol was provided by the overseer.	the alcohol was provided by the overseer . </s>	passive	plausible	83.47498	nounk
+The overseer was provided by the alcohol.	the overseer was provided by the alcohol . </s>	passive	implausible	90.18508	nounk
+The troublemaker crashed the car.	the <unk> crashed the car . </s>	active	plausible	64.11923	unk
+The car crashed the troublemaker.	the car crashed the <unk> . </s>	active	implausible	73.8161	unk
+The car was crashed by the troublemaker.	the car was crashed by the <unk> . </s>	passive	plausible	85.13839	unk
+The troublemaker was crashed by the car.	the <unk> was crashed by the car . </s>	passive	implausible	82.20649	unk
+The hooligan wrecked the vehicle.	the <unk> wrecked the vehicle . </s>	active	plausible	76.26594	unk
+The vehicle wrecked the hooligan.	the vehicle wrecked the <unk> . </s>	active	implausible	83.34022999999999	unk
+The vehicle was wrecked by the hooligan.	the vehicle was wrecked by the <unk> . </s>	passive	plausible	76.38169	unk
+The hooligan was wrecked by the vehicle.	the <unk> was wrecked by the vehicle . </s>	passive	implausible	75.66014	unk
+The repairman fixed the tap.	the <unk> fixed the tap . </s>	active	plausible	70.67139	unk
+The tap fixed the repairman.	the tap fixed the <unk> . </s>	active	implausible	86.96020000000001	unk
+The tap was fixed by the repairman.	the tap was fixed by the <unk> . </s>	passive	plausible	84.44935000000001	unk
+The repairman was fixed by the tap.	the <unk> was fixed by the tap . </s>	passive	implausible	74.10256000000001	unk
+The handyman repaired the faucet.	the <unk> repaired the <unk> . </s>	active	plausible	66.83223000000001	unk
+The faucet repaired the handyman.	the <unk> repaired the <unk> . </s>	active	implausible	66.83223000000001	unk
+The faucet was repaired by the handyman.	the <unk> was repaired by the <unk> . </s>	passive	plausible	71.57386	unk
+The handyman was repaired by the faucet.	the <unk> was repaired by the <unk> . </s>	passive	implausible	71.57386	unk
+The secretary organized the desk.	the secretary organized the desk . </s>	active	plausible	76.9781	nounk
+The desk organized the secretary.	the desk organized the secretary . </s>	active	implausible	80.65961999999999	nounk
+The desk was organized by the secretary.	the desk was organized by the secretary . </s>	passive	plausible	79.42007	nounk
+The secretary was organized by the desk.	the secretary was organized by the desk . </s>	passive	implausible	81.3241	nounk
+The receptionist tidied the table.	the receptionist <unk> the table . </s>	active	plausible	79.73217	unk
+The table tidied the receptionist.	the table <unk> the receptionist . </s>	active	implausible	73.93253999999999	unk
+The table was tidied by the receptionist.	the table was <unk> by the receptionist . </s>	passive	plausible	79.37462	unk
+The receptionist was tidied by the table.	the receptionist was <unk> by the table . </s>	passive	implausible	88.44377	unk
+The pilot steered the airplane.	the pilot steered the airplane . </s>	active	plausible	74.09764	nounk
+The airplane steered the pilot.	the airplane steered the pilot . </s>	active	implausible	82.35434	nounk
+The airplane was steered by the pilot.	the airplane was steered by the pilot . </s>	passive	plausible	80.8609	nounk
+The pilot was steered by the airplane.	the pilot was steered by the airplane . </s>	passive	implausible	80.73683	nounk
+The aviator maneuvered the jet.	the aviator maneuvered the jet . </s>	active	plausible	88.27041999999999	nounk
+The jet maneuvered the aviator.	the jet maneuvered the aviator . </s>	active	implausible	88.69704999999999	nounk
+The jet was maneuvered by the aviator.	the jet was maneuvered by the aviator . </s>	passive	plausible	97.87798	nounk
+The aviator was maneuvered by the jet.	the aviator was maneuvered by the jet . </s>	passive	implausible	100.49559999999998	nounk
+The chef sauteed the squid.	the chef <unk> the squid . </s>	active	plausible	78.28031	unk
+The squid sauteed the chef.	the squid <unk> the chef . </s>	active	implausible	81.21543	unk
+The squid was sauteed by the chef.	the squid was <unk> by the chef . </s>	passive	plausible	89.34159000000001	unk
+The chef was sauteed by the squid.	the chef was <unk> by the squid . </s>	passive	implausible	89.6421	unk
+The cook grilled the octopus.	the cook grilled the octopus . </s>	active	plausible	90.38004	nounk
+The octopus grilled the cook.	the octopus grilled the cook . </s>	active	implausible	91.28751	nounk
+The octopus was grilled by the cook.	the octopus was grilled by the cook . </s>	passive	plausible	102.88157	nounk
+The cook was grilled by the octopus.	the cook was grilled by the octopus . </s>	passive	implausible	101.33207	nounk
+The ship captain promised the triumph.	the ship captain promised the triumph . </s>	active	plausible	91.26025	nounk
+The triumph promised the ship captain.	the triumph promised the ship captain . </s>	active	implausible	90.15982	nounk
+The triumph was promised by the ship captain.	the triumph was promised by the ship captain . </s>	passive	plausible	95.37245	nounk
+The ship captain was promised by the triumph.	the ship captain was promised by the triumph . </s>	passive	implausible	98.42406	nounk
+The skipper guaranteed the victory.	the skipper guaranteed the victory . </s>	active	plausible	82.28259	nounk
+The victory guaranteed the skipper.	the victory guaranteed the skipper . </s>	active	implausible	75.71476000000001	nounk
+The victory was guaranteed by the skipper.	the victory was guaranteed by the skipper . </s>	passive	plausible	78.64173	nounk
+The skipper was guaranteed by the victory.	the skipper was guaranteed by the victory . </s>	passive	implausible	86.78505000000001	nounk
+The milliner adorned the fedora.	the <unk> adorned the <unk> . </s>	active	plausible	72.41475	unk
+The fedora adorned the milliner.	the <unk> adorned the <unk> . </s>	active	implausible	72.41475	unk
+The fedora was adorned by the milliner.	the <unk> was adorned by the <unk> . </s>	passive	plausible	75.52192	unk
+The milliner was adorned by the fedora.	the <unk> was adorned by the <unk> . </s>	passive	implausible	75.52192	unk
+The hatter decorated the bowler.	the <unk> decorated the bowler . </s>	active	plausible	73.25132	unk
+The bowler decorated the hatter.	the bowler decorated the <unk> . </s>	active	implausible	83.04951	unk
+The bowler was decorated by the hatter.	the bowler was decorated by the <unk> . </s>	passive	plausible	82.72003000000001	unk
+The hatter was decorated by the bowler.	the <unk> was decorated by the bowler . </s>	passive	implausible	69.35094000000001	unk
+The serviceman hoisted the flag.	the <unk> hoisted the flag . </s>	active	plausible	73.48022	unk
+The flag hoisted the serviceman.	the flag hoisted the <unk> . </s>	active	implausible	75.13727	unk
+The flag was hoisted by the serviceman.	the flag was hoisted by the <unk> . </s>	passive	plausible	73.64774	unk
+The serviceman was hoisted by the flag.	the <unk> was hoisted by the flag . </s>	passive	implausible	81.758	unk
+The soldier raised the banner.	the soldier raised the banner . </s>	active	plausible	78.53443999999999	nounk
+The banner raised the soldier.	the banner raised the soldier . </s>	active	implausible	80.99009000000001	nounk
+The banner was raised by the soldier.	the banner was raised by the soldier . </s>	passive	plausible	76.8853	nounk
+The soldier was raised by the banner.	the soldier was raised by the banner . </s>	passive	implausible	81.24503999999999	nounk
+The agent failed the mission.	the agent failed the mission . </s>	active	plausible	80.64458	nounk
+The mission failed the agent.	the mission failed the agent . </s>	active	implausible	72.24391	nounk
+The mission was failed by the agent.	the mission was failed by the agent . </s>	passive	plausible	84.95394999999999	nounk
+The agent was failed by the mission.	the agent was failed by the mission . </s>	passive	implausible	89.56406	nounk
+The operative blew the assignment.	the operative blew the assignment . </s>	active	plausible	83.59962000000002	nounk
+The assignment blew the operative.	the assignment blew the operative . </s>	active	implausible	86.14753999999999	nounk
+The assignment was blown by the operative.	the assignment was blown by the operative . </s>	passive	plausible	90.14873	nounk
+The operative was blown by the assignment.	the operative was blown by the assignment . </s>	passive	implausible	95.47731	nounk
+The anchorman garbled the expression.	the <unk> <unk> the expression . </s>	active	plausible	62.89038000000001	unk
+The expression garbled the anchorman.	the expression <unk> the <unk> . </s>	active	implausible	67.98801	unk
+The expression was garbled by the anchorman.	the expression was <unk> by the <unk> . </s>	passive	plausible	75.62279000000001	unk
+The anchorman was garbled by the expression.	the <unk> was <unk> by the expression . </s>	passive	implausible	70.31393	unk
+The announcer mispronounced the word.	the announcer <unk> the word . </s>	active	plausible	74.49134	unk
+The word mispronounced the announcer.	the word <unk> the announcer . </s>	active	implausible	67.34346	unk
+The word was mispronounced by the announcer.	the word was <unk> by the announcer . </s>	passive	plausible	73.79413	unk
+The announcer was mispronounced by the word.	the announcer was <unk> by the word . </s>	passive	implausible	82.69998	unk
+The author finished the novel.	the author finished the novel . </s>	active	plausible	76.34056000000001	nounk
+The novel finished the author.	the novel finished the author . </s>	active	implausible	76.02255	nounk
+The novel was finished by the author.	the novel was finished by the author . </s>	passive	plausible	73.23827	nounk
+The author was finished by the novel.	the author was finished by the novel . </s>	passive	implausible	77.45792	nounk
+The writer completed the book.	the writer completed the book . </s>	active	plausible	75.57101	nounk
+The book completed the writer.	the book completed the writer . </s>	active	implausible	75.03228	nounk
+The book was completed by the writer.	the book was completed by the writer . </s>	passive	plausible	70.87509	nounk
+The writer was completed by the book.	the writer was completed by the book . </s>	passive	implausible	75.21194	nounk
+The financier sponsored the project.	the financier sponsored the project . </s>	active	plausible	82.09513	nounk
+The project sponsored the financier.	the project sponsored the financier . </s>	active	implausible	74.74021	nounk
+The project was sponsored by the financier.	the project was sponsored by the financier . </s>	passive	plausible	75.204572	nounk
+The financier was sponsored by the project.	the financier was sponsored by the project . </s>	passive	implausible	81.594652	nounk
+The banker funded the program.	the banker funded the program . </s>	active	plausible	82.66467000000002	nounk
+The program funded the banker.	the program funded the banker . </s>	active	implausible	72.93452	nounk
+The program was funded by the banker.	the program was funded by the banker . </s>	passive	plausible	70.501394	nounk
+The banker was funded by the program.	the banker was funded by the program . </s>	passive	implausible	80.58570399999999	nounk
+The tourist exited the bus.	the tourist exited the bus . </s>	active	plausible	79.97525999999999	nounk
+The bus exited the tourist.	the bus exited the tourist . </s>	active	implausible	79.27802	nounk
+The bus was exited by the tourist.	the bus was exited by the tourist . </s>	passive	plausible	96.92103	nounk
+The tourist was exited by the bus.	the tourist was exited by the bus . </s>	passive	implausible	99.5354	nounk
+The vacationer left the shuttle.	the <unk> left the shuttle . </s>	active	plausible	65.72607	unk
+The shuttle left the vacationer.	the shuttle left the <unk> . </s>	active	implausible	68.09822	unk
+The shuttle was left by the vacationer.	the shuttle was left by the <unk> . </s>	passive	plausible	78.99445	unk
+The vacationer was left by the shuttle.	the <unk> was left by the shuttle . </s>	passive	implausible	78.39878	unk
+The dietitian loathed the jam.	the <unk> loathed the jam . </s>	active	plausible	76.09099	unk
+The jam loathed the dietitian.	the jam loathed the <unk> . </s>	active	implausible	89.45289	unk
+The jam was loathed by the dietitian.	the jam was loathed by the <unk> . </s>	passive	plausible	94.98034	unk
+The dietitian was loathed by the jam.	the <unk> was loathed by the jam . </s>	passive	implausible	81.25034	unk
+The nutritionist detested the marmalade.	the <unk> detested the <unk> . </s>	active	plausible	76.78900999999999	unk
+The marmalade detested the nutritionist.	the <unk> detested the <unk> . </s>	active	implausible	76.78900999999999	unk
+The marmalade was detested by the nutritionist.	the <unk> was detested by the <unk> . </s>	passive	plausible	72.76209	unk
+The nutritionist was detested by the marmalade.	the <unk> was detested by the <unk> . </s>	passive	implausible	72.76209	unk
+The scientist discovered the cure.	the scientist discovered the cure . </s>	active	plausible	76.72058	nounk
+The cure discovered the scientist.	the cure discovered the scientist . </s>	active	implausible	80.61068	nounk
+The cure was discovered by the scientist.	the cure was discovered by the scientist . </s>	passive	plausible	86.68243	nounk
+The scientist was discovered by the cure.	the scientist was discovered by the cure . </s>	passive	implausible	86.51521	nounk
+The researcher found the remedy.	the researcher found the remedy . </s>	active	plausible	77.24281	nounk
+The remedy found the researcher.	the remedy found the researcher . </s>	active	implausible	82.29053	nounk
+The remedy was found by the researcher.	the remedy was found by the researcher . </s>	passive	plausible	86.67059	nounk
+The researcher was found by the remedy.	the researcher was found by the remedy . </s>	passive	implausible	91.51425	nounk
+The doctor closed the school.	the doctor closed the school . </s>	active	plausible	74.80863	nounk
+The school closed the doctor.	the school closed the doctor . </s>	active	implausible	67.70947	nounk
+The school was closed by the doctor.	the school was closed by the doctor . </s>	passive	plausible	63.53192	nounk
+The doctor was closed by the school.	the doctor was closed by the school . </s>	passive	implausible	75.73671	nounk
+The maid lifted the cushion.	the maid lifted the cushion . </s>	active	plausible	86.76965999999999	nounk
+The cushion lifted the maid.	the cushion lifted the maid . </s>	active	implausible	84.34221000000001	nounk
+The cushion was lifted by the maid.	the cushion was lifted by the maid . </s>	passive	plausible	92.24866999999999	nounk
+The maid was lifted by the cushion.	the maid was lifted by the cushion . </s>	passive	implausible	94.99776	nounk
+The designer suggested the drapes.	the designer suggested the <unk> . </s>	active	plausible	78.4219	unk
+The drapes suggested the designer.	the <unk> suggested the designer . </s>	active	implausible	68.05865	unk
+The drapes were suggested by the designer.	the <unk> were suggested by the designer . </s>	passive	plausible	72.14615	unk
+The designer was suggested by the drapes.	the designer was suggested by the <unk> . </s>	passive	implausible	76.65538000000001	unk
+The decorator recommended the curtains.	the decorator recommended the curtains . </s>	active	plausible	85.93088	nounk
+The curtains recommended the decorator.	the curtains recommended the decorator . </s>	active	implausible	85.37914	nounk
+The curtains were recommended by the decorator.	the curtains were recommended by the decorator . </s>	passive	plausible	90.42153	nounk
+The decorator was recommended by the curtains.	the decorator was recommended by the curtains . </s>	passive	implausible	93.47441	nounk
+The builder washed the pants.	the builder washed the pants . </s>	active	plausible	89.21318	nounk
+The pants washed the builder.	the pants washed the builder . </s>	active	implausible	86.48913999999999	nounk
+The pants were washed by the builder.	the pants were washed by the builder . </s>	passive	plausible	91.11531000000001	nounk
+The builder was washed by the pants.	the builder was washed by the pants . </s>	passive	implausible	98.87097	nounk
+The contractor laundered the trousers.	the contractor <unk> the trousers . </s>	active	plausible	75.79638	unk
+The trousers laundered the contractor.	the trousers <unk> the contractor . </s>	active	implausible	81.84584	unk
+The trousers were laundered by the contractor.	the trousers were <unk> by the contractor . </s>	passive	plausible	79.44668000000001	unk
+The contractor was laundered by the trousers.	the contractor was <unk> by the trousers . </s>	passive	implausible	75.47412	unk
+The servant wiped the sink.	the servant wiped the sink . </s>	active	plausible	85.53435	nounk
+The sink wiped the servant.	the sink wiped the servant . </s>	active	implausible	88.67820999999999	nounk
+The sink was wiped by the servant.	the sink was wiped by the servant . </s>	passive	plausible	101.84546999999999	nounk
+The servant was wiped by the sink.	the servant was wiped by the sink . </s>	passive	implausible	97.56734000000002	nounk
+The domestic cleaned the wash basin.	the domestic cleaned the wash basin . </s>	active	plausible	102.8	nounk
+The wash basin cleaned the domestic.	the wash basin cleaned the domestic . </s>	active	implausible	105.69900999999999	nounk
+The wash basin was cleaned by the domestic.	the wash basin was cleaned by the domestic . </s>	passive	plausible	114.31742	nounk
+The domestic was cleaned by the wash basin.	the domestic was cleaned by the wash basin . </s>	passive	implausible	115.98894	nounk
+The friend donned the pullover.	the friend donned the <unk> . </s>	active	plausible	85.68964	unk
+The pullover donned the friend.	the <unk> donned the friend . </s>	active	implausible	75.51866	unk
+The pullover was donned by the friend.	the <unk> was donned by the friend . </s>	passive	plausible	91.92129	unk
+The friend was donned by the pullover.	the friend was donned by the <unk> . </s>	passive	implausible	97.77484	unk
+The convalescent took the pill.	the <unk> took the pill . </s>	active	plausible	66.56348	unk
+The pill took the convalescent.	the pill took the <unk> . </s>	active	implausible	69.95091	unk
+The pill was taken by the convalescent.	the pill was taken by the <unk> . </s>	passive	plausible	80.0221	unk
+The convalescent was taken by the pill.	the <unk> was taken by the pill . </s>	passive	implausible	74.27174000000001	unk
+The patient swallowed the medicine.	the patient swallowed the medicine . </s>	active	plausible	81.42770999999999	nounk
+The medicine swallowed the patient.	the medicine swallowed the patient . </s>	active	implausible	84.66857999999999	nounk
+The medicine was swallowed by the patient.	the medicine was swallowed by the patient . </s>	passive	plausible	83.12555	nounk
+The patient was swallowed by the medicine.	the patient was swallowed by the medicine . </s>	passive	implausible	85.87195	nounk
+The hoarder hid the stash.	the <unk> hid the <unk> . </s>	active	plausible	72.62674999999999	unk
+The stash hid the hoarder.	the <unk> hid the <unk> . </s>	active	implausible	72.62674999999999	unk
+The stash was hidden by the hoarder.	the <unk> was hidden by the <unk> . </s>	passive	plausible	70.84952	unk
+The hoarder was hidden by the stash.	the <unk> was hidden by the <unk> . </s>	passive	implausible	70.84952	unk
+The packrat concealed the stockpile.	the <unk> concealed the stockpile . </s>	active	plausible	71.87157	unk
+The stockpile concealed the packrat.	the stockpile concealed the <unk> . </s>	active	implausible	88.33256	unk
+The stockpile was concealed by the packrat.	the stockpile was concealed by the <unk> . </s>	passive	plausible	88.06478999999999	unk
+The packrat was concealed by the stockpile.	the <unk> was concealed by the stockpile . </s>	passive	implausible	75.69646	unk
+The reporter abandoned the story.	the reporter abandoned the story . </s>	active	plausible	80.09105	nounk
+The story abandoned the reporter.	the story abandoned the reporter . </s>	active	implausible	78.35411	nounk
+The story was abandoned by the reporter.	the story was abandoned by the reporter . </s>	passive	plausible	77.89142000000001	nounk
+The reporter was abandoned by the story.	the reporter was abandoned by the story . </s>	passive	implausible	84.51895	nounk
+The journalist ditched the article.	the journalist ditched the article . </s>	active	plausible	81.80213	nounk
+The article ditched the journalist.	the article ditched the journalist . </s>	active	implausible	80.47197	nounk
+The article was ditched by the journalist.	the article was ditched by the journalist . </s>	passive	plausible	90.95852000000001	nounk
+The journalist was ditched by the article.	the journalist was ditched by the article . </s>	passive	implausible	100.47968	nounk
+The carnivore ate the steak.	the <unk> ate the steak . </s>	active	plausible	72.77694	unk
+The steak ate the carnivore.	the steak ate the <unk> . </s>	active	implausible	84.28204	unk
+The steak was eaten by the carnivore.	the steak was eaten by the <unk> . </s>	passive	plausible	84.10538	unk
+The carnivore was eaten by the steak.	the <unk> was eaten by the steak . </s>	passive	implausible	78.38558	unk
+The meat-eater devoured the filet.	the <unk> devoured the <unk> . </s>	active	plausible	77.68535	unk
+The filet devoured the meat-eater.	the <unk> devoured the <unk> . </s>	active	implausible	77.68535	unk
+The filet was devoured by the meat-eater.	the <unk> was devoured by the <unk> . </s>	passive	plausible	72.82576	unk
+The meat-eater was devoured by the filet.	the <unk> was devoured by the <unk> . </s>	passive	implausible	72.82576	unk
+The man drank the soda.	the man drank the soda . </s>	active	plausible	84.02571999999999	nounk
+The soda drank the man.	the soda drank the man . </s>	active	implausible	85.99884	nounk
+The soda was drunk by the man.	the soda was drunk by the man . </s>	passive	plausible	83.71112	nounk
+The man was drunk by the soda.	the man was drunk by the soda . </s>	passive	implausible	86.74145999999999	nounk
+The teacher bought the laptop.	the teacher bought the laptop . </s>	active	plausible	79.69736	nounk
+The laptop bought the teacher.	the laptop bought the teacher . </s>	active	implausible	81.81452	nounk
+The laptop was bought by the teacher.	the laptop was bought by the teacher . </s>	passive	plausible	82.36934	nounk
+The teacher was bought by the laptop.	the teacher was bought by the laptop . </s>	passive	implausible	84.26559999999999	nounk
+The instructor purchased the computer.	the instructor purchased the computer . </s>	active	plausible	81.3098	nounk
+The computer purchased the instructor.	the computer purchased the instructor . </s>	active	implausible	77.35012	nounk
+The computer was purchased by the instructor.	the computer was purchased by the instructor . </s>	passive	plausible	76.54146	nounk
+The instructor was purchased by the computer.	the instructor was purchased by the computer . </s>	passive	implausible	79.96952	nounk
+The lady cooked the supper.	the lady cooked the supper . </s>	active	plausible	86.84066	nounk
+The supper cooked the lady.	the supper cooked the lady . </s>	active	implausible	88.08353999999999	nounk
+The supper was cooked by the lady.	the supper was cooked by the lady . </s>	passive	plausible	90.25702999999999	nounk
+The lady was cooked by the supper.	the lady was cooked by the supper . </s>	passive	implausible	92.68950000000001	nounk
+The woman prepared the dinner.	the woman prepared the dinner . </s>	active	plausible	79.02280999999999	nounk
+The dinner prepared the woman.	the dinner prepared the woman . </s>	active	implausible	77.61336000000001	nounk
+The dinner was prepared by the woman.	the dinner was prepared by the woman . </s>	passive	plausible	81.13176000000001	nounk
+The woman was prepared by the dinner.	the woman was prepared by the dinner . </s>	passive	implausible	81.51692	nounk
+The traveler lost the souvenir.	the traveler lost the souvenir . </s>	active	plausible	84.54065	nounk
+The souvenir lost the traveler.	the souvenir lost the traveler . </s>	active	implausible	81.88534000000001	nounk
+The souvenir was lost by the traveler.	the souvenir was lost by the traveler . </s>	passive	plausible	93.88497	nounk
+The traveler was lost by the souvenir.	the traveler was lost by the souvenir . </s>	passive	implausible	92.69442000000001	nounk
+The sightseer misplaced the memento.	the <unk> misplaced the <unk> . </s>	active	plausible	77.84692000000001	unk
+The memento misplaced the sightseer.	the <unk> misplaced the <unk> . </s>	active	implausible	77.84692000000001	unk
+The memento was misplaced by the sightseer.	the <unk> was misplaced by the <unk> . </s>	passive	plausible	80.40223	unk
+The sightseer was misplaced by the memento.	the <unk> was misplaced by the <unk> . </s>	passive	implausible	80.40223	unk
+The comedian confirmed the itinerary.	the comedian confirmed the itinerary . </s>	active	plausible	77.77562	nounk
+The itinerary confirmed the comedian.	the itinerary confirmed the comedian . </s>	active	implausible	85.46864	nounk
+The itinerary was confirmed by the comedian.	the itinerary was confirmed by the comedian . </s>	passive	plausible	91.82817000000001	nounk
+The comedian was confirmed by the itinerary.	the comedian was confirmed by the itinerary . </s>	passive	implausible	86.52405999999999	nounk
+The humorist verified the schedule.	the humorist verified the schedule . </s>	active	plausible	87.47399	nounk
+The schedule verified the humorist.	the schedule verified the humorist . </s>	active	implausible	86.82234	nounk
+The schedule was verified by the humorist.	the schedule was verified by the humorist . </s>	passive	plausible	87.87246000000002	nounk
+The humorist was verified by the schedule.	the humorist was verified by the schedule . </s>	passive	implausible	95.11695999999999	nounk
+The woodworker skimmed the brochure.	the <unk> <unk> the brochure . </s>	active	plausible	64.10466	unk
+The brochure skimmed the woodworker.	the brochure <unk> the <unk> . </s>	active	implausible	73.62928	unk
+The brochure was skimmed by the woodworker.	the brochure was <unk> by the <unk> . </s>	passive	plausible	81.63413	unk
+The woodworker was skimmed by the brochure.	the <unk> was <unk> by the brochure . </s>	passive	implausible	71.44704	unk
+The guide reached the target.	the guide reached the target . </s>	active	plausible	73.64418	nounk
+The target reached the guide.	the target reached the guide . </s>	active	implausible	76.60079	nounk
+The target was reached by the guide.	the target was reached by the guide . </s>	passive	plausible	82.96617	nounk
+The guide was reached by the target.	the guide was reached by the target . </s>	passive	implausible	79.06053	nounk
+The townsperson farmed the grain.	the <unk> farmed the grain . </s>	active	plausible	75.04157	unk
+The grain farmed the townsperson.	the grain farmed the <unk> . </s>	active	implausible	86.74350000000001	unk
+The grain was farmed by the townsperson.	the grain was farmed by the <unk> . </s>	passive	plausible	85.70603	unk
+The townsperson was farmed by the grain.	the <unk> was farmed by the grain . </s>	passive	implausible	79.06932	unk
+The villager cultivated the crop.	the <unk> cultivated the crop . </s>	active	plausible	70.4756	unk
+The crop cultivated the villager.	the crop cultivated the <unk> . </s>	active	implausible	75.81504999999999	unk
+The crop was cultivated by the villager.	the crop was cultivated by the <unk> . </s>	passive	plausible	81.71619	unk
+The villager was cultivated by the crop.	the <unk> was cultivated by the crop . </s>	passive	implausible	77.01329	unk
+The mentor revised the manuscript.	the mentor revised the manuscript . </s>	active	plausible	83.46157	nounk
+The manuscript revised the mentor.	the manuscript revised the mentor . </s>	active	implausible	83.63580999999999	nounk
+The manuscript was revised by the mentor.	the manuscript was revised by the mentor . </s>	passive	plausible	83.23787999999999	nounk
+The mentor was revised by the manuscript.	the mentor was revised by the manuscript . </s>	passive	implausible	90.80726	nounk
+The advisor edited the paper.	the advisor edited the paper . </s>	active	plausible	80.67257000000001	nounk
+The paper edited the advisor.	the paper edited the advisor . </s>	active	implausible	82.00977	nounk
+The paper was edited by the advisor.	the paper was edited by the advisor . </s>	passive	plausible	85.51528	nounk
+The advisor was edited by the paper.	the advisor was edited by the paper . </s>	passive	implausible	86.80219	nounk
+The accountant made the chart.	the accountant made the chart . </s>	active	plausible	80.2577	nounk
+The chart made the accountant.	the chart made the accountant . </s>	active	implausible	80.09897000000001	nounk
+The chart was made by the accountant.	the chart was made by the accountant . </s>	passive	plausible	77.63647	nounk
+The accountant was made by the chart.	the accountant was made by the chart . </s>	passive	implausible	88.29604	nounk
+The bookkeeper created the graph.	the bookkeeper created the graph . </s>	active	plausible	84.29371	nounk
+The graph created the bookkeeper.	the graph created the bookkeeper . </s>	active	implausible	79.743	nounk
+The graph was created by the bookkeeper.	the graph was created by the bookkeeper . </s>	passive	plausible	90.28058000000001	nounk
+The bookkeeper was created by the graph.	the bookkeeper was created by the graph . </s>	passive	implausible	93.12266	nounk
+The logger felled the pine tree.	the <unk> felled the pine tree . </s>	active	plausible	79.46035	unk
+The pine tree felled the logger.	the pine tree felled the <unk> . </s>	active	implausible	86.45463	unk
+The pine tree was felled by the logger.	the pine tree was felled by the <unk> . </s>	passive	plausible	84.59646000000001	unk
+The logger was felled by the pine tree.	the <unk> was felled by the pine tree . </s>	passive	implausible	82.0268	unk
+The tycoon ran the company.	the tycoon ran the company . </s>	active	plausible	79.3612	nounk
+The company ran the tycoon.	the company ran the tycoon . </s>	active	implausible	74.00166	nounk
+The company was run by the tycoon.	the company was run by the tycoon . </s>	passive	plausible	73.336591	nounk
+The tycoon was run by the company.	the tycoon was run by the company . </s>	passive	implausible	84.98222	nounk
+The mogul governed the corporation.	the mogul governed the corporation . </s>	active	plausible	85.96556	nounk
+The corporation governed the mogul.	the corporation governed the mogul . </s>	active	implausible	78.42821	nounk
+The corporation was governed by the mogul.	the corporation was governed by the mogul . </s>	passive	plausible	82.169925	nounk
+The mogul was governed by the corporation.	the mogul was governed by the corporation . </s>	passive	implausible	85.603075	nounk
+The campaigner biased the ballot.	the campaigner biased the ballot . </s>	active	plausible	92.78940999999999	nounk
+The ballot biased the campaigner.	the ballot biased the campaigner . </s>	active	implausible	94.02604	nounk
+The ballot was biased by the campaigner.	the ballot was biased by the campaigner . </s>	passive	plausible	97.16434000000001	nounk
+The campaigner was biased by the ballot.	the campaigner was biased by the ballot . </s>	passive	implausible	102.69251	nounk
+The activist prejudiced the vote.	the activist prejudiced the vote . </s>	active	plausible	89.88670000000002	nounk
+The vote prejudiced the activist.	the vote prejudiced the activist . </s>	active	implausible	91.54286	nounk
+The vote was prejudiced by the activist.	the vote was prejudiced by the activist . </s>	passive	plausible	94.55121000000001	nounk
+The activist was prejudiced by the vote.	the activist was prejudiced by the vote . </s>	passive	implausible	104.30001	nounk
+The stewardess pulled the suitcase.	the <unk> pulled the suitcase . </s>	active	plausible	68.81783999999999	unk
+The suitcase pulled the stewardess.	the suitcase pulled the <unk> . </s>	active	implausible	83.26075	unk
+The suitcase was pulled by the stewardess.	the suitcase was pulled by the <unk> . </s>	passive	plausible	84.40747999999999	unk
+The stewardess was pulled by the suitcase.	the <unk> was pulled by the suitcase . </s>	passive	implausible	76.15498	unk
+The flight-attendant dragged the luggage.	the <unk> dragged the luggage . </s>	active	plausible	72.85134	unk
+The luggage dragged the flight-attendant.	the luggage dragged the <unk> . </s>	active	implausible	83.10327000000001	unk
+The luggage was dragged by the flight-attendant.	the luggage was dragged by the <unk> . </s>	passive	plausible	88.71691	unk
+The flight-attendant was dragged by the luggage.	the <unk> was dragged by the luggage . </s>	passive	implausible	75.99708000000001	unk
+The congressman delivered the speech.	the congressman delivered the speech . </s>	active	plausible	77.58525	nounk
+The speech delivered the congressman.	the speech delivered the congressman . </s>	active	implausible	76.00192	nounk
+The speech was delivered by the congressman.	the speech was delivered by the congressman . </s>	passive	plausible	75.19668	nounk
+The congressman was delivered by the speech.	the congressman was delivered by the speech . </s>	passive	implausible	81.99521	nounk
+The representative gave the address.	the representative gave the address . </s>	active	plausible	78.07925	nounk
+The address gave the representative.	the address gave the representative . </s>	active	implausible	78.38684	nounk
+The address was given by the representative.	the address was given by the representative . </s>	passive	plausible	76.44689	nounk
+The representative was given by the address.	the representative was given by the address . </s>	passive	implausible	85.58733	nounk
+The sheriff inspected the estate.	the sheriff inspected the estate . </s>	active	plausible	79.65411	nounk
+The estate inspected the sheriff.	the estate inspected the sheriff . </s>	active	implausible	79.0557	nounk
+The estate was inspected by the sheriff.	the estate was inspected by the sheriff . </s>	passive	plausible	77.94134	nounk
+The sheriff was inspected by the estate.	the sheriff was inspected by the estate . </s>	passive	implausible	85.88037	nounk
+The constable examined the property.	the constable examined the property . </s>	active	plausible	80.70680999999999	nounk
+The property examined the constable.	the property examined the constable . </s>	active	implausible	78.75034	nounk
+The property was examined by the constable.	the property was examined by the constable . </s>	passive	plausible	79.83625	nounk
+The constable was examined by the property.	the constable was examined by the property . </s>	passive	implausible	87.57249	nounk
+The celebrity signed the photograph.	the celebrity signed the photograph . </s>	active	plausible	80.09134	nounk
+The photograph signed the celebrity.	the photograph signed the celebrity . </s>	active	implausible	79.44923	nounk
+The photograph was signed by the celebrity.	the photograph was signed by the celebrity . </s>	passive	plausible	79.25667	nounk
+The celebrity was signed by the photograph.	the celebrity was signed by the photograph . </s>	passive	implausible	80.72405	nounk
+The star autographed the picture.	the star autographed the picture . </s>	active	plausible	83.18643999999999	nounk
+The picture autographed the star.	the picture autographed the star . </s>	active	implausible	84.37531	nounk
+The picture was autographed by the star.	the picture was autographed by the star . </s>	passive	plausible	86.49058	nounk
+The star was autographed by the picture.	the star was autographed by the picture . </s>	passive	implausible	90.06882999999999	nounk
+The nanny tutored the boy.	the nanny tutored the boy . </s>	active	plausible	85.58073	nounk
+The boy tutored the nanny.	the boy tutored the nanny . </s>	active	implausible	81.62753000000001	nounk
+The boy was tutored by the nanny.	the boy was tutored by the nanny . </s>	passive	plausible	83.78974	nounk
+The nanny was tutored by the boy.	the nanny was tutored by the boy . </s>	passive	implausible	92.32692000000002	nounk
+The governess instructed the lad.	the governess instructed the lad . </s>	active	plausible	84.23232	nounk
+The lad instructed the governess.	the lad instructed the governess . </s>	active	implausible	82.07728	nounk
+The lad was instructed by the governess.	the lad was instructed by the governess . </s>	passive	plausible	84.41421	nounk
+The governess was instructed by the lad.	the governess was instructed by the lad . </s>	passive	implausible	90.01259	nounk
+The blackmailer threatened the senator.	the <unk> threatened the senator . </s>	active	plausible	71.02834	unk
+The senator threatened the blackmailer.	the senator threatened the <unk> . </s>	active	implausible	81.01676	unk
+The senator was threatened by the blackmailer.	the senator was threatened by the <unk> . </s>	passive	plausible	76.38181	unk
+The blackmailer was threatened by the senator.	the <unk> was threatened by the senator . </s>	passive	implausible	71.42287999999999	unk
+The extortionist menaced the legislator.	the <unk> <unk> the legislator . </s>	active	plausible	61.90126000000001	unk
+The legislator menaced the extortionist.	the legislator <unk> the <unk> . </s>	active	implausible	72.86706	unk
+The legislator was menaced by the extortionist.	the legislator was <unk> by the <unk> . </s>	passive	plausible	84.62243000000001	unk
+The extortionist was menaced by the legislator.	the <unk> was <unk> by the legislator . </s>	passive	implausible	69.24354	unk
+The artist portrayed the philosopher.	the artist portrayed the philosopher . </s>	active	plausible	77.35515999999998	nounk
+The philosopher portrayed the artist.	the philosopher portrayed the artist . </s>	active	implausible	79.37916999999999	nounk
+The philosopher was portrayed by the artist.	the philosopher was portrayed by the artist . </s>	passive	plausible	83.664242	nounk
+The artist was portrayed by the philosopher.	the artist was portrayed by the philosopher . </s>	passive	implausible	80.233922	nounk
+The painter depicted the thinker.	the painter depicted the thinker . </s>	active	plausible	83.02181	nounk
+The thinker depicted the painter.	the thinker depicted the painter . </s>	active	implausible	83.91768	nounk
+The thinker was depicted by the painter.	the thinker was depicted by the painter . </s>	passive	plausible	89.99166	nounk
+The painter was depicted by the thinker.	the painter was depicted by the thinker . </s>	passive	implausible	90.33331	nounk
+The mechanic berated the intern.	the mechanic <unk> the intern . </s>	active	plausible	82.72263	unk
+The intern berated the mechanic.	the intern <unk> the mechanic . </s>	active	implausible	78.75061000000001	unk
+The intern was berated by the mechanic.	the intern was <unk> by the mechanic . </s>	passive	plausible	88.33670000000001	unk
+The mechanic was berated by the intern.	the mechanic was <unk> by the intern . </s>	passive	implausible	87.96232	unk
+The technician rebuked the aide.	the technician rebuked the aide . </s>	active	plausible	90.78175000000002	nounk
+The aide rebuked the technician.	the aide rebuked the technician . </s>	active	implausible	91.52015	nounk
+The aide was rebuked by the technician.	the aide was rebuked by the technician . </s>	passive	plausible	94.95099	nounk
+The technician was rebuked by the aide.	the technician was rebuked by the aide . </s>	passive	implausible	95.42477	nounk
+The fairy enchanted the troll.	the fairy enchanted the troll . </s>	active	plausible	89.81436000000001	nounk
+The troll enchanted the fairy.	the troll enchanted the fairy . </s>	active	implausible	94.89852	nounk
+The troll was enchanted by the fairy.	the troll was enchanted by the fairy . </s>	passive	plausible	99.31437000000001	nounk
+The fairy was enchanted by the troll.	the fairy was enchanted by the troll . </s>	passive	implausible	93.13295000000001	nounk
+The pixie mesmerized the ogre.	the <unk> <unk> the <unk> . </s>	active	plausible	55.34488	unk
+The ogre mesmerized the pixie.	the <unk> <unk> the <unk> . </s>	active	implausible	55.34488	unk
+The ogre was mesmerized by the pixie.	the <unk> was <unk> by the <unk> . </s>	passive	plausible	65.78555	unk
+The pixie was mesmerized by the ogre.	the <unk> was <unk> by the <unk> . </s>	passive	implausible	65.78555	unk
+The orderly assisted the dentist.	the orderly assisted the dentist . </s>	active	plausible	83.74027000000001	nounk
+The dentist assisted the orderly.	the dentist assisted the orderly . </s>	active	implausible	84.51797	nounk
+The dentist was assisted by the orderly.	the dentist was assisted by the orderly . </s>	passive	plausible	89.481777	nounk
+The orderly was assisted by the dentist.	the orderly was assisted by the dentist . </s>	passive	implausible	90.269807	nounk
+The nurse helped the orthodontist.	the nurse helped the <unk> . </s>	active	plausible	79.70815999999999	unk
+The orthodontist helped the nurse.	the <unk> helped the nurse . </s>	active	implausible	68.01008999999999	unk
+The orthodontist was helped by the nurse.	the <unk> was helped by the nurse . </s>	passive	plausible	74.18479	unk
+The nurse was helped by the orthodontist.	the nurse was helped by the <unk> . </s>	passive	implausible	82.284861	unk
+The owner evicted the tenant.	the owner evicted the tenant . </s>	active	plausible	81.54776	nounk
+The tenant evicted the owner.	the tenant evicted the owner . </s>	active	implausible	85.04553999999999	nounk
+The tenant was evicted by the owner.	the tenant was evicted by the owner . </s>	passive	plausible	84.47922000000001	nounk
+The owner was evicted by the tenant.	the owner was evicted by the tenant . </s>	passive	implausible	85.43625	nounk
+The critic attacked the conservative.	the critic attacked the conservative . </s>	active	plausible	80.21553	nounk
+The conservative attacked the critic.	the conservative attacked the critic . </s>	active	implausible	78.98103	nounk
+The conservative was attacked by the critic.	the conservative was attacked by the critic . </s>	passive	plausible	86.53055	nounk
+The critic was attacked by the conservative.	the critic was attacked by the conservative . </s>	passive	implausible	82.7841	nounk
+The reviewer criticized the right-winger.	the reviewer criticized the <unk> . </s>	active	plausible	71.00523000000001	unk
+The right-winger criticized the reviewer.	the <unk> criticized the reviewer . </s>	active	implausible	71.80260999999999	unk
+The right-winger was criticized by the reviewer.	the <unk> was criticized by the reviewer . </s>	passive	plausible	75.65697	unk
+The reviewer was criticized by the right-winger.	the reviewer was criticized by the <unk> . </s>	passive	implausible	81.79179	unk
+The admirer badgered the director.	the admirer <unk> the director . </s>	active	plausible	83.93884	unk
+The director badgered the admirer.	the director <unk> the admirer . </s>	active	implausible	78.3461	unk
+The director was badgered by the admirer.	the director was <unk> by the admirer . </s>	passive	plausible	80.03814	unk
+The admirer was badgered by the director.	the admirer was <unk> by the director . </s>	passive	implausible	82.51010000000001	unk
+The fan pestered the filmmaker.	the fan <unk> the filmmaker . </s>	active	plausible	76.01344	unk
+The filmmaker pestered the fan.	the filmmaker <unk> the fan . </s>	active	implausible	75.08435	unk
+The filmmaker was pestered by the fan.	the filmmaker was <unk> by the fan . </s>	passive	plausible	79.43028	unk
+The fan was pestered by the filmmaker.	the fan was <unk> by the filmmaker . </s>	passive	implausible	74.8472	unk
+The paramedic revived the youth.	the paramedic revived the youth . </s>	active	plausible	82.96064	nounk
+The youth revived the paramedic.	the youth revived the paramedic . </s>	active	implausible	81.32236999999999	nounk
+The youth was revived by the paramedic.	the youth was revived by the paramedic . </s>	passive	plausible	86.83229	nounk
+The paramedic was revived by the youth.	the paramedic was revived by the youth . </s>	passive	implausible	89.58373	nounk
+The EMT resuscitated the youngster.	the <unk> <unk> the youngster . </s>	active	plausible	79.17594	unk
+The youngster resuscitated the EMT.	the youngster <unk> the <unk> . </s>	active	implausible	72.45488	unk
+The youngster was resuscitated by the EMT.	the youngster was <unk> by the <unk> . </s>	passive	plausible	81.98699	unk
+The EMT was resuscitated by the youngster.	the <unk> was <unk> by the youngster . </s>	passive	implausible	86.51822	unk
+The prankster duped the marketer.	the <unk> duped the marketer . </s>	active	plausible	95.14555	unk
+The marketer duped the prankster.	the marketer duped the <unk> . </s>	active	implausible	92.82230999999999	unk
+The marketer was duped by the prankster.	the marketer was duped by the <unk> . </s>	passive	plausible	94.97615	unk
+The prankster was duped by the marketer.	the <unk> was duped by the marketer . </s>	passive	implausible	99.79419	unk
+The joker tricked the distributor.	the joker tricked the distributor . </s>	active	plausible	84.26373	nounk
+The distributor tricked the joker.	the distributor tricked the joker . </s>	active	implausible	84.94284999999999	nounk
+The distributor was tricked by the joker.	the distributor was tricked by the joker . </s>	passive	plausible	90.68920000000001	nounk
+The joker was tricked by the distributor.	the joker was tricked by the distributor . </s>	passive	implausible	87.35315999999999	nounk
+The playboy courted the damsel.	the playboy courted the <unk> . </s>	active	plausible	88.73317	unk
+The damsel courted the playboy.	the <unk> courted the playboy . </s>	active	implausible	75.95755	unk
+The damsel was courted by the playboy.	the <unk> was courted by the playboy . </s>	passive	plausible	78.57203899999999	unk
+The playboy was courted by the damsel.	the playboy was courted by the <unk> . </s>	passive	implausible	89.388609	unk
+The womanizer wooed the maiden.	the womanizer <unk> the maiden . </s>	active	plausible	84.79409	unk
+The maiden wooed the womanizer.	the maiden <unk> the womanizer . </s>	active	implausible	77.81051	unk
+The maiden was wooed by the womanizer.	the maiden was <unk> by the womanizer . </s>	passive	plausible	82.43327	unk
+The womanizer was wooed by the maiden.	the womanizer was <unk> by the maiden . </s>	passive	implausible	91.84108	unk
+The nomad cherished the clergyman.	the <unk> cherished the clergyman . </s>	active	plausible	78.33121	unk
+The clergyman cherished the nomad.	the clergyman cherished the <unk> . </s>	active	implausible	90.01731999999998	unk
+The clergyman was cherished by the nomad.	the clergyman was cherished by the <unk> . </s>	passive	plausible	95.46292	unk
+The nomad was cherished by the clergyman.	the <unk> was cherished by the clergyman . </s>	passive	implausible	83.13395000000001	unk
+The vagabond revered the priest.	the <unk> revered the priest . </s>	active	plausible	74.74978999999999	unk
+The priest revered the vagabond.	the priest revered the <unk> . </s>	active	implausible	86.85534999999999	unk
+The priest was revered by the vagabond.	the priest was revered by the <unk> . </s>	passive	plausible	83.08306999999999	unk
+The vagabond was revered by the priest.	the <unk> was revered by the priest . </s>	passive	implausible	70.49651	unk
+The assassin shot the statesman.	the assassin shot the statesman . </s>	active	plausible	84.97720000000001	nounk
+The statesman shot the assassin.	the statesman shot the assassin . </s>	active	implausible	85.03726	nounk
+The statesman was shot by the assassin.	the statesman was shot by the assassin . </s>	passive	plausible	90.48439	nounk
+The assassin was shot by the statesman.	the assassin was shot by the statesman . </s>	passive	implausible	85.10273000000001	nounk
+The hit man killed the politician.	the hit man killed the politician . </s>	active	plausible	86.02020999999999	nounk
+The politician killed the hit man.	the politician killed the hit man . </s>	active	implausible	88.27611	nounk
+The politician was killed by the hit man.	the politician was killed by the hit man . </s>	passive	plausible	93.72971	nounk
+The hit man was killed by the politician.	the hit man was killed by the politician . </s>	passive	implausible	89.89077999999999	nounk
+The clerk charged the elderly person.	the clerk charged the elderly person . </s>	active	plausible	93.43817999999999	nounk
+The elderly person charged the clerk.	the elderly person charged the clerk . </s>	active	implausible	83.70354999999999	nounk
+The elderly person was charged by the clerk.	the elderly person was charged by the clerk . </s>	passive	plausible	89.76943	nounk
+The clerk was charged by the elderly person.	the clerk was charged by the elderly person . </s>	passive	implausible	95.13216	nounk
+The cashier billed the senior citizen.	the cashier billed the senior citizen . </s>	active	plausible	96.26783999999999	nounk
+The senior citizen billed the cashier.	the senior citizen billed the cashier . </s>	active	implausible	91.71386000000001	nounk
+The senior citizen was billed by the cashier.	the senior citizen was billed by the cashier . </s>	passive	plausible	97.98815	nounk
+The cashier was billed by the senior citizen.	the cashier was billed by the senior citizen . </s>	passive	implausible	103.61024	nounk
+The mediator rescued the hostage.	the mediator rescued the hostage . </s>	active	plausible	87.84799	nounk
+The hostage rescued the mediator.	the hostage rescued the mediator . </s>	active	implausible	86.07726000000001	nounk
+The hostage was rescued by the mediator.	the hostage was rescued by the mediator . </s>	passive	plausible	89.11731	nounk
+The mediator was rescued by the hostage.	the mediator was rescued by the hostage . </s>	passive	implausible	94.38340000000001	nounk
+The negotiator saved the captive.	the negotiator saved the captive . </s>	active	plausible	88.58785	nounk
+The captive saved the negotiator.	the captive saved the negotiator . </s>	active	implausible	86.03532	nounk
+The captive was saved by the negotiator.	the captive was saved by the negotiator . </s>	passive	plausible	93.56472	nounk
+The negotiator was saved by the captive.	the negotiator was saved by the captive . </s>	passive	implausible	91.79687999999999	nounk
+The detective found the assailant.	the detective found the assailant . </s>	active	plausible	78.64728	nounk
+The assailant found the detective.	the assailant found the detective . </s>	active	implausible	79.67439	nounk
+The assailant was found by the detective.	the assailant was found by the detective . </s>	passive	plausible	84.43041000000001	nounk
+The detective was found by the assailant.	the detective was found by the assailant . </s>	passive	implausible	86.22224	nounk
+The sleuth located the attacker.	the <unk> located the attacker . </s>	active	plausible	69.69117	unk
+The attacker located the sleuth.	the attacker located the <unk> . </s>	active	implausible	79.09967	unk
+The attacker was located by the sleuth.	the attacker was located by the <unk> . </s>	passive	plausible	80.26116999999999	unk
+The sleuth was located by the attacker.	the <unk> was located by the attacker . </s>	passive	implausible	74.16582	unk
+The artisan trained the apprentice.	the artisan trained the apprentice . </s>	active	plausible	86.90704000000001	nounk
+The apprentice trained the artisan.	the apprentice trained the artisan . </s>	active	implausible	89.04223999999999	nounk
+The apprentice was trained by the artisan.	the apprentice was trained by the artisan . </s>	passive	plausible	96.34871000000001	nounk
+The artisan was trained by the apprentice.	the artisan was trained by the apprentice . </s>	passive	implausible	95.43618000000001	nounk
+The craftsman taught the trainee.	the craftsman taught the trainee . </s>	active	plausible	88.09509000000001	nounk
+The trainee taught the craftsman.	the trainee taught the craftsman . </s>	active	implausible	84.87361	nounk
+The trainee was taught by the craftsman.	the trainee was taught by the craftsman . </s>	passive	plausible	94.04606000000001	nounk
+The craftsman was taught by the trainee.	the craftsman was taught by the trainee . </s>	passive	implausible	97.26766	nounk
+The biker defied the trainer.	the biker defied the trainer . </s>	active	plausible	83.34279	nounk
+The trainer defied the biker.	the trainer defied the biker . </s>	active	implausible	84.9288	nounk
+The trainer was defied by the biker.	the trainer was defied by the biker . </s>	passive	plausible	101.40127000000001	nounk
+The biker was defied by the trainer.	the biker was defied by the trainer . </s>	passive	implausible	103.09476	nounk
+The cyclist disobeyed the coach.	the cyclist disobeyed the coach . </s>	active	plausible	84.16476	nounk
+The coach disobeyed the cyclist.	the coach disobeyed the cyclist . </s>	active	implausible	85.201	nounk
+The coach was disobeyed by the cyclist.	the coach was disobeyed by the cyclist . </s>	passive	plausible	100.06790000000001	nounk
+The cyclist was disobeyed by the coach.	the cyclist was disobeyed by the coach . </s>	passive	implausible	101.00802	nounk
+The speaker engrossed the audience.	the speaker <unk> the audience . </s>	active	plausible	68.97533	unk
+The audience engrossed the speaker.	the audience <unk> the speaker . </s>	active	implausible	70.06094	unk
+The audience was engrossed by the speaker.	the audience was <unk> by the speaker . </s>	passive	plausible	71.38291000000001	unk
+The speaker was engrossed by the audience.	the speaker was <unk> by the audience . </s>	passive	implausible	66.62799	unk
+The orator captivated the spectators.	the orator captivated the spectators . </s>	active	plausible	85.98527	nounk
+The spectators captivated the orator.	the spectators captivated the orator . </s>	active	implausible	88.0155	nounk
+The spectators were captivated by the orator.	the spectators were captivated by the orator . </s>	passive	plausible	90.53737900000002	nounk
+The orator was captivated by the spectators.	the orator was captivated by the spectators . </s>	passive	implausible	92.560943	nounk
+The genius shocked the cousin.	the genius shocked the cousin . </s>	active	plausible	88.76301000000001	nounk
+The cousin shocked the genius.	the cousin shocked the genius . </s>	active	implausible	87.86479	nounk
+The cousin was shocked by the genius.	the cousin was shocked by the genius . </s>	passive	plausible	91.895944	nounk
+The genius was shocked by the cousin.	the genius was shocked by the cousin . </s>	passive	implausible	92.214654	nounk
+The prodigy surprised the relative.	the prodigy surprised the relative . </s>	active	plausible	87.62772	nounk
+The relative surprised the prodigy.	the relative surprised the prodigy . </s>	active	implausible	83.35367000000001	nounk
+The relative was surprised by the prodigy.	the relative was surprised by the prodigy . </s>	passive	plausible	91.36776	nounk
+The prodigy was surprised by the relative.	the prodigy was surprised by the relative . </s>	passive	implausible	90.19422	nounk
+The smuggler bribed the bureaucrat.	the <unk> bribed the bureaucrat . </s>	active	plausible	80.48625000000001	unk
+The bureaucrat bribed the smuggler.	the bureaucrat bribed the <unk> . </s>	active	implausible	89.33321000000001	unk
+The bureaucrat was bribed by the smuggler.	the bureaucrat was bribed by the <unk> . </s>	passive	plausible	95.69727999999999	unk
+The smuggler was bribed by the bureaucrat.	the <unk> was bribed by the bureaucrat . </s>	passive	implausible	82.38889	unk
+The amateur irked the maestro.	the amateur <unk> the maestro . </s>	active	plausible	76.85052999999999	unk
+The maestro irked the amateur.	the maestro <unk> the amateur . </s>	active	implausible	76.53309	unk
+The maestro was irked by the amateur.	the maestro was <unk> by the amateur . </s>	passive	plausible	83.47873	unk
+The amateur was irked by the maestro.	the amateur was <unk> by the maestro . </s>	passive	implausible	89.28046	unk
+The novice irritated the virtuoso.	the novice irritated the virtuoso . </s>	active	plausible	89.34524	nounk
+The virtuoso irritated the novice.	the virtuoso irritated the novice . </s>	active	implausible	85.79136	nounk
+The virtuoso was irritated by the novice.	the virtuoso was irritated by the novice . </s>	passive	plausible	94.50932	nounk
+The novice was irritated by the virtuoso.	the novice was irritated by the virtuoso . </s>	passive	implausible	98.06321	nounk
+The lawyer questioned the witness.	the lawyer questioned the witness . </s>	active	plausible	79.45947	nounk
+The witness questioned the lawyer.	the witness questioned the lawyer . </s>	active	implausible	84.41747	nounk
+The witness was questioned by the lawyer.	the witness was questioned by the lawyer . </s>	passive	plausible	84.78017	nounk
+The lawyer was questioned by the witness.	the lawyer was questioned by the witness . </s>	passive	implausible	84.03297	nounk
+The attorney interrogated the bystander.	the attorney interrogated the bystander . </s>	active	plausible	87.51458	nounk
+The bystander interrogated the attorney.	the bystander interrogated the attorney . </s>	active	implausible	91.95739999999999	nounk
+The bystander was interrogated by the attorney.	the bystander was interrogated by the attorney . </s>	passive	plausible	93.04346	nounk
+The attorney was interrogated by the bystander.	the attorney was interrogated by the bystander . </s>	passive	implausible	88.50674000000001	nounk
+The singer disappointed the enthusiast.	the singer disappointed the enthusiast . </s>	active	plausible	85.82291000000001	nounk
+The enthusiast disappointed the singer.	the enthusiast disappointed the singer . </s>	active	implausible	88.17711999999999	nounk
+The enthusiast was disappointed by the singer.	the enthusiast was disappointed by the singer . </s>	passive	plausible	88.38351999999999	nounk
+The singer was disappointed by the enthusiast.	the singer was disappointed by the enthusiast . </s>	passive	implausible	83.88737	nounk
+The vocalist disillusioned the connoisseur.	the vocalist disillusioned the <unk> . </s>	active	plausible	94.64725999999999	unk
+The connoisseur disillusioned the vocalist.	the <unk> disillusioned the vocalist . </s>	active	implausible	80.36763	unk
+The connoisseur was disillusioned by the vocalist.	the <unk> was disillusioned by the vocalist . </s>	passive	plausible	76.65859	unk
+The vocalist was disillusioned by the connoisseur.	the vocalist was disillusioned by the <unk> . </s>	passive	implausible	90.21898	unk
+The chauffeur drove the diplomat.	the chauffeur drove the diplomat . </s>	active	plausible	84.47881	nounk
+The diplomat drove the chauffeur.	the diplomat drove the chauffeur . </s>	active	implausible	83.99240999999999	nounk
+The diplomat was driven by the chauffeur.	the diplomat was driven by the chauffeur . </s>	passive	plausible	91.34751	nounk
+The chauffeur was driven by the diplomat.	the chauffeur was driven by the diplomat . </s>	passive	implausible	90.45147	nounk
+The driver transported the ambassador.	the driver transported the ambassador . </s>	active	plausible	80.38024	nounk
+The ambassador transported the driver.	the ambassador transported the driver . </s>	active	implausible	82.04319000000001	nounk
+The ambassador was transported by the driver.	the ambassador was transported by the driver . </s>	passive	plausible	81.80511	nounk
+The driver was transported by the ambassador.	the driver was transported by the ambassador . </s>	passive	implausible	80.89651	nounk
+The guard apprehended the prisoner.	the guard apprehended the prisoner . </s>	active	plausible	82.09448	nounk
+The prisoner apprehended the guard.	the prisoner apprehended the guard . </s>	active	implausible	84.84557	nounk
+The prisoner was apprehended by the guard.	the prisoner was apprehended by the guard . </s>	passive	plausible	80.13433	nounk
+The guard was apprehended by the prisoner.	the guard was apprehended by the prisoner . </s>	passive	implausible	83.49172	nounk
+The warden caught the inmate.	the warden caught the inmate . </s>	active	plausible	83.13306999999999	nounk
+The inmate caught the warden.	the inmate caught the warden . </s>	active	implausible	83.79491999999999	nounk
+The inmate was caught by the warden.	the inmate was caught by the warden . </s>	passive	plausible	85.92599	nounk
+The warden was caught by the inmate.	the warden was caught by the inmate . </s>	passive	implausible	87.77068	nounk
+The tailor costumed the dancer.	the tailor costumed the dancer . </s>	active	plausible	91.82865	nounk
+The dancer costumed the tailor.	the dancer costumed the tailor . </s>	active	implausible	92.73761	nounk
+The dancer was costumed by the tailor.	the dancer was costumed by the tailor . </s>	passive	plausible	107.16141	nounk
+The tailor was costumed by the dancer.	the tailor was costumed by the dancer . </s>	passive	implausible	108.56186	nounk
+The dressmaker attired the ballerina.	the <unk> <unk> the ballerina . </s>	active	plausible	61.42376	unk
+The ballerina attired the dressmaker.	the ballerina <unk> the <unk> . </s>	active	implausible	70.68111	unk
+The ballerina was attired by the dressmaker.	the ballerina was <unk> by the <unk> . </s>	passive	plausible	83.83692	unk
+The dressmaker was attired by the ballerina.	the <unk> was <unk> by the ballerina . </s>	passive	implausible	68.76604	unk
+The principal scolded the child.	the principal <unk> the child . </s>	active	plausible	66.66977	unk
+The child scolded the principal.	the child <unk> the principal . </s>	active	implausible	72.87669	unk
+The child was scolded by the principal.	the child was <unk> by the principal . </s>	passive	plausible	71.07723	unk
+The principal was scolded by the child.	the principal was <unk> by the child . </s>	passive	implausible	74.82288	unk
+The headmaster reprimanded the kid.	the headmaster reprimanded the kid . </s>	active	plausible	83.58992	nounk
+The kid reprimanded the headmaster.	the kid reprimanded the headmaster . </s>	active	implausible	83.16034	nounk
+The kid was reprimanded by the headmaster.	the kid was reprimanded by the headmaster . </s>	passive	plausible	83.07593	nounk
+The headmaster was reprimanded by the kid.	the headmaster was reprimanded by the kid . </s>	passive	implausible	84.76518	nounk
+The lord named the heir.	the lord named the heir . </s>	active	plausible	77.80938	nounk
+The heir named the lord.	the heir named the lord . </s>	active	implausible	80.91701	nounk
+The heir was named by the lord.	the heir was named by the lord . </s>	passive	plausible	78.83283	nounk
+The lord was named by the heir.	the lord was named by the heir . </s>	passive	implausible	81.45141	nounk
+The baron chose the successor.	the baron chose the successor . </s>	active	plausible	79.37946000000001	nounk
+The successor chose the baron.	the successor chose the baron . </s>	active	implausible	79.75144	nounk
+The successor was chosen by the baron.	the successor was chosen by the baron . </s>	passive	plausible	81.98002000000001	nounk
+The baron was chosen by the successor.	the baron was chosen by the successor . </s>	passive	implausible	79.83417	nounk
+The cop restrained the rioter.	the cop restrained the <unk> . </s>	active	plausible	89.19086999999999	unk
+The rioter restrained the cop.	the <unk> restrained the cop . </s>	active	implausible	80.42313	unk
+The rioter was restrained by the cop.	the <unk> was restrained by the cop . </s>	passive	plausible	77.04076	unk
+The cop was restrained by the rioter.	the cop was restrained by the <unk> . </s>	passive	implausible	90.35274000000001	unk
+The policeman subdued the rabble-rouser.	the policeman subdued the <unk> . </s>	active	plausible	86.18469999999999	unk
+The rabble-rouser subdued the policeman.	the <unk> subdued the policeman . </s>	active	implausible	73.24114	unk
+The rabble-rouser was subdued by the policeman.	the <unk> was subdued by the policeman . </s>	passive	plausible	75.46691	unk
+The policeman was subdued by the rabble-rouser.	the policeman was subdued by the <unk> . </s>	passive	implausible	83.71739	unk
+The dad coddled the baby.	the dad <unk> the baby . </s>	active	plausible	79.32082000000001	unk
+The baby coddled the dad.	the baby <unk> the dad . </s>	active	implausible	75.46227	unk
+The baby was coddled by the dad.	the baby was <unk> by the dad . </s>	passive	plausible	80.10945000000001	unk
+The dad was coddled by the baby.	the dad was <unk> by the baby . </s>	passive	implausible	84.14492	unk
+The father pampered the infant.	the father <unk> the infant . </s>	active	plausible	73.92293	unk
+The infant pampered the father.	the infant <unk> the father . </s>	active	implausible	73.18196	unk
+The infant was pampered by the father.	the infant was <unk> by the father . </s>	passive	plausible	74.16941	unk
+The father was pampered by the infant.	the father was <unk> by the infant . </s>	passive	implausible	79.87928	unk
+The king exiled the rebel.	the king exiled the rebel . </s>	active	plausible	79.50831	nounk
+The rebel exiled the king.	the rebel exiled the king . </s>	active	implausible	84.24537000000001	nounk
+The rebel was exiled by the king.	the rebel was exiled by the king . </s>	passive	plausible	85.19776000000002	nounk
+The king was exiled by the rebel.	the king was exiled by the rebel . </s>	passive	implausible	82.19207	nounk
+The monarch banished the insurgent.	the monarch banished the insurgent . </s>	active	plausible	101.82323	nounk
+The insurgent banished the monarch.	the insurgent banished the monarch . </s>	active	implausible	88.10131	nounk
+The insurgent was banished by the monarch.	the insurgent was banished by the monarch . </s>	passive	plausible	90.60050000000001	nounk
+The monarch was banished by the insurgent.	the monarch was banished by the insurgent . </s>	passive	implausible	104.2315	nounk
+The thief robbed the manufacturer.	the thief robbed the manufacturer . </s>	active	plausible	83.85515	nounk
+The manufacturer robbed the thief.	the manufacturer robbed the thief . </s>	active	implausible	81.70917	nounk
+The manufacturer was robbed by the thief.	the manufacturer was robbed by the thief . </s>	passive	plausible	91.13869	nounk
+The thief was robbed by the manufacturer.	the thief was robbed by the manufacturer . </s>	passive	implausible	84.66605	nounk
+The robber burgled the industrialist.	the robber <unk> the industrialist . </s>	active	plausible	80.21839	unk
+The industrialist burgled the robber.	the industrialist <unk> the robber . </s>	active	implausible	77.04774	unk
+The industrialist was burgled by the robber.	the industrialist was <unk> by the robber . </s>	passive	plausible	87.3081	unk
+The robber was burgled by the industrialist.	the robber was <unk> by the industrialist . </s>	passive	implausible	85.14642	unk
+The pessimist discouraged the contestant.	the <unk> discouraged the contestant . </s>	active	plausible	74.49631	unk
+The contestant discouraged the pessimist.	the contestant discouraged the <unk> . </s>	active	implausible	83.5155	unk
+The contestant was discouraged by the pessimist.	the contestant was discouraged by the <unk> . </s>	passive	plausible	79.76998	unk
+The pessimist was discouraged by the contestant.	the <unk> was discouraged by the contestant . </s>	passive	implausible	73.31272	unk
+The cynic dissuaded the participant.	the <unk> dissuaded the participant . </s>	active	plausible	73.06358	unk
+The participant dissuaded the cynic.	the participant dissuaded the <unk> . </s>	active	implausible	87.69462999999999	unk
+The participant was dissuaded by the cynic.	the participant was dissuaded by the <unk> . </s>	passive	plausible	87.99627000000001	unk
+The cynic was dissuaded by the participant.	the <unk> was dissuaded by the participant . </s>	passive	implausible	77.88782	unk
+The loudmouth tormented the loner.	the <unk> tormented the loner . </s>	active	plausible	81.19812	unk
+The loner tormented the loudmouth.	the loner tormented the <unk> . </s>	active	implausible	96.70947999999999	unk
+The loner was tormented by the loudmouth.	the loner was tormented by the <unk> . </s>	passive	plausible	97.03856	unk
+The loudmouth was tormented by the loner.	the <unk> was tormented by the loner . </s>	passive	implausible	84.0221	unk
+The windbag taunted the recluse.	the <unk> taunted the recluse . </s>	active	plausible	77.12673000000001	unk
+The recluse taunted the windbag.	the recluse taunted the <unk> . </s>	active	implausible	90.22262	unk
+The recluse was taunted by the windbag.	the recluse was taunted by the <unk> . </s>	passive	plausible	97.83582	unk
+The windbag was taunted by the recluse.	the <unk> was taunted by the recluse . </s>	passive	implausible	85.18417	unk
+The imitator fooled the investigator.	the <unk> fooled the investigator . </s>	active	plausible	75.03554000000001	unk
+The investigator fooled the imitator.	the investigator fooled the <unk> . </s>	active	implausible	89.17425	unk
+The investigator was fooled by the imitator.	the investigator was fooled by the <unk> . </s>	passive	plausible	90.45577	unk
+The imitator was fooled by the investigator.	the <unk> was fooled by the investigator . </s>	passive	implausible	76.46697	unk
+The impersonator conned the inspector.	the impersonator <unk> the inspector . </s>	active	plausible	83.67546	unk
+The inspector conned the impersonator.	the inspector <unk> the impersonator . </s>	active	implausible	79.70778	unk
+The inspector was conned by the impersonator.	the inspector was <unk> by the impersonator . </s>	passive	plausible	85.83359	unk
+The impersonator was conned by the inspector.	the impersonator was <unk> by the inspector . </s>	passive	implausible	88.04262	unk
+The boss fired the worker.	the boss fired the worker . </s>	active	plausible	81.84044999999999	nounk
+The worker fired the boss.	the worker fired the boss . </s>	active	implausible	81.08525999999999	nounk
+The worker was fired by the boss.	the worker was fired by the boss . </s>	passive	plausible	82.65107	nounk
+The boss was fired by the worker.	the boss was fired by the worker . </s>	passive	implausible	85.64578999999999	nounk
+The pyromaniac unnerved the shopkeeper.	the <unk> <unk> the shopkeeper . </s>	active	plausible	62.592870000000005	unk
+The shopkeeper unnerved the pyromaniac.	the shopkeeper <unk> the <unk> . </s>	active	implausible	74.65537	unk
+The shopkeeper was unnerved by the pyromaniac.	the shopkeeper was <unk> by the <unk> . </s>	passive	plausible	81.98573999999999	unk
+The pyromaniac was unnerved by the shopkeeper.	the <unk> was <unk> by the shopkeeper . </s>	passive	implausible	69.93515000000001	unk
+The arsonist alarmed the vendor.	the <unk> alarmed the vendor . </s>	active	plausible	72.52246000000001	unk
+The vendor alarmed the arsonist.	the vendor alarmed the <unk> . </s>	active	implausible	84.21501	unk
+The vendor was alarmed by the arsonist.	the vendor was alarmed by the <unk> . </s>	passive	plausible	87.56114600000001	unk
+The arsonist was alarmed by the vendor.	the <unk> was alarmed by the vendor . </s>	passive	implausible	68.850176	unk
+The professional supported the beginner.	the professional supported the beginner . </s>	active	plausible	79.88615999999999	nounk
+The beginner supported the professional.	the beginner supported the professional . </s>	active	implausible	85.37922	nounk
+The beginner was supported by the professional.	the beginner was supported by the professional . </s>	passive	plausible	91.738677	nounk
+The professional was supported by the beginner.	the professional was supported by the beginner . </s>	passive	implausible	88.443747	nounk
+The master encouraged the rookie.	the master encouraged the rookie . </s>	active	plausible	81.08579999999999	nounk
+The rookie encouraged the master.	the rookie encouraged the master . </s>	active	implausible	82.37803	nounk
+The rookie was encouraged by the master.	the rookie was encouraged by the master . </s>	passive	plausible	83.66416	nounk
+The master was encouraged by the rookie.	the master was encouraged by the rookie . </s>	passive	implausible	83.2377	nounk
+The magician hypnotized the crowd.	the magician <unk> the crowd . </s>	active	plausible	67.94772999999999	unk
+The crowd hypnotized the magician.	the crowd <unk> the magician . </s>	active	implausible	72.97564	unk
+The crowd was hypnotized by the magician.	the crowd was <unk> by the magician . </s>	passive	plausible	73.08466	unk
+The magician was hypnotized by the crowd.	the magician was <unk> by the crowd . </s>	passive	implausible	78.51675	unk
+The illusionist entranced the viewers.	the <unk> <unk> the viewers . </s>	active	plausible	61.04051	unk
+The viewers entranced the illusionist.	the viewers <unk> the <unk> . </s>	active	implausible	72.30337999999999	unk
+The viewers were entranced by the illusionist.	the viewers were <unk> by the <unk> . </s>	passive	plausible	75.66728	unk
+The illusionist was entranced by the viewers.	the <unk> was <unk> by the viewers . </s>	passive	implausible	67.52709	unk
+The businessman employed the expert.	the businessman employed the expert . </s>	active	plausible	85.56386	nounk
+The expert employed the businessman.	the expert employed the businessman . </s>	active	implausible	86.38859000000001	nounk
+The expert was employed by the businessman.	the expert was employed by the businessman . </s>	passive	plausible	92.47691	nounk
+The businessman was employed by the expert.	the businessman was employed by the expert . </s>	passive	implausible	93.63741000000002	nounk
+The entrepreneur hired the specialist.	the entrepreneur hired the specialist . </s>	active	plausible	88.26191	nounk
+The specialist hired the entrepreneur.	the specialist hired the entrepreneur . </s>	active	implausible	85.88677000000001	nounk
+The specialist was hired by the entrepreneur.	the specialist was hired by the entrepreneur . </s>	passive	plausible	90.91416	nounk
+The entrepreneur was hired by the specialist.	the entrepreneur was hired by the specialist . </s>	passive	implausible	88.44516	nounk
+The terrorist petrified the first lady.	the terrorist petrified the first lady . </s>	active	plausible	94.57389	nounk
+The first lady petrified the terrorist.	the first lady petrified the terrorist . </s>	active	implausible	93.92393999999999	nounk
+The first lady was petrified by the terrorist.	the first lady was petrified by the terrorist . </s>	passive	plausible	105.86371	nounk
+The terrorist was petrified by the first lady.	the terrorist was petrified by the first lady . </s>	passive	implausible	105.36413	nounk
+The hijacker terrified the president's wife.	the <unk> terrified the president 's wife . </s>	active	plausible	88.34719	unk
+The president's wife terrified the hijacker.	the president 's wife terrified the <unk> . </s>	active	implausible	94.71887000000001	unk
+The president's wife was terrified by the hijacker.	the president 's wife was terrified by the <unk> . </s>	passive	plausible	90.38384	unk
+The hijacker was terrified by the president's wife.	the <unk> was terrified by the president 's wife . </s>	passive	implausible	84.7581	unk
+The judge praised the gold medalist.	the judge praised the gold medalist . </s>	active	plausible	80.76243	nounk
+The gold medalist praised the judge.	the gold medalist praised the judge . </s>	active	implausible	85.59333000000001	nounk
+The gold medalist was praised by the judge.	the gold medalist was praised by the judge . </s>	passive	plausible	87.92088	nounk
+The judge was praised by the gold medalist.	the judge was praised by the gold medalist . </s>	passive	implausible	85.94039000000001	nounk
+The panelist congratulated the winner.	the panelist congratulated the winner . </s>	active	plausible	90.31067999999999	nounk
+The winner congratulated the panelist.	the winner congratulated the panelist . </s>	active	implausible	88.85946	nounk
+The winner was congratulated by the panelist.	the winner was congratulated by the panelist . </s>	passive	plausible	90.41669	nounk
+The panelist was congratulated by the winner.	the panelist was congratulated by the winner . </s>	passive	implausible	100.85488	nounk
+The liar emulated the victor.	the liar emulated the victor . </s>	active	plausible	85.55714	nounk
+The victor emulated the liar.	the victor emulated the liar . </s>	active	implausible	86.03222	nounk
+The victor was emulated by the liar.	the victor was emulated by the liar . </s>	passive	plausible	92.04678	nounk
+The liar was emulated by the victor.	the liar was emulated by the victor . </s>	passive	implausible	97.52517	nounk
+The deceiver imitated the conqueror.	the <unk> imitated the conqueror . </s>	active	plausible	73.21832	unk
+The conqueror imitated the deceiver.	the conqueror imitated the <unk> . </s>	active	implausible	85.19914	unk
+The conqueror was imitated by the deceiver.	the conqueror was imitated by the <unk> . </s>	passive	plausible	89.25897	unk
+The deceiver was imitated by the conqueror.	the <unk> was imitated by the conqueror . </s>	passive	implausible	75.52321	unk
+The environmentalist cautioned the tobacconist.	the environmentalist cautioned the <unk> . </s>	active	plausible	90.25130999999999	unk
+The tobacconist cautioned the environmentalist.	the <unk> cautioned the environmentalist . </s>	active	implausible	75.64617	unk
+The tobacconist was cautioned by the environmentalist.	the <unk> was cautioned by the environmentalist . </s>	passive	plausible	86.77687	unk
+The environmentalist was cautioned by the tobacconist.	the environmentalist was cautioned by the <unk> . </s>	passive	implausible	98.76799	unk
+The ecologist warned the cigar-maker.	the <unk> warned the <unk> . </s>	active	plausible	71.51598999999999	unk
+The cigar-maker warned the ecologist.	the <unk> warned the <unk> . </s>	active	implausible	71.51598999999999	unk
+The cigar-maker was warned by the ecologist.	the <unk> was warned by the <unk> . </s>	passive	plausible	68.28172	unk
+The ecologist was warned by the cigar-maker.	the <unk> was warned by the <unk> . </s>	passive	implausible	68.28172	unk
+The peasant idolized the ancestors.	the peasant <unk> the ancestors . </s>	active	plausible	72.81907000000001	unk
+The ancestors idolized the peasant.	the ancestors <unk> the peasant . </s>	active	implausible	83.62688	unk
+The ancestors were idolized by the peasant.	the ancestors were <unk> by the peasant . </s>	passive	plausible	84.89773	unk
+The peasant was idolized by the ancestors.	the peasant was <unk> by the ancestors . </s>	passive	implausible	87.49576	unk
+The serf worshipped the forefathers.	the serf worshipped the forefathers . </s>	active	plausible	90.87769	nounk
+The forefathers worshipped the serf.	the forefathers worshipped the serf . </s>	active	implausible	109.44736	nounk
+The forefathers were worshipped by the serf.	the forefathers were worshipped by the serf . </s>	passive	plausible	115.52267	nounk
+The serf was worshipped by the forefathers.	the serf was worshipped by the forefathers . </s>	passive	implausible	94.36137	nounk
+The alcoholic hassled the guest.	the alcoholic <unk> the guest . </s>	active	plausible	78.58287	unk
+The guest hassled the alcoholic.	the guest <unk> the alcoholic . </s>	active	implausible	77.44256	unk
+The guest was hassled by the alcoholic.	the guest was <unk> by the alcoholic . </s>	passive	plausible	85.24957	unk
+The alcoholic was hassled by the guest.	the alcoholic was <unk> by the guest . </s>	passive	implausible	90.34067	unk
+The drunk bothered the visitor.	the drunk bothered the visitor . </s>	active	plausible	89.39389	nounk
+The visitor bothered the drunk.	the visitor bothered the drunk . </s>	active	implausible	91.10962	nounk
+The visitor was bothered by the drunk.	the visitor was bothered by the drunk . </s>	passive	plausible	91.18566	nounk
+The drunk was bothered by the visitor.	the drunk was bothered by the visitor . </s>	passive	implausible	95.03359999999999	nounk
+The commentator vexed the athlete.	the commentator <unk> the athlete . </s>	active	plausible	79.58189000000002	unk
+The athlete vexed the commentator.	the athlete <unk> the commentator . </s>	active	plausible	80.66909000000001	unk
+The athlete was vexed by the commentator.	the athlete was <unk> by the commentator . </s>	passive	plausible	87.70788999999999	unk
+The commentator was vexed by the athlete.	the commentator was <unk> by the athlete . </s>	passive	plausible	89.84706	unk
+The sportscaster peeved the jock.	the sportscaster <unk> the jock . </s>	active	plausible	84.72322	unk
+The jock peeved the sportscaster.	the jock <unk> the sportscaster . </s>	active	plausible	78.82679999999999	unk
+The jock was peeved by the sportscaster.	the jock was <unk> by the sportscaster . </s>	passive	plausible	90.58051999999999	unk
+The sportscaster was peeved by the jock.	the sportscaster was <unk> by the jock . </s>	passive	plausible	91.77031	unk
+The preacher hugged the churchgoer.	the preacher <unk> the <unk> . </s>	active	plausible	70.43658	unk
+The churchgoer hugged the preacher.	the <unk> <unk> the preacher . </s>	active	plausible	64.02867	unk
+The churchgoer was hugged by the preacher.	the <unk> was <unk> by the preacher . </s>	passive	plausible	70.35255000000001	unk
+The preacher was hugged by the churchgoer.	the preacher was <unk> by the <unk> . </s>	passive	plausible	82.11772	unk
+The pastor embraced the parishioner.	the pastor embraced the <unk> . </s>	active	plausible	80.88559000000001	unk
+The parishioner embraced the pastor.	the <unk> embraced the pastor . </s>	active	plausible	69.13976	unk
+The parishioner was embraced by the pastor.	the <unk> was embraced by the pastor . </s>	passive	plausible	71.481094	unk
+The pastor was embraced by the parishioner.	the pastor was embraced by the <unk> . </s>	passive	plausible	81.546604	unk
+The maniac mocked the clown.	the <unk> mocked the clown . </s>	active	plausible	73.42521	unk
+The clown mocked the maniac.	the clown mocked the <unk> . </s>	active	plausible	86.48877999999999	unk
+The clown was mocked by the maniac.	the clown was mocked by the <unk> . </s>	passive	plausible	87.11265	unk
+The maniac was mocked by the clown.	the <unk> was mocked by the clown . </s>	passive	plausible	76.83503999999999	unk
+The lunatic ridiculed the jester.	the lunatic ridiculed the jester . </s>	active	plausible	102.98566	nounk
+The jester ridiculed the lunatic.	the jester ridiculed the lunatic . </s>	active	plausible	86.43180000000001	nounk
+The jester was ridiculed by the lunatic.	the jester was ridiculed by the lunatic . </s>	passive	plausible	95.18799999999999	nounk
+The lunatic was ridiculed by the jester.	the lunatic was ridiculed by the jester . </s>	passive	plausible	111.74189	nounk
+The archivist contacted the inventor.	the archivist contacted the inventor . </s>	active	plausible	84.70824999999999	nounk
+The inventor contacted the archivist.	the inventor contacted the archivist . </s>	active	plausible	85.06257	nounk
+The inventor was contacted by the archivist.	the inventor was contacted by the archivist . </s>	passive	plausible	88.32497599999999	nounk
+The archivist was contacted by the inventor.	the archivist was contacted by the inventor . </s>	passive	plausible	91.918146	nounk
+The historian approached the innovator.	the historian approached the innovator . </s>	active	plausible	79.61954	nounk
+The innovator approached the historian.	the innovator approached the historian . </s>	active	plausible	84.90620999999999	nounk
+The innovator was approached by the historian.	the innovator was approached by the historian . </s>	passive	plausible	88.335079	nounk
+The historian was approached by the innovator.	the historian was approached by the innovator . </s>	passive	plausible	89.272549	nounk
+The janitor called the landscaper.	the janitor called the <unk> . </s>	active	plausible	72.83941000000002	unk
+The landscaper called the janitor.	the <unk> called the janitor . </s>	active	plausible	68.7613	unk
+The landscaper was called by the janitor.	the <unk> was called by the janitor . </s>	passive	plausible	75.08136999999999	unk
+The janitor was called by the landscaper.	the janitor was called by the <unk> . </s>	passive	plausible	87.40082	unk
+The custodian phoned the gardener.	the custodian phoned the gardener . </s>	active	plausible	83.7383	nounk
+The gardener phoned the custodian.	the gardener phoned the custodian . </s>	active	plausible	84.86595	nounk
+The gardener was phoned by the custodian.	the gardener was phoned by the custodian . </s>	passive	plausible	105.76112	nounk
+The custodian was phoned by the gardener.	the custodian was phoned by the gardener . </s>	passive	plausible	106.26912	nounk
+The drummer annoyed the weatherman.	the drummer annoyed the <unk> . </s>	active	plausible	87.18799999999999	unk
+The weatherman annoyed the drummer.	the <unk> annoyed the drummer . </s>	active	plausible	76.02999	unk
+The weatherman was annoyed by the drummer.	the <unk> was annoyed by the drummer . </s>	passive	plausible	75.49229	unk
+The drummer was annoyed by the weatherman.	the drummer was annoyed by the <unk> . </s>	passive	plausible	83.95331999999999	unk
+The percussionist displeased the meteorologist.	the percussionist displeased the meteorologist . </s>	active	plausible	90.56766	nounk
+The meteorologist displeased the percussionist.	the meteorologist displeased the percussionist . </s>	active	plausible	90.60063	nounk
+The meteorologist was displeased by the percussionist.	the meteorologist was displeased by the percussionist . </s>	passive	plausible	98.482629	nounk
+The percussionist was displeased by the meteorologist.	the percussionist was displeased by the meteorologist . </s>	passive	plausible	98.449729	nounk
+The go-between belittled the defendant.	the <unk> <unk> the defendant . </s>	active	plausible	52.66974999999999	unk
+The defendant belittled the go-between.	the defendant <unk> the <unk> . </s>	active	plausible	70.09558	unk
+The defendant was belittled by the go-between.	the defendant was <unk> by the <unk> . </s>	passive	plausible	75.37326	unk
+The go-between was belittled by the defendant.	the <unk> was <unk> by the defendant . </s>	passive	plausible	64.74273	unk
+The intermediary deprecated the felon.	the intermediary deprecated the felon . </s>	active	plausible	92.17697000000001	nounk
+The felon deprecated the intermediary.	the felon deprecated the intermediary . </s>	active	plausible	91.14197000000001	nounk
+The felon was deprecated by the intermediary.	the felon was deprecated by the intermediary . </s>	passive	plausible	99.97948000000001	nounk
+The intermediary was deprecated by the felon.	the intermediary was deprecated by the felon . </s>	passive	plausible	99.27361000000002	nounk
+The valet entertained the envoy.	the valet entertained the envoy . </s>	active	plausible	89.41078999999999	nounk
+The envoy entertained the valet.	the envoy entertained the valet . </s>	active	plausible	90.37466	nounk
+The envoy was entertained by the valet.	the envoy was entertained by the valet . </s>	passive	plausible	95.91036000000001	nounk
+The valet was entertained by the envoy.	the valet was entertained by the envoy . </s>	passive	plausible	98.11908	nounk
+The manservant amused the emissary.	the <unk> amused the emissary . </s>	active	plausible	75.50255	unk
+The emissary amused the manservant.	the emissary amused the <unk> . </s>	active	plausible	91.10835	unk
+The emissary was amused by the manservant.	the emissary was amused by the <unk> . </s>	passive	plausible	85.975325	unk
+The manservant was amused by the emissary.	the <unk> was amused by the emissary . </s>	passive	plausible	74.88336000000001	unk
+The acrobat pushed the stranger.	the <unk> pushed the stranger . </s>	active	plausible	68.37583	unk
+The stranger pushed the acrobat.	the stranger pushed the <unk> . </s>	active	plausible	79.35072	unk
+The stranger was pushed by the acrobat.	the stranger was pushed by the <unk> . </s>	passive	plausible	85.55404	unk
+The acrobat was pushed by the stranger.	the <unk> was pushed by the stranger . </s>	passive	plausible	75.84985	unk
+The gymnast shoved the outsider.	the gymnast shoved the outsider . </s>	active	plausible	91.34587	nounk
+The outsider shoved the gymnast.	the outsider shoved the gymnast . </s>	active	plausible	90.90662	nounk
+The outsider was shoved by the gymnast.	the outsider was shoved by the gymnast . </s>	passive	plausible	107.14556	nounk
+The gymnast was shoved by the outsider.	the gymnast was shoved by the outsider . </s>	passive	plausible	107.58479	nounk
+The benefactor calmed the architect.	the benefactor calmed the architect . </s>	active	plausible	87.43081	nounk
+The architect calmed the benefactor.	the architect calmed the benefactor . </s>	active	plausible	84.38562999999999	nounk
+The architect was calmed by the benefactor.	the architect was calmed by the benefactor . </s>	passive	plausible	89.3169	nounk
+The benefactor was calmed by the architect.	the benefactor was calmed by the architect . </s>	passive	plausible	93.62423	nounk
+The patron soothed the draftsman.	the patron <unk> the draftsman . </s>	active	plausible	77.78564	unk
+The draftsman soothed the patron.	the draftsman <unk> the patron . </s>	active	plausible	81.13055	unk
+The draftsman was soothed by the patron.	the draftsman was <unk> by the patron . </s>	passive	plausible	83.87068	unk
+The patron was soothed by the draftsman.	the patron was <unk> by the draftsman . </s>	passive	plausible	83.54617999999999	unk
+The therapist lauded the hairdresser.	the therapist lauded the hairdresser . </s>	active	plausible	83.66735	nounk
+The hairdresser lauded the therapist.	the hairdresser lauded the therapist . </s>	active	plausible	84.68854999999999	nounk
+The hairdresser was lauded by the therapist.	the hairdresser was lauded by the therapist . </s>	passive	plausible	88.49159999999999	nounk
+The therapist was lauded by the hairdresser.	the therapist was lauded by the hairdresser . </s>	passive	plausible	91.25521	nounk
+The psychologist extolled the hairstylist.	the psychologist <unk> the <unk> . </s>	active	plausible	69.54212	unk
+The hairstylist extolled the psychologist.	the <unk> <unk> the psychologist . </s>	active	plausible	62.63071000000001	unk
+The hairstylist was extolled by the psychologist.	the <unk> was <unk> by the psychologist . </s>	passive	plausible	69.59579	unk
+The psychologist was extolled by the hairstylist.	the psychologist was <unk> by the <unk> . </s>	passive	plausible	81.57675	unk
+The nobleman married the baroness.	the nobleman married the baroness . </s>	active	plausible	84.24724	nounk
+The baroness married the nobleman.	the baroness married the nobleman . </s>	active	plausible	82.14	nounk
+The baroness was married by the nobleman.	the baroness was married by the nobleman . </s>	passive	plausible	92.88542	nounk
+The nobleman was married by the baroness.	the nobleman was married by the baroness . </s>	passive	plausible	89.43934	nounk
+The aristocrat wed the countess.	the aristocrat wed the countess . </s>	active	plausible	89.44984	nounk
+The countess wed the aristocrat.	the countess wed the aristocrat . </s>	active	plausible	88.90038	nounk
+The countess was wed by the aristocrat.	the countess was wed by the aristocrat . </s>	passive	plausible	100.46333	nounk
+The aristocrat was wed by the countess.	the aristocrat was wed by the countess . </s>	passive	plausible	101.67878999999999	nounk
+The actuary assuaged the creditor.	the <unk> <unk> the creditor . </s>	active	plausible	61.489990000000006	unk
+The creditor assuaged the actuary.	the creditor <unk> the <unk> . </s>	active	plausible	71.59289	unk
+The creditor was assuaged by the actuary.	the creditor was <unk> by the <unk> . </s>	passive	plausible	80.27599000000001	unk
+The actuary was assuaged by the creditor.	the <unk> was <unk> by the creditor . </s>	passive	plausible	68.35407000000001	unk
+The analyst relieved the investor.	the analyst relieved the investor . </s>	active	plausible	84.98375	nounk
+The investor relieved the analyst.	the investor relieved the analyst . </s>	active	plausible	83.50222	nounk
+The investor was relieved by the analyst.	the investor was relieved by the analyst . </s>	passive	plausible	87.99691	nounk
+The analyst was relieved by the investor.	the analyst was relieved by the investor . </s>	passive	plausible	93.43429	nounk
+The sailor frightened the psychic.	the sailor frightened the psychic . </s>	active	plausible	88.41388	nounk
+The psychic frightened the sailor.	the psychic frightened the sailor . </s>	active	plausible	84.73061	nounk
+The psychic was frightened by the sailor.	the psychic was frightened by the sailor . </s>	passive	plausible	93.30123	nounk
+The sailor was frightened by the psychic.	the sailor was frightened by the psychic . </s>	passive	plausible	88.92401000000001	nounk
+The mariner scared the fortune-teller.	the mariner scared the <unk> . </s>	active	plausible	86.78745	unk
+The fortune-teller scared the mariner.	the <unk> scared the mariner . </s>	active	plausible	78.24680000000001	unk
+The fortune-teller was scared by the mariner.	the <unk> was scared by the mariner . </s>	passive	plausible	81.19021000000001	unk
+The mariner was scared by the fortune-teller.	the mariner was scared by the <unk> . </s>	passive	plausible	91.82439	unk
+The assistant flattered the auditor.	the assistant <unk> the auditor . </s>	active	plausible	75.65127	unk
+The auditor flattered the assistant.	the auditor <unk> the assistant . </s>	active	plausible	81.63322	unk
+The auditor was flattered by the assistant.	the auditor was <unk> by the assistant . </s>	passive	plausible	84.29445	unk
+The assistant was flattered by the auditor.	the assistant was <unk> by the auditor . </s>	passive	plausible	85.35627	unk
+The helper complimented the appraiser.	the helper complimented the <unk> . </s>	active	plausible	86.64131	unk
+The appraiser complimented the helper.	the <unk> complimented the helper . </s>	active	plausible	72.64968999999999	unk
+The appraiser was complimented by the helper.	the <unk> was complimented by the helper . </s>	passive	plausible	81.70323	unk
+The helper was complimented by the appraiser.	the helper was complimented by the <unk> . </s>	passive	plausible	93.47059999999999	unk
+The immigrant believed the trooper.	the immigrant believed the trooper . </s>	active	plausible	83.5761	nounk
+The trooper believed the immigrant.	the trooper believed the immigrant . </s>	active	plausible	85.94869	nounk
+The trooper was believed by the immigrant.	the trooper was believed by the immigrant . </s>	passive	plausible	91.92492999999999	nounk
+The immigrant was believed by the trooper.	the immigrant was believed by the trooper . </s>	passive	plausible	92.15532	nounk
+The foreigner trusted the patrolman.	the foreigner trusted the <unk> . </s>	active	plausible	88.55458999999999	unk
+The patrolman trusted the foreigner.	the <unk> trusted the foreigner . </s>	active	plausible	78.39763	unk
+The patrolman was trusted by the foreigner.	the <unk> was trusted by the foreigner . </s>	passive	plausible	79.71175000000001	unk
+The foreigner was trusted by the patrolman.	the foreigner was trusted by the <unk> . </s>	passive	plausible	90.60953	unk
+The mapmaker affronted the farmer.	the <unk> <unk> the farmer . </s>	active	plausible	62.09376	unk
+The farmer affronted the mapmaker.	the farmer <unk> the <unk> . </s>	active	plausible	69.72971	unk
+The farmer was affronted by the mapmaker.	the farmer was <unk> by the <unk> . </s>	passive	plausible	76.4186	unk
+The mapmaker was affronted by the farmer.	the <unk> was <unk> by the farmer . </s>	passive	plausible	68.92314	unk
+The cartographer insulted the rancher.	the cartographer insulted the rancher . </s>	active	plausible	90.28018	nounk
+The rancher insulted the cartographer.	the rancher insulted the cartographer . </s>	active	plausible	90.48414	nounk
+The rancher was insulted by the cartographer.	the rancher was insulted by the cartographer . </s>	passive	plausible	100.80513000000002	nounk
+The cartographer was insulted by the rancher.	the cartographer was insulted by the rancher . </s>	passive	plausible	100.60116000000001	nounk
+The poet awed the entertainer.	the poet <unk> the entertainer . </s>	active	plausible	73.63328000000001	unk
+The entertainer awed the poet.	the entertainer <unk> the poet . </s>	active	plausible	78.67982	unk
+The entertainer was awed by the poet.	the entertainer was <unk> by the poet . </s>	passive	plausible	83.1885	unk
+The poet was awed by the entertainer.	the poet was <unk> by the entertainer . </s>	passive	plausible	81.58282	unk
+The lyricist dazzled the performer.	the lyricist <unk> the performer . </s>	active	plausible	76.8866	unk
+The performer dazzled the lyricist.	the performer <unk> the lyricist . </s>	active	plausible	75.21844	unk
+The performer was dazzled by the lyricist.	the performer was <unk> by the lyricist . </s>	passive	plausible	81.36166	unk
+The lyricist was dazzled by the performer.	the lyricist was <unk> by the performer . </s>	passive	plausible	82.35843	unk
+The peddler tested the manager.	the <unk> tested the manager . </s>	active	plausible	69.32121000000001	unk
+The manager tested the peddler.	the manager tested the <unk> . </s>	active	plausible	78.90173999999999	unk
+The manager was tested by the peddler.	the manager was tested by the <unk> . </s>	passive	plausible	76.47379	unk
+The peddler was tested by the manager.	the <unk> was tested by the manager . </s>	passive	plausible	72.27754999999999	unk
+The traveling salesman challenged the executive.	the traveling salesman challenged the executive . </s>	active	plausible	90.93931	nounk
+The executive challenged the traveling salesman.	the executive challenged the traveling salesman . </s>	active	plausible	85.66339	nounk
+The executive was challenged by the traveling salesman.	the executive was challenged by the traveling salesman . </s>	passive	plausible	89.61245	nounk
+The traveling salesman was challenged by the executive.	the traveling salesman was challenged by the executive . </s>	passive	plausible	92.02500999999998	nounk
+The musician admired the diva.	the musician admired the diva . </s>	active	plausible	81.5727	nounk
+The diva admired the musician.	the diva admired the musician . </s>	active	plausible	85.62725	nounk
+The diva was admired by the musician.	the diva was admired by the musician . </s>	passive	plausible	91.79215	nounk
+The musician was admired by the diva.	the musician was admired by the diva . </s>	passive	plausible	85.81081	nounk
+The instrumentalist adored the prima donna.	the instrumentalist adored the prima donna . </s>	active	plausible	111.00318999999999	nounk
+The prima donna adored the instrumentalist.	the prima donna adored the instrumentalist . </s>	active	plausible	108.35112	nounk
+The prima donna was adored by the instrumentalist.	the prima donna was adored by the instrumentalist . </s>	passive	plausible	112.08148800000002	nounk
+The instrumentalist was adored by the prima donna.	the instrumentalist was adored by the prima donna . </s>	passive	plausible	118.07592800000002	nounk
+The general welcomed the hero.	the general welcomed the hero . </s>	active	plausible	75.05562	nounk
+The hero welcomed the general.	the hero welcomed the general . </s>	active	plausible	80.0976	nounk
+The hero was welcomed by the general.	the hero was welcomed by the general . </s>	passive	plausible	80.40963	nounk
+The general was welcomed by the hero.	the general was welcomed by the hero . </s>	passive	plausible	83.61184	nounk
+The commander greeted the champion.	the commander greeted the champion . </s>	active	plausible	80.28050999999999	nounk
+The champion greeted the commander.	the champion greeted the commander . </s>	active	plausible	81.84781	nounk
+The champion was greeted by the commander.	the champion was greeted by the commander . </s>	passive	plausible	83.48791	nounk
+The commander was greeted by the champion.	the commander was greeted by the champion . </s>	passive	plausible	83.7025	nounk
+The cobbler disdained the stonecutter.	the <unk> <unk> the <unk> . </s>	active	plausible	55.34488	unk
+The stonecutter disdained the cobbler.	the <unk> <unk> the <unk> . </s>	active	plausible	55.34488	unk
+The stonecutter was disdained by the cobbler.	the <unk> was <unk> by the <unk> . </s>	passive	plausible	65.78555	unk
+The cobbler was disdained by the stonecutter.	the <unk> was <unk> by the <unk> . </s>	passive	plausible	65.78555	unk
+The shoemaker scorned the mason.	the shoemaker scorned the mason . </s>	active	plausible	90.01616	nounk
+The mason scorned the shoemaker.	the mason scorned the shoemaker . </s>	active	plausible	87.85389	nounk
+The mason was scorned by the shoemaker.	the mason was scorned by the shoemaker . </s>	passive	plausible	92.84026	nounk
+The shoemaker was scorned by the mason.	the shoemaker was scorned by the mason . </s>	passive	plausible	95.12952	nounk
+The postman noticed the chaplain.	the <unk> noticed the chaplain . </s>	active	plausible	68.86751999999998	unk
+The chaplain noticed the postman.	the chaplain noticed the <unk> . </s>	active	plausible	83.08053000000001	unk
+The chaplain was noticed by the postman.	the chaplain was noticed by the <unk> . </s>	passive	plausible	85.22456	unk
+The postman was noticed by the chaplain.	the <unk> was noticed by the chaplain . </s>	passive	plausible	72.77034	unk
+The mailman saw the minister.	the <unk> saw the minister . </s>	active	plausible	64.7021	unk
+The minister saw the mailman.	the minister saw the <unk> . </s>	active	plausible	74.82661999999999	unk
+The minister was seen by the mailman.	the minister was seen by the <unk> . </s>	passive	plausible	76.25906	unk
+The mailman was seen by the minister.	the <unk> was seen by the minister . </s>	passive	plausible	66.42663	unk
+The composer begrudged the playwright.	the composer <unk> the playwright . </s>	active	plausible	74.02152	unk
+The playwright begrudged the composer.	the playwright <unk> the composer . </s>	active	plausible	73.6544	unk
+The playwright was begrudged by the composer.	the playwright was <unk> by the composer . </s>	passive	plausible	77.46907	unk
+The composer was begrudged by the playwright.	the composer was <unk> by the playwright . </s>	passive	plausible	75.54339	unk
+The songwriter envied the dramatist.	the songwriter <unk> the dramatist . </s>	active	plausible	82.12217000000001	unk
+The dramatist envied the songwriter.	the dramatist <unk> the songwriter . </s>	active	plausible	80.42189	unk
+The dramatist was envied by the songwriter.	the dramatist was <unk> by the songwriter . </s>	passive	plausible	88.71286	unk
+The songwriter was envied by the dramatist.	the songwriter was <unk> by the dramatist . </s>	passive	plausible	86.88656	unk
+The dictator angered the residents.	the dictator angered the residents . </s>	active	plausible	85.20455999999999	nounk
+The residents angered the dictator.	the residents angered the dictator . </s>	active	plausible	79.62468	nounk
+The residents were angered by the dictator.	the residents were angered by the dictator . </s>	passive	plausible	78.898748	nounk
+The dictator was angered by the residents.	the dictator was angered by the residents . </s>	passive	plausible	83.00224	nounk
+The despot enraged the townspeople.	the <unk> enraged the townspeople . </s>	active	plausible	72.73667	unk
+The townspeople enraged the despot.	the townspeople enraged the <unk> . </s>	active	plausible	81.86287999999999	unk
+The townspeople were enraged by the despot.	the townspeople were enraged by the <unk> . </s>	passive	plausible	84.23432	unk
+The despot was enraged by the townspeople.	the <unk> was enraged by the townspeople . </s>	passive	plausible	70.29514	unk
+The missionary baffled the oracle.	the missionary baffled the oracle . </s>	active	plausible	85.85257999999999	nounk
+The oracle baffled the missionary.	the oracle baffled the missionary . </s>	active	plausible	87.21906	nounk
+The oracle was baffled by the missionary.	the oracle was baffled by the missionary . </s>	passive	plausible	89.64651	nounk
+The missionary was baffled by the oracle.	the missionary was baffled by the oracle . </s>	passive	plausible	91.58704999999999	nounk
+The evangelist mystified the soothsayer.	the evangelist <unk> the <unk> . </s>	active	plausible	71.28269	unk
+The soothsayer mystified the evangelist.	the <unk> <unk> the evangelist . </s>	active	plausible	62.37792999999999	unk
+The soothsayer was mystified by the evangelist.	the <unk> was <unk> by the evangelist . </s>	passive	plausible	69.72021000000001	unk
+The evangelist was mystified by the soothsayer.	the evangelist was <unk> by the <unk> . </s>	passive	plausible	80.74640000000001	unk
+The trespasser choked the fighter.	the <unk> choked the fighter . </s>	active	plausible	75.87905	unk
+The fighter choked the trespasser.	the fighter choked the <unk> . </s>	active	plausible	87.34416999999999	unk
+The fighter was choked by the trespasser.	the fighter was choked by the <unk> . </s>	passive	plausible	94.46871	unk
+The trespasser was choked by the fighter.	the <unk> was choked by the fighter . </s>	passive	plausible	86.86370000000001	unk
+The encroacher strangled the warrior.	the <unk> strangled the warrior . </s>	active	plausible	76.25067	unk
+The warrior strangled the encroacher.	the warrior strangled the <unk> . </s>	active	plausible	88.15371999999999	unk
+The warrior was strangled by the encroacher.	the warrior was strangled by the <unk> . </s>	passive	plausible	86.06523	unk
+The encroacher was strangled by the warrior.	the <unk> was strangled by the warrior . </s>	passive	plausible	77.13628	unk
+The broker introduced the donor.	the broker introduced the donor . </s>	active	plausible	80.96385	nounk
+The donor introduced the broker.	the donor introduced the broker . </s>	active	plausible	79.71256	nounk
+The donor was introduced by the broker.	the donor was introduced by the broker . </s>	passive	plausible	81.54568	nounk
+The broker was introduced by the donor.	the broker was introduced by the donor . </s>	passive	plausible	86.88565	nounk
+The dealer presented the sponsor.	the dealer presented the sponsor . </s>	active	plausible	78.31972999999999	nounk
+The sponsor presented the dealer.	the sponsor presented the dealer . </s>	active	plausible	80.31531	nounk
+The sponsor was presented by the dealer.	the sponsor was presented by the dealer . </s>	passive	plausible	81.11489	nounk
+The dealer was presented by the sponsor.	the dealer was presented by the sponsor . </s>	passive	plausible	86.54176000000001	nounk
+The shrink commended the dean.	the shrink commended the dean . </s>	active	plausible	87.35776	nounk
+The dean commended the shrink.	the dean commended the shrink . </s>	active	plausible	86.55394	nounk
+The dean was commended by the shrink.	the dean was commended by the shrink . </s>	passive	plausible	91.69588999999999	nounk
+The shrink was commended by the dean.	the shrink was commended by the dean . </s>	passive	plausible	90.8912	nounk
+The psychiatrist applauded the provost.	the psychiatrist applauded the provost . </s>	active	plausible	85.43370999999999	nounk
+The provost applauded the psychiatrist.	the provost applauded the psychiatrist . </s>	active	plausible	84.44117	nounk
+The provost was applauded by the psychiatrist.	the provost was applauded by the psychiatrist . </s>	passive	plausible	84.961686	nounk
+The psychiatrist was applauded by the provost.	the psychiatrist was applauded by the provost . </s>	passive	plausible	92.788916	nounk
+The refugee provoked the homeless person.	the refugee provoked the homeless person . </s>	active	plausible	89.99421	nounk
+The homeless person provoked the refugee.	the homeless person provoked the refugee . </s>	active	plausible	91.31989999999999	nounk
+The homeless person was provoked by the refugee.	the homeless person was provoked by the refugee . </s>	passive	plausible	98.94782800000002	nounk
+The refugee was provoked by the homeless person.	the refugee was provoked by the homeless person . </s>	passive	plausible	102.99386799999999	nounk
+The asylum seeker goaded the vagrant.	the asylum seeker <unk> the vagrant . </s>	active	plausible	90.38573	unk
+The vagrant goaded the asylum seeker.	the vagrant <unk> the asylum seeker . </s>	active	plausible	90.85998000000001	unk
+The vagrant was goaded by the asylum seeker.	the vagrant was <unk> by the asylum seeker . </s>	passive	plausible	98.59657000000001	unk
+The asylum seeker was goaded by the vagrant.	the asylum seeker was <unk> by the vagrant . </s>	passive	plausible	94.70323	unk
+The interpreter swindled the messenger.	the interpreter <unk> the messenger . </s>	active	plausible	80.51297	unk
+The messenger swindled the interpreter.	the messenger <unk> the interpreter . </s>	active	plausible	76.0838	unk
+The messenger was swindled by the interpreter.	the messenger was <unk> by the interpreter . </s>	passive	plausible	78.2791	unk
+The interpreter was swindled by the messenger.	the interpreter was <unk> by the messenger . </s>	passive	plausible	86.63673	unk
+The translator deceived the courier.	the translator deceived the courier . </s>	active	plausible	84.92674	nounk
+The courier deceived the translator.	the courier deceived the translator . </s>	active	plausible	84.63239	nounk
+The courier was deceived by the translator.	the courier was deceived by the translator . </s>	passive	plausible	89.73264999999999	nounk
+The translator was deceived by the courier.	the translator was deceived by the courier . </s>	passive	plausible	93.16879	nounk
+The gangster hated the governor.	the gangster hated the governor . </s>	active	plausible	83.54038	nounk
+The governor hated the gangster.	the governor hated the gangster . </s>	active	plausible	82.72191000000001	nounk
+The governor was hated by the gangster.	the governor was hated by the gangster . </s>	passive	plausible	84.59923	nounk
+The gangster was hated by the governor.	the gangster was hated by the governor . </s>	passive	plausible	87.69665	nounk
+The hoodlum abhorred the chancellor.	the <unk> <unk> the chancellor . </s>	active	plausible	61.3072	unk
+The chancellor abhorred the hoodlum.	the chancellor <unk> the <unk> . </s>	active	plausible	68.89807	unk
+The chancellor was abhorred by the hoodlum.	the chancellor was <unk> by the <unk> . </s>	passive	plausible	75.29595	unk
+The hoodlum was abhorred by the chancellor.	the <unk> was <unk> by the chancellor . </s>	passive	plausible	64.89881	unk
+The planner convinced the customer.	the planner convinced the customer . </s>	active	plausible	82.49354	nounk
+The customer convinced the planner.	the customer convinced the planner . </s>	active	plausible	82.33879	nounk
+The customer was convinced by the planner.	the customer was convinced by the planner . </s>	passive	plausible	87.66676	nounk
+The planner was convinced by the customer.	the planner was convinced by the customer . </s>	passive	plausible	84.69727999999999	nounk
+The organizer persuaded the buyer.	the organizer persuaded the buyer . </s>	active	plausible	82.73155	nounk
+The buyer persuaded the organizer.	the buyer persuaded the organizer . </s>	active	plausible	83.20607	nounk
+The buyer was persuaded by the organizer.	the buyer was persuaded by the organizer . </s>	passive	plausible	90.12032999999998	nounk
+The organizer was persuaded by the buyer.	the organizer was persuaded by the buyer . </s>	passive	plausible	85.92413	nounk
+The wizard protected the gnome.	the wizard protected the <unk> . </s>	active	plausible	82.99134000000001	unk
+The gnome protected the wizard.	the <unk> protected the wizard . </s>	active	plausible	68.07541	unk
+The gnome was protected by the wizard.	the <unk> was protected by the wizard . </s>	passive	plausible	72.01010600000001	unk
+The wizard was protected by the gnome.	the wizard was protected by the <unk> . </s>	passive	plausible	76.991656	unk
+The sorcerer defended the dwarf.	the sorcerer defended the dwarf . </s>	active	plausible	83.52774000000001	nounk
+The dwarf defended the sorcerer.	the dwarf defended the sorcerer . </s>	active	plausible	82.57345	nounk
+The dwarf was defended by the sorcerer.	the dwarf was defended by the sorcerer . </s>	passive	plausible	91.974765	nounk
+The sorcerer was defended by the dwarf.	the sorcerer was defended by the dwarf . </s>	passive	plausible	91.000345	nounk
+The student befuddled the professor.	the student <unk> the professor . </s>	active	plausible	73.48811	unk
+The professor befuddled the student.	the professor <unk> the student . </s>	active	plausible	74.22028	unk
+The professor was befuddled by the student.	the professor was <unk> by the student . </s>	passive	plausible	78.2908	unk
+The student was befuddled by the professor.	the student was <unk> by the professor . </s>	passive	plausible	78.91172	unk
+The scholar confused the lecturer.	the scholar confused the lecturer . </s>	active	plausible	86.3621	nounk
+The lecturer confused the scholar.	the lecturer confused the scholar . </s>	active	plausible	91.7971	nounk
+The lecturer was confused by the scholar.	the lecturer was confused by the scholar . </s>	passive	plausible	90.53868	nounk
+The scholar was confused by the lecturer.	the scholar was confused by the lecturer . </s>	passive	plausible	92.8116	nounk
+The invader spotted the sentry.	the <unk> spotted the sentry . </s>	active	plausible	73.1194	unk
+The sentry spotted the invader.	the sentry spotted the <unk> . </s>	active	plausible	84.73037	unk
+The sentry was spotted by the invader.	the sentry was spotted by the <unk> . </s>	passive	plausible	82.33182	unk
+The invader was spotted by the sentry.	the <unk> was spotted by the sentry . </s>	passive	plausible	77.02724	unk
+The intruder sighted the watchman.	the intruder sighted the watchman . </s>	active	plausible	89.35546	nounk
+The watchman sighted the intruder.	the watchman sighted the intruder . </s>	active	plausible	86.29075	nounk
+The watchman was sighted by the intruder.	the watchman was sighted by the intruder . </s>	passive	plausible	90.83029	nounk
+The intruder was sighted by the watchman.	the intruder was sighted by the watchman . </s>	passive	plausible	96.12548000000001	nounk
+The supplier reimbursed the merchant.	the supplier reimbursed the merchant . </s>	active	plausible	88.44599000000001	nounk
+The merchant reimbursed the supplier.	the merchant reimbursed the supplier . </s>	active	plausible	84.41487000000001	nounk
+The merchant was reimbursed by the supplier.	the merchant was reimbursed by the supplier . </s>	passive	plausible	90.91843	nounk
+The supplier was reimbursed by the merchant.	the supplier was reimbursed by the merchant . </s>	passive	plausible	93.62767	nounk
+The wholesaler compensated the trader.	the wholesaler compensated the trader . </s>	active	plausible	89.80262	nounk
+The trader compensated the wholesaler.	the trader compensated the wholesaler . </s>	active	plausible	90.08333999999999	nounk
+The trader was compensated by the wholesaler.	the trader was compensated by the wholesaler . </s>	passive	plausible	90.81082	nounk
+The wholesaler was compensated by the trader.	the wholesaler was compensated by the trader . </s>	passive	plausible	94.65964000000001	nounk
+The accuser confronted the vandal.	the accuser confronted the <unk> . </s>	active	plausible	83.75253000000001	unk
+The vandal confronted the accuser.	the <unk> confronted the accuser . </s>	active	plausible	69.27347	unk
+The vandal was confronted by the accuser.	the <unk> was confronted by the accuser . </s>	passive	plausible	74.83679000000001	unk
+The accuser was confronted by the vandal.	the accuser was confronted by the <unk> . </s>	passive	plausible	80.91796099999999	unk
+The plaintiff accosted the thug.	the plaintiff <unk> the <unk> . </s>	active	plausible	70.56354999999999	unk
+The thug accosted the plaintiff.	the <unk> <unk> the plaintiff . </s>	active	plausible	61.53239	unk
+The thug was accosted by the plaintiff.	the <unk> was <unk> by the plaintiff . </s>	passive	plausible	67.45057	unk
+The plaintiff was accosted by the thug.	the plaintiff was <unk> by the <unk> . </s>	passive	plausible	76.25066000000001	unk
+The trickster bemused the idiot.	the <unk> <unk> the idiot . </s>	active	plausible	66.21200999999999	unk
+The idiot bemused the trickster.	the idiot <unk> the <unk> . </s>	active	plausible	75.30365	unk
+The idiot was bemused by the trickster.	the idiot was <unk> by the <unk> . </s>	passive	plausible	87.30534	unk
+The trickster was bemused by the idiot.	the <unk> was <unk> by the idiot . </s>	passive	plausible	73.55429000000001	unk
+The swindler puzzled the fool.	the <unk> puzzled the fool . </s>	active	plausible	83.75022000000001	unk
+The fool puzzled the swindler.	the fool puzzled the <unk> . </s>	active	plausible	94.47220999999999	unk
+The fool was puzzled by the swindler.	the fool was puzzled by the <unk> . </s>	passive	plausible	92.40819	unk
+The swindler was puzzled by the fool.	the <unk> was puzzled by the fool . </s>	passive	plausible	79.71769	unk
+The protestor quoted the leader.	the <unk> quoted the leader . </s>	active	plausible	70.11773	unk
+The leader quoted the protestor.	the leader quoted the <unk> . </s>	active	plausible	82.10614000000001	unk
+The leader was quoted by the protestor.	the leader was quoted by the <unk> . </s>	passive	plausible	76.93444	unk
+The protestor was quoted by the leader.	the <unk> was quoted by the leader . </s>	passive	plausible	69.76535	unk
+The striker cited the chief.	the striker cited the chief . </s>	active	plausible	82.02950999999999	nounk
+The chief cited the striker.	the chief cited the striker . </s>	active	plausible	75.74042999999999	nounk
+The chief was cited by the striker.	the chief was cited by the striker . </s>	passive	plausible	80.56065	nounk
+The striker was cited by the chief.	the striker was cited by the chief . </s>	passive	plausible	85.47442000000001	nounk
+The postal worker repulsed the taxi-driver.	the postal worker repulsed the <unk> . </s>	active	plausible	90.97325	unk
+The taxi-driver repulsed the postal worker.	the <unk> repulsed the postal worker . </s>	active	plausible	82.0484	unk
+The taxi-driver was repulsed by the postal worker.	the <unk> was repulsed by the postal worker . </s>	passive	plausible	81.51146	unk
+The postal worker was repulsed by the taxi-driver.	the postal worker was repulsed by the <unk> . </s>	passive	plausible	86.68117000000001	unk
+The letter carrier disgusted the cabbie.	the letter carrier disgusted the <unk> . </s>	active	plausible	93.52998	unk
+The cabbie disgusted the letter carrier.	the <unk> disgusted the letter carrier . </s>	active	plausible	88.56071	unk
+The cabbie was disgusted by the letter carrier.	the <unk> was disgusted by the letter carrier . </s>	passive	plausible	86.36708999999999	unk
+The letter carrier was disgusted by the cabbie.	the letter carrier was disgusted by the <unk> . </s>	passive	plausible	90.36289000000001	unk
+The competitor agitated the rival.	the competitor agitated the rival . </s>	active	plausible	88.63566000000002	nounk
+The rival agitated the competitor.	the rival agitated the competitor . </s>	active	plausible	86.3019	nounk
+The rival was agitated by the competitor.	the rival was agitated by the competitor . </s>	passive	plausible	95.54337	nounk
+The competitor was agitated by the rival.	the competitor was agitated by the rival . </s>	passive	plausible	93.47881	nounk
+The contender flustered the opponent.	the contender <unk> the opponent . </s>	active	plausible	80.05069999999999	unk
+The opponent flustered the contender.	the opponent <unk> the contender . </s>	active	plausible	83.05230999999999	unk
+The opponent was flustered by the contender.	the opponent was <unk> by the contender . </s>	passive	plausible	89.2355	unk
+The contender was flustered by the opponent.	the contender was <unk> by the opponent . </s>	passive	plausible	81.73687000000001	unk
+The officer alerted the authorities.	the officer alerted the authorities . </s>	active	plausible	80.78484999999999	nounk
+The authorities alerted the officer.	the authorities alerted the officer . </s>	active	plausible	79.43496	nounk
+The authorities were alerted by the officer.	the authorities were alerted by the officer . </s>	passive	plausible	76.23382	nounk
+The officer was alerted by the authorities.	the officer was alerted by the authorities . </s>	passive	plausible	80.70546999999999	nounk
+The deputy notified the higher-ups.	the deputy notified the <unk> . </s>	active	plausible	83.14292	unk
+The higher-ups notified the deputy.	the <unk> notified the deputy . </s>	active	plausible	71.51726000000001	unk
+The higher-ups were notified by the deputy.	the <unk> were notified by the deputy . </s>	passive	plausible	73.40383	unk
+The deputy was notified by the higher-ups.	the deputy was notified by the <unk> . </s>	passive	plausible	86.22354	unk
+The culprit betrayed the hunter.	the culprit betrayed the hunter . </s>	active	plausible	85.36156	nounk
+The hunter betrayed the culprit.	the hunter betrayed the culprit . </s>	active	plausible	81.50765	nounk
+The hunter was betrayed by the culprit.	the hunter was betrayed by the culprit . </s>	passive	plausible	87.79229	nounk
+The culprit was betrayed by the hunter.	the culprit was betrayed by the hunter . </s>	passive	plausible	84.85942	nounk
+The botanist respected the partner.	the botanist respected the partner . </s>	active	plausible	84.57011	nounk
+The partner respected the botanist.	the partner respected the botanist . </s>	active	plausible	84.26975	nounk
+The partner was respected by the botanist.	the partner was respected by the botanist . </s>	passive	plausible	87.03070000000001	nounk
+The botanist was respected by the partner.	the botanist was respected by the partner . </s>	passive	plausible	93.02319999999999	nounk
+The flora specialist esteemed the collaborator.	the flora specialist esteemed the collaborator . </s>	active	plausible	108.98895999999999	nounk
+The collaborator esteemed the flora specialist.	the collaborator esteemed the flora specialist . </s>	active	plausible	111.94367	nounk
+The collaborator was esteemed by the flora specialist.	the collaborator was esteemed by the flora specialist . </s>	passive	plausible	116.95638	nounk
+The flora specialist was esteemed by the collaborator.	the flora specialist was esteemed by the collaborator . </s>	passive	plausible	117.86882000000001	nounk
+The pacifist placated the zealot.	the pacifist <unk> the <unk> . </s>	active	plausible	74.39389	unk
+The zealot placated the pacifist.	the <unk> <unk> the pacifist . </s>	active	plausible	64.49905	unk
+The zealot was placated by the pacifist.	the <unk> was <unk> by the pacifist . </s>	passive	plausible	71.84133	unk
+The pacifist was placated by the zealot.	the pacifist was <unk> by the <unk> . </s>	passive	plausible	85.20724000000001	unk
+The peace-lover mollified the fanatic.	the <unk> <unk> the fanatic . </s>	active	plausible	64.09335999999999	unk
+The fanatic mollified the peace-lover.	the fanatic <unk> the <unk> . </s>	active	plausible	71.70966	unk
+The fanatic was mollified by the peace-lover.	the fanatic was <unk> by the <unk> . </s>	passive	plausible	84.97199	unk
+The peace-lover was mollified by the fanatic.	the <unk> was <unk> by the fanatic . </s>	passive	plausible	71.43564	unk
+The scoundrel beat the protagonist.	the <unk> beat the protagonist . </s>	active	plausible	68.74229	unk
+The protagonist beat the scoundrel.	the protagonist beat the <unk> . </s>	active	plausible	78.73059	unk
+The protagonist was beaten by the scoundrel.	the protagonist was beaten by the <unk> . </s>	passive	plausible	77.97609	unk
+The scoundrel was beaten by the protagonist.	the <unk> was beaten by the protagonist . </s>	passive	plausible	68.00182000000001	unk
+The rogue defeated the main character.	the rogue defeated the main character . </s>	active	plausible	84.63432	nounk
+The main character defeated the rogue.	the main character defeated the rogue . </s>	active	plausible	79.70015000000001	nounk
+The main character was defeated by the rogue.	the main character was defeated by the rogue . </s>	passive	plausible	81.8235	nounk
+The rogue was defeated by the main character.	the rogue was defeated by the main character . </s>	passive	plausible	87.90120999999999	nounk
+The sociologist accepted the offer.	the sociologist accepted the offer . </s>	active	plausible	68.04232999999999	nounk
+The offer accepted the sociologist.	the offer accepted the sociologist . </s>	active	implausible	83.06087	nounk
+The offer was accepted by the sociologist.	the offer was accepted by the sociologist . </s>	passive	plausible	70.56844000000001	nounk
+The sociologist was accepted by the offer.	the sociologist was accepted by the offer . </s>	passive	implausible	82.0473	nounk
+The boyfriend basted the turkey.	the boyfriend <unk> the turkey . </s>	active	plausible	77.14564	unk
+The turkey basted the boyfriend.	the turkey <unk> the boyfriend . </s>	active	implausible	77.5449	unk
+The turkey was basted by the boyfriend.	the turkey was <unk> by the boyfriend . </s>	passive	plausible	87.16899000000001	unk
+The boyfriend was basted by the turkey.	the boyfriend was <unk> by the turkey . </s>	passive	implausible	84.36537	unk
+The caseworker posed the question.	the <unk> posed the question . </s>	active	plausible	61.69377	unk
+The question posed the caseworker.	the question posed the <unk> . </s>	active	implausible	74.47733	unk
+The question was posed by the caseworker.	the question was posed by the <unk> . </s>	passive	plausible	70.10687	unk
+The caseworker was posed by the question.	the <unk> was posed by the question . </s>	passive	implausible	75.70353	unk
+The ditch digger bent the wire.	the ditch <unk> bent the wire . </s>	active	plausible	94.23473	unk
+The wire bent the ditch digger.	the wire bent the ditch <unk> . </s>	active	implausible	106.31116	unk
+The wire was bent by the ditch digger.	the wire was bent by the ditch <unk> . </s>	passive	plausible	114.05944	unk
+The ditch digger was bent by the wire.	the ditch <unk> was bent by the wire . </s>	passive	implausible	105.53796999999999	unk
+The box-office sold the tickets.	the box-office sold the tickets . </s>	active	plausible	82.18297	nounk
+The tickets sold the box-office.	the tickets sold the box-office . </s>	active	implausible	70.94650999999999	nounk
+The tickets were sold by the box-office.	the tickets were sold by the box-office . </s>	passive	plausible	77.09839	nounk
+The box-office was sold by the tickets.	the box-office was sold by the tickets . </s>	passive	implausible	89.83639	nounk
+The uncle hung the ornament.	the uncle hung the ornament . </s>	active	plausible	88.49409000000001	nounk
+The ornament hung the uncle.	the ornament hung the uncle . </s>	active	implausible	89.85156	nounk
+The ornament was hung by the uncle.	the ornament was hung by the uncle . </s>	passive	plausible	93.10192	nounk
+The uncle was hung by the ornament.	the uncle was hung by the ornament . </s>	passive	implausible	97.24775000000001	nounk
+The attendant pressed the button.	the attendant pressed the button . </s>	active	plausible	73.104	nounk
+The button pressed the attendant.	the button pressed the attendant . </s>	active	implausible	78.06672	nounk
+The button was pressed by the attendant.	the button was pressed by the attendant . </s>	passive	plausible	83.18513	nounk
+The attendant was pressed by the button.	the attendant was pressed by the button . </s>	passive	implausible	90.40637	nounk
+The bum stole the necklace.	the <unk> stole the necklace . </s>	active	plausible	69.95916	unk
+The necklace stole the bum.	the necklace stole the <unk> . </s>	active	implausible	83.62921	unk
+The necklace was stolen by the bum.	the necklace was stolen by the <unk> . </s>	passive	plausible	82.71547	unk
+The bum was stolen by the necklace.	the <unk> was stolen by the necklace . </s>	passive	implausible	73.59519	unk
+The potter molded the clay.	the potter molded the clay . </s>	active	plausible	88.8692	nounk
+The clay molded the potter.	the clay molded the potter . </s>	active	implausible	88.50439	nounk
+The clay was molded by the potter.	the clay was molded by the potter . </s>	passive	plausible	95.42989	nounk
+The potter was molded by the clay.	the potter was molded by the clay . </s>	passive	implausible	96.99293	nounk
+The guarantor initialed the form.	the guarantor <unk> the form . </s>	active	plausible	80.83349	unk
+The form initialed the guarantor.	the form <unk> the guarantor . </s>	active	implausible	75.96726000000001	unk
+The form was initialed by the guarantor.	the form was <unk> by the guarantor . </s>	passive	plausible	79.53207	unk
+The guarantor was initialed by the form.	the guarantor was <unk> by the form . </s>	passive	implausible	89.40333	unk
+The couch-potato forgot the umbrella.	the <unk> forgot the umbrella . </s>	active	plausible	71.97201	unk
+The umbrella forgot the couch-potato.	the umbrella forgot the <unk> . </s>	active	implausible	81.84034	unk
+The umbrella was forgotten by the couch-potato.	the umbrella was forgotten by the <unk> . </s>	passive	plausible	84.38381000000001	unk
+The couch-potato was forgotten by the umbrella.	the <unk> was forgotten by the umbrella . </s>	passive	implausible	75.83632	unk
+The groupie attended the concert.	the <unk> attended the concert . </s>	active	plausible	65.98006	unk
+The concert attended the groupie.	the concert attended the <unk> . </s>	active	implausible	65.14899	unk
+The concert was attended by the groupie.	the concert was attended by the <unk> . </s>	passive	plausible	68.8597	unk
+The groupie was attended by the concert.	the <unk> was attended by the concert . </s>	passive	implausible	76.29239	unk
+The hacker memorized the password.	the hacker memorized the password . </s>	active	plausible	86.08162999999999	nounk
+The password memorized the hacker.	the password memorized the hacker . </s>	active	implausible	89.51259	nounk
+The password was memorized by the hacker.	the password was memorized by the hacker . </s>	passive	plausible	103.42689	nounk
+The hacker was memorized by the password.	the hacker was memorized by the password . </s>	passive	implausible	98.11233	nounk
+The marine packed the bag.	the marine packed the bag . </s>	active	plausible	81.33050000000001	nounk
+The bag packed the marine.	the bag packed the marine . </s>	active	implausible	85.15618	nounk
+The bag was packed by the marine.	the bag was packed by the marine . </s>	passive	plausible	96.05506000000001	nounk
+The marine was packed by the bag.	the marine was packed by the bag . </s>	passive	implausible	96.69724000000001	nounk
+The counselor emphasized the rules.	the counselor emphasized the rules . </s>	active	plausible	83.37988	nounk
+The rules emphasized the counselor.	the rules emphasized the counselor . </s>	active	implausible	81.439	nounk
+The rules were emphasized by the counselor.	the rules were emphasized by the counselor . </s>	passive	plausible	89.76089	nounk
+The counselor was emphasized by the rules.	the counselor was emphasized by the rules . </s>	passive	implausible	86.36538	nounk
+The seamstress ironed the shirt.	the <unk> <unk> the shirt . </s>	active	plausible	61.97896	unk
+The shirt ironed the seamstress.	the shirt <unk> the <unk> . </s>	active	implausible	72.26732	unk
+The shirt was ironed by the seamstress.	the shirt was <unk> by the <unk> . </s>	passive	plausible	77.58317	unk
+The seamstress was ironed by the shirt.	the <unk> was <unk> by the shirt . </s>	passive	implausible	69.43514	unk
+The confectioner sprinkled the sugar.	the <unk> sprinkled the sugar . </s>	active	plausible	79.42717	unk
+The sugar sprinkled the confectioner.	the sugar sprinkled the <unk> . </s>	active	implausible	89.09857	unk
+The sugar was sprinkled by the confectioner.	the sugar was sprinkled by the <unk> . </s>	passive	plausible	97.05275999999999	unk
+The confectioner was sprinkled by the sugar.	the <unk> was sprinkled by the sugar . </s>	passive	implausible	89.69313999999999	unk
+The voter sealed the envelope.	the voter sealed the envelope . </s>	active	plausible	81.74568000000001	nounk
+The envelope sealed the voter.	the envelope sealed the voter . </s>	active	implausible	76.94550000000001	nounk
+The envelope was sealed by the voter.	the envelope was sealed by the voter . </s>	passive	plausible	87.66746	nounk
+The voter was sealed by the envelope.	the voter was sealed by the envelope . </s>	passive	implausible	88.36523999999999	nounk
+The fisherman emptied the trashcan.	the fisherman emptied the <unk> . </s>	active	plausible	88.48555999999999	unk
+The trashcan emptied the fisherman.	the <unk> emptied the fisherman . </s>	active	implausible	75.79915	unk
+The trashcan was emptied by the fisherman.	the <unk> was emptied by the fisherman . </s>	passive	plausible	77.36881	unk
+The fisherman was emptied by the trashcan.	the fisherman was emptied by the <unk> . </s>	passive	implausible	87.12341	unk
+The cellist received the prize.	the cellist received the prize . </s>	active	plausible	74.92567	nounk
+The prize received the cellist.	the prize received the cellist . </s>	active	implausible	79.6403	nounk
+The prize was received by the cellist.	the prize was received by the cellist . </s>	passive	plausible	80.38374999999999	nounk
+The cellist was received by the prize.	the cellist was received by the prize . </s>	passive	implausible	89.16106	nounk
+The cheapskate rated the service.	the <unk> rated the service . </s>	active	plausible	69.94362	unk
+The service rated the cheapskate.	the service rated the <unk> . </s>	active	implausible	76.35433	unk
+The service was rated by the cheapskate.	the service was rated by the <unk> . </s>	passive	plausible	74.21055	unk
+The cheapskate was rated by the service.	the <unk> was rated by the service . </s>	passive	implausible	74.32853	unk
+The schoolgirl borrowed the key.	the <unk> borrowed the key . </s>	active	plausible	72.26781	unk
+The key borrowed the schoolgirl.	the key borrowed the <unk> . </s>	active	implausible	79.55117999999999	unk
+The key was borrowed by the schoolgirl.	the key was borrowed by the <unk> . </s>	passive	plausible	81.77412000000001	unk
+The schoolgirl was borrowed by the key.	the <unk> was borrowed by the key . </s>	passive	implausible	77.68173	unk
+The bookworm recited the poem.	the <unk> recited the poem . </s>	active	plausible	71.27262	unk
+The poem recited the bookworm.	the poem recited the <unk> . </s>	active	implausible	81.90505999999999	unk
+The poem was recited by the bookworm.	the poem was recited by the <unk> . </s>	passive	plausible	72.31904	unk
+The bookworm was recited by the poem.	the <unk> was recited by the poem . </s>	passive	implausible	75.02929	unk
+The diver recharged the battery.	the diver <unk> the battery . </s>	active	plausible	75.97865	unk
+The battery recharged the diver.	the battery <unk> the diver . </s>	active	implausible	73.94574999999999	unk
+The battery was recharged by the diver.	the battery was <unk> by the diver . </s>	passive	plausible	73.25175	unk
+The diver was recharged by the battery.	the diver was <unk> by the battery . </s>	passive	implausible	83.4803	unk
+The poker player won the game.	the poker player won the game . </s>	active	plausible	73.15701	nounk
+The game won the poker player.	the game won the poker player . </s>	active	implausible	71.778451	nounk
+The game was won by the poker player.	the game was won by the poker player . </s>	passive	plausible	74.083668	nounk
+The poker player was won by the game.	the poker player was won by the game . </s>	passive	implausible	88.82451999999999	nounk
+The copycat redecorated the apartment.	the <unk> <unk> the apartment . </s>	active	plausible	61.43419	unk
+The apartment redecorated the copycat.	the apartment <unk> the <unk> . </s>	active	implausible	71.78807	unk
+The apartment was redecorated by the copycat.	the apartment was <unk> by the <unk> . </s>	passive	plausible	76.94125	unk
+The copycat was redecorated by the apartment.	the <unk> was <unk> by the apartment . </s>	passive	implausible	68.83717	unk
+The winemaker uncorked the bottle.	the <unk> <unk> the bottle . </s>	active	plausible	61.073980000000006	unk
+The bottle uncorked the winemaker.	the bottle <unk> the <unk> . </s>	active	implausible	71.40288	unk
+The bottle was uncorked by the winemaker.	the bottle was <unk> by the <unk> . </s>	passive	plausible	76.64344	unk
+The winemaker was uncorked by the bottle.	the <unk> was <unk> by the bottle . </s>	passive	implausible	68.67066000000001	unk
+The laundress folded the clothes.	the <unk> folded the clothes . </s>	active	plausible	70.37519	unk
+The clothes folded the laundress.	the clothes folded the <unk> . </s>	active	implausible	86.76769999999999	unk
+The clothes were folded by the laundress.	the clothes were folded by the <unk> . </s>	passive	plausible	86.83476999999999	unk
+The laundress was folded by the clothes.	the <unk> was folded by the clothes . </s>	passive	implausible	76.70382	unk
+The travel-agent photocopied the passport.	the <unk> <unk> the passport . </s>	active	plausible	63.99414	unk
+The passport photocopied the travel-agent.	the passport <unk> the <unk> . </s>	active	implausible	74.71299	unk
+The passport was photocopied by the travel-agent.	the passport was <unk> by the <unk> . </s>	passive	plausible	79.80297	unk
+The travel-agent was photocopied by the passport.	the <unk> was <unk> by the passport . </s>	passive	implausible	71.33642	unk
+The exterminator filed the complaint.	the <unk> filed the complaint . </s>	active	plausible	70.74208	unk
+The complaint filed the exterminator.	the complaint filed the <unk> . </s>	active	implausible	73.48185000000001	unk
+The complaint was filed by the exterminator.	the complaint was filed by the <unk> . </s>	passive	plausible	67.70785	unk
+The exterminator was filed by the complaint.	the <unk> was filed by the complaint . </s>	passive	implausible	75.25735	unk
+The minuteman loaded the gun.	the minuteman loaded the gun . </s>	active	plausible	86.19521	nounk
+The gun loaded the minuteman.	the gun loaded the minuteman . </s>	active	implausible	79.54694	nounk
+The gun was loaded by the minuteman.	the gun was loaded by the minuteman . </s>	passive	plausible	88.54837	nounk
+The minuteman was loaded by the gun.	the minuteman was loaded by the gun . </s>	passive	implausible	94.10414999999999	nounk
+The bookseller calculated the profit.	the bookseller calculated the profit . </s>	active	plausible	87.69974	nounk
+The profit calculated the bookseller.	the profit calculated the bookseller . </s>	active	implausible	87.18485	nounk
+The profit was calculated by the bookseller.	the profit was calculated by the bookseller . </s>	passive	plausible	91.68095	nounk
+The bookseller was calculated by the profit.	the bookseller was calculated by the profit . </s>	passive	implausible	97.27025	nounk
+The count inherited the painting.	the count inherited the painting . </s>	active	plausible	78.30186	nounk
+The painting inherited the count.	the painting inherited the count . </s>	active	implausible	77.16764	nounk
+The painting was inherited by the count.	the painting was inherited by the count . </s>	passive	plausible	76.85859400000001	nounk
+The count was inherited by the painting.	the count was inherited by the painting . </s>	passive	implausible	78.030604	nounk
+The groundskeeper changed the light bulb.	the <unk> changed the light bulb . </s>	active	plausible	73.99409	unk
+The light bulb changed the groundskeeper.	the light bulb changed the <unk> . </s>	active	implausible	85.29221000000001	unk
+The light bulb was changed by the groundskeeper.	the light bulb was changed by the <unk> . </s>	passive	plausible	83.13601	unk
+The groundskeeper was changed by the light bulb.	the <unk> was changed by the light bulb . </s>	passive	implausible	77.59287	unk
+The marcher sang the anthem.	the <unk> sang the anthem . </s>	active	plausible	68.26088999999999	unk
+The anthem sang the marcher.	the anthem sang the <unk> . </s>	active	implausible	81.60415999999998	unk
+The anthem was sung by the marcher.	the anthem was sung by the <unk> . </s>	passive	plausible	67.60515	unk
+The marcher was sung by the anthem.	the <unk> was sung by the anthem . </s>	passive	implausible	76.65475	unk
+The deckhand unlocked the door.	the <unk> unlocked the door . </s>	active	plausible	75.69607	unk
+The door unlocked the deckhand.	the door unlocked the <unk> . </s>	active	implausible	75.46916999999999	unk
+The door was unlocked by the deckhand.	the door was unlocked by the <unk> . </s>	passive	plausible	78.11993000000001	unk
+The deckhand was unlocked by the door.	the <unk> was unlocked by the door . </s>	passive	implausible	78.93463	unk
+The supremacist established the fund.	the supremacist established the fund . </s>	active	plausible	83.1836	nounk
+The fund established the supremacist.	the fund established the supremacist . </s>	active	implausible	93.76507	nounk
+The fund was established by the supremacist.	the fund was established by the supremacist . </s>	passive	plausible	91.43545999999999	nounk
+The supremacist was established by the fund.	the supremacist was established by the fund . </s>	passive	implausible	88.69759	nounk
+The house sitter watered the plant.	the house sitter watered the plant . </s>	active	plausible	105.84203000000001	nounk
+The plant watered the house sitter.	the plant watered the house sitter . </s>	active	implausible	102.69376	nounk
+The plant was watered by the house sitter.	the plant was watered by the house sitter . </s>	passive	plausible	101.09679	nounk
+The house sitter was watered by the plant.	the house sitter was watered by the plant . </s>	passive	implausible	108.16992000000002	nounk
+The interviewee wrinkled the suit.	the <unk> <unk> the suit . </s>	active	plausible	61.53246	unk
+The suit wrinkled the interviewee.	the suit <unk> the <unk> . </s>	active	implausible	67.91164	unk
+The suit was wrinkled by the interviewee.	the suit was <unk> by the <unk> . </s>	passive	plausible	67.71903	unk
+The interviewee was wrinkled by the suit.	the <unk> was <unk> by the suit . </s>	passive	implausible	69.94211	unk
+The cryptographer sent the letter.	the <unk> sent the letter . </s>	active	plausible	64.08615	unk
+The letter sent the cryptographer.	the letter sent the <unk> . </s>	active	implausible	72.26061	unk
+The letter was sent by the cryptographer.	the letter was sent by the <unk> . </s>	passive	plausible	71.37396	unk
+The cryptographer was sent by the letter.	the <unk> was sent by the letter . </s>	passive	implausible	71.00239	unk
+The bellboy erased the message.	the <unk> erased the message . </s>	active	plausible	69.72081	unk
+The message erased the bellboy.	the message erased the <unk> . </s>	active	implausible	83.12501	unk
+The message was erased by the bellboy.	the message was erased by the <unk> . </s>	passive	plausible	80.86619	unk
+The bellboy was erased by the message.	the <unk> was erased by the message . </s>	passive	implausible	73.14437000000001	unk
+The forger shipped the package.	the forger shipped the package . </s>	active	plausible	86.51095	nounk
+The package shipped the forger.	the package shipped the forger . </s>	active	implausible	83.48345	nounk
+The package was shipped by the forger.	the package was shipped by the forger . </s>	passive	plausible	84.55785	nounk
+The forger was shipped by the package.	the forger was shipped by the package . </s>	passive	implausible	92.35439999999998	nounk
+The crackhead smoked the pipe.	the <unk> smoked the pipe . </s>	active	plausible	77.85225	unk
+The pipe smoked the crackhead.	the pipe smoked the <unk> . </s>	active	implausible	89.37199000000001	unk
+The pipe was smoked by the crackhead.	the pipe was smoked by the <unk> . </s>	passive	plausible	93.42406000000001	unk
+The crackhead was smoked by the pipe.	the <unk> was smoked by the pipe . </s>	passive	implausible	88.71012999999999	unk
+The manicurist rescheduled the appointment.	the <unk> rescheduled the appointment . </s>	active	plausible	75.07406	unk
+The appointment rescheduled the manicurist.	the appointment rescheduled the <unk> . </s>	active	implausible	89.97761	unk
+The appointment was rescheduled by the manicurist.	the appointment was rescheduled by the <unk> . </s>	passive	plausible	86.757	unk
+The manicurist was rescheduled by the appointment.	the <unk> was rescheduled by the appointment . </s>	passive	implausible	84.73188	unk
+The charlatan burned the contract.	the <unk> burned the contract . </s>	active	plausible	69.67768	unk
+The contract burned the charlatan.	the contract burned the <unk> . </s>	active	implausible	78.08223000000001	unk
+The contract was burnt by the charlatan.	the contract was burnt by the <unk> . </s>	passive	plausible	78.03641	unk
+The charlatan was burnt by the contract.	the <unk> was burnt by the contract . </s>	passive	implausible	78.42862	unk
+The tanner placed the order.	the tanner placed the order . </s>	active	plausible	79.50237	nounk
+The order placed the tanner.	the order placed the tanner . </s>	active	implausible	77.77886000000001	nounk
+The order was placed by the tanner.	the order was placed by the tanner . </s>	passive	plausible	76.06967	nounk
+The tanner was placed by the order.	the tanner was placed by the order . </s>	passive	implausible	80.29934	nounk
+The archaeologist canceled the trip.	the archaeologist canceled the trip . </s>	active	plausible	81.94369	nounk
+The trip canceled the archaeologist.	the trip canceled the archaeologist . </s>	active	implausible	82.45111	nounk
+The trip was canceled by the archaeologist.	the trip was canceled by the archaeologist . </s>	passive	plausible	81.47566	nounk
+The archaeologist was canceled by the trip.	the archaeologist was canceled by the trip . </s>	passive	implausible	93.50574999999999	nounk
+The Frenchman sliced the baguette.	the frenchman sliced the <unk> . </s>	active	plausible	91.73277999999999	unk
+The baguette sliced the Frenchman.	the <unk> sliced the frenchman . </s>	active	implausible	75.53703	unk
+The baguette was sliced by the Frenchman.	the <unk> was sliced by the frenchman . </s>	passive	plausible	80.33633	unk
+The Frenchman was sliced by the baguette.	the frenchman was sliced by the <unk> . </s>	passive	implausible	89.61519000000001	unk
+The producer cast the actress.	the producer cast the actress . </s>	active	plausible	80.91783000000001	nounk
+The actress cast the producer.	the actress cast the producer . </s>	active	implausible	80.15875	nounk
+The actress was cast by the producer.	the actress was cast by the producer . </s>	passive	plausible	79.31716	nounk
+The producer was cast by the actress.	the producer was cast by the actress . </s>	passive	implausible	81.49674	nounk
+The babysitter punished the twins.	the <unk> punished the twins . </s>	active	plausible	71.00674	unk
+The twins punished the babysitter.	the twins punished the <unk> . </s>	active	implausible	83.42242999999999	unk
+The twins were punished by the babysitter.	the twins were punished by the <unk> . </s>	passive	plausible	78.0194	unk
+The babysitter was punished by the twins.	the <unk> was punished by the twins . </s>	passive	implausible	66.5569	unk
+The exorcist vanquished the spirit.	the <unk> <unk> the spirit . </s>	active	plausible	55.91996	unk
+The spirit vanquished the exorcist.	the spirit <unk> the <unk> . </s>	active	implausible	66.71646	unk
+The spirit was vanquished by the exorcist.	the spirit was <unk> by the <unk> . </s>	passive	plausible	76.36152000000001	unk
+The exorcist was vanquished by the spirit.	the <unk> was <unk> by the spirit . </s>	passive	implausible	67.56802	unk
+The barber shaved the old man.	the barber shaved the old man . </s>	active	plausible	90.29792	nounk
+The old man shaved the barber.	the old man shaved the barber . </s>	active	implausible	85.56933000000001	nounk
+The old man was shaved by the barber.	the old man was shaved by the barber . </s>	passive	plausible	98.49288000000001	nounk
+The barber was shaved by the old man.	the barber was shaved by the old man . </s>	passive	implausible	100.84292	nounk
+The paparazzi stalked the pop star.	the paparazzi stalked the pop star . </s>	active	plausible	79.49691	nounk
+The pop star stalked the paparazzi.	the pop star stalked the paparazzi . </s>	active	implausible	91.03413	nounk
+The pop star was stalked by the paparazzi.	the pop star was stalked by the paparazzi . </s>	passive	plausible	98.15019000000001	nounk
+The paparazzi was stalked by the pop star.	the paparazzi was stalked by the pop star . </s>	passive	implausible	98.55142000000001	nounk
+The brunette tipped the busboy.	the <unk> tipped the <unk> . </s>	active	plausible	75.7853	unk
+The busboy tipped the brunette.	the <unk> tipped the <unk> . </s>	active	implausible	75.7853	unk
+The busboy was tipped by the brunette.	the <unk> was tipped by the <unk> . </s>	passive	plausible	75.12528	unk
+The brunette was tipped by the busboy.	the <unk> was tipped by the <unk> . </s>	passive	implausible	75.12528	unk
+The roommate adopted the newborn.	the roommate adopted the newborn . </s>	active	plausible	81.71425	nounk
+The newborn adopted the roommate.	the newborn adopted the roommate . </s>	active	implausible	82.00493	nounk
+The newborn was adopted by the roommate.	the newborn was adopted by the roommate . </s>	passive	plausible	88.73334	nounk
+The roommate was adopted by the newborn.	the roommate was adopted by the newborn . </s>	passive	implausible	85.4795	nounk
+The cartoonist sketched the unicyclist.	the cartoonist sketched the <unk> . </s>	active	plausible	89.03058999999999	unk
+The unicyclist sketched the cartoonist.	the <unk> sketched the cartoonist . </s>	active	implausible	74.02547	unk
+The unicyclist was sketched by the cartoonist.	the <unk> was sketched by the cartoonist . </s>	passive	plausible	84.06003	unk
+The cartoonist was sketched by the unicyclist.	the cartoonist was sketched by the <unk> . </s>	passive	implausible	92.90357	unk
+The streetwalker undercharged the seaman.	the <unk> <unk> the seaman . </s>	active	plausible	65.40622	unk
+The seaman undercharged the streetwalker.	the seaman <unk> the <unk> . </s>	active	implausible	73.91868	unk
+The seaman was undercharged by the streetwalker.	the seaman was <unk> by the <unk> . </s>	passive	plausible	80.56863	unk
+The streetwalker was undercharged by the seaman.	the <unk> was <unk> by the seaman . </s>	passive	implausible	72.74860000000001	unk
+The urologist treated the widower.	the <unk> treated the widower . </s>	active	plausible	74.41352	unk
+The widower treated the urologist.	the widower treated the <unk> . </s>	active	implausible	84.57300000000001	unk
+The widower was treated by the urologist.	the widower was treated by the <unk> . </s>	passive	plausible	89.45822	unk
+The urologist was treated by the widower.	the <unk> was treated by the widower . </s>	passive	implausible	77.57911	unk
+The jury acquitted the economist.	the jury acquitted the economist . </s>	active	plausible	70.99943999999999	nounk
+The economist acquitted the jury.	the economist acquitted the jury . </s>	active	implausible	83.98664	nounk
+The economist was acquitted by the jury.	the economist was acquitted by the jury . </s>	passive	plausible	74.56528	nounk
+The jury was acquitted by the economist.	the jury was acquitted by the economist . </s>	passive	implausible	79.27728	nounk
+The freshman dodged the bully.	the freshman <unk> the bully . </s>	active	plausible	76.90992	unk
+The bully dodged the freshman.	the bully <unk> the freshman . </s>	active	implausible	80.43826000000001	unk
+The bully was dodged by the freshman.	the bully was <unk> by the freshman . </s>	passive	plausible	88.84749	unk
+The freshman was dodged by the bully.	the freshman was <unk> by the bully . </s>	passive	implausible	87.25228999999999	unk
+The nun reproached the hedonist.	the nun <unk> the <unk> . </s>	active	plausible	74.01865	unk
+The hedonist reproached the nun.	the <unk> <unk> the nun . </s>	active	implausible	62.22515	unk
+The hedonist was reproached by the nun.	the <unk> was <unk> by the nun . </s>	passive	plausible	69.56743	unk
+The nun was reproached by the hedonist.	the nun was <unk> by the <unk> . </s>	passive	implausible	82.70175	unk
+The librarian admonished the plagiarist.	the librarian admonished the <unk> . </s>	active	plausible	88.84719999999999	unk
+The plagiarist admonished the librarian.	the <unk> admonished the librarian . </s>	active	implausible	73.54256	unk
+The plagiarist was admonished by the librarian.	the <unk> was admonished by the librarian . </s>	passive	plausible	73.63677	unk
+The librarian was admonished by the plagiarist.	the librarian was admonished by the <unk> . </s>	passive	implausible	86.08076	unk
+The colonel supervised the cadet.	the colonel supervised the cadet . </s>	active	plausible	82.1586	nounk
+The cadet supervised the colonel.	the cadet supervised the colonel . </s>	active	implausible	82.16760000000001	nounk
+The cadet was supervised by the colonel.	the cadet was supervised by the colonel . </s>	passive	plausible	91.644261	nounk
+The colonel was supervised by the cadet.	the colonel was supervised by the cadet . </s>	passive	implausible	84.530961	nounk
+The abolitionist hid the slave.	the abolitionist hid the slave . </s>	active	plausible	82.83503999999999	nounk
+The slave hid the abolitionist.	the slave hid the abolitionist . </s>	active	implausible	83.71438	nounk
+The slave was hidden by the abolitionist.	the slave was hidden by the abolitionist . </s>	passive	plausible	88.94328999999999	nounk
+The abolitionist was hidden by the slave.	the abolitionist was hidden by the slave . </s>	passive	implausible	91.53859999999999	nounk
+The personal trainer weighed the Olympian.	the personal trainer weighed the olympian . </s>	active	plausible	94.10786	nounk
+The Olympian weighed the personal trainer.	the olympian weighed the personal trainer . </s>	active	implausible	91.57012999999999	nounk
+The Olympian was weighed by the personal trainer.	the olympian was weighed by the personal trainer . </s>	passive	plausible	100.24034000000002	nounk
+The personal trainer was weighed by the Olympian.	the personal trainer was weighed by the olympian . </s>	passive	implausible	103.31098000000001	nounk
+The zookeeper fed the giraffe.	the <unk> fed the giraffe . </s>	active	plausible	74.01392	unk
+The giraffe fed the zookeeper.	the giraffe fed the <unk> . </s>	active	implausible	81.72506999999999	unk
+The giraffe was fed by the zookeeper.	the giraffe was fed by the <unk> . </s>	passive	plausible	82.70005	unk
+The zookeeper was fed by the giraffe.	the <unk> was fed by the giraffe . </s>	passive	implausible	77.43514	unk
+The masseuse relaxed the linebacker.	the <unk> relaxed the linebacker . </s>	active	plausible	72.86105	unk
+The linebacker relaxed the masseuse.	the linebacker relaxed the <unk> . </s>	active	implausible	88.71155999999999	unk
+The linebacker was relaxed by the masseuse.	the linebacker was relaxed by the <unk> . </s>	passive	plausible	89.23592	unk
+The masseuse was relaxed by the linebacker.	the <unk> was relaxed by the linebacker . </s>	passive	implausible	76.74118	unk
+The page obeyed the noble.	the page obeyed the noble . </s>	active	plausible	85.64441	nounk
+The noble obeyed the page.	the noble obeyed the page . </s>	active	implausible	83.04924	nounk
+The noble was obeyed by the page.	the noble was obeyed by the page . </s>	passive	plausible	97.94892	nounk
+The page was obeyed by the noble.	the page was obeyed by the noble . </s>	passive	implausible	95.84487	nounk
+The lion chased the tour-guide.	the lion chased the <unk> . </s>	active	plausible	82.95824000000002	unk
+The tour-guide chased the lion.	the <unk> chased the lion . </s>	active	implausible	71.1548	unk
+The tour-guide was chased by the lion.	the <unk> was chased by the lion . </s>	passive	plausible	74.38216	unk
+The lion was chased by the tour-guide.	the lion was chased by the <unk> . </s>	passive	implausible	80.61059	unk
+The caretaker quieted the orphan.	the caretaker <unk> the orphan . </s>	active	plausible	83.87119	unk
+The orphan quieted the caretaker.	the orphan <unk> the caretaker . </s>	active	implausible	80.06833	unk
+The orphan was quieted by the caretaker.	the orphan was <unk> by the caretaker . </s>	passive	plausible	88.47756000000001	unk
+The caretaker was quieted by the orphan.	the caretaker was <unk> by the orphan . </s>	passive	implausible	90.91818	unk
+The tennis player thanked the chiropractor.	the tennis player thanked the <unk> . </s>	active	plausible	92.45092	unk
+The chiropractor thanked the tennis player.	the <unk> thanked the tennis player . </s>	active	implausible	77.77736	unk
+The chiropractor was thanked by the tennis player.	the <unk> was thanked by the tennis player . </s>	passive	plausible	84.81742000000001	unk
+The tennis player was thanked by the chiropractor.	the tennis player was thanked by the <unk> . </s>	passive	implausible	94.24366	unk
+The experimenter recruited the subject.	the experimenter recruited the subject . </s>	active	plausible	84.11828	nounk
+The subject recruited the experimenter.	the subject recruited the experimenter . </s>	active	implausible	81.42031999999999	nounk
+The subject was recruited by the experimenter.	the subject was recruited by the experimenter . </s>	passive	plausible	74.22438	nounk
+The experimenter was recruited by the subject.	the experimenter was recruited by the subject . </s>	passive	implausible	89.13736	nounk
+The mother disciplined the toddler.	the mother disciplined the toddler . </s>	active	plausible	89.24644	nounk
+The toddler disciplined the mother.	the toddler disciplined the mother . </s>	active	implausible	91.60569	nounk
+The toddler was disciplined by the mother.	the toddler was disciplined by the mother . </s>	passive	plausible	91.20535	nounk
+The mother was disciplined by the toddler.	the mother was disciplined by the toddler . </s>	passive	implausible	89.54939999999999	nounk
+The assistant principal expelled the sociopath.	the assistant principal expelled the <unk> . </s>	active	plausible	87.96952999999999	unk
+The sociopath expelled the assistant principal.	the <unk> expelled the assistant principal . </s>	active	implausible	76.77277000000001	unk
+The sociopath was expelled by the assistant principal.	the <unk> was expelled by the assistant principal . </s>	passive	plausible	76.86102	unk
+The assistant principal was expelled by the sociopath.	the assistant principal was expelled by the <unk> . </s>	passive	implausible	90.76443	unk
+The channeler sensed the ghost.	the <unk> sensed the ghost . </s>	active	plausible	71.08425	unk
+The ghost sensed the channeler.	the ghost sensed the <unk> . </s>	active	implausible	84.00514000000001	unk
+The ghost was sensed by the channeler.	the ghost was sensed by the <unk> . </s>	passive	plausible	84.72352000000001	unk
+The channeler was sensed by the ghost.	the <unk> was sensed by the ghost . </s>	passive	implausible	79.55484	unk
+The union ousted the whistle-blower.	the union ousted the <unk> . </s>	active	plausible	77.35064	unk
+The whistle-blower ousted the union.	the <unk> ousted the union . </s>	active	implausible	72.76531	unk
+The whistle-blower was ousted by the union.	the <unk> was ousted by the union . </s>	passive	plausible	67.56748999999999	unk
+The union was ousted by the whistle-blower.	the union was ousted by the <unk> . </s>	passive	implausible	74.65416	unk
+The huntsman trapped the deer.	the huntsman trapped the deer . </s>	active	plausible	85.49028	nounk
+The deer trapped the huntsman.	the deer trapped the huntsman . </s>	active	implausible	87.74808	nounk
+The deer was trapped by the huntsman.	the deer was trapped by the huntsman . </s>	passive	plausible	92.63019000000001	nounk
+The huntsman was trapped by the deer.	the huntsman was trapped by the deer . </s>	passive	implausible	87.43164	nounk
+The cardiologist discredited the quack.	the <unk> discredited the <unk> . </s>	active	plausible	72.10243	unk
+The quack discredited the cardiologist.	the <unk> discredited the <unk> . </s>	active	implausible	72.10243	unk
+The quack was discredited by the cardiologist.	the <unk> was discredited by the <unk> . </s>	passive	plausible	71.95609999999999	unk
+The cardiologist was discredited by the quack.	the <unk> was discredited by the <unk> . </s>	passive	implausible	71.95609999999999	unk
+The bailiff released the ruffian.	the bailiff released the <unk> . </s>	active	plausible	81.11671000000001	unk
+The ruffian released the bailiff.	the <unk> released the bailiff . </s>	active	implausible	68.7068	unk
+The ruffian was released by the bailiff.	the <unk> was released by the bailiff . </s>	passive	plausible	72.770108	unk
+The bailiff was released by the ruffian.	the bailiff was released by the <unk> . </s>	passive	implausible	83.41051	unk
+The shark mauled the snorkeler.	the shark <unk> the <unk> . </s>	active	plausible	71.05657	unk
+The snorkeler mauled the shark.	the <unk> <unk> the shark . </s>	active	implausible	61.01544	unk
+The snorkeler was mauled by the shark.	the <unk> was <unk> by the shark . </s>	passive	plausible	66.33501	unk
+The shark was mauled by the snorkeler.	the shark was <unk> by the <unk> . </s>	passive	implausible	78.06574	unk
+The president pardoned the traitor.	the president pardoned the traitor . </s>	active	plausible	81.47512	nounk
+The traitor pardoned the president.	the traitor pardoned the president . </s>	active	implausible	85.89096999999998	nounk
+The traitor was pardoned by the president.	the traitor was pardoned by the president . </s>	passive	plausible	83.42387	nounk
+The president was pardoned by the traitor.	the president was pardoned by the traitor . </s>	passive	implausible	80.22169	nounk
+The au pair spanked the girl.	the au pair <unk> the girl . </s>	active	plausible	79.24449	unk
+The girl spanked the au pair.	the girl <unk> the au pair . </s>	active	implausible	81.70097	unk
+The girl was spanked by the au pair.	the girl was <unk> by the au pair . </s>	passive	plausible	82.22001	unk
+The au pair was spanked by the girl.	the au pair was <unk> by the girl . </s>	passive	implausible	85.06435	unk
+The TV station head promoted the newsagent.	the tv station head promoted the <unk> . </s>	active	plausible	97.86866	unk
+The newsagent promoted the TV station head.	the <unk> promoted the tv station head . </s>	active	implausible	89.03341	unk
+The newsagent was promoted by the TV station head.	the <unk> was promoted by the tv station head . </s>	passive	plausible	95.63709	unk
+The TV station head was promoted by the newsagent.	the tv station head was promoted by the <unk> . </s>	passive	implausible	96.12137	unk
+The policewoman handcuffed the offender.	the <unk> handcuffed the offender . </s>	active	plausible	78.81363	unk
+The offender handcuffed the policewoman.	the offender handcuffed the <unk> . </s>	active	implausible	91.87244000000001	unk
+The offender was handcuffed by the policewoman.	the offender was handcuffed by the <unk> . </s>	passive	plausible	95.96209	unk
+The policewoman was handcuffed by the offender.	the <unk> was handcuffed by the offender . </s>	passive	implausible	85.61001	unk
+The anthropologist studied the tribesman.	the anthropologist studied the <unk> . </s>	active	plausible	80.66726	unk
+The tribesman studied the anthropologist.	the <unk> studied the anthropologist . </s>	active	implausible	72.06541	unk
+The tribesman was studied by the anthropologist.	the <unk> was studied by the anthropologist . </s>	passive	plausible	71.46179000000001	unk
+The anthropologist was studied by the tribesman.	the anthropologist was studied by the <unk> . </s>	passive	implausible	82.56787	unk
+The police chief rewarded the firefighter.	the police chief rewarded the firefighter . </s>	active	plausible	90.05575999999999	nounk
+The firefighter rewarded the police chief.	the firefighter rewarded the police chief . </s>	active	implausible	88.46275	nounk
+The firefighter was rewarded by the police chief.	the firefighter was rewarded by the police chief . </s>	passive	plausible	91.02799	nounk
+The police chief was rewarded by the firefighter.	the police chief was rewarded by the firefighter . </s>	passive	implausible	91.59134000000002	nounk
+The miscreant kidnapped the beneficiary.	the <unk> kidnapped the beneficiary . </s>	active	plausible	69.53072	unk
+The beneficiary kidnapped the miscreant.	the beneficiary kidnapped the <unk> . </s>	active	implausible	85.83379	unk
+The beneficiary was kidnapped by the miscreant.	the beneficiary was kidnapped by the <unk> . </s>	passive	plausible	82.01148	unk
+The miscreant was kidnapped by the beneficiary.	the <unk> was kidnapped by the beneficiary . </s>	passive	implausible	72.3051	unk
+The social worker comforted the abused woman.	the social worker comforted the abused woman . </s>	active	plausible	108.80002	nounk
+The abused woman comforted the social worker.	the abused woman comforted the social worker . </s>	active	implausible	103.97833	nounk
+The abused woman was comforted by the social worker.	the abused woman was comforted by the social worker . </s>	passive	plausible	110.02102	nounk
+The social worker was comforted by the abused woman.	the social worker was comforted by the abused woman . </s>	passive	implausible	115.40031	nounk
+The neuroscientist overwhelmed the lab assistant.	the <unk> overwhelmed the lab assistant . </s>	active	plausible	82.72222	unk
+The lab assistant overwhelmed the neuroscientist.	the lab assistant overwhelmed the <unk> . </s>	active	implausible	87.84356999999999	unk
+The lab assistant was overwhelmed by the neuroscientist.	the lab assistant was overwhelmed by the <unk> . </s>	passive	plausible	89.60056	unk
+The neuroscientist was overwhelmed by the lab assistant.	the <unk> was overwhelmed by the lab assistant . </s>	passive	implausible	85.08364	unk
+The warmonger terrorized the gunsmith.	the <unk> <unk> the <unk> . </s>	active	plausible	55.34488	unk
+The gunsmith terrorized the warmonger.	the <unk> <unk> the <unk> . </s>	active	implausible	55.34488	unk
+The gunsmith was terrorized by the warmonger.	the <unk> was <unk> by the <unk> . </s>	passive	plausible	65.78555	unk
+The warmonger was terrorized by the gunsmith.	the <unk> was <unk> by the <unk> . </s>	passive	implausible	65.78555	unk
+The conductor tolerated the violinist.	the conductor tolerated the violinist . </s>	active	plausible	84.5081	nounk
+The violinist tolerated the conductor.	the violinist tolerated the conductor . </s>	active	plausible	85.16141	nounk
+The violinist was tolerated by the conductor.	the violinist was tolerated by the conductor . </s>	passive	plausible	93.009	nounk
+The conductor was tolerated by the violinist.	the conductor was tolerated by the violinist . </s>	passive	plausible	85.61992	nounk
+The pitcher signaled the hitter.	the pitcher signaled the hitter . </s>	active	plausible	85.05456	nounk
+The hitter signaled the pitcher.	the hitter signaled the pitcher . </s>	active	plausible	84.29344	nounk
+The hitter was signaled by the pitcher.	the hitter was signaled by the pitcher . </s>	passive	plausible	94.27191	nounk
+The pitcher was signaled by the hitter.	the pitcher was signaled by the hitter . </s>	passive	plausible	93.21645	nounk
+The quarterback kissed the cheerleader.	the quarterback kissed the cheerleader . </s>	active	plausible	92.02528000000001	nounk
+The cheerleader kissed the quarterback.	the cheerleader kissed the quarterback . </s>	active	plausible	89.73544	nounk
+The cheerleader was kissed by the quarterback.	the cheerleader was kissed by the quarterback . </s>	passive	plausible	108.40531	nounk
+The quarterback was kissed by the cheerleader.	the quarterback was kissed by the cheerleader . </s>	passive	plausible	106.97192000000001	nounk
+The camper startled the bear.	the <unk> startled the bear . </s>	active	plausible	71.26817	unk
+The bear startled the camper.	the bear startled the <unk> . </s>	active	plausible	86.76203999999998	unk
+The bear was startled by the camper.	the bear was startled by the <unk> . </s>	passive	plausible	80.2764	unk
+The camper was startled by the bear.	the <unk> was startled by the bear . </s>	passive	plausible	71.50068999999999	unk
+The admiral accompanied the lieutenant.	the admiral accompanied the lieutenant . </s>	active	plausible	79.60493	nounk
+The lieutenant accompanied the admiral.	the lieutenant accompanied the admiral . </s>	active	plausible	85.82001	nounk
+The lieutenant was accompanied by the admiral.	the lieutenant was accompanied by the admiral . </s>	passive	plausible	89.984848	nounk
+The admiral was accompanied by the lieutenant.	the admiral was accompanied by the lieutenant . </s>	passive	plausible	78.662478	nounk
+The tenor loved the soprano.	the tenor loved the soprano . </s>	active	plausible	82.17414000000001	nounk
+The soprano loved the tenor.	the soprano loved the tenor . </s>	active	plausible	84.20358999999999	nounk
+The soprano was loved by the tenor.	the soprano was loved by the tenor . </s>	passive	plausible	92.38631	nounk
+The tenor was loved by the soprano.	the tenor was loved by the soprano . </s>	passive	plausible	84.30251	nounk
+The photographer paid the barrister.	the photographer paid the barrister . </s>	active	plausible	83.91931	nounk
+The barrister paid the photographer.	the barrister paid the photographer . </s>	active	plausible	85.01322	nounk
+The barrister was paid by the photographer.	the barrister was paid by the photographer . </s>	passive	plausible	90.66506	nounk
+The photographer was paid by the barrister.	the photographer was paid by the barrister . </s>	passive	plausible	86.88851	nounk
+The bachelor intrigued the blonde.	the bachelor intrigued the blonde . </s>	active	plausible	87.91633999999999	nounk
+The blonde intrigued the bachelor.	the blonde intrigued the bachelor . </s>	active	plausible	90.33659	nounk
+The blonde was intrigued by the bachelor.	the blonde was intrigued by the bachelor . </s>	passive	plausible	94.091206	nounk
+The bachelor was intrigued by the blonde.	the bachelor was intrigued by the blonde . </s>	passive	plausible	92.056956	nounk
+The football player pursued the socialite.	the football player pursued the socialite . </s>	active	plausible	87.75374	nounk
+The socialite pursued the football player.	the socialite pursued the football player . </s>	active	plausible	87.92732000000001	nounk
+The socialite was pursued by the football player.	the socialite was pursued by the football player . </s>	passive	plausible	96.8208	nounk
+The football player was pursued by the socialite.	the football player was pursued by the socialite . </s>	passive	plausible	94.78304000000001	nounk
+The neurologist consulted the geneticist.	the neurologist consulted the geneticist . </s>	active	plausible	90.30926000000001	nounk
+The geneticist consulted the neurologist.	the geneticist consulted the neurologist . </s>	active	plausible	91.14159000000001	nounk
+The geneticist was consulted by the neurologist.	the geneticist was consulted by the neurologist . </s>	passive	plausible	98.8632	nounk
+The neurologist was consulted by the geneticist.	the neurologist was consulted by the geneticist . </s>	passive	plausible	98.03079000000001	nounk
+The fashionista humiliated the mode.	the <unk> humiliated the mode . </s>	active	plausible	75.37989999999999	unk
+The mode humiliated the fashionista.	the mode humiliated the <unk> . </s>	active	plausible	87.90903	unk
+The mode was humiliated by the fashionista.	the mode was humiliated by the <unk> . </s>	passive	plausible	84.41619	unk
+The fashionista was humiliated by the mode.	the <unk> was humiliated by the mode . </s>	passive	plausible	74.26713000000001	unk
+The butcher accused the meatpacker.	the butcher accused the <unk> . </s>	active	plausible	83.38495	unk
+The meatpacker accused the butcher.	the <unk> accused the butcher . </s>	active	plausible	67.91366	unk
+The meatpacker was accused by the butcher.	the <unk> was accused by the butcher . </s>	passive	plausible	69.74128	unk
+The butcher was accused by the meatpacker.	the butcher was accused by the <unk> . </s>	passive	plausible	82.76285	unk
+The niece embarrassed the aunt.	the niece embarrassed the aunt . </s>	active	plausible	89.74686	nounk
+The aunt embarrassed the niece.	the aunt embarrassed the niece . </s>	active	plausible	88.88403	nounk
+The aunt was embarrassed by the niece.	the aunt was embarrassed by the niece . </s>	passive	plausible	93.70152	nounk
+The niece was embarrassed by the aunt.	the niece was embarrassed by the aunt . </s>	passive	plausible	92.88836	nounk
+The warlord hailed the mercenary.	the warlord hailed the mercenary . </s>	active	plausible	86.95118000000001	nounk
+The mercenary hailed the warlord.	the mercenary hailed the warlord . </s>	active	plausible	85.06487	nounk
+The mercenary was hailed by the warlord.	the mercenary was hailed by the warlord . </s>	passive	plausible	91.49631	nounk
+The warlord was hailed by the mercenary.	the warlord was hailed by the mercenary . </s>	passive	plausible	94.44648000000001	nounk
+The neighbor snubbed the newcomer.	the neighbor <unk> the newcomer . </s>	active	plausible	76.96938	unk
+The newcomer snubbed the neighbor.	the newcomer <unk> the neighbor . </s>	active	plausible	77.11172	unk
+The newcomer was snubbed by the neighbor.	the newcomer was <unk> by the neighbor . </s>	passive	plausible	89.31812000000001	unk
+The neighbor was snubbed by the newcomer.	the neighbor was <unk> by the newcomer . </s>	passive	plausible	85.20232000000001	unk
+The editor overheard the proofreader.	the editor overheard the <unk> . </s>	active	plausible	84.99341000000001	unk
+The proofreader overheard the editor.	the <unk> overheard the editor . </s>	active	plausible	72.8551	unk
+The proofreader was overheard by the editor.	the <unk> was overheard by the editor . </s>	passive	plausible	74.58153	unk
+The editor was overheard by the proofreader.	the editor was overheard by the <unk> . </s>	passive	plausible	85.37023	unk
+The communist offended the capitalist.	the communist offended the capitalist . </s>	active	plausible	81.12769	nounk
+The capitalist offended the communist.	the capitalist offended the communist . </s>	active	plausible	86.67695999999998	nounk
+The capitalist was offended by the communist.	the capitalist was offended by the communist . </s>	passive	plausible	90.67936	nounk
+The communist was offended by the capitalist.	the communist was offended by the capitalist . </s>	passive	plausible	88.0179	nounk
+The curator misinformed the sculptor.	the curator <unk> the sculptor . </s>	active	plausible	81.55184	unk
+The sculptor misinformed the curator.	the sculptor <unk> the curator . </s>	active	plausible	74.08940999999999	unk
+The sculptor was misinformed by the curator.	the sculptor was <unk> by the curator . </s>	passive	plausible	79.38707	unk
+The curator was misinformed by the sculptor.	the curator was <unk> by the sculptor . </s>	passive	plausible	84.22021000000001	unk
+The baker mentioned the miller.	the baker mentioned the miller . </s>	active	plausible	84.38288	nounk
+The miller mentioned the baker.	the miller mentioned the baker . </s>	active	plausible	82.21236999999999	nounk
+The miller was mentioned by the baker.	the miller was mentioned by the baker . </s>	passive	plausible	90.36645	nounk
+The baker was mentioned by the miller.	the baker was mentioned by the miller . </s>	passive	plausible	91.32475	nounk
+The pollster shamed the statistician.	the <unk> <unk> the statistician . </s>	active	plausible	65.04831	unk
+The statistician shamed the pollster.	the statistician <unk> the <unk> . </s>	active	plausible	75.7062	unk
+The statistician was shamed by the pollster.	the statistician was <unk> by the <unk> . </s>	passive	plausible	85.6936	unk
+The pollster was shamed by the statistician.	the <unk> was <unk> by the statistician . </s>	passive	plausible	69.53149	unk
+The screenwriter emailed the actor.	the screenwriter <unk> the actor . </s>	active	plausible	81.28726	unk
+The actor emailed the screenwriter.	the actor <unk> the screenwriter . </s>	active	plausible	76.2436	unk
+The actor was emailed by the screenwriter.	the actor was <unk> by the screenwriter . </s>	passive	plausible	81.88298	unk
+The screenwriter was emailed by the actor.	the screenwriter was <unk> by the actor . </s>	passive	plausible	87.93483	unk
+The dermatologist contradicted the pathologist.	the <unk> contradicted the pathologist . </s>	active	plausible	71.85048	unk
+The pathologist contradicted the dermatologist.	the pathologist contradicted the <unk> . </s>	active	plausible	82.70575	unk
+The pathologist was contradicted by the dermatologist.	the pathologist was contradicted by the <unk> . </s>	passive	plausible	87.16748	unk
+The dermatologist was contradicted by the pathologist.	the <unk> was contradicted by the pathologist . </s>	passive	plausible	72.77838	unk
+The sharecropper misled the fieldworker.	the <unk> misled the <unk> . </s>	active	plausible	73.37156999999999	unk
+The fieldworker misled the sharecropper.	the <unk> misled the <unk> . </s>	active	plausible	73.37156999999999	unk
+The fieldworker was misled by the sharecropper.	the <unk> was misled by the <unk> . </s>	passive	plausible	74.22962	unk
+The sharecropper was misled by the fieldworker.	the <unk> was misled by the <unk> . </s>	passive	plausible	74.22962	unk
+The patriot saluted the veteran.	the patriot <unk> the veteran . </s>	active	plausible	79.92741	unk
+The veteran saluted the patriot.	the veteran <unk> the patriot . </s>	active	plausible	75.51745	unk
+The veteran was saluted by the patriot.	the veteran was <unk> by the patriot . </s>	passive	plausible	86.82131000000001	unk
+The patriot was saluted by the veteran.	the patriot was <unk> by the veteran . </s>	passive	plausible	86.49922000000001	unk
+The welder visited the milkman.	the <unk> visited the <unk> . </s>	active	plausible	54.36568	unk
+The milkman visited the welder.	the <unk> visited the <unk> . </s>	active	plausible	54.36568	unk
+The milkman was visited by the welder.	the <unk> was visited by the <unk> . </s>	passive	plausible	67.97963	unk
+The welder was visited by the milkman.	the <unk> was visited by the <unk> . </s>	passive	plausible	67.97963	unk
+The teenager mortified the parent.	the teenager <unk> the parent . </s>	active	plausible	78.49881	unk
+The parent mortified the teenager.	the parent <unk> the teenager . </s>	active	plausible	74.36292	unk
+The parent was mortified by the teenager.	the parent was <unk> by the teenager . </s>	passive	plausible	82.27331	unk
+The teenager was mortified by the parent.	the teenager was <unk> by the parent . </s>	passive	plausible	81.25001	unk
+The surfer impressed the swimmer.	the surfer impressed the swimmer . </s>	active	plausible	86.25165	nounk
+The swimmer impressed the surfer.	the swimmer impressed the surfer . </s>	active	plausible	85.88938999999999	nounk
+The swimmer was impressed by the surfer.	the swimmer was impressed by the surfer . </s>	passive	plausible	90.44431	nounk
+The surfer was impressed by the swimmer.	the surfer was impressed by the swimmer . </s>	passive	plausible	89.81483	nounk
+The miser antagonized the landlady.	the <unk> <unk> the landlady . </s>	active	plausible	62.497870000000006	unk
+The landlady antagonized the miser.	the landlady <unk> the <unk> . </s>	active	plausible	76.3721	unk
+The landlady was antagonized by the miser.	the landlady was <unk> by the <unk> . </s>	passive	plausible	85.34862000000001	unk
+The miser was antagonized by the landlady.	the <unk> was <unk> by the landlady . </s>	passive	plausible	69.84015000000001	unk
+The infantryman upset the loyalist.	the <unk> upset the loyalist . </s>	active	plausible	71.65558	unk
+The loyalist upset the infantryman.	the loyalist upset the <unk> . </s>	active	plausible	84.78581	unk
+The loyalist was upset by the infantryman.	the loyalist was upset by the <unk> . </s>	passive	plausible	86.82892	unk
+The infantryman was upset by the loyalist.	the <unk> was upset by the loyalist . </s>	passive	plausible	76.24086	unk
+The florist invoiced the grocer.	the <unk> <unk> the grocer . </s>	active	plausible	64.15587	unk
+The grocer invoiced the florist.	the grocer <unk> the <unk> . </s>	active	plausible	72.9339	unk
+The grocer was invoiced by the florist.	the grocer was <unk> by the <unk> . </s>	passive	plausible	85.36059	unk
+The florist was invoiced by the grocer.	the <unk> was <unk> by the grocer . </s>	passive	plausible	71.49815000000001	unk
+The claims adjuster harassed the retailer.	the claims <unk> harassed the retailer . </s>	active	plausible	92.77328	unk
+The retailer harassed the claims adjuster.	the retailer harassed the claims <unk> . </s>	active	plausible	89.66272000000001	unk
+The retailer was harassed by the claims adjuster.	the retailer was harassed by the claims <unk> . </s>	passive	plausible	97.30935999999998	unk
+The claims adjuster was harassed by the retailer.	the claims <unk> was harassed by the retailer . </s>	passive	plausible	97.84796000000001	unk
+The ex-wife punched the girlfriend.	the ex-wife punched the girlfriend . </s>	active	plausible	91.05743000000001	nounk
+The girlfriend punched the ex-wife.	the girlfriend punched the ex-wife . </s>	active	plausible	90.64765	nounk
+The girlfriend was punched by the ex-wife.	the girlfriend was punched by the ex-wife . </s>	passive	plausible	100.55475000000001	nounk
+The ex-wife was punched by the girlfriend.	the ex-wife was punched by the girlfriend . </s>	passive	plausible	102.27082000000001	nounk
+The defender blamed the goalkeeper.	the defender blamed the goalkeeper . </s>	active	plausible	80.0599	nounk
+The goalkeeper blamed the defender.	the goalkeeper blamed the defender . </s>	active	plausible	80.57535	nounk
+The goalkeeper was blamed by the defender.	the goalkeeper was blamed by the defender . </s>	passive	plausible	88.27758	nounk
+The defender was blamed by the goalkeeper.	the defender was blamed by the goalkeeper . </s>	passive	plausible	88.52566999999999	nounk
+The geologist reassured the excavator.	the geologist reassured the <unk> . </s>	active	plausible	88.22789	unk
+The excavator reassured the geologist.	the <unk> reassured the geologist . </s>	active	plausible	73.14311000000001	unk
+The excavator was reassured by the geologist.	the <unk> was reassured by the geologist . </s>	passive	plausible	83.50515	unk
+The geologist was reassured by the excavator.	the geologist was reassured by the <unk> . </s>	passive	plausible	96.28628	unk
+The physicist nagged the mathematician.	the physicist <unk> the mathematician . </s>	active	plausible	76.74463	unk
+The mathematician nagged the physicist.	the mathematician <unk> the physicist . </s>	active	plausible	76.81466	unk
+The mathematician was nagged by the physicist.	the mathematician was <unk> by the physicist . </s>	passive	plausible	84.99592	unk
+The physicist was nagged by the mathematician.	the physicist was <unk> by the mathematician . </s>	passive	plausible	84.52279000000001	unk
+The employee watched the embezzler.	the employee watched the <unk> . </s>	active	plausible	82.15655999999998	unk
+The embezzler watched the employee.	the <unk> watched the employee . </s>	active	plausible	69.26892	unk
+The embezzler was watched by the employee.	the <unk> was watched by the employee . </s>	passive	plausible	72.136704	unk
+The employee was watched by the embezzler.	the employee was watched by the <unk> . </s>	passive	plausible	81.972974	unk
+The programmer distrusted the volunteer.	the programmer distrusted the volunteer . </s>	active	plausible	83.03529	nounk
+The volunteer distrusted the programmer.	the volunteer distrusted the programmer . </s>	active	plausible	82.43297	nounk
+The volunteer was distrusted by the programmer.	the volunteer was distrusted by the programmer . </s>	passive	plausible	85.03869	nounk
+The programmer was distrusted by the volunteer.	the programmer was distrusted by the volunteer . </s>	passive	plausible	92.22858	nounk
+The interviewer befriended the chairman.	the interviewer befriended the chairman . </s>	active	plausible	83.17181000000001	nounk
+The chairman befriended the interviewer.	the chairman befriended the interviewer . </s>	active	plausible	82.59756	nounk
+The chairman was befriended by the interviewer.	the chairman was befriended by the interviewer . </s>	passive	plausible	87.70582	nounk
+The interviewer was befriended by the chairman.	the interviewer was befriended by the chairman . </s>	passive	plausible	85.54463999999999	nounk
+The cinematographer favored the movie star.	the cinematographer favored the movie star . </s>	active	plausible	90.12885	nounk
+The movie star favored the cinematographer.	the movie star favored the cinematographer . </s>	active	plausible	88.36012	nounk
+The movie star was favored by the cinematographer.	the movie star was favored by the cinematographer . </s>	passive	plausible	93.72443	nounk
+The cinematographer was favored by the movie star.	the cinematographer was favored by the movie star . </s>	passive	plausible	90.48293	nounk
+The hockey player aggravated the skater.	the hockey player aggravated the skater . </s>	active	plausible	90.26262	nounk
+The skater aggravated the hockey player.	the skater aggravated the hockey player . </s>	active	plausible	91.79682	nounk
+The skater was aggravated by the hockey player.	the skater was aggravated by the hockey player . </s>	passive	plausible	99.21586	nounk
+The hockey player was aggravated by the skater.	the hockey player was aggravated by the skater . </s>	passive	plausible	95.95582	nounk
+The bricklayer outraged the crane operator.	the <unk> outraged the crane operator . </s>	active	plausible	80.97251	unk
+The crane operator outraged the bricklayer.	the crane operator outraged the <unk> . </s>	active	plausible	86.31523999999999	unk
+The crane operator was outraged by the bricklayer.	the crane operator was outraged by the <unk> . </s>	passive	plausible	86.21899	unk
+The bricklayer was outraged by the crane operator.	the <unk> was outraged by the crane operator . </s>	passive	plausible	83.6796	unk
+The candidate approved the nominee.	the candidate approved the nominee . </s>	active	plausible	76.68527	nounk
+The nominee approved the candidate.	the nominee approved the candidate . </s>	active	plausible	83.46684	nounk
+The nominee was approved by the candidate.	the nominee was approved by the candidate . </s>	passive	plausible	86.42615	nounk
+The candidate was approved by the nominee.	the candidate was approved by the nominee . </s>	passive	plausible	81.00145	nounk
+The entomologist disparaged the biologist.	the <unk> disparaged the biologist . </s>	active	plausible	78.55016	unk
+The biologist disparaged the entomologist.	the biologist disparaged the <unk> . </s>	active	plausible	86.21627000000001	unk
+The biologist was disparaged by the entomologist.	the biologist was disparaged by the <unk> . </s>	passive	plausible	92.32430000000001	unk
+The entomologist was disparaged by the biologist.	the <unk> was disparaged by the biologist . </s>	passive	plausible	80.44739000000001	unk
+The hypochondriac hounded the medic.	the <unk> <unk> the medic . </s>	active	plausible	64.3123	unk
+The medic hounded the hypochondriac.	the medic <unk> the <unk> . </s>	active	plausible	75.16366000000001	unk
+The medic was hounded by the hypochondriac.	the medic was <unk> by the <unk> . </s>	passive	plausible	85.23867000000001	unk
+The hypochondriac was hounded by the medic.	the <unk> was <unk> by the medic . </s>	passive	plausible	71.65458000000001	unk
+The chemist suspected the pharmacist.	the chemist suspected the pharmacist . </s>	active	plausible	88.09069000000001	nounk
+The pharmacist suspected the chemist.	the pharmacist suspected the chemist . </s>	active	plausible	89.01455	nounk
+The pharmacist was suspected by the chemist.	the pharmacist was suspected by the chemist . </s>	passive	plausible	93.68189	nounk
+The chemist was suspected by the pharmacist.	the chemist was suspected by the pharmacist . </s>	passive	plausible	96.33217000000002	nounk
+The litigator begged the citizen.	the <unk> begged the citizen . </s>	active	plausible	73.54771	unk
+The citizen begged the litigator.	the citizen begged the <unk> . </s>	active	plausible	86.77441999999999	unk
+The citizen was begged by the litigator.	the citizen was begged by the <unk> . </s>	passive	plausible	95.12934	unk
+The litigator was begged by the citizen.	the <unk> was begged by the citizen . </s>	passive	plausible	85.13301	unk
+The plumber devastated the foreman.	the plumber devastated the foreman . </s>	active	plausible	86.88074	nounk
+The foreman devastated the plumber.	the foreman devastated the plumber . </s>	active	plausible	89.29209	nounk
+The foreman was devastated by the plumber.	the foreman was devastated by the plumber . </s>	passive	plausible	89.97643	nounk
+The plumber was devastated by the foreman.	the plumber was devastated by the foreman . </s>	passive	plausible	91.79104000000001	nounk
+The sergeant identified the sniper.	the sergeant identified the sniper . </s>	active	plausible	80.81094999999999	nounk
+The sniper identified the sergeant.	the sniper identified the sergeant . </s>	active	plausible	84.57503	nounk
+The sniper was identified by the sergeant.	the sniper was identified by the sergeant . </s>	passive	plausible	93.21287	nounk
+The sergeant was identified by the sniper.	the sergeant was identified by the sniper . </s>	passive	plausible	83.194	nounk

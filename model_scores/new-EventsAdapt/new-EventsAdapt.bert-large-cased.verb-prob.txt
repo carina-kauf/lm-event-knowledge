@@ -1,0 +1,1648 @@
+0	The raider caught the illness .	-3.159056617766585
+1	The illness caught the raider .	-5.795516926678089
+2	The illness was caught by the raider .	-2.4934123021119508
+3	The raider was caught by the illness .	-5.143357557533208
+4	The marauder contracted the disease .	-2.972601294388314
+5	The disease contracted the marauder .	-10.320041012650506
+6	The disease was contracted by the marauder .	-3.3592634848397087
+7	The marauder was contracted by the disease .	-8.519103888377854
+8	The convict dreaded the prison .	-12.796146759765392
+9	The prison dreaded the convict .	-9.324368023878524
+10	The prison was dreaded by the convict .	-11.132927733105067
+11	The convict was dreaded by the prison .	-12.662006844534679
+12	The criminal feared the jail .	-9.74199081323337
+13	The jail feared the criminal .	-9.618511745678259
+14	The jail was feared by the criminal .	-9.589318079290639
+15	The criminal was feared by the jail .	-9.80653831120029
+16	The prostitute squandered the cash .	-16.5450704305982
+17	The cash squandered the prostitute .	-16.45088178364299
+18	The cash was squandered by the prostitute .	-16.512867524765795
+19	The prostitute was squandered by the cash .	-19.190688072641876
+20	The call girl wasted the money .	-8.571534819618819
+21	The money wasted the call girl .	-13.771014584601447
+22	The money was wasted by the call girl .	-7.787126106994919
+23	The call girl was wasted by the money .	-9.241164380505484
+24	The adventurer requested the beverage .	-5.376665796051693
+25	The beverage requested the adventurer .	-10.868080608020636
+26	The beverage was requested by the adventurer .	-4.186343793308541
+27	The adventurer was requested by the beverage .	-10.675071896748298
+28	The undertaker prepared the funeral .	-7.47393249307459
+29	The funeral prepared the undertaker .	-11.429656348459202
+30	The funeral was prepared by the undertaker .	-6.444877538218509
+31	The undertaker was prepared by the funeral .	-8.680254801640329
+32	The mortician arranged the burial .	-3.1746358979366183
+33	The burial arranged the mortician .	-13.797187162919293
+34	The burial was arranged by the mortician .	-2.843719678265154
+35	The mortician was arranged by the burial .	-11.728099241304601
+36	The supervisor supplied the liquor .	-4.432733243274001
+37	The liquor supplied the supervisor .	-6.5798362480992685
+38	The liquor was supplied by the supervisor .	-4.114242324546652
+39	The supervisor was supplied by the liquor .	-4.211714745394426
+40	The overseer provided the alcohol .	-4.766693261147914
+41	The alcohol provided the overseer .	-8.54211884349707
+42	The alcohol was provided by the overseer .	-3.4212578419688175
+43	The overseer was provided by the alcohol .	-8.851797583291559
+44	The troublemaker crashed the car .	-6.445970738920305
+45	The car crashed the troublemaker .	-13.311850238885814
+46	The car was crashed by the troublemaker .	-5.115386203453692
+47	The troublemaker was crashed by the car .	-8.686636044512195
+48	The hooligan wrecked the vehicle .	-5.770127066972506
+49	The vehicle wrecked the hooligan .	-8.238634522871271
+50	The vehicle was wrecked by the hooligan .	-3.757579077561468
+51	The hooligan was wrecked by the vehicle .	-9.743433649761904
+52	The repairman fixed the tap .	-5.785842077968989
+53	The tap fixed the repairman .	-9.619784191038438
+54	The tap was fixed by the repairman .	-3.6256162598721486
+55	The repairman was fixed by the tap .	-7.698484506841962
+56	The handyman repaired the faucet .	-4.457698424320467
+57	The faucet repaired the handyman .	-11.209335099879667
+58	The faucet was repaired by the handyman .	-2.5173996140213077
+59	The handyman was repaired by the faucet .	-11.906438471839309
+60	The secretary organized the desk .	-10.580244442822995
+61	The desk organized the secretary .	-13.864538651195783
+62	The desk was organized by the secretary .	-8.845431483775767
+63	The secretary was organized by the desk .	-11.930400893829407
+64	The receptionist tidied the table .	-13.612272408514338
+65	The table tidied the receptionist .	-10.783044230634383
+66	The table was tidied by the receptionist .	-16.34652481722017
+67	The receptionist was tidied by the table .	-15.943908207466926
+68	The pilot steered the airplane .	-7.427147583382629
+69	The airplane steered the pilot .	-10.690261927334129
+70	The airplane was steered by the pilot .	-9.16701425439023
+71	The pilot was steered by the airplane .	-12.04159805390535
+72	The aviator maneuvered the jet .	-10.938987917220114
+73	The jet maneuvered the aviator .	-9.097538378611308
+74	The jet was maneuvered by the aviator .	-12.551936964210487
+75	The aviator was maneuvered by the jet .	-13.861504003667044
+76	The chef sauteed the squid .	-10.923806438487798
+77	The squid sauteed the chef .	-9.990941006919112
+78	The squid was sauteed by the chef .	-1.7166395477417624
+79	The chef was sauteed by the squid .	-13.470624925326414
+80	The cook grilled the octopus .	-11.836013024099021
+81	The octopus grilled the cook .	-11.005148233154063
+82	The octopus was grilled by the cook .	-14.840263241895787
+83	The cook was grilled by the octopus .	-14.07180755114579
+84	The ship captain promised the triumph .	-9.770059363578014
+85	The triumph promised the ship captain .	-9.7263358937207
+86	The triumph was promised by the ship captain .	-9.602112292447014
+87	The ship captain was promised by the triumph .	-13.56396832973371
+88	The skipper guaranteed the victory .	-7.550437796637501
+89	The victory guaranteed the skipper .	-7.08992462175509
+90	The victory was guaranteed by the skipper .	-6.998779877500457
+91	The skipper was guaranteed by the victory .	-11.465526416889697
+92	The milliner adorned the fedora .	-7.976266267967762
+93	The fedora adorned the milliner .	-7.187077596599646
+94	The fedora was adorned by the milliner .	-7.314639867274787
+95	The milliner was adorned by the fedora .	-9.745792488230991
+96	The hatter decorated the bowler .	-15.571561510318043
+97	The bowler decorated the hatter .	-15.948458496187964
+98	The bowler was decorated by the hatter .	-11.699181136906164
+99	The hatter was decorated by the bowler .	-11.380500154426414
+100	The serviceman hoisted the flag .	-10.618464378417405
+101	The flag hoisted the serviceman .	-14.328718743981034
+102	The flag was hoisted by the serviceman .	-11.420571251950843
+103	The serviceman was hoisted by the flag .	-14.24606402165319
+104	The soldier raised the banner .	-1.5567075251913414
+105	The banner raised the soldier .	-7.902759122234466
+106	The banner was raised by the soldier .	-2.9133593022387614
+107	The soldier was raised by the banner .	-6.896273236064366
+108	The agent failed the mission .	-3.746536548313182
+109	The mission failed the agent .	-6.116069124566254
+110	The mission was failed by the agent .	-3.896859485362497
+111	The agent was failed by the mission .	-6.723196155094679
+112	The operative blew the assignment .	-7.417062594488854
+113	The assignment blew the operative .	-10.911153391514869
+114	The assignment was blown by the operative .	-7.308740019651924
+115	The operative was blown by the assignment .	-9.66783763976738
+116	The anchorman garbled the expression .	-15.372218164220913
+117	The expression garbled the anchorman .	-17.14108324900016
+118	The expression was garbled by the anchorman .	-16.945737268580512
+119	The anchorman was garbled by the expression .	-16.29615400193761
+120	The announcer mispronounced the word .	-15.809075461516072
+121	The word mispronounced the announcer .	-16.540664679202063
+122	The word was mispronounced by the announcer .	-15.75361577019389
+123	The announcer was mispronounced by the word .	-16.270187925458476
+124	The author finished the novel .	-6.306158619524421
+125	The novel finished the author .	-8.253249721895761
+126	The novel was finished by the author .	-5.355214398221223
+127	The author was finished by the novel .	-10.574515419697649
+128	The writer completed the book .	-7.724126889116401
+129	The book completed the writer .	-7.423146398803082
+130	The book was completed by the writer .	-5.688691011649683
+131	The writer was completed by the book .	-10.330196404277528
+132	The financier sponsored the project .	-5.524619661430206
+133	The project sponsored the financier .	-9.478087236155698
+134	The project was sponsored by the financier .	-4.377522917002642
+135	The financier was sponsored by the project .	-10.775537967657955
+136	The banker funded the program .	-6.3699225422469095
+137	The program funded the banker .	-8.335391298259822
+138	The program was funded by the banker .	-2.635727166428845
+139	The banker was funded by the program .	-7.565554670199141
+140	The tourist exited the bus .	-4.656368326087571
+141	The bus exited the tourist .	-11.900364987029524
+142	The bus was exited by the tourist .	-7.712230100658813
+143	The tourist was exited by the bus .	-10.223191945572484
+144	The vacationer left the shuttle .	-5.18274740825276
+145	The shuttle left the vacationer .	-6.5136576798342825
+146	The shuttle was left by the vacationer .	-4.4995584720307615
+147	The vacationer was left by the shuttle .	-4.3534476646557705
+148	The dietitian loathed the jam .	-14.870420521590356
+149	The jam loathed the dietitian .	-14.593315843132421
+150	The jam was loathed by the dietitian .	-15.83523880123755
+151	The dietitian was loathed by the jam .	-17.38337723096327
+152	The nutritionist detested the marmalade .	-11.005437755463241
+153	The marmalade detested the nutritionist .	-9.542056559185065
+154	The marmalade was detested by the nutritionist .	-12.688608785813818
+155	The nutritionist was detested by the marmalade .	-14.02699910615475
+156	The scientist discovered the cure .	-3.2090977963790284
+157	The cure discovered the scientist .	-9.546972863286282
+158	The cure was discovered by the scientist .	-0.823539785073364
+159	The scientist was discovered by the cure .	-9.345230874465303
+160	The researcher found the remedy .	-3.461109736292534
+161	The remedy found the researcher .	-7.602355748697723
+162	The remedy was found by the researcher .	-2.7694180187633344
+163	The researcher was found by the remedy .	-8.000600464988784
+164	The doctor closed the school .	-4.736355267471852
+165	The school closed the doctor .	-8.897625210982731
+166	The school was closed by the doctor .	-5.966732383256648
+167	The doctor was closed by the school .	-8.378455573432564
+168	The maid lifted the cushion .	-2.723033572520568
+169	The cushion lifted the maid .	-7.38566320906948
+170	The cushion was lifted by the maid .	-3.067268488139516
+171	The maid was lifted by the cushion .	-8.138449179845654
+172	The designer suggested the drapes .	-7.1578077907905335
+173	The drapes suggested the designer .	-6.264521397777449
+174	The drapes were suggested by the designer .	-7.247272903727257
+175	The designer was suggested by the drapes .	-8.73627368038841
+176	The decorator recommended the curtains .	-9.376582272552968
+177	The curtains recommended the decorator .	-9.275005319452386
+178	The curtains were recommended by the decorator .	-7.353411507542021
+179	The decorator was recommended by the curtains .	-12.317572631085312
+180	The builder washed the pants .	-8.247948214689554
+181	The pants washed the builder .	-13.991870518260528
+182	The pants were washed by the builder .	-7.130642701894556
+183	The builder was washed by the pants .	-10.5167619587328
+184	The contractor laundered the trousers .	-13.197776601145948
+185	The trousers laundered the contractor .	-12.612072165255624
+186	The trousers were laundered by the contractor .	-13.576531367106483
+187	The contractor was laundered by the trousers .	-14.231599592125528
+188	The servant wiped the sink .	-4.78029546302396
+189	The sink wiped the servant .	-12.58303598208954
+190	The sink was wiped by the servant .	-5.870802823913467
+191	The servant was wiped by the sink .	-11.879087893226663
+192	The domestic cleaned the wash basin .	-4.145055364223371
+193	The wash basin cleaned the domestic .	-9.923483394613097
+194	The wash basin was cleaned by the domestic .	-4.305494688912988
+195	The domestic was cleaned by the wash basin .	-4.5176873440385545
+196	The friend donned the pullover .	-12.472610043496053
+197	The pullover donned the friend .	-12.686210229300023
+198	The pullover was donned by the friend .	-11.75613870571291
+199	The friend was donned by the pullover .	-14.33038618044032
+200	The convalescent took the pill .	-1.7258948644227388
+201	The pill took the convalescent .	-6.063620733418262
+202	The pill was taken by the convalescent .	-1.5202038208300352
+203	The convalescent was taken by the pill .	-4.277677413218385
+204	The patient swallowed the medicine .	-6.0483660151094325
+205	The medicine swallowed the patient .	-9.514150718819055
+206	The medicine was swallowed by the patient .	-2.713820326000563
+207	The patient was swallowed by the medicine .	-8.994573563062302
+208	The hoarder hid the stash .	-5.880190575367622
+209	The stash hid the hoarder .	-8.7347191659814
+210	The stash was hidden by the hoarder .	-4.368133327074389
+211	The hoarder was hidden by the stash .	-8.43039775885536
+212	The packrat concealed the stockpile .	-8.745893456338973
+213	The stockpile concealed the packrat .	-10.847352445146983
+214	The stockpile was concealed by the packrat .	-6.983590758031242
+215	The packrat was concealed by the stockpile .	-7.382281025300879
+216	The reporter abandoned the story .	-9.527323356968575
+217	The story abandoned the reporter .	-10.817209197788847
+218	The story was abandoned by the reporter .	-7.9585813598531
+219	The reporter was abandoned by the story .	-10.835881548037548
+220	The journalist ditched the article .	-9.979249175477419
+221	The article ditched the journalist .	-10.262172378054332
+222	The article was ditched by the journalist .	-12.243635125352684
+223	The journalist was ditched by the article .	-13.238668760394285
+224	The carnivore ate the steak .	-1.8308086096335885
+225	The steak ate the carnivore .	-6.309398943723648
+226	The steak was eaten by the carnivore .	-1.5797952031040996
+227	The carnivore was eaten by the steak .	-7.050182302255047
+228	The meat-eater devoured the filet .	-10.843242189715276
+229	The filet devoured the meat-eater .	-9.4907074744287
+230	The filet was devoured by the meat-eater .	-12.97390575807906
+231	The meat-eater was devoured by the filet .	-11.08733970243684
+232	The man drank the soda .	-3.187851741687149
+233	The soda drank the man .	-7.797921715216946
+234	The soda was drunk by the man .	-0.3323449661238035
+235	The man was drunk by the soda .	-0.6473050777927449
+236	The teacher bought the laptop .	-6.6039398525175805
+237	The laptop bought the teacher .	-9.113531336472377
+238	The laptop was bought by the teacher .	-6.224532883656261
+239	The teacher was bought by the laptop .	-11.16146683751914
+240	The instructor purchased the computer .	-8.868280326724683
+241	The computer purchased the instructor .	-11.85146741243875
+242	The computer was purchased by the instructor .	-8.015677851936
+243	The instructor was purchased by the computer .	-11.147035002274796
+244	The lady cooked the supper .	-4.140625896127631
+245	The supper cooked the lady .	-8.288478485466955
+246	The supper was cooked by the lady .	-3.1487383650277736
+247	The lady was cooked by the supper .	-8.846849812520112
+248	The woman prepared the dinner .	-4.589846792096763
+249	The dinner prepared the woman .	-10.552394903619701
+250	The dinner was prepared by the woman .	-1.460921404345
+251	The woman was prepared by the dinner .	-8.672849503410163
+252	The traveler lost the souvenir .	-6.7730827614739875
+253	The souvenir lost the traveler .	-11.841674079490534
+254	The souvenir was lost by the traveler .	-6.028726262044579
+255	The traveler was lost by the souvenir .	-8.64444291255553
+256	The sightseer misplaced the memento .	-15.37775832832268
+257	The memento misplaced the sightseer .	-20.041513580088363
+258	The memento was misplaced by the sightseer .	-15.265489743091939
+259	The sightseer was misplaced by the memento .	-16.37067085918821
+260	The comedian confirmed the itinerary .	-8.924260099379607
+261	The itinerary confirmed the comedian .	-9.58096788520154
+262	The itinerary was confirmed by the comedian .	-4.653646752243101
+263	The comedian was confirmed by the itinerary .	-6.943609870109564
+264	The humorist verified the schedule .	-7.912622180518491
+265	The schedule verified the humorist .	-10.925582797719057
+266	The schedule was verified by the humorist .	-6.336904075556862
+267	The humorist was verified by the schedule .	-10.141841100442287
+268	The woodworker skimmed the brochure .	-10.72185361403297
+269	The brochure skimmed the woodworker .	-10.545836215387064
+270	The brochure was skimmed by the woodworker .	-14.232876626014209
+271	The woodworker was skimmed by the brochure .	-13.979415820473745
+272	The guide reached the target .	-6.09167956392614
+273	The target reached the guide .	-11.511099891800203
+274	The target was reached by the guide .	-5.283195309617355
+275	The guide was reached by the target .	-8.210691532432977
+276	The townsperson farmed the grain .	-9.2323304548288
+277	The grain farmed the townsperson .	-8.960642336296784
+278	The grain was farmed by the townsperson .	-11.093608121487065
+279	The townsperson was farmed by the grain .	-10.988308799883487
+280	The villager cultivated the crop .	-5.639325865762461
+281	The crop cultivated the villager .	-8.963995999331598
+282	The crop was cultivated by the villager .	-3.693386153546257
+283	The villager was cultivated by the crop .	-7.903576314196051
+284	The mentor revised the manuscript .	-7.534562459488668
+285	The manuscript revised the mentor .	-12.379501014406388
+286	The manuscript was revised by the mentor .	-6.094224099413517
+287	The mentor was revised by the manuscript .	-13.59196366141711
+288	The advisor edited the paper .	-5.762211652954782
+289	The paper edited the advisor .	-10.101888908142792
+290	The paper was edited by the advisor .	-4.346939474864403
+291	The advisor was edited by the paper .	-10.081317876803377
+292	The accountant made the chart .	-7.3721622848345145
+293	The chart made the accountant .	-9.481241087576052
+294	The chart was made by the accountant .	-3.5478862498199413
+295	The accountant was made by the chart .	-10.112309497731996
+296	The bookkeeper created the graph .	-8.35853174703463
+297	The graph created the bookkeeper .	-9.68086819286777
+298	The graph was created by the bookkeeper .	-3.8535489053291787
+299	The bookkeeper was created by the graph .	-9.659337119013687
+300	The logger felled the pine tree .	-5.362229640011966
+301	The pine tree felled the logger .	-8.802714942916674
+302	The pine tree was felled by the logger .	-5.765208842333941
+303	The logger was felled by the pine tree .	-7.8485498698620075
+304	The tycoon ran the company .	-5.683967713286599
+305	The company ran the tycoon .	-7.340909067396693
+306	The company was run by the tycoon .	-4.328776186199151
+307	The tycoon was run by the company .	-8.861764918135188
+308	The mogul governed the corporation .	-9.774775514140641
+309	The corporation governed the mogul .	-12.824515324690863
+310	The corporation was governed by the mogul .	-6.576435065539071
+311	The mogul was governed by the corporation .	-10.777026310151792
+312	The campaigner biased the ballot .	-11.156097096038527
+313	The ballot biased the campaigner .	-9.043589096671562
+314	The ballot was biased by the campaigner .	-11.850023315650956
+315	The campaigner was biased by the ballot .	-12.798280906427033
+316	The activist prejudiced the vote .	-12.218018442442588
+317	The vote prejudiced the activist .	-11.025465035950486
+318	The vote was prejudiced by the activist .	-13.093430676533181
+319	The activist was prejudiced by the vote .	-12.275173239562244
+320	The stewardess pulled the suitcase .	-6.606322080605335
+321	The suitcase pulled the stewardess .	-10.424138134296799
+322	The suitcase was pulled by the stewardess .	-7.2128709822307675
+323	The stewardess was pulled by the suitcase .	-7.435872921464845
+324	The flight-attendant dragged the luggage .	-8.475547780247968
+325	The luggage dragged the flight-attendant .	-13.795714939447432
+326	The luggage was dragged by the flight-attendant .	-9.123192235534233
+327	The flight-attendant was dragged by the luggage .	-7.7418089526866005
+328	The congressman delivered the speech .	-3.489392189532282
+329	The speech delivered the congressman .	-9.552609935980934
+330	The speech was delivered by the congressman .	-2.8809987132530788
+331	The congressman was delivered by the speech .	-9.736200616843762
+332	The representative gave the address .	-1.8316227766678017
+333	The address gave the representative .	-11.818739295114582
+334	The address was given by the representative .	-1.6429958746192916
+335	The representative was given by the address .	-9.189850492359199
+336	The sheriff inspected the estate .	-4.078044960934643
+337	The estate inspected the sheriff .	-15.429572045476007
+338	The estate was inspected by the sheriff .	-6.211355347662406
+339	The sheriff was inspected by the estate .	-11.296280649577275
+340	The constable examined the property .	-4.123426408608856
+341	The property examined the constable .	-15.148527459502983
+342	The property was examined by the constable .	-4.926244310456892
+343	The constable was examined by the property .	-9.429112028500995
+344	The celebrity signed the photograph .	-8.898370576970628
+345	The photograph signed the celebrity .	-10.269117259340856
+346	The photograph was signed by the celebrity .	-3.2166742045604173
+347	The celebrity was signed by the photograph .	-8.883715486883181
+348	The star autographed the picture .	-13.033859743299189
+349	The picture autographed the star .	-12.511750022243753
+350	The picture was autographed by the star .	-11.576378405451255
+351	The star was autographed by the picture .	-12.805438012368352
+352	The nanny tutored the boy .	-8.965530052155728
+353	The boy tutored the nanny .	-10.646604374584932
+354	The boy was tutored by the nanny .	-10.612561386407164
+355	The nanny was tutored by the boy .	-11.981259408614186
+356	The governess instructed the lad .	-7.530566691631079
+357	The lad instructed the governess .	-9.344940148738749
+358	The lad was instructed by the governess .	-6.677590535440414
+359	The governess was instructed by the lad .	-10.86885099826214
+360	The blackmailer threatened the senator .	-5.311136625067499
+361	The senator threatened the blackmailer .	-9.071952292295755
+362	The senator was threatened by the blackmailer .	-3.734782506521992
+363	The blackmailer was threatened by the senator .	-6.5517957642170925
+364	The extortionist menaced the legislator .	-11.644362826924164
+365	The legislator menaced the extortionist .	-12.017567304220556
+366	The legislator was menaced by the extortionist .	-13.713811933259883
+367	The extortionist was menaced by the legislator .	-13.593828707904112
+368	The artist portrayed the philosopher .	-9.894104929152427
+369	The philosopher portrayed the artist .	-10.399370475449198
+370	The philosopher was portrayed by the artist .	-3.5954236865525036
+371	The artist was portrayed by the philosopher .	-8.318643574272022
+372	The painter depicted the thinker .	-12.128421265088642
+373	The thinker depicted the painter .	-12.483152354620653
+374	The thinker was depicted by the painter .	-5.887066125650877
+375	The painter was depicted by the thinker .	-7.463690708733384
+376	The mechanic berated the intern .	-9.74072972177237
+377	The intern berated the mechanic .	-9.52600804622028
+378	The intern was berated by the mechanic .	-11.944212029401243
+379	The mechanic was berated by the intern .	-11.870583424810091
+380	The technician rebuked the aide .	-14.45519078690212
+381	The aide rebuked the technician .	-13.627109361815629
+382	The aide was rebuked by the technician .	-14.382625624006163
+383	The technician was rebuked by the aide .	-14.495173152615527
+384	The fairy enchanted the troll .	-12.598080324781398
+385	The troll enchanted the fairy .	-12.81131129092387
+386	The troll was enchanted by the fairy .	-13.17077624461592
+387	The fairy was enchanted by the troll .	-14.194634688967106
+388	The pixie mesmerized the ogre .	-13.304951950475003
+389	The ogre mesmerized the pixie .	-13.267112006739032
+390	The ogre was mesmerized by the pixie .	-15.134090096622678
+391	The pixie was mesmerized by the ogre .	-15.599771177179795
+392	The orderly assisted the dentist .	-9.050578089624858
+393	The dentist assisted the orderly .	-7.427186233858698
+394	The dentist was assisted by the orderly .	-5.385681901096804
+395	The orderly was assisted by the dentist .	-4.5532813196328865
+396	The nurse helped the orthodontist .	-5.594023370348837
+397	The orthodontist helped the nurse .	-6.827901017972144
+398	The orthodontist was helped by the nurse .	-4.223577256258787
+399	The nurse was helped by the orthodontist .	-5.994159907186435
+400	The owner evicted the tenant .	-13.087016911782362
+401	The tenant evicted the owner .	-14.180675951918312
+402	The tenant was evicted by the owner .	-11.18111800686575
+403	The owner was evicted by the tenant .	-11.886885038032215
+404	The critic attacked the conservative .	-6.461359314395713
+405	The conservative attacked the critic .	-7.047080653504946
+406	The conservative was attacked by the critic .	-4.163349982428158
+407	The critic was attacked by the conservative .	-2.937446016130422
+408	The reviewer criticized the right-winger .	-5.001038298662989
+409	The right-winger criticized the reviewer .	-5.961776705085688
+410	The right-winger was criticized by the reviewer .	-3.386883391760317
+411	The reviewer was criticized by the right-winger .	-3.181301232503223
+412	The admirer badgered the director .	-14.427613132359777
+413	The director badgered the admirer .	-14.889953868252748
+414	The director was badgered by the admirer .	-13.881428299532855
+415	The admirer was badgered by the director .	-14.366664264944955
+416	The fan pestered the filmmaker .	-10.767267142391843
+417	The filmmaker pestered the fan .	-11.387448199366197
+418	The filmmaker was pestered by the fan .	-12.07631540014075
+419	The fan was pestered by the filmmaker .	-11.908521406019503
+420	The paramedic revived the youth .	-5.936405354396564
+421	The youth revived the paramedic .	-9.50001304159019
+422	The youth was revived by the paramedic .	-3.9519212356228564
+423	The paramedic was revived by the youth .	-5.824807486117308
+424	The EMT resuscitated the youngster .	-14.738695274824476
+425	The youngster resuscitated the EMT .	-15.737571897064091
+426	The youngster was resuscitated by the EMT .	-15.66263240673687
+427	The EMT was resuscitated by the youngster .	-15.890533350581107
+428	The prankster duped the marketer .	-15.40779481842328
+429	The marketer duped the prankster .	-15.77644073812695
+430	The marketer was duped by the prankster .	-14.84981424522217
+431	The prankster was duped by the marketer .	-15.016836508525014
+432	The joker tricked the distributor .	-10.602147376048647
+433	The distributor tricked the joker .	-10.324138080346296
+434	The distributor was tricked by the joker .	-10.492228299248541
+435	The joker was tricked by the distributor .	-11.333242688014192
+436	The playboy courted the damsel .	-9.614209420540268
+437	The damsel courted the playboy .	-10.58552274664761
+438	The damsel was courted by the playboy .	-11.374205374835192
+439	The playboy was courted by the damsel .	-11.635760197431726
+440	The womanizer wooed the maiden .	-10.451668989104576
+441	The maiden wooed the womanizer .	-11.18747528175157
+442	The maiden was wooed by the womanizer .	-13.380763830693871
+443	The womanizer was wooed by the maiden .	-11.922752519523762
+444	The nomad cherished the clergyman .	-15.789371935690593
+445	The clergyman cherished the nomad .	-15.297882550820544
+446	The clergyman was cherished by the nomad .	-16.43676433933132
+447	The nomad was cherished by the clergyman .	-15.686130626653892
+448	The vagabond revered the priest .	-10.098868688570484
+449	The priest revered the vagabond .	-9.951935066695489
+450	The priest was revered by the vagabond .	-11.822846362657591
+451	The vagabond was revered by the priest .	-8.959330255380944
+452	The assassin shot the statesman .	-6.690453082680214
+453	The statesman shot the assassin .	-9.140793731352794
+454	The statesman was shot by the assassin .	-2.7613362088816156
+455	The assassin was shot by the statesman .	-2.8267921427753295
+456	The hit man killed the politician .	-1.7716837391900633
+457	The politician killed the hit man .	-3.9907019600138427
+458	The politician was killed by the hit man .	-0.3126113295722685
+459	The hit man was killed by the politician .	-1.0738034915681751
+460	The clerk charged the elderly person .	-6.0839356231537
+461	The elderly person charged the clerk .	-7.226017608684472
+462	The elderly person was charged by the clerk .	-6.066630682530431
+463	The clerk was charged by the elderly person .	-7.051255817747671
+464	The cashier billed the senior citizen .	-9.783476758489426
+465	The senior citizen billed the cashier .	-9.516289451797427
+466	The senior citizen was billed by the cashier .	-7.514283091970523
+467	The cashier was billed by the senior citizen .	-8.994092490186665
+468	The mediator rescued the hostage .	-3.780576535411946
+469	The hostage rescued the mediator .	-8.879718009234667
+470	The hostage was rescued by the mediator .	-3.2064073117456515
+471	The mediator was rescued by the hostage .	-5.008999971307927
+472	The negotiator saved the captive .	-4.571296907181923
+473	The captive saved the negotiator .	-9.279131485198285
+474	The captive was saved by the negotiator .	-3.5734762414885535
+475	The negotiator was saved by the captive .	-3.674595394282785
+476	The detective found the assailant .	-4.396475705508294
+477	The assailant found the detective .	-6.077656904336476
+478	The assailant was found by the detective .	-3.7183086015618403
+479	The detective was found by the assailant .	-5.982417123498293
+480	The sleuth located the attacker .	-4.64996122460652
+481	The attacker located the sleuth .	-8.200831519237367
+482	The attacker was located by the sleuth .	-5.279824799588518
+483	The sleuth was located by the attacker .	-9.643631147823656
+484	The artisan trained the apprentice .	-5.649153667032345
+485	The apprentice trained the artisan .	-7.092616537473672
+486	The apprentice was trained by the artisan .	-1.872030362063465
+487	The artisan was trained by the apprentice .	-3.918822300607895
+488	The craftsman taught the trainee .	-5.674983376462223
+489	The trainee taught the craftsman .	-7.483218192003817
+490	The trainee was taught by the craftsman .	-2.907598312136689
+491	The craftsman was taught by the trainee .	-3.5595679968441436
+492	The biker defied the trainer .	-14.113778500999102
+493	The trainer defied the biker .	-13.084075521842037
+494	The trainer was defied by the biker .	-14.092341122494835
+495	The biker was defied by the trainer .	-14.463839459973645
+496	The cyclist disobeyed the coach .	-10.913096535129696
+497	The coach disobeyed the cyclist .	-10.499852468510579
+498	The coach was disobeyed by the cyclist .	-11.629546029373087
+499	The cyclist was disobeyed by the coach .	-12.190228091123787
+500	The speaker engrossed the audience .	-15.44412900398447
+501	The audience engrossed the speaker .	-16.295866581411005
+502	The audience was engrossed by the speaker .	-16.703880762844957
+503	The speaker was engrossed by the audience .	-14.342647846774936
+504	The orator captivated the spectators .	-12.657665174941762
+505	The spectators captivated the orator .	-13.472645755186369
+506	The spectators were captivated by the orator .	-13.358062942887084
+507	The orator was captivated by the spectators .	-15.420987933783117
+508	The genius shocked the cousin .	-9.109752069636329
+509	The cousin shocked the genius .	-12.580320699323348
+510	The cousin was shocked by the genius .	-3.212403008253603
+511	The genius was shocked by the cousin .	-7.120375037539486
+512	The prodigy surprised the relative .	-10.863434679985
+513	The relative surprised the prodigy .	-13.521685793826403
+514	The relative was surprised by the prodigy .	-0.66303070844185
+515	The prodigy was surprised by the relative .	-7.920926464761805
+516	The smuggler bribed the bureaucrat .	-11.423525106100145
+517	The bureaucrat bribed the smuggler .	-11.091858949037022
+518	The bureaucrat was bribed by the smuggler .	-14.19311208464998
+519	The smuggler was bribed by the bureaucrat .	-13.882238827925143
+520	The amateur irked the maestro .	-13.079111618985813
+521	The maestro irked the amateur .	-12.656853170478843
+522	The maestro was irked by the amateur .	-14.302595423146984
+523	The amateur was irked by the maestro .	-15.034677995850421
+524	The novice irritated the virtuoso .	-11.946683783841513
+525	The virtuoso irritated the novice .	-10.07567808455764
+526	The virtuoso was irritated by the novice .	-8.039499531578313
+527	The novice was irritated by the virtuoso .	-6.265110432278582
+528	The lawyer questioned the witness .	-3.9644845004242835
+529	The witness questioned the lawyer .	-7.56652401276695
+530	The witness was questioned by the lawyer .	-2.869657365665735
+531	The lawyer was questioned by the witness .	-3.8776871674228723
+532	The attorney interrogated the bystander .	-10.97278364661709
+533	The bystander interrogated the attorney .	-11.671360831906433
+534	The bystander was interrogated by the attorney .	-13.379180765843373
+535	The attorney was interrogated by the bystander .	-13.684007923804884
+536	The singer disappointed the enthusiast .	-12.76338326350029
+537	The enthusiast disappointed the singer .	-10.932529378023471
+538	The enthusiast was disappointed by the singer .	-4.637203096560673
+539	The singer was disappointed by the enthusiast .	-6.21860383008775
+540	The vocalist disillusioned the connoisseur .	-13.916460541454207
+541	The connoisseur disillusioned the vocalist .	-14.32998013235228
+542	The connoisseur was disillusioned by the vocalist .	-15.247771358451091
+543	The vocalist was disillusioned by the connoisseur .	-15.135489374384186
+544	The chauffeur drove the diplomat .	-5.200997218079459
+545	The diplomat drove the chauffeur .	-6.194732575403242
+546	The diplomat was driven by the chauffeur .	-4.552467805639978
+547	The chauffeur was driven by the diplomat .	-4.614122357970854
+548	The driver transported the ambassador .	-10.128896607195793
+549	The ambassador transported the driver .	-12.49570745409515
+550	The ambassador was transported by the driver .	-5.100081389001047
+551	The driver was transported by the ambassador .	-8.551304425728482
+552	The guard apprehended the prisoner .	-12.010407628961078
+553	The prisoner apprehended the guard .	-11.433442285084373
+554	The prisoner was apprehended by the guard .	-12.59158765682631
+555	The guard was apprehended by the prisoner .	-13.032976917516482
+556	The warden caught the inmate .	-5.849554124171969
+557	The inmate caught the warden .	-9.334331648319099
+558	The inmate was caught by the warden .	-5.549029532655747
+559	The warden was caught by the inmate .	-6.98138562088132
+560	The tailor costumed the dancer .	-9.444567217313496
+561	The dancer costumed the tailor .	-11.234429736328039
+562	The dancer was costumed by the tailor .	-10.453361544550317
+563	The tailor was costumed by the dancer .	-11.665300319433403
+564	The dressmaker attired the ballerina .	-10.61134450142491
+565	The ballerina attired the dressmaker .	-10.990443592837279
+566	The ballerina was attired by the dressmaker .	-11.704311888164229
+567	The dressmaker was attired by the ballerina .	-12.609632362185248
+568	The principal scolded the child .	-11.905289212481533
+569	The child scolded the principal .	-10.9571938474695
+570	The child was scolded by the principal .	-14.708907100348512
+571	The principal was scolded by the child .	-13.801564642064296
+572	The headmaster reprimanded the kid .	-12.69936576267598
+573	The kid reprimanded the headmaster .	-14.924519783207986
+574	The kid was reprimanded by the headmaster .	-13.95466136514322
+575	The headmaster was reprimanded by the kid .	-17.734302519825416
+576	The lord named the heir .	-5.09062223363362
+577	The heir named the lord .	-8.10746788247684
+578	The heir was named by the lord .	-3.4337970502211683
+579	The lord was named by the heir .	-7.3079620301290085
+580	The baron chose the successor .	-2.1927002774222584
+581	The successor chose the baron .	-8.28817440770312
+582	The successor was chosen by the baron .	-1.0955764090828388
+583	The baron was chosen by the successor .	-5.4153985351919145
+584	The cop restrained the rioter .	-9.158321858324246
+585	The rioter restrained the cop .	-9.077174288023317
+586	The rioter was restrained by the cop .	-3.6171161653247377
+587	The cop was restrained by the rioter .	-5.282061380446367
+588	The policeman subdued the rabble-rouser .	-8.297810818273911
+589	The rabble-rouser subdued the policeman .	-8.498055697527766
+590	The rabble-rouser was subdued by the policeman .	-3.7344380932857257
+591	The policeman was subdued by the rabble-rouser .	-5.194203993036004
+592	The dad coddled the baby .	-11.796563495317924
+593	The baby coddled the dad .	-12.874335655414267
+594	The baby was coddled by the dad .	-11.164531202752366
+595	The dad was coddled by the baby .	-13.415345055820863
+596	The father pampered the infant .	-14.592533557712455
+597	The infant pampered the father .	-14.22497494224155
+598	The infant was pampered by the father .	-15.103086074720368
+599	The father was pampered by the infant .	-15.929033435356759
+600	The king exiled the rebel .	-6.429796221032631
+601	The rebel exiled the king .	-8.540798248659604
+602	The rebel was exiled by the king .	-5.099576917822525
+603	The king was exiled by the rebel .	-7.70884297684457
+604	The monarch banished the insurgent .	-6.59917439771227
+605	The insurgent banished the monarch .	-8.407188497046029
+606	The insurgent was banished by the monarch .	-4.838678237623607
+607	The monarch was banished by the insurgent .	-8.45142195345919
+608	The thief robbed the manufacturer .	-7.114093051765997
+609	The manufacturer robbed the thief .	-8.829087486207039
+610	The manufacturer was robbed by the thief .	-4.440856652913725
+611	The thief was robbed by the manufacturer .	-8.301440338594029
+612	The robber burgled the industrialist .	-14.64486009152387
+613	The industrialist burgled the robber .	-14.258364830403533
+614	The industrialist was burgled by the robber .	-17.032462231924185
+615	The robber was burgled by the industrialist .	-15.356502739717648
+616	The pessimist discouraged the contestant .	-9.528402431132585
+617	The contestant discouraged the pessimist .	-14.711630419288099
+618	The contestant was discouraged by the pessimist .	-7.129636764335767
+619	The pessimist was discouraged by the contestant .	-8.196645020641016
+620	The cynic dissuaded the participant .	-11.832894021589142
+621	The participant dissuaded the cynic .	-13.471740794302931
+622	The participant was dissuaded by the cynic .	-12.035442053627529
+623	The cynic was dissuaded by the participant .	-12.229657117121443
+624	The loudmouth tormented the loner .	-10.894484618229802
+625	The loner tormented the loudmouth .	-13.871438749301708
+626	The loner was tormented by the loudmouth .	-11.185702993682886
+627	The loudmouth was tormented by the loner .	-10.973645571424541
+628	The windbag taunted the recluse .	-15.88192870042336
+629	The recluse taunted the windbag .	-14.816230604278624
+630	The recluse was taunted by the windbag .	-13.988120425565056
+631	The windbag was taunted by the recluse .	-15.144970281870398
+632	The imitator fooled the investigator .	-9.98354709913895
+633	The investigator fooled the imitator .	-9.405305090011973
+634	The investigator was fooled by the imitator .	-11.038748927688145
+635	The imitator was fooled by the investigator .	-11.238992522393868
+636	The impersonator conned the inspector .	-12.509134825557418
+637	The inspector conned the impersonator .	-12.567747463405526
+638	The inspector was conned by the impersonator .	-12.922031876283235
+639	The impersonator was conned by the inspector .	-13.49848007438201
+640	The boss fired the worker .	-6.316215597099885
+641	The worker fired the boss .	-8.888048611199627
+642	The worker was fired by the boss .	-1.697444374552499
+643	The boss was fired by the worker .	-3.9768245765895203
+644	The pyromaniac unnerved the shopkeeper .	-16.248971739872594
+645	The shopkeeper unnerved the pyromaniac .	-14.609744381643209
+646	The shopkeeper was unnerved by the pyromaniac .	-18.252599497769957
+647	The pyromaniac was unnerved by the shopkeeper .	-16.380767246483426
+648	The arsonist alarmed the vendor .	-12.835797880615036
+649	The vendor alarmed the arsonist .	-11.391310887811853
+650	The vendor was alarmed by the arsonist .	-12.431962890414345
+651	The arsonist was alarmed by the vendor .	-10.380450269801415
+652	The professional supported the beginner .	-6.336110822635992
+653	The beginner supported the professional .	-8.453687254848258
+654	The beginner was supported by the professional .	-4.525206838170525
+655	The professional was supported by the beginner .	-4.659594122509321
+656	The master encouraged the rookie .	-6.91652683395118
+657	The rookie encouraged the master .	-10.508696932454336
+658	The rookie was encouraged by the master .	-6.253820335644642
+659	The master was encouraged by the rookie .	-7.5342255557678905
+660	The magician hypnotized the crowd .	-12.189267920013096
+661	The crowd hypnotized the magician .	-13.147363673092372
+662	The crowd was hypnotized by the magician .	-13.820995309162626
+663	The magician was hypnotized by the crowd .	-14.305694313068916
+664	The illusionist entranced the viewers .	-11.195888465120316
+665	The viewers entranced the illusionist .	-12.065724624092969
+666	The viewers were entranced by the illusionist .	-12.555277799833851
+667	The illusionist was entranced by the viewers .	-13.933136976369866
+668	The businessman employed the expert .	-10.267996959493194
+669	The expert employed the businessman .	-9.576622732835176
+670	The expert was employed by the businessman .	-4.920279350272693
+671	The businessman was employed by the expert .	-7.25579149558821
+672	The entrepreneur hired the specialist .	-9.454990280311886
+673	The specialist hired the entrepreneur .	-11.376536844828886
+674	The specialist was hired by the entrepreneur .	-2.493670945053207
+675	The entrepreneur was hired by the specialist .	-4.44691092252157
+676	The terrorist petrified the first lady .	-15.079237168564847
+677	The first lady petrified the terrorist .	-12.89592420580502
+678	The first lady was petrified by the terrorist .	-14.055849208056035
+679	The terrorist was petrified by the first lady .	-12.534246468443751
+680	The hijacker terrified the president's wife .	-9.2904070127823
+681	The president's wife terrified the hijacker .	-9.786675844752548
+682	The president's wife was terrified by the hijacker .	-8.698211611248702
+683	The hijacker was terrified by the president's wife .	-8.406843948660537
+684	The judge praised the gold medalist .	-8.073067810498715
+685	The gold medalist praised the judge .	-10.20901859312909
+686	The gold medalist was praised by the judge .	-7.633774018031218
+687	The judge was praised by the gold medalist .	-8.06705784966005
+688	The panelist congratulated the winner .	-14.83730232834284
+689	The winner congratulated the panelist .	-15.566935121098297
+690	The winner was congratulated by the panelist .	-17.087671025438848
+691	The panelist was congratulated by the winner .	-15.885192292778136
+692	The liar emulated the victor .	-17.599950891096036
+693	The victor emulated the liar .	-17.068661266480543
+694	The victor was emulated by the liar .	-16.206016944190317
+695	The liar was emulated by the victor .	-16.344368756389375
+696	The deceiver imitated the conqueror .	-16.334909804813538
+697	The conqueror imitated the deceiver .	-16.139437786684674
+698	The conqueror was imitated by the deceiver .	-14.337682771061917
+699	The deceiver was imitated by the conqueror .	-14.108185355174479
+700	The environmentalist cautioned the tobacconist .	-12.088472933437274
+701	The tobacconist cautioned the environmentalist .	-11.80342346150285
+702	The tobacconist was cautioned by the environmentalist .	-11.67067504292763
+703	The environmentalist was cautioned by the tobacconist .	-11.173465579031745
+704	The ecologist warned the cigar-maker .	-13.360175267421319
+705	The cigar-maker warned the ecologist .	-12.617999516246957
+706	The cigar-maker was warned by the ecologist .	-8.026843133891909
+707	The ecologist was warned by the cigar-maker .	-7.178295263107764
+708	The peasant idolized the ancestors .	-12.168260995493576
+709	The ancestors idolized the peasant .	-12.555329063104319
+710	The ancestors were idolized by the peasant .	-10.984392435970687
+711	The peasant was idolized by the ancestors .	-11.34049381399389
+712	The serf worshipped the forefathers .	-6.372644335768842
+713	The forefathers worshipped the serf .	-5.9415066677724635
+714	The forefathers were worshipped by the serf .	-5.0800937297390165
+715	The serf was worshipped by the forefathers .	-5.563509567270236
+716	The alcoholic hassled the guest .	-7.2541321650436785
+717	The guest hassled the alcoholic .	-8.429777870238725
+718	The guest was hassled by the alcoholic .	-13.253041255949622
+719	The alcoholic was hassled by the guest .	-12.702562952097727
+720	The drunk bothered the visitor .	-8.514296274218305
+721	The visitor bothered the drunk .	-10.344412694485536
+722	The visitor was bothered by the drunk .	-8.940860075538465
+723	The drunk was bothered by the visitor .	-8.57003459650718
+724	The commentator vexed the athlete .	-15.660124337236427
+725	The athlete vexed the commentator .	-16.994334120855044
+726	The athlete was vexed by the commentator .	-17.037856966394596
+727	The commentator was vexed by the athlete .	-17.16969276906634
+728	The sportscaster peeved the jock .	-13.573511991804576
+729	The jock peeved the sportscaster .	-15.059297830870484
+730	The jock was peeved by the sportscaster .	-15.577503002462535
+731	The sportscaster was peeved by the jock .	-15.691138826327151
+732	The preacher hugged the churchgoer .	-12.924609964449065
+733	The churchgoer hugged the preacher .	-11.994485760750297
+734	The churchgoer was hugged by the preacher .	-7.447787117051394
+735	The preacher was hugged by the churchgoer .	-8.333069998344444
+736	The pastor embraced the parishioner .	-7.030511952451464
+737	The parishioner embraced the pastor .	-8.74875629002297
+738	The parishioner was embraced by the pastor .	-5.835992232102732
+739	The pastor was embraced by the parishioner .	-8.485776734657403
+740	The maniac mocked the clown .	-7.8901240197675735
+741	The clown mocked the maniac .	-9.40787834509483
+742	The clown was mocked by the maniac .	-7.277433880647967
+743	The maniac was mocked by the clown .	-6.6427541917679624
+744	The lunatic ridiculed the jester .	-12.023492076321222
+745	The jester ridiculed the lunatic .	-11.0103816968844
+746	The jester was ridiculed by the lunatic .	-14.039198763098454
+747	The lunatic was ridiculed by the jester .	-12.84372832431121
+748	The archivist contacted the inventor .	-6.019932774118224
+749	The inventor contacted the archivist .	-9.080860386473175
+750	The inventor was contacted by the archivist .	-3.374797218676985
+751	The archivist was contacted by the inventor .	-4.444260240217177
+752	The historian approached the innovator .	-10.22249700995273
+753	The innovator approached the historian .	-10.462059656030075
+754	The innovator was approached by the historian .	-6.089179892806986
+755	The historian was approached by the innovator .	-6.440392256411303
+756	The janitor called the landscaper .	-5.349465613356903
+757	The landscaper called the janitor .	-6.258705412831206
+758	The landscaper was called by the janitor .	-5.112006223125505
+759	The janitor was called by the landscaper .	-5.67478563364762
+760	The custodian phoned the gardener .	-11.098494817674862
+761	The gardener phoned the custodian .	-12.042145562969306
+762	The gardener was phoned by the custodian .	-13.251541933533876
+763	The custodian was phoned by the gardener .	-12.986084981949492
+764	The drummer annoyed the weatherman .	-11.147471299937417
+765	The weatherman annoyed the drummer .	-12.456598436468392
+766	The weatherman was annoyed by the drummer .	-9.74011877022474
+767	The drummer was annoyed by the weatherman .	-10.596127243590042
+768	The percussionist displeased the meteorologist .	-12.95252697060385
+769	The meteorologist displeased the percussionist .	-12.669350764433325
+770	The meteorologist was displeased by the percussionist .	-14.381076159859088
+771	The percussionist was displeased by the meteorologist .	-14.282680139399076
+772	The go-between belittled the defendant .	-10.381182326371402
+773	The defendant belittled the go-between .	-10.314396782345069
+774	The defendant was belittled by the go-between .	-13.86208570718842
+775	The go-between was belittled by the defendant .	-11.096051006984416
+776	The intermediary deprecated the felon .	-12.81969214604317
+777	The felon deprecated the intermediary .	-14.387686305203538
+778	The felon was deprecated by the intermediary .	-13.606081034486907
+779	The intermediary was deprecated by the felon .	-13.871992990201536
+780	The valet entertained the envoy .	-7.156095750031383
+781	The envoy entertained the valet .	-7.630365079064581
+782	The envoy was entertained by the valet .	-4.784417245792111
+783	The valet was entertained by the envoy .	-6.198567994265485
+784	The manservant amused the emissary .	-9.99935720238665
+785	The emissary amused the manservant .	-9.475784240337436
+786	The emissary was amused by the manservant .	-10.093586697785163
+787	The manservant was amused by the emissary .	-8.605468028108989
+788	The acrobat pushed the stranger .	-5.748377347424041
+789	The stranger pushed the acrobat .	-7.367757256584371
+790	The stranger was pushed by the acrobat .	-6.194393569431448
+791	The acrobat was pushed by the stranger .	-6.396862019270205
+792	The gymnast shoved the outsider .	-13.662507135231927
+793	The outsider shoved the gymnast .	-13.136246103386872
+794	The outsider was shoved by the gymnast .	-10.009145279643592
+795	The gymnast was shoved by the outsider .	-9.555907677646887
+796	The benefactor calmed the architect .	-14.832058228895272
+797	The architect calmed the benefactor .	-15.511810833074444
+798	The architect was calmed by the benefactor .	-17.922588684976407
+799	The benefactor was calmed by the architect .	-13.665609889213403
+800	The patron soothed the draftsman .	-10.738012819299978
+801	The draftsman soothed the patron .	-11.506057153462844
+802	The draftsman was soothed by the patron .	-13.110226787352689
+803	The patron was soothed by the draftsman .	-11.421992155785366
+804	The therapist lauded the hairdresser .	-11.812933765399587
+805	The hairdresser lauded the therapist .	-11.788908057513547
+806	The hairdresser was lauded by the therapist .	-14.642353343431221
+807	The therapist was lauded by the hairdresser .	-14.323565000504043
+808	The psychologist extolled the hairstylist .	-12.86834416430232
+809	The hairstylist extolled the psychologist .	-13.157788742714455
+810	The hairstylist was extolled by the psychologist .	-13.814236429125922
+811	The psychologist was extolled by the hairstylist .	-13.832716282630763
+812	The nobleman married the baroness .	-2.6538691931962863
+813	The baroness married the nobleman .	-2.4933569388500416
+814	The baroness was married by the nobleman .	-2.903712875235591
+815	The nobleman was married by the baroness .	-2.678339612685703
+816	The aristocrat wed the countess .	-11.966399805599078
+817	The countess wed the aristocrat .	-8.180793915261244
+818	The countess was wed by the aristocrat .	-1.3785953786214928
+819	The aristocrat was wed by the countess .	-1.9634881605578656
+820	The actuary assuaged the creditor .	-13.996142113368522
+821	The creditor assuaged the actuary .	-14.959088230235633
+822	The creditor was assuaged by the actuary .	-14.046550571467566
+823	The actuary was assuaged by the creditor .	-15.033154618566718
+824	The analyst relieved the investor .	-12.845354596599242
+825	The investor relieved the analyst .	-12.820596934891572
+826	The investor was relieved by the analyst .	-9.18452177226535
+827	The analyst was relieved by the investor .	-7.487022381983575
+828	The sailor frightened the psychic .	-9.248394177829104
+829	The psychic frightened the sailor .	-8.877986140806298
+830	The psychic was frightened by the sailor .	-5.672863852572291
+831	The sailor was frightened by the psychic .	-4.059156300155156
+832	The mariner scared the fortune-teller .	-12.270517603238954
+833	The fortune-teller scared the mariner .	-13.515640489377247
+834	The fortune-teller was scared by the mariner .	-10.04063763837154
+835	The mariner was scared by the fortune-teller .	-8.785772509034285
+836	The assistant flattered the auditor .	-16.24835006567585
+837	The auditor flattered the assistant .	-16.19009582649591
+838	The auditor was flattered by the assistant .	-16.798406375072542
+839	The assistant was flattered by the auditor .	-16.99736100565669
+840	The helper complimented the appraiser .	-10.887373324111103
+841	The appraiser complimented the helper .	-10.53876036539655
+842	The appraiser was complimented by the helper .	-11.121334660037716
+843	The helper was complimented by the appraiser .	-11.423115954287779
+844	The immigrant believed the trooper .	-7.383295294609477
+845	The trooper believed the immigrant .	-6.254963171383561
+846	The trooper was believed by the immigrant .	-8.970934489165554
+847	The immigrant was believed by the trooper .	-8.407979641357535
+848	The foreigner trusted the patrolman .	-7.523866328961993
+849	The patrolman trusted the foreigner .	-7.707682066782175
+850	The patrolman was trusted by the foreigner .	-9.338701299054321
+851	The foreigner was trusted by the patrolman .	-10.044061235234764
+852	The mapmaker affronted the farmer .	-10.58808926260534
+853	The farmer affronted the mapmaker .	-10.689202146086735
+854	The farmer was affronted by the mapmaker .	-12.727365398791617
+855	The mapmaker was affronted by the farmer .	-11.521541380872376
+856	The cartographer insulted the rancher .	-8.421462277392182
+857	The rancher insulted the cartographer .	-10.634444817633929
+858	The rancher was insulted by the cartographer .	-5.566921186870638
+859	The cartographer was insulted by the rancher .	-7.995846554015586
+860	The poet awed the entertainer .	-12.01793973812536
+861	The entertainer awed the poet .	-11.790242656621887
+862	The entertainer was awed by the poet .	-12.158669520719156
+863	The poet was awed by the entertainer .	-12.445138247013496
+864	The lyricist dazzled the performer .	-13.438818012156354
+865	The performer dazzled the lyricist .	-14.400586392265298
+866	The performer was dazzled by the lyricist .	-14.446618023627014
+867	The lyricist was dazzled by the performer .	-15.46160961048823
+868	The peddler tested the manager .	-13.313567491712227
+869	The manager tested the peddler .	-11.903455144829312
+870	The manager was tested by the peddler .	-9.29931848674
+871	The peddler was tested by the manager .	-8.99994684054791
+872	The traveling salesman challenged the executive .	-8.170735017713639
+873	The executive challenged the traveling salesman .	-9.892152241005064
+874	The executive was challenged by the traveling salesman .	-5.265082156607857
+875	The traveling salesman was challenged by the executive .	-6.231364786356096
+876	The musician admired the diva .	-6.708634526004636
+877	The diva admired the musician .	-7.475703900003845
+878	The diva was admired by the musician .	-5.540760139765365
+879	The musician was admired by the diva .	-5.140477555351393
+880	The instrumentalist adored the prima donna .	-15.016578829968813
+881	The prima donna adored the instrumentalist .	-14.899574311548564
+882	The prima donna was adored by the instrumentalist .	-14.476048308749002
+883	The instrumentalist was adored by the prima donna .	-13.675099560793834
+884	The general welcomed the hero .	-10.972895307165377
+885	The hero welcomed the general .	-10.03744065949861
+886	The hero was welcomed by the general .	-2.9935580114591116
+887	The general was welcomed by the hero .	-4.016081801896907
+888	The commander greeted the champion .	-9.640871792716085
+889	The champion greeted the commander .	-8.373706302790783
+890	The champion was greeted by the commander .	-6.811023308922427
+891	The commander was greeted by the champion .	-7.618911471018172
+892	The cobbler disdained the stonecutter .	-10.143648089567055
+893	The stonecutter disdained the cobbler .	-9.962194594716369
+894	The stonecutter was disdained by the cobbler .	-11.697884500771199
+895	The cobbler was disdained by the stonecutter .	-12.290191246612796
+896	The shoemaker scorned the mason .	-10.404056904235482
+897	The mason scorned the shoemaker .	-10.371852591087274
+898	The mason was scorned by the shoemaker .	-12.470034318453719
+899	The shoemaker was scorned by the mason .	-12.26967924757605
+900	The postman noticed the chaplain .	-7.089683847382208
+901	The chaplain noticed the postman .	-8.119456171918111
+902	The chaplain was noticed by the postman .	-5.803406917673969
+903	The postman was noticed by the chaplain .	-7.339629419986684
+904	The mailman saw the minister .	-5.048224162852074
+905	The minister saw the mailman .	-6.182668289674059
+906	The minister was seen by the mailman .	-4.393497282085608
+907	The mailman was seen by the minister .	-5.2891577203994595
+908	The composer begrudged the playwright .	-12.845449073188064
+909	The playwright begrudged the composer .	-12.472089024026564
+910	The playwright was begrudged by the composer .	-13.80311985230185
+911	The composer was begrudged by the playwright .	-14.097263931117265
+912	The songwriter envied the dramatist .	-13.169884618668034
+913	The dramatist envied the songwriter .	-14.005662308210749
+914	The dramatist was envied by the songwriter .	-13.056326093617809
+915	The songwriter was envied by the dramatist .	-13.63690030015892
+916	The dictator angered the residents .	-7.389300476954616
+917	The residents angered the dictator .	-8.222511236528353
+918	The residents were angered by the dictator .	-4.705913059676412
+919	The dictator was angered by the residents .	-6.388803167341726
+920	The despot enraged the townspeople .	-5.637287046911285
+921	The townspeople enraged the despot .	-9.881133057040744
+922	The townspeople were enraged by the despot .	-3.8151674376361195
+923	The despot was enraged by the townspeople .	-7.534884982563304
+924	The missionary baffled the oracle .	-15.238001853599169
+925	The oracle baffled the missionary .	-13.006236721980038
+926	The oracle was baffled by the missionary .	-15.52762406067058
+927	The missionary was baffled by the oracle .	-15.155448560586914
+928	The evangelist mystified the soothsayer .	-13.103104150294303
+929	The soothsayer mystified the evangelist .	-13.528922135060666
+930	The soothsayer was mystified by the evangelist .	-14.469213875330405
+931	The evangelist was mystified by the soothsayer .	-14.48854581376034
+932	The trespasser choked the fighter .	-9.13829606564105
+933	The fighter choked the trespasser .	-9.205108216188515
+934	The fighter was choked by the trespasser .	-10.306214166960412
+935	The trespasser was choked by the fighter .	-11.155037806812905
+936	The encroacher strangled the warrior .	-10.964443538902032
+937	The warrior strangled the encroacher .	-9.517806904346877
+938	The warrior was strangled by the encroacher .	-7.3293180201470225
+939	The encroacher was strangled by the warrior .	-6.504065052144213
+940	The broker introduced the donor .	-9.31035997492625
+941	The donor introduced the broker .	-10.672647368457765
+942	The donor was introduced by the broker .	-7.438635832941083
+943	The broker was introduced by the donor .	-7.279376199778431
+944	The dealer presented the sponsor .	-11.163875341108989
+945	The sponsor presented the dealer .	-11.087349494333406
+946	The sponsor was presented by the dealer .	-6.91234775141335
+947	The dealer was presented by the sponsor .	-8.759024985036993
+948	The shrink commended the dean .	-14.285276953446596
+949	The dean commended the shrink .	-13.487112978278775
+950	The dean was commended by the shrink .	-9.505069437991882
+951	The shrink was commended by the dean .	-6.134682365400957
+952	The psychiatrist applauded the provost .	-14.890293972282574
+953	The provost applauded the psychiatrist .	-14.982704095087566
+954	The provost was applauded by the psychiatrist .	-15.12002619327549
+955	The psychiatrist was applauded by the provost .	-14.975081368110834
+956	The refugee provoked the homeless person .	-11.419869476975439
+957	The homeless person provoked the refugee .	-10.828147846393431
+958	The homeless person was provoked by the refugee .	-7.0784646617594555
+959	The refugee was provoked by the homeless person .	-7.348579288291117
+960	The asylum seeker goaded the vagrant .	-15.414357665465406
+961	The vagrant goaded the asylum seeker .	-15.894472817411845
+962	The vagrant was goaded by the asylum seeker .	-15.016669844519168
+963	The asylum seeker was goaded by the vagrant .	-15.272265344367838
+964	The interpreter swindled the messenger .	-11.703087947727433
+965	The messenger swindled the interpreter .	-11.494749600408182
+966	The messenger was swindled by the interpreter .	-14.192033591655896
+967	The interpreter was swindled by the messenger .	-13.551201994355235
+968	The translator deceived the courier .	-11.650994745072015
+969	The courier deceived the translator .	-11.712546499669074
+970	The courier was deceived by the translator .	-12.291871162132624
+971	The translator was deceived by the courier .	-12.700414693524806
+972	The gangster hated the governor .	-10.388703933904223
+973	The governor hated the gangster .	-9.8456625123501
+974	The governor was hated by the gangster .	-10.751547703316112
+975	The gangster was hated by the governor .	-8.777323073381666
+976	The hoodlum abhorred the chancellor .	-11.552208264214954
+977	The chancellor abhorred the hoodlum .	-11.095742842729218
+978	The chancellor was abhorred by the hoodlum .	-13.71519824067353
+979	The hoodlum was abhorred by the chancellor .	-13.54859914056246
+980	The planner convinced the customer .	-10.429947242061074
+981	The customer convinced the planner .	-12.979811498782556
+982	The customer was convinced by the planner .	-7.984693949721012
+983	The planner was convinced by the customer .	-10.828529173654488
+984	The organizer persuaded the buyer .	-10.04895397250704
+985	The buyer persuaded the organizer .	-11.87003561813343
+986	The buyer was persuaded by the organizer .	-6.468569880414839
+987	The organizer was persuaded by the buyer .	-7.133582041823145
+988	The wizard protected the gnome .	-9.203503828629302
+989	The gnome protected the wizard .	-8.688276113626063
+990	The gnome was protected by the wizard .	-6.589372251631641
+991	The wizard was protected by the gnome .	-6.422380773862097
+992	The sorcerer defended the dwarf .	-7.719080362766844
+993	The dwarf defended the sorcerer .	-7.343346492720393
+994	The dwarf was defended by the sorcerer .	-7.677622525784424
+995	The sorcerer was defended by the dwarf .	-6.933948641999962
+996	The student befuddled the professor .	-10.815795508557608
+997	The professor befuddled the student .	-11.801856049742629
+998	The professor was befuddled by the student .	-13.58626322687096
+999	The student was befuddled by the professor .	-14.087792865929469
+1000	The scholar confused the lecturer .	-13.091469570493073
+1001	The lecturer confused the scholar .	-11.09365395837011
+1002	The lecturer was confused by the scholar .	-8.328705960905124
+1003	The scholar was confused by the lecturer .	-8.3820527588393
+1004	The invader spotted the sentry .	-8.777058854537474
+1005	The sentry spotted the invader .	-5.856213397724065
+1006	The sentry was spotted by the invader .	-9.08302088983102
+1007	The invader was spotted by the sentry .	-3.8526347940121894
+1008	The intruder sighted the watchman .	-7.527024852344774
+1009	The watchman sighted the intruder .	-6.478353990041077
+1010	The watchman was sighted by the intruder .	-8.825056497955835
+1011	The intruder was sighted by the watchman .	-7.036873939410833
+1012	The supplier reimbursed the merchant .	-13.70911313035283
+1013	The merchant reimbursed the supplier .	-14.36600445579698
+1014	The merchant was reimbursed by the supplier .	-13.368085507162629
+1015	The supplier was reimbursed by the merchant .	-13.30888693671634
+1016	The wholesaler compensated the trader .	-11.996890538447438
+1017	The trader compensated the wholesaler .	-12.652254137635381
+1018	The trader was compensated by the wholesaler .	-9.848339724436826
+1019	The wholesaler was compensated by the trader .	-10.578528641899647
+1020	The accuser confronted the vandal .	-5.299811694335492
+1021	The vandal confronted the accuser .	-6.039072908676972
+1022	The vandal was confronted by the accuser .	-6.1865847412589705
+1023	The accuser was confronted by the vandal .	-5.589147251679811
+1024	The plaintiff accosted the thug .	-11.898888063615816
+1025	The thug accosted the plaintiff .	-11.476472611158231
+1026	The thug was accosted by the plaintiff .	-12.437791196072673
+1027	The plaintiff was accosted by the thug .	-12.958733056439705
+1028	The trickster bemused the idiot .	-12.679580449444586
+1029	The idiot bemused the trickster .	-10.876536778651463
+1030	The idiot was bemused by the trickster .	-11.556258420715606
+1031	The trickster was bemused by the idiot .	-11.103849078410361
+1032	The swindler puzzled the fool .	-13.137235431229847
+1033	The fool puzzled the swindler .	-13.791011325723602
+1034	The fool was puzzled by the swindler .	-8.550200087898531
+1035	The swindler was puzzled by the fool .	-7.755848136395304
+1036	The protestor quoted the leader .	-11.104001438802543
+1037	The leader quoted the protestor .	-10.548758646898904
+1038	The leader was quoted by the protestor .	-9.977179423773986
+1039	The protestor was quoted by the leader .	-10.062694482353127
+1040	The striker cited the chief .	-9.498690067586407
+1041	The chief cited the striker .	-9.096731977490517
+1042	The chief was cited by the striker .	-7.741391868385205
+1043	The striker was cited by the chief .	-6.53868114142907
+1044	The postal worker repulsed the taxi-driver .	-10.841038880652965
+1045	The taxi-driver repulsed the postal worker .	-11.248165885225868
+1046	The taxi-driver was repulsed by the postal worker .	-8.07085852168733
+1047	The postal worker was repulsed by the taxi-driver .	-8.5016679938906
+1048	The letter carrier disgusted the cabbie .	-13.243524884930933
+1049	The cabbie disgusted the letter carrier .	-14.09086879564739
+1050	The cabbie was disgusted by the letter carrier .	-12.749685517745572
+1051	The letter carrier was disgusted by the cabbie .	-11.070184201769418
+1052	The competitor agitated the rival .	-12.981730970398361
+1053	The rival agitated the competitor .	-11.9380930166173
+1054	The rival was agitated by the competitor .	-10.239679816558796
+1055	The competitor was agitated by the rival .	-10.19474447733279
+1056	The contender flustered the opponent .	-14.090265432858304
+1057	The opponent flustered the contender .	-14.818828842728207
+1058	The opponent was flustered by the contender .	-14.614267982077468
+1059	The contender was flustered by the opponent .	-14.892295927957605
+1060	The officer alerted the authorities .	-2.3480397139920353
+1061	The authorities alerted the officer .	-9.845956882081293
+1062	The authorities were alerted by the officer .	-2.432773422822181
+1063	The officer was alerted by the authorities .	-8.906992234431613
+1064	The deputy notified the higher-ups .	-8.264041285281829
+1065	The higher-ups notified the deputy .	-8.941973914771037
+1066	The higher-ups were notified by the deputy .	-5.667540490326485
+1067	The deputy was notified by the higher-ups .	-8.466375999652971
+1068	The culprit betrayed the hunter .	-9.203163812769699
+1069	The hunter betrayed the culprit .	-8.670894561558509
+1070	The hunter was betrayed by the culprit .	-4.682841687410321
+1071	The culprit was betrayed by the hunter .	-6.290726062781175
+1072	The botanist respected the partner .	-9.476027919784404
+1073	The partner respected the botanist .	-9.684601581540452
+1074	The partner was respected by the botanist .	-7.482026278011478
+1075	The botanist was respected by the partner .	-7.554985037806644
+1076	The flora specialist esteemed the collaborator .	-12.425030275761717
+1077	The collaborator esteemed the flora specialist .	-11.891663697162352
+1078	The collaborator was esteemed by the flora specialist .	-11.40765922242229
+1079	The flora specialist was esteemed by the collaborator .	-11.836269045517334
+1080	The pacifist placated the zealot .	-15.730727892936823
+1081	The zealot placated the pacifist .	-16.361331837750456
+1082	The zealot was placated by the pacifist .	-13.855540922761259
+1083	The pacifist was placated by the zealot .	-14.085171642120624
+1084	The peace-lover mollified the fanatic .	-16.843945595584536
+1085	The fanatic mollified the peace-lover .	-16.950836430448092
+1086	The fanatic was mollified by the peace-lover .	-14.93789040427676
+1087	The peace-lover was mollified by the fanatic .	-15.153931261330195
+1088	The scoundrel beat the protagonist .	-12.988630043028959
+1089	The protagonist beat the scoundrel .	-13.608021365982506
+1090	The protagonist was beaten by the scoundrel .	-5.420440818124176
+1091	The scoundrel was beaten by the protagonist .	-5.639280286469283
+1092	The rogue defeated the main character .	-13.731423169029247
+1093	The main character defeated the rogue .	-12.16876106271798
+1094	The main character was defeated by the rogue .	-3.595239332623107
+1095	The rogue was defeated by the main character .	-3.2908213213777953
+1096	The sociologist accepted the offer .	-2.217937600495571
+1097	The offer accepted the sociologist .	-5.970958343608634
+1098	The offer was accepted by the sociologist .	-0.85690108115698
+1099	The sociologist was accepted by the offer .	-6.440145417447745
+1100	The boyfriend basted the turkey .	-10.589985221562259
+1101	The turkey basted the boyfriend .	-10.81497327404496
+1102	The turkey was basted by the boyfriend .	-11.948981373712257
+1103	The boyfriend was basted by the turkey .	-12.59924031091164
+1104	The caseworker posed the question .	-4.2974050198708476
+1105	The question posed the caseworker .	-8.809470679575064
+1106	The question was posed by the caseworker .	-4.500053756922942
+1107	The caseworker was posed by the question .	-11.323287669024026
+1108	The ditch digger bent the wire .	-6.856634130174317
+1109	The wire bent the ditch digger .	-9.3024059236624
+1110	The wire was bent by the ditch digger .	-7.114594292641048
+1111	The ditch digger was bent by the wire .	-6.70816242407221
+1112	The box-office sold the tickets .	-1.307045535557978
+1113	The tickets sold the box-office .	-6.133768940904091
+1114	The tickets were sold by the box-office .	-0.4663621770253702
+1115	The box-office was sold by the tickets .	-4.977351280249835
+1116	The uncle hung the ornament .	-7.372848037538875
+1117	The ornament hung the uncle .	-12.298760725621847
+1118	The ornament was hung by the uncle .	-6.020523976888945
+1119	The uncle was hung by the ornament .	-6.216056724203508
+1120	The attendant pressed the button .	-0.6227475327048754
+1121	The button pressed the attendant .	-6.906895175835844
+1122	The button was pressed by the attendant .	-0.7024891247500088
+1123	The attendant was pressed by the button .	-6.49681904527519
+1124	The bum stole the necklace .	-3.9031796634612377
+1125	The necklace stole the bum .	-9.57121629988816
+1126	The necklace was stolen by the bum .	-2.1322219289555777
+1127	The bum was stolen by the necklace .	-9.455942674263637
+1128	The potter molded the clay .	-10.014098054076618
+1129	The clay molded the potter .	-9.126288521393688
+1130	The clay was molded by the potter .	-11.321667549618475
+1131	The potter was molded by the clay .	-11.169172190799168
+1132	The guarantor initialed the form .	-11.061931576380319
+1133	The form initialed the guarantor .	-11.23530556128795
+1134	The form was initialed by the guarantor .	-11.730229920019694
+1135	The guarantor was initialed by the form .	-12.057548103552952
+1136	The couch-potato forgot the umbrella .	-8.686262548424219
+1137	The umbrella forgot the couch-potato .	-10.878984818761102
+1138	The umbrella was forgotten by the couch-potato .	-4.819736313156028
+1139	The couch-potato was forgotten by the umbrella .	-6.240623295480643
+1140	The groupie attended the concert .	-3.5134191748364723
+1141	The concert attended the groupie .	-8.210729769510898
+1142	The concert was attended by the groupie .	-1.312802098613154
+1143	The groupie was attended by the concert .	-10.540046133468755
+1144	The hacker memorized the password .	-11.129257318369397
+1145	The password memorized the hacker .	-14.206572096873744
+1146	The password was memorized by the hacker .	-11.853492227094195
+1147	The hacker was memorized by the password .	-14.202935766534269
+1148	The marine packed the bag .	-7.657168784057487
+1149	The bag packed the marine .	-9.910276263748525
+1150	The bag was packed by the marine .	-6.9600093830715455
+1151	The marine was packed by the bag .	-12.589712686982892
+1152	The counselor emphasized the rules .	-10.847490355682908
+1153	The rules emphasized the counselor .	-12.996358011777604
+1154	The rules were emphasized by the counselor .	-9.504113716379889
+1155	The counselor was emphasized by the rules .	-18.708974224135726
+1156	The seamstress ironed the shirt .	-9.150394086169598
+1157	The shirt ironed the seamstress .	-9.479073101824467
+1158	The shirt was ironed by the seamstress .	-10.184998033728066
+1159	The seamstress was ironed by the shirt .	-13.060024391486081
+1160	The confectioner sprinkled the sugar .	-11.939744659603361
+1161	The sugar sprinkled the confectioner .	-11.158434719026207
+1162	The sugar was sprinkled by the confectioner .	-14.725910377983183
+1163	The confectioner was sprinkled by the sugar .	-13.321752929905422
+1164	The voter sealed the envelope .	-6.162442860067458
+1165	The envelope sealed the voter .	-8.357507316141263
+1166	The envelope was sealed by the voter .	-3.7188459398499365
+1167	The voter was sealed by the envelope .	-7.5856036229202735
+1168	The fisherman emptied the trashcan .	-1.7609233962707562
+1169	The trashcan emptied the fisherman .	-10.163640179458252
+1170	The trashcan was emptied by the fisherman .	-3.115508726908018
+1171	The fisherman was emptied by the trashcan .	-13.50305037273591
+1172	The cellist received the prize .	-2.020499156964555
+1173	The prize received the cellist .	-6.97074151973964
+1174	The prize was received by the cellist .	-2.852574474330181
+1175	The cellist was received by the prize .	-6.7469565831183145
+1176	The cheapskate rated the service .	-9.61199939193271
+1177	The service rated the cheapskate .	-10.275365501377804
+1178	The service was rated by the cheapskate .	-10.133399889846759
+1179	The cheapskate was rated by the service .	-9.305148480127382
+1180	The schoolgirl borrowed the key .	-8.790997273452106
+1181	The key borrowed the schoolgirl .	-14.921162502125087
+1182	The key was borrowed by the schoolgirl .	-5.466585299965629
+1183	The schoolgirl was borrowed by the key .	-13.953980454248551
+1184	The bookworm recited the poem .	-7.060028217909406
+1185	The poem recited the bookworm .	-12.44888091130421
+1186	The poem was recited by the bookworm .	-5.180003702272306
+1187	The bookworm was recited by the poem .	-14.015055468065375
+1188	The diver recharged the battery .	-11.835018558013871
+1189	The battery recharged the diver .	-10.463086131241374
+1190	The battery was recharged by the diver .	-13.010666915429363
+1191	The diver was recharged by the battery .	-14.147827013056126
+1192	The poker player won the game .	-3.7928301981865222
+1193	The game won the poker player .	-7.399716595090409
+1194	The game was won by the poker player .	-0.23286461608792564
+1195	The poker player was won by the game .	-4.773597479971202
+1196	The copycat redecorated the apartment .	-12.053755781714734
+1197	The apartment redecorated the copycat .	-12.532940612110949
+1198	The apartment was redecorated by the copycat .	-12.121645538401626
+1199	The copycat was redecorated by the apartment .	-11.367277701013721
+1200	The winemaker uncorked the bottle .	-15.661699157001204
+1201	The bottle uncorked the winemaker .	-13.978949964354737
+1202	The bottle was uncorked by the winemaker .	-15.707742440767804
+1203	The winemaker was uncorked by the bottle .	-14.896366524738614
+1204	The laundress folded the clothes .	-4.273064497630471
+1205	The clothes folded the laundress .	-15.995723042898613
+1206	The clothes were folded by the laundress .	-4.131786173134296
+1207	The laundress was folded by the clothes .	-13.186995060400918
+1208	The travel-agent photocopied the passport .	-12.093585529962764
+1209	The passport photocopied the travel-agent .	-12.143020771162155
+1210	The passport was photocopied by the travel-agent .	-12.799685280535448
+1211	The travel-agent was photocopied by the passport .	-12.942031194154666
+1212	The exterminator filed the complaint .	-4.884782176920296
+1213	The complaint filed the exterminator .	-9.14432873896355
+1214	The complaint was filed by the exterminator .	-3.364884520450047
+1215	The exterminator was filed by the complaint .	-10.89993480918918
+1216	The minuteman loaded the gun .	-5.922988976549061
+1217	The gun loaded the minuteman .	-9.87495498946649
+1218	The gun was loaded by the minuteman .	-3.8745914015460214
+1219	The minuteman was loaded by the gun .	-10.834030769285304
+1220	The bookseller calculated the profit .	-8.971756174695997
+1221	The profit calculated the bookseller .	-14.769422228418486
+1222	The profit was calculated by the bookseller .	-6.770251687818593
+1223	The bookseller was calculated by the profit .	-9.62081976744192
+1224	The count inherited the painting .	-6.648695137318144
+1225	The painting inherited the count .	-12.035371468831384
+1226	The painting was inherited by the count .	-3.3147623557934565
+1227	The count was inherited by the painting .	-14.472161099059248
+1228	The groundskeeper changed the light bulb .	-3.361978331422534
+1229	The light bulb changed the groundskeeper .	-7.294704809657013
+1230	The light bulb was changed by the groundskeeper .	-4.05807362567547
+1231	The groundskeeper was changed by the light bulb .	-7.664532072851433
+1232	The marcher sang the anthem .	-3.070429258012116
+1233	The anthem sang the marcher .	-9.270727991895367
+1234	The anthem was sung by the marcher .	-1.0339067059415072
+1235	The marcher was sung by the anthem .	-6.267260130164624
+1236	The deckhand unlocked the door .	-2.853083981223599
+1237	The door unlocked the deckhand .	-5.2032248066595175
+1238	The door was unlocked by the deckhand .	-2.3600650887798555
+1239	The deckhand was unlocked by the door .	-12.56360891324858
+1240	The supremacist established the fund .	-6.278714911876914
+1241	The fund established the supremacist .	-8.705143389264242
+1242	The fund was established by the supremacist .	-3.4562894560872737
+1243	The supremacist was established by the fund .	-8.956692859705223
+1244	The house sitter watered the plant .	-9.304455380590076
+1245	The plant watered the house sitter .	-9.775326800499524
+1246	The plant was watered by the house sitter .	-10.206326347021964
+1247	The house sitter was watered by the plant .	-11.981662413860306
+1248	The interviewee wrinkled the suit .	-9.64545389610374
+1249	The suit wrinkled the interviewee .	-12.481335123153071
+1250	The suit was wrinkled by the interviewee .	-11.184440442794871
+1251	The interviewee was wrinkled by the suit .	-11.98779224293887
+1252	The cryptographer sent the letter .	-5.396700742564073
+1253	The letter sent the cryptographer .	-6.520951670379461
+1254	The letter was sent by the cryptographer .	-4.611949415092315
+1255	The cryptographer was sent by the letter .	-7.002887980984832
+1256	The bellboy erased the message .	-8.16364188358316
+1257	The message erased the bellboy .	-11.228667153255383
+1258	The message was erased by the bellboy .	-7.803640107212249
+1259	The bellboy was erased by the message .	-12.988716473938219
+1260	The forger shipped the package .	-9.529303684343672
+1261	The package shipped the forger .	-11.80603728732054
+1262	The package was shipped by the forger .	-8.266198359099235
+1263	The forger was shipped by the package .	-11.322767227621714
+1264	The crackhead smoked the pipe .	-8.273156417673261
+1265	The pipe smoked the crackhead .	-8.846829578423757
+1266	The pipe was smoked by the crackhead .	-5.875949431926359
+1267	The crackhead was smoked by the pipe .	-9.521817711881006
+1268	The manicurist rescheduled the appointment .	-12.074957301099838
+1269	The appointment rescheduled the manicurist .	-13.03707764126856
+1270	The appointment was rescheduled by the manicurist .	-12.561788831236713
+1271	The manicurist was rescheduled by the appointment .	-16.78809528330944
+1272	The charlatan burned the contract .	-8.206782687541924
+1273	The contract burned the charlatan .	-8.17833570183378
+1274	The contract was burnt by the charlatan .	-9.191494866464222
+1275	The charlatan was burnt by the contract .	-8.41670924835296
+1276	The tanner placed the order .	-8.679274122463713
+1277	The order placed the tanner .	-8.641897172664164
+1278	The order was placed by the tanner .	-6.0925069999969095
+1279	The tanner was placed by the order .	-8.53347845822051
+1280	The archaeologist canceled the trip .	-5.372478376206519
+1281	The trip canceled the archaeologist .	-10.44829612183005
+1282	The trip was canceled by the archaeologist .	-6.325047838838837
+1283	The archaeologist was canceled by the trip .	-14.031382120890385
+1284	The Frenchman sliced the baguette .	-6.360215971398473
+1285	The baguette sliced the Frenchman .	-11.103869905237293
+1286	The baguette was sliced by the Frenchman .	-8.021905924736984
+1287	The Frenchman was sliced by the baguette .	-10.707558191569113
+1288	The producer cast the actress .	-4.577093264842511
+1289	The actress cast the producer .	-9.891711493012348
+1290	The actress was cast by the producer .	-4.127119633004321
+1291	The producer was cast by the actress .	-6.896691777357398
+1292	The babysitter punished the twins .	-10.06814490625233
+1293	The twins punished the babysitter .	-10.787624502157083
+1294	The twins were punished by the babysitter .	-7.272767072411205
+1295	The babysitter was punished by the twins .	-8.535701179211339
+1296	The exorcist vanquished the spirit .	-13.90498929614746
+1297	The spirit vanquished the exorcist .	-15.720031722855154
+1298	The spirit was vanquished by the exorcist .	-13.467167513843252
+1299	The exorcist was vanquished by the spirit .	-15.665085230777624
+1300	The barber shaved the old man .	-8.901140855827098
+1301	The old man shaved the barber .	-9.815602127996934
+1302	The old man was shaved by the barber .	-7.444213427148002
+1303	The barber was shaved by the old man .	-9.804248601156818
+1304	The paparazzi stalked the pop star .	-4.867367081581489
+1305	The pop star stalked the paparazzi .	-8.277294117455991
+1306	The pop star was stalked by the paparazzi .	-4.651971407620356
+1307	The paparazzi was stalked by the pop star .	-7.748275902312801
+1308	The brunette tipped the busboy .	-6.647620969151829
+1309	The busboy tipped the brunette .	-7.626027123573554
+1310	The busboy was tipped by the brunette .	-9.177698439850577
+1311	The brunette was tipped by the busboy .	-7.796982950982494
+1312	The roommate adopted the newborn .	-6.186102406614179
+1313	The newborn adopted the roommate .	-8.678430494681008
+1314	The newborn was adopted by the roommate .	-2.558633756610399
+1315	The roommate was adopted by the newborn .	-5.733486870210987
+1316	The cartoonist sketched the unicyclist .	-9.500639949915872
+1317	The unicyclist sketched the cartoonist .	-11.085721602932406
+1318	The unicyclist was sketched by the cartoonist .	-10.388797907207245
+1319	The cartoonist was sketched by the unicyclist .	-11.565675055174186
+1320	The streetwalker undercharged the seaman .	-9.523459884938038
+1321	The seaman undercharged the streetwalker .	-9.679594557698898
+1322	The seaman was undercharged by the streetwalker .	-15.28175160996267
+1323	The streetwalker was undercharged by the seaman .	-14.542103510428658
+1324	The urologist treated the widower .	-6.481788681551424
+1325	The widower treated the urologist .	-9.712441872585684
+1326	The widower was treated by the urologist .	-2.0389454517011267
+1327	The urologist was treated by the widower .	-5.4731116016552654
+1328	The jury acquitted the economist .	-2.7848338224012528
+1329	The economist acquitted the jury .	-9.878085465025718
+1330	The economist was acquitted by the jury .	-1.3939936717656578
+1331	The jury was acquitted by the economist .	-11.201458906434333
+1332	The freshman dodged the bully .	-12.889622516049696
+1333	The bully dodged the freshman .	-13.457963126791004
+1334	The bully was dodged by the freshman .	-11.973003602830449
+1335	The freshman was dodged by the bully .	-14.112111915917765
+1336	The nun reproached the hedonist .	-11.185090591131399
+1337	The hedonist reproached the nun .	-11.150634246831077
+1338	The hedonist was reproached by the nun .	-12.146846757264651
+1339	The nun was reproached by the hedonist .	-13.219849508601788
+1340	The librarian admonished the plagiarist .	-12.75840486868156
+1341	The plagiarist admonished the librarian .	-13.115660917326073
+1342	The plagiarist was admonished by the librarian .	-14.907446331961802
+1343	The librarian was admonished by the plagiarist .	-15.136603625161523
+1344	The colonel supervised the cadet .	-6.98909403008235
+1345	The cadet supervised the colonel .	-10.847037706372658
+1346	The cadet was supervised by the colonel .	-4.03105087533313
+1347	The colonel was supervised by the cadet .	-7.5914355348349565
+1348	The abolitionist hid the slave .	-8.74927454185165
+1349	The slave hid the abolitionist .	-9.877278767456778
+1350	The slave was hidden by the abolitionist .	-7.4308189940254605
+1351	The abolitionist was hidden by the slave .	-7.369567780596924
+1352	The personal trainer weighed the Olympian .	-15.236281254841767
+1353	The Olympian weighed the personal trainer .	-13.103156544342486
+1354	The Olympian was weighed by the personal trainer .	-6.299554860656982
+1355	The personal trainer was weighed by the Olympian .	-9.872047052408131
+1356	The zookeeper fed the giraffe .	-6.223996878622848
+1357	The giraffe fed the zookeeper .	-11.34056239065995
+1358	The giraffe was fed by the zookeeper .	-4.437569593851805
+1359	The zookeeper was fed by the giraffe .	-7.367771640733924
+1360	The masseuse relaxed the linebacker .	-9.713732887557658
+1361	The linebacker relaxed the masseuse .	-11.510147208869684
+1362	The linebacker was relaxed by the masseuse .	-7.95051061272761
+1363	The masseuse was relaxed by the linebacker .	-10.719032378095271
+1364	The page obeyed the noble .	-6.734172335511411
+1365	The noble obeyed the page .	-8.675452874722021
+1366	The noble was obeyed by the page .	-5.832112353881702
+1367	The page was obeyed by the noble .	-6.834329952158347
+1368	The lion chased the tour-guide .	-8.014070540645479
+1369	The tour-guide chased the lion .	-6.343885723819715
+1370	The tour-guide was chased by the lion .	-4.277798711966307
+1371	The lion was chased by the tour-guide .	-6.013908347303152
+1372	The caretaker quieted the orphan .	-9.695161364343553
+1373	The orphan quieted the caretaker .	-9.732465744386388
+1374	The orphan was quieted by the caretaker .	-11.855146315698235
+1375	The caretaker was quieted by the orphan .	-12.403284898768907
+1376	The tennis player thanked the chiropractor .	-8.535595120906668
+1377	The chiropractor thanked the tennis player .	-10.843628487103047
+1378	The chiropractor was thanked by the tennis player .	-6.310879928458026
+1379	The tennis player was thanked by the chiropractor .	-9.362802710466731
+1380	The experimenter recruited the subject .	-9.44493191748686
+1381	The subject recruited the experimenter .	-11.519105189720523
+1382	The subject was recruited by the experimenter .	-7.607274171902083
+1383	The experimenter was recruited by the subject .	-7.647681429860591
+1384	The mother disciplined the toddler .	-10.462179792330181
+1385	The toddler disciplined the mother .	-11.115200837312813
+1386	The toddler was disciplined by the mother .	-13.076389590088176
+1387	The mother was disciplined by the toddler .	-12.974213068759257
+1388	The assistant principal expelled the sociopath .	-9.899151064485723
+1389	The sociopath expelled the assistant principal .	-9.509152291254173
+1390	The sociopath was expelled by the assistant principal .	-5.94719860275952
+1391	The assistant principal was expelled by the sociopath .	-7.900438686745556
+1392	The channeler sensed the ghost .	-5.291418533703688
+1393	The ghost sensed the channeler .	-8.85032054793171
+1394	The ghost was sensed by the channeler .	-4.742780025668455
+1395	The channeler was sensed by the ghost .	-7.2336966296400735
+1396	The union ousted the whistle-blower .	-12.239747819978666
+1397	The whistle-blower ousted the union .	-12.378122190864108
+1398	The whistle-blower was ousted by the union .	-14.008785211881651
+1399	The union was ousted by the whistle-blower .	-14.958512198632723
+1400	The huntsman trapped the deer .	-6.9028437595612235
+1401	The deer trapped the huntsman .	-8.215297662015216
+1402	The deer was trapped by the huntsman .	-6.154293874764622
+1403	The huntsman was trapped by the deer .	-5.579690693974288
+1404	The cardiologist discredited the quack .	-13.90472193260814
+1405	The quack discredited the cardiologist .	-13.313760981904847
+1406	The quack was discredited by the cardiologist .	-14.622080628675205
+1407	The cardiologist was discredited by the quack .	-14.823709295336888
+1408	The bailiff released the ruffian .	-5.493878451904206
+1409	The ruffian released the bailiff .	-5.921235318504457
+1410	The ruffian was released by the bailiff .	-4.335863689542235
+1411	The bailiff was released by the ruffian .	-7.506789963265631
+1412	The shark mauled the snorkeler .	-11.26477760567176
+1413	The snorkeler mauled the shark .	-11.6071909023981
+1414	The snorkeler was mauled by the shark .	-14.960860795119341
+1415	The shark was mauled by the snorkeler .	-15.040786925815675
+1416	The president pardoned the traitor .	-11.673579517783766
+1417	The traitor pardoned the president .	-9.267951272484474
+1418	The traitor was pardoned by the president .	-10.383929967059768
+1419	The president was pardoned by the traitor .	-12.320426010592055
+1420	The au pair spanked the girl .	-12.482192738849026
+1421	The girl spanked the au pair .	-14.47493405214237
+1422	The girl was spanked by the au pair .	-14.626600736221139
+1423	The au pair was spanked by the girl .	-14.547910774755739
+1424	The TV station head promoted the newsagent .	-12.219673007924536
+1425	The newsagent promoted the TV station head .	-10.913813935802839
+1426	The newsagent was promoted by the TV station head .	-8.209127315432783
+1427	The TV station head was promoted by the newsagent .	-8.403557260316452
+1428	The policewoman handcuffed the offender .	-13.317948720975192
+1429	The offender handcuffed the policewoman .	-14.456382103524874
+1430	The offender was handcuffed by the policewoman .	-13.873807672370448
+1431	The policewoman was handcuffed by the offender .	-14.913366832431787
+1432	The anthropologist studied the tribesman .	-5.208707183328528
+1433	The tribesman studied the anthropologist .	-6.745303481701688
+1434	The tribesman was studied by the anthropologist .	-5.700330322131214
+1435	The anthropologist was studied by the tribesman .	-11.712137823858445
+1436	The police chief rewarded the firefighter .	-8.919076535710813
+1437	The firefighter rewarded the police chief .	-11.443716558268145
+1438	The firefighter was rewarded by the police chief .	-7.177095694192615
+1439	The police chief was rewarded by the firefighter .	-10.806077381521701
+1440	The miscreant kidnapped the beneficiary .	-14.990017921485327
+1441	The beneficiary kidnapped the miscreant .	-15.344514684675122
+1442	The beneficiary was kidnapped by the miscreant .	-7.198530620457186
+1443	The miscreant was kidnapped by the beneficiary .	-9.443449938298961
+1444	The social worker comforted the abused woman .	-8.172802507692653
+1445	The abused woman comforted the social worker .	-11.175791662433415
+1446	The abused woman was comforted by the social worker .	-11.03187242276652
+1447	The social worker was comforted by the abused woman .	-10.655447386890298
+1448	The neuroscientist overwhelmed the lab assistant .	-12.890772771302007
+1449	The lab assistant overwhelmed the neuroscientist .	-10.526520645465796
+1450	The lab assistant was overwhelmed by the neuroscientist .	-7.319944723704753
+1451	The neuroscientist was overwhelmed by the lab assistant .	-7.5724438366103275
+1452	The warmonger terrorized the gunsmith .	-12.82802506501154
+1453	The gunsmith terrorized the warmonger .	-13.063322572594759
+1454	The gunsmith was terrorized by the warmonger .	-14.236698738684082
+1455	The warmonger was terrorized by the gunsmith .	-14.169964330579697
+1456	The conductor tolerated the violinist .	-12.074274805803176
+1457	The violinist tolerated the conductor .	-11.435167112968415
+1458	The violinist was tolerated by the conductor .	-14.669168515188412
+1459	The conductor was tolerated by the violinist .	-12.929152803590261
+1460	The pitcher signaled the hitter .	-9.993528757585207
+1461	The hitter signaled the pitcher .	-9.677967251255543
+1462	The hitter was signaled by the pitcher .	-6.86911647317748
+1463	The pitcher was signaled by the hitter .	-7.843373049677655
+1464	The quarterback kissed the cheerleader .	-3.5864628269661165
+1465	The cheerleader kissed the quarterback .	-3.374044281888863
+1466	The cheerleader was kissed by the quarterback .	-4.632140022871879
+1467	The quarterback was kissed by the cheerleader .	-3.966614234570475
+1468	The camper startled the bear .	-7.882222527841779
+1469	The bear startled the camper .	-8.665472057806777
+1470	The bear was startled by the camper .	-5.671069933382925
+1471	The camper was startled by the bear .	-6.647507800599624
+1472	The admiral accompanied the lieutenant .	-7.519809070948683
+1473	The lieutenant accompanied the admiral .	-6.4369448058469
+1474	The lieutenant was accompanied by the admiral .	-4.869556699194013
+1475	The admiral was accompanied by the lieutenant .	-2.930524308115667
+1476	The tenor loved the soprano .	-9.197717166283626
+1477	The soprano loved the tenor .	-10.16835936815675
+1478	The soprano was loved by the tenor .	-9.044836755600464
+1479	The tenor was loved by the soprano .	-9.018251790473627
+1480	The photographer paid the barrister .	-7.638601185100491
+1481	The barrister paid the photographer .	-6.332935046822887
+1482	The barrister was paid by the photographer .	-7.059186251240556
+1483	The photographer was paid by the barrister .	-4.113590202168429
+1484	The bachelor intrigued the blonde .	-9.811660737231174
+1485	The blonde intrigued the bachelor .	-7.694367883425363
+1486	The blonde was intrigued by the bachelor .	-3.359048526664641
+1487	The bachelor was intrigued by the blonde .	-2.950948705515115
+1488	The football player pursued the socialite .	-9.343434340638401
+1489	The socialite pursued the football player .	-8.45224746125945
+1490	The socialite was pursued by the football player .	-5.1642232865324695
+1491	The football player was pursued by the socialite .	-4.168194464665636
+1492	The neurologist consulted the geneticist .	-10.445982098323785
+1493	The geneticist consulted the neurologist .	-11.571386163695957
+1494	The geneticist was consulted by the neurologist .	-3.9757212158157977
+1495	The neurologist was consulted by the geneticist .	-5.13960044484503
+1496	The fashionista humiliated the mode .	-15.984704957329695
+1497	The mode humiliated the fashionista .	-13.516731523129948
+1498	The mode was humiliated by the fashionista .	-15.0291891990861
+1499	The fashionista was humiliated by the mode .	-14.014025642136206
+1500	The butcher accused the meatpacker .	-11.233144704333021
+1501	The meatpacker accused the butcher .	-9.505458648168382
+1502	The meatpacker was accused by the butcher .	-8.250239388011684
+1503	The butcher was accused by the meatpacker .	-8.0373558011619
+1504	The niece embarrassed the aunt .	-9.34018781287676
+1505	The aunt embarrassed the niece .	-10.201875383680601
+1506	The aunt was embarrassed by the niece .	-10.404247659074565
+1507	The niece was embarrassed by the aunt .	-8.600586957559768
+1508	The warlord hailed the mercenary .	-5.4292765067193045
+1509	The mercenary hailed the warlord .	-5.8530906694496165
+1510	The mercenary was hailed by the warlord .	-6.403277092431725
+1511	The warlord was hailed by the mercenary .	-7.45586714346004
+1512	The neighbor snubbed the newcomer .	-11.769345612731355
+1513	The newcomer snubbed the neighbor .	-10.461131280510056
+1514	The newcomer was snubbed by the neighbor .	-14.039394478833056
+1515	The neighbor was snubbed by the newcomer .	-16.19361233467556
+1516	The editor overheard the proofreader .	-16.413843430004952
+1517	The proofreader overheard the editor .	-15.774479029863407
+1518	The proofreader was overheard by the editor .	-14.210921947723822
+1519	The editor was overheard by the proofreader .	-11.828945540785165
+1520	The communist offended the capitalist .	-9.023795166177731
+1521	The capitalist offended the communist .	-9.660939123629989
+1522	The capitalist was offended by the communist .	-9.471100036779871
+1523	The communist was offended by the capitalist .	-8.444588401638816
+1524	The curator misinformed the sculptor .	-16.257863051657104
+1525	The sculptor misinformed the curator .	-16.675874399751525
+1526	The sculptor was misinformed by the curator .	-16.21072076771763
+1527	The curator was misinformed by the sculptor .	-14.938306842516118
+1528	The baker mentioned the miller .	-11.186009839732261
+1529	The miller mentioned the baker .	-10.969012618558818
+1530	The miller was mentioned by the baker .	-9.812286525649531
+1531	The baker was mentioned by the miller .	-9.62107844518761
+1532	The pollster shamed the statistician .	-13.234151247267826
+1533	The statistician shamed the pollster .	-13.374959731988731
+1534	The statistician was shamed by the pollster .	-15.207784887495809
+1535	The pollster was shamed by the statistician .	-14.430913564457951
+1536	The screenwriter emailed the actor .	-11.779274330295152
+1537	The actor emailed the screenwriter .	-12.948638940784093
+1538	The actor was emailed by the screenwriter .	-12.23021502326883
+1539	The screenwriter was emailed by the actor .	-11.44172625287835
+1540	The dermatologist contradicted the pathologist .	-11.96472370693128
+1541	The pathologist contradicted the dermatologist .	-12.403143750105924
+1542	The pathologist was contradicted by the dermatologist .	-12.83095194881181
+1543	The dermatologist was contradicted by the pathologist .	-12.597392517068215
+1544	The sharecropper misled the fieldworker .	-12.644840759866012
+1545	The fieldworker misled the sharecropper .	-12.501356389350391
+1546	The fieldworker was misled by the sharecropper .	-12.895707202317652
+1547	The sharecropper was misled by the fieldworker .	-12.903630740750566
+1548	The patriot saluted the veteran .	-10.813735684837722
+1549	The veteran saluted the patriot .	-11.777126796836042
+1550	The veteran was saluted by the patriot .	-10.015097253915698
+1551	The patriot was saluted by the veteran .	-10.658043587909628
+1552	The welder visited the milkman .	-9.038934106740902
+1553	The milkman visited the welder .	-9.438305781576938
+1554	The milkman was visited by the welder .	-8.036491243772836
+1555	The welder was visited by the milkman .	-6.849326770228623
+1556	The teenager mortified the parent .	-14.805703627629189
+1557	The parent mortified the teenager .	-15.018970067866135
+1558	The parent was mortified by the teenager .	-16.056482145463967
+1559	The teenager was mortified by the parent .	-15.494018112522525
+1560	The surfer impressed the swimmer .	-10.598891758992705
+1561	The swimmer impressed the surfer .	-10.711803878446512
+1562	The swimmer was impressed by the surfer .	-8.454176550892571
+1563	The surfer was impressed by the swimmer .	-7.414528704108768
+1564	The miser antagonized the landlady .	-11.4500875817446
+1565	The landlady antagonized the miser .	-13.681427914169486
+1566	The landlady was antagonized by the miser .	-14.054159357066949
+1567	The miser was antagonized by the landlady .	-13.991051972818612
+1568	The infantryman upset the loyalist .	-10.166682657844552
+1569	The loyalist upset the infantryman .	-10.64725056511796
+1570	The loyalist was upset by the infantryman .	-10.653455509211554
+1571	The infantryman was upset by the loyalist .	-12.063617145996613
+1572	The florist invoiced the grocer .	-9.679312533916592
+1573	The grocer invoiced the florist .	-9.222212488341574
+1574	The grocer was invoiced by the florist .	-11.595286040949288
+1575	The florist was invoiced by the grocer .	-11.24694770974172
+1576	The claims adjuster harassed the retailer .	-16.212640441867457
+1577	The retailer harassed the claims adjuster .	-17.026504457306245
+1578	The retailer was harassed by the claims adjuster .	-13.804503984641656
+1579	The claims adjuster was harassed by the retailer .	-16.941070604862027
+1580	The ex-wife punched the girlfriend .	-8.627785427799076
+1581	The girlfriend punched the ex-wife .	-12.837109961913306
+1582	The girlfriend was punched by the ex-wife .	-6.830549403212879
+1583	The ex-wife was punched by the girlfriend .	-6.774956767179636
+1584	The defender blamed the goalkeeper .	-13.922034415223878
+1585	The goalkeeper blamed the defender .	-13.67324135588202
+1586	The goalkeeper was blamed by the defender .	-9.188871886833407
+1587	The defender was blamed by the goalkeeper .	-8.970059920147575
+1588	The geologist reassured the excavator .	-10.435522673487762
+1589	The excavator reassured the geologist .	-11.406493779319694
+1590	The excavator was reassured by the geologist .	-13.393009840221973
+1591	The geologist was reassured by the excavator .	-13.820940894513722
+1592	The physicist nagged the mathematician .	-15.235054146187382
+1593	The mathematician nagged the physicist .	-15.363549916554636
+1594	The mathematician was nagged by the physicist .	-13.380424652999265
+1595	The physicist was nagged by the mathematician .	-13.327679273430563
+1596	The employee watched the embezzler .	-11.355493571468292
+1597	The embezzler watched the employee .	-13.379586147125483
+1598	The embezzler was watched by the employee .	-8.401150349027457
+1599	The employee was watched by the embezzler .	-10.001178525185502
+1600	The programmer distrusted the volunteer .	-11.434440222554125
+1601	The volunteer distrusted the programmer .	-11.271096305422212
+1602	The volunteer was distrusted by the programmer .	-12.125309402658731
+1603	The programmer was distrusted by the volunteer .	-11.942048380281753
+1604	The interviewer befriended the chairman .	-10.427451042560103
+1605	The chairman befriended the interviewer .	-10.34936478695993
+1606	The chairman was befriended by the interviewer .	-7.928293586011493
+1607	The interviewer was befriended by the chairman .	-10.230005705118124
+1608	The cinematographer favored the movie star .	-9.38907977345968
+1609	The movie star favored the cinematographer .	-11.264871878691137
+1610	The movie star was favored by the cinematographer .	-8.476581720308086
+1611	The cinematographer was favored by the movie star .	-7.850971041448396
+1612	The hockey player aggravated the skater .	-11.295631755659583
+1613	The skater aggravated the hockey player .	-11.185534020159519
+1614	The skater was aggravated by the hockey player .	-11.606346595120016
+1615	The hockey player was aggravated by the skater .	-11.523701414458808
+1616	The bricklayer outraged the crane operator .	-11.18684030315976
+1617	The crane operator outraged the bricklayer .	-11.810608715250453
+1618	The crane operator was outraged by the bricklayer .	-12.898202291061532
+1619	The bricklayer was outraged by the crane operator .	-13.402372223544342
+1620	The candidate approved the nominee .	-9.109652392350505
+1621	The nominee approved the candidate .	-8.253313092490542
+1622	The nominee was approved by the candidate .	-4.707232684483514
+1623	The candidate was approved by the nominee .	-3.8724106734623716
+1624	The entomologist disparaged the biologist .	-12.631701496607892
+1625	The biologist disparaged the entomologist .	-12.882503110507878
+1626	The biologist was disparaged by the entomologist .	-14.272927803586011
+1627	The entomologist was disparaged by the biologist .	-14.389212563280305
+1628	The hypochondriac hounded the medic .	-11.83139171981682
+1629	The medic hounded the hypochondriac .	-11.149825229421566
+1630	The medic was hounded by the hypochondriac .	-12.862634663872518
+1631	The hypochondriac was hounded by the medic .	-12.600465288431353
+1632	The chemist suspected the pharmacist .	-9.05654340189324
+1633	The pharmacist suspected the chemist .	-9.142056731954554
+1634	The pharmacist was suspected by the chemist .	-7.886180567168126
+1635	The chemist was suspected by the pharmacist .	-7.157291442798483
+1636	The litigator begged the citizen .	-14.049368940577756
+1637	The citizen begged the litigator .	-13.680850723965202
+1638	The citizen was begged by the litigator .	-11.587511705098807
+1639	The litigator was begged by the citizen .	-10.354027275868026
+1640	The plumber devastated the foreman .	-15.103025185346866
+1641	The foreman devastated the plumber .	-15.513600331597745
+1642	The foreman was devastated by the plumber .	-10.988579347232136
+1643	The plumber was devastated by the foreman .	-12.65539886477423
+1644	The sergeant identified the sniper .	-6.065257317111296
+1645	The sniper identified the sergeant .	-7.17163727100635
+1646	The sniper was identified by the sergeant .	-3.175684642450143
+1647	The sergeant was identified by the sniper .	-8.286269747081043
