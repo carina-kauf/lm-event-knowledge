@@ -1,0 +1,472 @@
+# AI 22 active-plausible
+The ship captain promised the triumph. 
+# AI 22 active-implausible
+The triumph promised the ship captain. 
+# AI 22 passive-plausible
+The triumph was promised by the ship captain. 
+# AI 22 passive-implausible
+The ship captain was promised by the triumph. 
+
+# AI 28 active-plausible
+The agent failed the mission. 
+# AI 28 active-implausible
+The mission failed the agent. 
+# AI 28 passive-plausible
+The mission was failed by the agent. 
+# AI 28 passive-implausible
+The agent was failed by the mission. 
+
+# AI 30 active-plausible
+The anchorman garbled the expression. 
+# AI 30 active-implausible
+The expression garbled the anchorman. 
+# AI 30 passive-plausible
+The expression was garbled by the anchorman. 
+# AI 30 passive-implausible
+The anchorman was garbled by the expression. 
+
+# AI 36 active-plausible
+The tourist exited the bus. 
+# AI 36 active-implausible
+The bus exited the tourist. 
+# AI 36 passive-plausible
+The bus was exited by the tourist. 
+# AI 36 passive-implausible
+The tourist was exited by the bus. 
+
+# AI 40 active-plausible
+The scientist discovered the cure. 
+# AI 40 active-implausible
+The cure discovered the scientist. 
+# AI 40 passive-plausible
+The cure was discovered by the scientist. 
+# AI 40 passive-implausible
+The scientist was discovered by the cure. 
+
+# AI 44 active-plausible
+The designer suggested the drapes. 
+# AI 44 active-implausible
+The drapes suggested the designer. 
+# AI 44 passive-plausible
+The drapes were suggested by the designer. 
+# AI 44 passive-implausible
+The designer were suggested by the drapes. 
+
+# AI 46 active-plausible
+The builder washed the pants. 
+# AI 46 active-implausible
+The pants washed the builder. 
+# AI 46 passive-plausible
+The pants were washed by the builder. 
+# AI 46 passive-implausible
+The builder were washed by the pants. 
+
+# AI 82 active-plausible
+The flight-attendant dragged the luggage. 
+# AI 82 active-implausible
+The luggage dragged the flight-attendant. 
+# AI 82 passive-plausible
+The luggage was dragged by the flight-attendant. 
+# AI 82 passive-implausible
+The flight-attendant was dragged by the luggage. 
+
+# AAN 92 active-plausible
+The extortionist menaced the legislator. 
+# AAN 92 active-implausible
+The legislator menaced the extortionist. 
+# AAN 92 passive-plausible
+The legislator was menaced by the extortionist. 
+# AAN 92 passive-implausible
+The extortionist was menaced by the legislator. 
+
+# AAN 94 active-plausible
+The painter depicted the thinker. 
+# AAN 94 active-implausible
+The thinker depicted the painter. 
+# AAN 94 passive-plausible
+The thinker was depicted by the painter. 
+# AAN 94 passive-implausible
+The painter was depicted by the thinker. 
+
+# AAN 106 active-plausible
+The fan pestered the filmmaker. 
+# AAN 106 active-implausible
+The filmmaker pestered the fan. 
+# AAN 106 passive-plausible
+The filmmaker was pestered by the fan. 
+# AAN 106 passive-implausible
+The fan was pestered by the filmmaker. 
+
+# AAN 110 active-plausible
+The joker tricked the distributor. 
+# AAN 110 active-implausible
+The distributor tricked the joker. 
+# AAN 110 passive-plausible
+The distributor was tricked by the joker. 
+# AAN 110 passive-implausible
+The joker was tricked by the distributor. 
+
+# AAN 120 active-plausible
+The negotiator saved the captive. 
+# AAN 120 active-implausible
+The captive saved the negotiator. 
+# AAN 120 passive-plausible
+The captive was saved by the negotiator. 
+# AAN 120 passive-implausible
+The negotiator was saved by the captive. 
+
+# AAN 124 active-plausible
+The craftsman taught the trainee. 
+# AAN 124 active-implausible
+The trainee taught the craftsman. 
+# AAN 124 passive-plausible
+The trainee was taught by the craftsman. 
+# AAN 124 passive-implausible
+The craftsman was taught by the trainee. 
+
+# AAN 126 active-plausible
+The cyclist disobeyed the coach. 
+# AAN 126 active-implausible
+The coach disobeyed the cyclist. 
+# AAN 126 passive-plausible
+The coach was disobeyed by the cyclist. 
+# AAN 126 passive-implausible
+The cyclist was disobeyed by the coach. 
+
+# AAN 128 active-plausible
+The orator captivated the spectators. 
+# AAN 128 active-implausible
+The spectators captivated the orator. 
+# AAN 128 passive-plausible
+The spectators were captivated by the orator. 
+# AAN 128 passive-implausible
+The orator were captivated by the spectators. 
+
+# AAN 134 active-plausible
+The lawyer questioned the witness. 
+# AAN 134 active-implausible
+The witness questioned the lawyer. 
+# AAN 134 passive-plausible
+The witness was questioned by the lawyer. 
+# AAN 134 passive-implausible
+The lawyer was questioned by the witness. 
+
+# AAN 150 active-plausible
+The dad coddled the baby. 
+# AAN 150 active-implausible
+The baby coddled the dad. 
+# AAN 150 passive-plausible
+The baby was coddled by the dad. 
+# AAN 150 passive-implausible
+The dad was coddled by the baby. 
+
+# AAN 158 active-plausible
+The loudmouth tormented the loner. 
+# AAN 158 active-implausible
+The loner tormented the loudmouth. 
+# AAN 158 passive-plausible
+The loner was tormented by the loudmouth. 
+# AAN 158 passive-implausible
+The loudmouth was tormented by the loner. 
+
+# AAN 168 active-plausible
+The illusionist entranced the viewers. 
+# AAN 168 active-implausible
+The viewers entranced the illusionist. 
+# AAN 168 passive-plausible
+The viewers were entranced by the illusionist. 
+# AAN 168 passive-implausible
+The illusionist were entranced by the viewers. 
+
+# AAN 174 active-plausible
+The panelist congratulated the winner. 
+# AAN 174 active-implausible
+The winner congratulated the panelist. 
+# AAN 174 passive-plausible
+The winner was congratulated by the panelist. 
+# AAN 174 passive-implausible
+The panelist was congratulated by the winner. 
+
+# AAR 184 active-plausible-0
+The sportscaster peeved the jock. 
+# AAR 184 active-plausible-1
+The jock peeved the sportscaster. 
+# AAR 184 passive-plausible-0
+The jock was peeved by the sportscaster. 
+# AAR 184 passive-plausible-1
+The sportscaster was peeved by the jock. 
+
+# AAR 186 active-plausible-0
+The pastor embraced the parishioner. 
+# AAR 186 active-plausible-1
+The parishioner embraced the pastor. 
+# AAR 186 passive-plausible-0
+The parishioner was embraced by the pastor. 
+# AAR 186 passive-plausible-1
+The pastor was embraced by the parishioner. 
+
+# AAR 188 active-plausible-0
+The lunatic ridiculed the jester. 
+# AAR 188 active-plausible-1
+The jester ridiculed the lunatic. 
+# AAR 188 passive-plausible-0
+The jester was ridiculed by the lunatic. 
+# AAR 188 passive-plausible-1
+The lunatic was ridiculed by the jester. 
+
+# AAR 194 active-plausible-0
+The percussionist displeased the meteorologist. 
+# AAR 194 active-plausible-1
+The meteorologist displeased the percussionist. 
+# AAR 194 passive-plausible-0
+The meteorologist was displeased by the percussionist. 
+# AAR 194 passive-plausible-1
+The percussionist was displeased by the meteorologist. 
+
+# AAR 202 active-plausible-0
+The patron soothed the draftsman. 
+# AAR 202 active-plausible-1
+The draftsman soothed the patron. 
+# AAR 202 passive-plausible-0
+The draftsman was soothed by the patron. 
+# AAR 202 passive-plausible-1
+The patron was soothed by the draftsman. 
+
+# AAR 204 active-plausible-0
+The psychologist extolled the hairstylist. 
+# AAR 204 active-plausible-1
+The hairstylist extolled the psychologist. 
+# AAR 204 passive-plausible-0
+The hairstylist was extolled by the psychologist. 
+# AAR 204 passive-plausible-1
+The psychologist was extolled by the hairstylist. 
+
+# AAR 208 active-plausible-0
+The analyst relieved the investor. 
+# AAR 208 active-plausible-1
+The investor relieved the analyst. 
+# AAR 208 passive-plausible-0
+The investor was relieved by the analyst. 
+# AAR 208 passive-plausible-1
+The analyst was relieved by the investor. 
+
+# AAR 230 active-plausible-0
+The songwriter envied the dramatist. 
+# AAR 230 active-plausible-1
+The dramatist envied the songwriter. 
+# AAR 230 passive-plausible-0
+The dramatist was envied by the songwriter. 
+# AAR 230 passive-plausible-1
+The songwriter was envied by the dramatist. 
+
+# AAR 232 active-plausible-0
+The despot enraged the townspeople. 
+# AAR 232 active-plausible-1
+The townspeople enraged the despot. 
+# AAR 232 passive-plausible-0
+The townspeople were enraged by the despot. 
+# AAR 232 passive-plausible-1
+The despot were enraged by the townspeople. 
+
+# AAR 238 active-plausible-0
+The dealer presented the sponsor. 
+# AAR 238 active-plausible-1
+The sponsor presented the dealer. 
+# AAR 238 passive-plausible-0
+The sponsor was presented by the dealer. 
+# AAR 238 passive-plausible-1
+The dealer was presented by the sponsor. 
+
+# AAR 246 active-plausible-0
+The hoodlum abhorred the chancellor. 
+# AAR 246 active-plausible-1
+The chancellor abhorred the hoodlum. 
+# AAR 246 passive-plausible-0
+The chancellor was abhorred by the hoodlum. 
+# AAR 246 passive-plausible-1
+The hoodlum was abhorred by the chancellor. 
+
+# AAR 264 active-plausible-0
+The striker cited the chief. 
+# AAR 264 active-plausible-1
+The chief cited the striker. 
+# AAR 264 passive-plausible-0
+The chief was cited by the striker. 
+# AAR 264 passive-plausible-1
+The striker was cited by the chief. 
+
+# AAR 266 active-plausible-0
+The letter carrier disgusted the cabbie. 
+# AAR 266 active-plausible-1
+The cabbie disgusted the letter carrier. 
+# AAR 266 passive-plausible-0
+The cabbie was disgusted by the letter carrier. 
+# AAR 266 passive-plausible-1
+The letter carrier was disgusted by the cabbie. 
+
+# AAR 270 active-plausible-0
+The deputy notified the higher-ups. 
+# AAR 270 active-plausible-1
+The higher-ups notified the deputy. 
+# AAR 270 passive-plausible-0
+The higher-ups were notified by the deputy. 
+# AAR 270 passive-plausible-1
+The deputy were notified by the higher-ups. 
+
+# AI 288 active-plausible
+The guarantor initialed the form. 
+# AI 288 active-implausible
+The form initialed the guarantor. 
+# AI 288 passive-plausible
+The form was initialed by the guarantor. 
+# AI 288 passive-implausible
+The guarantor was initialed by the form. 
+
+# AI 300 active-plausible
+The schoolgirl borrowed the key. 
+# AI 300 active-implausible
+The key borrowed the schoolgirl. 
+# AI 300 passive-plausible
+The key was borrowed by the schoolgirl. 
+# AI 300 passive-implausible
+The schoolgirl was borrowed by the key. 
+
+# AI 302 active-plausible
+The diver recharged the battery. 
+# AI 302 active-implausible
+The battery recharged the diver. 
+# AI 302 passive-plausible
+The battery was recharged by the diver. 
+# AI 302 passive-implausible
+The diver was recharged by the battery. 
+
+# AI 304 active-plausible
+The copycat redecorated the apartment. 
+# AI 304 active-implausible
+The apartment redecorated the copycat. 
+# AI 304 passive-plausible
+The apartment was redecorated by the copycat. 
+# AI 304 passive-implausible
+The copycat was redecorated by the apartment. 
+
+# AI 306 active-plausible
+The laundress folded the clothes. 
+# AI 306 active-implausible
+The clothes folded the laundress. 
+# AI 306 passive-plausible
+The clothes were folded by the laundress. 
+# AI 306 passive-implausible
+The laundress were folded by the clothes. 
+
+# AI 310 active-plausible
+The bookseller calculated the profit. 
+# AI 310 active-implausible
+The profit calculated the bookseller. 
+# AI 310 passive-plausible
+The profit was calculated by the bookseller. 
+# AI 310 passive-implausible
+The bookseller was calculated by the profit. 
+
+# AI 312 active-plausible
+The groundskeeper changed the light bulb. 
+# AI 312 active-implausible
+The light bulb changed the groundskeeper. 
+# AI 312 passive-plausible
+The light bulb was changed by the groundskeeper. 
+# AI 312 passive-implausible
+The groundskeeper was changed by the light bulb. 
+
+# AI 320 active-plausible
+The forger shipped the package. 
+# AI 320 active-implausible
+The package shipped the forger. 
+# AI 320 passive-plausible
+The package was shipped by the forger. 
+# AI 320 passive-implausible
+The forger was shipped by the package. 
+
+# AAN 328 active-plausible
+The babysitter punished the twins. 
+# AAN 328 active-implausible
+The twins punished the babysitter. 
+# AAN 328 passive-plausible
+The twins were punished by the babysitter. 
+# AAN 328 passive-implausible
+The babysitter were punished by the twins. 
+
+# AAN 330 active-plausible
+The barber shaved the old man. 
+# AAN 330 active-implausible
+The old man shaved the barber. 
+# AAN 330 passive-plausible
+The old man was shaved by the barber. 
+# AAN 330 passive-implausible
+The barber was shaved by the old man. 
+
+# AAN 350 active-plausible
+The experimenter recruited the subject. 
+# AAN 350 active-implausible
+The subject recruited the experimenter. 
+# AAN 350 passive-plausible
+The subject was recruited by the experimenter. 
+# AAN 350 passive-implausible
+The experimenter was recruited by the subject. 
+
+# AAR 370 active-plausible-0
+The pitcher signaled the hitter. 
+# AAR 370 active-plausible-1
+The hitter signaled the pitcher. 
+# AAR 370 passive-plausible-0
+The hitter was signaled by the pitcher. 
+# AAR 370 passive-plausible-1
+The pitcher was signaled by the hitter. 
+
+# AAR 376 active-plausible-0
+The bachelor intrigued the blonde. 
+# AAR 376 active-plausible-1
+The blonde intrigued the bachelor. 
+# AAR 376 passive-plausible-0
+The blonde was intrigued by the bachelor. 
+# AAR 376 passive-plausible-1
+The bachelor was intrigued by the blonde. 
+
+# AAR 380 active-plausible-0
+The butcher accused the meatpacker. 
+# AAR 380 active-plausible-1
+The meatpacker accused the butcher. 
+# AAR 380 passive-plausible-0
+The meatpacker was accused by the butcher. 
+# AAR 380 passive-plausible-1
+The butcher was accused by the meatpacker. 
+
+# AAR 402 active-plausible-0
+The geologist reassured the excavator. 
+# AAR 402 active-plausible-1
+The excavator reassured the geologist. 
+# AAR 402 passive-plausible-0
+The excavator was reassured by the geologist. 
+# AAR 402 passive-plausible-1
+The geologist was reassured by the excavator. 
+
+# AAR 406 active-plausible-0
+The interviewer befriended the chairman. 
+# AAR 406 active-plausible-1
+The chairman befriended the interviewer. 
+# AAR 406 passive-plausible-0
+The chairman was befriended by the interviewer. 
+# AAR 406 passive-plausible-1
+The interviewer was befriended by the chairman. 
+
+# AAR 410 active-plausible-0
+The candidate approved the nominee. 
+# AAR 410 active-plausible-1
+The nominee approved the candidate. 
+# AAR 410 passive-plausible-0
+The nominee was approved by the candidate. 
+# AAR 410 passive-plausible-1
+The candidate was approved by the nominee. 
+
+# filler 1 filler 
+Please select the leftmost option. 
+# filler 2 filler 
+Please select the rightmost option. 

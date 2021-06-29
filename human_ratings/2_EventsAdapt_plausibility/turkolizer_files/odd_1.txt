@@ -1,0 +1,472 @@
+# AI 7 active-plausible
+The adventurer requested the beverage. 
+# AI 7 active-implausible
+The beverage requested the adventurer. 
+# AI 7 passive-plausible
+The beverage was requested by the adventurer. 
+# AI 7 passive-implausible
+The adventurer was requested by the beverage. 
+
+# AI 15 active-plausible
+The handyman repaired the faucet. 
+# AI 15 active-implausible
+The faucet repaired the handyman. 
+# AI 15 passive-plausible
+The faucet was repaired by the handyman. 
+# AI 15 passive-implausible
+The handyman was repaired by the faucet. 
+
+# AI 21 active-plausible
+The cook grilled the octopus. 
+# AI 21 active-implausible
+The octopus grilled the cook. 
+# AI 21 passive-plausible
+The octopus was grilled by the cook. 
+# AI 21 passive-implausible
+The cook was grilled by the octopus. 
+
+# AI 23 active-plausible
+The skipper guaranteed the victory. 
+# AI 23 active-implausible
+The victory guaranteed the skipper. 
+# AI 23 passive-plausible
+The victory was guaranteed by the skipper. 
+# AI 23 passive-implausible
+The skipper was guaranteed by the victory. 
+
+# AI 31 active-plausible
+The announcer mispronounced the word. 
+# AI 31 active-implausible
+The word mispronounced the announcer. 
+# AI 31 passive-plausible
+The word was mispronounced by the announcer. 
+# AI 31 passive-implausible
+The announcer was mispronounced by the word. 
+
+# AI 47 active-plausible
+The contractor laundered the trousers. 
+# AI 47 active-implausible
+The trousers laundered the contractor. 
+# AI 47 passive-plausible
+The trousers were laundered by the contractor. 
+# AI 47 passive-implausible
+The contractor were laundered by the trousers. 
+
+# AI 49 active-plausible
+The domestic cleaned the wash basin. 
+# AI 49 active-implausible
+The wash basin cleaned the domestic. 
+# AI 49 passive-plausible
+The wash basin was cleaned by the domestic. 
+# AI 49 passive-implausible
+The domestic was cleaned by the wash basin. 
+
+# AI 53 active-plausible
+The hoarder hid the stash. 
+# AI 53 active-implausible
+The stash hid the hoarder. 
+# AI 53 passive-plausible
+The stash was hidden by the hoarder. 
+# AI 53 passive-implausible
+The hoarder was hidden by the stash. 
+
+# AI 57 active-plausible
+The carnivore ate the steak. 
+# AI 57 active-implausible
+The steak ate the carnivore. 
+# AI 57 passive-plausible
+The steak was eaten by the carnivore. 
+# AI 57 passive-implausible
+The carnivore was eaten by the steak. 
+
+# AI 59 active-plausible
+The man drank the soda. 
+# AI 59 active-implausible
+The soda drank the man. 
+# AI 59 passive-plausible
+The soda was drunk by the man. 
+# AI 59 passive-implausible
+The man was drunk by the soda. 
+
+# AI 63 active-plausible
+The woman prepared the dinner. 
+# AI 63 active-implausible
+The dinner prepared the woman. 
+# AI 63 passive-plausible
+The dinner was prepared by the woman. 
+# AI 63 passive-implausible
+The woman was prepared by the dinner. 
+
+# AI 73 active-plausible
+The advisor edited the paper. 
+# AI 73 active-implausible
+The paper edited the advisor. 
+# AI 73 passive-plausible
+The paper was edited by the advisor. 
+# AI 73 passive-implausible
+The advisor was edited by the paper. 
+
+# AI 81 active-plausible
+The stewardess pulled the suitcase. 
+# AI 81 active-implausible
+The suitcase pulled the stewardess. 
+# AI 81 passive-plausible
+The suitcase was pulled by the stewardess. 
+# AI 81 passive-implausible
+The stewardess was pulled by the suitcase. 
+
+# AI 85 active-plausible
+The sheriff inspected the estate. 
+# AI 85 active-implausible
+The estate inspected the sheriff. 
+# AI 85 passive-plausible
+The estate was inspected by the sheriff. 
+# AI 85 passive-implausible
+The sheriff was inspected by the estate. 
+
+# AI 87 active-plausible
+The celebrity signed the photograph. 
+# AI 87 active-implausible
+The photograph signed the celebrity. 
+# AI 87 passive-plausible
+The photograph was signed by the celebrity. 
+# AI 87 passive-implausible
+The celebrity was signed by the photograph. 
+
+# AAN 105 active-plausible
+The admirer badgered the director. 
+# AAN 105 active-implausible
+The director badgered the admirer. 
+# AAN 105 passive-plausible
+The director was badgered by the admirer. 
+# AAN 105 passive-implausible
+The admirer was badgered by the director. 
+
+# AAN 125 active-plausible
+The biker defied the trainer. 
+# AAN 125 active-implausible
+The trainer defied the biker. 
+# AAN 125 passive-plausible
+The trainer was defied by the biker. 
+# AAN 125 passive-implausible
+The biker was defied by the trainer. 
+
+# AAN 147 active-plausible
+The baron chose the successor. 
+# AAN 147 active-implausible
+The successor chose the baron. 
+# AAN 147 passive-plausible
+The successor was chosen by the baron. 
+# AAN 147 passive-implausible
+The baron was chosen by the successor. 
+
+# AAN 153 active-plausible
+The monarch banished the insurgent. 
+# AAN 153 active-implausible
+The insurgent banished the monarch. 
+# AAN 153 passive-plausible
+The insurgent was banished by the monarch. 
+# AAN 153 passive-implausible
+The monarch was banished by the insurgent. 
+
+# AAN 155 active-plausible
+The robber burgled the industrialist. 
+# AAN 155 active-implausible
+The industrialist burgled the robber. 
+# AAN 155 passive-plausible
+The industrialist was burgled by the robber. 
+# AAN 155 passive-implausible
+The robber was burgled by the industrialist. 
+
+# AAN 161 active-plausible
+The impersonator conned the inspector. 
+# AAN 161 active-implausible
+The inspector conned the impersonator. 
+# AAN 161 passive-plausible
+The inspector was conned by the impersonator. 
+# AAN 161 passive-implausible
+The impersonator was conned by the inspector. 
+
+# AAN 163 active-plausible
+The pyromaniac unnerved the shopkeeper. 
+# AAN 163 active-implausible
+The shopkeeper unnerved the pyromaniac. 
+# AAN 163 passive-plausible
+The shopkeeper was unnerved by the pyromaniac. 
+# AAN 163 passive-implausible
+The pyromaniac was unnerved by the shopkeeper. 
+
+# AAN 173 active-plausible
+The judge praised the gold medalist. 
+# AAN 173 active-implausible
+The gold medalist praised the judge. 
+# AAN 173 passive-plausible
+The gold medalist was praised by the judge. 
+# AAN 173 passive-implausible
+The judge was praised by the gold medalist. 
+
+# AAN 177 active-plausible
+The environmentalist cautioned the tobacconist. 
+# AAN 177 active-implausible
+The tobacconist cautioned the environmentalist. 
+# AAN 177 passive-plausible
+The tobacconist was cautioned by the environmentalist. 
+# AAN 177 passive-implausible
+The environmentalist was cautioned by the tobacconist. 
+
+# AAR 183 active-plausible-0
+The commentator vexed the athlete. 
+# AAR 183 active-plausible-1
+The athlete vexed the commentator. 
+# AAR 183 passive-plausible-0
+The athlete was vexed by the commentator. 
+# AAR 183 passive-plausible-1
+The commentator was vexed by the athlete. 
+
+# AAR 185 active-plausible-0
+The preacher hugged the churchgoer. 
+# AAR 185 active-plausible-1
+The churchgoer hugged the preacher. 
+# AAR 185 passive-plausible-0
+The churchgoer was hugged by the preacher. 
+# AAR 185 passive-plausible-1
+The preacher was hugged by the churchgoer. 
+
+# AAR 197 active-plausible-0
+The valet entertained the envoy. 
+# AAR 197 active-plausible-1
+The envoy entertained the valet. 
+# AAR 197 passive-plausible-0
+The envoy was entertained by the valet. 
+# AAR 197 passive-plausible-1
+The valet was entertained by the envoy. 
+
+# AAR 207 active-plausible-0
+The actuary assuaged the creditor. 
+# AAR 207 active-plausible-1
+The creditor assuaged the actuary. 
+# AAR 207 passive-plausible-0
+The creditor was assuaged by the actuary. 
+# AAR 207 passive-plausible-1
+The actuary was assuaged by the creditor. 
+
+# AAR 221 active-plausible-0
+The musician admired the diva. 
+# AAR 221 active-plausible-1
+The diva admired the musician. 
+# AAR 221 passive-plausible-0
+The diva was admired by the musician. 
+# AAR 221 passive-plausible-1
+The musician was admired by the diva. 
+
+# AAR 237 active-plausible-0
+The broker introduced the donor. 
+# AAR 237 active-plausible-1
+The donor introduced the broker. 
+# AAR 237 passive-plausible-0
+The donor was introduced by the broker. 
+# AAR 237 passive-plausible-1
+The broker was introduced by the donor. 
+
+# AAR 259 active-plausible-0
+The accuser confronted the vandal. 
+# AAR 259 active-plausible-1
+The vandal confronted the accuser. 
+# AAR 259 passive-plausible-0
+The vandal was confronted by the accuser. 
+# AAR 259 passive-plausible-1
+The accuser was confronted by the vandal. 
+
+# AAR 263 active-plausible-0
+The protestor quoted the leader. 
+# AAR 263 active-plausible-1
+The leader quoted the protestor. 
+# AAR 263 passive-plausible-0
+The leader was quoted by the protestor. 
+# AAR 263 passive-plausible-1
+The protestor was quoted by the leader. 
+
+# AAR 265 active-plausible-0
+The postal worker repulsed the taxi-driver. 
+# AAR 265 active-plausible-1
+The taxi-driver repulsed the postal worker. 
+# AAR 265 passive-plausible-0
+The taxi-driver was repulsed by the postal worker. 
+# AAR 265 passive-plausible-1
+The postal worker was repulsed by the taxi-driver. 
+
+# AI 285 active-plausible
+The attendant pressed the button. 
+# AI 285 active-implausible
+The button pressed the attendant. 
+# AI 285 passive-plausible
+The button was pressed by the attendant. 
+# AI 285 passive-implausible
+The attendant was pressed by the button. 
+
+# AI 293 active-plausible
+The counselor emphasized the rules. 
+# AI 293 active-implausible
+The rules emphasized the counselor. 
+# AI 293 passive-plausible
+The rules were emphasized by the counselor. 
+# AI 293 passive-implausible
+The counselor were emphasized by the rules. 
+
+# AI 301 active-plausible
+The bookworm recited the poem. 
+# AI 301 active-implausible
+The poem recited the bookworm. 
+# AI 301 passive-plausible
+The poem was recited by the bookworm. 
+# AI 301 passive-implausible
+The bookworm was recited by the poem. 
+
+# AI 309 active-plausible
+The minuteman loaded the gun. 
+# AI 309 active-implausible
+The gun loaded the minuteman. 
+# AI 309 passive-plausible
+The gun was loaded by the minuteman. 
+# AI 309 passive-implausible
+The minuteman was loaded by the gun. 
+
+# AI 321 active-plausible
+The crackhead smoked the pipe. 
+# AI 321 active-implausible
+The pipe smoked the crackhead. 
+# AI 321 passive-plausible
+The pipe was smoked by the crackhead. 
+# AI 321 passive-implausible
+The crackhead was smoked by the pipe. 
+
+# AAN 329 active-plausible
+The exorcist vanquished the spirit. 
+# AAN 329 active-implausible
+The spirit vanquished the exorcist. 
+# AAN 329 passive-plausible
+The spirit was vanquished by the exorcist. 
+# AAN 329 passive-implausible
+The exorcist was vanquished by the spirit. 
+
+# AAN 331 active-plausible
+The paparazzi stalked the pop star. 
+# AAN 331 active-implausible
+The pop star stalked the paparazzi. 
+# AAN 331 passive-plausible
+The pop star was stalked by the paparazzi. 
+# AAN 331 passive-implausible
+The paparazzi was stalked by the pop star. 
+
+# AAN 341 active-plausible
+The colonel supervised the cadet. 
+# AAN 341 active-implausible
+The cadet supervised the colonel. 
+# AAN 341 passive-plausible
+The cadet was supervised by the colonel. 
+# AAN 341 passive-implausible
+The colonel was supervised by the cadet. 
+
+# AAN 343 active-plausible
+The personal trainer weighed the Olympian. 
+# AAN 343 active-implausible
+The Olympian weighed the personal trainer. 
+# AAN 343 passive-plausible
+The Olympian was weighed by the personal trainer. 
+# AAN 343 passive-implausible
+The personal trainer was weighed by the Olympian. 
+
+# AAN 353 active-plausible
+The channeler sensed the ghost. 
+# AAN 353 active-implausible
+The ghost sensed the channeler. 
+# AAN 353 passive-plausible
+The ghost was sensed by the channeler. 
+# AAN 353 passive-implausible
+The channeler was sensed by the ghost. 
+
+# AAN 357 active-plausible
+The bailiff released the ruffian. 
+# AAN 357 active-implausible
+The ruffian released the bailiff. 
+# AAN 357 passive-plausible
+The ruffian was released by the bailiff. 
+# AAN 357 passive-implausible
+The bailiff was released by the ruffian. 
+
+# AAN 361 active-plausible
+The TV station head promoted the newsagent. 
+# AAN 361 active-implausible
+The newsagent promoted the TV station head. 
+# AAN 361 passive-plausible
+The newsagent was promoted by the TV station head. 
+# AAN 361 passive-implausible
+The TV station head was promoted by the newsagent. 
+
+# AAR 375 active-plausible-0
+The photographer paid the barrister. 
+# AAR 375 active-plausible-1
+The barrister paid the photographer. 
+# AAR 375 passive-plausible-0
+The barrister was paid by the photographer. 
+# AAR 375 passive-plausible-1
+The photographer was paid by the barrister. 
+
+# AAR 379 active-plausible-0
+The fashionista humiliated the model. 
+# AAR 379 active-plausible-1
+The model humiliated the fashionista. 
+# AAR 379 passive-plausible-0
+The model was humiliated by the fashionista. 
+# AAR 379 passive-plausible-1
+The fashionista was humiliated by the model. 
+
+# AAR 383 active-plausible-0
+The neighbor snubbed the newcomer. 
+# AAR 383 active-plausible-1
+The newcomer snubbed the neighbor. 
+# AAR 383 passive-plausible-0
+The newcomer was snubbed by the neighbor. 
+# AAR 383 passive-plausible-1
+The neighbor was snubbed by the newcomer. 
+
+# AAR 397 active-plausible-0
+The infantryman upset the loyalist. 
+# AAR 397 active-plausible-1
+The loyalist upset the infantryman. 
+# AAR 397 passive-plausible-0
+The loyalist was upset by the infantryman. 
+# AAR 397 passive-plausible-1
+The infantryman was upset by the loyalist. 
+
+# AAR 399 active-plausible-0
+The claims adjuster harassed the retailer. 
+# AAR 399 active-plausible-1
+The retailer harassed the claims adjuster. 
+# AAR 399 passive-plausible-0
+The retailer was harassed by the claims adjuster. 
+# AAR 399 passive-plausible-1
+The claims adjuster was harassed by the retailer. 
+
+# AAR 407 active-plausible-0
+The cinematographer favored the movie star. 
+# AAR 407 active-plausible-1
+The movie star favored the cinematographer. 
+# AAR 407 passive-plausible-0
+The movie star was favored by the cinematographer. 
+# AAR 407 passive-plausible-1
+The cinematographer was favored by the movie star. 
+
+# AAR 415 active-plausible-0
+The plumber devastated the foreman. 
+# AAR 415 active-plausible-1
+The foreman devastated the plumber. 
+# AAR 415 passive-plausible-0
+The foreman was devastated by the plumber. 
+# AAR 415 passive-plausible-1
+The plumber was devastated by the foreman. 
+
+# filler 1 filler 
+Please select the leftmost option. 
+# filler 2 filler 
+Please select the rightmost option. 

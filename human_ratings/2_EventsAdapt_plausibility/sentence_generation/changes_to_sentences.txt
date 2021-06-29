@@ -1,0 +1,28 @@
+Changes
+
+his, a -> the
+jail, prison, jam, marmalade -> the jail...
+
+Little things
+sautéed -> sauteed
+dietician -> dietitian
+
+Irregular verbs
+['gave', 'ate', 'took', 'drank', 'blew', 'ran', 'drove', 'saw', 'sang', 'burned', 'hid', 'chose', 'beat', 'stole', 'forgot']
+['given', 'eaten', 'taken', 'drunk', 'blown', 'run', 'driven', 'seen', 'sung', 'burnt', 'hidden', 'chosen', 'beaten', 'stolen', 'forgotten']
+
+Verbs not in verb list
+['The physician shut down the academy.', 'The housekeeper picked up the pillow.', 'The pal put on the sweater.', 'The guy gulped down the coke.', 'The carpenter glanced at the booklet.', 'The navigator arrived at the destination.', 'The lumberjack cut down the evergreen.', 'The employer laid off the laborer.', 'The runner bumped into the co-worker.', 'The perpetrator ratted out the poacher.', 'The landlord threw out the occupant.', 'The first baseman tagged out the base runner.', 'The cabdriver dropped off the redhead.', 'The grandmother brought up the granddaughter.', 'The demonstrator voted for the democrat.']
+
+Verbs in verb list, but too long
+['The explorer asked for the drink.', 'The drink was asked for by the explorer.', 'The pillow was picked up by the housekeeper.', 'The evergreen was cut down by the lumberjack.', 'The destination was arrived at by the navigator.', 'The booklet was glanced at by the carpenter.', 'The sweater was put on by the pal.', 'The coke was gulped down by the guy.', 'The academy was shut down by the physician.', 'The proprietor kicked out the renter.', 'The renter was kicked out by the proprietor.', 'The official was paid off by the trafficker.', 'The trafficker paid off the official.', 'The laborer was laid off by the employer.', 'The jogger ran into the colleague.', 'The colleague was run into by the jogger.', 'The co-worker was bumped into by the runner.', 'The poacher was ratted out by the perpetrator.', 'The occupant was thrown out by the landlord.', 'The base runner was tagged out by the first baseman.', 'The redhead was dropped off by the cabdriver.', 'The pedestrian was honked at by the truck driver.', 'The truck driver honked at the pedestrian.', 'The granddaughter was brought up by the grandmother.', 'The democrat was voted for by the demonstrator.']
+
+AI - 136
+AAN - 135
+AAR - 141
+
+Added:
+The runner bumped into the co-worker. -> The runner encountered the co-worker.
+The jogger ran into the colleague. ->    The jogger met the colleague.
+The perpetrator ratted out the poacher. -> The perpetrator exposed the poacher.
+The proprietor kicked out the renter. -> The proprietor dislodged the renter.

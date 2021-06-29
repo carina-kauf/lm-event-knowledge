@@ -1,0 +1,472 @@
+# AI 12 active-plausible
+The troublemaker crashed the car. 
+# AI 12 active-implausible
+The car crashed the troublemaker. 
+# AI 12 passive-plausible
+The car was crashed by the troublemaker. 
+# AI 12 passive-implausible
+The troublemaker was crashed by the car. 
+
+# AI 24 active-plausible
+The milliner adorned the fedora. 
+# AI 24 active-implausible
+The fedora adorned the milliner. 
+# AI 24 passive-plausible
+The fedora was adorned by the milliner. 
+# AI 24 passive-implausible
+The milliner was adorned by the fedora. 
+
+# AI 26 active-plausible
+The serviceman hoisted the flag. 
+# AI 26 active-implausible
+The flag hoisted the serviceman. 
+# AI 26 passive-plausible
+The flag was hoisted by the serviceman. 
+# AI 26 passive-implausible
+The serviceman was hoisted by the flag. 
+
+# AI 32 active-plausible
+The author finished the novel. 
+# AI 32 active-implausible
+The novel finished the author. 
+# AI 32 passive-plausible
+The novel was finished by the author. 
+# AI 32 passive-implausible
+The author was finished by the novel. 
+
+# AI 38 active-plausible
+The dietitian loathed the jam. 
+# AI 38 active-implausible
+The jam loathed the dietitian. 
+# AI 38 passive-plausible
+The jam was loathed by the dietitian. 
+# AI 38 passive-implausible
+The dietitian was loathed by the jam. 
+
+# AI 42 active-plausible
+The doctor closed the school. 
+# AI 42 active-implausible
+The school closed the doctor. 
+# AI 42 passive-plausible
+The school was closed by the doctor. 
+# AI 42 passive-implausible
+The doctor was closed by the school. 
+
+# AI 50 active-plausible
+The friend donned the pullover. 
+# AI 50 active-implausible
+The pullover donned the friend. 
+# AI 50 passive-plausible
+The pullover was donned by the friend. 
+# AI 50 passive-implausible
+The friend was donned by the pullover. 
+
+# AI 54 active-plausible
+The packrat concealed the stockpile. 
+# AI 54 active-implausible
+The stockpile concealed the packrat. 
+# AI 54 passive-plausible
+The stockpile was concealed by the packrat. 
+# AI 54 passive-implausible
+The packrat was concealed by the stockpile. 
+
+# AI 58 active-plausible
+The meat-eater devoured the filet. 
+# AI 58 active-implausible
+The filet devoured the meat-eater. 
+# AI 58 passive-plausible
+The filet was devoured by the meat-eater. 
+# AI 58 passive-implausible
+The meat-eater was devoured by the filet. 
+
+# AI 74 active-plausible
+The accountant made the chart. 
+# AI 74 active-implausible
+The chart made the accountant. 
+# AI 74 passive-plausible
+The chart was made by the accountant. 
+# AI 74 passive-implausible
+The accountant was made by the chart. 
+
+# AI 76 active-plausible
+The logger felled the pine tree. 
+# AI 76 active-implausible
+The pine tree felled the logger. 
+# AI 76 passive-plausible
+The pine tree was felled by the logger. 
+# AI 76 passive-implausible
+The logger was felled by the pine tree. 
+
+# AI 78 active-plausible
+The mogul governed the corporation. 
+# AI 78 active-implausible
+The corporation governed the mogul. 
+# AI 78 passive-plausible
+The corporation was governed by the mogul. 
+# AI 78 passive-implausible
+The mogul was governed by the corporation. 
+
+# AI 86 active-plausible
+The constable examined the property. 
+# AI 86 active-implausible
+The property examined the constable. 
+# AI 86 passive-plausible
+The property was examined by the constable. 
+# AI 86 passive-implausible
+The constable was examined by the property. 
+
+# AAN 90 active-plausible
+The governess instructed the lad. 
+# AAN 90 active-implausible
+The lad instructed the governess. 
+# AAN 90 passive-plausible
+The lad was instructed by the governess. 
+# AAN 90 passive-implausible
+The governess was instructed by the lad. 
+
+# AAN 100 active-plausible
+The nurse helped the orthodontist. 
+# AAN 100 active-implausible
+The orthodontist helped the nurse. 
+# AAN 100 passive-plausible
+The orthodontist was helped by the nurse. 
+# AAN 100 passive-implausible
+The nurse was helped by the orthodontist. 
+
+# AAN 114 active-plausible
+The vagabond revered the priest. 
+# AAN 114 active-implausible
+The priest revered the vagabond. 
+# AAN 114 passive-plausible
+The priest was revered by the vagabond. 
+# AAN 114 passive-implausible
+The vagabond was revered by the priest. 
+
+# AAN 132 active-plausible
+The amateur irked the maestro. 
+# AAN 132 active-implausible
+The maestro irked the amateur. 
+# AAN 132 passive-plausible
+The maestro was irked by the amateur. 
+# AAN 132 passive-implausible
+The amateur was irked by the maestro. 
+
+# AAN 138 active-plausible
+The chauffeur drove the diplomat. 
+# AAN 138 active-implausible
+The diplomat drove the chauffeur. 
+# AAN 138 passive-plausible
+The diplomat was driven by the chauffeur. 
+# AAN 138 passive-implausible
+The chauffeur was driven by the diplomat. 
+
+# AAN 142 active-plausible
+The tailor costumed the dancer. 
+# AAN 142 active-implausible
+The dancer costumed the tailor. 
+# AAN 142 passive-plausible
+The dancer was costumed by the tailor. 
+# AAN 142 passive-implausible
+The tailor was costumed by the dancer. 
+
+# AAN 164 active-plausible
+The arsonist alarmed the vendor. 
+# AAN 164 active-implausible
+The vendor alarmed the arsonist. 
+# AAN 164 passive-plausible
+The vendor was alarmed by the arsonist. 
+# AAN 164 passive-implausible
+The arsonist was alarmed by the vendor. 
+
+# AAN 166 active-plausible
+The master encouraged the rookie. 
+# AAN 166 active-implausible
+The rookie encouraged the master. 
+# AAN 166 passive-plausible
+The rookie was encouraged by the master. 
+# AAN 166 passive-implausible
+The master was encouraged by the rookie. 
+
+# AAN 170 active-plausible
+The entrepreneur hired the specialist. 
+# AAN 170 active-implausible
+The specialist hired the entrepreneur. 
+# AAN 170 passive-plausible
+The specialist was hired by the entrepreneur. 
+# AAN 170 passive-implausible
+The entrepreneur was hired by the specialist. 
+
+# AAN 172 active-plausible
+The hijacker terrified the president's wife. 
+# AAN 172 active-implausible
+The president's wife terrified the hijacker. 
+# AAN 172 passive-plausible
+The president's wife was terrified by the hijacker. 
+# AAN 172 passive-implausible
+The hijacker was terrified by the president's wife. 
+
+# AAN 176 active-plausible
+The deceiver imitated the conqueror. 
+# AAN 176 active-implausible
+The conqueror imitated the deceiver. 
+# AAN 176 passive-plausible
+The conqueror was imitated by the deceiver. 
+# AAN 176 passive-implausible
+The deceiver was imitated by the conqueror. 
+
+# AAN 180 active-plausible
+The serf worshipped the forefathers. 
+# AAN 180 active-implausible
+The forefathers worshipped the serf. 
+# AAN 180 passive-plausible
+The forefathers were worshipped by the serf. 
+# AAN 180 passive-implausible
+The serf were worshipped by the forefathers. 
+
+# AAR 200 active-plausible-0
+The gymnast shoved the outsider. 
+# AAR 200 active-plausible-1
+The outsider shoved the gymnast. 
+# AAR 200 passive-plausible-0
+The outsider was shoved by the gymnast. 
+# AAR 200 passive-plausible-1
+The gymnast was shoved by the outsider. 
+
+# AAR 210 active-plausible-0
+The mariner scared the fortune-teller. 
+# AAR 210 active-plausible-1
+The fortune-teller scared the mariner. 
+# AAR 210 passive-plausible-0
+The fortune-teller was scared by the mariner. 
+# AAR 210 passive-plausible-1
+The mariner was scared by the fortune-teller. 
+
+# AAR 214 active-plausible-0
+The foreigner trusted the patrolman. 
+# AAR 214 active-plausible-1
+The patrolman trusted the foreigner. 
+# AAR 214 passive-plausible-0
+The patrolman was trusted by the foreigner. 
+# AAR 214 passive-plausible-1
+The foreigner was trusted by the patrolman. 
+
+# AAR 218 active-plausible-0
+The lyricist dazzled the performer. 
+# AAR 218 active-plausible-1
+The performer dazzled the lyricist. 
+# AAR 218 passive-plausible-0
+The performer was dazzled by the lyricist. 
+# AAR 218 passive-plausible-1
+The lyricist was dazzled by the performer. 
+
+# AAR 220 active-plausible-0
+The traveling salesman challenged the executive. 
+# AAR 220 active-plausible-1
+The executive challenged the traveling salesman. 
+# AAR 220 passive-plausible-0
+The executive was challenged by the traveling salesman. 
+# AAR 220 passive-plausible-1
+The traveling salesman was challenged by the executive. 
+
+# AAR 224 active-plausible-0
+The commander greeted the champion. 
+# AAR 224 active-plausible-1
+The champion greeted the commander. 
+# AAR 224 passive-plausible-0
+The champion was greeted by the commander. 
+# AAR 224 passive-plausible-1
+The commander was greeted by the champion. 
+
+# AAR 228 active-plausible-0
+The mailman saw the minister. 
+# AAR 228 active-plausible-1
+The minister saw the mailman. 
+# AAR 228 passive-plausible-0
+The minister was seen by the mailman. 
+# AAR 228 passive-plausible-1
+The mailman was seen by the minister. 
+
+# AAR 240 active-plausible-0
+The psychiatrist applauded the provost. 
+# AAR 240 active-plausible-1
+The provost applauded the psychiatrist. 
+# AAR 240 passive-plausible-0
+The provost was applauded by the psychiatrist. 
+# AAR 240 passive-plausible-1
+The psychiatrist was applauded by the provost. 
+
+# AAR 242 active-plausible-0
+The asylum seeker goaded the vagrant. 
+# AAR 242 active-plausible-1
+The vagrant goaded the asylum seeker. 
+# AAR 242 passive-plausible-0
+The vagrant was goaded by the asylum seeker. 
+# AAR 242 passive-plausible-1
+The asylum seeker was goaded by the vagrant. 
+
+# AAR 248 active-plausible-0
+The organizer persuaded the buyer. 
+# AAR 248 active-plausible-1
+The buyer persuaded the organizer. 
+# AAR 248 passive-plausible-0
+The buyer was persuaded by the organizer. 
+# AAR 248 passive-plausible-1
+The organizer was persuaded by the buyer. 
+
+# AAR 252 active-plausible-0
+The jogger met the colleague. 
+# AAR 252 active-plausible-1
+The colleague met the jogger. 
+# AAR 252 passive-plausible-0
+The colleague was met by the jogger. 
+# AAR 252 passive-plausible-1
+The jogger was met by the colleague. 
+
+# AAR 256 active-plausible-0
+The intruder sighted the watchman. 
+# AAR 256 active-plausible-1
+The watchman sighted the intruder. 
+# AAR 256 passive-plausible-0
+The watchman was sighted by the intruder. 
+# AAR 256 passive-plausible-1
+The intruder was sighted by the watchman. 
+
+# AAR 260 active-plausible-0
+The plaintiff accosted the thug. 
+# AAR 260 active-plausible-1
+The thug accosted the plaintiff. 
+# AAR 260 passive-plausible-0
+The thug was accosted by the plaintiff. 
+# AAR 260 passive-plausible-1
+The plaintiff was accosted by the thug. 
+
+# AAR 262 active-plausible-0
+The swindler puzzled the fool. 
+# AAR 262 active-plausible-1
+The fool puzzled the swindler. 
+# AAR 262 passive-plausible-0
+The fool was puzzled by the swindler. 
+# AAR 262 passive-plausible-1
+The swindler was puzzled by the fool. 
+
+# AAR 278 active-plausible-0
+The rogue defeated the main character. 
+# AAR 278 active-plausible-1
+The main character defeated the rogue. 
+# AAR 278 passive-plausible-0
+The main character was defeated by the rogue. 
+# AAR 278 passive-plausible-1
+The rogue was defeated by the main character. 
+
+# AI 294 active-plausible
+The seamstress ironed the shirt. 
+# AI 294 active-implausible
+The shirt ironed the seamstress. 
+# AI 294 passive-plausible
+The shirt was ironed by the seamstress. 
+# AI 294 passive-implausible
+The seamstress was ironed by the shirt. 
+
+# AI 318 active-plausible
+The cryptographer sent the letter. 
+# AI 318 active-implausible
+The letter sent the cryptographer. 
+# AI 318 passive-plausible
+The letter was sent by the cryptographer. 
+# AI 318 passive-implausible
+The cryptographer was sent by the letter. 
+
+# AI 324 active-plausible
+The tanner placed the order. 
+# AI 324 active-implausible
+The order placed the tanner. 
+# AI 324 passive-plausible
+The order was placed by the tanner. 
+# AI 324 passive-implausible
+The tanner was placed by the order. 
+
+# AAN 340 active-plausible
+The librarian admonished the plagiarist. 
+# AAN 340 active-implausible
+The plagiarist admonished the librarian. 
+# AAN 340 passive-plausible
+The plagiarist was admonished by the librarian. 
+# AAN 340 passive-implausible
+The librarian was admonished by the plagiarist. 
+
+# AAN 342 active-plausible
+The abolitionist hid the slave. 
+# AAN 342 active-implausible
+The slave hid the abolitionist. 
+# AAN 342 passive-plausible
+The slave was hidden by the abolitionist. 
+# AAN 342 passive-implausible
+The abolitionist was hidden by the slave. 
+
+# AAN 364 active-plausible
+The police chief rewarded the firefighter. 
+# AAN 364 active-implausible
+The firefighter rewarded the police chief. 
+# AAN 364 passive-plausible
+The firefighter was rewarded by the police chief. 
+# AAN 364 passive-implausible
+The police chief was rewarded by the firefighter. 
+
+# AAN 368 active-plausible
+The warmonger terrorized the gunsmith. 
+# AAN 368 active-implausible
+The gunsmith terrorized the warmonger. 
+# AAN 368 passive-plausible
+The gunsmith was terrorized by the warmonger. 
+# AAN 368 passive-implausible
+The warmonger was terrorized by the gunsmith. 
+
+# AAR 384 active-plausible-0
+The editor overheard the proofreader. 
+# AAR 384 active-plausible-1
+The proofreader overheard the editor. 
+# AAR 384 passive-plausible-0
+The proofreader was overheard by the editor. 
+# AAR 384 passive-plausible-1
+The editor was overheard by the proofreader. 
+
+# AAR 388 active-plausible-0
+The pollster shamed the statistician. 
+# AAR 388 active-plausible-1
+The statistician shamed the pollster. 
+# AAR 388 passive-plausible-0
+The statistician was shamed by the pollster. 
+# AAR 388 passive-plausible-1
+The pollster was shamed by the statistician. 
+
+# AAR 398 active-plausible-0
+The florist invoiced the grocer. 
+# AAR 398 active-plausible-1
+The grocer invoiced the florist. 
+# AAR 398 passive-plausible-0
+The grocer was invoiced by the florist. 
+# AAR 398 passive-plausible-1
+The florist was invoiced by the grocer. 
+
+# AAR 404 active-plausible-0
+The employee watched the embezzler. 
+# AAR 404 active-plausible-1
+The embezzler watched the employee. 
+# AAR 404 passive-plausible-0
+The embezzler was watched by the employee. 
+# AAR 404 passive-plausible-1
+The employee was watched by the embezzler. 
+
+# AAR 408 active-plausible-0
+The hockey player aggravated the skater. 
+# AAR 408 active-plausible-1
+The skater aggravated the hockey player. 
+# AAR 408 passive-plausible-0
+The skater was aggravated by the hockey player. 
+# AAR 408 passive-plausible-1
+The hockey player was aggravated by the skater. 
+
+# filler 1 filler 
+Please select the leftmost option. 
+# filler 2 filler 
+Please select the rightmost option. 
