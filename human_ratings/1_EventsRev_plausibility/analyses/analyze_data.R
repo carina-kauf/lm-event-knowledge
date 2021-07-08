@@ -45,7 +45,7 @@ data$xx1 = NULL
 data$xx2 = NULL
 
 ## SAVE A LONGFORM VERSION OF YOUR DATA
-#write_csv(data,"longform_data.csv")
+write_csv(data,"longform_data.csv")
 
 
 # ANALYSES
@@ -58,15 +58,14 @@ data = data %>%
     n = length(Answer.Rating)) %>%
   ungroup()
 
-data.summ = data %>% 
-  group_by(WorkerId, Plausibility) %>%
+data_summ = data %>% 
+  group_by(WorkerId) %>%
   summarize(
     na.pct = mean(is.na(Answer.Rating)),
-    n = length(Answer.Rating),
-    mean.rating = mean(Answer.Rating, na.rm = TRUE))
+    n = length(Answer.Rating))
 
 ## save a summary of individual subjects' performance
-#write_csv(data.summ,"data_summ_by_worker.csv")
+write_csv(data_summ,"data_summ_by_worker.csv")
 
 z_score = function(xs) {
   (xs - mean(xs)) / sd(xs)
@@ -93,8 +92,8 @@ data.good.summary = data.good %>%
   
 ## save a summary of individual subjects' performance
 data.good.summary = data.good.summary[,c(2,1,3,4)]
-#write_csv(data.good.summary[order(data.good.summary$Item),],
-#          "EventsRev_data_summ.csv")
+write_csv(data.good.summary[order(data.good.summary$Item),],
+          "EventsRev_data_summ.csv")
 
 # graphs of ratings by condition 
 p1 = ggplot(data=data.good.summary)+
@@ -113,63 +112,3 @@ p1 = ggplot(data=data.good.summary)+
 ggsave('EventsRev plaus plot.png', p1, width=10, height=10, units="cm")
 
 print(p1)
-
-# SEE RESPONSE CONSISTENCY
-data.avg = data.good.summary %>%
-  group_by(Plausibility) %>%
-  summarize(mean.rating.all = mean(m))
-data.merged = merge(data.summ, data.avg) %>%
-  mutate(diff = mean.rating - mean.rating.all)
-
-p2 = ggplot(data=data.merged,
-            mapping = aes(x=Plausibility, y=mean.rating))+
-  geom_point()+
-  geom_hline(yintercept=0)+
-  theme_classic()
-print(p2)
-
-## BOOTSTRAP
-# old - no replacement
-get_sample_estimate_norepl <- function(data,n) {
-  nsub = length(unique(data$WorkerId))
-  subIDs = unique(data$WorkerId)
-  # bootstrap
-  sub_indices = sample(nsub, n)
-  subIDs.boot = subIDs[sub_indices]
-  data.boot = data %>% filter(WorkerId %in% subIDs.boot) %>%
-    group_by(Plausibility) %>%
-    summarize(mean.rating.all = mean(Answer.Rating))
-  return(data.boot$mean.rating.all[1])
-}
-
-bootstrap_mean <- function(data,sub_index) {
-  subIDs = unique(data$WorkerId)
-  subID.boot = subIDs[sub_index]
-  data.boot = data %>% filter(WorkerId ==subID.boot) %>%
-    group_by(Plausibility) %>%
-    summarize(mean.rating.all = mean(Answer.Rating))
-  return(data.boot$mean.rating.all[2])
-}
-
-get_sample_estimate <- function(data,n) {
-  nsub = length(unique(data$WorkerId))
-  # bootstrap
-  sub_indices = sample(nsub, n, replace=T)
-  data.boot = sapply(sub_indices, 
-                     function(x) bootstrap_mean(data,x))
-  return(mean(data.boot))
-}
-
-data4boot = data.good %>% filter(Input.list %in% c(2,4))
-nsub = length(unique(data4boot$WorkerId))
-r = sapply(rep(1:nsub, each=100), function(x) get_sample_estimate(data4boot, x))
-df = data.frame(num.samples = rep(1:nsub, each=100), mean.plaus = r)
-
-p3 = ggplot(data=df, mapping=aes(x=num.samples, y=mean.plaus))+
-  geom_point()+theme_classic()
-print(p3)
-ggsave('boostrap_plaus_l2.png')
-
-df.var = df %>% group_by(num.samples) %>% summarize(mean.var = var(mean.plaus))
-p4 = ggplot(data=df.var,mapping=aes(x=num.samples,y=mean.var))+geom_point()+theme_classic()
-ggsave('boostrap_plaus_var_l2.png')

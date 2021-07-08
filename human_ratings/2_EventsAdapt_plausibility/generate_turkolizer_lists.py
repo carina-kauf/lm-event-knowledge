@@ -86,6 +86,6 @@ for p in parity:
         produce_turkolizer_input(filtered_df, filename)
         # save the txt file for input into turkolizer
 
-        create_turk_file(filename, 60, 0, 0, FNAME="EventsAdapt", append=True,
+        create_turk_file(filename, 48, 0, 0, FNAME="EventsAdapt2", append=True,
                          code=f"{p}{i}")
         # append to turkolizer csv.

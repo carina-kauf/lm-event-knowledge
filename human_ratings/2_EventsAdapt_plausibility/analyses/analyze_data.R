@@ -9,7 +9,8 @@ library(stringi)
 
 # READ DATA
 filenames=c('../results_raw/Batch_4332828_batch_results_raw.csv',
-            '../results_raw/Batch_4368386_batch_results_raw.csv')
+            '../results_raw/Batch_4368386_batch_results_raw.csv',
+            '../results_raw/Batch_4430335_batch_results_raw.csv')
 
 data <- lapply(filenames, read.csv)
 data = do.call("rbind", data)
@@ -20,7 +21,7 @@ num.trials = 54  # maximum number of trials per participant
 data = data %>% select(starts_with('Input'),starts_with('Answer'),
                        starts_with('WorkerId'), starts_with('AssignmentId')) %>%
             select(-Input.list, -Answer.answer, -Answer.proficiency1,
-                   -Answer.proficiency2)
+                   -Answer.proficiency2, -Answer.English, -Answer.country)
 
 
 # exclude bad workers
@@ -28,13 +29,13 @@ data = data %>% select(starts_with('Input'),starts_with('Answer'),
 #   filter(!(WorkerId %in% c('A35LWWZHYTBJES', 'A15A618QS7DD79', 'A1IC1DQ0QQBOOZ',
 #                            'A3V2XCDF45VN9X', 'A179LPB3NPSEF8', 'A13ASIJ31D76UN',
 #                            'A2717S28QHY09K')))                   # bad responses
-workers = read.csv("data_summ_by_worker_AIonly_summ.csv")
-workers = workers %>% filter(is.na(Use))
-data = data %>% filter(!(WorkerId %in% workers$WorkerId))
+bad_workers = read.csv("data_summ_by_worker_ALL.csv")
+bad_workers = bad_workers %>% filter(good_data == "no")
+data = data %>% filter(!(WorkerId %in% bad_workers$WorkerId))
 
 # gather (specify the list of columns you need)
 data = data %>% gather(key='variable',value="value",
-                       -WorkerId,-Answer.country, -Answer.English, -AssignmentId)
+                       -WorkerId, -AssignmentId)
 
 # separate
 data = data %>% separate(variable, into=c('Type','TrialNum'),sep='__',convert=TRUE) 
@@ -59,22 +60,8 @@ data$xx3 = NULL
 data$xx1 = NULL
 data$xx2 = NULL
 
-## SAVE A LONGFORM VERSION OF YOUR DATA
-write_csv(data,"longform_data.csv")
-
-
 # ANALYSES
 
-## Look at data by question
-
-summ_by_item = data %>%
-  group_by(Voice, Plausibility, Item) %>%
-  summarize(
-    n = length(Answer.Rating),
-    mean = mean(Answer.Rating, na.rm = TRUE)
-  )
-
-write.csv(summ_by_item, "data_by_item.csv")
 
 ## Look at data by participant (TODO: fix avg rating for plaus and implaus)
 data = data %>%
@@ -101,37 +88,32 @@ z_score = function(xs) {
   (xs - mean(xs)) / sd(xs)
 }
 
-#filter for US, English, na, and duplicate, then get scores
-###TODO: add filter for filler.left and filler.right??
+#Remove filler checks
 data$Item = as.numeric(data$Item)
 data.good = data %>%
-  filter(Answer.English == "yes" &
-         Answer.country == "USA" &
-         Answer.profcheck1 == "Yes" &
-         Answer.profcheck2 == "Yes" &
-         TrialType != "filler" &
+  filter(TrialType != "filler" &
          n <= num.trials) %>%
   filter(!is.na(Answer.Rating)) %>%
-  select(-Answer.English, -Answer.country, -Answer.profcheck1, -Answer.profcheck2,
-         -na.pct, -n)
+  select(-na.pct, -n)
 
-write_csv(data.good,"good_data.csv")
+write_csv(data.good,"longform_data.csv")
 
 
 data.good.summary = data.good %>%
   group_by(Item, Plausibility, Voice) %>%
   summarize(
+    n = length(Answer.Rating),
     m = mean(Answer.Rating),
     stdev= sd(Answer.Rating),
-#    se = stdev/sqrt(n()),
-#    upper= m+se*1.96,
-#    lower=m-se*1.96
+   se = stdev/sqrt(n()),
+   upper= m+se*1.96,
+   lower=m-se*1.96
   )
   
 ## save a summary of individual subjects' performance
 # data.good.summary = data.good.summary[,c(2,1,3,4, 5)]
 write_csv(data.good.summary[order(data.good.summary$Item),],
-          "EventsRev_data_summ.csv")
+          "EventsAdapt_data_summ.csv")
 
 # graphs of ratings by condition 
 p1 = ggplot(data=data.good.summary)+

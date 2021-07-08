@@ -1,5 +1,5 @@
 import pandas as pd
-from turkolizer_edited import create_turk_file
+from turkolizer import create_turk_file
 
 
 def get_active_items_dicts():
