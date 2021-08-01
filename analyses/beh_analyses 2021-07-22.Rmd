@@ -1,0 +1,174 @@
+---
+title: "Beh analyses"
+output: html_notebook
+---
+
+# Setup & read data
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rm(list=ls()) 
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+```
+
+```{r}
+
+# READ
+#dirname = 'Git_repos/lm-event-knowledge/human_ratings'
+dirname = '../human_ratings'
+ratings_eventsRev = paste(dirname, '1_EventsRev_plausibility', 'analyses', 'longform_data.csv', sep='/')
+ratings_eventsAdapt = paste(dirname, '2_EventsAdapt_plausibility', 'analyses', 'longform_data.csv', sep='/')
+
+dat_er = read.csv(ratings_eventsRev) %>% rename(Score=Answer.Rating) %>%
+  select(WorkerId, Score, Plausibility, Item, Input.trial) %>%
+  filter(Item<41)    # exclude attention checks
+
+dat_ea = read.csv(ratings_eventsAdapt) %>% rename(Score=Answer.Rating) %>%
+  select(WorkerId, Score, Plausibility, Item, Input.trial, TrialType, Voice)
+
+# CLEAN
+dat_er$Plausibility = recode(dat_er$Plausibility, implaus='implausible', plaus='plausible')
+dat_er$Experiment = 'EventsRev'
+dat_er$TrialType = 'AAN'           # can change to a different value to show EventsRev results separately
+dat_er$Voice = 'active'
+dat_er$Item = dat_er$Item + 900    # so that the numbering doesn't overlap
+
+# arbitrarily assign plausibility labels to AAR
+dat_ea$Plausibility = recode(dat_ea$Plausibility, plausible0='implausible', plausible1='plausible')    
+dat_ea$Experiment = 'EventsAdapt'
+
+# COMBINE
+dat = rbind(dat_er, dat_ea)
+dat$TrialType = factor(dat$TrialType, levels=c('AI', 'AAN', 'AAR'))
+
+# add info about synonym pairs for dat_ea items
+dat = dat %>%
+  mutate(SynonymPair = ifelse(Item>900, NA, (Item+1)%/%2)) %>%
+  mutate(NumSyn = ifelse(Item>900, NA, paste('Version', (Item+1)%%2+1, sep="")))
+```
+
+# PLAUSIBILITY
+
+```{r pressure, echo=FALSE}
+dat.mean = dat %>% 
+  group_by(Item, Plausibility, TrialType, Voice, SynonymPair, NumSyn) %>% 
+  summarize(MeanScore = mean(Score, na.rm=TRUE)) %>%
+  ungroup() 
+
+dat.binchoice = dat.mean %>%
+  group_by(Item, TrialType, Voice) %>%
+  summarize(ScoreDiff = MeanScore[Plausibility=="plausible"]-MeanScore[Plausibility=="implausible"]) %>%
+  mutate(Accuracy = ifelse(ScoreDiff>0, 1, 0))
+```
+
+
+## Binary accuracy
+
+This is what we use in the early barplots to compare different models but of course the metric is very simplified.
+
+Somewhat below chance for AAR. This effect only showed up after I subdivided the scores for active and passive sentences (was combining them before by accident) - probably there's some relationship there. BUT see the next score difference plot: the effect is tiny.
+
+```{r}
+ggplot(data=dat.binchoice, mapping=aes(x=TrialType, y=Accuracy))+
+  stat_summary(geom='col', fun.y='mean',
+               color='black', fill='gray80', width=0.5)+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               color = 'black', size = 0.5, width=0.1)+
+  theme_minimal()
+```
+
+## Mean Score Diff
+
+This is more fine-grained than just accuracy, but it might be better to use raw scores - see below (more informative)
+
+```{r}
+ggplot(data=dat.binchoice, mapping=aes(x=TrialType, y=ScoreDiff))+
+  stat_summary(geom='col', fun.y='mean',
+               color='black', fill='gray80', width=0.5)+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               color = 'black', size = 0.5, width=0.1)+
+  theme_minimal()
+```
+
+## Mean Scores 
+
+Plausible scores in AAR are a bit lower overall.
+
+```{r}
+ggplot(data=dat.mean, mapping=aes(x=TrialType, y=MeanScore, fill=Plausibility))+
+  stat_summary(geom='col', fun.y='mean',
+               color='black', position='dodge', width=0.5)+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               color = 'black', position=position_dodge(width=0.5), size = 0.5, width=0.1)
+```
+
+## Within-item scores for plausible vs. implausible versions of the sentence
+
+Cool result - the scores for AI and AAN are negatively correlated, but for AAR there's a strong positive correlation. Should think about the cause (verb/action freq? noun/entity freq in the world?)
+
+
+```{r}
+dat.wide = dat %>% 
+  dplyr::select(Item, TrialType, Plausibility, Voice, Score) %>%
+  group_by(Item, TrialType, Plausibility, Voice) %>%
+  summarize(meanScore = mean(Score, na.rm=TRUE)) %>%
+  spread(Plausibility, meanScore) 
+
+ggplot(data=dat.wide)+
+  geom_point(mapping=aes(x=implausible, y=plausible))+
+  facet_wrap(~TrialType)+
+  geom_abline()+
+  coord_cartesian(xlim=c(1,7), ylim=c(1,7))+
+  theme_classic()
+
+```
+
+# ACTIVE VS PASSIVE
+
+## Overall
+
+Main effect of voice - active voice results in somewhat higher scores
+
+```{r}
+ggplot(data=dat.binchoice, mapping=aes(x=TrialType, y=ScoreDiff, fill=Voice))+
+  stat_summary(geom='col', fun.y='mean', position='dodge', width=0.5)+
+  stat_summary(geom='errorbar', fun.data='mean_se', position=position_dodge(width=0.5),
+               color = 'black', size = 0.5, width=0.1)
+```
+
+## By item
+
+```{r}
+dat.voice = dat.mean %>%
+  filter(!is.na(SynonymPair)) %>%
+  spread(Voice, MeanScore)
+
+ggplot(data=dat.voice)+
+  geom_point(mapping=aes(x=active, y=passive))+
+  facet_wrap(~TrialType)+
+  geom_abline()+
+  coord_cartesian(xlim=c(1,7), ylim=c(1,7))+
+  theme_classic()
+```
+
+
+# SYNONYMS
+
+## By item
+
+```{r}
+dat.syn = dat.mean %>%
+  filter(!is.na(SynonymPair)) %>%
+  dplyr::select(-Item) %>%
+  spread(NumSyn, MeanScore)
+
+ggplot(data=dat.syn)+
+  geom_point(mapping=aes(x=Version1, y=Version2, color=Voice))+
+  facet_wrap(~TrialType)+
+  geom_abline()+
+  coord_cartesian(xlim=c(1,7), ylim=c(1,7))+
+  theme_classic()
+```
+
