@@ -1,0 +1,359 @@
+---
+title: "model_analysis"
+output: html_document
+---
+
+TODO
+* includes only EventsAdapt so far >> could merge with EventsRev (as in beh analysis)
+* define outlier policy
+* further generalization analysis
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rm(list=ls()) 
+library(ggplot2)
+library(dplyr)
+library(stringr)
+library(gridExtra)
+#library(reshape)
+
+#helper function #https://stackoverflow.com/questions/35775696/trying-to-use-dplyr-to-group-by-and-apply-scale
+scale_this <- function(x) as.vector(scale(x))
+
+# custom function to read a datatable
+read_data <- function(directory, filename) {
+  d = read.delim(paste(directory, filename, sep='/'), 
+                 header=FALSE, sep='\t')
+  if (nrow(d)!=1648) {
+    print(paste('unexpected number of sentences in file: ', filename, 'number of sentences: ', nrow(d)))
+    return(NULL)
+    
+    
+  } else if (ncol(d)==3) {
+    d = d  %>%
+      rename(SentenceNum=V1, Sentence=V2, Score=V3) %>%
+      mutate(ItemNum = SentenceNum %/% 4) %>%
+      mutate(Plausibility = ifelse(SentenceNum%%2==0, 'Plausible', 'Implausible')) %>%
+      
+      #scale scores
+      mutate(NormScore =scale_this(Score))
+      
+    
+    d = d %>% 
+    mutate(Metric = substr(filename,1,nchar(filename)-4)) %>%
+    mutate(Metric = str_replace(Metric, "new-eventsAdapt_", "")) %>%
+    mutate(Metric = str_replace(Metric, "new-EventsAdapt.", ""))
+    return(d)
+      
+    
+  } else {
+    print(paste('unexpected number of columns in file: ', 'number of columns: ', filename, ncol(d)))
+    return(NULL)
+  }
+
+#  d = d %>% 
+#    mutate(Metric = substr(filename,1,nchar(filename)-4))
+#  return(d)
+}
+```
+
+# EventsAdapt
+## Load data (below yields 28016 (lines)/1648 (sentences)=17(models))
+```{r read data, echo=FALSE}
+dirname = '../model_scores/new-EventsAdapt'
+files = list.files(path=dirname, pattern="*.txt")
+dat = do.call(rbind, lapply(files, function(x) read_data(dirname, x)))
+```
+
+## Preprocess data file
+### Filter out non-ANN models for now
+### below yields 18128 (lines) /1648 (sentences) = 11 (models)
+```{r read data, echo=FALSE}
+
+#print(unique(dat$Metric))
+anns <- c("gpt2","bert","xlnet","roberta")
+
+#filter out non-ANN models
+dat = dat %>%
+  filter(grepl(paste(anns, collapse = "|"),dat$Metric))
+print(unique(dat$Metric))
+```
+
+### Align numbers with human files
+### Add synonym information
+```{r read data, echo=FALSE}
+#align ItemNumber with numbers from behavioral analysis
+dat$ItemNum = dat$ItemNum+1
+
+# add info about synonym pairs
+dat = dat %>%
+  mutate(SynonymPair = (ItemNum+1)%/%2) %>%
+  mutate(NumSyn = paste('Version', (ItemNum+1)%%2+1, sep=""))
+```
+
+## Load & merge with original sentence file for information about TrialType & Voice
+NOTE: Some of the sentences were fixed from the human experiment! >> take from dropbox, NOT behavioral study!
+The file we use is downloaded from Dropbox and named here as 'newsentences_EventsAdapt_smallfixes.csv' to avoid confusion with the 'newsentences_EventsAdapt.csv' file in the behavioral study folder
+```{r read data, echo=FALSE}
+sentence_data = read.csv('newsentences_EventsAdapt_smallfixes.csv') %>%
+rename(TrialType=EvType) %>%
+rename(SentenceNum=X) %>%
+rename(ItemNum=ItemNumber) %>% 
+rename(Sentence=Stimulus) %>%
+#assimilate stimuli with model stimuli for alignment
+#I fixed the error, so we could align via ItemNum & SentenceNum now (used to be a problem with the sentences being different (was/were) > solved via loading different file)
+mutate(Sentence = str_replace(Sentence, "[.]", " .")) %>%
+select(Sentence, Voice, TrialType)
+
+#merge
+dat = merge(dat, sentence_data)
+dat=arrange(dat, desc(Metric), ItemNum, SentenceNum)
+
+#determine order of TrialTypes
+dat$TrialType = factor(dat$TrialType, levels=c('AI', 'AAN', 'AAR'))
+```
+
+# PLAUSIBILITY
+
+```{r pressure, echo=FALSE}
+
+dat.binchoice = dat %>%
+  group_by(ItemNum, TrialType, Voice, Metric) %>%
+  summarize(ScoreDiff = NormScore[Plausibility=="Plausible"]-NormScore[Plausibility=="Implausible"]) %>%
+  mutate(Accuracy = ifelse(ScoreDiff>0, 1, 0))
+```
+
+# Overall ANN plausibility plot
+```{r}
+ggplot(data=dat.binchoice, mapping=aes(x=TrialType, y=Accuracy))+
+  stat_summary(geom='col', fun.y='mean',
+               color='black', fill='gray80', width=0.5)+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               color = 'black', size = 0.5, width=0.1)+
+  theme_minimal()
+#ggsave('plots/XXX.png', width=16, height=12, units='cm')
+```
+
+# Split by model & metric
+```{r}
+ggplot(data=dat.binchoice, mapping=aes(x=TrialType, y=Accuracy))+
+  facet_wrap(~Metric, ncol = 3)+
+  stat_summary(geom='col', fun.y='mean',
+               color='black', fill='gray80', width=0.5)+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               color = 'black', size = 0.5, width=0.1)+
+  theme_minimal()
+#ggsave('plots/XXX.png', width=16, height=12, units='cm')
+```
+
+# BINARY ACCURACY
+
+##Overall
+```{r}
+ggplot(data=dat.binchoice, mapping=aes(x=TrialType, y=Accuracy))+
+  stat_summary(geom='col', fun.y='mean',
+               color='black', fill='gray80', width=0.5)+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               color = 'black', size = 0.5, width=0.1)+
+  theme_minimal()
+```
+
+##Split by model & metric
+```{r}
+ggplot(data=dat.binchoice, mapping=aes(x=TrialType, y=Accuracy))+
+  facet_wrap(~Metric, ncol = 3)+
+  stat_summary(geom='col', fun.y='mean',
+               color='black', fill='gray80', width=0.5)+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               color = 'black', size = 0.5, width=0.1)+
+  theme_minimal()
+```
+
+# SCORE DIFFERENCE
+## Overall
+```{r}
+ggplot(data=dat.binchoice, mapping=aes(x=TrialType, y=ScoreDiff))+
+  stat_summary(geom='col', fun.y='mean',
+               color='black', fill='gray80', width=0.5)+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               color = 'black', size = 0.5, width=0.1)+
+  theme_minimal()
+```
+
+##Split by model & metric
+```{r}
+ggplot(data=dat.binchoice, mapping=aes(x=TrialType, y=ScoreDiff))+
+  facet_wrap(~Metric, ncol = 3)+
+  stat_summary(geom='col', fun.y='mean',
+               color='black', fill='gray80', width=0.5)+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               color = 'black', size = 0.5, width=0.1)+
+  theme_minimal()
+```
+
+
+# SCORES
+## Overall
+```{r}
+ggplot(data=dat, mapping=aes(x=TrialType, y=NormScore, fill=Plausibility))+
+  stat_summary(geom='col', fun.y='mean',
+               color='black', position='dodge', width=0.5)+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               color = 'black', position=position_dodge(width=0.5), size = 0.5, width=0.1)
+```
+
+##Split by model & metric
+```{r}
+ggplot(data=dat, mapping=aes(x=TrialType, y=NormScore, fill=Plausibility))+
+  facet_wrap(~Metric, ncol = 3)+
+  stat_summary(geom='col', fun.y='mean',
+               color='black', position='dodge', width=0.5)+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               color = 'black', position=position_dodge(width=0.5), size = 0.5, width=0.1)
+```
+
+# Within-item scores for plausible vs. implausible versions of the sentence
+Need to exclude certain outliers!
+## Overall
+```{r}
+dat.wide = dat %>% 
+  dplyr::select(ItemNum, TrialType, Plausibility, Voice, Metric, NormScore) %>%
+  group_by(ItemNum, TrialType, Plausibility, Voice, Metric) %>%
+  summarize(meanScore = mean(NormScore, na.rm=TRUE)) %>%
+  spread(Plausibility, meanScore)  
+
+ggplot(data=dat.wide)+
+  geom_point(mapping=aes(x=Implausible, y=Plausible))+
+  facet_wrap(~TrialType)+
+  geom_abline()+
+  theme_classic()
+```
+
+##Split by model & metric
+
+```{r Fig1, echo=FALSE, fig.height=15, fig.width=15}
+models_metrics = unique(dat$Metric)
+
+for(i in seq_along(models_metrics)){
+  nam <- paste("A", i, sep = "")
+  #print(models_metrics[i])
+  
+  curr_data = dat.wide %>%
+    filter(Metric==models_metrics[i])
+  
+  p <- ggplot(data=curr_data)+
+  geom_point(mapping=aes(x=Implausible, y=Plausible))+
+  facet_wrap(~TrialType)+
+  geom_abline()+
+  theme_classic()+
+  ggtitle(paste(models_metrics[i]))
+  
+  assign(nam, p)
+}
+
+grid.arrange(A1, A2, A3, A4, A5, A6, A7, A9, A10, A11) #, ncol = 2)
+```
+
+# ACTIVE VS PASSIVE
+
+## Overall
+
+```{r}
+ggplot(data=dat.binchoice, mapping=aes(x=TrialType, y=ScoreDiff, fill=Voice))+
+  stat_summary(geom='col', fun.y='mean', position='dodge', width=0.5)+
+  stat_summary(geom='errorbar', fun.data='mean_se', position=position_dodge(width=0.5),
+               color = 'black', size = 0.5, width=0.1)
+```
+
+##Split by model & metric
+
+```{r}
+ggplot(data=dat.binchoice, mapping=aes(x=TrialType, y=ScoreDiff, fill=Voice))+
+  facet_wrap(~Metric, ncol = 3)+
+  stat_summary(geom='col', fun.y='mean', position='dodge', width=0.5)+
+  stat_summary(geom='errorbar', fun.data='mean_se', position=position_dodge(width=0.5),
+               color = 'black', size = 0.5, width=0.1)
+```
+
+
+## By item
+
+```{r}
+dat.voice = dat %>%
+  dplyr::select(ItemNum, TrialType, Plausibility, Voice, Metric, NormScore) %>%
+  group_by(ItemNum, TrialType, Plausibility, Voice, Metric) %>%
+  summarize(meanScore = mean(NormScore, na.rm=TRUE)) %>%
+  spread(Voice, meanScore)
+
+ggplot(data=dat.voice)+
+  geom_point(mapping=aes(x=active, y=passive))+
+  facet_wrap(~TrialType)+
+  geom_abline()+
+  theme_classic()
+```
+
+```{r Fig2, echo=FALSE, fig.height=15, fig.width=15}
+models_metrics = unique(dat$Metric)
+
+for(i in seq_along(models_metrics)){
+  nam <- paste("A", i, sep = "")
+  print(models_metrics[i])
+  
+  curr_data = dat.voice %>%
+    filter(Metric==models_metrics[i])
+  
+  p <- ggplot(data=curr_data)+
+  geom_point(mapping=aes(x=active, y=passive))+
+  facet_wrap(~TrialType)+
+  geom_abline()+
+  theme_classic()+
+  ggtitle(paste(models_metrics[i]))
+  
+  assign(nam, p)
+}
+
+grid.arrange(A1, A2, A3, A4, A5, A6, A7, A9, A10, A11)
+```
+
+# SYNONYMS
+
+## By item
+
+```{r}
+dat.syn = dat %>%
+  dplyr::select(-ItemNum) %>%
+  group_by(TrialType, NumSyn, SynonymPair, Plausibility, Voice, Metric) %>%
+  summarize(meanScore = mean(NormScore, na.rm=TRUE)) %>%
+  spread(NumSyn, meanScore)
+
+ggplot(data=dat.syn)+
+  geom_point(mapping=aes(x=Version1, y=Version2, color=Voice))+
+  facet_wrap(~TrialType)+
+  geom_abline()+
+  theme_classic()
+```
+
+```{r Fig3, echo=FALSE, fig.height=15, fig.width=15}
+models_metrics = unique(dat$Metric)
+
+for(i in seq_along(models_metrics)){
+  nam <- paste("A", i, sep = "")
+  print(models_metrics[i])
+  
+  curr_data = dat.syn %>%
+    filter(Metric==models_metrics[i])
+  
+  p <- ggplot(data=curr_data)+
+  geom_point(mapping=aes(x=Version1, y=Version2, color=Voice))+
+  facet_wrap(~TrialType)+
+  geom_abline()+
+  theme_classic()+
+  ggtitle(paste(models_metrics[i]))
+  
+  assign(nam, p)
+}
+
+grid.arrange(A1, A2, A3, A4, A5, A6, A7, A9, A10, A11)
+```
+
+
