@@ -112,7 +112,7 @@ read_data <- function(directory, filename) {
 #SET ENVIRONMENT VARIABLES
 #use BOTH EventsAdapt AND EventsRev OR only EventsAdapt
 ```{r, echo=FALSE}
-use_eventsrev <- FALSE #set to FALSE if you don't want to also use EventsRev data for analyses
+use_eventsrev <- TRUE #set to FALSE if you don't want to also use EventsRev data for analyses
 which_models <- "anns" #can be "anns", baselines" or "all"
 message("Running with the following environment variables:")
 message(paste("use_eventsrev: ", use_eventsrev))
