@@ -141,9 +141,8 @@ dat_er = do.call(rbind, lapply(files_er, function(x) read_data(dirname_eventsRev
 ## EVENTSADAPT
 ##Load & merge with original sentence file for information about TrialType & Voice
 NOTE: Some of the sentences were fixed from the human experiment! >> take from dropbox, NOT behavioral study!
+Maybe we should also just exclude these sentences
 The file we use is downloaded from Dropbox and named here as 'newsentences_EventsAdapt_smallfixes.csv' to avoid confusion with the 'newsentences_EventsAdapt.csv' file in the behavioral study folder
-## yields 26368/1648 = 16 > Why is this less now? Didn't use to be the case? And we didn't
-#change anything wrt EventsAdapt!
 ```{r read data, echo=FALSE}
 sentence_data = read.csv('newsentences_EventsAdapt_smallfixes.csv') %>%
 rename(TrialType=EvType) %>%
