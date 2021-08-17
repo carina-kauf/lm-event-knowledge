@@ -7,7 +7,7 @@ TODO
 * define outlier policy?
 
 NOTE!
-There are 16 extra sentences in new-EventsAdapt_fast_vector_sum.txt!
+There are sentences extra/missing in new-EventsAdapt_fast_vector_sum.txt!
 ** Check helper_notebook_model-generalization.ipynb for details!
 
 ```{r setup, include=FALSE, echo=FALSE}
