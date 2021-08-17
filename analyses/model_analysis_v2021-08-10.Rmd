@@ -4,8 +4,7 @@ output: html_document
 ---
 
 TODO
-* define outlier policy
-* further generalization analysis
+* define outlier policy?
 
 NOTE!
 There are 16 extra sentences in new-EventsAdapt_fast_vector_sum.txt!
@@ -70,28 +69,31 @@ read_data <- function(directory, filename) {
       mutate(ItemNum = SentenceNum %/% target_trialnr) %>%
       mutate(Plausibility = ifelse(SentenceNum%%2==0, 'Plausible', 'Implausible')) %>%
       
-      # 2. MODEL_METRIC
+      # 2. NAME MODEL_METRIC
       #add metric column
       mutate(Metric = substr(filename,1,nchar(filename)-4)) %>%
       #fix names EventsAdapt
-      mutate(Metric = str_replace(Metric, "new-eventsAdapt_", "")) %>%
-      mutate(Metric = str_replace(Metric, "new-EventsAdapt.", "")) %>%
-      mutate(Metric = str_replace(Metric, "newsentences-EventsAdapt.", "")) %>%
-      mutate(Metric = str_replace(Metric, "newsentences_EventsAdapt.", "")) %>%
+      mutate(Metric = str_replace(Metric, "new-[Ee]ventsAdapt[_\\.]", "")) %>%
+      mutate(Metric = str_replace(Metric, "newsentences[_-]EventsAdapt.", "")) %>%
       #fix names EventsRev
       mutate(Metric = str_replace(Metric, "ev1.", "")) %>%
       mutate(Metric = str_replace(Metric, "deps.prob_sent_gpt2-xl", "gpt2-xl_full")) %>%
       mutate(Metric = str_replace(Metric, "deps.prob_sent_gpt2", "gpt2_full"))
       
-      # 3. SCORES
+      # 3. PREPROCESS SCORES
+    
+      #3.1 Log-Scale GPT2 probabilities
       #the GPT2 models are the only ones with probability scores and not log probability! > log-scale
-    if (grepl("deps.prob_sent_", filename, fixed = TRUE) == TRUE){
+      #Note: One entire quadruplet (SentenceNum 1516, The editor overheard the proofreader .) has score 0.0
+      # >> add 1e-30 to enable log scaling & ask Emmanuele why this is 0!
+    if ((grepl("gpt2", filename) == TRUE) & (grepl("surprisal", filename) == FALSE)) {
+      print(paste("log scaling scores in file: ", filename))
       d = d %>%
+      mutate(Score = replace(Score, Score == 0.0, 1e-20)) %>% #Take out once 0.0 is fixed!
       mutate(Score = log(Score))
     }
-    
+      #3.2 Normalize scores for all models
     d = d %>%
-      #normalize scores for all models
       mutate(NormScore =scale_this(Score)) %>%
 
       # 4. PROCESS SENTENCES
@@ -119,7 +121,8 @@ message(paste("use_eventsrev: ", use_eventsrev))
 message(paste("which_models: ", which_models))
 ```
 
-# Load data (below yields 28016 (lines)/1648 (sentences) = 17(models)) for EventsAdapt
+# Load data (below yields 28368 (lines)/1648 (sentences) = 16 (models)) for EventsAdapt
+# Load data (below yields 960 (lines)/80 (sentences) = 12 (models)) for EventsRev
 ```{r read data, echo=FALSE}
 dirname = '../model_scores'
 
@@ -196,7 +199,7 @@ dat = dat %>%
 ```
 
 ### Filter out non-ANN models
-### below yields 18128 (lines) /1648 (sentences) = 11 (models) for EventsAdapt
+### below yields 19908 (lines) /(1648+80=1728) (sentences) = 11 (models) for EventsAdapt + EventsRev
 ```{r, echo=FALSE}
 
 #print(unique(dat$Metric))
@@ -227,9 +230,8 @@ We need to define for which models a higher score for plausible sentences is des
     * PPMI >> higher PMI indicates a plausible sentence
 2. LOWER = MORE PLAUSIBLE
     * Vector distance
-    * TFit (vector distance)
+    * TFit (sum of vector distances to prototype vector)
     * Surprisal
-
 3. UNCLEAR as of now:
     * SDM (I think it's just the sum of some vector distances as per the paper, but ask!)
     * > put this under "lower is better" now, but ask!
@@ -383,13 +385,16 @@ for(i in seq_along(models_metrics)){
 
 if (which_models=="all") {
   grid.arrange(A1, A2, A3, A4, A5, A6, A7, A9, A10, A11, A12, A13, A14, A15, A16)
+  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A9, A10, A11, A12, A13, A14, A15, A16) #generates g
 } else if (which_models=="anns") {
-grid.arrange(A1, A2, A3, A4, A5, A6, A7, A9, A10, A11)
+  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A9, A10, A11)
+  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A9, A10, A11)
 } else { #if which_models == "baselines"
-  grid.arrange(A1, A2, A3, A4, A5)}
-
+  grid.arrange(A1, A2, A3, A4, A5)
+  g <- arrangeGrob(A1, A2, A3, A4, A5)
+  }
 savename <- "4_withinItem_split.png"
-ggsave(paste(savedir,savename,sep="/"), width=16, height=12, units='cm')
+ggsave(paste(savedir,savename,sep="/"), width=30, height=30, units='cm', g)
 ```
 
 # ACTIVE VS PASSIVE
@@ -462,20 +467,21 @@ for(i in seq_along(models_metrics)){
 
 if (which_models=="all") {
   grid.arrange(A1, A2, A3, A4, A5, A6, A7, A9, A10, A11, A12, A13, A14, A15, A16)
+  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A9, A10, A11, A12, A13, A14, A15, A16) #generates g
 } else if (which_models=="anns") {
-grid.arrange(A1, A2, A3, A4, A5, A6, A7, A9, A10, A11)
+  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A9, A10, A11)
+  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A9, A10, A11)
 } else { #if which_models == "baselines"
-  grid.arrange(A1, A2, A3, A4, A5)}
-
+  grid.arrange(A1, A2, A3, A4, A5)
+  g <- arrangeGrob(A1, A2, A3, A4, A5)
+  }
 savename <- "6_activePassive_byitem_split.png"
-ggsave(paste(savedir,savename,sep="/"), width=16, height=12, units='cm')
+ggsave(paste(savedir,savename,sep="/"), width=30, height=30, units='cm', g)
 ```
 
 # SYNONYMS
 
 ## By item
-
-SynonymPair 91 does not have a score for any model for Version2 for some reason!
 
 ```{r, echo=FALSE}
 dat.syn = dat %>%
@@ -495,7 +501,7 @@ savename <- "7_synonyms_all.png"
 ggsave(paste(savedir,savename,sep="/"), width=16, height=12, units='cm')
 ```
 
-```{r Fig3, echo=FALSE, fig.height=15, fig.width=15}
+```{r, echo=FALSE, fig.height=15, fig.width=15}
 models_metrics = unique(dat$Metric)
 
 for(i in seq_along(models_metrics)){
@@ -517,13 +523,16 @@ for(i in seq_along(models_metrics)){
 
 if (which_models=="all") {
   grid.arrange(A1, A2, A3, A4, A5, A6, A7, A9, A10, A11, A12, A13, A14, A15, A16)
+  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A9, A10, A11, A12, A13, A14, A15, A16) #generates g
 } else if (which_models=="anns") {
-grid.arrange(A1, A2, A3, A4, A5, A6, A7, A9, A10, A11)
+  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A9, A10, A11)
+  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A9, A10, A11)
 } else { #if which_models == "baselines"
-  grid.arrange(A1, A2, A3, A4, A5)}
-
+  grid.arrange(A1, A2, A3, A4, A5)
+  g <- arrangeGrob(A1, A2, A3, A4, A5)
+  }
 savename <- "7_synonyms_split.png"
-ggsave(paste(savedir,savename,sep="/"), width=16, height=12, units='cm')
+ggsave(paste(savedir,savename,sep="/"), width=30, height=30, units='cm', g)
 ```
 
 
