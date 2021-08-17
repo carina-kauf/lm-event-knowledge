@@ -29,7 +29,7 @@ read_data <- function(directory, filename) {
   
   #EXCLUDE FILE FOR EXTRA SENTENCES
   if (filename=="new-EventsAdapt_fast_vector_sum.txt") {
-    message(paste(">> File", filename, "has 16 extra sentences. Excluding it for now!"))
+    message(paste(">> File", filename, "includes extra/missing sentences. Excluding it for now!"))
     return(NULL)
   }
   
