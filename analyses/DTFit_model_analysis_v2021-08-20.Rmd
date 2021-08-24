@@ -1,0 +1,314 @@
+---
+title: "DTFit_model_analysis_v2021-08-20"
+output: html_document
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rm(list=ls()) 
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(gridExtra)
+
+#helper function #https://stackoverflow.com/questions/35775696/trying-to-use-dplyr-to-group-by-and-apply-scale
+scale_this <- function(x) as.vector(scale(x))
+
+# custom function to read a datatable
+read_data <- function(directory, filename) {
+  d = read.delim(paste(directory, filename, sep='/'), 
+                 header=FALSE, sep='\t')
+  
+  #DATA EXCLUSION
+  ## Exclude ngram model for having too many UNK tokens in EventsAdapt sentence set
+  if (grepl("ngram", filename, fixed = TRUE) == TRUE) {
+    message(">> Ngram model has too many UNK tokens for EventsAdapt sentence set! Excluding the model for now!")
+    return(NULL)
+  }
+  ## Exclude GRNN & gpt2 surprisal model for only having been run on DTFit dataset
+  if ((grepl("surprisal_scores_GRNN", filename, fixed = TRUE)  == TRUE) |
+    (grepl("surprisal_scores_gpt2", filename, fixed = TRUE)  == TRUE)) {
+    message(paste(">> Model", filename, "not run for EventsAdapt! Excluding the model!"))
+    return(NULL)
+  }
+  
+  #ROWS
+  #set target number of *rows* in file
+  target_rownumber = 798
+  
+  #check for target number of rows
+  if (nrow(d)!=target_rownumber) {
+    print(paste('unexpected number of sentences in file: ', filename, 'number of sentences: ', nrow(d)))
+    return(NULL)
+  }
+  
+  #COLUMNS
+  #check for target number of *columns* in file
+  if (ncol(d)==3 | ncol(d)==4 | ncol(d)==5 | ncol(d)==7) {
+      
+    target_trialnr = 2
+    
+    #streamline input format
+    if (ncol(d)==3) {
+      d = d  %>%
+      rename(SentenceNum=V1, Sentence=V2, Score=V3)
+    }
+    else if (ncol(d)==4) {
+      d = d  %>%
+      select(V1,V2,V4) %>% #select relevant columns (do not choose Typicality column to streamline how it's assigned)
+      rename(SentenceNum=V1, Sentence=V2, Score=V4)
+    }
+    
+    else if (ncol(d)==5) { #If surprisal_scores_tinylstm
+      d = d  %>%
+      select(V1,V2,V5) %>% 
+      rename(SentenceNum=V1, Sentence=V2, Score=V5)
+    }
+    
+    else if (ncol(d)==7) {
+      d = d  %>%
+      select(V1,V3,V7) %>% #select relevant columns (others include grammatical tags)
+      rename(SentenceNum=V1, Sentence=V3, Score=V7)
+    }
+    
+    d = d %>%
+      mutate(Typicality = ifelse(SentenceNum%%2==0, 'Atypical', 'Typical')) %>%
+      mutate(ItemNum = SentenceNum %/% target_trialnr) %>%
+      
+      # 2. NAME MODEL_METRIC
+      #add metric column
+      mutate(Metric = substr(filename,1,nchar(filename)-4)) %>%
+      
+      #strip dataset prefix
+      mutate(Metric = str_replace(Metric, "dtfit_vassallo_|dtfit.", "")) %>%
+      
+      ##Assimilate ppmi model names between datasets
+      mutate(Metric = str_replace(Metric, "deps.smooth.baseline1", "syntax-based_PPMI")) %>%
+      mutate(Metric = str_replace(Metric, "deps.smooth.baseline2", "order-based_PPMI")) %>%
+      ##Assimilate gpt2 model names between datasets
+      mutate(Metric = str_replace(Metric, "deps.prob_sent_gpt2-xl", "gpt2-xl_full")) %>%
+      mutate(Metric = str_replace(Metric, "deps.prob_sent_gpt2", "gpt2_full"))
+      
+      # 3. PREPROCESS SCORES
+    
+      #3.1 Log-Scale GPT2 probabilities
+      #the GPT2 models are the only ones with probability scores and not log probability! > log-scale
+    if ((grepl("gpt2", filename) == TRUE) & (grepl("surprisal", filename) == FALSE)) {
+      print(paste("log scaling scores in file: ", filename))
+      d = d %>%
+      mutate(Score = replace(Score, Score == 0.0, 1e-20)) %>% #Take out once 0.0 is fixed!
+      mutate(Score = log(Score))
+    }
+      #3.2 Normalize scores for all models
+    d = d %>%
+      mutate(NormScore =scale_this(Score)) %>%
+
+      # 4. PROCESS SENTENCES
+      #strip space before final period
+      mutate(Sentence = str_replace(Sentence, " [.]", ".")) %>%
+      #for some reason, some baseline files have multiple periods at end > strip to just one!
+      mutate(Sentence = str_replace(Sentence, "[.]{2,}", "."))
+    
+    return(d)
+  } 
+  else {
+    print(paste('unexpected number of columns in file: ', 'number of columns: ', filename, ncol(d)))
+    return(NULL)
+  }
+}
+```
+
+#SET ENVIRONMENT VARIABLES
+```{r, echo=FALSE}
+which_models <- "anns" #can be "anns", baselines" or "all"
+message("Running with the following environment variables:")
+message(paste("which_models: ", which_models))
+```
+
+## Below yields: 11172/798 = 14 models
+```{r read data, echo=FALSE}
+dirname = '../model_scores'
+
+dirname_dtfit = paste(dirname, 'DTFit_scores_new_format', sep='/')
+
+message("Loading DTFit data ...")
+files = list.files(path=dirname_dtfit, pattern="*.txt")
+dat = do.call(rbind, lapply(files, function(x) read_data(dirname_dtfit, x)))
+```
+
+###### PREPROCESS DATA FILES ######
+
+## DTFIT
+```{r read data, echo=FALSE}
+
+dat$TrialType = 'DTFit'
+```
+
+### Filter out non-ANN models
+```{r, echo=FALSE}
+
+#print(unique(dat$Metric))
+anns <- c("gpt2","bert","xlnet","roberta")
+
+#filter out non-ANN models
+if (which_models == "anns"){
+  dat = dat %>%
+  filter(grepl(paste(anns, collapse = "|"),dat$Metric))
+  message("Using only ANN models for analysis")
+} else if (which_models == "baselines"){
+  dat = dat %>%
+  filter(!grepl(paste(anns, collapse = "|"),dat$Metric))
+  dat$Metric = factor(dat$Metric, levels=c("syntax-based_PPMI","order-based_PPMI","thematicFit_addition",
+    "thematicFit_product","v2_sdm","fast_vector_sum","surprisal_scores_tinylstm"))
+  message("Using only baseline models for analysis")
+} else {
+  message("Using all models for analysis")
+}
+
+print(unique(dat$Metric))
+```
+
+# TYPICALITY
+
+We need to define for which models a higher score for typical sentences is desirable:
+
+1. HIGHER = MORE TYPICAL
+    * ANNs >> metric is probability
+    * PPMI >> higher PMI indicates a typical sentence
+    * Vector similarity
+    * TFit similarity (sum of vector similarities to prototype vector)
+    * SDM (sum of some vector similarities)
+2. LOWER = MORE TYPICAL
+    * Surprisal
+
+```{r pressure, echo=FALSE}
+
+lower_better = c("surprisal")
+lower_better_pat <- paste(lower_better, collapse = '|')
+
+dat.binchoice = dat %>%
+  #create filter criterion
+  mutate(LowerBetter = ifelse(grepl(lower_better_pat, Metric),TRUE,FALSE)) %>%
+  group_by(ItemNum, Metric, LowerBetter, TrialType) %>%
+  summarize(ScoreDiff = NormScore[Typicality=="Typical"]-NormScore[Typicality=="Atypical"]) %>%
+  mutate(FinalScoreDiff = ifelse(LowerBetter==TRUE, -ScoreDiff, ScoreDiff)) %>%
+  mutate(Accuracy = ifelse(FinalScoreDiff>0, 1, 0))
+
+# Add FinalNormScore for NormScores plotting in the same direction for all metrics (i.e., Typical is more positive!)
+# Take out/plot NormScore below if confusing!
+dat = dat %>%
+  mutate(LowerBetter = ifelse(grepl(lower_better_pat, Metric),TRUE,FALSE)) %>%
+  mutate(FinalNormScore = ifelse(LowerBetter==TRUE, -NormScore, NormScore))
+```
+
+# BINARY ACCURACY
+
+For baselines: Thematic fit models have lots & lots of 0.0 scores, which drags performance as Accuracy is set to 1 if the ScoreDifference is positive.
+## Overall ANN plausibility plot
+```{r, echo=FALSE}
+
+ggplot(data=dat.binchoice, mapping=aes(x=TrialType,y=Accuracy))+
+  stat_summary(geom='col', fun.y='mean',
+               color='black', fill='gray80', width=0.5)+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               color = 'black', size = 0.5, width=0.1)+
+  coord_cartesian(ylim=c(0,1))+
+  theme_minimal()+
+  xlab("")
+
+savedir <- paste("plots/DTFit_Models=",which_models)
+ifelse(!dir.exists(savedir), dir.create(savedir), FALSE)
+
+savename <- "1_binaryAccuracy_all.png"
+#print(paste(savedir,savename,sep="/"))
+
+ggsave(paste(savedir,savename,sep="/"), width=16, height=12, units='cm')
+```
+
+# Split by model & metric
+```{r, echo=FALSE, fig.height=12, fig.width=10}
+ggplot(data=dat.binchoice, mapping=aes(x=TrialType, y=Accuracy))+
+  facet_wrap(~Metric, ncol = 3)+
+  stat_summary(geom='col', fun.y='mean',
+               color='black', fill='gray80', width=0.5)+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               color = 'black', size = 0.5, width=0.1)+
+  coord_cartesian(ylim=c(0,1))+
+  theme_minimal()+
+  xlab("")
+
+savename <- "1_binaryAccuracy_split.png"
+ggsave(paste(savedir,savename,sep="/"), width=16, height=12, units='cm')
+```
+
+# SCORE DIFFERENCE
+
+Note: This is a weird plot for baselines as the score differences come from wildly different metrics!
+Ignore the plots for baselines, or split up to enable a good visualization?
+Also: As for some model a negative score difference indicates a more typical choice (e.g. surprisal models), and for some it indicates a more imtypical choice (e.g. PPMI models), I opted to plot the FinalScoreDiff.
+FinalScoreDiff looks at whether a lower score is better for typical sentences and, if so, reverses the sign of the score difference (see above).
+Note that we could also adjust the NormScore & reverse the sign, and then keep ScoreDiff. Haven't done that, because that is also not clean yet.
+
+## Overall
+```{r, echo=FALSE}
+#ggplot(data=dat.binchoice, mapping=aes(x=TrialType, y=ScoreDiff))+
+ggplot(data=dat.binchoice, mapping=aes(x=TrialType, y=FinalScoreDiff))+
+  stat_summary(geom='col', fun.y='mean',
+               color='black', fill='gray80', width=0.5)+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               color = 'black', size = 0.5, width=0.1)+
+  theme_minimal()+
+  xlab("")
+
+savename <- "2_scoreDifference_all.png"
+ggsave(paste(savedir,savename,sep="/"), width=16, height=12, units='cm')
+```
+
+##Split by model & metric
+```{r, echo=FALSE, fig.height=12, fig.width=10}
+#ggplot(data=dat.binchoice, mapping=aes(x=TrialType, y=ScoreDiff))+
+ggplot(data=dat.binchoice, mapping=aes(x=TrialType, y=FinalScoreDiff))+
+  facet_wrap(~Metric, ncol = 3)+
+  stat_summary(geom='col', fun.y='mean',
+               color='black', fill='gray80', width=0.5)+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               color = 'black', size = 0.5, width=0.1)+
+  theme_minimal()+
+  xlab("")
+
+savename <- "2_scoreDifference_split.png"
+ggsave(paste(savedir,savename,sep="/"), width=16, height=12, units='cm')
+```
+
+
+# SCORES by Typicality
+
+Note that NormScore is more negative for typical sentences for some models (e.g. surprisal)
+## Overall
+```{r, echo=FALSE}
+ggplot(data=dat, mapping=aes(x=TrialType, y=FinalNormScore, fill=Typicality))+
+  stat_summary(geom='col', fun.y='mean',
+               color='black', position='dodge', width=0.5)+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               color = 'black', position=position_dodge(width=0.5), size = 0.5, width=0.1)+
+  xlab("")
+
+savename <- "3_normScores_all.png"
+ggsave(paste(savedir,savename,sep="/"), width=16, height=12, units='cm')
+```
+
+##Split by model & metric
+```{r, echo=FALSE, fig.height=12, fig.width=10}
+
+ggplot(data=dat, mapping=aes(x=TrialType, y=FinalNormScore, fill=Typicality))+
+  facet_wrap(~Metric, ncol = 3)+
+  stat_summary(geom='col', fun.y='mean',
+               color='black', position='dodge', width=0.5)+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               color = 'black', position=position_dodge(width=0.5), size = 0.5, width=0.1)+
+  xlab("")
+
+savename <- "3_normScores_split.png"
+ggsave(paste(savedir,savename,sep="/"), width=16, height=12, units='cm')
+```
