@@ -155,7 +155,7 @@ read_data <- function(directory, filename) {
 #use BOTH EventsAdapt AND EventsRev OR only EventsAdapt
 ```{r, echo=FALSE}
 use_eventsrev <- TRUE #set to FALSE if you don't want to also use EventsRev data for analyses
-which_models <- "baselines" #can be "anns", baselines" or "all"
+which_models <- "anns" #can be "anns", baselines" or "all"
 message("Running with the following environment variables:")
 message(paste("use_eventsrev: ", use_eventsrev))
 message(paste("which_models: ", which_models))
@@ -267,17 +267,15 @@ We need to define for which models a higher score for plausible sentences is des
 1. HIGHER = MORE PLAUSIBLE
     * ANNs >> metric is probability
     * PPMI >> higher PMI indicates a plausible sentence
+    * Vector similarity
+    * TFit similarity (sum of vector similarities to prototype vector)
+    * SDM (sum of some vector similarities)
 2. LOWER = MORE PLAUSIBLE
-    * Vector distance
-    * TFit (sum of vector distances to prototype vector)
     * Surprisal
-3. UNCLEAR as of now:
-    * SDM (I think it's just the sum of some vector distances as per the paper, but ask!)
-    * > put this under "lower is better" now, but ask!
 
 ```{r pressure, echo=FALSE}
 
-lower_better = c("surprisal","thematicFit","sdm","fast_vector_sum")
+lower_better = c("surprisal")
 lower_better_pat <- paste(lower_better, collapse = '|')
 
 dat.binchoice = dat %>%
@@ -338,7 +336,7 @@ ggsave(paste(savedir,savename,sep="/"), width=16, height=12, units='cm')
 
 Note: This is a weird plot for baselines as the score differences come from wildly different metrics!
 Ignore the plots for baselines, or split up to enable a good visualization?
-Also: As for some model a negative score difference indicates a more plausible choice (e.g. surprisal models), and for some it indicates a more implausible choice (e.g. PPMI models), I opted to plot the FinalScoreDiff.
+Also: As for some models a negative score difference indicates a more plausible choice (e.g. surprisal models), and for some it indicates a more implausible choice (e.g. PPMI models), I opted to plot the FinalScoreDiff.
 FinalScoreDiff looks at whether a lower score is better for plausible sentences and, if so, reverses the sign of the score difference (see above).
 Note that we could also adjust the NormScore & reverse the sign, and then keep ScoreDiff. Haven't done that, because that is also not clean yet.
 
@@ -444,14 +442,14 @@ for(i in seq_along(models_metrics)){
 }
 
 if (which_models=="all") {
-  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17) #generates g
+  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18)
+  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18) #generates g
 } else if (which_models=="anns") {
   grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11)
   g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11)
 } else { #if which_models == "baselines"
-  grid.arrange(A1, A2, A3, A4, A5, A6)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6)
+  grid.arrange(A1, A2, A3, A4, A5, A6, A7)
+  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7)
   }
 savename <- "4_withinItem_split.png"
 ggsave(paste(savedir,savename,sep="/"), width=30, height=30, units='cm', g)
@@ -528,14 +526,14 @@ for(i in seq_along(models_metrics)){
 }
 
 if (which_models=="all") {
-  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17) #generates g
+  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18)
+  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18) #generates g
 } else if (which_models=="anns") {
   grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11)
   g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11)
 } else { #if which_models == "baselines"
-  grid.arrange(A1, A2, A3, A4, A5, A6)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6)
+  grid.arrange(A1, A2, A3, A4, A5, A6, A7)
+  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7)
   }
 savename <- "6_activePassive_byitem_split.png"
 ggsave(paste(savedir,savename,sep="/"), width=30, height=30, units='cm', g)
@@ -584,14 +582,14 @@ for(i in seq_along(models_metrics)){
 }
 
 if (which_models=="all") {
-  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17) #generates g
+  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18)
+  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18) #generates g
 } else if (which_models=="anns") {
   grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11)
   g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11)
 } else { #if which_models == "baselines"
-  grid.arrange(A1, A2, A3, A4, A5, A6)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6)
+  grid.arrange(A1, A2, A3, A4, A5, A6, A7)
+  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7)
   }
 savename <- "7_synonyms_split.png"
 ggsave(paste(savedir,savename,sep="/"), width=30, height=30, units='cm', g)
