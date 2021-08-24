@@ -161,8 +161,6 @@ message(paste("use_eventsrev: ", use_eventsrev))
 message(paste("which_models: ", which_models))
 ```
 
-# Load data (below yields 28368 (lines)/1648 (sentences) = 16 (models)) for EventsAdapt
-# Load data (below yields 960 (lines)/80 (sentences) = 12 (models)) for EventsRev
 ```{r read data, echo=FALSE}
 dirname = '../model_scores'
 
@@ -236,7 +234,7 @@ dat = dat %>%
 ```
 
 ### Filter out non-ANN models
-### below yields 19908 (lines) /(1648+80=1728) (sentences) = 11 (models) for EventsAdapt + EventsRev
+### below yields 24192 (lines) /(1648+80=1728) (sentences) = 14 (models) for EventsAdapt + EventsRev
 ```{r, echo=FALSE}
 
 #print(unique(dat$Metric))
@@ -442,11 +440,11 @@ for(i in seq_along(models_metrics)){
 }
 
 if (which_models=="all") {
-  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18) #generates g
+  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20, A21)
+  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20, A21) #generates g
 } else if (which_models=="anns") {
-  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11)
+  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14)
+  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14)
 } else { #if which_models == "baselines"
   grid.arrange(A1, A2, A3, A4, A5, A6, A7)
   g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7)
@@ -526,11 +524,11 @@ for(i in seq_along(models_metrics)){
 }
 
 if (which_models=="all") {
-  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18) #generates g
+  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20, A21)
+  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20, A21) #generates g
 } else if (which_models=="anns") {
-  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11)
+  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14)
+  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14)
 } else { #if which_models == "baselines"
   grid.arrange(A1, A2, A3, A4, A5, A6, A7)
   g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7)
@@ -582,11 +580,11 @@ for(i in seq_along(models_metrics)){
 }
 
 if (which_models=="all") {
-  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18) #generates g
+  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20, A21)
+  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20, A21) #generates g
 } else if (which_models=="anns") {
-  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11)
+  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14)
+  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14)
 } else { #if which_models == "baselines"
   grid.arrange(A1, A2, A3, A4, A5, A6, A7)
   g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7)
