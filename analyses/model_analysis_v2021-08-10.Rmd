@@ -3,10 +3,6 @@ title: "model_analysis"
 output: html_document
 ---
 
-NOTE!
-There are sentences extra/missing in new-EventsAdapt_fast_vector_sum.txt!
-** Check helper_notebook_model-generalization.ipynb for details!
-
 ```{r setup, include=FALSE, echo=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 rm(list=ls()) 
@@ -25,11 +21,6 @@ read_data <- function(directory, filename) {
                  header=FALSE, sep='\t')
   
   #DATA EXCLUSION
-  ## Exclude fast_vector_sum model for having been run on the wrong set of sentences
-  if (grepl("fast_vector_sum", filename, fixed = TRUE) == TRUE) {
-    message(">> File new-EventsAdapt_fast_vector_sum.txt includes extra/missing sentences. Excluding the model for now!")
-    return(NULL)
-  }
   ## Exclude ngram model for having too many UNK tokens in EventsAdapt sentence set
   if (grepl("ngram", filename, fixed = TRUE) == TRUE) {
     message(">> Ngram model has too many UNK tokens for EventsAdapt sentence set! Excluding the model for now!")
@@ -164,7 +155,7 @@ read_data <- function(directory, filename) {
 #use BOTH EventsAdapt AND EventsRev OR only EventsAdapt
 ```{r, echo=FALSE}
 use_eventsrev <- TRUE #set to FALSE if you don't want to also use EventsRev data for analyses
-which_models <- "all" #can be "anns", baselines" or "all"
+which_models <- "baselines" #can be "anns", baselines" or "all"
 message("Running with the following environment variables:")
 message(paste("use_eventsrev: ", use_eventsrev))
 message(paste("which_models: ", which_models))
@@ -260,7 +251,7 @@ if (which_models == "anns"){
   dat = dat %>%
   filter(!grepl(paste(anns, collapse = "|"),dat$Metric))
   dat$Metric = factor(dat$Metric, levels=c("syntax-based_PPMI","order-based_PPMI","thematicFit_addition",
-    "thematicFit_product","v2_sdm","surprisal_scores_tinylstm"))
+    "thematicFit_product","v2_sdm","fast_vector_sum","surprisal_scores_tinylstm"))
   message("Using only baseline models for analysis")
 } else {
   message("Using all models for analysis")
@@ -286,7 +277,7 @@ We need to define for which models a higher score for plausible sentences is des
 
 ```{r pressure, echo=FALSE}
 
-lower_better = c("surprisal","thematicFit","sdm")
+lower_better = c("surprisal","thematicFit","sdm","fast_vector_sum")
 lower_better_pat <- paste(lower_better, collapse = '|')
 
 dat.binchoice = dat %>%
