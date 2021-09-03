@@ -3,6 +3,8 @@ title: "model_analysis"
 output: html_document
 ---
 
+NOTE: Currently we standardize the data. We could also do min-max scaling.
+
 ```{r setup, include=FALSE, echo=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 rm(list=ls()) 
@@ -129,7 +131,6 @@ read_data <- function(directory, filename) {
     if ((grepl("gpt2", filename) == TRUE) & (grepl("surprisal", filename) == FALSE)) {
       print(paste("log scaling scores in file: ", filename))
       d = d %>%
-      mutate(Score = replace(Score, Score == 0.0, 1e-20)) %>% #Take out once 0.0 is fixed!
       mutate(Score = log(Score))
     }
       #3.2 Normalize scores for all models
@@ -155,7 +156,7 @@ read_data <- function(directory, filename) {
 #use BOTH EventsAdapt AND EventsRev OR only EventsAdapt
 ```{r, echo=FALSE}
 use_eventsrev <- TRUE #set to FALSE if you don't want to also use EventsRev data for analyses
-which_models <- "anns" #can be "anns", baselines" or "all"
+which_models <- "baselines" #can be "anns", baselines" or "all"
 message("Running with the following environment variables:")
 message(paste("use_eventsrev: ", use_eventsrev))
 message(paste("which_models: ", which_models))
@@ -450,7 +451,7 @@ if (which_models=="all") {
   g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7)
   }
 savename <- "4_withinItem_split.png"
-ggsave(paste(savedir,savename,sep="/"), width=30, height=30, units='cm', g)
+ggsave(paste(savedir,savename,sep="/"), width=35, height=30, units='cm', g)
 ```
 
 # ACTIVE VS PASSIVE
@@ -534,7 +535,7 @@ if (which_models=="all") {
   g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7)
   }
 savename <- "6_activePassive_byitem_split.png"
-ggsave(paste(savedir,savename,sep="/"), width=30, height=30, units='cm', g)
+ggsave(paste(savedir,savename,sep="/"), width=35, height=30, units='cm', g)
 ```
 
 # SYNONYMS
@@ -590,7 +591,7 @@ if (which_models=="all") {
   g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7)
   }
 savename <- "7_synonyms_split.png"
-ggsave(paste(savedir,savename,sep="/"), width=30, height=30, units='cm', g)
+ggsave(paste(savedir,savename,sep="/"), width=35, height=30, units='cm', g)
 ```
 
 

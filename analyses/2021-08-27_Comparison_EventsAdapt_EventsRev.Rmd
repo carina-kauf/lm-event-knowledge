@@ -136,7 +136,6 @@ read_data <- function(directory, filename) {
     if ((grepl("gpt2", filename) == TRUE) & (grepl("surprisal", filename) == FALSE)) {
       print(paste("log scaling scores in file: ", filename))
       d = d %>%
-      mutate(Score = replace(Score, Score == 0.0, 1e-20)) %>% #Take out once 0.0 is fixed!
       mutate(Score = log(Score))
     }
       #3.2 Normalize scores for all models
