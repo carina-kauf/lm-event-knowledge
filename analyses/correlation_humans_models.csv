@@ -1,0 +1,16 @@
+"","models_metrics.i.","correlation"
+"1","human",1
+"2","gpt2_full",0.0194893298374279
+"3","gpt2-xl_full",-6.43545646060087e-05
+"4","xlnet-large-cased.last-word-prob",-0.021645865282176
+"5","bert-large-cased.last-word-prob",-0.018096381599693
+"6","roberta-large.l2r",0.09647672727443
+"7","xlnet-large-cased.verb-prob",-0.0108025422607098
+"8","roberta-large.last-word-prob",-0.0150658676307609
+"9","xlnet-large-cased.sentence-probs-pseudolog",0.0303342534455515
+"10","roberta-large.verb-prob",-0.015450102037647
+"11","bert-large-cased.verb-prob",-0.0529654033578492
+"12","xlnet-large-cased.l2r",-0.0120325544769982
+"13","bert-large-cased.l2r",-0.00211515134130888
+"14","roberta-large.sentence-probs-pseudolog",0.154816831533299
+"15","bert-large-cased.sentence-probs-pseudolog",0.123388596135287
