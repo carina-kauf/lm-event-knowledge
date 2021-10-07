@@ -806,7 +806,7 @@ grid_arrange_shared_legend(A1, A2, A3, ncol = 2, nrow = 2, position='bottom')
 g <- arrangeGrob(A1, A2, A3)
 
 savename <- "violin_all.png"
-ggsave(paste(savedir,savename,sep="/"), width=20, height=20, units='cm', g)
+ggsave(paste(savedir,savename,sep="/"), width=30, height=30, units='cm', g)
 ```
 
 ```{r, fig.height=8, fig.width=12}
@@ -837,7 +837,7 @@ grid.arrange(A1, A2)
 g <- arrangeGrob(A1, A2)
 
 savename <- "violin_gpt2_human.png"
-ggsave(paste(savedir,savename,sep="/"), width=12, height=8, units='cm')
+ggsave(paste(savedir,savename,sep="/"), width=20, height=20, units='cm', g)
 ```
 
 ```{r, fig.height=8, fig.width=12}
@@ -868,7 +868,7 @@ grid.arrange(A1, A2)
 g <- arrangeGrob(A1, A2)
 
 savename <- "violin_roberta_human.png"
-ggsave(paste(savedir,savename,sep="/"), width=12, height=8, units='cm')
+ggsave(paste(savedir,savename,sep="/"), width=20, height=20, units='cm', g)
 ```
 
 ```{r, fig.height=4, fig.width=12}
@@ -903,7 +903,7 @@ grid.arrange(A1, A2, ncol=2, nrow=1,
 g <- arrangeGrob(A1, A2)
 
 savename <- "violin_gpt2_EventsRev.png"
-ggsave(paste(savedir,savename,sep="/"), width=16, height=12, units='cm')
+ggsave(paste(savedir,savename,sep="/"), width=16, height=12, units='cm', g)
 ```
 
 
