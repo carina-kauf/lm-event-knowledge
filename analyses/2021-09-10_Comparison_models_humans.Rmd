@@ -697,7 +697,31 @@ ggplot(data=scatter_dat)+
              show.legend = TRUE)+
   geom_abline(h = 0, lty = 2, col="blue")+
   theme_classic()
+
+savedir = './correlation_figs'
+savename <- "scatter_human_gpt2.png"
+ggsave(paste(savedir,savename,sep="/"), width=16, height=12, units='cm')
 ```
+
+```{r plot}
+
+scatter_dat_roberta = subset(dat, Metric=="roberta-large.sentence-probs-pseudolog") %>% #best model as per correlation analysis
+  select(NormScore) %>%
+  rename(roberta = NormScore)
+
+scatter_dat = cbind(scatter_dat_human, scatter_dat_roberta)
+
+ggplot(data=scatter_dat)+
+    geom_point(mapping = aes(x=human, y=roberta),
+             shape=21, size=0.75, color='black',
+             show.legend = TRUE)+
+  geom_abline(h = 0, lty = 2, col="blue")+
+  theme_classic()
+
+savename <- "scatter_human_roberta.png"
+ggsave(paste(savedir,savename,sep="/"), width=16, height=12, units='cm')
+```
+
 
 ```{r, fig.height=12, fig.width=15}
 
@@ -712,6 +736,9 @@ ggplot(data=datAI)+
              show.legend = TRUE)+
   labs(x='Model')+
   geom_hline(yintercept=0, linetype='dotted')+theme_classic()+coord_flip()
+
+savename <- "violin_AI.png"
+ggsave(paste(savedir,savename,sep="/"), width=20, height=20, units='cm')
 ```
 
 ```{r, fig.height=12, fig.width=15}
@@ -727,6 +754,9 @@ ggplot(data=datAAN)+
              show.legend = TRUE)+
   labs(x='Model')+
   geom_hline(yintercept=0, linetype='dotted')+theme_classic()+coord_flip()
+
+savename <- "violin_AAN.png"
+ggsave(paste(savedir,savename,sep="/"), width=20, height=20, units='cm')
 ```
 
 ```{r, fig.height=12, fig.width=15}
@@ -742,6 +772,9 @@ ggplot(data=datAAR)+
              show.legend = TRUE)+
   labs(x='Model')+
   geom_hline(yintercept=0, linetype='dotted')+theme_classic()+coord_flip()
+
+savename <- "violin_AAR.png"
+ggsave(paste(savedir,savename,sep="/"), width=20, height=20, units='cm')
 ```
 
 ```{r, fig.height=20, fig.width=20}
@@ -771,6 +804,9 @@ for(i in seq_along(trialtypes)){
 grid_arrange_shared_legend(A1, A2, A3, ncol = 2, nrow = 2, position='bottom')
 #grid.arrange(A1, A2, A3, ncol=2, nrow=2)
 g <- arrangeGrob(A1, A2, A3)
+
+savename <- "violin_all.png"
+ggsave(paste(savedir,savename,sep="/"), width=20, height=20, units='cm', g)
 ```
 
 ```{r, fig.height=8, fig.width=12}
@@ -799,6 +835,40 @@ for(i in seq_along(curr_metrics)){
 
 grid.arrange(A1, A2)
 g <- arrangeGrob(A1, A2)
+
+savename <- "violin_gpt2_human.png"
+ggsave(paste(savedir,savename,sep="/"), width=12, height=8, units='cm')
+```
+
+```{r, fig.height=8, fig.width=12}
+
+curr_metrics = c("human", "roberta-large.sentence-probs-pseudolog") #best model as per correlation analysis
+for(i in seq_along(curr_metrics)){
+  nam <- paste("A", i, sep = "")
+  #print(models_metrics[i])
+  
+  curr_data = dat %>%
+    filter(Metric==curr_metrics[i])
+  
+  p <- ggplot(data=curr_data) +
+    geom_violin(mapping = aes(x=factor(TrialType, levels=rev(c('AI', "AAN", "AAR"))), y=NormScore, fill=Plausibility), scale='width', width=0.7, alpha=0.5, position=position_dodge(width=0.6))+
+    geom_point(mapping = aes(x=TrialType, y=NormScore, fill=Plausibility),
+             shape=21, size=1.2, color='black',
+             position=position_jitterdodge(jitter.width=0.15, jitter.height=0, dodge.width=.6),
+             show.legend = TRUE)+
+  labs(x='Model')+
+  geom_hline(yintercept=0, linetype='dotted')+theme_classic()+coord_flip()+
+  facet_wrap(~TrialType)+
+  ggtitle(paste(curr_metrics[i]))
+  
+  assign(nam, p)
+}
+
+grid.arrange(A1, A2)
+g <- arrangeGrob(A1, A2)
+
+savename <- "violin_roberta_human.png"
+ggsave(paste(savedir,savename,sep="/"), width=12, height=8, units='cm')
 ```
 
 ```{r, fig.height=4, fig.width=12}
@@ -831,6 +901,9 @@ for(i in seq_along(curr_metrics)){
 grid.arrange(A1, A2, ncol=2, nrow=1,
      top = "EventsRev")
 g <- arrangeGrob(A1, A2)
+
+savename <- "violin_gpt2_EventsRev.png"
+ggsave(paste(savedir,savename,sep="/"), width=16, height=12, units='cm')
 ```
 
 
@@ -847,7 +920,8 @@ ggplot(data=curr_dat)+
   labs(x='Model')+
   labs(y='Standardized score (AI)')+
   geom_hline(yintercept=0, linetype='dotted')+theme_classic()+coord_flip()
-#ggsave('plots/EventsRev/binary_distribution.png', width=16, height=12, units='cm')
+savename <- "violin_gpt2_AI.png"
+ggsave(paste(savedir,savename,sep="/"), width=16, height=12, units='cm')
 ```
 
 
