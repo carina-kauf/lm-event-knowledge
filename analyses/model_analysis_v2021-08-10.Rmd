@@ -5,6 +5,11 @@ output: html_document
 
 NOTE: Currently we standardize the data. We could also do min-max scaling.
 
+NOTE: Synsets seem to only exist for items with ItemNums <= 274!
+Some items do not have the correct SynSet associated (items 102 & 272 from human data is not in models)
+
+FIX: aligned sentences with human sentences & excluded sentences without synonyms > after new ItemNum 248 there are no synonym sentences anymore.
+
 ```{r setup, include=FALSE, echo=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 rm(list=ls()) 
@@ -13,6 +18,7 @@ library(dplyr)
 library(tidyr)
 library(stringr)
 library(gridExtra)
+library(assertthat)
 
 #helper function #https://stackoverflow.com/questions/35775696/trying-to-use-dplyr-to-group-by-and-apply-scale
 scale_this <- function(x) as.vector(scale(x))
@@ -34,6 +40,13 @@ read_data <- function(directory, filename) {
     message(paste(">> Model", filename, "not run for EventsAdapt! Excluding the model!"))
     return(NULL)
   }
+  
+#  ## Exclude outdated thematic fit files/files used to combine thematic fit sentences & scores >> moved to folder
+#  if ((grepl("_OLD", filename, fixed = TRUE)  == TRUE) | 
+#    (grepl("n200.m20", filename, fixed = TRUE)  == TRUE)) {
+#    message(paste("Excluding old scores for thematic fit model!"))
+#    return(NULL)
+#  }
   
   #ROWS
   #set target number of *rows* in file
@@ -70,6 +83,7 @@ read_data <- function(directory, filename) {
       d = d  %>%
       rename(SentenceNum=V1, Sentence=V2, Score=V3) %>%
       mutate(ItemNum = SentenceNum %/% target_trialnr)
+      print(paste(filename, "here!"))
     }
     else if (ncol(d)==4){
       d = d  %>%
@@ -126,16 +140,16 @@ read_data <- function(directory, filename) {
     
       #3.1 Log-Scale GPT2 probabilities
       #the GPT2 models are the only ones with probability scores and not log probability! > log-scale
-      #Note: One entire quadruplet (SentenceNum 1516, The editor overheard the proofreader .) has score 0.0
-      # >> add 1e-30 to enable log scaling & ask Emmanuele why this is 0!
+
     if ((grepl("gpt2", filename) == TRUE) & (grepl("surprisal", filename) == FALSE)) {
       print(paste("log scaling scores in file: ", filename))
       d = d %>%
       mutate(Score = log(Score))
     }
-      #3.2 Normalize scores for all models
+      #3.2 Normalize scores for all model
     d = d %>%
-      mutate(NormScore =scale_this(Score)) %>%
+      mutate(Score = replace(Score, Score==0.0, 1e-20)) %>% #Sentences 937 & 938 don't have a score for thematic fit. #NOTE: Manually changed the score "None" to 0.0 for these!
+      mutate(NormScore = scale_this(Score)) %>%
 
       # 4. PROCESS SENTENCES
       #strip space before final period for alignment with TrialTypes etc below
@@ -156,7 +170,7 @@ read_data <- function(directory, filename) {
 #use BOTH EventsAdapt AND EventsRev OR only EventsAdapt
 ```{r, echo=FALSE}
 use_eventsrev <- TRUE #set to FALSE if you don't want to also use EventsRev data for analyses
-which_models <- "baselines" #can be "anns", baselines" or "all"
+which_models <- "anns" #can be "anns", baselines" or "all"
 message("Running with the following environment variables:")
 message(paste("use_eventsrev: ", use_eventsrev))
 message(paste("which_models: ", which_models))
@@ -227,11 +241,104 @@ if (use_eventsrev == TRUE){
 }
 
 dat$TrialType = factor(dat$TrialType, levels=c('AI', 'AAN', 'AAR'))
+```
 
-# add info about synonym pairs for dat_ea items
-dat = dat %>%
-  mutate(SynonymPair = ifelse(ItemNum>900, NA, (ItemNum+1)%/%2)) %>%
-  mutate(NumSyn = ifelse(ItemNum>900, NA, paste('Version', (ItemNum+1)%%2+1, sep="")))
+## Need to filter out data to make sure the correct synsets are assigned (and humans & models are being evaluated on the same dataset)
+### Note: The next two cells were taken from the script 2021-09-10_Comparison_models_humans
+We have to exclude certain items because there's not a full overlap of stimuli between human and model data. We cannot exclude based on item number or synonym pair number because of general misalignment (some numbers are missing)
+The below exclusion keywords are obtained from running the check that finds differences in the datasets for models and humans below
+
+```{r}
+exclusion_keywords = c('designer', 
+                       'decorator',
+                       #
+                       'pants',
+                       'trousers',
+                       #
+                       'owner',
+                       'proprietor',
+                       #
+                       'spectators',
+                       'audience',
+                       #
+                       'illusionist',
+                       'magician',
+                       #
+                       'ancestors',
+                       'serf',
+                       #
+                       'dictator',
+                       'townspeople',
+                       #
+                       'runner',
+                       'jogger',
+                       #
+                       'officer',
+                       'deputy',
+                       #
+                       'hunter',
+                       'perpetrator',
+                       #
+                       'closed', # doesn't come with a synonym
+                       'cushion', # doesn't come with a synonym
+                       'pullover',  # doesn't come with a synonym
+                       'soda', # doesn't come with a synonym
+                       'woodworker', # doesn't come with a synonym
+                       'target', # doesn't come with a synonym
+                       'pine',  # doesn't come with a synonym
+                       'smuggler',  # doesn't come with a synonym
+                       'fired',  # doesn't come with a synonym
+                       'beverage', #7 doesn't come with a synonym
+                       'box-office', #282 no synonym
+                       'counselor', #293 no synonym
+                       'laundress', #306 no synonym
+                       'twins', #328 no synonym
+                       'fashionista', #379 no synonym
+                       'sportsstar', #922 no synonym
+                       'applauding' #927 no synonym
+                       )
+```
+
+#exclude from model dataset
+```{r}
+#exclude sentences based on those that are not shared between models and humans in the dataset/which don't contain a second SynSet version
+message(paste(length(unique(dat$Sentence))))
+model_dat = dat %>% 
+  filter(!grepl(paste(exclusion_keywords, collapse = "|"), Sentence))
+message(paste(length(unique(model_dat$Sentence))))
+
+#order by itemNum for correct assignment
+model_dat = arrange(model_dat, ItemNum)
+
+models = unique(model_dat$Metric)
+df = NA
+
+for(i in seq_along(models)){ 
+  curr_dataset = subset(model_dat, Metric == models[i])
+  # add info about synonym pairs for dat_ea items
+  num_EA = length(subset(curr_dataset, Experiment=='EventsAdapt')$Sentence) %/% 4
+  print(paste(num_EA, ',', num_EA%*%4))
+  num_ER = length(subset(curr_dataset, Experiment=='EventsRev')$Sentence) %/% 2
+  print(paste(num_ER, ',', num_ER%*%2))
+  itemNums_forSynsets <- c(rep(1:num_EA, each=4), rep(901:(900+num_ER), each=2))
+  
+  curr_dataset = curr_dataset %>%
+    rename(ItemNum_OLD=ItemNum) %>%
+    mutate(ItemNum = itemNums_forSynsets) %>%
+    mutate(SynonymPair = ifelse(ItemNum>248, NA, (ItemNum+1)%/%2)) %>% #changed from 900 to 248 || Items after the new ItemNum 248 do not have synonyms!
+    mutate(NumSyn = ifelse(ItemNum>248, NA, paste('Version', (ItemNum+1)%%2+1, sep=""))) #changed from 900 to 248
+
+  if (is.na(df)){
+    df = curr_dataset}
+  else{
+    df = merge(df,curr_dataset, all=TRUE)
+  }
+}
+
+model_dat = arrange(df, Metric)
+model_dat = arrange(model_dat, ItemNum)
+
+dat = model_dat
 ```
 
 ### Filter out non-ANN models
@@ -277,6 +384,9 @@ We need to define for which models a higher score for plausible sentences is des
 lower_better = c("surprisal")
 lower_better_pat <- paste(lower_better, collapse = '|')
 
+#TAKE OUT (for presentation only)!!
+#dat = subset(dat, Metric%in%c("gpt2-xl_full","bert-large-cased.sentence-probs-pseudolog"))
+
 dat.binchoice = dat %>%
   #create filter criterion
   mutate(LowerBetter = ifelse(grepl(lower_better_pat, Metric),TRUE,FALSE)) %>%
@@ -290,6 +400,7 @@ dat.binchoice = dat %>%
 dat = dat %>%
   mutate(LowerBetter = ifelse(grepl(lower_better_pat, Metric),TRUE,FALSE)) %>%
   mutate(FinalNormScore = ifelse(LowerBetter==TRUE, -NormScore, NormScore))
+
 ```
 
 # BINARY ACCURACY
@@ -316,6 +427,19 @@ ggsave(paste(savedir,savename,sep="/"), width=16, height=12, units='cm')
 ```
 
 # Split by model & metric
+```{r}
+#Set plotting options for grid plots
+
+models_metrics = unique(dat$Metric)
+nr_models = length(models_metrics)
+ncols=3
+nrows=round(nr_models/3)
+if (nrows * ncols < nr_models) {
+  nrows = nrows + 1
+}
+
+```
+
 ```{r, echo=FALSE, fig.height=12, fig.width=15}
 ggplot(data=dat.binchoice, mapping=aes(x=TrialType, y=Accuracy))+
   facet_wrap(~Metric, ncol = 3)+
@@ -327,7 +451,7 @@ ggplot(data=dat.binchoice, mapping=aes(x=TrialType, y=Accuracy))+
   theme_minimal()
 
 savename <- "1_binaryAccuracy_split.png"
-ggsave(paste(savedir,savename,sep="/"), width=16, height=12, units='cm')
+ggsave(paste(savedir,savename,sep="/"), width=ncols*10, height=nrows*7, units='cm')
 ```
 
 
@@ -365,7 +489,7 @@ ggplot(data=dat.binchoice, mapping=aes(x=TrialType, y=FinalScoreDiff))+
   theme_minimal()
 
 savename <- "2_scoreDifference_split.png"
-ggsave(paste(savedir,savename,sep="/"), width=30, height=30, units='cm')
+ggsave(paste(savedir,savename,sep="/"), width=ncols*10, height=nrows*7, units='cm')
 ```
 
 
@@ -395,7 +519,7 @@ ggplot(data=dat, mapping=aes(x=TrialType, y=FinalNormScore, fill=Plausibility))+
                color = 'black', position=position_dodge(width=0.5), size = 0.5, width=0.1)
 
 savename <- "3_normScores_split.png"
-ggsave(paste(savedir,savename,sep="/"), width=16, height=12, units='cm')
+ggsave(paste(savedir,savename,sep="/"), width=ncols*10, height=nrows*7, units='cm')
 ```
 
 # Within-item scores for plausible vs. implausible versions of the sentence
@@ -441,17 +565,17 @@ for(i in seq_along(models_metrics)){
 }
 
 if (which_models=="all") {
-  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20, A21)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20, A21) #generates g
+  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20, A21, ncol=ncols, nrow=nrows)
+  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20, A21, ncol=ncols, nrow=nrows) #generates g
 } else if (which_models=="anns") {
-  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14)
+  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, ncol=ncols, nrow=nrows)
+  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, ncol=ncols, nrow=nrows)
 } else { #if which_models == "baselines"
-  grid.arrange(A1, A2, A3, A4, A5, A6, A7)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7)
+  grid.arrange(A1, A2, A3, A4, A5, A6, A7, ncol=ncols, nrow=nrows)
+  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, ncol=ncols, nrow=nrows)
   }
 savename <- "4_withinItem_split.png"
-ggsave(paste(savedir,savename,sep="/"), width=35, height=30, units='cm', g)
+ggsave(paste(savedir,savename,sep="/"), width=ncols*10, height=nrows*7, units='cm', g)
 ```
 
 # ACTIVE VS PASSIVE
@@ -480,7 +604,7 @@ ggplot(data=dat.binchoice, mapping=aes(x=TrialType, y=FinalScoreDiff, fill=Voice
                color = 'black', size = 0.5, width=0.1)
 
 savename <- "5_activePassive_split.png"
-ggsave(paste(savedir,savename,sep="/"), width=16, height=12, units='cm')
+ggsave(paste(savedir,savename,sep="/"), width=ncols*10, height=nrows*7, units='cm')
 ```
 
 
@@ -525,17 +649,17 @@ for(i in seq_along(models_metrics)){
 }
 
 if (which_models=="all") {
-  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20, A21)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20, A21) #generates g
+  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20, A21, ncol=ncols, nrow=nrows)
+  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20, A21, ncol=ncols, nrow=nrows) #generates g
 } else if (which_models=="anns") {
-  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14)
+  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, ncol=ncols, nrow=nrows)
+  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, ncol=ncols, nrow=nrows)
 } else { #if which_models == "baselines"
-  grid.arrange(A1, A2, A3, A4, A5, A6, A7)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7)
+  grid.arrange(A1, A2, A3, A4, A5, A6, A7, ncol=ncols, nrow=nrows)
+  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, ncol=ncols, nrow=nrows)
   }
 savename <- "6_activePassive_byitem_split.png"
-ggsave(paste(savedir,savename,sep="/"), width=35, height=30, units='cm', g)
+ggsave(paste(savedir,savename,sep="/"), width=ncols*10, height=nrows*7, units='cm', g)
 ```
 
 # SYNONYMS
@@ -561,7 +685,6 @@ ggsave(paste(savedir,savename,sep="/"), width=16, height=12, units='cm')
 ```
 
 ```{r, echo=FALSE, fig.height=15, fig.width=15}
-models_metrics = unique(dat$Metric)
 
 for(i in seq_along(models_metrics)){
   nam <- paste("A", i, sep = "")
@@ -581,17 +704,17 @@ for(i in seq_along(models_metrics)){
 }
 
 if (which_models=="all") {
-  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20, A21)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20, A21) #generates g
+  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20, A21, ncol=ncols, nrow=nrows)
+  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20, A21, ncol=ncols, nrow=nrows) #generates g
 } else if (which_models=="anns") {
-  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14)
+  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, ncol=ncols, nrow=nrows)
+  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, ncol=ncols, nrow=nrows)
 } else { #if which_models == "baselines"
-  grid.arrange(A1, A2, A3, A4, A5, A6, A7)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7)
+  grid.arrange(A1, A2, A3, A4, A5, A6, A7, ncol=ncols, nrow=nrows)
+  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, ncol=ncols, nrow=nrows)
   }
 savename <- "7_synonyms_split.png"
-ggsave(paste(savedir,savename,sep="/"), width=35, height=30, units='cm', g)
+ggsave(paste(savedir,savename,sep="/"), width=ncols*10, height=nrows*7, units='cm', g)
 ```
 
 
