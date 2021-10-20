@@ -1,0 +1,135 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rm(list=ls()) 
+
+library(lme4)
+library(lmerTest)
+library(ggplot2)
+library(dplyr)
+```
+
+# Read data
+
+## Sentence info
+
+```{r}
+dirname = '../word_frequency_info'
+
+sentence_file_er = paste(dirname, 'EventsRev_freqs.csv', sep='/')
+sentence_file_ea = paste(dirname, 'EventsAdapt_freqs.csv', sep='/')
+
+# read in & normalize predictors
+dat_er_sentence = read.csv(sentence_file_er) %>%
+  mutate(agent_freq_norm = (agent_freq - mean(agent_freq))/sd(agent_freq),
+         patient_freq_norm = (patient_freq - mean(patient_freq))/sd(patient_freq),
+         verb_freq_norm = (verb_freq - mean(verb_freq))/sd(verb_freq),
+         sentence_freq_norm = (sentence_freq - mean(sentence_freq))/sd(sentence_freq))
+dat_ea_sentence = read.csv(sentence_file_ea) %>%
+  mutate(agent_freq_norm = (agent_freq - mean(agent_freq))/sd(agent_freq),
+         patient_freq_norm = (patient_freq - mean(patient_freq))/sd(patient_freq),
+         verb_freq_norm = (verb_freq - mean(verb_freq))/sd(verb_freq),
+         sentence_freq_norm = (sentence_freq - mean(sentence_freq))/sd(sentence_freq))
+```
+
+## Human Scores
+
+```{r}
+dirname = '../human_ratings'
+ratings_eventsRev = paste(dirname, '1_EventsRev_plausibility', 'analyses', 'longform_data.csv', sep='/')
+ratings_eventsAdapt = paste(dirname, '2_EventsAdapt_plausibility', 'analyses', 'longform_data.csv', sep='/')
+
+dat_er_human = read.csv(ratings_eventsRev) %>% rename(Score=Answer.Rating) %>%
+  rename(Sentence=Input.trial) %>%
+  rename(ItemNum=Item) %>%
+  select(WorkerId, Score, Plausibility, ItemNum, Sentence) %>%
+  filter(ItemNum<41)    # exclude attention checks
+dat_er = merge(dat_er_human, dat_er_sentence, by=c("ItemNum", "Plausibility", "Sentence"))
+
+dat_ea_human = read.csv(ratings_eventsAdapt) %>% rename(Score=Answer.Rating) %>%
+  rename(Sentence=Input.trial) %>%
+  rename(ItemNum=Item) %>%
+  select(WorkerId, Score, Plausibility, ItemNum, Sentence, TrialType, Voice)
+# arbitrarily assign plausibility labels to AAR
+dat_ea_human$Plausibility_random = recode(dat_ea_human$Plausibility, 
+                                          plausible0='implausible', plausible1='plausible')  
+dat_ea_human$Plausibility = recode(dat_ea_human$Plausibility, 
+                                   plausible0='plausible', plausible1='plausible')  
+dat_ea = merge(dat_ea_human, dat_ea_sentence, 
+               by=c("ItemNum", "Sentence", "Plausibility", "Voice", "TrialType"))
+```
+
+In the regression model, "AAR" and "plausible" convey redundant information, making it hard to disentangle different predictors
+Two solutions:
+a. arbitrarily assign "plausible" and "implausible" tags to AAR
+b. encode trial type as "AA" instead of "AAR"/"AAN"
+
+Going with option 1 for now but open to changes.
+
+```{r}
+# CLEAN
+dat_er$Plausibility = recode(dat_er$Plausibility, implaus='Implausible', plaus='Plausible')
+dat_er$Experiment = 'EventsRev'
+dat_er$TrialType = 'AAN'           # can change to a different value to show EventsRev results separately
+dat_er$Voice = 'active'
+dat_er$ItemNum = dat_er$ItemNum + 900    # so that the numbering doesn't overlap
+
+dat_ea$Plausibility = recode(dat_ea$Plausibility_random, 
+                             implausible='Implausible', plausible='Plausible') 
+dat_ea = dat_ea %>% select(-Plausibility_random)
+dat_ea$Experiment = 'EventsAdapt'
+
+# COMBINE
+dat = rbind(dat_er, dat_ea) 
+```
+
+
+# Stats
+
+## Contrasts
+```{r}
+dat$Plausibility = factor(dat$Plausibility, levels=c("Plausible", "Implausible")) # dummy coding by default
+
+dat$Voice = as.factor(dat$Voice)
+contrasts(dat$Voice) = c(0.5, -0.5)
+colnames(attr(dat$Voice, "contrasts")) = c("A>P")
+
+dat$TrialType = factor(dat$TrialType, levels=c("AAR", "AAN", "AI"))    # dummy coding by default
+
+dat$ItemNum = as.factor(dat$ItemNum)
+dat$WorkerId = as.factor(dat$WorkerId)
+```
+
+## Humans
+
+```{r lmer humans}
+m0 = lmer(Score ~ Plausibility*TrialType*Voice + agent_freq_norm + patient_freq_norm + verb_freq_norm + sentence_freq_norm + (1|ItemNum) + (1|WorkerId), 
+         data=dat, REML=FALSE)
+m1 = lmer(Score ~ Plausibility*TrialType*Voice + agent_freq_norm + patient_freq_norm + verb_freq_norm + sentence_freq_norm + (1|ItemNum) + (1+Plausibility:TrialType||WorkerId), 
+         data=dat, REML=FALSE)
+m2 = lmer(Score ~ Plausibility*TrialType*Voice + agent_freq_norm + patient_freq_norm + verb_freq_norm + sentence_freq_norm + (1+Plausibility|ItemNum) + (1+Plausibility:TrialType||WorkerId), 
+         data=dat, REML=FALSE, control=lmerControl(optimizer="bobyqa",
+                                 optCtrl=list(maxfun=2e5)))
+m3 = lmer(Score ~ Plausibility*TrialType*Voice + agent_freq_norm + patient_freq_norm + verb_freq_norm + sentence_freq_norm + (1+Plausibility||ItemNum) + (1+Plausibility:TrialType+Voice||WorkerId), 
+         data=dat, REML=FALSE, control=lmerControl(optimizer="bobyqa",
+                                 optCtrl=list(maxfun=2e6)))    # failed to converge when item num correlation is included
+
+#m4 = lmer(Score ~ Plausibility*TrialType*Voice + agent_freq_norm + patient_freq_norm + verb_freq_norm + sentence_freq_norm + (1+Plausibility+Voice||ItemNum) + (1+Plausibility:TrialType+Voice||WorkerId), 
+#         data=dat, REML=FALSE, control=lmerControl(optimizer="bobyqa",
+#                                 optCtrl=list(maxfun=2e6)))  # failed to converge
+```
+
+```{r}
+anova(m0, m1, m2, m3)
+```
+
+```{r}
+sink("model3.txt", append=FALSE)
+print(summary(m3), correlation=TRUE)
+sink()
+summary(m3)
+```
