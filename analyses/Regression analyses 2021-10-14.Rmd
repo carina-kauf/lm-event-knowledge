@@ -13,9 +13,11 @@ library(ggplot2)
 library(dplyr)
 ```
 
-# Read data
+# EventsAdapt/Rev
 
-## Sentence info
+## Read data
+
+### Sentence info
 
 ```{r}
 dirname = '../word_frequency_info'
@@ -36,7 +38,7 @@ dat_ea_sentence = read.csv(sentence_file_ea) %>%
          sentence_freq_norm = (sentence_freq - mean(sentence_freq))/sd(sentence_freq))
 ```
 
-## Human Scores
+### Human Scores
 
 ```{r}
 dirname = '../human_ratings'
@@ -88,9 +90,9 @@ dat = rbind(dat_er, dat_ea)
 ```
 
 
-# Stats
+## Stats
 
-## Contrasts
+### Contrasts
 ```{r}
 dat$Plausibility = factor(dat$Plausibility, levels=c("Plausible", "Implausible")) # dummy coding by default
 
@@ -104,7 +106,7 @@ dat$ItemNum = as.factor(dat$ItemNum)
 dat$WorkerId = as.factor(dat$WorkerId)
 ```
 
-## Humans
+### Humans
 
 ```{r lmer humans}
 m0 = lmer(Score ~ Plausibility*TrialType*Voice + agent_freq_norm + patient_freq_norm + verb_freq_norm + sentence_freq_norm + (1|ItemNum) + (1|WorkerId), 
@@ -132,4 +134,55 @@ sink("model3.txt", append=FALSE)
 print(summary(m3), correlation=TRUE)
 sink()
 summary(m3)
+```
+
+# DTFit
+
+## Read data
+
+### Sentence info
+```{r}
+dirname = '../word_frequency_info'
+
+sentence_file_dtfit = paste(dirname, 'DTFit_freqs.csv', sep='/')
+
+# read in & normalize predictors
+dat_dtfit_sentence = read.csv(sentence_file_dtfit) %>%
+  mutate(agent_freq_norm = (agent_freq - mean(agent_freq))/sd(agent_freq),
+         patient_freq_norm = (patient_freq - mean(patient_freq))/sd(patient_freq),
+         verb_freq_norm = (verb_freq - mean(verb_freq))/sd(verb_freq),
+         sentence_freq_norm = (sentence_freq - mean(sentence_freq))/sd(sentence_freq))
+```
+
+### Human ratings
+```{r}
+dirname = '../human_ratings'
+ratings_dtfit = paste(dirname, '3_DTFIT', 'newformat_curated_human_ratings.csv', sep='/')
+
+dat_dtfit = read.csv(ratings_dtfit)
+
+dat_dtfit = merge(dat_dtfit, dat_dtfit_sentence, 
+               by=c("Sentence", "Typicality", "Rating")) %>%
+  rename(ItemNum=Item, Plausibility=Typicality, Score=Rating)  # to be consistent with other datasets
+
+dat_dtfit$Plausibility = recode(dat_dtfit$Plausibility, 
+                             AT='Implausible', T='Plausible') 
+```
+
+## Stats
+
+### Contrasts
+
+```{r}
+dat_dtfit$Plausibility = factor(dat_dtfit$Plausibility, levels=c("Plausible", "Implausible")) # dummy coding by default
+
+dat_dtfit$ItemNum = as.factor(dat_dtfit$ItemNum)
+```
+
+### Fit
+
+```{r}
+m = lmer(Score ~ Plausibility + agent_freq_norm + patient_freq_norm + verb_freq_norm + sentence_freq_norm + (1|ItemNum), 
+         data=dat_dtfit, REML=FALSE)
+summary(m)
 ```
