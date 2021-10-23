@@ -18,6 +18,8 @@ library(gridExtra)
 library(operator.tools)
 library(lme4)
 library(lmerTest)
+library(cocor)
+library(patchwork)
 
 
 #SET ENVIRONMENT VARIABLES
@@ -623,7 +625,7 @@ dat = within(dat, Metric <- relevel(Metric, ref = "human"))    # set humans as t
 dat$ItemNum = as.factor(dat$ItemNum)
 ```
 
-# PLOTTING
+# KEY ANALYSES
 
 ```{r}
 #Set plotting options for grid plots
@@ -637,12 +639,14 @@ if (nrows * ncols < nr_models) {
 }
 ```
 
+## Binary accuracy
+
 ```{r, echo=FALSE, fig.height=12, fig.width=15}
 
 if (endsWith(paste(which_models),"_main")){
-  aan_group = anns_main
+  aan_group = sapply(anns_main, function(x) {str_replace(x, ".sentence-probs-pseudolog", "")})
 } else {
-  aan_group = anns
+  aan_group = sapply(anns, function(x) {str_replace(x, ".sentence-probs-pseudolog", "")})
 }
 
 dat.binchoice = dat %>%
@@ -663,6 +667,34 @@ dat.binchoice$Category = factor(dat.binchoice$Category, levels=c("human", "ANNs"
 dat.binchoice$TrialType = factor(dat.binchoice$TrialType, levels=c("AI", "AAN", "AAR"))
 ```
 
+### Stats
+
+```{r}
+calculate_binom_pval <- function(numCorrect, numTotal) {
+  return(sapply(c(1:length(numCorrect)), 
+                function(i){ binom.test(numCorrect[i], numTotal[i])$p.value}))
+}
+
+# get p values
+dat.binchoice.summary = dat.binchoice %>%
+  filter(TrialType %in% c("AI", "AAN")) %>%
+  group_by(Category, Metric, TrialType) %>%
+  summarize(NumCorrect=sum(Accuracy), NumTotal=length(Accuracy)) %>%
+  ungroup() %>%
+  mutate(pVal = calculate_binom_pval(NumCorrect, NumTotal))
+
+# adjust for multiple comparisons within each category
+dat.binchoice.summary = dat.binchoice.summary %>%
+  group_by(Category) %>%
+  mutate(pValAdjusted = p.adjust(pVal, method="fdr", n=length(pVal)),
+         ntoadjust = length(pVal)) %>%
+  mutate(pLabel = ifelse(pValAdjusted<0.001, "***", 
+                         ifelse(pValAdjusted<0.01, "**",
+                                ifelse(pValAdjusted<0.05, "*", ""))))
+```
+
+### Plot 
+
 ```{r, echo=FALSE}
 
 ggplot(data=subset(dat.binchoice, TrialType%in%c("AI","AAN")), 
@@ -673,7 +705,7 @@ ggplot(data=subset(dat.binchoice, TrialType%in%c("AI","AAN")),
                color='black', width=0.8)+
   stat_summary(geom='errorbar', fun.data='mean_se',
                color = 'black', size = 0.5, width=0.1)+
-  #scale_fill_brewer(palette="Set2")+
+  geom_text(mapping=aes(x=Metric, y=0.05, label=pLabel), data=dat.binchoice.summary)+
   coord_cartesian(ylim=c(0,1))+
   geom_hline(yintercept=.5, linetype='dotted')+
   theme_classic()+
@@ -684,97 +716,58 @@ savename <- "1_binaryAccuracy_split.png"
 ggsave(paste(savedir,savename,sep="/"), width=15, height=12, units='cm')
 ```
 
-# SCORES by Plausibility
 
-Note that NormScore is more negative for plausible sentences for some models (e.g. surprisal) > used FinalNormScore in different
 
-##Split by model & metric
-```{r, echo=FALSE}
+# SCATTERPLOTS
 
-ggplot(data=dat, mapping=aes(x=TrialType, y=NormScore, fill=Plausibility))+
-  facet_wrap(~Metric, ncol = 3)+
-  stat_summary(geom='col', fun.y='mean',
-               color='black', position='dodge', width=0.5)+
-  stat_summary(geom='errorbar', fun.data='mean_se',
-               color = 'black', position=position_dodge(width=0.5), size = 0.5, width=0.1)
+## General settings
+```{r}
+# Plotting only humans and ANNs for now - will put baselines in the appendix
+which_models = "anns_main"
+metrics2plot = c(human, anns_main)
+metrics2plot = as.vector(sapply(metrics2plot, 
+                                  function(x) {str_replace(x, ".sentence-probs-pseudolog", "")}))
 
-savename <- "3_normScores_split.png"
-ggsave(paste(savedir,savename,sep="/"), height=30,width=30, units='cm')
+dat2plot = dat %>% 
+  filter(Metric %in% metrics2plot)
+
+# color scheme
+color_plaus = '#1b9e77'
+color_voice = '#d95f02'
+color_syn = '#7570b3'
 ```
 
-# Within-item scores for plausible vs. implausible versions of the sentence
+## PLAUSIBLE VS IMPLAUSIBLE
 
-## Overall
+### Prep data
 ```{r, echo=FALSE}
-dat.wide = dat %>% 
+dat.plaus = dat2plot %>% 
   dplyr::select(ItemNum, TrialType, Plausibility, Voice, Metric, NormScore) %>%
   group_by(ItemNum, TrialType, Plausibility, Voice, Metric) %>%
   summarize(meanScore = mean(NormScore, na.rm=TRUE)) %>%
   spread(Plausibility, meanScore)  
 ```
 
-##Split by model & metric
-
-```{r Fig1, echo=FALSE, fig.height=10, fig.width=15}
-
-for(i in seq_along(models_metrics)){
-  nam <- paste("A", i, sep = "")
-  print(models_metrics[i])
-  
-  curr_data = dat.wide %>%
-    filter(Metric==models_metrics[i])
-  
-  p <- ggplot(data=curr_data)+
-  geom_point(mapping=aes(x=Implausible, y=Plausible))+
-  #facet_wrap(~TrialType)+
-  geom_abline(slope=1, intercept=0)+
+```{r}
+plot.plaus = ggplot(data=dat.plaus)+
+  geom_point(mapping=aes(x=Plausible, y=Implausible), size=0.2, color=color_plaus)+
+  facet_wrap(~Metric, ncol=ncols, nrow=nrows)+
+  geom_abline(slope=1, intercept=0, size=0.2)+
   coord_cartesian(ylim=c(0,1), xlim=c(0,1))+
+  ggtitle('PLAUSIBILITY')+
   theme_classic()+
-  ggtitle(paste(models_metrics[i]))
-  
-  assign(nam, p)
-}
-
-
-if (which_models=="all") {
-  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20, A21, ncol=ncols, nrow=nrows)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20, A21, ncol=ncols, nrow=nrows) #generates g
-} else if (which_models=="anns") {
-  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, ncol=ncols, nrow=nrows)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, ncol=ncols, nrow=nrows)
-} else if (which_models=="anns_main") {
-  grid.arrange(A1, A2, A3, A4, ncol=ncols, nrow=nrows)
-  g <- arrangeGrob(A1, A2, A3, A4, ncol=ncols, nrow=nrows)
-} else if (which_models=="all_main") {
-  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10,  ncol=ncols, nrow=nrows)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, ncol=ncols, nrow=nrows)
-} else { #if which_models == "baselines"
-  grid.arrange(A1, A2, A3, A4, A5, A6, A7, ncol=ncols, nrow=nrows)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, ncol=ncols, nrow=nrows)
-  }
-savename <- "4_withinItem_split.png"
-ggsave(paste(savedir,savename,sep="/"), height=20,width=40, units='cm', g)
+  theme(plot.title = element_text(hjust=0.5,face='bold'))
+plot.plaus
 ```
 
 
-# ACTIVE VS PASSIVE
+## ACTIVE VS PASSIVE
 
-##Split by model & metric
 
-```{r, echo=FALSE, fig.height=12, fig.width=15}
-ggplot(data=dat.binchoice, mapping=aes(x=TrialType, y=ScoreDiff, fill=Voice))+
-  facet_wrap(~Metric, ncol = 3)+
-  stat_summary(geom='col', fun.y='mean', position='dodge', width=0.5)+
-  stat_summary(geom='errorbar', fun.data='mean_se', position=position_dodge(width=0.5),
-               color = 'black', size = 0.5, width=0.1)
-
-savename <- "5_activePassive_split.png"
-ggsave(paste(savedir,savename,sep="/"), height=30,width=30, units='cm')
-```
-## By item
+### Prep data
 
 ```{r, echo=FALSE}
-dat.voice = dat %>%
+dat.voice = dat2plot %>%
   filter(Experiment=='EventsAdapt') %>%
   select(ItemNum, TrialType, Plausibility, Voice, Metric, NormScore) %>%
   group_by(ItemNum, TrialType, Plausibility, Voice, Metric) %>%
@@ -782,50 +775,27 @@ dat.voice = dat %>%
   spread(Voice, meanScore)
 ```
 
-```{r Fig2, echo=FALSE, fig.height=12, fig.width=15}
+### Plot
 
-for(i in c(1:length(models_metrics))){
-  nam <- paste("A", i, sep = "")
-  print(models_metrics[i])
-  
-  curr_data = dat.voice %>%
-    filter(Metric==models_metrics[i])
-  
-  p <- ggplot(data=curr_data)+
-  geom_point(mapping=aes(x=active, y=passive))+
-  #facet_wrap(~TrialType)+
-  geom_abline(slope=1, intercept=0)+
+```{r}
+plot.voice = ggplot(data=dat.voice)+
+  geom_point(mapping=aes(x=active, y=passive), size=0.2, color=color_voice)+
+  facet_wrap(~Metric, ncol=ncols, nrow=nrows)+
+  geom_abline(slope=1, intercept=0, size=0.2)+
   coord_cartesian(ylim=c(0,1), xlim=c(0,1))+
+  ggtitle('VOICE')+
   theme_classic()+
-  ggtitle(paste(models_metrics[i]))
-  
-  assign(nam, p)
-}
-
-if (which_models=="all") {
-  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20, A21, ncol=ncols, nrow=nrows)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20, A21, ncol=ncols, nrow=nrows) #generates g
-} else if (which_models=="anns") {
-  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, ncol=ncols, nrow=nrows)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, ncol=ncols, nrow=nrows)
-} else if (which_models=="anns_main") {
-  grid.arrange(A1, A2, A3, A4, ncol=ncols, nrow=nrows)
-  g <- arrangeGrob(A1, A2, A3, A4, ncol=ncols, nrow=nrows)
-} else if (which_models=="all_main") {
-  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, ncol=ncols, nrow=nrows)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, ncol=ncols, nrow=nrows)
-} else { #if which_models == "baselines"
-  grid.arrange(A1, A2, A3, A4, A5, A6, A7, ncol=ncols, nrow=nrows)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, ncol=ncols, nrow=nrows)
-  }
-savename <- "6_activePassive_byitem_split.png"
-ggsave(paste(savedir,savename,sep="/"), height=20,width=40, units='cm', g)
+  theme(plot.title = element_text(hjust=0.5,face='bold'))
+plot.voice
 ```
 
-# Synonyms
+
+## SYNONYMOUS SENTENCES
+
+### Prep data
 
 ```{r, echo=FALSE}
-dat.syn = dat %>%
+dat.syn = dat2plot %>%
   filter(!is.na(SynonymPair)) %>%
   dplyr::select(-ItemNum) %>%
   group_by(TrialType, NumSyn, SynonymPair, Plausibility, Voice, Metric) %>%
@@ -838,46 +808,72 @@ dat.syn = dat.syn %>%
   filter(!is.na(Version2))
 ```
 
-```{r, echo=FALSE, fig.height=15, fig.width=15}
+### Calculate correlations
 
-for(i in seq_along(models_metrics)){
-  nam <- paste("A", i, sep = "")
-  print(models_metrics[i])
-  
-  curr_data = dat.syn %>%
-    filter(Metric==models_metrics[i])
-  
-  p <- ggplot(data=curr_data)+
-  geom_point(mapping=aes(x=Version1, y=Version2))+
-  #facet_wrap(~TrialType)+
-  geom_abline(slope=1, intercept=0)+
+```{r}
+
+#cocor.dep.groups.nonoverlap(0.5,0.8,0.2,0.4,0.4,0.9,40, test='raghunathan1996')
+#x@raghunathan1996$p.value
+```
+
+### Plot
+
+
+```{r}
+plot.syn = ggplot(data=dat.syn)+
+  geom_point(mapping=aes(x=Version1, y=Version2), size=0.2, color=color_syn)+
+  facet_wrap(~Metric, ncol=ncols, nrow=nrows)+
+  geom_abline(slope=1, intercept=0, size=0.2)+
+  coord_cartesian(ylim=c(0,1), xlim=c(0,1))+
+  ggtitle('SYNONYMOUS SENTENCES')+
   theme_classic()+
-  ggtitle(paste(models_metrics[i]))
-  
-  assign(nam, p)
-}
-if (which_models=="all") {
-  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20, A21, ncol=ncols, nrow=nrows)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, A15, A16, A17, A18, A19, A20, A21, ncol=ncols, nrow=nrows) #generates g
-} else if (which_models=="anns") {
-  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, ncol=ncols, nrow=nrows)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14, ncol=ncols, nrow=nrows)
-} else if (which_models=="anns_main") {
-  grid.arrange(A1, A2, A3, A4, ncol=ncols, nrow=nrows)
-  g <- arrangeGrob(A1, A2, A3, A4, ncol=ncols, nrow=nrows)
-} else if (which_models=="all_main") {
-  grid.arrange(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, ncol=ncols, nrow=nrows)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, ncol=ncols, nrow=nrows)
-} else { #if which_models == "baselines"
-  grid.arrange(A1, A2, A3, A4, A5, A6, A7, ncol=ncols, nrow=nrows)
-  g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, ncol=ncols, nrow=nrows)
-}
-savename <- "7_synonyms_split.png"
-ggsave(paste(savedir,savename,sep="/"), height=20,width=40, units='cm', g)
+  theme(plot.title = element_text(hjust=0.5,face='bold'))
+plot.syn
+```
+
+## Combine
+
+```{r}
+plot.plaus / plot.voice / plot.syn 
+
+savename <- "scatterplot_all.png"
+ggsave(paste(savedir,savename,sep="/"), height=24,width=28, units='cm')
 ```
 
 
-##CORRELATION ANALYSIS
+# ADDITIONAL PLOTS
+
+Note that NormScore is more negative for plausible sentences for some models (e.g. surprisal) > used FinalNormScore in different
+
+## Scores by TrialType and Plaus (barplot)
+```{r, echo=FALSE}
+
+ggplot(data=dat, mapping=aes(x=TrialType, y=NormScore, fill=Plausibility))+
+  facet_wrap(~Metric, ncol = 3)+
+  stat_summary(geom='col', fun.y='mean',
+               color='black', position='dodge', width=0.5)+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               color = 'black', position=position_dodge(width=0.5), size = 0.5, width=0.1)
+
+savename <- "S_normScores_split.png"
+ggsave(paste(savedir,savename,sep="/"), height=30,width=30, units='cm')
+```
+
+## Binary Scores by TrialType and Active/Passive (barplot)
+
+```{r, echo=FALSE, fig.height=12, fig.width=15}
+ggplot(data=dat.binchoice, mapping=aes(x=TrialType, y=ScoreDiff, fill=Voice))+
+  facet_wrap(~Metric, ncol = 3)+
+  stat_summary(geom='col', fun.y='mean', position='dodge', width=0.5)+
+  stat_summary(geom='errorbar', fun.data='mean_se', position=position_dodge(width=0.5),
+               color = 'black', size = 0.5, width=0.1)
+
+savename <- "5_activePassive_split.png"
+ggsave(paste(savedir,savename,sep="/"), height=30,width=30, units='cm')
+```
+
+
+#CORRELATION ANALYSIS
 NOTE: If I run this with the dat as defined in the regression part I get way higher correlations > check!
 ```{r correlation, echo=FALSE}
 print(paste(models_metrics))
@@ -943,93 +939,26 @@ ggsave(paste(savedir,savename,sep="/"), width=16, height=12, units='cm')
 
 ```{r, fig.height=12, fig.width=15}
 
-datAI = subset(dat, TrialType=='AI')
+dat_violin = dat
+dat_violin$TrialType = factor(dat_violin$TrialType, levels=c("AI", "AAN", "AAR"))
+dat_violin$Metric = factor(dat_violin$Metric, levels=rev(models_metrics))
 
-ggplot(data=datAI)+
-    geom_violin(mapping = aes(x=factor(Metric, levels=rev(append(c('human'),chosen_models))), y=NormScore, fill=Plausibility), 
+ggplot(data=dat_violin)+
+    geom_violin(mapping = aes(x=Metric, y=NormScore, fill=Plausibility), 
     scale='width', width=0.7, alpha=0.5, position=position_dodge(width=0.6))+
+  facet_wrap(~TrialType)+
     geom_point(mapping = aes(x=Metric, y=NormScore, fill=Plausibility),
              shape=21, size=1.2, color='black',
              position=position_jitterdodge(jitter.width=0.15, jitter.height=0, dodge.width=.6),
              show.legend = TRUE)+
   labs(x='Model')+
-  geom_hline(yintercept=reference_value, linetype='dotted')+theme_classic()+coord_flip()+
-  ggtitle("AI") 
-
-savename <- "violin_AI.png"
-ggsave(paste(savedir,savename,sep="/"), width=20, height=20, units='cm')
-```
-
-```{r, fig.height=12, fig.width=15}
-
-datAAN = subset(dat, TrialType=='AAN')
-
-ggplot(data=datAAN)+
-    geom_violin(mapping = aes(x=factor(Metric, levels=rev(append(c('human'),chosen_models))), y=NormScore, fill=Plausibility), 
-                scale='width', width=0.7, alpha=0.5, position=position_dodge(width=0.6))+
-    geom_point(mapping = aes(x=Metric, y=NormScore, fill=Plausibility),
-             shape=21, size=1.2, color='black',
-             position=position_jitterdodge(jitter.width=0.15, jitter.height=0, dodge.width=.6),
-             show.legend = TRUE)+
-  labs(x='Model')+
-  geom_hline(yintercept=reference_value, linetype='dotted')+theme_classic()+coord_flip()+
-  ggtitle("AAN") 
-
-savename <- "violin_AAN.png"
-ggsave(paste(savedir,savename,sep="/"), width=20, height=20, units='cm')
-```
-
-```{r, fig.height=12, fig.width=15}
-
-datAAR = subset(dat, TrialType=='AAR')
-
-ggplot(data=datAAR)+
-    geom_violin(mapping = aes(x=factor(Metric, levels=rev(append(c('human'),chosen_models))), y=NormScore, fill=Plausibility), 
-                scale='width', width=0.7, alpha=0.5, position=position_dodge(width=0.6))+
-    geom_point(mapping = aes(x=Metric, y=NormScore, fill=Plausibility),
-             shape=21, size=1.2, color='black',
-             position=position_jitterdodge(jitter.width=0.15, jitter.height=0, dodge.width=.6),
-             show.legend = TRUE)+
-  labs(x='Model')+
-  geom_hline(yintercept=reference_value, linetype='dotted')+theme_classic()+coord_flip() +
-  ggtitle("AAR") 
-
-savename <- "violin_AAR.png"
-ggsave(paste(savedir,savename,sep="/"), width=20, height=20, units='cm')
-```
-
-```{r, fig.height=20, fig.width=20}
-
-trialtypes = unique(dat$TrialType)
-for(i in seq_along(trialtypes)){
-  nam <- paste("A", i, sep = "")
-  #print(models_metrics[i])
-  
-  curr_data = dat %>%
-    filter(TrialType==trialtypes[i])
-  
-  p <- ggplot(data=curr_data) +
-    geom_violin(mapping = aes(x=factor(Metric, levels=rev(append(c('human'),chosen_models))), y=NormScore, fill=Plausibility), scale='width', width=0.7, alpha=0.5, position=position_dodge(width=0.6))+
-    geom_point(mapping = aes(x=Metric, y=NormScore, fill=Plausibility),
-             shape=21, size=1.2, color='black',
-             position=position_jitterdodge(jitter.width=0.15, jitter.height=0, dodge.width=.6),
-             show.legend = TRUE)+
-  labs(x='Model')+
-  geom_hline(yintercept=reference_value, linetype='dotted')+theme_classic()+coord_flip()+
-  ggtitle(paste(trialtypes[i])) #+
-  #facet_wrap(~TrialType)
-  #ggtitle(paste(trialtypes[i]))
-  
-  assign(nam, p)
-}
-
-grid_arrange_shared_legend(A1, A2, A3, ncol = 2, nrow = 2, position='bottom')
-#grid.arrange(A1, A2, A3, ncol=2, nrow=2)
-g <- arrangeGrob(A1, A2, A3)
+  geom_hline(yintercept=reference_value, linetype='dotted')+theme_classic()+coord_flip()
 
 savename <- "violin_all.png"
-ggsave(paste(savedir,savename,sep="/"), width=30, height=30, units='cm', g)
+ggsave(paste(savedir,savename,sep="/"), width=20, height=20, units='cm')
 ```
+
+
 
 ```{r, fig.height=8, fig.width=12}
 
@@ -1064,7 +993,7 @@ ggsave(paste(savedir,savename,sep="/"), width=20, height=20, units='cm', g)
 
 ```{r, fig.height=8, fig.width=12}
 
-curr_metrics = c("human", "roberta-large.sentence-probs-pseudolog") #best model as per correlation analysis
+curr_metrics = c("human", "roberta-large") #best model as per correlation analysis
 for(i in seq_along(curr_metrics)){
   nam <- paste("A", i, sep = "")
   #print(models_metrics[i])
@@ -1152,59 +1081,41 @@ if (use_eventsrev == TRUE){
 }
 ```
 
-##REGRESSION
-
-### Sentence freq info
-
-```{r}
-# get updated item numbers
-dat_sentence$ItemNum_OLD = dat_sentence$ItemNum 
-dat_sentence = dat_sentence %>%
-  filter(ItemNum_OLD %in% unique(human_dat.mean_ordered$ItemNum_OLD)) 
-dat_sentence = arrange(dat_sentence, ItemNum_OLD)
-dat_sentence$ItemNum = itemNums_forSynsets
-
-dat = merge(dat_scores, dat_sentence %>% select(-Plausibility), 
-               by=c("ItemNum", "Sentence", "Voice", "TrialType"))
-#write.csv(dat, 'dat_all_models_EventsAdaptRev.csv', row.names=FALSE)
-```
+#REGRESSION
 
 
-### Stats
+## Stats
 
 ```{r regression, echo=FALSE}
-m = lmer(NormScore ~ Plausibility*TrialType*Voice*Metric + agent_freq_norm*Metric + patient_freq_norm*Metric + verb_freq_norm*Metric + sentence_freq_norm*Metric + (1+Plausibility||ItemNum), 
+m0 = lmer(NormScore ~ Plausibility*TrialType*Voice*Metric + agent_freq_norm*Metric + patient_freq_norm*Metric + verb_freq_norm*Metric + sentence_freq_norm*Metric + (1|ItemNum), 
          data=dat, REML=FALSE)
-sink("regression_model.txt", append=FALSE)
+sink("regression_m0.txt", append=FALSE)
 options(max.print=1000000)
-summary(m)
+summary(m0)
 sink()
-summary(m)
 ```
 
 ```{r regression, echo=FALSE}
 m1 = lmer(NormScore ~ Plausibility*TrialType*Voice*Metric + agent_freq_norm*Metric + patient_freq_norm*Metric + verb_freq_norm*Metric + sentence_freq_norm*Metric + (1+Plausibility|ItemNum), 
-         data=dat, REML=FALSE)
-sink("regression_model1.txt", append=FALSE)
+         data=dat, REML=FALSE, control=lmerControl(optimizer="bobyqa",
+                                 optCtrl=list(maxfun=2e6)))
+sink("regression_m1.txt", append=FALSE)
 options(max.print=1000000)
 summary(m1)
 sink()
-summary(m1)
-
 ```
+
 ```{r}
-anova(m,m1)  # result: no benefit of adding a correlation param there
+anova(m0,m1)  # result: m1 is better
 ```
 
 ```{r regression, echo=FALSE}
-m2 = lmer(NormScore ~ Plausibility*TrialType*Voice*Metric + agent_freq_norm*Metric + patient_freq_norm*Metric + verb_freq_norm*Metric + sentence_freq_norm*Metric + (1+Plausibility*Metric||ItemNum), 
+m2 = lmer(NormScore ~ Plausibility*TrialType*Voice*Metric + agent_freq_norm*Metric + patient_freq_norm*Metric + verb_freq_norm*Metric + sentence_freq_norm*Metric + (1+Plausibility+Metric|ItemNum), 
          data=dat, REML=FALSE)
-sink("regression_model2.txt", append=FALSE)
+sink("regression_m2.txt", append=FALSE)
 options(max.print=1000000)
 summary(m2)
 sink()
-summary(m2)
-
 ```
 
 
