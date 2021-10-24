@@ -725,7 +725,7 @@ ggsave(paste(savedir,savename,sep="/"), width=15, height=12, units='cm')
 ```{r}
 human_dat.comp = human_dat %>%
   mutate(FinalNormScore = min_max(Score)) %>%
-  select(WorkerId, ItemNum, Plausibility, Voice, Sentence, FinalNormScore)
+  select(WorkerId, ItemNum, TrialType, Plausibility, Voice, Sentence, FinalNormScore)
 
 workerIDs = unique(human_dat.comp$WorkerId)
 df_correlation = data.frame()
@@ -758,7 +758,7 @@ And compute the avg of all other responses
 ```{r}
 set.seed(21)
 human_dat.sampled = human_dat.comp %>%
-  group_by(ItemNum, Plausibility, Voice, Sentence) %>%
+  group_by(ItemNum, TrialType, Plausibility, Voice, Sentence) %>%
   summarize(RandomScore = sample(FinalNormScore,1),
             MeanScoreRest = (sum(FinalNormScore)-RandomScore)/(length(FinalNormScore)-1)) %>%
   ungroup()
@@ -775,11 +775,11 @@ ggplot(dat=human_dat.sampled)+
 
 ```{r}
 dat.human = dat %>% filter(Metric=="human") %>%
-  select(ItemNum, Sentence, Plausibility, FinalNormScore)
+  select(ItemNum, TrialType, Sentence, Plausibility, FinalNormScore)
 dat.model = dat %>% filter(Metric!="human") %>%
-  select(ItemNum, Sentence, Plausibility, FinalNormScore, Metric)
+  select(ItemNum, TrialType, Sentence, Plausibility, FinalNormScore, Metric)
 dat.model2human = merge(dat.human, dat.model, 
-                        by=c("ItemNum", "Sentence", "Plausibility")) %>%
+                        by=c("ItemNum", "TrialType", "Sentence", "Plausibility")) %>%
   rename(HumanScore=FinalNormScore.x, ModelScore=FinalNormScore.y)
 
 # add human2human data
@@ -791,42 +791,60 @@ human_dat.sampled$Metric = 'singleHuman'
 dat.model2human = rbind(dat.model2human, human_dat.sampled)
 ```
 
+Formatting:
+
+```{r, echo=FALSE, fig.height=12, fig.width=15}
+dat.model2human = dat.model2human %>%
+  #add color info
+  mutate(Category = ifelse(Metric%in%aan_group, "ANNs", "baselines")) %>%
+  mutate(Category = ifelse(Metric=="singleHuman", "human", Category))
+
+# specify order for plotting
+metric_names = models_metrics
+metric_names[1] = "singleHuman"
+dat.model2human$Metric = factor(dat.model2human$Metric, levels=metric_names)
+dat.model2human$Category = factor(dat.model2human$Category, levels=c("human", "ANNs", "baselines"))
+dat.model2human$TrialType = factor(dat.model2human$TrialType, levels=c("AI", "AAN", "AAR"))
+```
+
 ## Calculate correlations for the plot
 
 ```{r}
 df_correlation = data.frame()
 
-# get pairwise correlation values for humans and each model
-val1.human = dat.model2human$ModelScore[dat.model2human$Metric=="singleHuman"]
-val2.human = dat.model2human$HumanScore[dat.model2human$Metric=="singleHuman"]
-
-for(i in seq_along(metrics2plot)){
-  if (metrics2plot[i]=="human"){
-    current_metric="singleHuman"
-  } else {
-    current_metric=metrics2plot[i]
+trialTypes = unique(dat.model2human$TrialType)
+for (t in seq_along(trialTypes)){
+  dat.model2human.tt = dat.model2human %>%
+    filter(TrialType==trialTypes[t])
+  
+  # get pairwise correlation values for humans and each model
+  val1.human = dat.model2human.tt$ModelScore[dat.model2human.tt$Metric=="singleHuman"]
+  val2.human = dat.model2human.tt$HumanScore[dat.model2human.tt$Metric=="singleHuman"]
+  
+  for(i in seq_along(metric_names)){
+      current_metric=metric_names[i]
+      val1.model = dat.model2human.tt$ModelScore[dat.model2human.tt$Metric==current_metric]
+      val2.model = dat.model2human.tt$HumanScore[dat.model2human.tt$Metric==current_metric]
+      pval2zero = cor.test(val1.model, val2.model, method="pearson")$p.value
+      corvals = c(
+        cor(val1.human, val2.human, method="pearson"),
+        cor(val1.model, val2.model, method="pearson"),
+        cor(val1.human, val1.model, method="pearson"),
+        cor(val1.human, val2.model, method="pearson"),
+        cor(val2.human, val1.model, method="pearson"),
+        cor(val2.human, val2.model, method="pearson"))
+      test2humans = cocor.dep.groups.nonoverlap(corvals[1], corvals[2], corvals[3],
+                                         corvals[4], corvals[5], corvals[6], 
+                                         n=length(val1.model),
+                                         test='raghunathan1996')
+      pval2humans= test2humans@raghunathan1996$p.value
+      
+      # add vector to a dataframe
+      df <- data.frame(current_metric, trialTypes[t], corvals[2], pval2zero, pval2humans)
+      df_correlation <- rbind(df_correlation,df)
   }
-    val1.model = dat.model2human$ModelScore[dat.model2human$Metric==current_metric]
-    val2.model = dat.model2human$HumanScore[dat.model2human$Metric==current_metric]
-    pval2zero = cor.test(val1.model, val2.model, method="pearson")$p.value
-    corvals = c(
-      cor(val1.human, val2.human, method="pearson"),
-      cor(val1.model, val2.model, method="pearson"),
-      cor(val1.human, val1.model, method="pearson"),
-      cor(val1.human, val2.model, method="pearson"),
-      cor(val2.human, val1.model, method="pearson"),
-      cor(val2.human, val2.model, method="pearson"))
-    test2humans = cocor.dep.groups.nonoverlap(corvals[1], corvals[2], corvals[3],
-                                       corvals[4], corvals[5], corvals[6], 
-                                       n=length(val1.model),
-                                       test='raghunathan1996')
-    pval2humans= test2humans@raghunathan1996$p.value
-    
-    # add vector to a dataframe
-    df <- data.frame(current_metric, corvals[2], pval2zero, pval2humans)
-    df_correlation <- rbind(df_correlation,df)
 }
-colnames(df_correlation) = c("Metric", "Correlation", "pVal2zero", "pVal2humans")
+colnames(df_correlation) = c("Metric", "TrialType", "Correlation", "pVal2zero", "pVal2humans")
 
 # adjust for multiple comparisons
 df_correlation = df_correlation %>%
@@ -843,16 +861,19 @@ df_correlation = df_correlation %>%
 ## Plot
 ```{r}
 plot.model2human = ggplot(dat=dat.model2human)+  
-  geom_point(mapping=aes(x=ModelScore, y=HumanScore), size=0.001, color='gray50',
-             position=position_jitter(width=0.01))+
-  facet_wrap(~Metric, nrow=nrows, ncol=ncols)+
+  geom_point(mapping=aes(x=ModelScore, y=HumanScore, color=Category), 
+             size=0.1, position=position_jitter(width=0.01))+
+  facet_wrap(TrialType~Metric, ncol=ncols)+
   geom_abline(slope=1, intercept=0, size=0.2)+
+  geom_text(mapping=aes(x=-0.25, y=1, 
+                        label=sprintf("r = %.2f%s", round(Correlation,2), pVal2zeroLabel)), 
+            data=df_correlation, size=cortext_size, hjust = 0)+
   coord_cartesian(ylim=c(0,1), xlim=c(-0.2,1))+
   theme_classic()
 plot.model2human
 
-savename <- "model2human.png"
-ggsave(paste(savedir,savename,sep="/"), height=15,width=35, units='cm')
+savename <- "model2human_byTrialType.png"
+ggsave(paste(savedir,savename,sep="/"), height=30,width=25, units='cm')
 ```
 
 
