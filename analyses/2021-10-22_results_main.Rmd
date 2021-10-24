@@ -501,14 +501,14 @@ model_dat.binchoice = model_dat %>%
   mutate(LowerBetter = ifelse(grepl(lower_better_pat, Metric),TRUE,FALSE)) %>%
   group_by(ItemNum, TrialType, Voice, Metric,LowerBetter) %>%
   summarize(ScoreDiff = NormScore[Plausibility=="Plausible"]-NormScore[Plausibility=="Implausible"]) %>%
-  mutate(FinalScoreDiff = ifelse(LowerBetter==TRUE, -ScoreDiff, ScoreDiff)) %>%
+  mutate(FinalScoreDiff = ifelse(LowerBetter==TRUE, -ScoreDiff+1, ScoreDiff)) %>%
   mutate(Accuracy = ifelse(FinalScoreDiff>0, 1, 0))
 
 # Add FinalNormScore for NormScores plotting in the same direction for all metrics (i.e., Plausible is more positive!)
 # Take out/plot NormScore below if confusing!
 model_dat = model_dat %>%
   mutate(LowerBetter = ifelse(grepl(lower_better_pat, Metric),TRUE,FALSE)) %>%
-  mutate(FinalNormScore = ifelse(LowerBetter==TRUE, -NormScore, NormScore))
+  mutate(FinalNormScore = ifelse(LowerBetter==TRUE, -NormScore+1, NormScore))
 ```
 
 # Sentence exclusion
@@ -625,7 +625,10 @@ dat = within(dat, Metric <- relevel(Metric, ref = "human"))    # set humans as t
 dat$ItemNum = as.factor(dat$ItemNum)
 ```
 
-# KEY ANALYSES
+
+# BINARY ACCURACY
+
+## General plotting settings
 
 ```{r}
 #Set plotting options for grid plots
@@ -638,8 +641,6 @@ if (nrows * ncols < nr_models) {
   nrows = nrows + 1
 }
 ```
-
-## Binary accuracy
 
 ```{r, echo=FALSE, fig.height=12, fig.width=15}
 
@@ -717,6 +718,143 @@ ggsave(paste(savedir,savename,sep="/"), width=15, height=12, units='cm')
 ```
 
 
+# MODEL HUMAN COMPARISON
+
+## Calculate human 2 human response correlation 
+(each human with the average of all the rest)
+```{r}
+human_dat.comp = human_dat %>%
+  mutate(FinalNormScore = min_max(Score)) %>%
+  select(WorkerId, ItemNum, Plausibility, Voice, Sentence, FinalNormScore)
+
+workerIDs = unique(human_dat.comp$WorkerId)
+df_correlation = data.frame()
+
+for (i in seq_along(workerIDs)) {
+  if (i%%50==0) {    # just to keep track (n=511 for EventsAdapt)
+    print(i)
+  }
+  human_dat.this = human_dat.comp %>% filter(WorkerId==workerIDs[i])
+  human_dat.rest = human_dat.comp %>% filter(WorkerId!=workerIDs[i]) %>%
+    filter(ItemNum %in% unique(human_dat.this$ItemNum)) %>%
+    group_by(ItemNum, Plausibility, Voice, Sentence) %>% 
+    summarize(MeanNormScore=mean(FinalNormScore))
+  
+  human_dat.side2side = merge(human_dat.this, human_dat.rest,
+                              by=c("ItemNum", "Plausibility", "Voice"))
+  corval= cor(human_dat.side2side$FinalNormScore, human_dat.side2side$MeanNormScore)
+  # add vector to a dataframe
+  df <- data.frame(workerIDs[i], corval)
+  df_correlation <- rbind(df_correlation,df)
+}
+
+human2human_corr = mean(df_correlation$corval)
+print(paste("The human2human overall correlation value is", human2human_corr))
+```
+
+## Sample a random human response for each item 
+And compute the avg of all other responses 
+
+```{r}
+set.seed(21)
+human_dat.sampled = human_dat.comp %>%
+  group_by(ItemNum, Plausibility, Voice, Sentence) %>%
+  summarize(RandomScore = sample(FinalNormScore,1),
+            MeanScoreRest = (sum(FinalNormScore)-RandomScore)/(length(FinalNormScore)-1)) %>%
+  ungroup()
+
+ggplot(dat=human_dat.sampled)+  
+  geom_point(mapping=aes(x=RandomScore, y=MeanScoreRest), size=0.2, 
+             position = position_jitter(width=0.05))+
+  geom_abline(slope=1, intercept=0, size=0.2)+
+  coord_cartesian(ylim=c(0,1), xlim=c(-0.1,1))+
+  theme_classic()
+```
+
+## Prep data
+
+```{r}
+dat.human = dat %>% filter(Metric=="human") %>%
+  select(ItemNum, Sentence, Plausibility, FinalNormScore)
+dat.model = dat %>% filter(Metric!="human") %>%
+  select(ItemNum, Sentence, Plausibility, FinalNormScore, Metric)
+dat.model2human = merge(dat.human, dat.model, 
+                        by=c("ItemNum", "Sentence", "Plausibility")) %>%
+  rename(HumanScore=FinalNormScore.x, ModelScore=FinalNormScore.y)
+
+# add human2human data
+human_dat.sampled = human_dat.sampled %>%
+  select(-Voice) %>%
+  filter(Sentence %in% unique(dat.model2human$Sentence)) %>%  # make sure it's the same sents
+  rename(HumanScore=MeanScoreRest, ModelScore=RandomScore)    # renaming for convenience 
+human_dat.sampled$Metric = 'singleHuman'
+dat.model2human = rbind(dat.model2human, human_dat.sampled)
+```
+
+## Calculate correlations for the plot
+
+```{r}
+df_correlation = data.frame()
+
+# get pairwise correlation values for humans and each model
+val1.human = dat.model2human$ModelScore[dat.model2human$Metric=="singleHuman"]
+val2.human = dat.model2human$HumanScore[dat.model2human$Metric=="singleHuman"]
+
+for(i in seq_along(metrics2plot)){
+  if (metrics2plot[i]=="human"){
+    current_metric="singleHuman"
+  } else {
+    current_metric=metrics2plot[i]
+  }
+    val1.model = dat.model2human$ModelScore[dat.model2human$Metric==current_metric]
+    val2.model = dat.model2human$HumanScore[dat.model2human$Metric==current_metric]
+    pval2zero = cor.test(val1.model, val2.model, method="pearson")$p.value
+    corvals = c(
+      cor(val1.human, val2.human, method="pearson"),
+      cor(val1.model, val2.model, method="pearson"),
+      cor(val1.human, val1.model, method="pearson"),
+      cor(val1.human, val2.model, method="pearson"),
+      cor(val2.human, val1.model, method="pearson"),
+      cor(val2.human, val2.model, method="pearson"))
+    test2humans = cocor.dep.groups.nonoverlap(corvals[1], corvals[2], corvals[3],
+                                       corvals[4], corvals[5], corvals[6], 
+                                       n=length(val1.model),
+                                       test='raghunathan1996')
+    pval2humans= test2humans@raghunathan1996$p.value
+    
+    # add vector to a dataframe
+    df <- data.frame(current_metric, corvals[2], pval2zero, pval2humans)
+    df_correlation <- rbind(df_correlation,df)
+}
+colnames(df_correlation) = c("Metric", "Correlation", "pVal2zero", "pVal2humans")
+
+# adjust for multiple comparisons
+df_correlation = df_correlation %>%
+  mutate(pVal2zeroAdjusted = p.adjust(pVal2zero, method="fdr", n=length(pVal2zero)),
+         pVal2humansAdjusted = p.adjust(pVal2humans, method="fdr", n=length(pVal2humans))) %>%
+  mutate(pVal2zeroLabel = ifelse(pVal2zeroAdjusted<0.001, "***", 
+                                 ifelse(pVal2zeroAdjusted<0.01, "**",
+                                        ifelse(pVal2zeroAdjusted<0.05, "*", ""))),
+         pVal2humansLabel = ifelse(pVal2humansAdjusted<0.001, "***", 
+                                 ifelse(pVal2humansAdjusted<0.01, "**",
+                                        ifelse(pVal2humansAdjusted<0.05, "*", ""))))
+```
+
+## Plot
+```{r}
+plot.model2human = ggplot(dat=dat.model2human)+  
+  geom_point(mapping=aes(x=ModelScore, y=HumanScore), size=0.001, color='gray50',
+             position=position_jitter(width=0.01))+
+  facet_wrap(~Metric, nrow=nrows, ncol=ncols)+
+  geom_abline(slope=1, intercept=0, size=0.2)+
+  coord_cartesian(ylim=c(0,1), xlim=c(-0.2,1))+
+  theme_classic()
+plot.model2human
+
+savename <- "model2human.png"
+ggsave(paste(savedir,savename,sep="/"), height=15,width=35, units='cm')
+```
+
 
 # SCATTERPLOTS
 
@@ -735,6 +873,9 @@ dat2plot = dat %>%
 color_plaus = '#1b9e77'
 color_voice = '#d95f02'
 color_syn = '#7570b3'
+
+# text size 
+cortext_size = 3
 ```
 
 ## PLAUSIBLE VS IMPLAUSIBLE
@@ -748,21 +889,68 @@ dat.plaus = dat2plot %>%
   spread(Plausibility, meanScore)  
 ```
 
+### Calculate correlations
+
+```{r}
+df_correlation = data.frame()
+
+# get pairwise correlation values for humans and each model
+val1.human = dat.plaus$Plausible[dat.plaus$Metric=="human"]
+val2.human = dat.plaus$Implausible[dat.plaus$Metric=="human"]
+
+for(i in seq_along(metrics2plot)){
+    val1.model = dat.plaus$Plausible[dat.voice$Metric==metrics2plot[i]]
+    val2.model = dat.plaus$Implausible[dat.voice$Metric==metrics2plot[i]]
+    pval2zero = cor.test(val1.model, val2.model, method="pearson")$p.value
+    corvals = c(
+      cor(val1.human, val2.human, method="pearson"),
+      cor(val1.model, val2.model, method="pearson"),
+      cor(val1.human, val1.model, method="pearson"),
+      cor(val1.human, val2.model, method="pearson"),
+      cor(val2.human, val1.model, method="pearson"),
+      cor(val2.human, val2.model, method="pearson"))
+    test2humans = cocor.dep.groups.nonoverlap(corvals[1], corvals[2], corvals[3],
+                                       corvals[4], corvals[5], corvals[6], 
+                                       n=length(val1.model),
+                                       test='raghunathan1996')
+    pval2humans= test2humans@raghunathan1996$p.value
+    
+    # add vector to a dataframe
+    df <- data.frame(models_metrics[i], corvals[2], pval2zero, pval2humans)
+    df_correlation <- rbind(df_correlation,df)
+}
+colnames(df_correlation) = c("Metric", "Correlation", "pVal2zero", "pVal2humans")
+
+# adjust for multiple comparisons (-1 to exclude humans, *3 for 3 metrics we're comparing)
+df_correlation = df_correlation %>%
+  mutate(pVal2zeroAdjusted = p.adjust(pVal2zero, method="fdr", n=length(pVal2zero)*3),
+         pVal2humansAdjusted = p.adjust(pVal2humans, method="fdr", n=(length(pVal2humans)-1)*3)) %>%
+  mutate(pVal2zeroLabel = ifelse(pVal2zeroAdjusted<0.001, "***", 
+                                 ifelse(pVal2zeroAdjusted<0.01, "**",
+                                        ifelse(pVal2zeroAdjusted<0.05, "*", ""))),
+         pVal2humansLabel = ifelse(pVal2humansAdjusted<0.001, "***", 
+                                 ifelse(pVal2humansAdjusted<0.01, "**",
+                                        ifelse(pVal2humansAdjusted<0.05, "*", ""))))
+```
+
+### Plot
 ```{r}
 plot.plaus = ggplot(data=dat.plaus)+
   geom_point(mapping=aes(x=Plausible, y=Implausible), size=0.2, color=color_plaus)+
   facet_wrap(~Metric, ncol=ncols, nrow=nrows)+
   geom_abline(slope=1, intercept=0, size=0.2)+
+  geom_text(mapping=aes(x=0.1, y=1, label=sprintf("r = %.2f", round(Correlation,2))), 
+            data=df_correlation, size=cortext_size)+
   coord_cartesian(ylim=c(0,1), xlim=c(0,1))+
   ggtitle('PLAUSIBILITY')+
   theme_classic()+
   theme(plot.title = element_text(hjust=0.5,face='bold'))
 plot.plaus
+#paste("r",round(Correlation,2),sep=" = ")
 ```
 
 
 ## ACTIVE VS PASSIVE
-
 
 ### Prep data
 
@@ -775,6 +963,50 @@ dat.voice = dat2plot %>%
   spread(Voice, meanScore)
 ```
 
+### Calculate correlations
+
+```{r}
+df_correlation = data.frame()
+
+# get pairwise correlation values for humans and each model
+val1.human = dat.voice$active[dat.voice$Metric=="human"]
+val2.human = dat.voice$passive[dat.voice$Metric=="human"]
+
+for(i in seq_along(metrics2plot)){
+    val1.model = dat.voice$active[dat.voice$Metric==metrics2plot[i]]
+    val2.model = dat.voice$passive[dat.voice$Metric==metrics2plot[i]]
+    pval2zero = cor.test(val1.model, val2.model, method="pearson")$p.value
+    corvals = c(
+      cor(val1.human, val2.human, method="pearson"),
+      cor(val1.model, val2.model, method="pearson"),
+      cor(val1.human, val1.model, method="pearson"),
+      cor(val1.human, val2.model, method="pearson"),
+      cor(val2.human, val1.model, method="pearson"),
+      cor(val2.human, val2.model, method="pearson"))
+    test2humans = cocor.dep.groups.nonoverlap(corvals[1], corvals[2], corvals[3],
+                                       corvals[4], corvals[5], corvals[6], 
+                                       n=length(val1.model),
+                                       test='raghunathan1996')
+    pval2humans= test2humans@raghunathan1996$p.value
+    
+    # add vector to a dataframe
+    df <- data.frame(models_metrics[i], corvals[2], pval2zero, pval2humans)
+    df_correlation <- rbind(df_correlation,df)
+}
+colnames(df_correlation) = c("Metric", "Correlation", "pVal2zero", "pVal2humans")
+
+# adjust for multiple comparisons (-1 to exclude humans, *3 for 3 metrics we're comparing)
+df_correlation = df_correlation %>%
+  mutate(pVal2zeroAdjusted = p.adjust(pVal2zero, method="fdr", n=length(pVal2zero)*3),
+         pVal2humansAdjusted = p.adjust(pVal2humans, method="fdr", n=(length(pVal2humans)-1)*3)) %>%
+  mutate(pVal2zeroLabel = ifelse(pVal2zeroAdjusted<0.001, "***", 
+                                 ifelse(pVal2zeroAdjusted<0.01, "**",
+                                        ifelse(pVal2zeroAdjusted<0.05, "*", ""))),
+         pVal2humansLabel = ifelse(pVal2humansAdjusted<0.001, "***", 
+                                 ifelse(pVal2humansAdjusted<0.01, "**",
+                                        ifelse(pVal2humansAdjusted<0.05, "*", ""))))
+```
+
 ### Plot
 
 ```{r}
@@ -782,6 +1014,8 @@ plot.voice = ggplot(data=dat.voice)+
   geom_point(mapping=aes(x=active, y=passive), size=0.2, color=color_voice)+
   facet_wrap(~Metric, ncol=ncols, nrow=nrows)+
   geom_abline(slope=1, intercept=0, size=0.2)+
+  geom_text(mapping=aes(x=0.1, y=1, label=sprintf("r = %.2f", round(Correlation,2))), 
+          data=df_correlation, size=cortext_size)+
   coord_cartesian(ylim=c(0,1), xlim=c(0,1))+
   ggtitle('VOICE')+
   theme_classic()+
@@ -812,8 +1046,45 @@ dat.syn = dat.syn %>%
 
 ```{r}
 
-#cocor.dep.groups.nonoverlap(0.5,0.8,0.2,0.4,0.4,0.9,40, test='raghunathan1996')
-#x@raghunathan1996$p.value
+df_correlation = data.frame()
+
+# get pairwise correlation values for humans and each model
+synval1.human = dat.syn$Version1[dat.syn$Metric=="human"]
+synval2.human = dat.syn$Version2[dat.syn$Metric=="human"]
+
+for(i in seq_along(metrics2plot)){
+    synval1.model = dat.syn$Version1[dat.syn$Metric==metrics2plot[i]]
+    synval2.model = dat.syn$Version2[dat.syn$Metric==metrics2plot[i]]
+    pval2zero = cor.test(synval1.model, synval2.model, method="pearson")$p.value
+    corvals = c(
+      cor(synval1.human, synval2.human, method="pearson"),
+      cor(synval1.model, synval2.model, method="pearson"),
+      cor(synval1.human, synval1.model, method="pearson"),
+      cor(synval1.human, synval2.model, method="pearson"),
+      cor(synval2.human, synval1.model, method="pearson"),
+      cor(synval2.human, synval2.model, method="pearson"))
+    test2humans = cocor.dep.groups.nonoverlap(corvals[1], corvals[2], corvals[3],
+                                       corvals[4], corvals[5], corvals[6], 
+                                       n=length(synval1.model),
+                                       test='raghunathan1996')
+    pval2humans= test2humans@raghunathan1996$p.value
+    
+    # add vector to a dataframe
+    df <- data.frame(models_metrics[i], corvals[2], pval2zero, pval2humans)
+    df_correlation <- rbind(df_correlation,df)
+}
+colnames(df_correlation) = c("Metric", "Correlation", "pVal2zero", "pVal2humans")
+
+# adjust for multiple comparisons (-1 to exclude humans, *3 for 3 metrics we're comparing)
+df_correlation = df_correlation %>%
+  mutate(pVal2zeroAdjusted = p.adjust(pVal2zero, method="fdr", n=length(pVal2zero)*3),
+         pVal2humansAdjusted = p.adjust(pVal2humans, method="fdr", n=(length(pVal2humans)-1)*3)) %>%
+  mutate(pVal2zeroLabel = ifelse(pVal2zeroAdjusted<0.001, "***", 
+                                 ifelse(pVal2zeroAdjusted<0.01, "**",
+                                        ifelse(pVal2zeroAdjusted<0.05, "*", ""))),
+         pVal2humansLabel = ifelse(pVal2humansAdjusted<0.001, "***", 
+                                 ifelse(pVal2humansAdjusted<0.01, "**",
+                                        ifelse(pVal2humansAdjusted<0.05, "*", ""))))
 ```
 
 ### Plot
@@ -824,6 +1095,8 @@ plot.syn = ggplot(data=dat.syn)+
   geom_point(mapping=aes(x=Version1, y=Version2), size=0.2, color=color_syn)+
   facet_wrap(~Metric, ncol=ncols, nrow=nrows)+
   geom_abline(slope=1, intercept=0, size=0.2)+
+  geom_text(mapping=aes(x=0.1, y=1, label=sprintf("r = %.2f", round(Correlation,2))), 
+          data=df_correlation, size=cortext_size)+
   coord_cartesian(ylim=c(0,1), xlim=c(0,1))+
   ggtitle('SYNONYMOUS SENTENCES')+
   theme_classic()+
@@ -831,12 +1104,13 @@ plot.syn = ggplot(data=dat.syn)+
 plot.syn
 ```
 
-## Combine
+
+## COMBINE
 
 ```{r}
 plot.plaus / plot.voice / plot.syn 
 
-savename <- "scatterplot_all.png"
+savename <- "scatterplot_all_labeled.png"
 ggsave(paste(savedir,savename,sep="/"), height=24,width=28, units='cm')
 ```
 
@@ -872,6 +1146,20 @@ savename <- "5_activePassive_split.png"
 ggsave(paste(savedir,savename,sep="/"), height=30,width=30, units='cm')
 ```
 
+## Word frequency (sentence)
+
+```{r}
+plot.freq = ggplot(data=dat2plot)+
+  geom_point(mapping=aes(x=sentence_freq_norm, y=FinalNormScore), size=0.2)+
+  facet_wrap(~Metric, ncol=ncols, nrow=nrows)+
+  geom_abline(slope=1, intercept=0, size=0.2)+
+  coord_cartesian(ylim=c(0,1), xlim=c(0,1))+
+  ggtitle('WORD FREQUENCY (SENTENCE)')+
+  theme_classic()+
+  theme(plot.title = element_text(hjust=0.5,face='bold'))
+plot.freq
+```
+
 
 #CORRELATION ANALYSIS
 NOTE: If I run this with the dat as defined in the regression part I get way higher correlations > check!
@@ -893,6 +1181,8 @@ for(i in seq_along(models_metrics)){
 }
 write.csv(df_correlation, "correlation_humans_models.csv")
 ```
+
+
 ```{r plot}
 #matplot(dat$NormScore[dat$Metric=="human"],dat$NormScore[dat$Metric=="gpt2-xl_full"], type = "p",xlab="human",ylab="gpt2-xl_full")
 
