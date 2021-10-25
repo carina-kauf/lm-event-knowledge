@@ -866,6 +866,10 @@ df_correlation = df_correlation %>%
 
 ## Plot
 ```{r}
+
+# text size 
+cortext_size = 3
+
 plot.model2human = ggplot(dat=dat.model2human)+  
   geom_point(mapping=aes(x=ModelScore, y=HumanScore, color=Category), 
              size=0.1, position=position_jitter(width=0.01))+
@@ -901,8 +905,6 @@ color_plaus = '#1b9e77'
 color_voice = '#d95f02'
 color_syn = '#7570b3'
 
-# text size 
-cortext_size = 3
 ```
 
 ## PLAUSIBLE VS IMPLAUSIBLE
@@ -926,8 +928,8 @@ val1.human = dat.plaus$Plausible[dat.plaus$Metric=="human"]
 val2.human = dat.plaus$Implausible[dat.plaus$Metric=="human"]
 
 for(i in seq_along(metrics2plot)){
-    val1.model = dat.plaus$Plausible[dat.voice$Metric==metrics2plot[i]]
-    val2.model = dat.plaus$Implausible[dat.voice$Metric==metrics2plot[i]]
+    val1.model = dat.plaus$Plausible[dat.plaus$Metric==metrics2plot[i]]
+    val2.model = dat.plaus$Implausible[dat.plaus$Metric==metrics2plot[i]]
     pval2zero = cor.test(val1.model, val2.model, method="pearson")$p.value
     corvals = c(
       cor(val1.human, val2.human, method="pearson"),
@@ -1234,6 +1236,7 @@ savename <- "scatter_human_gpt2.png"
 ggsave(paste(savedir,savename,sep="/"), width=16, height=12, units='cm')
 ```
 
+
 ```{r plot}
 
 scatter_dat_roberta = subset(dat, Metric=="roberta-large") %>% #best model as per correlation analysis
@@ -1251,6 +1254,15 @@ ggplot(data=scatter_dat)+
 
 savename <- "scatter_human_roberta.png"
 ggsave(paste(savedir,savename,sep="/"), width=16, height=12, units='cm')
+```
+
+
+```{r plot}
+reg1 <- lm(human~roberta,data=scatter_dat) 
+summary(reg1)
+	
+with(scatter_dat,plot(human, roberta))
+abline(reg1)
 ```
 
 
