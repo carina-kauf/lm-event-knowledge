@@ -1,0 +1,503 @@
+---
+title: "DTFit_model_analysis_v2021-08-20"
+output: html_document
+---
+
+```{r setup, include=FALSE, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rm(list=ls()) 
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(gridExtra)
+library(cocor)
+
+#helper function #https://stackoverflow.com/questions/35775696/trying-to-use-dplyr-to-group-by-and-apply-scale
+scale_this <- function(x) as.vector(scale(x))
+
+min_max <- function(x) {
+return ((x - min(x)) / (max(x) - min(x)))
+}
+
+# custom function to read a datatable
+read_data <- function(directory, filename) {
+  d = read.delim(paste(directory, filename, sep='/'), 
+                 header=FALSE, sep='\t')
+  
+  #DATA EXCLUSION
+  ## Exclude ngram model for having too many UNK tokens in EventsAdapt sentence set
+  if (grepl("ngram", filename, fixed = TRUE) == TRUE) {
+    message(">> Ngram model has too many UNK tokens for EventsAdapt sentence set! Excluding the model for now!")
+    return(NULL)
+  }
+  ## Exclude GRNN & gpt2 surprisal model for only having been run on DTFit dataset
+  if ((grepl("surprisal_scores_GRNN", filename, fixed = TRUE)  == TRUE) |
+    (grepl("surprisal_scores_gpt2", filename, fixed = TRUE)  == TRUE)) {
+    message(paste(">> Model", filename, "not run for EventsAdapt! Excluding the model!"))
+    return(NULL)
+  }
+  
+  #ROWS
+  #set target number of *rows* in file
+  target_rownumber = 798
+  
+  #check for target number of rows
+  if (nrow(d)!=target_rownumber) {
+    print(paste('unexpected number of sentences in file: ', filename, 'number of sentences: ', nrow(d)))
+    return(NULL)
+  }
+  
+  #COLUMNS
+  #check for target number of *columns* in file
+  if (ncol(d)==3 | ncol(d)==4 | ncol(d)==5 | ncol(d)==7) {
+      
+    target_trialnr = 2
+    
+    #streamline input format
+    if (ncol(d)==3) {
+      d = d  %>%
+      rename(SentenceNum=V1, Sentence=V2, Score=V3)
+    }
+    else if (ncol(d)==4) {
+      d = d  %>%
+      select(V1,V2,V4) %>% #select relevant columns (do not choose Typicality column to streamline how it's assigned)
+      rename(SentenceNum=V1, Sentence=V2, Score=V4)
+    }
+    
+    else if (ncol(d)==5) { #If surprisal_scores_tinylstm
+      d = d  %>%
+      select(V1,V2,V5) %>% 
+      rename(SentenceNum=V1, Sentence=V2, Score=V5)
+    }
+    
+    else if (ncol(d)==7) {
+      d = d  %>%
+      select(V1,V3,V7) %>% #select relevant columns (others include grammatical tags)
+      rename(SentenceNum=V1, Sentence=V3, Score=V7)
+    }
+    
+    d = d %>%
+      mutate(Typicality = ifelse(SentenceNum%%2==0, 'Atypical', 'Typical')) %>%
+      mutate(ItemNum = SentenceNum %/% target_trialnr) %>%
+      
+      # 2. NAME MODEL_METRIC
+      #add metric column
+      mutate(Metric = substr(filename,1,nchar(filename)-4)) %>%
+      
+      #strip dataset prefix
+      mutate(Metric = str_replace(Metric, "dtfit_vassallo_|dtfit.", "")) %>%
+      
+      ##Assimilate ppmi model names between datasets
+      mutate(Metric = str_replace(Metric, "deps.smooth.baseline1", "syntax-based_PPMI")) %>%
+      mutate(Metric = str_replace(Metric, "deps.smooth.baseline2", "order-based_PPMI")) %>%
+      ##Assimilate gpt2 model names between datasets
+      mutate(Metric = str_replace(Metric, "deps.prob_sent_gpt2-xl", "gpt2-xl_full")) %>%
+      mutate(Metric = str_replace(Metric, "deps.prob_sent_gpt2", "gpt2_full"))
+      
+      # 3. PREPROCESS SCORES
+    
+      #3.1 Log-Scale GPT2 probabilities
+      #the GPT2 models are the only ones with probability scores and not log probability! > log-scale
+    if ((grepl("gpt2", filename) == TRUE) & (grepl("surprisal", filename) == FALSE)) {
+      print(paste("log scaling scores in file: ", filename))
+      d = d %>%
+      mutate(Score = replace(Score, Score == 0.0, 1e-20)) %>% #Take out once 0.0 is fixed!
+      mutate(Score = log(Score))
+    }
+      #3.2 Normalize scores for all models
+    d = d %>%
+      mutate(NormScore =min_max(Score)) %>%
+
+      # 4. PROCESS SENTENCES
+      #strip space before final period
+      mutate(Sentence = str_replace(Sentence, " [.]", ".")) %>%
+      #for some reason, some baseline files have multiple periods at end > strip to just one!
+      mutate(Sentence = str_replace(Sentence, "[.]{2,}", "."))
+    
+    return(d)
+  } 
+  else {
+    print(paste('unexpected number of columns in file: ', 'number of columns: ', filename, ncol(d)))
+    return(NULL)
+  }
+}
+```
+
+#SET ENVIRONMENT VARIABLES
+```{r, echo=FALSE}
+which_models <- "all_main" #can be "anns_all", "anns_main", "baselines", "all", "all_main"
+message("Running with the following environment variables:")
+message(paste("which_models: ", which_models))
+```
+
+## Below yields: 11172/798 = 14 models
+```{r read data, echo=FALSE}
+dirname = '../model_scores'
+
+dirname_dtfit = paste(dirname, 'DTFit_scores_new_format', sep='/')
+
+message("Loading DTFit data ...")
+files = list.files(path=dirname_dtfit, pattern="*.txt")
+dat = do.call(rbind, lapply(files, function(x) read_data(dirname_dtfit, x)))
+```
+
+###### PREPROCESS DATA FILES ######
+
+## DTFIT
+```{r read data, echo=FALSE}
+
+dat$TrialType = 'DTFit'
+```
+
+
+# Select which models/metrics to plot
+
+NOTE: the current version will fail to include all ANNs, might need to fix
+
+```{r, echo=FALSE}
+
+human <- c("human")
+anns <- c("gpt2","bert","xlnet","roberta")
+anns_main <- c("gpt2-xl_full","bert-large-cased.sentence-probs-pseudolog","roberta-large.sentence-probs-pseudolog","xlnet-large-cased.sentence-probs-pseudolog")
+baselines <- c("syntax-based_PPMI","order-based_PPMI","thematicFit_addition","v2_sdm","surprisal_scores_tinylstm") #"fast_vector_sum", "thematicFit_product",
+all_main <- c(human, anns_main)
+
+# select which to use
+chosen_models = eval(parse(text=which_models))
+model_dat = dat %>% filter(Metric %in% chosen_models)
+
+# simplify ANN names
+if (which_models %in% c("all_main", "anns_main")){
+  model_dat = model_dat %>% 
+    mutate(Metric = str_replace(Metric, ".sentence-probs-pseudolog", ""))
+}
+
+
+message("Using these models/metrics:")
+chosen_anns = unique(model_dat$Metric)
+print(paste(chosen_anns))
+```
+
+# TYPICALITY
+
+We need to define for which models a higher score for typical sentences is desirable:
+
+1. HIGHER = MORE TYPICAL
+    * ANNs >> metric is probability
+    * PPMI >> higher PMI indicates a typical sentence
+    * Vector similarity
+    * TFit similarity (sum of vector similarities to prototype vector)
+    * SDM (sum of some vector similarities)
+2. LOWER = MORE TYPICAL
+    * Surprisal
+
+```{r pressure, echo=FALSE}
+
+lower_better = c("surprisal")
+lower_better_pat <- paste(lower_better, collapse = '|')
+
+# Add FinalNormScore for NormScores plotting in the same direction for all metrics (i.e., Typical is more positive!)
+# Take out/plot NormScore below if confusing!
+model_dat = model_dat %>%
+  mutate(LowerBetter = ifelse(grepl(lower_better_pat, Metric),TRUE,FALSE)) %>%
+  mutate(FinalNormScore = ifelse(LowerBetter==TRUE, -NormScore, NormScore))
+
+# to be consistent with human data
+model_dat$ItemNum = model_dat$ItemNum+1
+```
+
+# Combine with other data
+
+## Sentence info
+```{r}
+dirname = '../word_frequency_info'
+
+sentence_file_dtfit = paste(dirname, 'DTFit_freqs.csv', sep='/')
+
+# read in & normalize predictors
+dat_dtfit_sentence = read.csv(sentence_file_dtfit) %>%
+  mutate(agent_freq_norm = (agent_freq - mean(agent_freq))/sd(agent_freq),
+         patient_freq_norm = (patient_freq - mean(patient_freq))/sd(patient_freq),
+         verb_freq_norm = (verb_freq - mean(verb_freq))/sd(verb_freq),
+         sentence_freq_norm = (sentence_freq - mean(sentence_freq))/sd(sentence_freq)) %>%
+  rename(Score=Rating, Plausibility=Typicality)
+dat_dtfit_sentence$Plausibility = recode(dat_dtfit_sentence$Plausibility, 
+                             AT='Implausible', T='Plausible') 
+```
+
+## Human ratings
+```{r}
+dirname = '../human_ratings'
+ratings_dtfit = paste(dirname, '3_DTFIT', 'newformat_curated_human_ratings.csv', sep='/')
+
+dat_human = read.csv(ratings_dtfit) %>%
+  rename(Score=Rating, ItemNum=Item)
+dat_human$Metric = 'human' 
+dat_human$TrialType = 'DTFit' 
+dat_human$FinalNormScore = min_max(dat_human$Score)
+```
+
+
+```{r}
+human_sent = dat_human$Sentence
+for (i in seq_along(chosen_anns)){
+  print(paste(chosen_anns[i]))
+  curr_dat = subset(model_dat, Metric==chosen_anns[i])
+  model_sent = c(curr_dat$Sentence)
+  for (j in seq_along(model_sent)){
+    ifelse(model_sent[j]%in%human_sent, "", print(paste(model_sent[j])))
+  }
+}
+  
+```
+
+```{r}
+#exclusion_keywords = c('snowball', 
+#                       'harness')
+exclusion_nrs = c(77, 323, 347)
+#exclude sentences based on those that are not shared between models and humans in the dataset
+message(paste(length(unique(model_dat$Sentence))))
+model_dat = model_dat[!(model_dat$ItemNum %in% exclusion_nrs), ]
+message(paste(length(unique(model_dat$Sentence))))
+```
+
+```{r}
+for (i in seq_along(chosen_anns)){
+  print(paste(chosen_anns[i]))
+  curr_dat = subset(model_dat, Metric==chosen_anns[i])
+  model_sent = c(curr_dat$Sentence)
+  for (j in seq_along(human_sent)){
+    ifelse(human_sent[j]%in%model_sent, "", print(paste(human_sent[j])))
+  }
+}
+  
+```
+
+
+```{r}
+for (i in seq_along(chosen_anns)){
+  for (j in seq_along(chosen_anns)){
+    print(paste(chosen_anns[i],chosen_anns[j]))
+    curr_dat1 = subset(model_dat, Metric==chosen_anns[i])
+    curr_dat2 = subset(model_dat, Metric==chosen_anns[j])
+    model_sent1 = c(curr_dat1$Sentence)
+    model_sent2 = c(curr_dat2$Sentence)
+    for (k in seq_along(model_sent1)){
+      ifelse(model_sent1[k]%in%model_sent2, "", print(paste(model_sent1[k])))
+    }
+    for (l in seq_along(model_sent2)){
+      ifelse(model_sent2[l]%in%model_sent1, "", print(paste(model_sent2[l])))
+    }
+  }
+}
+  
+```
+
+```{r}
+exclusion_nrs = c('77')
+message(paste(length(unique(dat_human$Sentence))))
+dat_human = dat_human[!(dat_human$ItemNum %in% exclusion_nrs), ]
+message(paste(length(unique(dat_human$Sentence))))
+```
+
+```{r}
+# no longer mismatched!
+for (i in seq_along(chosen_anns)){
+  sub = subset(model_dat, Metric==chosen_anns[i])
+  print(paste(chosen_anns[i], "|", length(sub$Sentence), length(unique(sub$Sentence))))
+}
+print(paste("human |", length(dat_human$Sentence), length(unique(dat_human$Sentence))))
+```
+
+
+```{r}
+# combine all
+dat = rbind(model_dat %>% select(ItemNum, Sentence, Score, Typicality, Metric, FinalNormScore, TrialType),
+           dat_human %>% select(ItemNum, Sentence, Score, Typicality, Metric, FinalNormScore, TrialType))
+
+dat = dat %>% rename(Plausibility=Typicality)
+dat$Plausibility = recode(dat$Plausibility, 
+                             AT='Implausible', T='Plausible',
+                             Atypical='Implausible', Typical='Plausible') 
+
+dat = merge(dat, dat_dtfit_sentence, 
+               by=c("Sentence", "Plausibility")) 
+
+```
+
+
+# Plotting
+
+```{r}
+#Set plotting options for grid plots
+models_metrics = as.vector(sapply(chosen_models, 
+                                  function(x) {str_replace(x, ".sentence-probs-pseudolog", "")}))
+nr_models = length(models_metrics)
+ncols=6
+nrows=round(nr_models/ncols)
+if (nrows * ncols < nr_models) {
+  nrows = nrows + 1
+}
+```
+
+```{r}
+metrics2plot = c(human,chosen_anns)
+for (i in seq_along(metrics2plot)){
+  sub = subset(dat, Metric==metrics2plot[i])
+  print(paste(metrics2plot[i], "|", length(sub$Sentence)))
+}
+```
+
+```{r}
+
+lower_better = c("surprisal")
+lower_better_pat <- paste(lower_better, collapse = '|')
+
+dat.binchoice = dat %>%
+  #add color
+  mutate(Category = ifelse(Metric%in%chosen_anns, "ANNs", "baselines")) %>%
+  mutate(Category = ifelse(Metric=="human", "human", Category)) %>%
+  mutate(LowerBetter = ifelse(grepl(lower_better_pat, Metric),TRUE,FALSE)) %>%
+  group_by(Category, ItemNum, Metric, LowerBetter, TrialType) %>%
+  summarize(ScoreDiff = FinalNormScore[Plausibility=="Plausible"]-FinalNormScore[Plausibility=="Implausible"]) %>%
+  mutate(FinalScoreDiff = ifelse(LowerBetter==TRUE, -ScoreDiff, ScoreDiff)) %>%
+  mutate(Accuracy = ifelse(FinalScoreDiff>0, 1, 0))
+```
+
+```{r}
+calculate_binom_pval <- function(numCorrect, numTotal) {
+  return(sapply(c(1:length(numCorrect)), 
+                function(i){ binom.test(numCorrect[i], numTotal[i])$p.value}))
+}
+
+# get p values
+dat.binchoice.summary = dat.binchoice %>%
+  group_by(Category, Metric) %>%
+  summarize(NumCorrect=sum(Accuracy), NumTotal=length(Accuracy)) %>%
+  ungroup() %>%
+  mutate(pVal = calculate_binom_pval(NumCorrect, NumTotal))
+
+# adjust for multiple comparisons within each category
+dat.binchoice.summary = dat.binchoice.summary %>%
+  group_by(Category) %>%
+  mutate(pValAdjusted = p.adjust(pVal, method="fdr", n=length(pVal)),
+         ntoadjust = length(pVal)) %>%
+  mutate(pLabel = ifelse(pValAdjusted<0.001, "***", 
+                         ifelse(pValAdjusted<0.01, "**",
+                                ifelse(pValAdjusted<0.05, "*", ""))))
+```
+
+### Plot 
+
+```{r, echo=FALSE}
+
+metrics2plot = c(human, chosen_anns)
+dat.binchoice$Metric = factor(dat.binchoice$Metric, levels=metrics2plot)
+dat.binchoice$Category = factor(dat.binchoice$Category, levels=c("human", "ANNs", "baselines"))
+dat.binchoice = dat.binchoice %>%
+  mutate(Color = ifelse(Metric=="human","#F8766D", "#00BA38"))
+
+ggplot(data=dat.binchoice, 
+       mapping=aes(x=Metric, y=Accuracy, fill=Category))+
+  facet_wrap(~TrialType, ncol = 1)+
+  geom_hline(yintercept=1, color='gray50', linetype='dotted')+
+  stat_summary(geom='col', fun.y='mean',
+               color='black', width=0.8)+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               color = 'black', size = 0.5, width=0.1)+
+  geom_text(mapping=aes(x=Metric, y=0.05, label=pLabel), data=dat.binchoice.summary)+
+  coord_cartesian(ylim=c(0,1))+
+  geom_hline(yintercept=.5, linetype='dotted')+
+  theme_classic()+
+  labs(x='Model')+
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))+
+  scale_fill_manual("Color", values=c("#F8766D", "#00BA38"))
+
+path <- paste("results_November2021/")
+ifelse(!dir.exists(path), dir.create(path), FALSE)
+savedir <- paste("results_November2021/DTFit")
+ifelse(!dir.exists(savedir), dir.create(savedir), FALSE)
+
+savename <- "1_binaryAccuracy.png"
+ggsave(paste(savedir,savename,sep="/"), width=15, height=12, units='cm')
+```
+
+```{r, echo=FALSE}
+# color scheme
+color_plaus = '#1b9e77'
+color_voice = '#d95f02'
+color_syn = '#7570b3'
+cortext_size = 3
+
+dat.plaus = dat %>% 
+  group_by(ItemNum, TrialType, Plausibility, Metric) %>%
+  summarize(meanScore = mean(FinalNormScore, na.rm=TRUE)) %>%
+  spread(Plausibility, meanScore)  
+```
+
+
+```{r}
+df_correlation = data.frame()
+
+dat.plaus$Metric = factor(dat.plaus$Metric, levels=metrics2plot)
+
+# get pairwise correlation values for humans and each model
+val1.human = dat.plaus$Plausible[dat.plaus$Metric=="human"]
+val2.human = dat.plaus$Implausible[dat.plaus$Metric=="human"]
+
+for(i in seq_along(metrics2plot)){
+  #print(paste(metrics2plot))
+    val1.model = dat.plaus$Plausible[dat.plaus$Metric==metrics2plot[i]]
+    val2.model = dat.plaus$Implausible[dat.plaus$Metric==metrics2plot[i]]
+    pval2zero = cor.test(val1.model, val2.model, method="pearson")$p.value
+    corvals = c(
+      cor(val1.human, val2.human, method="pearson"),
+      cor(val1.model, val2.model, method="pearson"),
+      cor(val1.human, val1.model, method="pearson"),
+      cor(val1.human, val2.model, method="pearson"),
+      cor(val2.human, val1.model, method="pearson"),
+      cor(val2.human, val2.model, method="pearson"))
+    test2humans = cocor.dep.groups.nonoverlap(corvals[1], corvals[2], corvals[3],
+                                       corvals[4], corvals[5], corvals[6], 
+                                       n=length(val1.model),
+                                       test='raghunathan1996')
+    pval2humans= test2humans@raghunathan1996$p.value
+    
+    # add vector to a dataframe
+    df <- data.frame(metrics2plot[i], corvals[2], pval2zero, pval2humans)
+    df_correlation <- rbind(df_correlation,df)
+}
+colnames(df_correlation) = c("Metric", "Correlation", "pVal2zero", "pVal2humans")
+
+# adjust for multiple comparisons (-1 to exclude humans, *3 for 3 metrics we're comparing)
+df_correlation = df_correlation %>%
+  mutate(pVal2zeroAdjusted = p.adjust(pVal2zero, method="fdr", n=length(pVal2zero)*3),
+         pVal2humansAdjusted = p.adjust(pVal2humans, method="fdr", n=(length(pVal2humans)-1)*3)) %>%
+  mutate(pVal2zeroLabel = ifelse(pVal2zeroAdjusted<0.001, "***", 
+                                 ifelse(pVal2zeroAdjusted<0.01, "**",
+                                        ifelse(pVal2zeroAdjusted<0.05, "*", ""))),
+         pVal2humansLabel = ifelse(pVal2humansAdjusted<0.001, "***", 
+                                 ifelse(pVal2humansAdjusted<0.01, "**",
+                                        ifelse(pVal2humansAdjusted<0.05, "*", ""))))
+```
+
+### Plot
+```{r}
+plot.plaus = ggplot(data=dat.plaus)+
+  geom_point(mapping=aes(x=Plausible, y=Implausible), size=0.2, color=color_plaus)+
+  facet_wrap(~Metric, ncol=ncols, nrow=nrows)+
+  geom_abline(slope=1, intercept=0, size=0.2)+
+  geom_point(mapping=aes(x=Plausible, y=Implausible), size=0.2, color=color_plaus)+
+  geom_text(mapping=aes(x=0.1, y=1, label=sprintf("r = %.2f%s", round(Correlation,2), pVal2zeroLabel)), 
+            data=df_correlation, size=cortext_size, hjust = 0)+
+  coord_cartesian(ylim=c(0,1), xlim=c(0,1))+
+  ggtitle('PLAUSIBILITY')+
+  theme_classic()+
+  theme(plot.title = element_text(hjust=0.5,face='bold'))
+plot.plaus
+
+savename <- "2_plausibility_scatter.png"
+ggsave(paste(savedir,savename,sep="/"), width=15, height=12, units='cm')
+```
+
