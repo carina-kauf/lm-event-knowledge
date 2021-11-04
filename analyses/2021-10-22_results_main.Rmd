@@ -611,7 +611,6 @@ for(i in seq_along(models)){
 # CONTRASTS
 
 ```{r}
-#dat = read.csv('dat_all_models_EventsAdaptRev.csv')
 dat = model_dat
 dat$Plausibility = factor(dat$Plausibility, levels=c("Plausible", "Implausible")) # dummy coding by default
 
@@ -687,11 +686,50 @@ dat.binchoice.summary = dat.binchoice %>%
 # adjust for multiple comparisons within each category
 dat.binchoice.summary = dat.binchoice.summary %>%
   group_by(Category) %>%
+  mutate(Accuracy=NumCorrect/NumTotal) %>%
   mutate(pValAdjusted = p.adjust(pVal, method="fdr", n=length(pVal)),
          ntoadjust = length(pVal)) %>%
   mutate(pLabel = ifelse(pValAdjusted<0.001, "***", 
                          ifelse(pValAdjusted<0.01, "**",
-                                ifelse(pValAdjusted<0.05, "*", ""))))
+                                ifelse(pValAdjusted<0.05, "*", "")))) %>%
+  ungroup()
+```
+
+Compare with human data (Chi Square)
+
+```{r}
+# get the X-square and p-value of the X-square 2 sample test. Assume the total num is the same
+calculate_chisq <- function(a, b, total) {
+  result = prop.test(c(a, total), c(b, total))
+  return(c(as.numeric(result$statistic), result$p.value))
+}
+
+calculate_chisq_vectorized_chi <- function(numCorrect, numTotal, num_correct_human) {
+  return(sapply(c(1:length(numCorrect)), 
+                function(i){ calculate_chisq(numCorrect[i], num_correct_human[i], numTotal[i])[1]}))
+}
+
+calculate_chisq_vectorized_p <- function(numCorrect, numTotal, num_correct_human) {
+  return(sapply(c(1:length(numCorrect)), 
+                function(i){ calculate_chisq(numCorrect[i], num_correct_human[i], numTotal[i])[2]}))
+}
+
+# get human responses separately
+human.results = dat.binchoice.summary %>%
+  filter(Metric=='human') %>%
+  select(TrialType, NumCorrect, NumTotal) %>%
+  rename(NumCorrectHuman=NumCorrect, NumTotalHuman=NumTotal)
+dat.binchoice.summary.withchisq = merge(dat.binchoice.summary, human.results)
+
+dat.binchoice.summary.withchisq = dat.binchoice.summary.withchisq %>%
+  mutate(ChiSq = calculate_chisq_vectorized_chi(NumCorrect, NumTotal, NumCorrectHuman),
+         pVal2humans = calculate_chisq_vectorized_p(NumCorrect, NumTotal, NumCorrectHuman)) %>%
+  group_by(Category) %>%
+  mutate(pVal2humansAdjusted = p.adjust(pVal2humans, method="fdr", n=length(pVal2humans)),
+         ntoadjust = length(pVal2humans)) %>%
+  mutate(pLabel2humans = ifelse(pVal2humansAdjusted<0.001, "***", 
+                         ifelse(pVal2humansAdjusted<0.01, "**",
+                                ifelse(pVal2humansAdjusted<0.05, "*", "")))) 
 ```
 
 ### Plot 
@@ -763,6 +801,8 @@ for (i in seq_along(workerIDs)) {
 
 human2human_corr = mean(df_correlation$corval)
 print(paste("The human2human overall correlation value is", human2human_corr))
+human2human_corr_sd = sd(df_correlation$corval)
+print(paste("SD", human2human_corr_sd))
 ```
 
 ## Sample a random human response for each item 
@@ -908,8 +948,11 @@ cortext_size = 3
 ## PLAUSIBLE VS IMPLAUSIBLE
 
 ### Prep data
+
+Only using AI and AAN sentences
 ```{r, echo=FALSE}
 dat.plaus = dat2plot %>% 
+  filter(TrialType %in% c('AI', 'AAN')) %>%
   dplyr::select(ItemNum, TrialType, Plausibility, Voice, Metric, NormScore) %>%
   group_by(ItemNum, TrialType, Plausibility, Voice, Metric) %>%
   summarize(meanScore = mean(NormScore, na.rm=TRUE)) %>%
@@ -926,8 +969,8 @@ val1.human = dat.plaus$Plausible[dat.plaus$Metric=="human"]
 val2.human = dat.plaus$Implausible[dat.plaus$Metric=="human"]
 
 for(i in seq_along(metrics2plot)){
-    val1.model = dat.plaus$Plausible[dat.voice$Metric==metrics2plot[i]]
-    val2.model = dat.plaus$Implausible[dat.voice$Metric==metrics2plot[i]]
+    val1.model = dat.plaus$Plausible[dat.plaus$Metric==metrics2plot[i]]
+    val2.model = dat.plaus$Implausible[dat.plaus$Metric==metrics2plot[i]]
     pval2zero = cor.test(val1.model, val2.model, method="pearson")$p.value
     corvals = c(
       cor(val1.human, val2.human, method="pearson"),
@@ -1188,71 +1231,7 @@ plot.freq
 ```
 
 
-#CORRELATION ANALYSIS
-NOTE: If I run this with the dat as defined in the regression part I get way higher correlations > check!
-```{r correlation, echo=FALSE}
-print(paste(models_metrics))
-
-df_correlation = data.frame()
-
-for(i in seq_along(models_metrics)){
-  message(paste(models_metrics[i]))
-  message(paste(length(dat$NormScore[dat$Metric=="human"]), length(dat$NormScore[dat$Metric==models_metrics[i]])))
-  correlation = cor(dat$NormScore[dat$Metric=="human"], dat$NormScore[dat$Metric==models_metrics[i]], method="pearson")
-  #correlation = cor.test(dat$NormScore[dat$Metric=="human"], dat$NormScore[dat$Metric==models_metrics[i]], method="pearson")
-  message(paste(correlation,"\n"))
-  
-  # add vector to a dataframe
-  df <- data.frame(models_metrics[i], correlation)
-  df_correlation <- rbind(df_correlation,df)
-}
-write.csv(df_correlation, "correlation_humans_models.csv")
-```
-
-
-```{r plot}
-#matplot(dat$NormScore[dat$Metric=="human"],dat$NormScore[dat$Metric=="gpt2-xl_full"], type = "p",xlab="human",ylab="gpt2-xl_full")
-
-scatter_dat_human = subset(dat, Metric=="human") %>%
-  select(NormScore) %>%
-  rename(human = NormScore)
-
-scatter_dat_gpt = subset(dat, Metric=="gpt2-xl_full") %>%
-  select(NormScore) %>%
-  rename(gpt2 = NormScore)
-
-scatter_dat = cbind(scatter_dat_human, scatter_dat_gpt)
-
-ggplot(data=scatter_dat)+
-    geom_point(mapping = aes(x=human, y=gpt2),
-             shape=21, size=0.75, color='black',
-             show.legend = TRUE)+
-  geom_abline(h = 0, lty = 2, col="blue")+
-  theme_classic()
-
-savename <- "scatter_human_gpt2.png"
-ggsave(paste(savedir,savename,sep="/"), width=16, height=12, units='cm')
-```
-
-```{r plot}
-
-scatter_dat_roberta = subset(dat, Metric=="roberta-large") %>% #best model as per correlation analysis
-  select(NormScore) %>%
-  rename(roberta = NormScore)
-
-scatter_dat = cbind(scatter_dat_human, scatter_dat_roberta)
-
-ggplot(data=scatter_dat)+
-    geom_point(mapping = aes(x=human, y=roberta),
-             shape=21, size=0.75, color='black',
-             show.legend = TRUE)+
-  geom_abline(h = 0, lty = 2, col="blue")+
-  theme_classic()
-
-savename <- "scatter_human_roberta.png"
-ggsave(paste(savedir,savename,sep="/"), width=16, height=12, units='cm')
-```
-
+## Violin by trial type
 
 ```{r, fig.height=12, fig.width=15}
 
@@ -1400,39 +1379,69 @@ if (use_eventsrev == TRUE){
 
 #REGRESSION
 
+## Contrasts
+
+```{r}
+dat$Plausibility = factor(dat$Plausibility, levels=c("Plausible", "Implausible")) # dummy coding by default
+
+dat$Voice = as.factor(dat$Voice)
+contrasts(dat$Voice) = c(0.5, -0.5)
+colnames(attr(dat$Voice, "contrasts")) = c("A>P")
+
+dat$TrialType = factor(dat$TrialType, levels=c("AAR", "AAN", "AI"))    # dummy coding by default
+dat$Metric = as.factor(dat$Metric)
+dat = within(dat, Metric <- relevel(Metric, ref = "human"))    # set humans as the reference 
+dat$ItemNum = as.factor(dat$ItemNum)
+```
 
 ## Stats
 
 ```{r regression, echo=FALSE}
-m0 = lmer(NormScore ~ Plausibility*TrialType*Voice*Metric + agent_freq_norm*Metric + patient_freq_norm*Metric + verb_freq_norm*Metric + sentence_freq_norm*Metric + (1|ItemNum), 
-         data=dat, REML=FALSE)
-sink("regression_m0.txt", append=FALSE)
-options(max.print=1000000)
-summary(m0)
-sink()
-```
 
-```{r regression, echo=FALSE}
-m1 = lmer(NormScore ~ Plausibility*TrialType*Voice*Metric + agent_freq_norm*Metric + patient_freq_norm*Metric + verb_freq_norm*Metric + sentence_freq_norm*Metric + (1+Plausibility|ItemNum), 
-         data=dat, REML=FALSE, control=lmerControl(optimizer="bobyqa",
-                                 optCtrl=list(maxfun=2e6)))
-sink("regression_m1.txt", append=FALSE)
-options(max.print=1000000)
-summary(m1)
-sink()
-```
+metrics = unique(dat$Metric)
+results = data.frame()
 
-```{r}
-anova(m0,m1)  # result: m1 is better
-```
+for(i in seq_along(metrics)){
+  metric = metrics[i]
+  dat.metric = dat %>% filter(Metric==metric)
+  m = lmer(NormScore ~ Plausibility*TrialType*Voice + agent_freq_norm + patient_freq_norm + verb_freq_norm + sentence_freq_norm + (1+Plausibility|ItemNum), 
+           data=dat.metric, REML=FALSE, 
+           control=lmerControl(optimizer="bobyqa", optCtrl=list(maxfun=2e6)))
+ d = data.frame(coef(summary(m)))
+ d = d %>% rename(pVal=Pr...t..)
+ d$Metric = metric 
+ d$Parameter = rownames(d)
+ d = d[,c(6,7,1:5)]
+ results = rbind(results, d)
+}
 
-```{r regression, echo=FALSE}
-m2 = lmer(NormScore ~ Plausibility*TrialType*Voice*Metric + agent_freq_norm*Metric + patient_freq_norm*Metric + verb_freq_norm*Metric + sentence_freq_norm*Metric + (1+Plausibility+Metric|ItemNum), 
-         data=dat, REML=FALSE)
-sink("regression_m2.txt", append=FALSE)
-options(max.print=1000000)
-summary(m2)
-sink()
+# split up
+results.ANN = results %>%
+  filter(Metric %in% metrics2plot)
+results.baselines = results %>%
+  filter(!(Metric %in% metrics2plot))
+
+# adjust for multiple comparisons
+results.ANN = results.ANN %>%
+  group_by(Parameter) %>%
+  mutate(pValAdjusted = p.adjust(pVal, method="fdr", n=length(pVal))) %>%
+  mutate(pLabel = ifelse(pValAdjusted<0.001, "***", 
+                         ifelse(pValAdjusted<0.01, "**",
+                                ifelse(pValAdjusted<0.05, "*", "")))) %>%
+  mutate(pValFinal = ifelse(pValAdjusted<0.001, "<0.001", as.character(round(pValAdjusted,3)))) %>%
+  ungroup()
+
+results.baselines = results.baselines %>%
+  group_by(Parameter) %>%
+  mutate(pValAdjusted = p.adjust(pVal, method="fdr", n=length(pVal)+1)) %>%   # account for humans too
+  mutate(pLabel = ifelse(pValAdjusted<0.001, "***", 
+                         ifelse(pValAdjusted<0.01, "**",
+                                ifelse(pValAdjusted<0.05, "*", "")))) %>%
+  mutate(pValFinal = ifelse(pValAdjusted<0.001, "<0.001", as.character(round(pValAdjusted,3)))) %>%
+  ungroup()
+
+savename <- "regression_by_metric.csv"
+write.csv(results, paste(savedir,savename,sep="/"), row.names=FALSE)
 ```
 
 
