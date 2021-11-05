@@ -12,6 +12,7 @@ library(tidyr)
 library(stringr)
 library(gridExtra)
 library(cocor)
+library(patchwork)
 
 #helper function #https://stackoverflow.com/questions/35775696/trying-to-use-dplyr-to-group-by-and-apply-scale
 scale_this <- function(x) as.vector(scale(x))
@@ -439,7 +440,7 @@ savedir <- paste("results_November2021/DTFit")
 ifelse(!dir.exists(savedir), dir.create(savedir), FALSE)
 
 savename <- "1_binaryAccuracy.png"
-ggsave(paste(savedir,savename,sep="/"), width=15, height=8, units='cm')
+ggsave(paste(savedir,savename,sep="/"), width=15, height=10, units='cm')
 ```
 
 ```{r, echo=FALSE}
@@ -505,7 +506,7 @@ df_correlation = df_correlation %>%
 ```{r}
 human_anns = c(human,ann_group)
 df_correlation_sub = subset(df_correlation, Metric%in%human_anns)
-plot.plaus = ggplot(data=subset(dat.plaus, Metric%in%human_anns))+
+plot.plaus_anns = ggplot(data=subset(dat.plaus, Metric%in%human_anns))+
   geom_point(mapping=aes(x=Plausible, y=Implausible), size=0.2, color=color_plaus)+
   facet_wrap(~Metric, ncol=ncols, nrow=nrows)+
   geom_abline(slope=1, intercept=0, size=0.2)+
@@ -516,16 +517,16 @@ plot.plaus = ggplot(data=subset(dat.plaus, Metric%in%human_anns))+
   ggtitle('PLAUSIBILITY')+
   theme_classic()+
   theme(plot.title = element_text(hjust=0.5,face='bold'))
-plot.plaus
+plot.plaus_anns
 
 savename <- "2_plausibility_scatter_anns.png"
-ggsave(paste(savedir,savename,sep="/"), width=15, height=8, units='cm')
+ggsave(paste(savedir,savename,sep="/"), width=20, height=8, units='cm')
 ```
 
 ```{r}
-human_baselines = c(human,baselines)
-df_correlation_sub = subset(df_correlation, Metric%in%human_baselines)
-plot.plaus = ggplot(data=subset(dat.plaus, Metric%in%human_baselines))+
+baselines = c(baselines)
+df_correlation_sub = subset(df_correlation, Metric%in%baselines)
+plot.plaus_baselines = ggplot(data=subset(dat.plaus, Metric%in%baselines))+
   geom_point(mapping=aes(x=Plausible, y=Implausible), size=0.2, color=color_plaus)+
   facet_wrap(~Metric, ncol=ncols, nrow=nrows)+
   geom_abline(slope=1, intercept=0, size=0.2)+
@@ -533,30 +534,21 @@ plot.plaus = ggplot(data=subset(dat.plaus, Metric%in%human_baselines))+
   geom_text(mapping=aes(x=0.1, y=1, label=sprintf("r = %.2f%s", round(Correlation,2), pVal2zeroLabel)), 
             data=df_correlation_sub, size=cortext_size, hjust = 0)+
   coord_cartesian(ylim=c(0,1), xlim=c(0,1))+
-  ggtitle('PLAUSIBILITY')+
+  #ggtitle('PLAUSIBILITY')+
   theme_classic()+
   theme(plot.title = element_text(hjust=0.5,face='bold'))
-plot.plaus
+plot.plaus_baselines
 
 savename <- "2_plausibility_scatter_baselines.png"
-ggsave(paste(savedir,savename,sep="/"), width=15, height=8, units='cm')
+ggsave(paste(savedir,savename,sep="/"), width=25, height=9, units='cm')
 ```
+## COMBINE
 
-```{r, fig.height=12, fig.width=15}
-plot.plaus = ggplot(data=dat.plaus)+
-  geom_point(mapping=aes(x=Plausible, y=Implausible), size=0.2, color=color_plaus)+
-  facet_wrap(~Metric, ncol=ncols, nrow=nrows)+
-  geom_abline(slope=1, intercept=0, size=0.2)+
-  geom_point(mapping=aes(x=Plausible, y=Implausible), size=0.2, color=color_plaus)+
-  geom_text(mapping=aes(x=0.1, y=1, label=sprintf("r = %.2f%s", round(Correlation,2), pVal2zeroLabel)), 
-            data=df_correlation, size=cortext_size, hjust = 0)+
-  coord_cartesian(ylim=c(0,1), xlim=c(0,1))+
-  ggtitle('PLAUSIBILITY')+
-  theme_classic()+
-  theme(plot.title = element_text(hjust=0.5,face='bold'))
-plot.plaus
+```{r}
+
+plot.plaus_anns / plot.plaus_baselines 
 
 savename <- "2_plausibility_scatter_all.png"
-ggsave(paste(savedir,savename,sep="/"), width=15, height=11, units='cm')
+ggsave(paste(savedir,savename,sep="/"), width=25, height=20, units='cm')
 ```
 
