@@ -440,7 +440,7 @@ savedir <- paste("results_November2021/DTFit")
 ifelse(!dir.exists(savedir), dir.create(savedir), FALSE)
 
 savename <- "1_binaryAccuracy.png"
-ggsave(paste(savedir,savename,sep="/"), width=15, height=10, units='cm')
+ggsave(paste(savedir,savename,sep="/"), width=15, height=9, units='cm')
 ```
 
 ```{r, echo=FALSE}
