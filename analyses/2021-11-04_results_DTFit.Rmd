@@ -549,6 +549,6 @@ ggsave(paste(savedir,savename,sep="/"), width=25, height=9, units='cm')
 plot.plaus_anns / plot.plaus_baselines 
 
 savename <- "2_plausibility_scatter_all.png"
-ggsave(paste(savedir,savename,sep="/"), width=25, height=20, units='cm')
+ggsave(paste(savedir,savename,sep="/"), height=15,width=28, units='cm')
 ```
 
