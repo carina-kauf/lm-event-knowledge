@@ -12,6 +12,7 @@ library(tidyr)
 library(stringr)
 library(gridExtra)
 library(cocor)
+library(patchwork)
 
 #helper function #https://stackoverflow.com/questions/35775696/trying-to-use-dplyr-to-group-by-and-apply-scale
 scale_this <- function(x) as.vector(scale(x))
@@ -388,7 +389,7 @@ dat.binchoice.summary = dat.binchoice.summary %>%
                                 ifelse(pValAdjusted<0.05, "*", ""))))
 ```
 
-### Plot 
+### Plot binchoice
 
 ```{r, echo=FALSE}
 
@@ -398,9 +399,8 @@ dat.binchoice$Category = factor(dat.binchoice$Category, levels=c("human", "ANNs"
 dat.binchoice = dat.binchoice %>%
   mutate(Color = ifelse(Metric=="human","#F8766D", "#00BA38"))
 
-ggplot(data=dat.binchoice, 
+plot.binchoice = ggplot(data=dat.binchoice, 
        mapping=aes(x=Metric, y=Accuracy, fill=Category))+
-  facet_wrap(~TrialType, ncol = 1)+
   geom_hline(yintercept=1, color='gray50', linetype='dotted')+
   stat_summary(geom='col', fun.y='mean',
                color='black', width=0.8)+
@@ -411,8 +411,10 @@ ggplot(data=dat.binchoice,
   geom_hline(yintercept=.5, linetype='dotted')+
   theme_classic()+
   labs(x='Model')+
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))+
-  scale_fill_manual("Color", values=c("#F8766D", "#00BA38"))
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1), legend.position="none")
+#  scale_fill_manual("Color", values=c("#F8766D", "#00BA38"))
+
+plot.binchoice
 
 path <- paste("results_November2021/")
 ifelse(!dir.exists(path), dir.create(path), FALSE)
@@ -482,7 +484,7 @@ df_correlation = df_correlation %>%
                                         ifelse(pVal2humansAdjusted<0.05, "*", ""))))
 ```
 
-### Plot
+### Plot plaus
 ```{r}
 plot.plaus = ggplot(data=dat.plaus)+
   geom_point(mapping=aes(x=Plausible, y=Implausible), size=0.2, color=color_plaus)+
@@ -492,12 +494,196 @@ plot.plaus = ggplot(data=dat.plaus)+
   geom_text(mapping=aes(x=0.1, y=1, label=sprintf("r = %.2f%s", round(Correlation,2), pVal2zeroLabel)), 
             data=df_correlation, size=cortext_size, hjust = 0)+
   coord_cartesian(ylim=c(0,1), xlim=c(0,1))+
-  ggtitle('PLAUSIBILITY')+
   theme_classic()+
   theme(plot.title = element_text(hjust=0.5,face='bold'))
 plot.plaus
 
 savename <- "2_plausibility_scatter.png"
 ggsave(paste(savedir,savename,sep="/"), width=15, height=12, units='cm')
+```
+
+
+
+# MODEL HUMAN COMPARISON
+
+## General settings
+
+```{r}
+# Plotting only humans and ANNs for now - will put baselines in the appendix
+which_models = "anns_main"
+metrics2plot = c(human, anns_main)
+metrics2plot = as.vector(sapply(metrics2plot, 
+                                  function(x) {str_replace(x, ".sentence-probs-pseudolog", "")}))
+
+dat2plot = dat %>% 
+  filter(Metric %in% metrics2plot)
+```
+
+
+## Prep data
+
+```{r}
+dat.human = dat2plot %>% filter(Metric=="human") %>%
+  select(ItemNum, TrialType, Sentence, Plausibility, FinalNormScore)
+dat.model = dat2plot %>% filter(Metric!="human") %>%
+  select(ItemNum, TrialType, Sentence, Plausibility, FinalNormScore, Metric)
+dat.model2human = merge(dat.human, dat.model, 
+                        by=c("ItemNum", "TrialType", "Sentence", "Plausibility")) %>%
+  rename(HumanScore=FinalNormScore.x, ModelScore=FinalNormScore.y)
+```
+
+Formatting:
+
+```{r, echo=FALSE, fig.height=12, fig.width=15}
+dat.model2human = dat.model2human %>%
+  #add color info
+  mutate(Category = ifelse(Metric%in%metrics2plot, "ANNs", "baselines")) 
+
+# specify order for plotting
+metric_names = metrics2plot
+dat.model2human$Metric = factor(dat.model2human$Metric, levels=metric_names)
+dat.model2human$Category = factor(dat.model2human$Category, levels=c("human", "ANNs", "baselines"))
+```
+
+## Calculate correlations for the plot
+
+Cannot do a human2human comparison because we only have mean data
+
+```{r}
+df_correlation = data.frame()
+metrics = unique(dat.model2human$Metric)
+
+trialTypes = unique(dat.model2human$TrialType)
+for (t in seq_along(trialTypes)){
+  dat.model2human.tt = dat.model2human %>%
+    filter(TrialType==trialTypes[t])
+  
+  for(i in seq_along(metrics)){
+      current_metric=metrics[i]
+      val1.model = dat.model2human.tt$ModelScore[dat.model2human.tt$Metric==current_metric]
+      val2.model = dat.model2human.tt$HumanScore[dat.model2human.tt$Metric==current_metric]
+      pval2zero = cor.test(val1.model, val2.model, method="pearson")$p.value
+      corval = cor(val1.model, val2.model, method="pearson")
+      
+      # add vector to a dataframe
+      df <- data.frame(current_metric, trialTypes[t], corval, pval2zero, pval2humans)
+      df_correlation <- rbind(df_correlation,df)
+  }
+}
+colnames(df_correlation) = c("Metric", "TrialType", "Correlation", "pVal2zero", "pVal2humans")
+
+# adjust for multiple comparisons
+df_correlation = df_correlation %>%
+  mutate(pVal2zeroAdjusted = p.adjust(pVal2zero, method="fdr", n=length(pVal2zero))) %>%
+  mutate(pVal2zeroLabel = ifelse(pVal2zeroAdjusted<0.001, "***", 
+                                 ifelse(pVal2zeroAdjusted<0.01, "**",
+                                        ifelse(pVal2zeroAdjusted<0.05, "*", ""))))
+
+```
+
+## Plot
+```{r}
+
+# text size 
+cortext_size = 3
+
+plot.model2human = ggplot(dat=dat.model2human)+  
+  geom_abline(slope=1, intercept=0, size=0.2)+
+  geom_point(mapping=aes(x=ModelScore, y=HumanScore), 
+             size=0.4, position=position_jitter(width=0.01), color='#00BFC4')+
+  facet_wrap(~Metric, ncol=ncols)+
+  geom_text(mapping=aes(x=-0.25, y=1, 
+                        label=sprintf("r = %.2f%s", round(Correlation,2), pVal2zeroLabel)), 
+            data=df_correlation, size=cortext_size, hjust = 0)+
+  coord_cartesian(ylim=c(0,1), xlim=c(-0.2,1))+
+  theme_classic()+
+  theme(legend.position="none")
+plot.model2human
+
+#savename <- "model2human_byTrialType_ANNs.png"
+#ggsave(paste(savedir,savename,sep="/"), height=15,width=25, units='cm')
+```
+
+# COMBINE
+
+```{r}
+# layout <- "
+# AA##BBBB
+# AA#CCCCC
+# "
+
+#plot.binchoice + plot.model2human + plot.plaus +
+#    plot_layout(design = layout)
+
+(plot.binchoice | plot_spacer() | 
+   (((plot_spacer() + plot.model2human) + plot_layout(widths=c(1,8))) / plot.plaus) ) + 
+  plot_layout(widths=c(1,0.05, 3))
+
+savename <- "composite.png"
+ggsave(paste(savedir,savename,sep="/"), height=15,width=30, units='cm')
+```
+
+
+
+#REGRESSION
+
+## Contrasts
+
+```{r}
+dat$Plausibility = factor(dat$Plausibility, levels=c("Plausible", "Implausible")) # dummy coding by default
+
+dat$Metric = as.factor(dat$Metric)
+dat = within(dat, Metric <- relevel(Metric, ref = "human"))    # set humans as the reference 
+dat$ItemNum = as.factor(dat$ItemNum)
+```
+
+## Stats
+
+```{r regression, echo=FALSE}
+
+metrics = unique(dat$Metric)
+results = data.frame()
+
+for(i in seq_along(metrics)){
+  metric = metrics[i]
+  dat.metric = dat %>% filter(Metric==metric)
+  m = lmer(FinalNormScore ~ Plausibility + agent_freq_norm + patient_freq_norm + verb_freq_norm + sentence_freq_norm + (1|ItemNum), 
+           data=dat.metric, REML=FALSE, 
+           control=lmerControl(optimizer="bobyqa", optCtrl=list(maxfun=2e6)))
+ d = data.frame(coef(summary(m)))
+ d = d %>% rename(pVal=Pr...t..)
+ d$Metric = metric 
+ d$Parameter = rownames(d)
+ d = d[,c(6,7,1:5)]
+ results = rbind(results, d)
+}
+
+# split up
+results.ANN = results %>%
+  filter(Metric %in% metrics2plot)
+results.baselines = results %>%
+  filter(!(Metric %in% metrics2plot))
+
+# adjust for multiple comparisons
+results.ANN = results.ANN %>%
+  group_by(Parameter) %>%
+  mutate(pValAdjusted = p.adjust(pVal, method="fdr", n=length(pVal))) %>%
+  mutate(pLabel = ifelse(pValAdjusted<0.001, "***", 
+                         ifelse(pValAdjusted<0.01, "**",
+                                ifelse(pValAdjusted<0.05, "*", "")))) %>%
+  mutate(pValFinal = ifelse(pValAdjusted<0.001, "<0.001", as.character(round(pValAdjusted,3)))) %>%
+  ungroup()
+
+results.baselines = results.baselines %>%
+  group_by(Parameter) %>%
+  mutate(pValAdjusted = p.adjust(pVal, method="fdr", n=length(pVal)+1)) %>%   # account for humans too
+  mutate(pLabel = ifelse(pValAdjusted<0.001, "***", 
+                         ifelse(pValAdjusted<0.01, "**",
+                                ifelse(pValAdjusted<0.05, "*", "")))) %>%
+  mutate(pValFinal = ifelse(pValAdjusted<0.001, "<0.001", as.character(round(pValAdjusted,3)))) %>%
+  ungroup()
+
+savename <- "regression_by_metric_ANN.csv"
+write.csv(results.ANN, paste(savedir,savename,sep="/"), row.names=FALSE)
 ```
 
