@@ -290,7 +290,6 @@ dat_er$ItemNum = dat_er$ItemNum + 900    # so that the numbering doesn't overlap
 human_dat = dat_er
 
 human_dat$TrialType = factor(human_dat$TrialType, levels=c('AI', 'AAN', 'AAR'))
-human_dat$
 ```
 
 Initial mean, but to be filtered later on!
@@ -540,6 +539,18 @@ dat.binchoice$Category = factor(dat.binchoice$Category, levels=c("human", "ANNs"
 dat.binchoice$TrialType = factor(dat.binchoice$TrialType, levels=c("AI", "AAN", "AAR"))
 ```
 
+Only ANNs
+
+```{r}
+# Plotting only humans and ANNs for now - will put baselines in the appendix
+which_models = "anns_main"
+metrics2plot = c(human, anns_main)
+metrics2plot = as.vector(sapply(metrics2plot, 
+                                  function(x) {str_replace(x, ".sentence-probs-pseudolog", "")}))
+
+data2plot = dat.binchoice %>% filter(Metric %in% metrics2plot)
+```
+
 ### Stats
 
 ```{r}
@@ -549,8 +560,7 @@ calculate_binom_pval <- function(numCorrect, numTotal) {
 }
 
 # get p values
-dat.binchoice.summary = dat.binchoice %>%
-  filter(TrialType %in% c("AI", "AAN")) %>%
+dat.binchoice.summary = data2plot %>%
   group_by(Category, Metric, TrialType) %>%
   summarize(NumCorrect=sum(Accuracy), NumTotal=length(Accuracy)) %>%
   ungroup() %>%
@@ -609,9 +619,8 @@ dat.binchoice.summary.withchisq = dat.binchoice.summary.withchisq %>%
 
 ```{r, echo=FALSE}
 
-plot.binacc = ggplot(data=subset(dat.binchoice, TrialType%in%c("AI","AAN")), 
+plot.binacc = ggplot(data=data2plot, 
        mapping=aes(x=Metric, y=Accuracy, fill=Category))+
-  facet_wrap(~TrialType, ncol = 1)+
   geom_hline(yintercept=1, color='gray50', linetype='dotted')+
   stat_summary(geom='col', fun.y='mean',
                color='black', width=0.8)+
@@ -622,7 +631,8 @@ plot.binacc = ggplot(data=subset(dat.binchoice, TrialType%in%c("AI","AAN")),
   geom_hline(yintercept=.5, linetype='dotted')+
   theme_classic()+
   labs(x='Model')+
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),
+        legend.position="none")
 plot.binacc
 
 savename <- "1_binaryAccuracy_split.png"
@@ -774,6 +784,7 @@ df_correlation = df_correlation %>%
          pVal2humansLabel = ifelse(pVal2humansAdjusted<0.001, "***", 
                                  ifelse(pVal2humansAdjusted<0.01, "**",
                                         ifelse(pVal2humansAdjusted<0.05, "*", ""))))
+
 ```
 
 ## Plot
@@ -783,10 +794,10 @@ df_correlation = df_correlation %>%
 cortext_size = 3
 
 plot.model2human = ggplot(dat=dat.model2human)+  
-  geom_point(mapping=aes(x=ModelScore, y=HumanScore, color=Category), 
-             size=0.2, position=position_jitter(width=0.01))+
-  facet_wrap(~Metric, ncol=ncols)+
   geom_abline(slope=1, intercept=0, size=0.2)+
+  geom_point(mapping=aes(x=ModelScore, y=HumanScore, color=Category), 
+             size=0.6, position=position_jitter(width=0.01))+
+  facet_wrap(~Metric, ncol=ncols)+
   geom_text(mapping=aes(x=-0.25, y=1, 
                         label=sprintf("r = %.2f%s", round(Correlation,2), pVal2zeroLabel)), 
             data=df_correlation, size=cortext_size, hjust = 0)+
@@ -795,8 +806,8 @@ plot.model2human = ggplot(dat=dat.model2human)+
   theme(legend.position="none")
 plot.model2human
 
-savename <- "model2human_byTrialType_ANNs.png"
-ggsave(paste(savedir,savename,sep="/"), height=15,width=25, units='cm')
+#savename <- "model2human_byTrialType_ANNs.png"
+#ggsave(paste(savedir,savename,sep="/"), height=15,width=25, units='cm')
 ```
 
 
@@ -879,9 +890,9 @@ df_correlation = df_correlation %>%
 ### Plot
 ```{r}
 plot.plaus = ggplot(data=dat.plaus)+
-  geom_point(mapping=aes(x=Plausible, y=Implausible), size=0.2, color=color_plaus)+
-  facet_wrap(~Metric, ncol=ncols, nrow=nrows)+
   geom_abline(slope=1, intercept=0, size=0.2)+
+  geom_point(mapping=aes(x=Plausible, y=Implausible), size=0.6, color=color_plaus)+
+  facet_wrap(~Metric, ncol=ncols, nrow=nrows)+
   geom_text(mapping=aes(x=0.2, y=1, label=sprintf("r = %.2f%s", round(Correlation,2), pVal2zeroLabel)), 
             data=df_correlation, size=cortext_size)+
   coord_cartesian(ylim=c(0,1), xlim=c(0,1))+
@@ -895,10 +906,10 @@ plot.plaus
 ## COMBINE
 
 ```{r}
-plot.binacc /  (plot.model2human | plot.plaus)
+(plot.binacc | plot_spacer() | (plot.model2human / plot.plaus) ) + plot_layout(widths=c(1,0.5, 3))
 
 savename <- "composite.png"
-ggsave(paste(savedir,savename,sep="/"), height=24,width=28, units='cm')
+ggsave(paste(savedir,savename,sep="/"), height=15,width=30, units='cm')
 ```
 
 
@@ -961,7 +972,7 @@ results.baselines = results.baselines %>%
   ungroup()
 
 savename <- "regression_by_metric.csv"
-write.csv(results, paste(savedir,savename,sep="/"), row.names=FALSE)
+write.csv(results.ANN, paste(savedir,savename,sep="/"), row.names=FALSE)
 ```
 
 

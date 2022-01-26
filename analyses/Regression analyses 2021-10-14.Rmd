@@ -106,7 +106,7 @@ dat$ItemNum = as.factor(dat$ItemNum)
 dat$WorkerId = as.factor(dat$WorkerId)
 ```
 
-### Humans
+### Fit
 
 ```{r lmer humans}
 m0 = lmer(Score ~ Plausibility*TrialType*Voice + agent_freq_norm + patient_freq_norm + verb_freq_norm + sentence_freq_norm + (1|ItemNum) + (1|WorkerId), 

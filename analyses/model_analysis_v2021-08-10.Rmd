@@ -440,18 +440,18 @@ if (nrows * ncols < nr_models) {
 
 ```
 
-```{r, echo=FALSE, fig.height=12, fig.width=15}
-ggplot(data=dat.binchoice, mapping=aes(x=TrialType, y=Accuracy))+
-  facet_wrap(~Metric, ncol = 3)+
+```{r, echo=FALSE, fig.height=8, fig.width=6}
+ggplot(data=dat.binchoice, mapping=aes(x=Metric, y=Accuracy))+
+  facet_wrap(~TrialType, nrow = 3)+
   stat_summary(geom='col', fun.y='mean',
-               color='black', fill='gray80', width=0.5)+
+               color='black', fill='gray80', width=0.8)+
   stat_summary(geom='errorbar', fun.data='mean_se',
                color = 'black', size = 0.5, width=0.1)+
   coord_cartesian(ylim=c(0,1))+
-  theme_minimal()
+  theme_classic()
 
-savename <- "1_binaryAccuracy_split.png"
-ggsave(paste(savedir,savename,sep="/"), width=ncols*10, height=nrows*7, units='cm')
+#savename <- "1_binaryAccuracy_split.png"
+#ggsave(paste(savedir,savename,sep="/"), width=ncols*10, height=nrows*7, units='cm')
 ```
 
 
@@ -556,7 +556,7 @@ for(i in seq_along(models_metrics)){
   
   p <- ggplot(data=curr_data)+
   geom_point(mapping=aes(x=Implausible, y=Plausible))+
-  facet_wrap(~TrialType)+
+  facet_wrap(~Metric)+
   geom_abline()+
   theme_classic()+
   ggtitle(paste(models_metrics[i]))
@@ -574,8 +574,9 @@ if (which_models=="all") {
   grid.arrange(A1, A2, A3, A4, A5, A6, A7, ncol=ncols, nrow=nrows)
   g <- arrangeGrob(A1, A2, A3, A4, A5, A6, A7, ncol=ncols, nrow=nrows)
   }
-savename <- "4_withinItem_split.png"
-ggsave(paste(savedir,savename,sep="/"), width=ncols*10, height=nrows*7, units='cm', g)
+
+#savename <- "4_withinItem_split.png"
+#ggsave(paste(savedir,savename,sep="/"), width=ncols*10, height=nrows*7, units='cm', g)
 ```
 
 # ACTIVE VS PASSIVE
