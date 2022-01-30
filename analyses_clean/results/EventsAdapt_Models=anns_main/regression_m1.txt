@@ -1,0 +1,186 @@
+Linear mixed model fit by maximum likelihood . t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: NormScore ~ Plausibility * TrialType * Voice * Metric + agent_freq_norm *  
+    Metric + patient_freq_norm * Metric + verb_freq_norm * Metric +  
+    sentence_freq_norm * Metric + (1 + Plausibility | ItemNum)
+   Data: dat
+Control: lmerControl(optimizer = "bobyqa", optCtrl = list(maxfun = 2e+06))
+
+     AIC      BIC   logLik deviance df.resid 
+ -8847.7  -8264.9   4507.9  -9015.7     7536 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-4.2304 -0.6322  0.0200  0.6293  6.1116 
+
+Random effects:
+ Groups   Name                    Variance  Std.Dev. Corr 
+ ItemNum  (Intercept)             0.0043130 0.06567       
+          PlausibilityImplausible 0.0003944 0.01986  -0.82
+ Residual                         0.0164856 0.12840       
+Number of obs: 7620, groups:  ItemNum, 381
+
+Fixed effects:
+                                                                          Estimate Std. Error         df t value
+(Intercept)                                                              7.946e-01  9.751e-03  1.514e+03  81.494
+PlausibilityImplausible                                                 -3.456e-03  1.123e-02  4.652e+03  -0.308
+TrialTypeAAN                                                             7.182e-02  1.396e-02  1.501e+03   5.145
+TrialTypeAI                                                              9.656e-02  1.458e-02  1.592e+03   6.623
+VoiceA>P                                                                -2.175e-02  1.747e-02  7.217e+03  -1.245
+MetricGPT2-XL.l2r                                                       -3.066e-01  1.117e-02  6.841e+03 -27.449
+MetricBERT-large.pverb                                                  -2.984e-01  1.117e-02  6.841e+03 -26.710
+MetricRoBERTa-large.pverb                                               -2.388e-01  1.117e-02  6.841e+03 -21.378
+MetrictinyLSTM.surprisal                                                -4.024e-01  1.117e-02  6.841e+03 -36.016
+agent_freq_norm                                                          8.041e-03  5.777e-03  2.760e+03   1.392
+patient_freq_norm                                                        1.485e-02  5.768e-03  2.737e+03   2.574
+verb_freq_norm                                                           1.131e-02  4.722e-03  1.288e+03   2.395
+sentence_freq_norm                                                      -2.718e-02  8.141e-03  2.863e+03  -3.339
+PlausibilityImplausible:TrialTypeAAN                                    -3.808e-01  1.616e-02  4.651e+03 -23.564
+PlausibilityImplausible:TrialTypeAI                                     -7.736e-01  1.681e-02  4.675e+03 -46.024
+PlausibilityImplausible:VoiceA>P                                         1.441e-04  2.210e-02  6.841e+03   0.007
+TrialTypeAAN:VoiceA>P                                                   -9.047e-03  2.255e-02  6.843e+03  -0.401
+TrialTypeAI:VoiceA>P                                                     2.798e-02  2.280e-02  6.869e+03   1.227
+PlausibilityImplausible:MetricGPT2-XL.l2r                                9.079e-03  1.570e-02  6.841e+03   0.578
+PlausibilityImplausible:MetricBERT-large.pverb                           1.782e-03  1.570e-02  6.841e+03   0.114
+PlausibilityImplausible:MetricRoBERTa-large.pverb                       -1.742e-04  1.570e-02  6.841e+03  -0.011
+PlausibilityImplausible:MetrictinyLSTM.surprisal                         4.914e-03  1.570e-02  6.841e+03   0.313
+TrialTypeAAN:MetricGPT2-XL.l2r                                          -2.341e-02  1.600e-02  6.841e+03  -1.463
+TrialTypeAI:MetricGPT2-XL.l2r                                           -5.058e-03  1.675e-02  6.841e+03  -0.302
+TrialTypeAAN:MetricBERT-large.pverb                                     -2.157e-02  1.600e-02  6.841e+03  -1.348
+TrialTypeAI:MetricBERT-large.pverb                                       3.020e-02  1.675e-02  6.841e+03   1.803
+TrialTypeAAN:MetricRoBERTa-large.pverb                                  -1.767e-02  1.600e-02  6.841e+03  -1.104
+TrialTypeAI:MetricRoBERTa-large.pverb                                    1.755e-02  1.675e-02  6.841e+03   1.048
+TrialTypeAAN:MetrictinyLSTM.surprisal                                   -8.056e-02  1.600e-02  6.841e+03  -5.034
+TrialTypeAI:MetrictinyLSTM.surprisal                                    -1.467e-01  1.675e-02  6.841e+03  -8.758
+VoiceA>P:MetricGPT2-XL.l2r                                               1.277e-01  2.385e-02  6.841e+03   5.356
+VoiceA>P:MetricBERT-large.pverb                                          4.004e-02  2.385e-02  6.841e+03   1.679
+VoiceA>P:MetricRoBERTa-large.pverb                                       5.678e-03  2.385e-02  6.841e+03   0.238
+VoiceA>P:MetrictinyLSTM.surprisal                                       -7.865e-02  2.385e-02  6.841e+03  -3.298
+MetricGPT2-XL.l2r:agent_freq_norm                                       -6.115e-03  6.804e-03  6.841e+03  -0.899
+MetricBERT-large.pverb:agent_freq_norm                                  -3.738e-02  6.804e-03  6.841e+03  -5.493
+MetricRoBERTa-large.pverb:agent_freq_norm                               -3.774e-02  6.804e-03  6.841e+03  -5.547
+MetrictinyLSTM.surprisal:agent_freq_norm                                -2.820e-02  6.804e-03  6.841e+03  -4.145
+MetricGPT2-XL.l2r:patient_freq_norm                                     -9.329e-03  6.804e-03  6.841e+03  -1.371
+MetricBERT-large.pverb:patient_freq_norm                                -4.412e-02  6.804e-03  6.841e+03  -6.485
+MetricRoBERTa-large.pverb:patient_freq_norm                             -4.046e-02  6.804e-03  6.841e+03  -5.946
+MetrictinyLSTM.surprisal:patient_freq_norm                              -3.448e-02  6.804e-03  6.841e+03  -5.068
+MetricGPT2-XL.l2r:verb_freq_norm                                         3.295e-03  5.075e-03  6.841e+03   0.649
+MetricBERT-large.pverb:verb_freq_norm                                    3.912e-02  5.075e-03  6.841e+03   7.709
+MetricRoBERTa-large.pverb:verb_freq_norm                                 4.288e-02  5.075e-03  6.841e+03   8.449
+MetrictinyLSTM.surprisal:verb_freq_norm                                 -2.354e-02  5.075e-03  6.841e+03  -4.638
+MetricGPT2-XL.l2r:sentence_freq_norm                                     8.417e-02  9.343e-03  6.841e+03   9.009
+MetricBERT-large.pverb:sentence_freq_norm                                9.775e-02  9.343e-03  6.841e+03  10.463
+MetricRoBERTa-large.pverb:sentence_freq_norm                             8.314e-02  9.343e-03  6.841e+03   8.899
+MetrictinyLSTM.surprisal:sentence_freq_norm                              4.502e-03  9.343e-03  6.841e+03   0.482
+PlausibilityImplausible:TrialTypeAAN:VoiceA>P                            3.219e-02  3.187e-02  6.841e+03   1.010
+PlausibilityImplausible:TrialTypeAI:VoiceA>P                            -6.945e-02  3.215e-02  6.841e+03  -2.160
+PlausibilityImplausible:TrialTypeAAN:MetricGPT2-XL.l2r                   3.209e-01  2.259e-02  6.841e+03  14.208
+PlausibilityImplausible:TrialTypeAI:MetricGPT2-XL.l2r                    6.071e-01  2.350e-02  6.841e+03  25.833
+PlausibilityImplausible:TrialTypeAAN:MetricBERT-large.pverb              3.252e-01  2.259e-02  6.841e+03  14.399
+PlausibilityImplausible:TrialTypeAI:MetricBERT-large.pverb               6.138e-01  2.350e-02  6.841e+03  26.119
+PlausibilityImplausible:TrialTypeAAN:MetricRoBERTa-large.pverb           3.281e-01  2.259e-02  6.841e+03  14.524
+PlausibilityImplausible:TrialTypeAI:MetricRoBERTa-large.pverb            6.229e-01  2.350e-02  6.841e+03  26.507
+PlausibilityImplausible:TrialTypeAAN:MetrictinyLSTM.surprisal            3.845e-01  2.259e-02  6.841e+03  17.022
+PlausibilityImplausible:TrialTypeAI:MetrictinyLSTM.surprisal             8.147e-01  2.350e-02  6.841e+03  34.667
+PlausibilityImplausible:VoiceA>P:MetricGPT2-XL.l2r                      -7.857e-04  3.126e-02  6.841e+03  -0.025
+PlausibilityImplausible:VoiceA>P:MetricBERT-large.pverb                 -1.185e-02  3.126e-02  6.841e+03  -0.379
+PlausibilityImplausible:VoiceA>P:MetricRoBERTa-large.pverb              -5.766e-03  3.126e-02  6.841e+03  -0.184
+PlausibilityImplausible:VoiceA>P:MetrictinyLSTM.surprisal               -6.633e-04  3.126e-02  6.841e+03  -0.021
+TrialTypeAAN:VoiceA>P:MetricGPT2-XL.l2r                                 -1.086e-03  3.188e-02  6.841e+03  -0.034
+TrialTypeAI:VoiceA>P:MetricGPT2-XL.l2r                                  -2.918e-02  3.221e-02  6.841e+03  -0.906
+TrialTypeAAN:VoiceA>P:MetricBERT-large.pverb                             6.537e-03  3.188e-02  6.841e+03   0.205
+TrialTypeAI:VoiceA>P:MetricBERT-large.pverb                             -2.739e-02  3.221e-02  6.841e+03  -0.850
+TrialTypeAAN:VoiceA>P:MetricRoBERTa-large.pverb                          1.657e-04  3.188e-02  6.841e+03   0.005
+TrialTypeAI:VoiceA>P:MetricRoBERTa-large.pverb                          -1.857e-02  3.221e-02  6.841e+03  -0.577
+TrialTypeAAN:VoiceA>P:MetrictinyLSTM.surprisal                           1.192e-02  3.188e-02  6.841e+03   0.374
+TrialTypeAI:VoiceA>P:MetrictinyLSTM.surprisal                           -3.461e-02  3.221e-02  6.841e+03  -1.074
+PlausibilityImplausible:TrialTypeAAN:VoiceA>P:MetricGPT2-XL.l2r         -4.646e-02  4.508e-02  6.841e+03  -1.031
+PlausibilityImplausible:TrialTypeAI:VoiceA>P:MetricGPT2-XL.l2r           7.339e-02  4.546e-02  6.841e+03   1.614
+PlausibilityImplausible:TrialTypeAAN:VoiceA>P:MetricBERT-large.pverb    -1.629e-02  4.508e-02  6.841e+03  -0.361
+PlausibilityImplausible:TrialTypeAI:VoiceA>P:MetricBERT-large.pverb      1.180e-01  4.546e-02  6.841e+03   2.596
+PlausibilityImplausible:TrialTypeAAN:VoiceA>P:MetricRoBERTa-large.pverb -2.592e-02  4.508e-02  6.841e+03  -0.575
+PlausibilityImplausible:TrialTypeAI:VoiceA>P:MetricRoBERTa-large.pverb   8.077e-02  4.546e-02  6.841e+03   1.777
+PlausibilityImplausible:TrialTypeAAN:VoiceA>P:MetrictinyLSTM.surprisal  -3.507e-02  4.508e-02  6.841e+03  -0.778
+PlausibilityImplausible:TrialTypeAI:VoiceA>P:MetrictinyLSTM.surprisal    7.283e-02  4.546e-02  6.841e+03   1.602
+                                                                        Pr(>|t|)    
+(Intercept)                                                              < 2e-16 ***
+PlausibilityImplausible                                                 0.758272    
+TrialTypeAAN                                                            3.03e-07 ***
+TrialTypeAI                                                             4.79e-11 ***
+VoiceA>P                                                                0.213096    
+MetricGPT2-XL.l2r                                                        < 2e-16 ***
+MetricBERT-large.pverb                                                   < 2e-16 ***
+MetricRoBERTa-large.pverb                                                < 2e-16 ***
+MetrictinyLSTM.surprisal                                                 < 2e-16 ***
+agent_freq_norm                                                         0.164053    
+patient_freq_norm                                                       0.010112 *  
+verb_freq_norm                                                          0.016770 *  
+sentence_freq_norm                                                      0.000852 ***
+PlausibilityImplausible:TrialTypeAAN                                     < 2e-16 ***
+PlausibilityImplausible:TrialTypeAI                                      < 2e-16 ***
+PlausibilityImplausible:VoiceA>P                                        0.994799    
+TrialTypeAAN:VoiceA>P                                                   0.688219    
+TrialTypeAI:VoiceA>P                                                    0.219767    
+PlausibilityImplausible:MetricGPT2-XL.l2r                               0.563022    
+PlausibilityImplausible:MetricBERT-large.pverb                          0.909621    
+PlausibilityImplausible:MetricRoBERTa-large.pverb                       0.991145    
+PlausibilityImplausible:MetrictinyLSTM.surprisal                        0.754238    
+TrialTypeAAN:MetricGPT2-XL.l2r                                          0.143444    
+TrialTypeAI:MetricGPT2-XL.l2r                                           0.762655    
+TrialTypeAAN:MetricBERT-large.pverb                                     0.177617    
+TrialTypeAI:MetricBERT-large.pverb                                      0.071438 .  
+TrialTypeAAN:MetricRoBERTa-large.pverb                                  0.269539    
+TrialTypeAI:MetricRoBERTa-large.pverb                                   0.294720    
+TrialTypeAAN:MetrictinyLSTM.surprisal                                   4.92e-07 ***
+TrialTypeAI:MetrictinyLSTM.surprisal                                     < 2e-16 ***
+VoiceA>P:MetricGPT2-XL.l2r                                              8.80e-08 ***
+VoiceA>P:MetricBERT-large.pverb                                         0.093233 .  
+VoiceA>P:MetricRoBERTa-large.pverb                                      0.811810    
+VoiceA>P:MetrictinyLSTM.surprisal                                       0.000978 ***
+MetricGPT2-XL.l2r:agent_freq_norm                                       0.368818    
+MetricBERT-large.pverb:agent_freq_norm                                  4.09e-08 ***
+MetricRoBERTa-large.pverb:agent_freq_norm                               3.01e-08 ***
+MetrictinyLSTM.surprisal:agent_freq_norm                                3.44e-05 ***
+MetricGPT2-XL.l2r:patient_freq_norm                                     0.170362    
+MetricBERT-large.pverb:patient_freq_norm                                9.52e-11 ***
+MetricRoBERTa-large.pverb:patient_freq_norm                             2.88e-09 ***
+MetrictinyLSTM.surprisal:patient_freq_norm                              4.12e-07 ***
+MetricGPT2-XL.l2r:verb_freq_norm                                        0.516182    
+MetricBERT-large.pverb:verb_freq_norm                                   1.45e-14 ***
+MetricRoBERTa-large.pverb:verb_freq_norm                                 < 2e-16 ***
+MetrictinyLSTM.surprisal:verb_freq_norm                                 3.59e-06 ***
+MetricGPT2-XL.l2r:sentence_freq_norm                                     < 2e-16 ***
+MetricBERT-large.pverb:sentence_freq_norm                                < 2e-16 ***
+MetricRoBERTa-large.pverb:sentence_freq_norm                             < 2e-16 ***
+MetrictinyLSTM.surprisal:sentence_freq_norm                             0.629933    
+PlausibilityImplausible:TrialTypeAAN:VoiceA>P                           0.312518    
+PlausibilityImplausible:TrialTypeAI:VoiceA>P                            0.030789 *  
+PlausibilityImplausible:TrialTypeAAN:MetricGPT2-XL.l2r                   < 2e-16 ***
+PlausibilityImplausible:TrialTypeAI:MetricGPT2-XL.l2r                    < 2e-16 ***
+PlausibilityImplausible:TrialTypeAAN:MetricBERT-large.pverb              < 2e-16 ***
+PlausibilityImplausible:TrialTypeAI:MetricBERT-large.pverb               < 2e-16 ***
+PlausibilityImplausible:TrialTypeAAN:MetricRoBERTa-large.pverb           < 2e-16 ***
+PlausibilityImplausible:TrialTypeAI:MetricRoBERTa-large.pverb            < 2e-16 ***
+PlausibilityImplausible:TrialTypeAAN:MetrictinyLSTM.surprisal            < 2e-16 ***
+PlausibilityImplausible:TrialTypeAI:MetrictinyLSTM.surprisal             < 2e-16 ***
+PlausibilityImplausible:VoiceA>P:MetricGPT2-XL.l2r                      0.979947    
+PlausibilityImplausible:VoiceA>P:MetricBERT-large.pverb                 0.704693    
+PlausibilityImplausible:VoiceA>P:MetricRoBERTa-large.pverb              0.853642    
+PlausibilityImplausible:VoiceA>P:MetrictinyLSTM.surprisal               0.983071    
+TrialTypeAAN:VoiceA>P:MetricGPT2-XL.l2r                                 0.972835    
+TrialTypeAI:VoiceA>P:MetricGPT2-XL.l2r                                  0.365121    
+TrialTypeAAN:VoiceA>P:MetricBERT-large.pverb                            0.837544    
+TrialTypeAI:VoiceA>P:MetricBERT-large.pverb                             0.395120    
+TrialTypeAAN:VoiceA>P:MetricRoBERTa-large.pverb                         0.995854    
+TrialTypeAI:VoiceA>P:MetricRoBERTa-large.pverb                          0.564269    
+TrialTypeAAN:VoiceA>P:MetrictinyLSTM.surprisal                          0.708572    
+TrialTypeAI:VoiceA>P:MetrictinyLSTM.surprisal                           0.282638    
+PlausibilityImplausible:TrialTypeAAN:VoiceA>P:MetricGPT2-XL.l2r         0.302759    
+PlausibilityImplausible:TrialTypeAI:VoiceA>P:MetricGPT2-XL.l2r          0.106532    
+PlausibilityImplausible:TrialTypeAAN:VoiceA>P:MetricBERT-large.pverb    0.717895    
+PlausibilityImplausible:TrialTypeAI:VoiceA>P:MetricBERT-large.pverb     0.009445 ** 
+PlausibilityImplausible:TrialTypeAAN:VoiceA>P:MetricRoBERTa-large.pverb 0.565235    
+PlausibilityImplausible:TrialTypeAI:VoiceA>P:MetricRoBERTa-large.pverb  0.075660 .  
+PlausibilityImplausible:TrialTypeAAN:VoiceA>P:MetrictinyLSTM.surprisal  0.436612    
+PlausibilityImplausible:TrialTypeAI:VoiceA>P:MetrictinyLSTM.surprisal   0.109197    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1

@@ -1,0 +1,867 @@
+---
+title: "results_main"
+output: html_document
+---
+
+# SETUP
+
+```{r setup, include=FALSE, echo=TRUE}
+knitr::opts_chunk$set(echo = TRUE)
+rm(list=ls()) 
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(grid)
+library(gridExtra)
+library(operator.tools)
+library(lme4)
+library(lmerTest)
+library(cocor)
+library(patchwork)
+library(gtools)
+
+source('dataloader_utils.R') #includes normalizations, read_data functions
+source('stats_utils.R')
+
+# Suppress summarise info
+options(dplyr.summarise.inform = FALSE)
+```
+
+### Print environment variables 
+```{r}
+#SET ENVIRONMENT VARIABLES
+which_models <- "all_main" #can be "anns_all", "anns_main", or "all_main"
+# anns_main = human + main ANNs
+# all_main = human + main ANNs + main baselines
+# anns_all = human + all ANNs
+normalization <- "min-max" #can be "min-max", "zscore"
+
+path <- paste("results/")
+ifelse(!dir.exists(path), dir.create(path), FALSE)
+savedir <- paste(path,"EventsAdapt_Models=",which_models,sep='')
+ifelse(!dir.exists(savedir), dir.create(savedir), FALSE)
+
+print(paste(savedir))
+message("Running with the following environment variables:")
+message(paste("which_models: ", which_models))
+message(paste("normalization: ", normalization))
+
+#for plotting the dotted reference line
+if (grepl("min-max", normalization) == TRUE){
+  reference_value = 0.5
+} else {
+  reference_value = 0
+}
+```
+
+# READ DATA
+```{r}
+#created via preprocess_datasets_Events*.Rmd
+dat = read.csv('clean_data/clean_EventsAdapt_df.csv')
+human_dat = read.csv('clean_data/clean_EventsAdapt_human_dat.csv')
+```
+
+```{r}
+if (grepl("min-max", normalization) == TRUE){
+  normalization <- function(x) {
+    return(min_max(x)) }
+} else {
+  normalization <- function(x) {
+    return(scale_this(x)) }
+}
+```
+
+# Select which models/metrics to plot
+
+```{r, utils.choose_models, echo=FALSE}
+human <- c("human")
+anns <- c("GPT2","BERT","RoBERTa","tinyLSTM")
+anns_main <- c("GPT2-XL.l2r","BERT-large.pverb","RoBERTa-large.pverb","tinyLSTM.surprisal") #best metrics
+baselines <- c("syntax.PPMI","SDM")
+
+anns_main <- c(human, anns_main)
+all_main <- c(anns_main, baselines)
+
+unique_metrics = unique(dat$Metric)
+anns <- unique_metrics[grepl(paste(anns, collapse = "|"), unique_metrics)]
+anns = mixedsort(anns)
+
+anns_all <- c(human,anns)
+
+# select which to use
+chosen_models = eval(parse(text=which_models))
+model_dat = dat %>% filter(Metric %in% chosen_models)
+
+message("Using these models/metrics:")
+model_dat$Metric = factor(model_dat$Metric, levels = chosen_models)
+print(unique(model_dat$Metric))
+```
+
+# CONTRASTS
+```{r}
+dat = model_dat
+dat$Plausibility = factor(dat$Plausibility, levels=c("Plausible", "Implausible")) # dummy coding by default
+
+dat$Voice = as.factor(dat$Voice)
+contrasts(dat$Voice) = c(0.5, -0.5)
+colnames(attr(dat$Voice, "contrasts")) = c("A>P")
+
+dat$TrialType = factor(dat$TrialType, levels=c("AAR", "AAN", "AI"))    # dummy coding by default
+dat$Metric = as.factor(dat$Metric)
+dat = within(dat, Metric <- relevel(Metric, ref = "human"))    # set humans as the reference 
+dat$ItemNum = as.factor(dat$ItemNum)
+```
+
+
+# BINARY ACCURACY
+
+## General plotting settings
+
+```{r}
+#Set plotting options for grid plots
+nr_models = length(chosen_models)
+ncols=nr_models #models plus human
+nrows=round(nr_models/ncols)
+if (nrows * ncols < nr_models) {
+  nrows = nrows + 1
+}
+```
+
+```{r, echo=FALSE, fig.height=12, fig.width=15}
+
+#add Category color
+if (which_models == "anns_all") {
+  dat.binchoice = dat %>%
+  mutate(Metric = as.character(Metric)) %>%
+  mutate(Category = ifelse(startsWith(Metric, "BERT"), "BERT", "RoBERTa")) %>%
+  mutate(Category = ifelse(startsWith(Metric, "GPT2"), "GPT2", Category)) %>%
+  mutate(Category = ifelse(startsWith(Metric, "tiny"), "tinyLSTM", Category)) %>%
+  mutate(Category = ifelse(Metric=="human", "human", Category))
+} else {
+  dat.binchoice = dat %>%
+  mutate(Category = ifelse(Metric%in%anns, "ANNs", "baselines")) %>%
+  mutate(Category = ifelse(Metric=="human", "human", Category))
+}
+
+dat.binchoice = dat.binchoice %>%
+  group_by(ItemNum, TrialType, Voice, Metric, LowerBetter, Category) %>%
+  summarize(ScoreDiff = NormScore[Plausibility=="Plausible"]-NormScore[Plausibility=="Implausible"]) %>%
+  mutate(FinalScoreDiff = ifelse(LowerBetter==TRUE, -ScoreDiff, ScoreDiff)) %>%
+  mutate(Accuracy = ifelse(FinalScoreDiff>0, 1, 0)) %>%
+  ungroup()
+
+# specify order for plotting
+dat.binchoice$Metric = factor(dat.binchoice$Metric, levels=chosen_models)
+dat.binchoice$TrialType = factor(dat.binchoice$TrialType, levels=c("AI", "AAN", "AAR"))
+
+if (which_models=="anns_all") {
+  dat.binchoice$Category = factor(dat.binchoice$Category, levels=c("human", "GPT2", "BERT", "RoBERTa", "tinyLSTM"))
+} else {
+  dat.binchoice$Category = factor(dat.binchoice$Category, levels=c("human", "ANNs", "baselines"))
+}
+```
+
+### Stats
+
+```{r}
+# get p values
+dat.binchoice.summary = dat.binchoice %>%
+  filter(TrialType %in% c("AI", "AAN")) %>%
+  group_by(Category, Metric, TrialType) %>%
+  summarize(NumCorrect=sum(Accuracy), NumTotal=length(Accuracy)) %>%
+  mutate(AccuracyScore = NumCorrect/NumTotal) %>%
+  ungroup() %>%
+  mutate(pVal = calculate_binom_pval(NumCorrect, NumTotal))
+
+# adjust for multiple comparisons within each category
+dat.binchoice.summary = dat.binchoice.summary %>%
+  group_by(Category) %>%
+  mutate(pValAdjusted = p.adjust(pVal, method="fdr", n=length(pVal)),
+         ntoadjust = length(pVal)) %>%
+  mutate(pLabel = ifelse(pValAdjusted<0.001, "***", 
+                         ifelse(pValAdjusted<0.01, "**",
+                                ifelse(pValAdjusted<0.05, "*", "")))) %>%
+  ungroup()
+```
+
+```{r}
+# get human responses separately
+human.results = dat.binchoice.summary %>%
+  filter(Metric=='human') %>%
+  select(TrialType, NumCorrect, NumTotal) %>%
+  rename(NumCorrectHuman=NumCorrect, NumTotalHuman=NumTotal)
+dat.binchoice.summary.withchisq = merge(dat.binchoice.summary, human.results)
+dat.binchoice.summary.withchisq = dat.binchoice.summary.withchisq %>%
+  mutate(ChiSq = calculate_chisq_vectorized_chi(NumCorrect, NumTotal, NumCorrectHuman),
+         pVal2humans = calculate_chisq_vectorized_p(NumCorrect, NumTotal, NumCorrectHuman)) %>%
+  group_by(Category) %>%
+  mutate(pVal2humansAdjusted = p.adjust(pVal2humans, method="fdr", n=length(pVal2humans)),
+         ntoadjust = length(pVal2humans)) %>%
+  mutate(pLabel2humans = ifelse(pVal2humansAdjusted<0.001, "***", 
+                         ifelse(pVal2humansAdjusted<0.01, "**",
+                                ifelse(pVal2humansAdjusted<0.05, "*", "")))) 
+```
+
+### Plot
+
+```{r, echo=FALSE}
+
+plot.binacc = ggplot(data=subset(dat.binchoice, TrialType%in%c("AI","AAN")), 
+       mapping=aes(x=Metric, y=Accuracy, fill=Category))+
+  facet_wrap(~TrialType, ncol = 1)+
+  geom_hline(yintercept=1, color='gray50', linetype='dotted')+
+  stat_summary(geom='col', fun.y='mean',
+               color='black', width=0.8)+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               color = 'black', size = 0.5, width=0.1)+
+  geom_text(mapping=aes(x=Metric, y=0.05, label=pLabel), data=dat.binchoice.summary)+
+  coord_cartesian(ylim=c(0,1))+
+  geom_hline(yintercept=.5, linetype='dotted')+
+  theme_classic()+
+  labs(x='Model')+
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+plot.binacc
+
+savename <- "1_binaryAccuracy_split.png"
+ggsave(paste(savedir,savename,sep="/"), width=15, height=12, units='cm')
+```
+
+```{r, echo=FALSE}
+
+# get p values
+dat.binchoice.summary.aar = dat.binchoice %>%
+  filter(TrialType %in% c("AAR")) %>%
+  group_by(Category, Metric, TrialType) %>%
+  summarize(NumCorrect=sum(Accuracy), NumTotal=length(Accuracy)) %>%
+  ungroup() %>%
+  mutate(pVal = calculate_binom_pval(NumCorrect, NumTotal))
+
+# adjust for multiple comparisons within each category
+dat.binchoice.summary.aar = dat.binchoice.summary.aar %>%
+  group_by(Category) %>%
+  mutate(pValAdjusted = p.adjust(pVal, method="fdr", n=length(pVal)),
+         ntoadjust = length(pVal)) %>%
+  mutate(pLabel = ifelse(pValAdjusted<0.001, "***", 
+                         ifelse(pValAdjusted<0.01, "**",
+                                ifelse(pValAdjusted<0.05, "*", ""))))
+
+#check for AAR condition (should be around chance)
+plot.binchoice.aar =ggplot(data=subset(dat.binchoice, TrialType%in%c("AAR")), 
+       mapping=aes(x=Metric, y=Accuracy, fill=Category))+
+  facet_wrap(~TrialType, ncol = 1)+
+  geom_hline(yintercept=1, color='gray50', linetype='dotted')+
+  stat_summary(geom='col', fun.y='mean',
+               color='black', width=0.8)+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               color = 'black', size = 0.5, width=0.1)+
+  geom_text(mapping=aes(x=Metric, y=0.05, label=pLabel), data=dat.binchoice.summary.aar)+
+  coord_cartesian(ylim=c(0,1))+
+  geom_hline(yintercept=.5, linetype='dotted')+
+  theme_classic()+
+  labs(x='Model')+
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+plot.binchoice.aar
+
+savename <- "1_binaryAccuracy_split_AAR.png"
+ggsave(paste(savedir,savename,sep="/"), width=15, height=12, units='cm')
+```
+
+# MODEL HUMAN COMPARISON
+
+## Calculate human 2 human response correlation 
+(each human with the average of all the rest)
+```{r}
+human_dat.comp = human_dat %>%
+  mutate(FinalNormScore = normalization(Score)) %>%
+  select(WorkerId, ItemNum, TrialType, Plausibility, Voice, Sentence, FinalNormScore)
+
+workerIDs = unique(human_dat.comp$WorkerId)
+df_correlation = data.frame()
+
+for (i in seq_along(workerIDs)) {
+  if (i%%50==0) {    # just to keep track (n=511 for EventsAdapt)
+    print(i)
+  }
+  human_dat.this = human_dat.comp %>% filter(WorkerId==workerIDs[i])
+  human_dat.rest = human_dat.comp %>% filter(WorkerId!=workerIDs[i]) %>%
+    filter(ItemNum %in% unique(human_dat.this$ItemNum)) %>%
+    group_by(ItemNum, Plausibility, Voice, Sentence) %>% 
+    summarize(MeanNormScore=mean(FinalNormScore))
+  
+  human_dat.side2side = merge(human_dat.this, human_dat.rest,
+                              by=c("ItemNum", "Plausibility", "Voice"))
+  corval= cor(human_dat.side2side$FinalNormScore, human_dat.side2side$MeanNormScore)
+  # add vector to a dataframe
+  df <- data.frame(workerIDs[i], corval)
+  df_correlation <- rbind(df_correlation,df)
+}
+
+human2human_corr = mean(df_correlation$corval)
+print(paste("The human2human overall correlation value is", human2human_corr))
+```
+
+## Sample a random human response for each item 
+And compute the avg of all other responses 
+
+```{r}
+set.seed(21)
+human_dat.sampled = human_dat.comp %>%
+  group_by(ItemNum, TrialType, Plausibility, Voice, Sentence) %>%
+  summarize(RandomScore = sample(FinalNormScore,1),
+            MeanScoreRest = (sum(FinalNormScore)-RandomScore)/(length(FinalNormScore)-1)) %>%
+  ungroup()
+```
+
+## Prep data
+
+```{r}
+dat.human = dat %>% filter(Metric=="human") %>%
+  select(ItemNum, TrialType, Sentence, Plausibility, FinalNormScore)
+dat.model = dat %>% filter(Metric!="human") %>%
+  select(ItemNum, TrialType, Sentence, Plausibility, FinalNormScore, Metric)
+dat.model2human = merge(dat.human, dat.model, 
+                        by=c("ItemNum", "TrialType", "Sentence", "Plausibility")) %>%
+  rename(HumanScore=FinalNormScore.x, ModelScore=FinalNormScore.y)
+```
+
+```{r}
+# add human2human data
+human_dat.sampled = human_dat.sampled %>%
+  select(-Voice) %>%
+  filter(Sentence %in% unique(dat.model2human$Sentence)) %>%  # make sure it's the same sents
+  rename(HumanScore=MeanScoreRest, ModelScore=RandomScore)    # renaming for convenience 
+human_dat.sampled$Metric = 'singleHuman'
+```
+
+```{r}
+dat.model2human = rbind(dat.model2human, human_dat.sampled)
+```
+
+Formatting:
+
+```{r, echo=FALSE, fig.height=12, fig.width=15}
+dat.model2human = dat.model2human %>%
+  #add color info
+  mutate(Category = ifelse(Metric%in%anns, "ANNs", "baselines")) %>%
+  mutate(Category = ifelse(Metric=="singleHuman", "human", Category))
+
+# specify order for plotting
+metric_names = chosen_models
+metric_names[1] = "singleHuman"
+dat.model2human$Metric = factor(dat.model2human$Metric, levels=metric_names)
+dat.model2human$Category = factor(dat.model2human$Category, levels=c("human", "ANNs", "baselines"))
+dat.model2human$TrialType = factor(dat.model2human$TrialType, levels=c("AI", "AAN", "AAR"))
+```
+
+## Calculate correlations for the plot
+
+```{r}
+trialTypes = c("AI", "AAN", "AAR")
+df_correlation = get_correlation_df_tt("model2human", "singleHuman", trialTypes, dat.model2human, metric_names)
+```
+
+## Plot
+
+```{r}
+
+dat.model2human$TrialType = factor(dat.model2human$TrialType, levels=c("AI","AAN","AAR"))
+df_correlation$Metric = factor(df_correlation$Metric, levels=metric_names)
+df_correlation$TrialType = factor(df_correlation$TrialType, levels=c("AI","AAN","AAR"))
+df_correlation$Metric = factor(df_correlation$Metric, levels=metric_names)
+
+# text size 
+cortext_size = 3
+
+plot.model2human = ggplot(dat=dat.model2human)+  
+  geom_point(mapping=aes(x=ModelScore, y=HumanScore, color=Category), 
+             size=0.1, position=position_jitter(width=0.01))+
+  geom_abline(slope=1, intercept=0, size=0.2)+
+  geom_point(mapping=aes(x=ModelScore, y=HumanScore, color=Category), 
+             size=0.1, position=position_jitter(width=0.01))+
+  geom_text(mapping=aes(x=0.2, y=1.10, 
+                        label=sprintf("r = %.2f%s", round(Correlation,2), pVal2zeroLabel)), 
+            data=df_correlation, size=cortext_size, hjust = 0)+
+  coord_cartesian(ylim=c(0,1.15), xlim=c(-0.15,1))+
+  scale_x_continuous(breaks=c(0,0.5,1))+
+  scale_y_continuous(breaks=c(0,0.5,1))+
+  theme_classic()+
+  facet_grid(TrialType~Metric)
+plot.model2human
+
+savename <- "model2human_byTrialType_ANNs.png"
+ggsave(paste(savedir,savename,sep="/"), height=12,width=24, units='cm')
+```
+
+```{r}
+
+dat.model2human.sub = dat.model2human %>% 
+  filter(TrialType %in% c("AI","AAN"))
+
+df_correlation = df_correlation %>%
+  filter(TrialType %in% c("AI","AAN"))
+
+dat.model2human.sub$TrialType = factor(dat.model2human.sub$TrialType, levels=c("AI","AAN","AAR"))
+df_correlation$Metric = factor(df_correlation$Metric, levels=metric_names)
+df_correlation$TrialType = factor(df_correlation$TrialType, levels=c("AI","AAN","AAR"))
+df_correlation$Metric = factor(df_correlation$Metric, levels=metric_names)
+
+# text size 
+cortext_size = 3
+
+plot.model2human.sub = ggplot(dat=dat.model2human.sub)+  
+  geom_point(mapping=aes(x=ModelScore, y=HumanScore, color=Category), 
+             size=0.1, position=position_jitter(width=0.01))+
+  geom_abline(slope=1, intercept=0, size=0.2)+
+  geom_point(mapping=aes(x=ModelScore, y=HumanScore, color=Category), 
+             size=0.1, position=position_jitter(width=0.01))+
+  geom_text(mapping=aes(x=-0.25, y=1, 
+                        label=sprintf("r = %.2f%s", round(Correlation,2), pVal2zeroLabel)), 
+            data=df_correlation, size=cortext_size, hjust = 0)+
+  coord_cartesian(ylim=c(0,1), xlim=c(-0.2,1))+
+  theme_classic()+
+  facet_grid(TrialType~Metric)
+plot.model2human.sub
+
+savename <- "model2human_byTrialType_ANNs_noAAR.png"
+ggsave(paste(savedir,savename,sep="/"), height=10,width=25, units='cm')
+```
+
+# SCATTERPLOTS
+
+## General settings
+```{r}
+
+# color scheme
+color_plaus = '#1b9e77'
+color_voice = '#d95f02'
+color_syn = '#7570b3'
+
+```
+
+## PLAUSIBLE VS IMPLAUSIBLE
+
+### Prep data
+```{r, echo=FALSE}
+dat.plaus = dat %>% 
+  dplyr::select(ItemNum, TrialType, Plausibility, Voice, Metric, FinalNormScore) %>%
+  group_by(ItemNum, TrialType, Plausibility, Voice, Metric) %>%
+  summarize(meanScore = mean(FinalNormScore, na.rm=TRUE)) %>%
+  spread(Plausibility, meanScore)  
+```
+
+### Calculate correlations
+
+
+```{r}
+print(paste(chosen_models))
+``` 
+
+```{r}
+trialTypes = c('AI', 'AAN')
+dat.plaus.sub = dat.plaus %>%
+  filter(TrialType%in%c(trialTypes))
+df_correlation.plaus = get_correlation_df("plausibility", "human", dat.plaus.sub, chosen_models)
+```
+
+### Plot
+```{r}
+#determine plotting order
+df_correlation.plaus$Metric = factor(df_correlation.plaus$Metric, levels=chosen_models)
+dat.plaus.sub$Metric = factor(dat.plaus.sub$Metric, levels=chosen_models)
+
+plot.plaus = ggplot(data=dat.plaus.sub)+
+  geom_point(mapping=aes(x=Plausible, y=Implausible), size=0.2, color=color_plaus)+
+  #facet_wrap(~Metric, ncol=ncols, nrow=nrows)+
+  geom_abline(slope=1, intercept=0, size=0.2)+
+  geom_point(mapping=aes(x=Plausible, y=Implausible), size=0.2, color=color_plaus)+
+  geom_text(mapping=aes(x=0, y=1.10, 
+                        label=sprintf("r = %.2f%s", round(Correlation,2), pVal2zeroLabel)), 
+            data=df_correlation.plaus, size=cortext_size, hjust = 0)+
+  coord_cartesian(ylim=c(0,1.15), xlim=c(0,1))+
+  scale_x_continuous(breaks=c(0,0.5,1))+
+  scale_y_continuous(breaks=c(0,0.5,1))+
+  ggtitle('PLAUSIBILITY')+
+  theme_classic()+
+  facet_grid(~Metric)+
+  theme(plot.title = element_text(hjust=0.5,face='bold'))
+plot.plaus
+#paste("r",round(Correlation,2),sep=" = ")
+```
+
+```{r, fig.height=2,fig.width=5}
+dat.sub = dat %>%
+  filter(TrialType%in%c("AI","AAN"))
+
+df_correlation.plaus$Metric = factor(df_correlation.plaus$Metric, levels=chosen_models)
+dat.sub$Metric = factor(dat.sub$Metric, levels=chosen_models)
+
+plot.plaus.density.sub = ggplot()+
+  geom_density(data=dat.sub, mapping=aes(FinalNormScore, fill = factor(Plausibility, levels=c("Implausible","Plausible"))), alpha = 0.2)+
+  facet_wrap(~Metric,nrow=nrows, ncol=ncols)+
+  geom_text(mapping=aes(x=0.1, y=5, label=sprintf("r = %.2f%s", round(Correlation,2), pVal2zeroLabel)),  data=df_correlation.plaus, size=cortext_size, hjust = 0)+
+  ggtitle('PLAUSIBILITY')+
+  geom_vline(xintercept=reference_value, linetype='dotted')+
+  #coord_flip()+
+  theme_classic()+
+  xlab("Normed score") +
+  ylab("Density")+
+  theme(plot.title = element_text(hjust=0.5,face='bold'))+
+  theme(legend.title = element_blank())
+plot.plaus.density.sub
+```
+#AAR density
+```{r}
+df_correlation.plaus = data.frame()
+
+dat.plaus.sub = dat.plaus %>%
+  filter(TrialType%in%c("AAR")) #subsetting here for plausibility as 
+df_correlation.plaus = get_correlation_df("plausibility", "human", dat.plaus.sub, chosen_models)
+```
+
+
+```{r, fig.height=2,fig.width=5}
+dat.sub = dat %>%
+  filter(TrialType%in%c("AAR"))
+
+df_correlation.plaus$Metric = factor(df_correlation.plaus$Metric, levels=chosen_models)
+dat.sub$Metric = factor(dat.sub$Metric, levels=chosen_models)
+
+plot.plaus.density.sub.aar = ggplot()+
+  geom_density(data=dat.sub, mapping=aes(FinalNormScore, fill = Plausibility), alpha = 0.2)+
+  facet_wrap(~Metric,nrow=nrows, ncol=ncols)+
+  geom_text(mapping=aes(x=0.1, y=5, label=sprintf("r = %.2f%s", round(Correlation,2), pVal2zeroLabel)),  data=df_correlation.plaus, size=cortext_size, hjust = 0)+
+  ggtitle('PLAUSIBILITY (BOTH VERSIONS PLAUSIBLE)')+
+  geom_vline(xintercept=reference_value, linetype='dotted')+
+  #coord_flip()+
+  theme_classic()+
+  xlab("Normed score") +
+  ylab("Density")+
+  theme(plot.title = element_text(hjust=0.5,face='bold'))+
+  theme(legend.title = element_blank())+
+  scale_fill_discrete(labels = c("Plausible (V1)", "Plausible (V2)"))
+plot.plaus.density.sub.aar
+```
+
+```{r}
+#NOTE: Here we're not necessarily interested in the correlation actually but rather if it's significantly above the reference value
+#AAR control
+
+df_correlation.plaus$Metric = factor(df_correlation.plaus$Metric, levels=chosen_models)
+dat.plaus.sub$Metric = factor(dat.plaus.sub$Metric, levels=chosen_models)
+
+plot.plaus.control = ggplot(data=dat.plaus.sub)+
+  geom_point(mapping=aes(x=Plausible, y=Implausible), size=0.2, color=color_plaus)+
+  facet_wrap(~Metric, ncol=ncols, nrow=nrows)+
+  geom_hline(yintercept=reference_value, linetype='dotted')+
+  geom_vline(xintercept=reference_value, linetype='dotted')+
+  geom_abline(slope=1, intercept=0, size=0.2)+
+  geom_point(mapping=aes(x=Plausible, y=Implausible), size=0.2, color=color_plaus)+
+  geom_point(mapping=aes(x=Plausible, y=Implausible), size=0.2, color=color_plaus)+
+  geom_text(mapping=aes(x=0, y=1, label=sprintf("r = %.2f%s", round(Correlation,2), pVal2zeroLabel)), 
+            data=df_correlation.plaus, size=cortext_size, hjust = 0)+
+  coord_cartesian(ylim=c(0,1), xlim=c(0,1))+
+  ggtitle('PLAUSIBILITY (BOTH VERSIONS PLAUSIBLE)')+
+  theme_classic()+
+  xlab("Plausible V1") +
+  ylab("Plausible V2") +
+  theme(plot.title = element_text(hjust=0.5,face='bold'))
+plot.plaus.control
+
+savename <- "scatterplot_plausibility_aar.png"
+ggsave(paste(savedir,savename,sep="/"), height=12,width=28, units='cm')
+#paste("r",round(Correlation,2),sep=" = ")
+```
+#Get ratio (how many above mean rating) AAR & STATS
+```{r}
+dat.plaus.aar = dat %>%
+  filter(Metric%in%chosen_models) %>%
+  filter(TrialType=="AAR") %>%
+  mutate(Greater05 = ifelse(FinalNormScore > 0.5,1,0)) %>%
+  group_by(Metric) %>%
+  summarize(AARCorrect = sum(Greater05)/length(Greater05))
+
+dat.plaus.aar.stats = dat %>%
+  filter(Metric%in%chosen_models) %>%
+  filter(TrialType=="AAR") %>%
+  mutate(AdjustedScore = FinalNormScore-0.5)
+
+df_ttest = data.frame()
+for(i in seq_along(chosen_models)){
+  curr_data = subset(dat.plaus.aar.stats, Metric==chosen_models[i])
+  tt = t.test(curr_data$AdjustedScore)
+  pval2zero = tt$p.value
+  ttstats = tt$statistic
+  df <- data.frame(chosen_models[i], ttstats, pval2zero)
+    df_ttest <- rbind(df_ttest,df)
+}
+```
+
+
+
+```{r, echo=FALSE}
+dat.binchoice.aar = subset(dat.binchoice, TrialType%in%c("AAR"))
+dat.binchoice.aar = subset(dat.binchoice.aar, Metric %in% chosen_models)
+dat.binchoice.aar$Metric = factor(dat.binchoice.aar$Metric, levels=chosen_models)
+
+df_correlation = data.frame()
+# get p values for t test
+for(i in seq_along(chosen_models)){
+  curr_dat = subset(dat.binchoice.aar,Metric==chosen_models[i])
+  curr_score_diff = c(curr_dat$FinalScoreDiff)
+  print(paste(t.test(curr_score_diff)$p.value))
+  ttestPval2zero = t.test(curr_score_diff)$p.value
+  print(paste(chosen_models[i], ttestPval2zero))
+  curr_cat = unique(curr_dat$Category)
+  # add vector to a dataframe
+    df <- data.frame(chosen_models[i], ttestPval2zero,curr_cat)
+    df_correlation <- rbind(df_correlation,df)
+}
+
+# adjust for multiple comparisons within each category
+df_correlation = df_correlation %>%
+  mutate(pLabel = ifelse(ttestPval2zero<0.001, "***", 
+                         ifelse(ttestPval2zero<0.01, "**",
+                                ifelse(ttestPval2zero<0.05, "*",
+                                       ifelse(ttestPval2zero>=0.05, "n.s.", "")))))
+
+colnames(df_correlation) = c("Metric", "ttestPval2zero", "Category", "pLabel")
+
+df_correlation$Metric = factor(df_correlation$Metric, levels=chosen_models)
+dat.binchoice.aar$Metric = factor(dat.binchoice.aar$Metric, levels=chosen_models)
+
+plot.score_difference.aar = ggplot(data=dat.binchoice.aar,mapping=aes(x=TrialType, y=FinalScoreDiff, fill=Category))+
+  facet_wrap(~Metric, ncol=ncols, nrow=nrows)+
+  stat_summary(geom='col', fun.y='mean',
+               color='black', width=0.5)+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               color = 'black', size = 0.5, width=0.1)+
+  geom_text(mapping=aes(x=1, y=0.015, label=pLabel), data=df_correlation, size=cortext_size)+
+  ggtitle('SCORE DIFFERENCE')+
+  theme_classic()+
+  theme(plot.title = element_text(hjust=0.5,face='bold'))+
+  xlab("")+
+  ylab("Difference (V1 - V2)")+
+  coord_cartesian(ylim=c(-0.01,0.015))
+plot.score_difference.aar
+savename <- "scoreDifference_AAR.png"
+ggsave(paste(savedir,savename,sep="/"), width=20, height=6, units='cm')
+```
+
+
+## COMBINE: Control plot AAR
+
+```{r}
+plot.plaus.control / plot.score_difference.aar 
+
+savename <- "controlplot_aar.png"
+ggsave(paste(savedir,savename,sep="/"), height=14,width=28, units='cm')
+```
+
+
+## ACTIVE VS PASSIVE
+
+### Prep data
+
+```{r, echo=FALSE}
+dat.voice = dat %>%
+  filter(Experiment=='EventsAdapt') %>%
+  select(ItemNum, TrialType, Plausibility, Voice, Metric, FinalNormScore) %>%
+  group_by(ItemNum, TrialType, Plausibility, Voice, Metric) %>%
+  summarize(meanScore = mean(FinalNormScore, na.rm=TRUE)) %>%
+  spread(Voice, meanScore)
+dat.voice$Metric = factor(dat.voice$Metric, levels=chosen_models)
+```
+
+### Calculate correlations
+
+```{r}
+df_correlation.voice = get_correlation_df("voice", "human", dat.voice, chosen_models)
+```
+
+### Plot
+
+```{r}
+df_correlation.voice$Metric = factor(df_correlation.voice$Metric, levels=chosen_models)
+dat.voice$Metric = factor(dat.voice$Metric, levels=chosen_models)
+
+plot.voice = ggplot(data=dat.voice)+
+  geom_point(mapping=aes(x=active, y=passive), size=0.2, color=color_voice)+
+  facet_wrap(~Metric, ncol=ncols, nrow=nrows)+
+  geom_abline(slope=1, intercept=0, size=0.2)+
+  geom_text(mapping=aes(x=0, y=1.10, 
+                        label=sprintf("r = %.2f%s", round(Correlation,2), pVal2zeroLabel)), 
+            data=df_correlation.voice, size=cortext_size, hjust = 0)+
+  coord_cartesian(ylim=c(0,1.15), xlim=c(0,1))+
+  scale_x_continuous(breaks=c(0,0.5,1))+
+  scale_y_continuous(breaks=c(0,0.5,1))+
+  theme_classic()+
+  facet_grid(~Metric)+
+  ggtitle('VOICE')+
+  xlab("Active")+
+  ylab("Passive")+
+  theme(plot.title = element_text(hjust=0.5,face='bold'))
+plot.voice
+```
+
+
+## SYNONYMOUS SENTENCES
+
+### Prep data
+
+```{r, echo=FALSE}
+dat.syn = dat %>%
+  filter(!is.na(SynonymPair)) %>%
+  dplyr::select(-ItemNum) %>%
+  group_by(TrialType, NumSyn, SynonymPair, Plausibility, Voice, Metric) %>%
+  summarize(meanScore = mean(FinalNormScore, na.rm=TRUE)) %>%
+  spread(NumSyn, meanScore)
+
+# remove the sentences that don't have synonyms
+dat.syn = dat.syn %>%
+  filter(!is.na(Version1)) %>%
+  filter(!is.na(Version2))
+
+dat.syn$Metric = factor(dat.syn$Metric, levels=chosen_models)
+```
+
+### Calculate correlations
+
+```{r}
+df_correlation.syn = get_correlation_df("synonym", "human", dat.syn, chosen_models)
+```
+
+### Plot
+
+
+```{r}
+df_correlation.syn$Metric = factor(df_correlation.syn$Metric, levels=chosen_models)
+dat.syn$Metric = factor(dat.syn$Metric, levels=chosen_models)
+
+plot.syn = ggplot(data=dat.syn)+
+  geom_point(mapping=aes(x=Version1, y=Version2), size=0.2, color=color_syn)+
+  #facet_wrap(~Metric, ncol=ncols, nrow=nrows)+
+  geom_abline(slope=1, intercept=0, size=0.2)+
+  geom_point(mapping=aes(x=Version1, y=Version2), size=0.2, color=color_syn)+
+  geom_text(mapping=aes(x=0, y=1.10, 
+                        label=sprintf("r = %.2f%s", round(Correlation,2), pVal2zeroLabel)), 
+            data=df_correlation.syn, size=cortext_size, hjust = 0)+
+  coord_cartesian(ylim=c(0,1.15), xlim=c(0,1))+
+  scale_x_continuous(breaks=c(0,0.5,1))+
+  scale_y_continuous(breaks=c(0,0.5,1))+
+  theme_classic()+
+  facet_grid(~Metric)+
+  ggtitle('SYNONYMOUS SENTENCES')+
+  theme(plot.title = element_text(hjust=0.5,face='bold'))
+plot.syn
+```
+
+
+## COMBINE
+
+```{r}
+plot.plaus / plot.plaus.control 
+
+savename <- "scatterplot_plausibility.png"
+ggsave(paste(savedir,savename,sep="/"), height=14,width=28, units='cm')
+```
+```{r}
+plot.plaus.control / plot.score_difference.aar 
+
+savename <- "controlplot_aar.png"
+ggsave(paste(savedir,savename,sep="/"), height=14,width=28, units='cm')
+```
+
+```{r}
+plot.plaus.density.sub / plot.plaus.density.sub.aar / plot.voice / plot.syn
+
+savename <- "scatterplot_density.png"
+ggsave(paste(savedir,savename,sep="/"), height=24,width=28, units='cm')
+```
+
+
+```{r}
+plot.plaus / plot.voice / plot.syn 
+
+savename <- "scatterplot_all_labeled.png"
+ggsave(paste(savedir,savename,sep="/"), height=24,width=28, units='cm')
+```
+
+```{r}
+plot.plaus / plot.plaus.control / plot.voice / plot.syn 
+
+savename <- "scatterplot_all_labeled_with_aar.png"
+ggsave(paste(savedir,savename,sep="/"), height=32,width=28, units='cm')
+```
+
+# ADDITIONAL PLOTS
+
+## Word frequency (sentence)
+
+```{r}
+plot.freq = ggplot(data=dat)+
+  geom_point(mapping=aes(x=sentence_freq_norm, y=FinalNormScore), size=0.2)+
+  facet_wrap(~Metric, ncol=ncols, nrow=nrows)+
+  geom_abline(slope=1, intercept=0, size=0.2)+
+  coord_cartesian(ylim=c(0,1), xlim=c(0,1))+
+  ggtitle('WORD FREQUENCY (SENTENCE)')+
+  theme_classic()+
+  theme(plot.title = element_text(hjust=0.5,face='bold'))
+plot.freq
+```
+
+#REGRESSION
+
+
+## Stats
+
+```{r regression, echo=FALSE}
+m0 = lmer(NormScore ~ Plausibility*TrialType*Voice*Metric + agent_freq_norm*Metric + patient_freq_norm*Metric + verb_freq_norm*Metric + sentence_freq_norm*Metric + (1|ItemNum), 
+         data=dat, REML=FALSE)
+savename = "regression_m0.txt"
+sink(paste(savedir,savename,sep="/"), append=FALSE)
+options(max.print=1000000)
+summary(m0)
+sink()
+```
+
+```{r regression, echo=FALSE}
+m1 = lmer(NormScore ~ Plausibility*TrialType*Voice*Metric + agent_freq_norm*Metric + patient_freq_norm*Metric + verb_freq_norm*Metric + sentence_freq_norm*Metric + (1+Plausibility|ItemNum), 
+         data=dat, REML=FALSE, control=lmerControl(optimizer="bobyqa",
+                                 optCtrl=list(maxfun=2e6)))
+savename = "regression_m1.txt"
+sink(paste(savedir,savename,sep="/"), append=FALSE)
+options(max.print=1000000)
+summary(m1)
+sink()
+```
+
+```{r}
+anova(m0,m1)  # result: m1 is better
+```
+
+```{r regression, echo=FALSE}
+m2 = lmer(NormScore ~ Plausibility*TrialType*Voice*Metric + agent_freq_norm*Metric + patient_freq_norm*Metric + verb_freq_norm*Metric + sentence_freq_norm*Metric + (1+Plausibility+Metric|ItemNum), 
+         data=dat, REML=FALSE)
+savename = "regression_m2.txt"
+sink(paste(savedir,savename,sep="/"), append=FALSE)
+options(max.print=1000000)
+summary(m2)
+sink()
+```
+
+```{r}
+anova(m1,m2)
+```
+
+```{r}
+m1@beta
+```
+
+
+
+
+
+
+
+

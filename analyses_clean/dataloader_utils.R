@@ -1,0 +1,274 @@
+################################
+## ---- normalization -----
+################################
+
+#helper function #https://stackoverflow.com/questions/35775696/trying-to-use-dplyr-to-group-by-and-apply-scale
+scale_this <- function(x) as.vector(scale(x))
+
+min_max <- function(x) {
+  return ((x - min(x)) / (max(x) - min(x)))
+}
+
+################################
+## ---- read in model data -----
+################################
+read_data <- function(directory, filename) {
+  d = read.delim(paste(directory, filename, sep='/'), 
+                 header=FALSE, sep='\t')
+  
+  #ROWS
+  #set target number of *rows* in file
+  if (grepl("Adapt", filename, fixed = TRUE) == TRUE) { #if EventsAdapt
+    target_rownumber = 1648
+  } else if (grepl("ev1", filename, fixed = TRUE) == TRUE){ #if EventsRev
+    target_rownumber = 80
+  } else {
+    print(paste("unknown experiment for file: ", filename))
+    target_rownumber = 0
+  }
+  #check for target number of rows
+  if (nrow(d)!=target_rownumber) {
+    print(paste('unexpected number of sentences in file: ', filename, 'number of sentences: ', nrow(d), 'wanted:', target_rownumber))
+    return(NULL)
+  }
+  
+  #COLUMNS
+  #check for target number of *columns* in file
+  if (ncol(d)%in%c(3,4,6)) {
+    
+    # 0. PREPARATION (set #of trials per item)
+    if (grepl("Adapt", filename, fixed = TRUE) == TRUE) { #if EventsAdapt
+      target_trialnr = 4
+    } else if (grepl("ev1", filename, fixed = TRUE) == TRUE){ #if EventsRev
+      target_trialnr = 2
+    } else {
+      print(paste("unknown experiment for file: ", filename))
+      target_trialnr = 0
+    }
+    
+    #streamline input format
+    if (ncol(d)==3){
+      d = d  %>%
+        rename(SentenceNum=V1, Sentence=V2, Score=V3) %>%
+        mutate(ItemNum = SentenceNum %/% target_trialnr)
+    }
+    else if (ncol(d)==4){
+      d = d  %>%
+        select(V1,V2,V4) %>% #select relevant columns (do not choose Plausibility column to streamline how it's assigned
+        #(e.g. all lowercase etc))
+        rename(SentenceNum=V1, Sentence=V2, Score=V4) %>%
+        mutate(ItemNum = SentenceNum %/% target_trialnr)
+    }
+    
+    else if ((ncol(d)==6) & (grepl("smooth", filename) == FALSE)) { #If surprisal_scores_tinylstm
+      #Add sentence number from 0 to len(dataset) -1
+      tgt_len = nrow(d)-1
+      sentnums = c(0:tgt_len)
+      d = d  %>%
+        select(V1,V5) %>% #select relevant columns (others include UNKification for EventsAdapt dataset)
+        rename(Sentence=V1, Score=V5) %>%
+        mutate(SentenceNum = sentnums) %>% #This adds a column SentenceNum from 0 to len(dataframe)-1
+        mutate(ItemNum = SentenceNum %/% target_trialnr)
+    }
+    
+    else if ((ncol(d)==6) & (grepl("smooth", filename) == TRUE)) {
+      d = d  %>%
+        select(V1,V3,V6) %>% #select relevant columns (others include grammatical tags)
+        rename(SentenceNum=V1, Sentence=V3, Score=V6) %>%
+        mutate(ItemNum = SentenceNum %/% target_trialnr)
+    }
+    
+    d = d %>%
+      mutate(Plausibility = ifelse(SentenceNum%%2==0, 'Plausible', 'Implausible')) %>%
+      
+      # 2. NAME MODEL_METRIC
+      #add metric column
+      mutate(Metric = substr(filename,1,nchar(filename)-4)) %>%
+      
+      #strip EventsAdapt dataset prefix
+      mutate(Metric = str_replace(Metric, "new[_-][Ee]ventsAdapt[_\\.]", "")) %>%
+      mutate(Metric = str_replace(Metric, "newsentences[_-]EventsAdapt[_\\.]", "")) %>%
+      #strip EventsRev dataset prefix
+      mutate(Metric = str_replace(Metric, "ev1[_\\.]", "")) %>%
+      
+      ##Assimilate model names between datasets & determine names for plotting
+      # ppmi
+      mutate(Metric = str_replace(Metric, "deps.smooth.baseline1", "syntax.PPMI")) %>% #EventsRev
+      mutate(Metric = str_replace(Metric, "scores_baseline1_ppmi", "syntax.PPMI")) %>% #EventsAdapt
+      # SDM model names
+      mutate(Metric = str_replace(Metric, "v2_sdm", "SDM")) %>%
+      # thematic fit
+      mutate(Metric = str_replace(Metric, "update-model.TF-add", "thematicFit.add")) %>%
+      mutate(Metric = str_replace(Metric, "thematicFit_addition", "thematicFit.add")) %>%
+      mutate(Metric = str_replace(Metric, "update-model.TF-prod", "thematicFit.prod")) %>%
+      mutate(Metric = str_replace(Metric, "thematicFit_product", "thematicFit.prod")) %>%
+      # GPT2
+      mutate(Metric = str_replace(Metric, "deps.prob_sent_gpt2-xl", "GPT2-XL.l2r")) %>%
+      mutate(Metric = str_replace(Metric, "gpt2-xl_full", "GPT2-XL.l2r")) %>%
+      mutate(Metric = str_replace(Metric, "deps.prob_sent_gpt2", "GPT2.l2r")) %>%
+      mutate(Metric = str_replace(Metric, "gpt2_full", "GPT2.l2r")) %>%
+      # tinyLSTM
+      mutate(Metric = str_replace(Metric, "surprisal_scores_tinylstm", "tinyLSTM.surprisal")) %>%
+      # Bidirectional
+      mutate(Metric = str_replace(Metric, ".sentence-probs-pseudolog", ".PLL")) %>%
+      mutate(Metric = str_replace(Metric, ".verb-prob", ".pverb")) %>%
+      mutate(Metric = str_replace(Metric, ".last-word-prob", ".plast")) %>%
+      # BERT
+      mutate(Metric = str_replace(Metric, "bert-large-cased", "BERT-large")) %>%
+      mutate(Metric = str_replace(Metric, "roberta-large", "RoBERTa-large"))
+    
+    # 3. PREPROCESS SCORES
+    
+    #3.1 Log-Scale GPT2 probabilities
+    #the GPT2 models are the only ones with probability scores and not log probability! > log-scale
+    if (grepl("gpt2", filename) == TRUE) {
+      print(paste("log scaling scores in file: ", filename))
+      d = d %>%
+        mutate(Score = log(Score))
+    }
+    #3.2 Normalize scores for all models
+    d = d %>%
+      mutate(NormScore = normalization(Score))
+    
+    # 4. PROCESS SENTENCES
+    d = d  %>%
+      #strip space before final period for alignment with TrialTypes etc below
+      mutate(Sentence = str_replace(Sentence, " [.]", ".")) %>%
+      #Add final period where missing
+      mutate(Sentence = ifelse(endsWith(Sentence, "."),Sentence,paste(Sentence, ".", sep="")))
+    
+    return(d)
+  } 
+  else {
+    print(paste('unexpected number of columns in file: ', 'number of columns: ', filename, ncol(d)))
+    return(NULL)
+  }
+}
+
+
+################################
+## ---- read in model data for DTFit -----
+################################
+#uppercase first letter of string (needed for fast_vector_sum)
+firstup <- function(x) {
+  substr(x, 1, 1) <- toupper(substr(x, 1, 1))
+  x
+}
+
+
+# custom function to read a datatable
+read_data_DTFit <- function(directory, filename) {
+  d = read.delim(paste(directory, filename, sep='/'), 
+                 header=FALSE, sep='\t')
+  
+  #ROWS
+  #set target number of *rows* in file
+  target_rownumber = 798
+  
+  #check for target number of rows
+  if (nrow(d)!=target_rownumber) {
+    print(paste('unexpected number of sentences in file: ', filename, 'number of sentences: ', nrow(d)))
+    return(NULL)
+  }
+  
+  #COLUMNS
+  #check for target number of *columns* in file
+  if (ncol(d)==3 | ncol(d)==4 | ncol(d)==5 | ncol(d)==7) {
+    
+    target_trialnr = 2
+    
+    #streamline input format
+    if (ncol(d)==3) {
+      d = d  %>%
+        rename(SentenceNum=V1, Sentence=V2, Score=V3)
+    }
+    else if (ncol(d)==4) {
+      d = d  %>%
+        select(V1,V2,V4) %>% #select relevant columns (do not choose Typicality column to streamline how it's assigned)
+        rename(SentenceNum=V1, Sentence=V2, Score=V4)
+    }
+    
+    else if (ncol(d)==5) { #If surprisal_scores_tinylstm
+      d = d  %>%
+        select(V1,V2,V5) %>% 
+        rename(SentenceNum=V1, Sentence=V2, Score=V5)
+    }
+    
+    else if (ncol(d)==7) {
+      d = d  %>%
+        select(V1,V3,V7) %>% #select relevant columns (others include grammatical tags)
+        rename(SentenceNum=V1, Sentence=V3, Score=V7)
+    }
+    
+    d = d %>%
+      mutate(Typicality = ifelse(SentenceNum%%2==0, 'Atypical', 'Typical')) %>%
+      mutate(ItemNum = SentenceNum %/% target_trialnr) %>%
+      
+      # 2. NAME MODEL_METRIC
+      #add metric column
+      mutate(Metric = substr(filename,1,nchar(filename)-4)) %>%
+      
+      #strip dataset prefix
+      mutate(Metric = str_replace(Metric, "dtfit_vassallo_|dtfit.", "")) %>%
+      
+      ##Assimilate model names between datasets & determine names for plotting
+      # ppmi
+      mutate(Metric = str_replace(Metric, "deps.smooth.baseline1", "syntax.PPMI")) %>% #EventsRev
+      mutate(Metric = str_replace(Metric, "scores_baseline1_ppmi", "syntax.PPMI")) %>% #EventsAdapt
+      # SDM model names
+      mutate(Metric = str_replace(Metric, "v2_sdm", "SDM")) %>%
+      # thematic fit
+      mutate(Metric = str_replace(Metric, "update-model.TF-add", "thematicFit.add")) %>%
+      mutate(Metric = str_replace(Metric, "thematicFit_addition", "thematicFit.add")) %>%
+      mutate(Metric = str_replace(Metric, "update-model.TF-prod", "thematicFit.prod")) %>%
+      mutate(Metric = str_replace(Metric, "thematicFit_product", "thematicFit.prod")) %>%
+      # GPT2
+      mutate(Metric = str_replace(Metric, "deps.prob_sent_gpt2-xl", "GPT2-XL.l2r")) %>%
+      mutate(Metric = str_replace(Metric, "gpt2-xl_full", "GPT2-XL.l2r")) %>%
+      mutate(Metric = str_replace(Metric, "deps.prob_sent_gpt2", "GPT2.l2r")) %>%
+      mutate(Metric = str_replace(Metric, "gpt2_full", "GPT2.l2r")) %>%
+      # tinyLSTM
+      mutate(Metric = str_replace(Metric, "surprisal_scores_tinylstm", "tinyLSTM.surprisal")) %>%
+      # Bidirectional
+      mutate(Metric = str_replace(Metric, ".sentence-probs-pseudolog", ".PLL")) %>%
+      mutate(Metric = str_replace(Metric, ".verb-prob", ".pverb")) %>%
+      mutate(Metric = str_replace(Metric, ".last-word-prob", ".plast")) %>%
+      # BERT
+      mutate(Metric = str_replace(Metric, "bert-large-cased", "BERT-large")) %>%
+      mutate(Metric = str_replace(Metric, "roberta-large", "RoBERTa-large"))
+    
+    # 3. PREPROCESS SCORES
+    
+    #3.1 Log-Scale GPT2 probabilities
+    #the GPT2 models are the only ones with probability scores and not log probability! > log-scale
+    if (grepl("gpt2", filename) == TRUE) {
+      print(paste("log scaling scores in file: ", filename))
+      d = d %>%
+        mutate(Score = replace(Score, Score == 0.0, 1e-20)) %>% #Take out once 0.0 is fixed!
+        mutate(Score = log(Score))
+    }
+    #3.2 Normalize scores for all models
+    d = d %>%
+      mutate(NormScore = normalization(Score))
+    
+    # 4. PROCESS SENTENCES
+    d = d  %>%
+      # 4. PROCESS SENTENCES
+      #strip space before final period
+      mutate(Sentence = str_replace(Sentence, " [.]", ".")) %>%
+      #for some reason, some baseline files have multiple periods at end > strip to just one!
+      mutate(Sentence = str_replace(Sentence, "[.]{2,}", ".")) %>%
+      #add final period to baseline models if they don't have one
+      mutate(Sentence = ifelse(endsWith(Sentence, "."),Sentence,paste(Sentence, ".", sep=""))) %>%
+      #strip space before final period
+      mutate(Sentence = str_replace(Sentence, " [.]", ".")) %>%
+      #uppercase first word in sentence to align with other model sentence sets
+      mutate(Sentence = firstup(Sentence))
+    
+    return(d)
+  } 
+  else {
+    print(paste('unexpected number of columns in file: ', 'number of columns: ', filename, ncol(d)))
+    return(NULL)
+  }
+}
