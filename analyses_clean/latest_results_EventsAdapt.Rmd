@@ -226,7 +226,45 @@ plot.binacc
 savename <- "1_binaryAccuracy_split.png"
 ggsave(paste(savedir,savename,sep="/"), width=15, height=12, units='cm')
 ```
+### Stats: difference between AI & AAN conditions
 
+Hypothesis test of proportions (Two proportions z test):
+prop.test(c(nr_successes1, nr_successes2), c(nr_total1, nr_total2), p = NULL, alternative = "two.sided",
+          correct = TRUE)
+          
+The function returns:
+- the value of Pearson’s chi-squared test statistic.
+- a p-value
+- a 95% confidence intervals
+- an estimated probability of success (the proportion of smokers in the two groups)
+
+```{r, echo=FALSE}
+dat.aivsaan = dat.binchoice.summary %>% 
+  dplyr::select(TrialType, Metric, NumCorrect, NumTotal)
+
+df_ai.vs.aan = data.frame()
+
+message(paste("Hypothesis test for proportions | AI vs. AAN accuracy"))
+for (i in seq_along(chosen_models)) {
+  curr_data = subset(dat.aivsaan, Metric==chosen_models[i])
+  cnt_successes = curr_data$NumCorrect
+  cnt_total = curr_data$NumTotal
+  
+  proptest <- prop.test(x = cnt_successes, n = cnt_total)
+  
+  proptest.stat = proptest$statistic
+  proptest.pval = proptest$p.value
+  
+  print(paste(chosen_models[i], "|", proptest.stat, "|", proptest.pval, "|", plabel(proptest.pval)))
+  
+  df <- data.frame(chosen_models[i], proptest.stat, proptest.pval, plabel(proptest.pval))
+  df_ai.vs.aan <- rbind(df_ai.vs.aan,df)
+}
+
+colnames(df_ai.vs.aan) = c("Metric", "statistic", "pVal", "pLabel")
+```
+
+# Plot AAR binary accuracy
 ```{r, echo=FALSE}
 
 # get p values

@@ -7,6 +7,16 @@ calculate_binom_pval <- function(numCorrect, numTotal) {
 }
 
 ################################
+## ---- significance level label --------
+################################
+plabel <- function(value) {
+  plabel = ifelse(value<0.001, "***", 
+                  ifelse(value<0.01, "**",
+                         ifelse(value<0.05, "*", "n.s.")))
+  return(plabel)
+}
+
+################################
 ## ---- chi-square --------
 ################################
 # get the X-square and p-value of the X-square 2 sample test. Assume the total num is the same
