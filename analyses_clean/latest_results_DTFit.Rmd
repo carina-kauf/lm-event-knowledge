@@ -17,6 +17,7 @@ library(cocor)
 library(patchwork)
 library(lme4)
 library(lmerTest)
+library(gtools)
 
 source('dataloader_utils.R') #includes normalizations, read_data functions
 source('stats_utils.R')
@@ -240,6 +241,18 @@ dat$Plausibility = recode(dat$Plausibility,
 
 dat = merge(dat, dat_dtfit_sentence, 
                by=c("Sentence", "Plausibility")) 
+```
+
+#save sentence set
+```{r}
+sentence_set = dat %>%
+  select(ItemNum, Sentence)
+sentence_set = sentence_set[!duplicated(sentence_set), ]
+
+savedir_sentences <- paste("clean_data")
+filename="clean_DTFit_SentenceSet.csv"
+
+write.csv(x=sentence_set, file=paste(savedir_sentences,filename,sep="/"), row.names = FALSE)
 ```
 
 
