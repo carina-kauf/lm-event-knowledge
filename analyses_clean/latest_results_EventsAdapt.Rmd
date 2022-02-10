@@ -872,10 +872,10 @@ print(lapply(pvals_likelihoodratiotest, function(x) {x<0.05/length(pvals_likelih
 
 Conclusion: the model with the Plausibility x ItemNum slope is a better fit for most metrics, so will stick to it.
 
-## Stats all
+## Stats main
 
 ```{r regression, echo=FALSE}
-metrics = unique(dat$Metric)
+metrics = levels(dat$Metric)
 results = data.frame()
 
 for(i in seq_along(metrics)){

@@ -230,8 +230,8 @@ print(paste("human |", length(dat_human$Sentence), length(unique(dat_human$Sente
 # Combine dataframes
 ```{r}
 # combine all
-dat = rbind(model_dat %>% select(ItemNum, Sentence, Score, Typicality, Metric, FinalNormScore, TrialType),
-           dat_human %>% select(ItemNum, Sentence, Score, Typicality, Metric, FinalNormScore, TrialType))
+dat = rbind(dat_human %>% select(ItemNum, Sentence, Score, Typicality, Metric, FinalNormScore, TrialType),
+           model_dat %>% select(ItemNum, Sentence, Score, Typicality, Metric, FinalNormScore, TrialType))
 
 chosen_models = c(human, chosen_models)
 dat = dat %>% rename(Plausibility=Typicality)
@@ -239,7 +239,7 @@ dat$Plausibility = recode(dat$Plausibility,
                              AT='Implausible', T='Plausible',
                              Atypical='Implausible', Typical='Plausible') 
 
-dat = merge(dat, dat_dtfit_sentence, 
+dat = merge(dat, dat_dtfit_sentence %>% select(-Score), 
                by=c("Sentence", "Plausibility")) 
 ```
 
@@ -253,6 +253,17 @@ savedir_sentences <- paste("clean_data")
 filename="clean_DTFit_SentenceSet.csv"
 
 write.csv(x=sentence_set, file=paste(savedir_sentences,filename,sep="/"), row.names = FALSE)
+```
+
+
+# CONTRASTS
+
+```{r}
+dat$Plausibility = factor(dat$Plausibility, levels=c("Plausible", "Implausible")) # dummy coding by default
+
+dat$Metric = factor(dat$Metric, levels=chosen_models)
+dat = within(dat, Metric <- relevel(Metric, ref = "human"))    # set humans as the reference 
+dat$ItemNum = as.factor(dat$ItemNum)
 ```
 
 
@@ -598,27 +609,19 @@ savename <- "scoreDifference.png"
 ggsave(paste(savedir,savename,sep="/"), width=20, height=6, units='cm')
 ```
 
+
 #REGRESSION
 
-## Contrasts
-
-```{r}
-dat$Plausibility = factor(dat$Plausibility, levels=c("Plausible", "Implausible")) # dummy coding by default
-
-dat$Metric = as.factor(dat$Metric)
-dat = within(dat, Metric <- relevel(Metric, ref = "human"))    # set humans as the reference 
-dat$ItemNum = as.factor(dat$ItemNum)
-```
-
-## Stats
+## Stats Main
 
 ```{r regression, echo=FALSE}
 
-metrics = unique(dat$Metric)
+metrics = levels(dat$Metric)
 results = data.frame()
 
 for(i in seq_along(metrics)){
   metric = metrics[i]
+  print(metric)
   dat.metric = dat %>% filter(Metric==metric)
   m = lmer(FinalNormScore ~ Plausibility + agent_freq_norm + patient_freq_norm + verb_freq_norm + sentence_freq_norm + (1|ItemNum), 
            data=dat.metric, REML=FALSE, 
@@ -630,16 +633,17 @@ for(i in seq_along(metrics)){
  d = d[,c(6,7,1:5)]
  results = rbind(results, d)
 }
+```
 
-# split up
-results.ANN = results %>%
-  filter(Metric %in% chosen_models)
-results.baselines = results %>%
-  filter(!(Metric %in% chosen_models))
+## Adjust for multiple comparisons
 
-# adjust for multiple comparisons
-results.ANN = results.ANN %>%
-  group_by(Parameter) %>%
+```{r adjust pVals, echo=FALSE}
+results = results %>%
+  mutate(Category = ifelse(Metric%in%anns, "ANNs", "baselines")) %>%
+  mutate(Category = ifelse(Metric=="human", "human", Category))
+
+results = results %>%
+  group_by(Category, Parameter) %>%
   mutate(pValAdjusted = p.adjust(pVal, method="fdr", n=length(pVal))) %>%
   mutate(pLabel = ifelse(pValAdjusted<0.001, "***", 
                          ifelse(pValAdjusted<0.01, "**",
@@ -647,16 +651,7 @@ results.ANN = results.ANN %>%
   mutate(pValFinal = ifelse(pValAdjusted<0.001, "<0.001", as.character(round(pValAdjusted,3)))) %>%
   ungroup()
 
-results.baselines = results.baselines %>%
-  group_by(Parameter) %>%
-  mutate(pValAdjusted = p.adjust(pVal, method="fdr", n=length(pVal)+1)) %>%   # account for humans too
-  mutate(pLabel = ifelse(pValAdjusted<0.001, "***", 
-                         ifelse(pValAdjusted<0.01, "**",
-                                ifelse(pValAdjusted<0.05, "*", "")))) %>%
-  mutate(pValFinal = ifelse(pValAdjusted<0.001, "<0.001", as.character(round(pValAdjusted,3)))) %>%
-  ungroup()
-
-savename <- "regression_by_metric_ANN.csv"
-write.csv(results.ANN, paste(savedir,savename,sep="/"), row.names=FALSE)
+savename <- "regression_by_metric.csv"
+write.csv(results, paste(savedir,savename,sep="/"), row.names=FALSE)
 ```
 

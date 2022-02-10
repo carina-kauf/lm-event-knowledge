@@ -95,7 +95,7 @@ model_dat = dat %>% filter(Metric %in% chosen_models)
 
 message("Using these models/metrics:")
 model_dat$Metric = factor(model_dat$Metric, levels = chosen_models)
-print(unique(model_dat$Metric))
+print(levels(model_dat$Metric))
 ```
 
 # CONTRASTS
@@ -435,21 +435,11 @@ ggsave(paste(savedir,savename,sep="/"), height=height,width=width, units='cm')
 
 #REGRESSION
 
-## Contrasts
-
-```{r}
-dat$Plausibility = factor(dat$Plausibility, levels=c("Plausible", "Implausible")) # dummy coding by default
-
-dat$Metric = as.factor(dat$Metric)
-dat = within(dat, Metric <- relevel(Metric, ref = "human"))    # set humans as the reference 
-dat$ItemNum = as.factor(dat$ItemNum)
-```
-
-## Stats
+## Stats main
 
 ```{r regression, echo=FALSE}
 
-metrics = unique(dat$Metric)
+metrics = levels(dat$Metric)
 results = data.frame()
 
 for(i in seq_along(metrics)){
@@ -465,16 +455,17 @@ for(i in seq_along(metrics)){
  d = d[,c(6,7,1:5)]
  results = rbind(results, d)
 }
+```
 
-# split up
-results.ANN = results %>%
-  filter(Metric %in% chosen_models)
-results.baselines = results %>%
-  filter(!(Metric %in% chosen_models))
+## Adjust for multiple comparisons
 
-# adjust for multiple comparisons
-results.ANN = results.ANN %>%
-  group_by(Parameter) %>%
+```{r adjust pVals, echo=FALSE}
+results = results %>%
+  mutate(Category = ifelse(Metric%in%anns, "ANNs", "baselines")) %>%
+  mutate(Category = ifelse(Metric=="human", "human", Category))
+
+results = results %>%
+  group_by(Category, Parameter) %>%
   mutate(pValAdjusted = p.adjust(pVal, method="fdr", n=length(pVal))) %>%
   mutate(pLabel = ifelse(pValAdjusted<0.001, "***", 
                          ifelse(pValAdjusted<0.01, "**",
@@ -482,19 +473,9 @@ results.ANN = results.ANN %>%
   mutate(pValFinal = ifelse(pValAdjusted<0.001, "<0.001", as.character(round(pValAdjusted,3)))) %>%
   ungroup()
 
-results.baselines = results.baselines %>%
-  group_by(Parameter) %>%
-  mutate(pValAdjusted = p.adjust(pVal, method="fdr", n=length(pVal)+1)) %>%   # account for humans too
-  mutate(pLabel = ifelse(pValAdjusted<0.001, "***", 
-                         ifelse(pValAdjusted<0.01, "**",
-                                ifelse(pValAdjusted<0.05, "*", "")))) %>%
-  mutate(pValFinal = ifelse(pValAdjusted<0.001, "<0.001", as.character(round(pValAdjusted,3)))) %>%
-  ungroup()
-
 savename <- "regression_by_metric.csv"
-write.csv(results.ANN, paste(savedir,savename,sep="/"), row.names=FALSE)
+write.csv(results, paste(savedir,savename,sep="/"), row.names=FALSE)
 ```
-
 
 
 
