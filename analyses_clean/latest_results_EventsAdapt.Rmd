@@ -315,7 +315,7 @@ acc_by_sentence.ANN = dat.binchoice %>%
   mutate(meanAccuracy=mean(Accuracy))
 ```
 
-### Quick plot
+### Quick plots
 ```{r}
 ggplot(acc_by_sentence.ANN, aes(x=meanAccuracy)) + geom_histogram() + 
   facet_wrap(~Voice)

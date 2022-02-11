@@ -383,6 +383,56 @@ savename <- "1_binaryAccuracy.png"
 ggsave(paste(savedir,savename,sep="/"), width=15, height=9, units='cm')
 ```
 
+## Error analysis
+
+```{r}
+acc_by_sentence.ANN = dat.binchoice %>% 
+  filter(Category=='ANNs') %>%
+  group_by(ItemNum) %>%
+  mutate(meanAccuracy=mean(Accuracy))
+```
+
+### Quick plot
+```{r}
+ggplot(acc_by_sentence.ANN, aes(x=meanAccuracy)) + geom_histogram()
+```
+
+### Save hard sentences
+
+```{r}
+hard_sents = acc_by_sentence.ANN %>%
+  filter(meanAccuracy<0.5) %>%
+  select(ItemNum, meanAccuracy)
+
+hard_sents = inner_join(hard_sents, dat) %>%
+  select(ItemNum, Sentence, meanAccuracy) %>% distinct()
+
+savename <- "hard_sentences_ANNs.csv"
+write.csv(hard_sents, paste(savedir,savename,sep="/"), row.names=FALSE)
+```
+
+### Compare with human scores
+
+```{r}
+dat.binchoice.human = dat.binchoice %>% filter(Metric=='human')
+dat.binchoice.human = inner_join(dat.binchoice.human, acc_by_sentence.ANN %>% select(ItemNum, meanAccuracy)) %>%
+  distinct()
+
+ggplot(dat.binchoice.human, aes(x=meanAccuracy, y=FinalScoreDiff)) + 
+  stat_summary(geom='col', fun.y='mean')+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               color = 'black', size = 0.5, width=0.1)
+```
+
+TODO: regression stats
+
+```{r}
+ggplot(dat.binchoice.human, aes(x=meanAccuracy, y=FinalScoreDiff)) + 
+  geom_jitter(width=0.02)
+
+cor(dat.binchoice.human$meanAccuracy, dat.binchoice.human$FinalScoreDiff)
+```
+
 # PLAUSIBILITY
 ```{r, echo=FALSE}
 # color scheme
