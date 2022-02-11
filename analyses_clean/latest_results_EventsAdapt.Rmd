@@ -264,7 +264,7 @@ for (i in seq_along(chosen_models)) {
 colnames(df_ai.vs.aan) = c("Metric", "statistic", "pVal", "pLabel")
 ```
 
-# Plot AAR binary accuracy
+### Extra: Plot AAR binary accuracy
 ```{r, echo=FALSE}
 
 # get p values
@@ -303,6 +303,63 @@ plot.binchoice.aar
 
 savename <- "1_binaryAccuracy_split_AAR.png"
 ggsave(paste(savedir,savename,sep="/"), width=15, height=12, units='cm')
+```
+
+## Error analysis
+
+```{r}
+acc_by_sentence.ANN = dat.binchoice %>% 
+  filter(TrialType %in% c("AI", "AAN")) %>%
+  filter(Category=='ANNs') %>%
+  group_by(ItemNum, Voice) %>%
+  mutate(meanAccuracy=mean(Accuracy))
+```
+
+### Quick plot
+```{r}
+ggplot(acc_by_sentence.ANN, aes(x=meanAccuracy)) + geom_histogram() + 
+  facet_wrap(~Voice)
+```
+```{r}
+# can adjust bin width slightly to show it's actually evenly distributed
+ggplot(acc_by_sentence.ANN, aes(x=meanAccuracy, fill=Voice)) + geom_histogram(binwidth=0.1, position="dodge") 
+```
+
+### Save hard sentences
+
+```{r}
+hard_sents = acc_by_sentence.ANN %>%
+  filter(meanAccuracy<0.5) %>%
+  select(ItemNum, Voice, meanAccuracy)
+
+hard_sents = inner_join(hard_sents, dat) %>%
+  filter(Plausibility=='Plausible') %>%
+  select(ItemNum, Voice, Sentence, meanAccuracy) %>% distinct()
+
+savename <- "hard_sentences_ANNs.csv"
+write.csv(hard_sents, paste(savedir,savename,sep="/"), row.names=FALSE)
+```
+
+### Compare with human scores
+
+```{r}
+dat.binchoice.human = dat.binchoice %>% filter(Metric=='human')
+dat.binchoice.human = inner_join(dat.binchoice.human, acc_by_sentence.ANN %>% select(ItemNum, TrialType, Voice, meanAccuracy)) %>%
+  distinct()
+
+ggplot(dat.binchoice.human, aes(x=meanAccuracy, y=FinalScoreDiff)) + 
+  stat_summary(geom='col', fun.y='mean')+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               color = 'black', size = 0.5, width=0.1)
+```
+
+TODO: regression stats
+
+```{r}
+ggplot(dat.binchoice.human, aes(x=meanAccuracy, y=FinalScoreDiff)) + 
+  geom_jitter(width=0.02)
+
+cor(dat.binchoice.human$meanAccuracy, dat.binchoice.human$FinalScoreDiff)
 ```
 
 # MODEL HUMAN COMPARISON
@@ -464,6 +521,7 @@ plot.model2human.sub
 savename <- "model2human_byTrialType_ANNs_noAAR.png"
 ggsave(paste(savedir,savename,sep="/"), height=10,width=25, units='cm')
 ```
+
 
 # SCATTERPLOTS
 
