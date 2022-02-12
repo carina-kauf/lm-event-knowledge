@@ -132,7 +132,7 @@ model_dat = model_dat %>%
 model_dat$ItemNum = model_dat$ItemNum+1
 ```
 
-# Combine with other data
+# Combine with other data 
 
 ## Sentence info
 ```{r}
@@ -163,91 +163,55 @@ dat_human$TrialType = 'DTFit'
 dat_human$FinalNormScore = min_max(dat_human$Score)
 ```
 
-# Assimilate sentence sets between models & humans
+## Assimilate sentence sets between models & humans
 ```{r}
-check_for_mismatch <- function(dat_human, model_dat) {
-  human_sent = dat_human$Sentence
-  message(paste('In model sentence set, but not in human sentence set:'))
-  for (i in seq_along(chosen_models)){
-    curr_dat = subset(model_dat, Metric==chosen_models[i])
-    model_sent = c(curr_dat$Sentence)
-    for (j in seq_along(model_sent)){
-      ifelse(model_sent[j]%in%human_sent, "", print(paste(chosen_models[i],'|', model_sent[j])))
-    }
-  }
-  print(paste('*******************'))
-  message(paste('In human sentence set, but not in model sentence set:'))
-  model_sent = model_dat$Sentence
-  for (j in seq_along(human_sent)){
-    ifelse(human_sent[j]%in%model_sent, "", print(paste('human |', human_sent[j])))
-  }
-}
-
-check_for_mismatch(dat_human, model_dat)
-```
-
-# Exclude mismatched sentences and their Item partner sentences
-```{r}
-exclusion_keywords = c('snowball', 
-                       'harness')
-
-exclude_sentences <- function(dataframe) {
-  message(paste(length(unique(dataframe$Sentence))))
-  dataframe = dataframe %>% 
-    filter(!grepl(paste(exclusion_keywords, collapse = "|"), Sentence))
-  
-  sentence_pairnum = dataframe %>%
-    group_by(ItemNum, Metric) %>%
-    summarize(NumSentences = length(ItemNum))
-  single_sentences = sentence_pairnum %>%
-    filter(NumSentences==1)
-  
-  # filter them out
-  dataframe = dataframe %>%
-    filter(!(ItemNum %in% single_sentences$ItemNum))
-  message(paste(length(unique(dataframe$Sentence))))
-  return(dataframe)
-}
-
-model_dat = exclude_sentences(model_dat)
-dat_human = exclude_sentences(dat_human)
-```
-
-
-```{r}
-check_for_mismatch(dat_human, model_dat)
-```
-
-```{r}
-# no longer mismatched!
-for (i in seq_along(chosen_models)){
-  sub = subset(model_dat, Metric==chosen_models[i])
-  print(paste(chosen_models[i], "|", length(sub$Sentence), length(unique(sub$Sentence))))
-}
-print(paste("human |", length(dat_human$Sentence), length(unique(dat_human$Sentence))))
-```
-
-# Combine dataframes
-```{r}
-# combine all
+# combine
 dat = rbind(dat_human %>% select(ItemNum, Sentence, Score, Typicality, Metric, FinalNormScore, TrialType),
            model_dat %>% select(ItemNum, Sentence, Score, Typicality, Metric, FinalNormScore, TrialType))
 
+# make sure sentences are the same
+sentences_shared = intersect(dat_human$Sentence, model_dat$Sentence)
+dat = dat %>%
+  filter(Sentence %in% sentences_shared)
+
+# keep only sentences with pairs
+dat = dat %>%
+  group_by(ItemNum, Metric) %>%
+  filter(length(ItemNum)==2)
+
+# format
 chosen_models = c(human, chosen_models)
 dat = dat %>% rename(Plausibility=Typicality)
 dat$Plausibility = recode(dat$Plausibility, 
                              AT='Implausible', T='Plausible',
                              Atypical='Implausible', Typical='Plausible') 
 
+# merge with sentence info
+if (any(sapply(dat_dtfit_sentence$Sentence, function(x) {!(x %in% sentences_shared)}))) {
+  stop('Not all sentences are in the sentence info file')
+}
 dat = merge(dat, dat_dtfit_sentence %>% select(-Score), 
                by=c("Sentence", "Plausibility")) 
+
+# reassign item numbers based on human data (for consistency)
+sentnums_humans = dat_human %>%
+  select(ItemNum, Sentence)
+dat = merge(sentnums_humans, dat %>% select(-ItemNum))
+
+# make sure that item numbers are the same everywhere
+item_sent_combos = dat %>%
+  group_by(Sentence) %>%
+  mutate(Count=length(unique(ItemNum)))
+if (any(sapply(item_sent_combos$Count, function(x) {x!=1}))) {
+  print(item_sent_combos %>% filter(Count!=1))
+  stop('Item number mismatch across metrics')
+}
 ```
 
-#save sentence set
+## Save final sentence set
 ```{r}
 sentence_set = dat %>%
-  select(ItemNum, Sentence)
-sentence_set = sentence_set[!duplicated(sentence_set), ]
+  select(ItemNum, Sentence, Plausibility) %>% distinct() 
 
 savedir_sentences <- paste("clean_data")
 filename="clean_DTFit_SentenceSet.csv"
@@ -405,7 +369,10 @@ hard_sents = acc_by_sentence.ANN %>%
   select(ItemNum, meanAccuracy)
 
 hard_sents = inner_join(hard_sents, dat) %>%
-  select(ItemNum, Sentence, meanAccuracy) %>% distinct()
+  select(ItemNum, Plausibility, Sentence, meanAccuracy) %>% 
+  distinct() %>%
+  spread(Plausibility, Sentence)
+
 
 savename <- "hard_sentences_ANNs.csv"
 write.csv(hard_sents, paste(savedir,savename,sep="/"), row.names=FALSE)
