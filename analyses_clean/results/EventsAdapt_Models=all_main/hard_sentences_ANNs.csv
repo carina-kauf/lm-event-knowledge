@@ -1,38 +1,38 @@
-"ItemNum","Voice","Sentence","meanAccuracy"
-"3","active","The convict dreaded the prison.",0
-"20","passive","The octopus was grilled by the cook.",0.25
-"23","active","The milliner adorned the fedora.",0.25
-"24","active","The hatter decorated the bowler.",0.25
-"24","passive","The bowler was decorated by the hatter.",0.25
-"29","passive","The expression was garbled by the anchorman.",0.25
-"36","passive","The shuttle was left by the vacationer.",0.25
-"59","active","The townsperson farmed the grain.",0.25
-"68","passive","The vote was prejudiced by the activist.",0.25
-"70","passive","The luggage was dragged by the flight-attendant.",0
-"83","passive","The intern was berated by the mechanic.",0
-"86","active","The pixie mesmerized the ogre.",0.25
-"87","active","The orderly assisted the dentist.",0.25
-"96","active","The joker tricked the distributor.",0.25
-"98","passive","The maiden was wooed by the womanizer.",0.25
-"99","active","The nomad cherished the clergyman.",0.25
-"99","passive","The clergyman was cherished by the nomad.",0.25
-"100","active","The vagabond revered the priest.",0.25
-"111","active","The biker defied the trainer.",0.25
-"113","active","The genius shocked the cousin.",0.25
-"119","passive","The enthusiast was disappointed by the singer.",0.25
-"120","passive","The connoisseur was disillusioned by the vocalist.",0.25
-"138","active","The robber burgled the industrialist.",0.25
-"151","active","The terrorist petrified the first lady.",0
-"152","passive","The president's wife was terrified by the hijacker.",0.25
-"154","passive","The winner was congratulated by the panelist.",0.25
-"155","active","The liar emulated the victor.",0.25
-"156","passive","The conqueror was imitated by the deceiver.",0.25
-"157","active","The environmentalist cautioned the tobacconist.",0
-"157","passive","The tobacconist was cautioned by the environmentalist.",0.25
-"270","active","The diver recharged the battery.",0.25
-"273","passive","The bottle was uncorked by the winemaker.",0.25
-"284","active","The interviewee wrinkled the suit.",0.25
-"301","passive","The seaman was undercharged by the streetwalker.",0.25
-"313","active","The lion chased the tour-guide.",0.25
-"327","active","The TV station head promoted the newsagent.",0
-"333","active","The neuroscientist overwhelmed the lab assistant.",0
+"ItemNum","Voice","meanAccuracy","Plausible","Implausible"
+"3","active",0,"The convict dreaded the prison.","The prison dreaded the convict."
+"20","passive",0.25,"The octopus was grilled by the cook.","The cook was grilled by the octopus."
+"23","active",0.25,"The milliner adorned the fedora.","The fedora adorned the milliner."
+"24","active",0.25,"The hatter decorated the bowler.","The bowler decorated the hatter."
+"24","passive",0.25,"The bowler was decorated by the hatter.","The hatter was decorated by the bowler."
+"29","passive",0.25,"The expression was garbled by the anchorman.","The anchorman was garbled by the expression."
+"36","passive",0.25,"The shuttle was left by the vacationer.","The vacationer was left by the shuttle."
+"59","active",0.25,"The townsperson farmed the grain.","The grain farmed the townsperson."
+"68","passive",0.25,"The vote was prejudiced by the activist.","The activist was prejudiced by the vote."
+"70","passive",0,"The luggage was dragged by the flight-attendant.","The flight-attendant was dragged by the luggage."
+"83","passive",0,"The intern was berated by the mechanic.","The mechanic was berated by the intern."
+"86","active",0.25,"The pixie mesmerized the ogre.","The ogre mesmerized the pixie."
+"87","active",0.25,"The orderly assisted the dentist.","The dentist assisted the orderly."
+"96","active",0.25,"The joker tricked the distributor.","The distributor tricked the joker."
+"98","passive",0.25,"The maiden was wooed by the womanizer.","The womanizer was wooed by the maiden."
+"99","active",0.25,"The nomad cherished the clergyman.","The clergyman cherished the nomad."
+"99","passive",0.25,"The clergyman was cherished by the nomad.","The nomad was cherished by the clergyman."
+"100","active",0.25,"The vagabond revered the priest.","The priest revered the vagabond."
+"111","active",0.25,"The biker defied the trainer.","The trainer defied the biker."
+"113","active",0.25,"The genius shocked the cousin.","The cousin shocked the genius."
+"119","passive",0.25,"The enthusiast was disappointed by the singer.","The singer was disappointed by the enthusiast."
+"120","passive",0.25,"The connoisseur was disillusioned by the vocalist.","The vocalist was disillusioned by the connoisseur."
+"138","active",0.25,"The robber burgled the industrialist.","The industrialist burgled the robber."
+"151","active",0,"The terrorist petrified the first lady.","The first lady petrified the terrorist."
+"152","passive",0.25,"The president's wife was terrified by the hijacker.","The hijacker was terrified by the president's wife."
+"154","passive",0.25,"The winner was congratulated by the panelist.","The panelist was congratulated by the winner."
+"155","active",0.25,"The liar emulated the victor.","The victor emulated the liar."
+"156","passive",0.25,"The conqueror was imitated by the deceiver.","The deceiver was imitated by the conqueror."
+"157","active",0,"The environmentalist cautioned the tobacconist.","The tobacconist cautioned the environmentalist."
+"157","passive",0.25,"The tobacconist was cautioned by the environmentalist.","The environmentalist was cautioned by the tobacconist."
+"270","active",0.25,"The diver recharged the battery.","The battery recharged the diver."
+"273","passive",0.25,"The bottle was uncorked by the winemaker.","The winemaker was uncorked by the bottle."
+"284","active",0.25,"The interviewee wrinkled the suit.","The suit wrinkled the interviewee."
+"301","passive",0.25,"The seaman was undercharged by the streetwalker.","The streetwalker was undercharged by the seaman."
+"313","active",0.25,"The lion chased the tour-guide.","The tour-guide chased the lion."
+"327","active",0,"The TV station head promoted the newsagent.","The newsagent promoted the TV station head."
+"333","active",0,"The neuroscientist overwhelmed the lab assistant.","The lab assistant overwhelmed the neuroscientist."

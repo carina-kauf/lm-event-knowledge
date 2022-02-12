@@ -245,8 +245,9 @@ hard_sents = acc_by_sentence.ANN %>%
   select(ItemNum, meanAccuracy)
 
 hard_sents = inner_join(hard_sents, dat) %>%
-  filter(Plausibility=='Plausible') %>%
-  select(ItemNum, Sentence, meanAccuracy) %>% distinct()
+  select(ItemNum, Sentence, Plausibility, meanAccuracy) %>% 
+  distinct() %>%
+  spread(Plausibility, Sentence)
 
 savename <- "hard_sentences_ANNs.csv"
 write.csv(hard_sents, paste(savedir,savename,sep="/"), row.names=FALSE)

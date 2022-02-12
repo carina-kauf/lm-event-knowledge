@@ -373,7 +373,6 @@ hard_sents = inner_join(hard_sents, dat) %>%
   distinct() %>%
   spread(Plausibility, Sentence)
 
-
 savename <- "hard_sentences_ANNs.csv"
 write.csv(hard_sents, paste(savedir,savename,sep="/"), row.names=FALSE)
 ```

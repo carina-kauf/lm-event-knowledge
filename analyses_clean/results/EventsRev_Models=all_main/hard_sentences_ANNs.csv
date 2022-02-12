@@ -1,4 +1,4 @@
-"ItemNum","Sentence","meanAccuracy"
-"8","The artist is painting the businessman.",0.25
-"31","The visitor is pushing the patient.",0.25
-"34","The dog is leading the blind person.",0.25
+"ItemNum","meanAccuracy","Plausible","Implausible"
+"8",0.25,"The artist is painting the businessman.","The businessman is painting the artist."
+"31",0.25,"The visitor is pushing the patient.","The patient is pushing the visitor."
+"34",0.25,"The dog is leading the blind person.","The blind person is leading the dog."
