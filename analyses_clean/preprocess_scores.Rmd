@@ -21,7 +21,7 @@ if (!dir.exists(savedir)) {dir.create(savedir)}
 ```
 
 ```{r}
-experiment = 'EventsAdapt' # can be 'EventsAdapt' or 'EventsRev'
+experiment = 'DTFit' # can be 'EventsAdapt' or 'EventsRev' or 'DTFit'
 normalization <- "min-max" #can be "min-max", "zscore"
 ```
 
@@ -50,11 +50,18 @@ dat.sentence = read.csv(sentence_file) %>%
 if (experiment=='EventsRev') {
   dat.sentence$TrialType = 'AAN'         
   dat.sentence$Voice = 'active'
+} else if (experiment=='DTFit') {
+  dat.sentence$TrialType = 'DTFit'         
+  dat.sentence$Voice = 'active'
+  dat.sentence = dat.sentence %>% 
+    rename(Plausibility=Typicality) %>%
+    select(-Rating)
 }
 
 dat.sentence$Plausibility = recode(dat.sentence$Plausibility, 
                              implausible='Implausible', plausible='Plausible',
-                             implaus="Implausible", plaus="Plausible") 
+                             implaus="Implausible", plaus="Plausible",
+                             AT='Implausible', T='Plausible') 
 dat.sentence$Experiment = experiment
 ```
 
@@ -83,39 +90,43 @@ if (experiment=='EventsAdapt'){
 ```{r}
 # READ
 dirname = '../human_ratings'
-expt_index = ifelse(experiment=='EventsRev', '1', '2')
-ratings_file = paste(dirname, paste(expt_index, experiment, 'plausibility', sep='_'), 
-                     'analyses', 'longform_data.csv', sep='/')
+expt_index = ifelse(experiment=='EventsRev', '1', ifelse(experiment=='EventsAdapt', '2', '3'))
+filename = ifelse(experiment=='DTFit', 'newformat_curated_human_ratings.csv', 
+                  'analyses/longform_data.csv')
+ratings_file = paste(dirname, paste(expt_index, experiment, sep='_'), 
+                     filename, sep='/')
 
-dat.human = read.csv(ratings_file) %>% rename(Score=Answer.Rating) %>%
-  rename(Sentence=Input.trial) %>%
+dat.human = read.csv(ratings_file) %>% 
   rename(ItemNum=Item)
 
 if (experiment=='EventsRev') {
   dat.human = dat.human %>%
+    rename(Score=Answer.Rating) %>%
+    rename(Sentence=Input.trial) %>%
     select(WorkerId, Score, Plausibility, ItemNum, Sentence) %>%
     filter(ItemNum<41)    # exclude attention checks
-  dat.human$TrialType = 'AAN'           
-  dat.human$Voice = 'active'
-} else {
+} else if (experiment=='EventsAdapt') {
     dat.human = dat.human %>%
+      rename(Score=Answer.Rating) %>%
+      rename(Sentence=Input.trial) %>%
       select(WorkerId, Score, Plausibility, ItemNum, Sentence, TrialType, Voice)
+} else {
+  dat.human = dat.human %>% rename(Score=Rating, Plausibility=Typicality)
 }
 
 # CLEAN
 dat.human$Plausibility = recode(dat.human$Plausibility, 
                              implausible='Implausible', plausible='Plausible',
                              implaus="Implausible", plaus="Plausible",
-                             plausible0='Implausible', plausible1='Plausible') 
-
-dat.human$TrialType = factor(dat.human$TrialType, levels=c('AI', 'AAN', 'AAR'))
+                             plausible0='Implausible', plausible1='Plausible',
+                             AT='Implausible', T='Plausible') 
 ```
 
 ## Get the human mean score (to compare w models)
 
 ```{r pressure, echo=FALSE}
 dat.human.mean = dat.human %>% 
-  group_by(ItemNum, Sentence, Plausibility, TrialType, Voice) %>%
+  group_by(ItemNum, Sentence, Plausibility) %>%
   summarize(MeanScore = mean(Score, na.rm=TRUE)) %>%
   ungroup() 
 dat.human.mean$ItemNum = as.factor(dat.human.mean$ItemNum)
@@ -131,23 +142,57 @@ dirname = paste('..', 'model_scores', experiment, sep='/')
 
 message(paste('Loading', experiment, 'model data ...'))
 filenames = list.files(path=dirname, pattern='*.txt')
-dat.models = do.call(rbind, lapply(filenames, function(x) read_data(dirname, x)))
+if (experiment=='DTFit') {
+  dat.models = do.call(rbind, lapply(filenames, function(x) read_data_DTFit(dirname, x)))
+  dat.models = dat.models %>%
+    rename(Plausibility=Typicality)
+} else {
+  dat.models = do.call(rbind, lapply(filenames, function(x) read_data(dirname, x)))
+}
 ```
 
-## Merge with sentence info
+## Add human data
+
+```{r}
+# check that sentences match & exclude items where they don't
+if (any(sapply(dat.models$Sentence, function(x) {!(x %in% dat.human.mean$Sentence)}))) {
+  shared_sentences = intersect(unique(dat$Sentence), unique(dat.sentence$Sentence))
+  excluded = dat %>% filter(!(Sentence %in% shared_sentences)) %>%
+    select(ItemNum, Sentence) %>% distinct()
+  warning(paste('Not all sentences are in the human data file. Excluding:',
+                excluded, sep='\n'))
+  dat.models = dat.models %>% filter(!(ItemNum %in% excluded$ItemNum))
+}
+
+# use human data as a reference for item numbers
+sentence_itemnums = dat.human.mean %>%
+  select(ItemNum, Sentence) %>% distinct()
+dat.models= merge(sentence_itemnums %>% select(-ItemNum), dat.models)
+
+# prep human data
+dat.human.mean = dat.human.mean %>%
+  rename(Score=MeanScore)
+dat.human.mean$Metric = "human"
+
+# combine
+dat.models = dat.models %>% select(-SentenceNum) 
+dat = rbind(dat.models, dat.human.mean)
+```
+
+## Add sentence info
 
 ```{r read data, echo=FALSE}
-dat.models = dat.models %>% select(-ItemNum, -Plausibility, -SentenceNum)
-if (any(sapply(dat.models$Sentence, function(x) {!(x %in% dat.sentence$Sentence)}))) {
-  shared_sentences = intersect(unique(dat.models$Sentence), unique(dat.sentence$Sentence))
-  excluded = dat.models %>% filter(!(Sentence %in% shared_sentences)) %>%
+# check that sentences match & exclude sentences where they don't
+if (any(sapply(dat$Sentence, function(x) {!(x %in% dat.sentence$Sentence)}))) {
+  shared_sentences = intersect(unique(dat$Sentence), unique(dat.sentence$Sentence))
+  excluded = dat %>% filter(!(Sentence %in% shared_sentences)) %>%
     select(Sentence) %>% distinct()
   warning(paste('Not all sentences are in the sentence info file. Excluding:',
                 excluded, sep='\n'))
-  dat.models = dat.models %>%
-    filter(Sentence %in% shared_sentences)
+  dat = dat %>% filter(Sentence %in% shared_sentences)
 }
-dat = merge(dat.models, dat.sentence, by=c("Sentence"))
+dat = dat %>% select(-Plausibility)
+dat = merge(dat, dat.sentence, by=c("Sentence"))
 
 # check which sentences don't have a plausibility pair
 sentence_pairnum = dat %>%
@@ -159,24 +204,12 @@ single_sentences = sentence_pairnum %>%
   select(ItemNum) %>%
   distinct()
 
+excluded = dat %>%
+  filter(ItemNum %in% single_sentences$ItemNum)
+
 # filter them out
 dat = dat %>%
   filter(!(ItemNum %in% single_sentences$ItemNum))
-```
-
-
-## Add human data
-```{r}
-# only include sentences present in model data
-dat.human.mean = dat.human.mean %>%
-  filter(ItemNum %in% unique(dat$ItemNum)) %>%
-  select(Sentence, MeanScore, NormScore) %>%
-  rename(Score=MeanScore)
-dat.human.mean = merge(dat.human.mean, dat.sentence, by=c("Sentence"))
-
-# combine
-dat.human.mean$Metric = "human"
-dat = rbind(dat, dat.human.mean)
 ```
 
 
@@ -194,7 +227,6 @@ We need to define for which models a higher score for plausible sentences is des
     * Surprisal
 
 ```{r pressure, echo=FALSE}
-
 lower_better = c("surprisal")
 lower_better_pat <- paste(lower_better, collapse = '|')
 
@@ -211,7 +243,7 @@ dat = dat %>%
 # make sure sentences are the same for humans and models
 shared_sentences = intersect(dat.human.mean$Sentence, dat.models$Sentence)
 if (any(sapply(dat$Sentence, function(x) {!(x %in% shared_sentences)}))) {
-  excluded = dat.models %>% filter(!(Sentence %in% shared_sentences)) %>%
+  excluded = dat %>% filter(!(Sentence %in% shared_sentences)) %>%
     select(Sentence) %>% distinct()
   warning(paste('Sentence mismatch between models and humans. Excluding:',
                 excluded, sep='\n'))
@@ -238,7 +270,6 @@ if (any(sapply(item_sent_combos$Count, function(x) {x!=1}))) {
   stop('Item number mismatch across metrics')
 }
 ```
-
 
 
 # KEYWORD EXCLUSION
@@ -330,7 +361,7 @@ if (experiment=='EventsAdapt') {
   sentence_set = dat %>%
     select(ItemNum, Sentence, Plausibility, Voice, TrialType, SynonymPair, NumSyn) %>% 
     distinct() %>% arrange(ItemNum)
-} else{
+} else {
   sentence_set = dat %>%
     select(ItemNum, Sentence, Plausibility, Voice) %>% 
     distinct() %>% arrange(ItemNum)
@@ -343,5 +374,5 @@ filename <- paste('clean', experiment, 'human_dat.csv', sep='_')
 write.csv(dat.human %>% 
             filter(Sentence %in% shared_sentences) %>%
             arrange(ItemNum, desc(Plausibility)), 
-          file=paste(savedir,filename,sep="/"))
+          paste(savedir,filename,sep="/"), row.names = FALSE)
 ```

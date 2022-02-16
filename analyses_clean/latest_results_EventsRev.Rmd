@@ -28,8 +28,9 @@ source('stats_utils.R')
 options(dplyr.summarise.inform = FALSE)
 ```
 
+
+### Print environment variables 
 ```{r}
-#SET ENVIRONMENT VARIABLES
 which_models <- "all_main" #can be "anns_all", "anns_main", or "all_main"
 # anns_main = human + main ANNs
 # all_main = human + main ANNs + main baselines
@@ -45,30 +46,25 @@ print(paste(savedir))
 message("Running with the following environment variables:")
 message(paste("which_models: ", which_models))
 message(paste("normalization: ", normalization))
-
-#for plotting the dotted reference line
-if (grepl("min-max", normalization) == TRUE){
-  reference_value = 0.5
-} else {
-  reference_value = 0
-}
-```
-
-# READ DATA
-```{r}
-#created via preprocess_datasets_Events*.Rmd
-dat = read.csv('clean_data/clean_EventsRev_df.csv')
-human_dat = read.csv('clean_data/clean_EventsRev_human_dat.csv')
 ```
 
 ```{r}
 if (grepl("min-max", normalization) == TRUE){
   normalization <- function(x) {
     return(min_max(x)) }
+  reference_value = 0.5
 } else {
   normalization <- function(x) {
     return(scale_this(x)) }
+  reference_value = 0
 }
+```
+
+# READ DATA
+```{r}
+#created via preprocess_scores.Rmd
+dat = read.csv('clean_data/clean_EventsRev_df.csv')
+human_dat = read.csv('clean_data/clean_EventsRev_human_dat.csv')
 ```
 
 # Select which models/metrics to plot

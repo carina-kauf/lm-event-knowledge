@@ -91,16 +91,15 @@ anns_all <- c(human,anns)
 
 # select which to use
 chosen_models = eval(parse(text=which_models))
-model_dat = dat %>% filter(Metric %in% chosen_models)
+dat = dat %>% filter(Metric %in% chosen_models)
 
 message("Using these models/metrics:")
-model_dat$Metric = factor(model_dat$Metric, levels = chosen_models)
-print(unique(model_dat$Metric))
+dat$Metric = factor(dat$Metric, levels = chosen_models)
+print(unique(dat$Metric))
 ```
 
 # CONTRASTS
 ```{r}
-dat = model_dat
 dat$Plausibility = factor(dat$Plausibility, levels=c("Plausible", "Implausible")) # dummy coding by default
 
 dat$Voice = as.factor(dat$Voice)
@@ -108,7 +107,6 @@ contrasts(dat$Voice) = c(0.5, -0.5)
 colnames(attr(dat$Voice, "contrasts")) = c("A>P")
 
 dat$TrialType = factor(dat$TrialType, levels=c("AAR", "AAN", "AI"))    # dummy coding by default
-dat$Metric = as.factor(dat$Metric)
 dat = within(dat, Metric <- relevel(Metric, ref = "human"))    # set humans as the reference 
 dat$ItemNum = as.factor(dat$ItemNum)
 ```
