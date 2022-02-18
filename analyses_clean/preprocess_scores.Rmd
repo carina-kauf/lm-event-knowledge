@@ -21,7 +21,7 @@ if (!dir.exists(savedir)) {dir.create(savedir)}
 ```
 
 ```{r}
-experiment = 'EventsRev' # can be 'EventsAdapt' or 'EventsRev' or 'DTFit'
+experiment = 'DTFit' # can be 'EventsAdapt' or 'EventsRev' or 'DTFit'
 normalization <- "min-max" #can be "min-max", "zscore"
 ```
 
@@ -118,7 +118,8 @@ dat.human$Plausibility = recode(dat.human$Plausibility,
                              implausible='Implausible', plausible='Plausible',
                              implaus="Implausible", plaus="Plausible",
                              plausible0='Implausible', plausible1='Plausible',
-                             AT='Implausible', T='Plausible') 
+                             AT='Implausible', T='Plausible',
+                             Atypical='Implausible', Typical='Plausible') 
 
 # fix a typo (the assumption is that it doesn't change the rating)
 if (experiment=='EventsRev') {
@@ -155,12 +156,19 @@ if (experiment=='DTFit') {
 } else {
   dat.models = do.call(rbind, lapply(filenames, function(x) read_data(dirname, x)))
 }
+
+# CLEAN
+dat.models$Plausibility = recode(dat.models$Plausibility, 
+                             implausible='Implausible', plausible='Plausible',
+                             implaus="Implausible", plaus="Plausible",
+                             plausible0='Implausible', plausible1='Plausible',
+                             AT='Implausible', T='Plausible',
+                             Atypical='Implausible', Typical='Plausible') 
 ```
 
 ## Add human data
 
 ```{r}
-
 # check that sentences match & exclude items where they don't
 shared_sentences = intersect(unique(dat.models$Sentence), unique(dat.human.mean$Sentence))
 if (any(sapply(dat.models$Sentence, function(x) {!(x %in% shared_sentences)}))) {
@@ -204,7 +212,13 @@ if (any(sapply(dat$Sentence, function(x) {!(x %in% dat.sentence$Sentence)}))) {
   warning('Not all human sentences are in the model data file. Excluding:\n') 
   warning(paste(excluded$Sentence, '\n'))
 }
-dat = merge(dat, dat.sentence %>% select(-ItemNum, -Plausibility), by=c("Sentence"))
+
+# merge
+if ("ItemNum" %in% colnames(dat.sentence)) {
+  dat = merge(dat, dat.sentence %>% select(-ItemNum, -Plausibility), by=c("Sentence"))
+} else {
+  dat = merge(dat, dat.sentence %>% select(-Plausibility), by=c("Sentence"))
+}
 
 # check which sentences don't have a plausibility pair
 sentence_pairnum = dat %>%
