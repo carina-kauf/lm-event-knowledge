@@ -21,7 +21,7 @@ if (!dir.exists(savedir)) {dir.create(savedir)}
 ```
 
 ```{r}
-experiment = 'DTFit' # can be 'EventsAdapt' or 'EventsRev' or 'DTFit'
+experiment = 'EventsAdapt' # can be 'EventsAdapt' or 'EventsRev' or 'DTFit'
 normalization <- "min-max" #can be "min-max", "zscore"
 ```
 
@@ -38,7 +38,7 @@ if (grepl("min-max", normalization) == TRUE){
 # Read sentence freq data
 
 ```{r}
-dirname = '../word_frequency_info'
+dirname = '../sentence_info'
 sentence_file = paste(dirname, paste(experiment, 'freqs.csv', sep='_'), sep='/')
 
 # read in & normalize predictors
@@ -77,11 +77,10 @@ if (experiment=='EventsAdapt'){
 
 ## Add synonym info
 ```{r}
-# Items after the new ItemNum 278 do not have synonyms
 if (experiment=='EventsAdapt'){
-  dat.sentence = dat.sentence %>%
-      mutate(SynonymPair = ifelse(ItemNum>278, NA, (ItemNum+1)%/%2)) %>% 
-      mutate(NumSyn = ifelse(ItemNum>278, NA, paste('Version', (ItemNum+1)%%2+1, sep="")))
+  dat.synonyms = read.csv("../sentence_info/EventsAdapt_synonyms.csv")
+  synonym_info = merge(dat.sentence, dat.synonyms) %>% select(ItemNum, SynonymPair, NumSyn)
+  dat.sentence = merge(dat.sentence, synonym_info, all=T)
 }
 ```
 
@@ -154,20 +153,28 @@ if (experiment=='DTFit') {
 ## Add human data
 
 ```{r}
+
 # check that sentences match & exclude items where they don't
-if (any(sapply(dat.models$Sentence, function(x) {!(x %in% dat.human.mean$Sentence)}))) {
-  shared_sentences = intersect(unique(dat$Sentence), unique(dat.sentence$Sentence))
-  excluded = dat %>% filter(!(Sentence %in% shared_sentences)) %>%
+shared_sentences = intersect(unique(dat.models$Sentence), unique(dat.human.mean$Sentence))
+if (any(sapply(dat.models$Sentence, function(x) {!(x %in% shared_sentences)}))) {
+  excluded = dat.models %>% filter(!(Sentence %in% shared_sentences)) %>%
     select(ItemNum, Sentence) %>% distinct()
-  warning(paste('Not all sentences are in the human data file. Excluding:',
-                excluded, sep='\n'))
+  warning('Not all model sentences are in the human data file. Excluding these sentences and their plausibility pairs:\n') 
+  warning(paste(excluded$Sentence, '\n'))
   dat.models = dat.models %>% filter(!(ItemNum %in% excluded$ItemNum))
+}
+if (any(sapply(dat.human.mean$Sentence, function(x) {!(x %in% shared_sentences)}))) {
+  excluded = dat.human.mean %>% filter(!(Sentence %in% shared_sentences)) %>%
+    select(ItemNum, Sentence) %>% distinct()
+  warning('Not all human sentences are in the model data file. Excluding these sentences and their plausibility pairs:\n') 
+  warning(paste(excluded$Sentence, '\n'))
+  dat.human.mean = dat.human.mean %>% filter(!(ItemNum %in% excluded$ItemNum))
 }
 
 # use human data as a reference for item numbers
 sentence_itemnums = dat.human.mean %>%
   select(ItemNum, Sentence) %>% distinct()
-dat.models= merge(sentence_itemnums %>% select(-ItemNum), dat.models)
+dat.models= merge(sentence_itemnums, dat.models %>% select(-ItemNum))
 
 # prep human data
 dat.human.mean = dat.human.mean %>%
@@ -187,12 +194,10 @@ if (any(sapply(dat$Sentence, function(x) {!(x %in% dat.sentence$Sentence)}))) {
   shared_sentences = intersect(unique(dat$Sentence), unique(dat.sentence$Sentence))
   excluded = dat %>% filter(!(Sentence %in% shared_sentences)) %>%
     select(Sentence) %>% distinct()
-  warning(paste('Not all sentences are in the sentence info file. Excluding:',
-                excluded, sep='\n'))
-  dat = dat %>% filter(Sentence %in% shared_sentences)
+  warning('Not all human sentences are in the model data file. Excluding:\n') 
+  warning(paste(excluded$Sentence, '\n'))
 }
-dat = dat %>% select(-Plausibility)
-dat = merge(dat, dat.sentence, by=c("Sentence"))
+dat = merge(dat, dat.sentence %>% select(-ItemNum, -Plausibility), by=c("Sentence"))
 
 # check which sentences don't have a plausibility pair
 sentence_pairnum = dat %>%
@@ -200,18 +205,41 @@ sentence_pairnum = dat %>%
   summarize(NumSentences = length(ItemNum)) %>%
   ungroup()
 single_sentences = sentence_pairnum %>%
-  filter(NumSentences==1) %>% 
+  filter(NumSentences!=2) %>% 
   select(ItemNum) %>%
   distinct()
 
-excluded = dat %>%
-  filter(ItemNum %in% single_sentences$ItemNum)
-
 # filter them out
-dat = dat %>%
-  filter(!(ItemNum %in% single_sentences$ItemNum))
+if (length(single_sentences$ItemNum)>0) {
+  excluded = dat %>%
+    filter(ItemNum %in% single_sentences$ItemNum)
+  dat = dat %>%
+    filter(!(ItemNum %in% single_sentences$ItemNum))
+  warning('Found sentences without a plausibility pair. Excluding:')
+  warning(paste(excluded$Sentence, '\n'))
+}
 ```
 
+
+
+
+
+
+
+
+
+
+## Final checks
+```{r}
+# make sure that item numbers are the same everywhere
+item_sent_combos = dat %>%
+  group_by(Sentence) %>%
+  mutate(Count=length(unique(ItemNum)))
+if (any(sapply(item_sent_combos$Count, function(x) {x!=1}))) {
+  print(item_sent_combos %>% filter(Count!=1))
+  stop('Item number mismatch across metrics')
+}
+```
 
 # Plausibility
 
@@ -236,118 +264,25 @@ dat = dat %>%
   mutate(FinalNormScore = ifelse(LowerBetter==TRUE, -NormScore+1, NormScore))
 ```
 
-# Sentence exclusion
 
-## Assimilate sentence sets between models & humans
+
+
+# Save final dataframes
+
+
+## Only include human scores from the final sentence set
 ```{r}
-# make sure sentences are the same for humans and models
-shared_sentences = intersect(dat.human.mean$Sentence, dat.models$Sentence)
-if (any(sapply(dat$Sentence, function(x) {!(x %in% shared_sentences)}))) {
-  excluded = dat %>% filter(!(Sentence %in% shared_sentences)) %>%
-    select(Sentence) %>% distinct()
-  warning(paste('Sentence mismatch between models and humans. Excluding:',
-                excluded, sep='\n'))
-  dat = dat %>% filter(Sentence %in% shared_sentences)
-}
-
-# keep only sentences with pairs
-dat = dat %>%
-  group_by(ItemNum, Metric, Voice) %>%
-  filter(length(ItemNum)==2) %>%
-  ungroup()
-
-# reassign item numbers based on human data (for consistency)
-sentnums_humans = dat.human.mean %>%
-  select(ItemNum, Sentence)
-dat = merge(sentnums_humans, dat %>% select(-ItemNum))
-
-# make sure that item numbers are the same everywhere
-item_sent_combos = dat %>%
-  group_by(Sentence) %>%
-  mutate(Count=length(unique(ItemNum)))
-if (any(sapply(item_sent_combos$Count, function(x) {x!=1}))) {
-  print(item_sent_combos %>% filter(Count!=1))
-  stop('Item number mismatch across metrics')
-}
-```
-
-
-# KEYWORD EXCLUSION
-
-## Define keywords
-```{r}
-# NOTE: not all sentences are SVO; sometimes it's the agent and the recipient who are switched
-if (experiment=='EventsAdapt'){
-  exclusion_keywords = c('designer',
-                       'decorator',
-                       #
-                       'pants',
-                       'trousers',
-                       #
-                       'owner',        # REMAINED
-                       'proprietor',
-                       #
-                       'spectators',
-                       'audience',        # REMAINED
-                       #
-                       'illusionist',
-                       'magician',        # REMAINED
-                       #
-                       'ancestors',
-                       'serf',
-                       #
-                       'dictator',
-                       'townspeople',        # REMAINED
-                       #
-                       'runner',
-                       'jogger',
-                       #
-                       'officer',
-                       'deputy',
-                       #
-                       'hunter',        # REMAINED
-                       'perpetrator',
-                       #
-                       'closed', # doesn't come with a synonym
-                       'cushion', # doesn't come with a synonym
-                       'pullover',  # doesn't come with a synonym
-                       'soda', # doesn't come with a synonym
-                       'woodworker', # doesn't come with a synonym
-                       'target', # doesn't come with a synonym
-                       'pine',  # doesn't come with a synonym
-                       'smuggler',  # doesn't come with a synonym
-                       'fired',  # doesn't come with a synonym
-                       'beverage', #7 doesn't come with a synonym
-                       'box-office', #282 no synonym
-                       'counselor', #293 no synonym
-                       'laundress', #306 no synonym
-                       'twins', #328 no synonym
-                       'fashionista' #379 no synonym
-                       )
-} else {
-  exclusion_keywords = c('sportsstar', #922 no synonym
-                       'applauding' #927 no synonym
-                       )
-}
-```
-
-## exclude from dataset
-```{r}
-#exclude sentences based on those that are not shared between models and humans in the dataset
-message(paste('num sentences in dat before and after keyword exclusion:'))
-message(paste(length(unique(dat$Sentence))))
-dat = dat %>%
-  filter(!grepl(paste(exclusion_keywords, collapse = "|"), Sentence))
+message(paste('num sentences in dat:'))
 message(paste(length(unique(dat$Sentence))))
 
-message(paste('num sentences in dat.human length before and after keyword exclusion:'))
+message(paste('num sentences in dat.human after matching to:'))
 message(paste(length(unique(dat.human$Sentence))))
 dat.human = dat.human %>%
   filter(!grepl(paste(exclusion_keywords, collapse = "|"), Sentence))
 message(paste(length(unique(dat.human$Sentence))))
 ```
 
-# Save final dataframes
+## Save
 ```{r}
 savedir <- 'clean_data'
 
