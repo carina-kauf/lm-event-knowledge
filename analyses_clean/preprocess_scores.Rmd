@@ -21,7 +21,7 @@ if (!dir.exists(savedir)) {dir.create(savedir)}
 ```
 
 ```{r}
-experiment = 'EventsAdapt' # can be 'EventsAdapt' or 'EventsRev' or 'DTFit'
+experiment = 'EventsRev' # can be 'EventsAdapt' or 'EventsRev' or 'DTFit'
 normalization <- "min-max" #can be "min-max", "zscore"
 ```
 
@@ -119,6 +119,13 @@ dat.human$Plausibility = recode(dat.human$Plausibility,
                              implaus="Implausible", plaus="Plausible",
                              plausible0='Implausible', plausible1='Plausible',
                              AT='Implausible', T='Plausible') 
+
+# fix a typo (the assumption is that it doesn't change the rating)
+if (experiment=='EventsRev') {
+  dat.human = dat.human %>%
+    mutate(Sentence=replace(Sentence, Sentence=="The journalist is interviewng the sportsstar.",
+                             "The journalist is interviewing the sportsstar."))
+}
 ```
 
 ## Get the human mean score (to compare w models)
@@ -269,16 +276,15 @@ dat = dat %>%
 
 # Save final dataframes
 
-
 ## Only include human scores from the final sentence set
 ```{r}
 message(paste('num sentences in dat:'))
 message(paste(length(unique(dat$Sentence))))
 
-message(paste('num sentences in dat.human after matching to:'))
+message(paste('num sentences in dat.human before and after matching with the main dataframe:'))
 message(paste(length(unique(dat.human$Sentence))))
 dat.human = dat.human %>%
-  filter(!grepl(paste(exclusion_keywords, collapse = "|"), Sentence))
+  filter(Sentence %in% dat$Sentence)
 message(paste(length(unique(dat.human$Sentence))))
 ```
 
