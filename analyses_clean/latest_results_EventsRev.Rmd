@@ -65,6 +65,7 @@ if (grepl("min-max", normalization) == TRUE){
 #created via preprocess_scores.Rmd
 dat = read.csv('clean_data/clean_EventsRev_df.csv')
 human_dat = read.csv('clean_data/clean_EventsRev_human_dat.csv')
+human_dat$TrialType = "AAN"
 ```
 
 # Select which models/metrics to plot
@@ -281,7 +282,7 @@ cor(dat.binchoice.human$meanAccuracy, dat.binchoice.human$FinalScoreDiff)
 human_dat.comp = human_dat %>%
   filter(!is.na(Score)) %>%
   mutate(FinalNormScore = normalization(Score)) %>%
-  select(WorkerId, ItemNum, Plausibility, Sentence, FinalNormScore)
+  select(WorkerId, ItemNum, Plausibility, TrialType, Sentence, FinalNormScore)
 
 workerIDs = unique(human_dat.comp$WorkerId)
 df_correlation = data.frame()
