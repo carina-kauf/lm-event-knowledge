@@ -21,7 +21,7 @@ if (!dir.exists(savedir)) {dir.create(savedir)}
 ```
 
 ```{r}
-experiment = 'DTFit' # can be 'EventsAdapt' or 'EventsRev' or 'DTFit'
+experiment = 'EventsAdapt' # can be 'EventsAdapt' or 'EventsRev' or 'DTFit'
 normalization <- "min-max" #can be "min-max", "zscore"
 ```
 
@@ -88,12 +88,10 @@ if (experiment=='EventsAdapt'){
 
 ```{r}
 # READ
-dirname = '../human_ratings'
-expt_index = ifelse(experiment=='EventsRev', '1', ifelse(experiment=='EventsAdapt', '2', '3'))
+dirname = '../beh-ratings-events'
 filename = ifelse(experiment=='DTFit', 'newformat_curated_human_ratings.csv', 
                   'analyses/longform_data.csv')
-ratings_file = paste(dirname, paste(expt_index, experiment, sep='_'), 
-                     filename, sep='/')
+ratings_file = paste(dirname, experiment, filename, sep='/')
 
 dat.human = read.csv(ratings_file) %>% 
   rename(ItemNum=Item)
