@@ -281,7 +281,7 @@ cor(dat.binchoice.human$meanAccuracy, dat.binchoice.human$FinalScoreDiff)
 human_dat.comp = human_dat %>%
   filter(!is.na(Score)) %>%
   mutate(FinalNormScore = normalization(Score)) %>%
-  select(WorkerId, ItemNum, Plausibility, TrialType, Sentence, FinalNormScore)
+  select(WorkerId, ItemNum, Plausibility, Sentence, FinalNormScore)
 
 workerIDs = unique(human_dat.comp$WorkerId)
 df_correlation = data.frame()
