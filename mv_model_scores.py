@@ -26,6 +26,7 @@ for exp in ['ev1', 'new-EventsAdapt', 'dtfit']:
     pat = variations[exp]
 
     files = [f for f in glob.glob(f'Event_Knowledge_Model_Comparison/results/**/*.txt', recursive=True) if re.search(pat, f)]
+    files = [f for f in files if "most_assoc" not in f]
     print(len(files))
     for file in files:
         shutil.copy(file, score_dir)
