@@ -193,6 +193,13 @@ dat.models= merge(sentence_itemnums, dat.models %>% select(-ItemNum))
 dat.human.mean = dat.human.mean %>%
   rename(Score=MeanScore)
 dat.human.mean$Metric = "human"
+dat.human.mean = dat.human.mean %>% select(-Plausibility)
+
+#get model plausibility assignment
+dat.models.plausibility.assignment = dat.models %>%
+  filter(Metric == "RoBERTa-large.pverb") %>%
+  select(Sentence,ItemNum,Plausibility)
+dat.human.mean = merge(dat.human.mean,dat.models.plausibility.assignment,by=c("Sentence","ItemNum"))
 
 # combine
 dat.models = dat.models %>% select(-SentenceNum) 
