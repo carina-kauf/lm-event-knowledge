@@ -90,43 +90,34 @@ read_data <- function(directory, filename) {
       mutate(Metric = str_replace(Metric, "newsentences[_-]EventsAdapt[_\\.]", "")) %>%
       #strip EventsRev dataset prefix
       mutate(Metric = str_replace(Metric, "ev1[_\\.]", "")) %>%
+      #strip DTFit dataset prefix
+      mutate(Metric = str_replace(Metric, "dtfit[_\\.]", "")) %>%
+      mutate(Metric = str_replace(Metric, "DTFit_vassallo[_\\.]", "")) %>%
       
       ##Assimilate model names between datasets & determine names for plotting
       # ppmi
-      mutate(Metric = str_replace(Metric, "deps.smooth.baseline1", "syntax.PPMI")) %>% #EventsRev
-      mutate(Metric = str_replace(Metric, "scores_baseline1_ppmi", "syntax.PPMI")) %>% #EventsAdapt
+      mutate(Metric = str_replace(Metric, "deps.scores_baseline1", "syntax.PPMI")) %>%
       # SDM model names
-      mutate(Metric = str_replace(Metric, "v2_sdm", "SDM")) %>%
+      mutate(Metric = str_replace(Metric, "v2.sdm_scores", "SDM")) %>%
       # thematic fit
-      mutate(Metric = str_replace(Metric, "update-model.TF-add", "thematicFit.add")) %>%
-      mutate(Metric = str_replace(Metric, "thematicFit_addition", "thematicFit.add")) %>%
-      mutate(Metric = str_replace(Metric, "update-model.TF-prod", "thematicFit.prod")) %>%
-      mutate(Metric = str_replace(Metric, "thematicFit_product", "thematicFit.prod")) %>%
+      mutate(Metric = str_replace(Metric, "deps.update-model.TF-prod.n200", "thematicFit.prod")) %>%
       # GPT2
-      mutate(Metric = str_replace(Metric, "deps.prob_sent_gpt2-xl", "GPT2-XL.l2r")) %>%
-      mutate(Metric = str_replace(Metric, "gpt2-xl_full", "GPT2-XL.l2r")) %>%
-      mutate(Metric = str_replace(Metric, "deps.prob_sent_gpt2", "GPT2.l2r")) %>%
-      mutate(Metric = str_replace(Metric, "gpt2_full", "GPT2.l2r")) %>%
+      mutate(Metric = str_replace(Metric, "gpt2-medium", "GPT2-medium")) %>%
+      mutate(Metric = str_replace(Metric, "gpt2-xl", "GPT2-xl")) %>%
+      mutate(Metric = str_replace(Metric, "sentence-prob", "l2r")) %>%
       # tinyLSTM
       mutate(Metric = str_replace(Metric, "surprisal_scores_tinylstm", "tinyLSTM.surprisal")) %>%
       # Bidirectional
-      mutate(Metric = str_replace(Metric, ".sentence-probs-pseudolog", ".PLL")) %>%
-      mutate(Metric = str_replace(Metric, ".verb-prob", ".pverb")) %>%
-      mutate(Metric = str_replace(Metric, ".last-word-prob", ".plast")) %>%
+      mutate(Metric = str_replace(Metric, "sentence-PLL", "PLL")) %>%
+      mutate(Metric = str_replace(Metric, "sentence-l2r-PLL", "l2r")) %>%
+      mutate(Metric = str_replace(Metric, ".verb-PLL", ".pverb")) %>%
+      mutate(Metric = str_replace(Metric, ".last-word-PLL", ".plast")) %>%
       # BERT
       mutate(Metric = str_replace(Metric, "bert-large-cased", "BERT-large")) %>%
       mutate(Metric = str_replace(Metric, "roberta-large", "RoBERTa-large"))
     
     # 3. PREPROCESS SCORES
-    
-    #3.1 Log-Scale GPT2 probabilities
-    #the GPT2 models are the only ones with probability scores and not log probability! > log-scale
-    if (grepl("gpt2", filename) == TRUE) {
-      print(paste("log scaling scores in file: ", filename))
-      d = d %>%
-        mutate(Score = log(Score))
-    }
-    #3.2 Normalize scores for all models
+    #Normalize scores for all models
     d = d %>%
       mutate(NormScore = normalization(Score))
     
@@ -208,60 +199,43 @@ read_data_DTFit <- function(directory, filename) {
       #add metric column
       mutate(Metric = substr(filename,1,nchar(filename)-4)) %>%
       
-      #strip dataset prefix
-      mutate(Metric = str_replace(Metric, "dtfit_vassallo_|dtfit.", "")) %>%
+      #strip DTFit dataset prefix
+      mutate(Metric = str_replace(Metric, "dtfit[_\\.]", "")) %>%
+      mutate(Metric = str_replace(Metric, "DTFit_vassallo[_\\.]", "")) %>%
       
       ##Assimilate model names between datasets & determine names for plotting
       # ppmi
-      mutate(Metric = str_replace(Metric, "deps.smooth.baseline1", "syntax.PPMI")) %>% #EventsRev
-      mutate(Metric = str_replace(Metric, "scores_baseline1_ppmi", "syntax.PPMI")) %>% #EventsAdapt
+      mutate(Metric = str_replace(Metric, "deps.scores_baseline1", "syntax.PPMI")) %>%
       # SDM model names
-      mutate(Metric = str_replace(Metric, "v2_sdm", "SDM")) %>%
+      mutate(Metric = str_replace(Metric, "v2.sdm_scores", "SDM")) %>%
       # thematic fit
-      mutate(Metric = str_replace(Metric, "update-model.TF-add", "thematicFit.add")) %>%
-      mutate(Metric = str_replace(Metric, "thematicFit_addition", "thematicFit.add")) %>%
-      mutate(Metric = str_replace(Metric, "update-model.TF-prod", "thematicFit.prod")) %>%
-      mutate(Metric = str_replace(Metric, "thematicFit_product", "thematicFit.prod")) %>%
+      mutate(Metric = str_replace(Metric, "deps.update-model.TF-prod.n200", "thematicFit.prod")) %>%
       # GPT2
-      mutate(Metric = str_replace(Metric, "deps.prob_sent_gpt2-xl", "GPT2-XL.l2r")) %>%
-      mutate(Metric = str_replace(Metric, "gpt2-xl_full", "GPT2-XL.l2r")) %>%
-      mutate(Metric = str_replace(Metric, "deps.prob_sent_gpt2", "GPT2.l2r")) %>%
-      mutate(Metric = str_replace(Metric, "gpt2_full", "GPT2.l2r")) %>%
+      mutate(Metric = str_replace(Metric, "gpt2-medium", "GPT2-medium")) %>%
+      mutate(Metric = str_replace(Metric, "gpt2-xl", "GPT2-xl")) %>%
+      mutate(Metric = str_replace(Metric, "sentence-prob", "l2r")) %>%
       # tinyLSTM
       mutate(Metric = str_replace(Metric, "surprisal_scores_tinylstm", "tinyLSTM.surprisal")) %>%
       # Bidirectional
-      mutate(Metric = str_replace(Metric, ".sentence-probs-pseudolog", ".PLL")) %>%
-      mutate(Metric = str_replace(Metric, ".verb-prob", ".pverb")) %>%
-      mutate(Metric = str_replace(Metric, ".last-word-prob", ".plast")) %>%
+      mutate(Metric = str_replace(Metric, "sentence-PLL", "PLL")) %>%
+      mutate(Metric = str_replace(Metric, "sentence-l2r-PLL", "l2r")) %>%
+      mutate(Metric = str_replace(Metric, ".verb-PLL", ".pverb")) %>%
+      mutate(Metric = str_replace(Metric, ".last-word-PLL", ".plast")) %>%
       # BERT
       mutate(Metric = str_replace(Metric, "bert-large-cased", "BERT-large")) %>%
       mutate(Metric = str_replace(Metric, "roberta-large", "RoBERTa-large"))
     
     # 3. PREPROCESS SCORES
-    
-    #3.1 Log-Scale GPT2 probabilities
-    #the GPT2 models are the only ones with probability scores and not log probability! > log-scale
-    if (grepl("gpt2", filename) == TRUE) {
-      print(paste("log scaling scores in file: ", filename))
-      d = d %>%
-        mutate(Score = replace(Score, Score == 0.0, 1e-20)) %>% #Take out once 0.0 is fixed!
-        mutate(Score = log(Score))
-    }
-    #3.2 Normalize scores for all models
+    #Normalize scores for all models
     d = d %>%
       mutate(NormScore = normalization(Score))
     
     # 4. PROCESS SENTENCES
     d = d  %>%
-      # 4. PROCESS SENTENCES
-      #strip space before final period
+      #strip space before final period for alignment with TrialTypes etc below
       mutate(Sentence = str_replace(Sentence, " [.]", ".")) %>%
-      #for some reason, some baseline files have multiple periods at end > strip to just one!
-      mutate(Sentence = str_replace(Sentence, "[.]{2,}", ".")) %>%
-      #add final period to baseline models if they don't have one
+      #Add final period where missing
       mutate(Sentence = ifelse(endsWith(Sentence, "."),Sentence,paste(Sentence, ".", sep=""))) %>%
-      #strip space before final period
-      mutate(Sentence = str_replace(Sentence, " [.]", ".")) %>%
       #uppercase first word in sentence to align with other model sentence sets
       mutate(Sentence = firstup(Sentence))
     
