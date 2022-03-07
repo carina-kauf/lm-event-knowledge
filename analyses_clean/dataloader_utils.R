@@ -17,20 +17,7 @@ read_data <- function(directory, filename) {
                  header=FALSE, sep='\t')
   
   #ROWS
-  #set target number of *rows* in file
-  if (grepl("Adapt", filename, fixed = TRUE) == TRUE) { #if EventsAdapt
-    target_rownumber = 1648
-  } else if (grepl("ev1", filename, fixed = TRUE) == TRUE){ #if EventsRev
-    target_rownumber = 80
-  } else {
-    print(paste("unknown experiment for file: ", filename))
-    target_rownumber = 0
-  }
-  #check for target number of rows
-  if (nrow(d)!=target_rownumber) {
-    print(paste('unexpected number of sentences in file: ', filename, 'number of sentences: ', nrow(d), 'wanted:', target_rownumber))
-    return(NULL)
-  }
+  print(paste('Number of sentences in ', filename, ': ', nrow(d)))
   
   #COLUMNS
   #check for target number of *columns* in file
@@ -123,7 +110,7 @@ read_data <- function(directory, filename) {
     
     # 4. PROCESS SENTENCES
     d = d  %>%
-      #strip space before final period for alignment with TrialTypes etc below
+      #strip space before final period 
       mutate(Sentence = str_replace(Sentence, " [.]", ".")) %>%
       #Add final period where missing
       mutate(Sentence = ifelse(endsWith(Sentence, "."),Sentence,paste(Sentence, ".", sep="")))
@@ -153,14 +140,7 @@ read_data_DTFit <- function(directory, filename) {
                  header=FALSE, sep='\t')
   
   #ROWS
-  #set target number of *rows* in file
-  target_rownumber = 798
-  
-  #check for target number of rows
-  if (nrow(d)!=target_rownumber) {
-    print(paste('unexpected number of sentences in file: ', filename, 'number of sentences: ', nrow(d)))
-    return(NULL)
-  }
+  print(paste('Number of sentences in ', filename, ': ', nrow(d)))
   
   #COLUMNS
   #check for target number of *columns* in file
