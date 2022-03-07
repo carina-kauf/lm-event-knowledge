@@ -21,18 +21,12 @@ if (!dir.exists(savedir)) {dir.create(savedir)}
 ```
 
 ```{r}
-experiment = 'EventsAdapt' # can be 'EventsAdapt' or 'EventsRev' or 'DTFit'
-normalization <- "min-max" #can be "min-max", "zscore"
+experiment = "EventsAdapt" # can be "EventsAdapt" or "EventsRev" or "DTFit"
+normalization_type = "min-max" #can be "min-max", "zscore", "none"
 ```
 
 ```{r}
-if (grepl("min-max", normalization) == TRUE){
-  normalization <- function(x) {
-    return(min_max(x)) }
-} else {
-  normalization <- function(x) {
-    return(scale_this(x)) }
-}
+normalization <- get_normalization_fn(normalization_type)
 ```
 
 # Read sentence freq data
@@ -148,11 +142,11 @@ dirname = paste('..', 'model_scores', experiment, sep='/')
 message(paste('Loading', experiment, 'model data ...'))
 filenames = list.files(path=dirname, pattern='*.txt')
 if (experiment=='DTFit') {
-  dat.models = do.call(rbind, lapply(filenames, function(x) read_data_DTFit(dirname, x)))
+  dat.models = do.call(rbind, lapply(filenames, function(x) read_data_DTFit(dirname, x, normalization)))
   dat.models = dat.models %>%
     rename(Plausibility=Typicality)
 } else {
-  dat.models = do.call(rbind, lapply(filenames, function(x) read_data(dirname, x)))
+  dat.models = do.call(rbind, lapply(filenames, function(x) read_data(dirname, x, normalization)))
 }
 
 # CLEAN

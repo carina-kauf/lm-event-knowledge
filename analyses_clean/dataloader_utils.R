@@ -1,20 +1,79 @@
 ################################
-## ---- normalization -----
+## ---- helper functions -----
 ################################
 
-#helper function #https://stackoverflow.com/questions/35775696/trying-to-use-dplyr-to-group-by-and-apply-scale
+#helper from https://stackoverflow.com/questions/35775696/trying-to-use-dplyr-to-group-by-and-apply-scale
 scale_this <- function(x) as.vector(scale(x))
 
 min_max <- function(x) {
   return ((x - min(x)) / (max(x) - min(x)))
 }
 
+get_normalization_fn <- function(normalization_type) {
+  if (grepl("min-max", normalization_type)){
+    normalization <- function(x) {return(min_max(x)) }
+  } else if (grepl("zscore", normalization_type)){
+    normalization <- function(x) {return(scale_this(x)) }
+  } else if (grepl("none", normalization_type)) {
+    normalization <- function(x) {return(x)}
+  } else {
+    stop(paste('Unknown normalization type: ', normalization_type))
+  }
+  return(normalization)
+}
+
+#uppercase first letter of string 
+firstup <- function(x) {
+  substr(x, 1, 1) <- toupper(substr(x, 1, 1))
+  return(x)
+}
+
+clean_metric_name <- function(filename) {
+  metric = substr(filename,1,nchar(filename)-4)
+  
+  #strip EventsAdapt dataset prefix
+  metric = str_replace(mmtric, "new[_-][Ee]ventsAdapt[_\\.]", "")
+  metric = str_replace(metric, "newsentences[_-]EventsAdapt[_\\.]", "")
+  #strip EventsRev dataset prefix
+  metric = str_replace(metric, "ev1[_\\.]", "")
+  #strip DTFit dataset prefix
+  metric = str_replace(metric, "dtfit[_\\.]", "")
+  metric = str_replace(metric, "DTFit_vassallo[_\\.]", "")
+  
+  ##Assimilate model names between datasets & determine names for plotting
+  # ppmi
+  metric = str_replace(Metric, "deps.scores_baseline1", "syntax.PPMI")
+  # SDM model names
+  metric = str_replace(Metric, "v2.sdm_scores", "SDM")
+  # thematic fit
+  metric = str_replace(Metric, "deps.update-model.TF-prod.n200", "thematicFit.prod")
+  # GPT2
+  metric = str_replace(Metric, "gpt2-medium", "GPT2-medium")
+  metric = str_replace(Metric, "gpt2-xl", "GPT2-xl")
+  metric = str_replace(Metric, "sentence-prob", "l2r")
+  # tinyLSTM
+  metric = str_replace(Metric, "surprisal_scores_tinylstm", "tinyLSTM.surprisal")
+  # Bidirectional
+  metric = str_replace(Metric, "sentence-PLL", "PLL")
+  metric = str_replace(Metric, "sentence-l2r-PLL", "l2r")
+  metric = str_replace(Metric, ".verb-PLL", ".pverb")
+  metric = str_replace(Metric, ".last-word-PLL", ".plast")
+  # BERT
+  metric = str_replace(Metric, "bert-large-cased", "BERT-large")
+  metric = str_replace(Metric, "roberta-large", "RoBERTa-large")
+  
+  return(metric)
+}
+
 ################################
 ## ---- read in model data -----
 ################################
-read_data <- function(directory, filename) {
+read_data <- function(directory, filename, normalization_type) {
   d = read.delim(paste(directory, filename, sep='/'), 
                  header=FALSE, sep='\t')
+  
+  #METRIC NAME
+  metric = clean_metric_name(filename)
   
   #ROWS
   print(paste('Number of sentences in ', filename, ': ', nrow(d)))
@@ -67,44 +126,10 @@ read_data <- function(directory, filename) {
     
     d = d %>%
       mutate(Plausibility = ifelse(SentenceNum%%2==0, 'Plausible', 'Implausible')) %>%
-      
-      # 2. NAME MODEL_METRIC
       #add metric column
-      mutate(Metric = substr(filename,1,nchar(filename)-4)) %>%
+      mutate(Metric = metric)
       
-      #strip EventsAdapt dataset prefix
-      mutate(Metric = str_replace(Metric, "new[_-][Ee]ventsAdapt[_\\.]", "")) %>%
-      mutate(Metric = str_replace(Metric, "newsentences[_-]EventsAdapt[_\\.]", "")) %>%
-      #strip EventsRev dataset prefix
-      mutate(Metric = str_replace(Metric, "ev1[_\\.]", "")) %>%
-      #strip DTFit dataset prefix
-      mutate(Metric = str_replace(Metric, "dtfit[_\\.]", "")) %>%
-      mutate(Metric = str_replace(Metric, "DTFit_vassallo[_\\.]", "")) %>%
-      
-      ##Assimilate model names between datasets & determine names for plotting
-      # ppmi
-      mutate(Metric = str_replace(Metric, "deps.scores_baseline1", "syntax.PPMI")) %>%
-      # SDM model names
-      mutate(Metric = str_replace(Metric, "v2.sdm_scores", "SDM")) %>%
-      # thematic fit
-      mutate(Metric = str_replace(Metric, "deps.update-model.TF-prod.n200", "thematicFit.prod")) %>%
-      # GPT2
-      mutate(Metric = str_replace(Metric, "gpt2-medium", "GPT2-medium")) %>%
-      mutate(Metric = str_replace(Metric, "gpt2-xl", "GPT2-xl")) %>%
-      mutate(Metric = str_replace(Metric, "sentence-prob", "l2r")) %>%
-      # tinyLSTM
-      mutate(Metric = str_replace(Metric, "surprisal_scores_tinylstm", "tinyLSTM.surprisal")) %>%
-      # Bidirectional
-      mutate(Metric = str_replace(Metric, "sentence-PLL", "PLL")) %>%
-      mutate(Metric = str_replace(Metric, "sentence-l2r-PLL", "l2r")) %>%
-      mutate(Metric = str_replace(Metric, ".verb-PLL", ".pverb")) %>%
-      mutate(Metric = str_replace(Metric, ".last-word-PLL", ".plast")) %>%
-      # BERT
-      mutate(Metric = str_replace(Metric, "bert-large-cased", "BERT-large")) %>%
-      mutate(Metric = str_replace(Metric, "roberta-large", "RoBERTa-large"))
-    
-    # 3. PREPROCESS SCORES
-    #Normalize scores for all models
+    #Normalize scores 
     d = d %>%
       mutate(NormScore = normalization(Score))
     
@@ -127,11 +152,7 @@ read_data <- function(directory, filename) {
 ################################
 ## ---- read in model data for DTFit -----
 ################################
-#uppercase first letter of string (needed for fast_vector_sum)
-firstup <- function(x) {
-  substr(x, 1, 1) <- toupper(substr(x, 1, 1))
-  x
-}
+
 
 
 # custom function to read a datatable
