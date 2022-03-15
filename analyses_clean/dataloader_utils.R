@@ -32,7 +32,7 @@ clean_metric_name <- function(filename) {
   metric = substr(filename,1,nchar(filename)-4)
   
   #strip EventsAdapt dataset prefix
-  metric = str_replace(mmtric, "new[_-][Ee]ventsAdapt[_\\.]", "")
+  metric = str_replace(metric, "new[_-][Ee]ventsAdapt[_\\.]", "")
   metric = str_replace(metric, "newsentences[_-]EventsAdapt[_\\.]", "")
   #strip EventsRev dataset prefix
   metric = str_replace(metric, "ev1[_\\.]", "")
@@ -42,31 +42,33 @@ clean_metric_name <- function(filename) {
   
   ##Assimilate model names between datasets & determine names for plotting
   # ppmi
-  metric = str_replace(Metric, "deps.scores_baseline1", "syntax.PPMI")
+  metric = str_replace(metric, "deps.scores_baseline1", "syntax.PPMI")
+  metric = str_replace(metric, "scores_baseline1", "syntax.PPMI")
   # SDM model names
-  metric = str_replace(Metric, "v2.sdm_scores", "SDM")
+  metric = str_replace(metric, "v2.sdm-scores", "SDM")
   # thematic fit
-  metric = str_replace(Metric, "deps.update-model.TF-prod.n200", "thematicFit.prod")
+  metric = str_replace(metric, "deps.update-model.TF-prod.n200", "thematicFit.prod")
+  metric = str_replace(metric, "update-model.TF-prod.n200", "thematicFit.prod")
   # GPT2
-  metric = str_replace(Metric, "gpt2-medium", "GPT2-medium")
-  metric = str_replace(Metric, "gpt2-xl", "GPT2-xl")
-  metric = str_replace(Metric, "sentence-prob", "l2r")
+  metric = str_replace(metric, "gpt2-medium", "GPT2-medium")
+  metric = str_replace(metric, "gpt2-xl", "GPT2-xl")
+  metric = str_replace(metric, "sentence-prob", "l2r")
   # tinyLSTM
-  metric = str_replace(Metric, "surprisal_scores_tinylstm", "tinyLSTM.surprisal")
+  metric = str_replace(metric, "surprisal_scores_tinylstm", "tinyLSTM.surprisal")
   # Bidirectional
-  metric = str_replace(Metric, "sentence-PLL", "PLL")
-  metric = str_replace(Metric, "sentence-l2r-PLL", "l2r")
-  metric = str_replace(Metric, ".verb-PLL", ".pverb")
-  metric = str_replace(Metric, ".last-word-PLL", ".plast")
+  metric = str_replace(metric, "sentence-PLL", "PLL")
+  metric = str_replace(metric, "sentence-l2r-PLL", "l2r")
+  metric = str_replace(metric, ".verb-PLL", ".pverb")
+  metric = str_replace(metric, ".last-word-PLL", ".plast")
   # BERT
-  metric = str_replace(Metric, "bert-large-cased", "BERT-large")
-  metric = str_replace(Metric, "roberta-large", "RoBERTa-large")
+  metric = str_replace(metric, "bert-large-cased", "BERT-large")
+  metric = str_replace(metric, "roberta-large", "RoBERTa-large")
   
   return(metric)
 }
 
 
-get_score_colnum <- function(experiment, metric) {
+get_score_colnum <- function(metric) {
   if (grepl("BERT", metric) || grepl("GPT2", metric) || grepl("thematicFit", metric)) {
     score_colnum = 3
   } else if (grepl("LSTM", metric)) {
@@ -79,6 +81,14 @@ get_score_colnum <- function(experiment, metric) {
     stop(paste("unknown metric: ", metric))
   }
   return(score_colnum)
+}
+
+get_sent_colnum <- function(metric, experiment) {
+  if (grepl("LSTM", metric) && grepl("EventsAdapt", experiment)) {
+    return(1)
+  } else {
+    return(2)
+  }
 }
 
 
@@ -107,12 +117,13 @@ read_data <- function(directory, filename, normalization_type) {
   sentnums = c(0:tgt_len)
   
   #COLUMNS
-  sent_colnum = 2
+  sent_colnum = get_sent_colnum(metric, experiment)
   score_colnum = get_score_colnum(metric)
   
   # create cleaned-up dataframe
-  d = d[sent_colnum, score_colnum] 
+  d = d[,c(sent_colnum, score_colnum)] 
   colnames(d) = c("Sentence", "Score")
+  d$Score = as.numeric(d$Score)
   d = d %>%
     mutate(SentenceNum = sentnums) %>%
     mutate(ItemNum = SentenceNum %/% target_trialnr) %>%
@@ -122,8 +133,12 @@ read_data <- function(directory, filename, normalization_type) {
     #strip space before final period 
     mutate(Sentence = str_replace(Sentence, " [.]", ".")) %>%
     #Add final period where missing
-    mutate(Sentence = ifelse(endsWith(Sentence, "."),Sentence,paste(Sentence, ".", sep="")))
+    mutate(Sentence = trimws(Sentence, which="both")) %>%
+    mutate(Sentence = ifelse(endsWith(Sentence, "."),Sentence,paste(Sentence, ".", sep=""))) %>%
+    #uppercase first word in sentence to align with other model sentence sets
+    mutate(Sentence = firstup(Sentence))
     
+  print(str(d))
   return(d)
 }
 
