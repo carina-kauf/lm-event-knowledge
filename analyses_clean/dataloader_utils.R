@@ -65,6 +65,23 @@ clean_metric_name <- function(filename) {
   return(metric)
 }
 
+
+get_score_colnum <- function(experiment, metric) {
+  if (grepl("BERT", metric) || grepl("GPT2", metric) || grepl("thematicFit", metric)) {
+    score_colnum = 3
+  } else if (grepl("LSTM", metric)) {
+    score_colnum = 5
+  } else if (grepl("PPMI", metric)) {
+    score_colnum = 4
+  } else if (grepl("SDM", metric)) {
+    score_colnum = 6
+  } else {
+    stop(paste("unknown metric: ", metric))
+  }
+  return(score_colnum)
+}
+
+
 ################################
 ## ---- read in model data -----
 ################################
@@ -78,74 +95,36 @@ read_data <- function(directory, filename, normalization_type) {
   #ROWS
   print(paste('Number of sentences in ', filename, ': ', nrow(d)))
   
-  #COLUMNS
-  #check for target number of *columns* in file
-  if (ncol(d)%in%c(3,4,6)) {
-    
-    # 0. PREPARATION (set #of trials per item)
-    if (grepl("Adapt", filename, fixed = TRUE) == TRUE) { #if EventsAdapt
-      target_trialnr = 4
-    } else if (grepl("ev1", filename, fixed = TRUE) == TRUE){ #if EventsRev
-      target_trialnr = 2
-    } else {
-      print(paste("unknown experiment for file: ", filename))
-      target_trialnr = 0
-    }
-    
-    #streamline input format
-    if (ncol(d)==3){
-      d = d  %>%
-        rename(SentenceNum=V1, Sentence=V2, Score=V3) %>%
-        mutate(ItemNum = SentenceNum %/% target_trialnr)
-    }
-    else if (ncol(d)==4){
-      d = d  %>%
-        select(V1,V2,V4) %>% #select relevant columns (do not choose Plausibility column to streamline how it's assigned
-        #(e.g. all lowercase etc))
-        rename(SentenceNum=V1, Sentence=V2, Score=V4) %>%
-        mutate(ItemNum = SentenceNum %/% target_trialnr)
-    }
-    
-    else if ((ncol(d)==6) & (grepl("smooth", filename) == FALSE)) { #If surprisal_scores_tinylstm
-      #Add sentence number from 0 to len(dataset) -1
-      tgt_len = nrow(d)-1
-      sentnums = c(0:tgt_len)
-      d = d  %>%
-        select(V1,V5) %>% #select relevant columns (others include UNKification for EventsAdapt dataset)
-        rename(Sentence=V1, Score=V5) %>%
-        mutate(SentenceNum = sentnums) %>% #This adds a column SentenceNum from 0 to len(dataframe)-1
-        mutate(ItemNum = SentenceNum %/% target_trialnr)
-    }
-    
-    else if ((ncol(d)==6) & (grepl("smooth", filename) == TRUE)) {
-      d = d  %>%
-        select(V1,V3,V6) %>% #select relevant columns (others include grammatical tags)
-        rename(SentenceNum=V1, Sentence=V3, Score=V6) %>%
-        mutate(ItemNum = SentenceNum %/% target_trialnr)
-    }
-    
-    d = d %>%
-      mutate(Plausibility = ifelse(SentenceNum%%2==0, 'Plausible', 'Implausible')) %>%
-      #add metric column
-      mutate(Metric = metric)
-      
-    #Normalize scores 
-    d = d %>%
-      mutate(NormScore = normalization(Score))
-    
-    # 4. PROCESS SENTENCES
-    d = d  %>%
-      #strip space before final period 
-      mutate(Sentence = str_replace(Sentence, " [.]", ".")) %>%
-      #Add final period where missing
-      mutate(Sentence = ifelse(endsWith(Sentence, "."),Sentence,paste(Sentence, ".", sep="")))
-    
-    return(d)
+  # set #of trials per item
+  if (grepl("Adapt", filename, fixed = TRUE) == TRUE) { #if EventsAdapt
+    target_trialnr = 4
+  } else { 
+    target_trialnr = 2
   } 
-  else {
-    print(paste('unexpected number of columns in file: ', 'number of columns: ', filename, ncol(d)))
-    return(NULL)
-  }
+  
+  #Add sentence number from 0 to len(dataset) -1
+  tgt_len = nrow(d)-1
+  sentnums = c(0:tgt_len)
+  
+  #COLUMNS
+  sent_colnum = 2
+  score_colnum = get_score_colnum(metric)
+  
+  # create cleaned-up dataframe
+  d = d[sent_colnum, score_colnum] 
+  colnames(d) = c("Sentence", "Score")
+  d = d %>%
+    mutate(SentenceNum = sentnums) %>%
+    mutate(ItemNum = SentenceNum %/% target_trialnr) %>%
+    mutate(Plausibility = ifelse(SentenceNum%%2==0, 'Plausible', 'Implausible')) %>%
+    mutate(Metric = metric) %>%
+    mutate(NormScore = normalization(Score)) %>%
+    #strip space before final period 
+    mutate(Sentence = str_replace(Sentence, " [.]", ".")) %>%
+    #Add final period where missing
+    mutate(Sentence = ifelse(endsWith(Sentence, "."),Sentence,paste(Sentence, ".", sep="")))
+    
+  return(d)
 }
 
 
