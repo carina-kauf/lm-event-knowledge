@@ -702,11 +702,9 @@
 701	The tobacconist cautioned the environmentalist 	environmentalist	0.39325582289694283	0.4980935573494645	0.8913493802464073
 702	The tobacconist was cautioned by the environmentalist 	environmentalist	0.39325582289694283	None	0.39325582289694283
 703	The environmentalist was cautioned by the tobacconist 	tobacconist	0.21980652216155283	None	0.21980652216155283
-not in vocabulary  cigar-maker
 704	The ecologist warned the cigar-maker 	cigar-maker	None	None	None
 705	The cigar-maker warned the ecologist 	ecologist	0.21644256076616386	0.5041479207321856	0.7205904814983495
 706	The cigar-maker was warned by the ecologist 	ecologist	0.21644256076616386	0.33485737335871013	0.551299934124874
-not in vocabulary  cigar-maker
 707	The ecologist was warned by the cigar-maker 	cigar-maker	None	None	None
 708	The peasant idolized the ancestors 	ancestors	0.4688974244918094	0.6070949857866613	1.0759924102784706
 709	The ancestors idolized the peasant 	peasant	0.3806148078656708	0.5175299557301297	0.8981447635958005
@@ -937,9 +935,7 @@ not in vocabulary  cigar-maker
 934	The fighter was choked by the trespasser 	trespasser	0.3453676811501286	0.2694154528584214	0.61478313400855
 935	The trespasser was choked by the fighter 	fighter	0.4133449250384871	None	0.4133449250384871
 936	The encroacher strangled the warrior 	warrior	0.1919668867165646	0.6184373118496533	0.8104041985662179
-not in vocabulary  encroacher
 937	The warrior strangled the encroacher 	encroacher	None	None	None
-not in vocabulary  encroacher
 938	The warrior was strangled by the encroacher 	encroacher	None	None	None
 939	The encroacher was strangled by the warrior 	warrior	0.1919668867165646	None	0.1919668867165646
 940	The broker introduced the donor 	donor	0.3345713291357504	0.5287102747089049	0.8632816038446552
@@ -1087,9 +1083,7 @@ not in vocabulary  encroacher
 1082	The zealot was placated by the pacifist 	pacifist	0.4363093590018139	None	0.4363093590018139
 1083	The pacifist was placated by the zealot 	zealot	0.4827536112341576	None	0.4827536112341576
 1084	The peace-lover mollified the fanatic 	fanatic	0.2926651567895131	None	0.2926651567895131
-not in vocabulary  peace-lover
 1085	The fanatic mollified the peace-lover 	peace-lover	None	None	None
-not in vocabulary  peace-lover
 1086	The fanatic was mollified by the peace-lover 	peace-lover	None	None	None
 1087	The peace-lover was mollified by the fanatic 	fanatic	0.2926651567895131	None	0.2926651567895131
 1088	The scoundrel beat the protagonist 	protagonist	0.4453584245408193	0.5429270084676493	0.9882854330084686
@@ -1213,9 +1207,7 @@ not in vocabulary  peace-lover
 1206	The clothes were folded by the laundress 	laundress	0.3114718666171079	0.09290404189813872	0.40437590851524663
 1207	The laundress was folded by the clothes 	clothes	0.49580897575258387	0.2506152249571858	0.7464242007097697
 1208	The travel-agent photocopied the passport 	passport	0.47147320176346375	0.5061628153538493	0.9776360171173131
-not in vocabulary  travel-agent
 1209	The passport photocopied the travel-agent 	travel-agent	None	None	None
-not in vocabulary  travel-agent
 1210	The passport was photocopied by the travel-agent 	travel-agent	None	None	None
 1211	The travel-agent was photocopied by the passport 	passport	0.47147320176346375	None	0.47147320176346375
 1212	The exterminator filed the complaint 	complaint	0.468993991420261	0.7735396541402554	1.2425336455605165
