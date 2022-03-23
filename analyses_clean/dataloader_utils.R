@@ -131,7 +131,6 @@ read_data <- function(directory, filename, normalization_type) {
   d = d %>%
     mutate(SentenceNum = sentnums) %>%
     mutate(ItemNum = SentenceNum %/% target_trialnr) %>%
-    mutate(Plausibility = ifelse(SentenceNum%%2==0, 'Plausible', 'Implausible')) %>%
     mutate(Metric = metric) %>%
     mutate(NormScore = normalization(Score)) %>%
     #strip space before final period 
@@ -141,6 +140,15 @@ read_data <- function(directory, filename, normalization_type) {
     mutate(Sentence = ifelse(endsWith(Sentence, "."),Sentence,paste(Sentence, ".", sep=""))) %>%
     #uppercase first word in sentence to align with other model sentence sets
     mutate(Sentence = firstup(Sentence))
+  
+  # assign plausibility labels
+  if (experiment=="DTFit") {
+    d = d %>%
+      mutate(Plausibility = ifelse(SentenceNum%%2==0, 'Implausible', 'Plausible')) 
+  } else {
+    d = d %>% 
+      mutate(Plausibility = ifelse(SentenceNum%%2==0, 'Plausible', 'Implausible')) 
+  }
     
   return(d)
 }
