@@ -67,12 +67,15 @@ clean_metric_name <- function(filename) {
   return(metric)
 }
 
-
-get_score_colnum <- function(metric) {
+get_score_colnum <- function(metric, experiment) {
   if (grepl("BERT", metric) || grepl("GPT2", metric) || grepl("thematicFit", metric)) {
     score_colnum = 3
   } else if (grepl("LSTM", metric)) {
-    score_colnum = 5
+    if (experiment=="EventsRev") {
+      score_colnum = 4
+    } else {
+      score_colnum = 5
+    }
   } else if (grepl("PPMI", metric)) {
     score_colnum = 4
   } else if (grepl("SDM", metric)) {
@@ -91,10 +94,10 @@ get_sent_colnum <- function(metric, experiment) {
   }
 }
 
-
 ################################
 ## ---- read in model data -----
 ################################
+
 read_data <- function(directory, filename, normalization_type) {
   d = read.delim(paste(directory, filename, sep='/'), 
                  header=FALSE, sep='\t')
@@ -118,7 +121,7 @@ read_data <- function(directory, filename, normalization_type) {
   
   #COLUMNS
   sent_colnum = get_sent_colnum(metric, experiment)
-  score_colnum = get_score_colnum(metric)
+  score_colnum = get_score_colnum(metric, experiment)
   
   # create cleaned-up dataframe
   d = d[,c(sent_colnum, score_colnum)] 
@@ -138,106 +141,5 @@ read_data <- function(directory, filename, normalization_type) {
     #uppercase first word in sentence to align with other model sentence sets
     mutate(Sentence = firstup(Sentence))
     
-  print(str(d))
   return(d)
-}
-
-
-################################
-## ---- read in model data for DTFit -----
-################################
-
-
-
-# custom function to read a datatable
-read_data_DTFit <- function(directory, filename) {
-  d = read.delim(paste(directory, filename, sep='/'), 
-                 header=FALSE, sep='\t')
-  
-  #ROWS
-  print(paste('Number of sentences in ', filename, ': ', nrow(d)))
-  
-  #COLUMNS
-  #check for target number of *columns* in file
-  if (ncol(d)==3 | ncol(d)==4 | ncol(d)==5 | ncol(d)==7) {
-    
-    target_trialnr = 2
-    
-    #streamline input format
-    if (ncol(d)==3) {
-      d = d  %>%
-        rename(SentenceNum=V1, Sentence=V2, Score=V3)
-    }
-    else if (ncol(d)==4) {
-      d = d  %>%
-        select(V1,V2,V4) %>% #select relevant columns (do not choose Typicality column to streamline how it's assigned)
-        rename(SentenceNum=V1, Sentence=V2, Score=V4)
-    }
-    
-    else if (ncol(d)==5) { #If surprisal_scores_tinylstm
-      d = d  %>%
-        select(V1,V2,V5) %>% 
-        rename(SentenceNum=V1, Sentence=V2, Score=V5)
-    }
-    
-    else if (ncol(d)==7) {
-      d = d  %>%
-        select(V1,V3,V7) %>% #select relevant columns (others include grammatical tags)
-        rename(SentenceNum=V1, Sentence=V3, Score=V7)
-    }
-    
-    d = d %>%
-      mutate(Typicality = ifelse(SentenceNum%%2==0, 'Atypical', 'Typical')) %>%
-      mutate(ItemNum = SentenceNum %/% target_trialnr) %>%
-      
-      # 2. NAME MODEL_METRIC
-      #add metric column
-      mutate(Metric = substr(filename,1,nchar(filename)-4)) %>%
-      
-      #strip DTFit dataset prefix
-      mutate(Metric = str_replace(Metric, "dtfit[_\\.]", "")) %>%
-      mutate(Metric = str_replace(Metric, "DTFit_vassallo[_\\.]", "")) %>%
-      
-      ##Assimilate model names between datasets & determine names for plotting
-      # ppmi
-      mutate(Metric = str_replace(Metric, "deps.scores_baseline1", "syntax.PPMI")) %>%
-      # SDM model names
-      mutate(Metric = str_replace(Metric, "v2.sdm_scores", "SDM")) %>%
-      # thematic fit
-      mutate(Metric = str_replace(Metric, "deps.update-model.TF-prod.n200", "thematicFit.prod")) %>%
-      # GPT2
-      mutate(Metric = str_replace(Metric, "gpt2-medium", "GPT2-medium")) %>%
-      mutate(Metric = str_replace(Metric, "gpt2-xl", "GPT2-xl")) %>%
-      mutate(Metric = str_replace(Metric, "sentence-prob", "l2r")) %>%
-      # tinyLSTM
-      mutate(Metric = str_replace(Metric, "surprisal_scores_tinylstm", "tinyLSTM.surprisal")) %>%
-      # Bidirectional
-      mutate(Metric = str_replace(Metric, "sentence-PLL", "PLL")) %>%
-      mutate(Metric = str_replace(Metric, "sentence-l2r-PLL", "l2r")) %>%
-      mutate(Metric = str_replace(Metric, ".verb-PLL", ".pverb")) %>%
-      mutate(Metric = str_replace(Metric, ".last-word-PLL", ".plast")) %>%
-      # BERT
-      mutate(Metric = str_replace(Metric, "bert-large-cased", "BERT-large")) %>%
-      mutate(Metric = str_replace(Metric, "roberta-large", "RoBERTa-large"))
-    
-    # 3. PREPROCESS SCORES
-    #Normalize scores for all models
-    d = d %>%
-      mutate(NormScore = normalization(Score))
-    
-    # 4. PROCESS SENTENCES
-    d = d  %>%
-      #strip space before final period for alignment with TrialTypes etc below
-      mutate(Sentence = str_replace(Sentence, " [.]", ".")) %>%
-      #Add final period where missing
-      mutate(Sentence = ifelse(endsWith(Sentence, "."),Sentence,paste(Sentence, ".", sep=""))) %>%
-      #uppercase first word in sentence to align with other model sentence sets
-      mutate(Sentence = firstup(Sentence))
-    
-    return(d)
-  } 
-  else {
-    print(paste('unexpected number of columns in file: ', 'number of columns: ', filename, ncol(d)))
-    return(NULL)
-  }
 }
