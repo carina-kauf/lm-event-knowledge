@@ -252,12 +252,19 @@ if (length(single_sentences$ItemNum)>0) {
 ## Final checks
 ```{r}
 # make sure that item numbers are the same everywhere
+#         & that the sentences are the same across all metrics
 item_sent_combos = dat %>%
   group_by(Sentence) %>%
-  mutate(Count=length(unique(ItemNum)))
-if (any(sapply(item_sent_combos$Count, function(x) {x!=1}))) {
-  print(item_sent_combos %>% filter(Count!=1))
+  mutate(ItemCount=length(unique(ItemNum)),
+         SentenceCount=length(Sentence))
+if (any(sapply(item_sent_combos$ItemCount, function(x) {x!=1}))) {
+  print(item_sent_combos %>% filter(ItemCount!=1))
   stop('Item number mismatch across metrics')
+}
+if (length(unique(item_sent_combos$SentenceCount))>1) {
+  correctNum = mode(item_sent_combos$SentenceCount)
+  print (item_sent_combos %>% filter(SentenceCount!=correctNum))
+  stop('Not all metrics have the same sentences')
 }
 ```
 
