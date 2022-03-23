@@ -56,6 +56,7 @@ clean_metric_name <- function(filename) {
   metric = str_replace(metric, "sentence-prob", "l2r")
   # tinyLSTM
   metric = str_replace(metric, "surprisal_scores_tinylstm", "tinyLSTM.surprisal")
+  metric = str_replace(metric, "vassallo_tinyLSTM", "tinyLSTM")
   # Bidirectional
   metric = str_replace(metric, "sentence-PLL", "PLL")
   metric = str_replace(metric, "sentence-l2r-PLL", "l2r")
