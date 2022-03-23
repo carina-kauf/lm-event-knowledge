@@ -74,8 +74,8 @@ human_dat$TrialType = "AAN"
 
 human <- c("human")
 anns <- c("GPT2","BERT","RoBERTa","tinyLSTM")
-anns_main <- c("GPT2-XL.l2r","BERT-large.pverb","RoBERTa-large.pverb","tinyLSTM.surprisal") #best metrics
-baselines <- c("syntax.PPMI","SDM")
+anns_main <- c("GPT2-xl.l2r","BERT-large.pverb","RoBERTa-large.pverb","tinyLSTM.surprisal") #best metrics
+baselines <- c("syntax.PPMI","thematicFit.prod","SDM")
 
 anns_main <- c(human, anns_main)
 all_main <- c(anns_main, baselines)
@@ -357,7 +357,6 @@ dat.model2human$Category = factor(dat.model2human$Category, levels=c("human", "A
 ## Calculate correlations for the plot
 
 ```{r}
-source('stats_utils.R')
 df_correlation = get_correlation_df("model2human", "singleHuman", dat.model2human, metric_names)
 ```
 

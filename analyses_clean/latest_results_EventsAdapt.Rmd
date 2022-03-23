@@ -77,8 +77,8 @@ if (grepl("min-max", normalization) == TRUE){
 ```{r, utils.choose_models, echo=FALSE}
 human <- c("human")
 anns <- c("GPT2","BERT","RoBERTa","tinyLSTM")
-anns_main <- c("GPT2-XL.l2r","BERT-large.pverb","RoBERTa-large.pverb","tinyLSTM.surprisal") #best metrics
-baselines <- c("syntax.PPMI","SDM")
+anns_main <- c("GPT2-xl.l2r","BERT-large.pverb","RoBERTa-large.pverb","tinyLSTM.surprisal") 
+baselines <- c("syntax.PPMI","thematicFit.prod", "SDM")
 
 anns_main <- c(human, anns_main)
 all_main <- c(anns_main, baselines)
@@ -367,6 +367,7 @@ cor(dat.binchoice.human$meanAccuracy, dat.binchoice.human$FinalScoreDiff)
 (each human with the average of all the rest)
 ```{r}
 human_dat.comp = human_dat %>%
+  filter(!is.na(Score)) %>%
   mutate(FinalNormScore = normalization(Score)) %>%
   select(WorkerId, ItemNum, TrialType, Plausibility, Voice, Sentence, FinalNormScore)
 

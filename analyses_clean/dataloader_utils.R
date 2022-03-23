@@ -46,6 +46,7 @@ clean_metric_name <- function(filename) {
   metric = str_replace(metric, "scores_baseline1", "syntax.PPMI")
   # SDM model names
   metric = str_replace(metric, "v2.sdm-scores", "SDM")
+  metric = str_replace(metric, "deps_SDM", "SDM")
   # thematic fit
   metric = str_replace(metric, "deps.update-model.TF-prod.n200", "thematicFit.prod")
   metric = str_replace(metric, "update-model.TF-prod.n200", "thematicFit.prod")

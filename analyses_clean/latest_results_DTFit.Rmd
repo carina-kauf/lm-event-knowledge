@@ -67,8 +67,8 @@ dat = read.csv('clean_data/clean_DTFit_df.csv')
 ```{r, utils.choose_models, echo=FALSE}
 human <- c("human")
 anns <- c("GPT2","BERT","RoBERTa","tinyLSTM")
-anns_main <- c("GPT2-XL.l2r","BERT-large.plast","RoBERTa-large.plast","tinyLSTM.surprisal") #best metrics
-baselines <- c("syntax.PPMI","SDM")
+anns_main <- c("GPT2-xl.l2r","BERT-large.plast","RoBERTa-large.plast","tinyLSTM.surprisal") #best metrics
+baselines <- c("syntax.PPMI","thematicFit.prod","SDM")
 
 anns_main <- c(human, anns_main)
 all_main <- c(anns_main, baselines)
