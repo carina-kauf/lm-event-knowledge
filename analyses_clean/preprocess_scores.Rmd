@@ -255,7 +255,7 @@ if (length(single_sentences$ItemNum)>0) {
 #         & that the sentences are the same across all metrics
 item_sent_combos = dat %>%
   group_by(Sentence) %>%
-  mutate(ItemCount=length(unique(ItemNum)),
+  summarize(ItemCount=length(unique(ItemNum)),
          SentenceCount=length(Sentence))
 if (any(sapply(item_sent_combos$ItemCount, function(x) {x!=1}))) {
   print(item_sent_combos %>% filter(ItemCount!=1))
