@@ -4,3 +4,4 @@
 [submodule "Event_Knowledge_Model_Comparison"]
 	path = Event_Knowledge_Model_Comparison
 	url = https://github.com/giuliarambelli/Event_Knowledge_Model_Comparison.git
+        branch = master
