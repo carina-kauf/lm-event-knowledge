@@ -21,7 +21,7 @@ if (!dir.exists(savedir)) {dir.create(savedir)}
 ```
 
 ```{r}
-experiment = "EventsRev" # can be "EventsAdapt" or "EventsRev" or "DTFit"
+experiment = "EventsAdapt" # can be "EventsAdapt" or "EventsRev" or "DTFit"
 normalization_type = "min-max" #can be "min-max", "zscore", "none"
 ```
 
