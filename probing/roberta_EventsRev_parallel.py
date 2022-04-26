@@ -93,5 +93,5 @@ def output(model_name, dataset_name):
   print(Accuracy)
   df_out = pd.DataFrame(Accuracy)
   df_out = df_out.transpose()
-  df_out.to_csv(output_path)
-output('roberta-large', '/om2/user/jshe/lm-event-knowledge/analyses_clean/clean_data/clean_DTFit_SentenceSet.csv')
+  df_out.to_csv(output_path, header = False)
+output('roberta-large', '/om2/user/jshe/lm-event-knowledge/analyses_clean/clean_data/clean_EventsRev_SentenceSet.csv')
