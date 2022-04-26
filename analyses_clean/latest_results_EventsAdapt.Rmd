@@ -31,7 +31,7 @@ options(dplyr.summarise.inform = FALSE)
 ### Print environment variables 
 ```{r}
 #SET ENVIRONMENT VARIABLES
-which_models <- "all_main" #can be "anns_all", "anns_main", or "all_main"
+which_models <- "anns_main" #can be "anns_all", "anns_main", or "all_main"
 # anns_main = human + main ANNs
 # all_main = human + main ANNs + main baselines
 # anns_all = human + all ANNs
@@ -262,6 +262,31 @@ for (i in seq_along(chosen_models)) {
 colnames(df_ai.vs.aan) = c("Metric", "statistic", "pVal", "pLabel")
 ```
 
+```{r, echo=FALSE}
+
+plot.binacc = ggplot(data=subset(dat.binchoice, TrialType%in%c("AI","AAN")), 
+       mapping=aes(x=TrialType, y=Accuracy, fill=Category))+
+  facet_wrap(~Metric, ncol=5)+
+  geom_hline(yintercept=1, color='gray50', linetype='dotted')+
+  stat_summary(geom='col', fun.y='mean',
+               color='black', width=0.8)+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               color = 'black', size = 0.5, width=0.1)+
+  geom_text(mapping=aes(x=TrialType, y=0.05, label=pLabel), data=dat.binchoice.summary)+
+  geom_line(data=tibble(x=c(1,2), y=c(1.1,1.1)), aes(x=x,y=y), inherit.aes=FALSE)+
+  geom_text(data=tibble(x=1.5, y=1.15), aes(x=x,y=y, label=df_ai.vs.aan$pLabel), inherit.aes=FALSE)+
+  scale_y_continuous(breaks=c(0,0.25,0.5,0.75,1))+
+  coord_cartesian(ylim=c(0,1.2))+
+  geom_hline(yintercept=.5, linetype='dotted')+
+  theme_classic()+
+  labs(x='')+
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+plot.binacc
+
+savename <- "1_binaryAccuracy_split_directComparison.png"
+ggsave(paste(savedir,savename,sep="/"), width=22, height=10, units='cm')
+```
+
 ### Extra: Plot AAR binary accuracy
 ```{r, echo=FALSE}
 
@@ -325,8 +350,9 @@ ggplot(data=subset(dat.binchoice, TrialType%in%c("AI")),
 
 savename <- "binaryAccuracy_AI.png"
 ggsave(paste(savedir,savename,sep="/"), width=8, height=8, units='cm')
+```
 
-
+```{r}
 ggplot(data=subset(dat.binchoice, TrialType%in%c("AAN")), 
        mapping=aes(x=Metric, y=Accuracy, fill=Category))+
   geom_hline(yintercept=1, color='gray50', linetype='dotted')+
@@ -778,6 +804,7 @@ plot.score_difference.aar = ggplot(data=dat.binchoice.aar,mapping=aes(x=TrialTyp
   stat_summary(geom='errorbar', fun.data='mean_se',
                color = 'black', size = 0.5, width=0.1)+
   geom_text(mapping=aes(x=1, y=0.015, label=pLabel), data=df_correlation, size=cortext_size)+
+  geom_hline(yintercept=0, linetype='dotted')+
   ggtitle('SCORE DIFFERENCE')+
   theme_classic()+
   theme(plot.title = element_text(hjust=0.5,face='bold'))+
