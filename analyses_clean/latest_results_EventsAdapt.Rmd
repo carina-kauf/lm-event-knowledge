@@ -303,6 +303,51 @@ savename <- "1_binaryAccuracy_split_AAR.png"
 ggsave(paste(savedir,savename,sep="/"), width=15, height=12, units='cm')
 ```
 
+## PRES
+
+```{r, echo=FALSE}
+
+ggplot(data=subset(dat.binchoice, TrialType%in%c("AI")), 
+       mapping=aes(x=Metric, y=Accuracy, fill=Category))+
+  geom_hline(yintercept=1, color='gray50', linetype='dotted')+
+  stat_summary(geom='col', fun.y='mean',
+               color='black', width=0.8, show.legend=FALSE)+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               color = 'black', size = 0.5, width=0.1)+
+  geom_text(mapping=aes(x=Metric, y=0.05, label=pLabel), 
+            data=subset(dat.binchoice.summary, TrialType%in%c("AI")))+
+  coord_cartesian(ylim=c(0,1))+
+  geom_hline(yintercept=.5, linetype='dotted')+
+  scale_x_discrete(labels=c("human", "GPT2-XL", "BERT-large", "RoBERTa-large", "tinyLSTM"))+
+  theme_classic()+
+  labs(x=NULL)+
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+savename <- "binaryAccuracy_AI.png"
+ggsave(paste(savedir,savename,sep="/"), width=8, height=8, units='cm')
+
+
+ggplot(data=subset(dat.binchoice, TrialType%in%c("AAN")), 
+       mapping=aes(x=Metric, y=Accuracy, fill=Category))+
+  geom_hline(yintercept=1, color='gray50', linetype='dotted')+
+  stat_summary(geom='col', fun.y='mean',
+               color='black', width=0.8, show.legend=FALSE)+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               color = 'black', size = 0.5, width=0.1)+
+  geom_text(mapping=aes(x=Metric, y=0.05, label=pLabel), 
+            data=subset(dat.binchoice.summary, TrialType%in%c("AAN")))+
+  coord_cartesian(ylim=c(0,1))+
+  geom_hline(yintercept=.5, linetype='dotted')+
+  scale_x_discrete(labels=c("human", "GPT2-XL", "BERT-large", "RoBERTa-large", "tinyLSTM"))+
+  theme_classic()+
+  labs(x=NULL)+
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+savename <- "binaryAccuracy_AAN.png"
+ggsave(paste(savedir,savename,sep="/"), width=8, height=8, units='cm')
+
+```
+
 ## Error analysis
 
 ```{r}

@@ -1,0 +1,1648 @@
+0	The raider caught the illness.	53.684143000000006	The raider caught the illness .	nounk
+1	The illness caught the raider.	54.144033	The illness caught the raider .	nounk
+2	The illness was caught by the raider.	59.36043300000001	The illness was caught by the raider .	nounk
+3	The raider was caught by the illness.	56.691554	The raider was caught by the illness .	nounk
+4	The marauder contracted the disease.	50.09021	The UNK-LC-er contracted the disease .	unk
+5	The disease contracted the marauder.	47.256916999999994	The disease contracted the UNK-LC-er .	unk
+6	The disease was contracted by the marauder.	51.458031	The disease was contracted by the UNK-LC-er .	unk
+7	The marauder was contracted by the disease.	55.465525	The UNK-LC-er was contracted by the disease .	unk
+8	The convict dreaded the prison.	54.937611000000004	The convict dreaded the prison .	nounk
+9	The prison dreaded the convict.	54.451154	The prison dreaded the convict .	nounk
+10	The prison was dreaded by the convict.	60.342924999999994	The prison was dreaded by the convict .	nounk
+11	The convict was dreaded by the prison.	61.671628	The convict was dreaded by the prison .	nounk
+12	The criminal feared the jail.	57.32689800000001	The criminal feared the jail .	nounk
+13	The jail feared the criminal.	58.660697	The jail feared the criminal .	nounk
+14	The jail was feared by the criminal.	60.023523999999995	The jail was feared by the criminal .	nounk
+15	The criminal was feared by the jail.	60.546234	The criminal was feared by the jail .	nounk
+16	The prostitute squandered the cash.	55.86886299999999	The prostitute squandered the cash .	nounk
+17	The cash squandered the prostitute.	60.49891999999999	The cash squandered the prostitute .	nounk
+18	The cash was squandered by the prostitute.	61.494015999999995	The cash was squandered by the prostitute .	nounk
+19	The prostitute was squandered by the cash.	63.457688000000005	The prostitute was squandered by the cash .	nounk
+20	The call girl wasted the money.	61.055601	The call girl wasted the money .	nounk
+21	The money wasted the call girl.	65.300873	The money wasted the call girl .	nounk
+22	The money was wasted by the call girl.	69.029419	The money was wasted by the call girl .	nounk
+23	The call girl was wasted by the money.	69.754487	The call girl was wasted by the money .	nounk
+24	The adventurer requested the beverage.	62.240274	The adventurer requested the beverage .	nounk
+25	The beverage requested the adventurer.	63.062917	The beverage requested the adventurer .	nounk
+26	The beverage was requested by the adventurer.	64.197781	The beverage was requested by the adventurer .	nounk
+27	The adventurer was requested by the beverage.	68.021549	The adventurer was requested by the beverage .	nounk
+28	The undertaker prepared the funeral.	54.806571000000005	The undertaker prepared the funeral .	nounk
+29	The funeral prepared the undertaker.	59.454996	The funeral prepared the undertaker .	nounk
+30	The funeral was prepared by the undertaker.	57.499158	The funeral was prepared by the undertaker .	nounk
+31	The undertaker was prepared by the funeral.	56.034074000000004	The undertaker was prepared by the funeral .	nounk
+32	The mortician arranged the burial.	57.314057	The mortician arranged the burial .	nounk
+33	The burial arranged the mortician.	61.33670599999999	The burial arranged the mortician .	nounk
+34	The burial was arranged by the mortician.	60.46067	The burial was arranged by the mortician .	nounk
+35	The mortician was arranged by the burial.	65.420395	The mortician was arranged by the burial .	nounk
+36	The supervisor supplied the liquor.	52.573775	The supervisor supplied the liquor .	nounk
+37	The liquor supplied the supervisor.	53.951632000000004	The liquor supplied the supervisor .	nounk
+38	The liquor was supplied by the supervisor.	53.507106	The liquor was supplied by the supervisor .	nounk
+39	The supervisor was supplied by the liquor.	58.797347	The supervisor was supplied by the liquor .	nounk
+40	The overseer provided the alcohol.	55.455945	The overseer provided the alcohol .	nounk
+41	The alcohol provided the overseer.	56.645770999999996	The alcohol provided the overseer .	nounk
+42	The alcohol was provided by the overseer.	59.000266999999994	The alcohol was provided by the overseer .	nounk
+43	The overseer was provided by the alcohol.	63.676124	The overseer was provided by the alcohol .	nounk
+44	The troublemaker crashed the car.	57.480512999999995	The troublemaker crashed the car .	nounk
+45	The car crashed the troublemaker.	55.224789	The car crashed the troublemaker .	nounk
+46	The car was crashed by the troublemaker.	59.956397	The car was crashed by the troublemaker .	nounk
+47	The troublemaker was crashed by the car.	63.222660999999995	The troublemaker was crashed by the car .	nounk
+48	The hooligan wrecked the vehicle.	45.811963	The UNK-LC wrecked the vehicle .	unk
+49	The vehicle wrecked the hooligan.	45.005312999999994	The vehicle wrecked the UNK-LC .	unk
+50	The vehicle was wrecked by the hooligan.	49.392289999999996	The vehicle was wrecked by the UNK-LC .	unk
+51	The hooligan was wrecked by the vehicle.	52.393175	The UNK-LC was wrecked by the vehicle .	unk
+52	The repairman fixed the tap.	60.559686	The repairman fixed the tap .	nounk
+53	The tap fixed the repairman.	58.153138000000006	The tap fixed the repairman .	nounk
+54	The tap was fixed by the repairman.	62.49807	The tap was fixed by the repairman .	nounk
+55	The repairman was fixed by the tap.	67.728181	The repairman was fixed by the tap .	nounk
+56	The handyman repaired the faucet.	56.348009000000005	The handyman repaired the faucet .	nounk
+57	The faucet repaired the handyman.	59.655293	The faucet repaired the handyman .	nounk
+58	The faucet was repaired by the handyman.	65.34559899999999	The faucet was repaired by the handyman .	nounk
+59	The handyman was repaired by the faucet.	64.697013	The handyman was repaired by the faucet .	nounk
+60	The secretary organized the desk.	46.91666	The secretary organized the desk .	nounk
+61	The desk organized the secretary.	53.570496000000006	The desk organized the secretary .	nounk
+62	The desk was organized by the secretary.	50.492411	The desk was organized by the secretary .	nounk
+63	The secretary was organized by the desk.	50.704105000000006	The secretary was organized by the desk .	nounk
+64	The receptionist tidied the table.	46.47782300000001	The receptionist UNK-LC-ed the table .	unk
+65	The table tidied the receptionist.	49.145160000000004	The table UNK-LC-ed the receptionist .	unk
+66	The table was tidied by the receptionist.	51.683498	The table was UNK-LC-ed by the receptionist .	unk
+67	The receptionist was tidied by the table.	52.506975999999995	The receptionist was UNK-LC-ed by the table .	unk
+68	The pilot steered the airplane.	49.000372	The pilot steered the airplane .	nounk
+69	The airplane steered the pilot.	51.278743	The airplane steered the pilot .	nounk
+70	The airplane was steered by the pilot.	55.058313999999996	The airplane was steered by the pilot .	nounk
+71	The pilot was steered by the airplane.	56.713265	The pilot was steered by the airplane .	nounk
+72	The aviator maneuvered the jet.	58.969733	The aviator maneuvered the jet .	nounk
+73	The jet maneuvered the aviator.	59.521095	The jet maneuvered the aviator .	nounk
+74	The jet was maneuvered by the aviator.	64.771546	The jet was maneuvered by the aviator .	nounk
+75	The aviator was maneuvered by the jet.	64.94166299999999	The aviator was maneuvered by the jet .	nounk
+76	The chef sauteed the squid.	67.701872	The chef sauteed the squid .	nounk
+77	The squid sauteed the chef.	68.336476	The squid sauteed the chef .	nounk
+78	The squid was sauteed by the chef.	75.14018800000001	The squid was sauteed by the chef .	nounk
+79	The chef was sauteed by the squid.	74.11514199999999	The chef was sauteed by the squid .	nounk
+80	The cook grilled the octopus.	54.820677	The cook grilled the octopus .	nounk
+81	The octopus grilled the cook.	58.824853000000004	The octopus grilled the cook .	nounk
+82	The octopus was grilled by the cook.	62.83854099999999	The octopus was grilled by the cook .	nounk
+83	The cook was grilled by the octopus.	62.555363	The cook was grilled by the octopus .	nounk
+84	The ship captain promised the triumph.	64.150802	The ship captain promised the triumph .	nounk
+85	The triumph promised the ship captain.	68.53222	The triumph promised the ship captain .	nounk
+86	The triumph was promised by the ship captain.	71.564161	The triumph was promised by the ship captain .	nounk
+87	The ship captain was promised by the triumph.	72.46200400000001	The ship captain was promised by the triumph .	nounk
+88	The skipper guaranteed the victory.	55.461558	The skipper guaranteed the victory .	nounk
+89	The victory guaranteed the skipper.	56.06751	The victory guaranteed the skipper .	nounk
+90	The victory was guaranteed by the skipper.	56.419395	The victory was guaranteed by the skipper .	nounk
+91	The skipper was guaranteed by the victory.	60.52581	The skipper was guaranteed by the victory .	nounk
+92	The milliner adorned the fedora.	59.05882	The UNK-LC-er adorned the fedora .	unk
+93	The fedora adorned the milliner.	59.119496	The fedora adorned the UNK-LC-er .	unk
+94	The fedora was adorned by the milliner.	63.493742	The fedora was adorned by the UNK-LC-er .	unk
+95	The milliner was adorned by the fedora.	64.66764	The UNK-LC-er was adorned by the fedora .	unk
+96	The hatter decorated the bowler.	53.16014300000001	The UNK-LC-er decorated the bowler .	unk
+97	The bowler decorated the hatter.	51.111515	The bowler decorated the UNK-LC-er .	unk
+98	The bowler was decorated by the hatter.	58.150777000000005	The bowler was decorated by the UNK-LC-er .	unk
+99	The hatter was decorated by the bowler.	61.853408	The UNK-LC-er was decorated by the bowler .	unk
+100	The serviceman hoisted the flag.	52.423868	The serviceman hoisted the flag .	nounk
+101	The flag hoisted the serviceman.	58.592453	The flag hoisted the serviceman .	nounk
+102	The flag was hoisted by the serviceman.	62.807399	The flag was hoisted by the serviceman .	nounk
+103	The serviceman was hoisted by the flag.	60.08439299999999	The serviceman was hoisted by the flag .	nounk
+104	The soldier raised the banner.	48.647798	The soldier raised the banner .	nounk
+105	The banner raised the soldier.	51.717993	The banner raised the soldier .	nounk
+106	The banner was raised by the soldier.	54.256055	The banner was raised by the soldier .	nounk
+107	The soldier was raised by the banner.	55.863454999999995	The soldier was raised by the banner .	nounk
+108	The agent failed the mission.	49.855667	The agent failed the mission .	nounk
+109	The mission failed the agent.	52.593757	The mission failed the agent .	nounk
+110	The mission was failed by the agent.	55.186222	The mission was failed by the agent .	nounk
+111	The agent was failed by the mission.	57.271528	The agent was failed by the mission .	nounk
+112	The operative blew the assignment.	58.914711000000004	The operative blew the assignment .	nounk
+113	The assignment blew the operative.	63.457023	The assignment blew the operative .	nounk
+114	The assignment was blown by the operative.	64.55439000000001	The assignment was blown by the operative .	nounk
+115	The operative was blown by the assignment.	65.86551700000001	The operative was blown by the assignment .	nounk
+116	The anchorman garbled the expression.	58.83222099999999	The anchorman garbled the expression .	nounk
+117	The expression garbled the anchorman.	63.940795	The expression garbled the anchorman .	nounk
+118	The expression was garbled by the anchorman.	67.539811	The expression was garbled by the anchorman .	nounk
+119	The anchorman was garbled by the expression.	66.94426	The anchorman was garbled by the expression .	nounk
+120	The announcer mispronounced the word.	44.21723500000001	The announcer UNK-LC-ed the word .	unk
+121	The word mispronounced the announcer.	46.624126000000004	The word UNK-LC-ed the announcer .	unk
+122	The word was mispronounced by the announcer.	50.048657	The word was UNK-LC-ed by the announcer .	unk
+123	The announcer was mispronounced by the word.	51.349227	The announcer was UNK-LC-ed by the word .	unk
+124	The author finished the novel.	43.420919000000005	The author finished the novel .	nounk
+125	The novel finished the author.	47.638615	The novel finished the author .	nounk
+126	The novel was finished by the author.	49.979338	The novel was finished by the author .	nounk
+127	The author was finished by the novel.	50.556384	The author was finished by the novel .	nounk
+128	The writer completed the book.	42.387747999999995	The writer completed the book .	nounk
+129	The book completed the writer.	50.613848000000004	The book completed the writer .	nounk
+130	The book was completed by the writer.	45.521207000000004	The book was completed by the writer .	nounk
+131	The writer was completed by the book.	47.65622	The writer was completed by the book .	nounk
+132	The financier sponsored the project.	44.963417	The financier sponsored the project .	nounk
+133	The project sponsored the financier.	50.298239	The project sponsored the financier .	nounk
+134	The project was sponsored by the financier.	43.309229	The project was sponsored by the financier .	nounk
+135	The financier was sponsored by the project.	52.31541	The financier was sponsored by the project .	nounk
+136	The banker funded the program.	47.068974	The banker funded the program .	nounk
+137	The program funded the banker.	50.179336	The program funded the banker .	nounk
+138	The program was funded by the banker.	46.389854	The program was funded by the banker .	nounk
+139	The banker was funded by the program.	49.572937	The banker was funded by the program .	nounk
+140	The tourist exited the bus.	50.99089	The tourist exited the bus .	nounk
+141	The bus exited the tourist.	53.708977	The bus exited the tourist .	nounk
+142	The bus was exited by the tourist.	60.008214	The bus was exited by the tourist .	nounk
+143	The tourist was exited by the bus.	59.142492000000004	The tourist was exited by the bus .	nounk
+144	The vacationer left the shuttle.	47.268730000000005	The vacationer left the shuttle .	nounk
+145	The shuttle left the vacationer.	48.436474	The shuttle left the vacationer .	nounk
+146	The shuttle was left by the vacationer.	54.84787299999999	The shuttle was left by the vacationer .	nounk
+147	The vacationer was left by the shuttle.	56.183113	The vacationer was left by the shuttle .	nounk
+148	The dietitian loathed the jam.	57.141019	The UNK-LC loathed the jam .	unk
+149	The jam loathed the dietitian.	57.620373	The jam loathed the UNK-LC .	unk
+150	The jam was loathed by the dietitian.	58.803401	The jam was loathed by the UNK-LC .	unk
+151	The dietitian was loathed by the jam.	60.036935	The UNK-LC was loathed by the jam .	unk
+152	The nutritionist detested the marmalade.	65.185154	The nutritionist detested the marmalade .	nounk
+153	The marmalade detested the nutritionist.	66.73168299999999	The marmalade detested the nutritionist .	nounk
+154	The marmalade was detested by the nutritionist.	75.933897	The marmalade was detested by the nutritionist .	nounk
+155	The nutritionist was detested by the marmalade.	74.365706	The nutritionist was detested by the marmalade .	nounk
+156	The scientist discovered the cure.	47.97299699999999	The scientist discovered the cure .	nounk
+157	The cure discovered the scientist.	54.868788	The cure discovered the scientist .	nounk
+158	The cure was discovered by the scientist.	52.200207	The cure was discovered by the scientist .	nounk
+159	The scientist was discovered by the cure.	56.953371999999995	The scientist was discovered by the cure .	nounk
+160	The researcher found the remedy.	47.8931	The researcher found the remedy .	nounk
+161	The remedy found the researcher.	53.26691900000001	The remedy found the researcher .	nounk
+162	The remedy was found by the researcher.	53.695149	The remedy was found by the researcher .	nounk
+163	The researcher was found by the remedy.	56.519862	The researcher was found by the remedy .	nounk
+164	The doctor closed the school.	41.950415	The doctor closed the school .	nounk
+165	The school closed the doctor.	46.326864	The school closed the doctor .	nounk
+166	The school was closed by the doctor.	47.424288	The school was closed by the doctor .	nounk
+167	The doctor was closed by the school.	47.346818	The doctor was closed by the school .	nounk
+168	The maid lifted the cushion.	55.65796099999999	The maid lifted the cushion .	nounk
+169	The cushion lifted the maid.	55.700788	The cushion lifted the maid .	nounk
+170	The cushion was lifted by the maid.	60.55834800000001	The cushion was lifted by the maid .	nounk
+171	The maid was lifted by the cushion.	62.480647	The maid was lifted by the cushion .	nounk
+172	The designer suggested the drapes.	54.817768	The designer suggested the drapes .	nounk
+173	The drapes suggested the designer.	55.175206	The drapes suggested the designer .	nounk
+174	The drapes were suggested by the designer.	60.805457999999994	The drapes were suggested by the designer .	nounk
+175	The designer was suggested by the drapes.	63.499806	The designer was suggested by the drapes .	nounk
+176	The decorator recommended the curtains.	56.84914	The decorator recommended the curtains .	nounk
+177	The curtains recommended the decorator.	58.984757	The curtains recommended the decorator .	nounk
+178	The curtains were recommended by the decorator.	59.481314999999995	The curtains were recommended by the decorator .	nounk
+179	The decorator was recommended by the curtains.	61.090627999999995	The decorator was recommended by the curtains .	nounk
+180	The builder washed the pants.	55.36632600000001	The builder washed the pants .	nounk
+181	The pants washed the builder.	60.090695	The pants washed the builder .	nounk
+182	The pants were washed by the builder.	60.394548	The pants were washed by the builder .	nounk
+183	The builder was washed by the pants.	60.280865000000006	The builder was washed by the pants .	nounk
+184	The contractor laundered the trousers.	61.527041000000004	The contractor laundered the trousers .	nounk
+185	The trousers laundered the contractor.	65.329982	The trousers laundered the contractor .	nounk
+186	The trousers were laundered by the contractor.	65.29115300000001	The trousers were laundered by the contractor .	nounk
+187	The contractor was laundered by the trousers.	69.01376400000001	The contractor was laundered by the trousers .	nounk
+188	The servant wiped the sink.	65.056606	The servant wiped the sink .	nounk
+189	The sink wiped the servant.	63.462344	The sink wiped the servant .	nounk
+190	The sink was wiped by the servant.	69.265784	The sink was wiped by the servant .	nounk
+191	The servant was wiped by the sink.	68.301852	The servant was wiped by the sink .	nounk
+192	The domestic cleaned the wash basin.	78.23129200000001	The domestic cleaned the wash basin .	nounk
+193	The wash basin cleaned the domestic.	78.827714	The wash basin cleaned the domestic .	nounk
+194	The wash basin was cleaned by the domestic.	81.854952	The wash basin was cleaned by the domestic .	nounk
+195	The domestic was cleaned by the wash basin.	84.917889	The domestic was cleaned by the wash basin .	nounk
+196	The friend donned the pullover.	58.370301000000005	The friend donned the pullover .	nounk
+197	The pullover donned the friend.	64.062793	The pullover donned the friend .	nounk
+198	The pullover was donned by the friend.	70.886703	The pullover was donned by the friend .	nounk
+199	The friend was donned by the pullover.	70.645141	The friend was donned by the pullover .	nounk
+200	The convalescent took the pill.	53.582386	The convalescent took the pill .	nounk
+201	The pill took the convalescent.	59.189522999999994	The pill took the convalescent .	nounk
+202	The pill was taken by the convalescent.	63.296746999999996	The pill was taken by the convalescent .	nounk
+203	The convalescent was taken by the pill.	63.027603	The convalescent was taken by the pill .	nounk
+204	The patient swallowed the medicine.	48.550916	The patient swallowed the medicine .	nounk
+205	The medicine swallowed the patient.	51.61402	The medicine swallowed the patient .	nounk
+206	The medicine was swallowed by the patient.	49.763571999999996	The medicine was swallowed by the patient .	nounk
+207	The patient was swallowed by the medicine.	51.421572	The patient was swallowed by the medicine .	nounk
+208	The hoarder hid the stash.	56.149939999999994	The UNK-LC-er hid the stash .	unk
+209	The stash hid the hoarder.	58.427071999999995	The stash hid the UNK-LC-er .	unk
+210	The stash was hidden by the hoarder.	59.348285999999995	The stash was hidden by the UNK-LC-er .	unk
+211	The hoarder was hidden by the stash.	62.731673	The UNK-LC-er was hidden by the stash .	unk
+212	The packrat concealed the stockpile.	54.614368	The UNK-LC concealed the stockpile .	unk
+213	The stockpile concealed the packrat.	53.234347	The stockpile concealed the UNK-LC .	unk
+214	The stockpile was concealed by the packrat.	57.594599	The stockpile was concealed by the UNK-LC .	unk
+215	The packrat was concealed by the stockpile.	60.404385	The UNK-LC was concealed by the stockpile .	unk
+216	The reporter abandoned the story.	42.70287400000001	The reporter abandoned the story .	nounk
+217	The story abandoned the reporter.	47.87775499999999	The story abandoned the reporter .	nounk
+218	The story was abandoned by the reporter.	46.139376	The story was abandoned by the reporter .	nounk
+219	The reporter was abandoned by the story.	49.812176	The reporter was abandoned by the story .	nounk
+220	The journalist ditched the article.	58.261143	The journalist ditched the article .	nounk
+221	The article ditched the journalist.	57.077686	The article ditched the journalist .	nounk
+222	The article was ditched by the journalist.	59.73332	The article was ditched by the journalist .	nounk
+223	The journalist was ditched by the article.	63.742061	The journalist was ditched by the article .	nounk
+224	The carnivore ate the steak.	67.15838099999999	The carnivore ate the steak .	nounk
+225	The steak ate the carnivore.	67.837358	The steak ate the carnivore .	nounk
+226	The steak was eaten by the carnivore.	65.64500000000001	The steak was eaten by the carnivore .	nounk
+227	The carnivore was eaten by the steak.	69.884247	The carnivore was eaten by the steak .	nounk
+228	The meat-eater devoured the filet.	57.44228999999999	The UNK-LC-DASH devoured the filet .	unk
+229	The filet devoured the meat-eater.	57.689357	The filet devoured the UNK-LC-DASH .	unk
+230	The filet was devoured by the meat-eater.	61.732260999999994	The filet was devoured by the UNK-LC-DASH .	unk
+231	The meat-eater was devoured by the filet.	61.810266999999996	The UNK-LC-DASH was devoured by the filet .	unk
+232	The man drank the soda.	45.88478200000001	The man drank the soda .	nounk
+233	The soda drank the man.	56.504306	The soda drank the man .	nounk
+234	The soda was drunk by the man.	60.346041	The soda was drunk by the man .	nounk
+235	The man was drunk by the soda.	57.792806	The man was drunk by the soda .	nounk
+236	The teacher bought the laptop.	50.49992399999999	The teacher bought the laptop .	nounk
+237	The laptop bought the teacher.	52.918636	The laptop bought the teacher .	nounk
+238	The laptop was bought by the teacher.	55.887654999999995	The laptop was bought by the teacher .	nounk
+239	The teacher was bought by the laptop.	58.873082	The teacher was bought by the laptop .	nounk
+240	The instructor purchased the computer.	49.745897	The instructor purchased the computer .	nounk
+241	The computer purchased the instructor.	52.364415	The computer purchased the instructor .	nounk
+242	The computer was purchased by the instructor.	53.353415999999996	The computer was purchased by the instructor .	nounk
+243	The instructor was purchased by the computer.	55.62931900000001	The instructor was purchased by the computer .	nounk
+244	The lady cooked the supper.	59.330908	The lady cooked the supper .	nounk
+245	The supper cooked the lady.	63.304008	The supper cooked the lady .	nounk
+246	The supper was cooked by the lady.	65.439517	The supper was cooked by the lady .	nounk
+247	The lady was cooked by the supper.	66.15330900000001	The lady was cooked by the supper .	nounk
+248	The woman prepared the dinner.	46.641193	The woman prepared the dinner .	nounk
+249	The dinner prepared the woman.	52.834578	The dinner prepared the woman .	nounk
+250	The dinner was prepared by the woman.	51.250349	The dinner was prepared by the woman .	nounk
+251	The woman was prepared by the dinner.	50.259460000000004	The woman was prepared by the dinner .	nounk
+252	The traveler lost the souvenir.	49.63979	The traveler lost the souvenir .	nounk
+253	The souvenir lost the traveler.	54.469768	The souvenir lost the traveler .	nounk
+254	The souvenir was lost by the traveler.	60.69825899999999	The souvenir was lost by the traveler .	nounk
+255	The traveler was lost by the souvenir.	60.837982	The traveler was lost by the souvenir .	nounk
+256	The sightseer misplaced the memento.	62.991946000000006	The UNK-LC-er misplaced the memento .	unk
+257	The memento misplaced the sightseer.	63.54690000000001	The memento misplaced the UNK-LC-er .	unk
+258	The memento was misplaced by the sightseer.	65.824213	The memento was misplaced by the UNK-LC-er .	unk
+259	The sightseer was misplaced by the memento.	67.431573	The UNK-LC-er was misplaced by the memento .	unk
+260	The comedian confirmed the itinerary.	52.360705	The comedian confirmed the itinerary .	nounk
+261	The itinerary confirmed the comedian.	56.293761999999994	The itinerary confirmed the comedian .	nounk
+262	The itinerary was confirmed by the comedian.	56.241365	The itinerary was confirmed by the comedian .	nounk
+263	The comedian was confirmed by the itinerary.	59.805104	The comedian was confirmed by the itinerary .	nounk
+264	The humorist verified the schedule.	59.311471	The humorist verified the schedule .	nounk
+265	The schedule verified the humorist.	63.529729	The schedule verified the humorist .	nounk
+266	The schedule was verified by the humorist.	60.082027999999994	The schedule was verified by the humorist .	nounk
+267	The humorist was verified by the schedule.	64.759422	The humorist was verified by the schedule .	nounk
+268	The woodworker skimmed the brochure.	65.63909799999999	The woodworker skimmed the brochure .	nounk
+269	The brochure skimmed the woodworker.	66.764887	The brochure skimmed the woodworker .	nounk
+270	The brochure was skimmed by the woodworker.	71.018587	The brochure was skimmed by the woodworker .	nounk
+271	The woodworker was skimmed by the brochure.	72.81793	The woodworker was skimmed by the brochure .	nounk
+272	The guide reached the target.	41.23582	The guide reached the target .	nounk
+273	The target reached the guide.	46.298232	The target reached the guide .	nounk
+274	The target was reached by the guide.	50.273371	The target was reached by the guide .	nounk
+275	The guide was reached by the target.	49.013366	The guide was reached by the target .	nounk
+276	The townsperson farmed the grain.	52.330505	The UNK-LC farmed the grain .	unk
+277	The grain farmed the townsperson.	51.990188	The grain farmed the UNK-LC .	unk
+278	The grain was farmed by the townsperson.	52.297012	The grain was farmed by the UNK-LC .	unk
+279	The townsperson was farmed by the grain.	53.932378	The UNK-LC was farmed by the grain .	unk
+280	The villager cultivated the crop.	59.257405999999996	The villager cultivated the crop .	nounk
+281	The crop cultivated the villager.	60.54088900000001	The crop cultivated the villager .	nounk
+282	The crop was cultivated by the villager.	64.477382	The crop was cultivated by the villager .	nounk
+283	The villager was cultivated by the crop.	66.54311	The villager was cultivated by the crop .	nounk
+284	The mentor revised the manuscript.	55.935551	The mentor revised the manuscript .	nounk
+285	The manuscript revised the mentor.	60.521582	The manuscript revised the mentor .	nounk
+286	The manuscript was revised by the mentor.	61.478109	The manuscript was revised by the mentor .	nounk
+287	The mentor was revised by the manuscript.	65.509949	The mentor was revised by the manuscript .	nounk
+288	The advisor edited the paper.	58.190546000000005	The advisor edited the paper .	nounk
+289	The paper edited the advisor.	61.799849	The paper edited the advisor .	nounk
+290	The paper was edited by the advisor.	59.861543	The paper was edited by the advisor .	nounk
+291	The advisor was edited by the paper.	61.47591700000001	The advisor was edited by the paper .	nounk
+292	The accountant made the chart.	46.11398	The accountant made the chart .	nounk
+293	The chart made the accountant.	47.606213	The chart made the accountant .	nounk
+294	The chart was made by the accountant.	49.923779999999994	The chart was made by the accountant .	nounk
+295	The accountant was made by the chart.	55.705302	The accountant was made by the chart .	nounk
+296	The bookkeeper created the graph.	53.361205999999996	The bookkeeper created the graph .	nounk
+297	The graph created the bookkeeper.	56.503597	The graph created the bookkeeper .	nounk
+298	The graph was created by the bookkeeper.	59.08001000000001	The graph was created by the bookkeeper .	nounk
+299	The bookkeeper was created by the graph.	59.901125	The bookkeeper was created by the graph .	nounk
+300	The logger felled the pine tree.	69.362254	The logger felled the pine tree .	nounk
+301	The pine tree felled the logger.	73.320376	The pine tree felled the logger .	nounk
+302	The pine tree was felled by the logger.	72.989632	The pine tree was felled by the logger .	nounk
+303	The logger was felled by the pine tree.	73.39174299999999	The logger was felled by the pine tree .	nounk
+304	The tycoon ran the company.	46.602853999999994	The tycoon ran the company .	nounk
+305	The company ran the tycoon.	47.188752	The company ran the tycoon .	nounk
+306	The company was run by the tycoon.	48.211344	The company was run by the tycoon .	nounk
+307	The tycoon was run by the company.	50.174457000000004	The tycoon was run by the company .	nounk
+308	The mogul governed the corporation.	56.454167000000005	The mogul governed the corporation .	nounk
+309	The corporation governed the mogul.	56.498706	The corporation governed the mogul .	nounk
+310	The corporation was governed by the mogul.	56.391952	The corporation was governed by the mogul .	nounk
+311	The mogul was governed by the corporation.	59.01146	The mogul was governed by the corporation .	nounk
+312	The campaigner biased the ballot.	60.25864599999999	The campaigner biased the ballot .	nounk
+313	The ballot biased the campaigner.	62.88740899999999	The ballot biased the campaigner .	nounk
+314	The ballot was biased by the campaigner.	63.052383	The ballot was biased by the campaigner .	nounk
+315	The campaigner was biased by the ballot.	64.46286	The campaigner was biased by the ballot .	nounk
+316	The activist prejudiced the vote.	52.681107999999995	The activist prejudiced the vote .	nounk
+317	The vote prejudiced the activist.	56.806521000000004	The vote prejudiced the activist .	nounk
+318	The vote was prejudiced by the activist.	57.636027999999996	The vote was prejudiced by the activist .	nounk
+319	The activist was prejudiced by the vote.	57.037085999999995	The activist was prejudiced by the vote .	nounk
+320	The stewardess pulled the suitcase.	51.659186	The stewardess pulled the suitcase .	nounk
+321	The suitcase pulled the stewardess.	57.545824999999994	The suitcase pulled the stewardess .	nounk
+322	The suitcase was pulled by the stewardess.	60.50014900000001	The suitcase was pulled by the stewardess .	nounk
+323	The stewardess was pulled by the suitcase.	57.943865	The stewardess was pulled by the suitcase .	nounk
+324	The flight-attendant dragged the luggage.	65.37389	The flight-attendant dragged the luggage .	nounk
+325	The luggage dragged the flight-attendant.	70.275632	The luggage dragged the flight-attendant .	nounk
+326	The luggage was dragged by the flight-attendant.	70.494236	The luggage was dragged by the flight-attendant .	nounk
+327	The flight-attendant was dragged by the luggage.	69.929141	The flight-attendant was dragged by the luggage .	nounk
+328	The congressman delivered the speech.	44.007981	The congressman delivered the speech .	nounk
+329	The speech delivered the congressman.	48.804149	The speech delivered the congressman .	nounk
+330	The speech was delivered by the congressman.	49.030950000000004	The speech was delivered by the congressman .	nounk
+331	The congressman was delivered by the speech.	53.041507	The congressman was delivered by the speech .	nounk
+332	The representative gave the address.	49.225785	The representative gave the address .	nounk
+333	The address gave the representative.	48.513234999999995	The address gave the representative .	nounk
+334	The address was given by the representative.	53.943331	The address was given by the representative .	nounk
+335	The representative was given by the address.	55.848131	The representative was given by the address .	nounk
+336	The sheriff inspected the estate.	50.701263	The sheriff inspected the estate .	nounk
+337	The estate inspected the sheriff.	55.24852	The estate inspected the sheriff .	nounk
+338	The estate was inspected by the sheriff.	55.347476	The estate was inspected by the sheriff .	nounk
+339	The sheriff was inspected by the estate.	58.12239099999999	The sheriff was inspected by the estate .	nounk
+340	The constable examined the property.	52.428131	The constable examined the property .	nounk
+341	The property examined the constable.	57.329404	The property examined the constable .	nounk
+342	The property was examined by the constable.	57.998341	The property was examined by the constable .	nounk
+343	The constable was examined by the property.	60.24951	The constable was examined by the property .	nounk
+344	The celebrity signed the photograph.	54.34563000000001	The celebrity signed the photograph .	nounk
+345	The photograph signed the celebrity.	60.200050999999995	The photograph signed the celebrity .	nounk
+346	The photograph was signed by the celebrity.	55.90084900000001	The photograph was signed by the celebrity .	nounk
+347	The celebrity was signed by the photograph.	57.450569	The celebrity was signed by the photograph .	nounk
+348	The star autographed the picture.	48.567751	The star autographed the picture .	nounk
+349	The picture autographed the star.	49.964532999999996	The picture autographed the star .	nounk
+350	The picture was autographed by the star.	59.47372000000001	The picture was autographed by the star .	nounk
+351	The star was autographed by the picture.	60.881023	The star was autographed by the picture .	nounk
+352	The nanny tutored the boy.	53.93942	The nanny tutored the boy .	nounk
+353	The boy tutored the nanny.	54.230340000000005	The boy tutored the nanny .	nounk
+354	The boy was tutored by the nanny.	64.454574	The boy was tutored by the nanny .	nounk
+355	The nanny was tutored by the boy.	64.23340400000001	The nanny was tutored by the boy .	nounk
+356	The governess instructed the lad.	60.950849	The governess instructed the lad .	nounk
+357	The lad instructed the governess.	62.155955000000006	The lad instructed the governess .	nounk
+358	The lad was instructed by the governess.	64.9329	The lad was instructed by the governess .	nounk
+359	The governess was instructed by the lad.	67.008743	The governess was instructed by the lad .	nounk
+360	The blackmailer threatened the senator.	49.263928	The UNK-LC-er threatened the senator .	unk
+361	The senator threatened the blackmailer.	47.980555	The senator threatened the UNK-LC-er .	unk
+362	The senator was threatened by the blackmailer.	51.703295	The senator was threatened by the UNK-LC-er .	unk
+363	The blackmailer was threatened by the senator.	50.428264	The UNK-LC-er was threatened by the senator .	unk
+364	The extortionist menaced the legislator.	70.716512	The extortionist menaced the legislator .	nounk
+365	The legislator menaced the extortionist.	70.565832	The legislator menaced the extortionist .	nounk
+366	The legislator was menaced by the extortionist.	73.905338	The legislator was menaced by the extortionist .	nounk
+367	The extortionist was menaced by the legislator.	75.74064200000001	The extortionist was menaced by the legislator .	nounk
+368	The artist portrayed the philosopher.	50.763816	The artist portrayed the philosopher .	nounk
+369	The philosopher portrayed the artist.	52.89116200000001	The philosopher portrayed the artist .	nounk
+370	The philosopher was portrayed by the artist.	57.166371	The philosopher was portrayed by the artist .	nounk
+371	The artist was portrayed by the philosopher.	55.510161	The artist was portrayed by the philosopher .	nounk
+372	The painter depicted the thinker.	55.99591100000001	The painter depicted the thinker .	nounk
+373	The thinker depicted the painter.	57.18074	The thinker depicted the painter .	nounk
+374	The thinker was depicted by the painter.	61.016856000000004	The thinker was depicted by the painter .	nounk
+375	The painter was depicted by the thinker.	62.206566	The painter was depicted by the thinker .	nounk
+376	The mechanic berated the intern.	54.903580999999996	The mechanic berated the intern .	nounk
+377	The intern berated the mechanic.	59.22970099999999	The intern berated the mechanic .	nounk
+378	The intern was berated by the mechanic.	64.37535700000001	The intern was berated by the mechanic .	nounk
+379	The mechanic was berated by the intern.	60.984229	The mechanic was berated by the intern .	nounk
+380	The technician rebuked the aide.	52.68286499999999	The technician rebuked the aide .	nounk
+381	The aide rebuked the technician.	53.30841	The aide rebuked the technician .	nounk
+382	The aide was rebuked by the technician.	57.140337	The aide was rebuked by the technician .	nounk
+383	The technician was rebuked by the aide.	55.689735999999996	The technician was rebuked by the aide .	nounk
+384	The fairy enchanted the troll.	74.829417	The fairy enchanted the troll .	nounk
+385	The troll enchanted the fairy.	68.072684	The troll enchanted the fairy .	nounk
+386	The troll was enchanted by the fairy.	73.200654	The troll was enchanted by the fairy .	nounk
+387	The fairy was enchanted by the troll.	73.383848	The fairy was enchanted by the troll .	nounk
+388	The pixie mesmerized the ogre.	71.438662	The pixie mesmerized the ogre .	nounk
+389	The ogre mesmerized the pixie.	68.253129	The ogre mesmerized the pixie .	nounk
+390	The ogre was mesmerized by the pixie.	71.33935199999999	The ogre was mesmerized by the pixie .	nounk
+391	The pixie was mesmerized by the ogre.	70.61764000000001	The pixie was mesmerized by the ogre .	nounk
+392	The orderly assisted the dentist.	71.108315	The orderly assisted the dentist .	nounk
+393	The dentist assisted the orderly.	65.872956	The dentist assisted the orderly .	nounk
+394	The dentist was assisted by the orderly.	68.037958	The dentist was assisted by the orderly .	nounk
+395	The orderly was assisted by the dentist.	68.408964	The orderly was assisted by the dentist .	nounk
+396	The nurse helped the orthodontist.	56.190006	The nurse helped the orthodontist .	nounk
+397	The orthodontist helped the nurse.	55.875837	The orthodontist helped the nurse .	nounk
+398	The orthodontist was helped by the nurse.	62.64692899999999	The orthodontist was helped by the nurse .	nounk
+399	The nurse was helped by the orthodontist.	60.09215	The nurse was helped by the orthodontist .	nounk
+400	The owner evicted the tenant.	51.44195499999999	The owner evicted the tenant .	nounk
+401	The tenant evicted the owner.	52.582485	The tenant evicted the owner .	nounk
+402	The tenant was evicted by the owner.	58.342178	The tenant was evicted by the owner .	nounk
+403	The owner was evicted by the tenant.	56.778028000000006	The owner was evicted by the tenant .	nounk
+404	The critic attacked the conservative.	55.338675	The critic attacked the conservative .	nounk
+405	The conservative attacked the critic.	53.881525	The conservative attacked the critic .	nounk
+406	The conservative was attacked by the critic.	56.701814999999996	The conservative was attacked by the critic .	nounk
+407	The critic was attacked by the conservative.	56.741652	The critic was attacked by the conservative .	nounk
+408	The reviewer criticized the right-winger.	56.895198	The reviewer criticized the right-winger .	nounk
+409	The right-winger criticized the reviewer.	58.68101	The right-winger criticized the reviewer .	nounk
+410	The right-winger was criticized by the reviewer.	60.075956	The right-winger was criticized by the reviewer .	nounk
+411	The reviewer was criticized by the right-winger.	61.061855	The reviewer was criticized by the right-winger .	nounk
+412	The admirer badgered the director.	57.928638	The admirer badgered the director .	nounk
+413	The director badgered the admirer.	55.197665	The director badgered the admirer .	nounk
+414	The director was badgered by the admirer.	58.612897000000004	The director was badgered by the admirer .	nounk
+415	The admirer was badgered by the director.	60.57937	The admirer was badgered by the director .	nounk
+416	The fan pestered the filmmaker.	61.955242999999996	The fan pestered the filmmaker .	nounk
+417	The filmmaker pestered the fan.	57.985821	The filmmaker pestered the fan .	nounk
+418	The filmmaker was pestered by the fan.	64.45771	The filmmaker was pestered by the fan .	nounk
+419	The fan was pestered by the filmmaker.	65.026281	The fan was pestered by the filmmaker .	nounk
+420	The paramedic revived the youth.	57.296133999999995	The paramedic revived the youth .	nounk
+421	The youth revived the paramedic.	61.762648000000006	The youth revived the paramedic .	nounk
+422	The youth was revived by the paramedic.	62.88082300000001	The youth was revived by the paramedic .	nounk
+423	The paramedic was revived by the youth.	60.262910999999995	The paramedic was revived by the youth .	nounk
+424	The EMT resuscitated the youngster.	65.08484200000001	The EMT resuscitated the youngster .	nounk
+425	The youngster resuscitated the EMT.	63.267311000000014	The youngster resuscitated the EMT .	nounk
+426	The youngster was resuscitated by the EMT.	67.208742	The youngster was resuscitated by the EMT .	nounk
+427	The EMT was resuscitated by the youngster.	66.347212	The EMT was resuscitated by the youngster .	nounk
+428	The prankster duped the marketer.	61.41276200000001	The prankster duped the marketer .	nounk
+429	The marketer duped the prankster.	62.812318	The marketer duped the prankster .	nounk
+430	The marketer was duped by the prankster.	64.829032	The marketer was duped by the prankster .	nounk
+431	The prankster was duped by the marketer.	67.64546999999999	The prankster was duped by the marketer .	nounk
+432	The joker tricked the distributor.	63.777646999999995	The joker tricked the distributor .	nounk
+433	The distributor tricked the joker.	61.807680999999995	The distributor tricked the joker .	nounk
+434	The distributor was tricked by the joker.	64.444866	The distributor was tricked by the joker .	nounk
+435	The joker was tricked by the distributor.	66.320619	The joker was tricked by the distributor .	nounk
+436	The playboy courted the damsel.	59.37943299999999	The playboy courted the damsel .	nounk
+437	The damsel courted the playboy.	64.287442	The damsel courted the playboy .	nounk
+438	The damsel was courted by the playboy.	67.546403	The damsel was courted by the playboy .	nounk
+439	The playboy was courted by the damsel.	62.895438	The playboy was courted by the damsel .	nounk
+440	The womanizer wooed the maiden.	67.845014	The womanizer wooed the maiden .	nounk
+441	The maiden wooed the womanizer.	67.164743	The maiden wooed the womanizer .	nounk
+442	The maiden was wooed by the womanizer.	66.162696	The maiden was wooed by the womanizer .	nounk
+443	The womanizer was wooed by the maiden.	67.140955	The womanizer was wooed by the maiden .	nounk
+444	The nomad cherished the clergyman.	67.61731400000001	The nomad cherished the clergyman .	nounk
+445	The clergyman cherished the nomad.	65.829066	The clergyman cherished the nomad .	nounk
+446	The clergyman was cherished by the nomad.	73.20654400000001	The clergyman was cherished by the nomad .	nounk
+447	The nomad was cherished by the clergyman.	72.311955	The nomad was cherished by the clergyman .	nounk
+448	The vagabond revered the priest.	62.70191	The vagabond revered the priest .	nounk
+449	The priest revered the vagabond.	61.901281999999995	The priest revered the vagabond .	nounk
+450	The priest was revered by the vagabond.	63.892056	The priest was revered by the vagabond .	nounk
+451	The vagabond was revered by the priest.	65.959151	The vagabond was revered by the priest .	nounk
+452	The assassin shot the statesman.	58.634014	The assassin shot the statesman .	nounk
+453	The statesman shot the assassin.	59.36260600000001	The statesman shot the assassin .	nounk
+454	The statesman was shot by the assassin.	61.34257	The statesman was shot by the assassin .	nounk
+455	The assassin was shot by the statesman.	60.364807	The assassin was shot by the statesman .	nounk
+456	The hit man killed the politician.	54.97332	The hit man killed the politician .	nounk
+457	The politician killed the hit man.	55.259086	The politician killed the hit man .	nounk
+458	The politician was killed by the hit man.	58.14553	The politician was killed by the hit man .	nounk
+459	The hit man was killed by the politician.	58.43589600000001	The hit man was killed by the politician .	nounk
+460	The clerk charged the elderly person.	60.760502	The clerk charged the elderly person .	nounk
+461	The elderly person charged the clerk.	58.594225	The elderly person charged the clerk .	nounk
+462	The elderly person was charged by the clerk.	62.362559999999995	The elderly person was charged by the clerk .	nounk
+463	The clerk was charged by the elderly person.	64.024609	The clerk was charged by the elderly person .	nounk
+464	The cashier billed the senior citizen.	63.316275	The cashier billed the senior citizen .	nounk
+465	The senior citizen billed the cashier.	59.633276	The senior citizen billed the cashier .	nounk
+466	The senior citizen was billed by the cashier.	63.035708	The senior citizen was billed by the cashier .	nounk
+467	The cashier was billed by the senior citizen.	67.230402	The cashier was billed by the senior citizen .	nounk
+468	The mediator rescued the hostage.	54.299696	The mediator rescued the hostage .	nounk
+469	The hostage rescued the mediator.	56.978688999999996	The hostage rescued the mediator .	nounk
+470	The hostage was rescued by the mediator.	57.010569999999994	The hostage was rescued by the mediator .	nounk
+471	The mediator was rescued by the hostage.	58.525121999999996	The mediator was rescued by the hostage .	nounk
+472	The negotiator saved the captive.	56.545362999999995	The negotiator saved the captive .	nounk
+473	The captive saved the negotiator.	56.997222	The captive saved the negotiator .	nounk
+474	The captive was saved by the negotiator.	61.119403999999996	The captive was saved by the negotiator .	nounk
+475	The negotiator was saved by the captive.	63.06254799999999	The negotiator was saved by the captive .	nounk
+476	The detective found the assailant.	48.784883	The detective found the assailant .	nounk
+477	The assailant found the detective.	50.79554399999999	The assailant found the detective .	nounk
+478	The assailant was found by the detective.	54.25427199999999	The assailant was found by the detective .	nounk
+479	The detective was found by the assailant.	53.993876	The detective was found by the assailant .	nounk
+480	The sleuth located the attacker.	63.876129000000006	The sleuth located the attacker .	nounk
+481	The attacker located the sleuth.	63.090492	The attacker located the sleuth .	nounk
+482	The attacker was located by the sleuth.	66.84565599999999	The attacker was located by the sleuth .	nounk
+483	The sleuth was located by the attacker.	67.987236	The sleuth was located by the attacker .	nounk
+484	The artisan trained the apprentice.	60.240745999999994	The artisan trained the apprentice .	nounk
+485	The apprentice trained the artisan.	58.735338000000006	The apprentice trained the artisan .	nounk
+486	The apprentice was trained by the artisan.	65.844817	The apprentice was trained by the artisan .	nounk
+487	The artisan was trained by the apprentice.	65.972487	The artisan was trained by the apprentice .	nounk
+488	The craftsman taught the trainee.	56.300699	The craftsman taught the trainee .	nounk
+489	The trainee taught the craftsman.	58.765418000000004	The trainee taught the craftsman .	nounk
+490	The trainee was taught by the craftsman.	62.505236	The trainee was taught by the craftsman .	nounk
+491	The craftsman was taught by the trainee.	61.84151799999999	The craftsman was taught by the trainee .	nounk
+492	The biker defied the trainer.	57.616041	The biker defied the trainer .	nounk
+493	The trainer defied the biker.	57.413352	The trainer defied the biker .	nounk
+494	The trainer was defied by the biker.	65.382451	The trainer was defied by the biker .	nounk
+495	The biker was defied by the trainer.	65.726599	The biker was defied by the trainer .	nounk
+496	The cyclist disobeyed the coach.	58.630795	The cyclist disobeyed the coach .	nounk
+497	The coach disobeyed the cyclist.	61.839383	The coach disobeyed the cyclist .	nounk
+498	The coach was disobeyed by the cyclist.	66.62505	The coach was disobeyed by the cyclist .	nounk
+499	The cyclist was disobeyed by the coach.	65.856268	The cyclist was disobeyed by the coach .	nounk
+500	The speaker engrossed the audience.	58.142143000000004	The speaker engrossed the audience .	nounk
+501	The audience engrossed the speaker.	59.89718400000001	The audience engrossed the speaker .	nounk
+502	The audience was engrossed by the speaker.	58.20715	The audience was engrossed by the speaker .	nounk
+503	The speaker was engrossed by the audience.	57.64353	The speaker was engrossed by the audience .	nounk
+504	The orator captivated the spectators.	58.307914	The orator captivated the spectators .	nounk
+505	The spectators captivated the orator.	58.244696000000005	The spectators captivated the orator .	nounk
+506	The spectators were captivated by the orator.	60.047325	The spectators were captivated by the orator .	nounk
+507	The orator was captivated by the spectators.	59.317485	The orator was captivated by the spectators .	nounk
+508	The genius shocked the cousin.	60.66332899999999	The genius shocked the cousin .	nounk
+509	The cousin shocked the genius.	57.558075	The cousin shocked the genius .	nounk
+510	The cousin was shocked by the genius.	62.104473	The cousin was shocked by the genius .	nounk
+511	The genius was shocked by the cousin.	66.21462199999999	The genius was shocked by the cousin .	nounk
+512	The prodigy surprised the relative.	61.539045	The prodigy surprised the relative .	nounk
+513	The relative surprised the prodigy.	64.569815	The relative surprised the prodigy .	nounk
+514	The relative was surprised by the prodigy.	68.689188	The relative was surprised by the prodigy .	nounk
+515	The prodigy was surprised by the relative.	64.400574	The prodigy was surprised by the relative .	nounk
+516	The smuggler bribed the bureaucrat.	57.794841000000005	The smuggler bribed the bureaucrat .	nounk
+517	The bureaucrat bribed the smuggler.	58.324876999999994	The bureaucrat bribed the smuggler .	nounk
+518	The bureaucrat was bribed by the smuggler.	64.650771	The bureaucrat was bribed by the smuggler .	nounk
+519	The smuggler was bribed by the bureaucrat.	64.328258	The smuggler was bribed by the bureaucrat .	nounk
+520	The amateur irked the maestro.	55.695261	The amateur irked the maestro .	nounk
+521	The maestro irked the amateur.	59.133486000000005	The maestro irked the amateur .	nounk
+522	The maestro was irked by the amateur.	63.648502	The maestro was irked by the amateur .	nounk
+523	The amateur was irked by the maestro.	62.978023	The amateur was irked by the maestro .	nounk
+524	The novice irritated the virtuoso.	60.241370999999994	The novice irritated the virtuoso .	nounk
+525	The virtuoso irritated the novice.	59.897769	The virtuoso irritated the novice .	nounk
+526	The virtuoso was irritated by the novice.	65.13837000000001	The virtuoso was irritated by the novice .	nounk
+527	The novice was irritated by the virtuoso.	65.16127	The novice was irritated by the virtuoso .	nounk
+528	The lawyer questioned the witness.	41.72065800000001	The lawyer questioned the witness .	nounk
+529	The witness questioned the lawyer.	44.593668	The witness questioned the lawyer .	nounk
+530	The witness was questioned by the lawyer.	47.424071	The witness was questioned by the lawyer .	nounk
+531	The lawyer was questioned by the witness.	44.955767	The lawyer was questioned by the witness .	nounk
+532	The attorney interrogated the bystander.	59.830897	The attorney interrogated the bystander .	nounk
+533	The bystander interrogated the attorney.	61.808831	The bystander interrogated the attorney .	nounk
+534	The bystander was interrogated by the attorney.	63.83501	The bystander was interrogated by the attorney .	nounk
+535	The attorney was interrogated by the bystander.	62.751384	The attorney was interrogated by the bystander .	nounk
+536	The singer disappointed the enthusiast.	58.77908599999999	The singer disappointed the enthusiast .	nounk
+537	The enthusiast disappointed the singer.	59.059384	The enthusiast disappointed the singer .	nounk
+538	The enthusiast was disappointed by the singer.	61.54658	The enthusiast was disappointed by the singer .	nounk
+539	The singer was disappointed by the enthusiast.	60.501920999999996	The singer was disappointed by the enthusiast .	nounk
+540	The vocalist disillusioned the connoisseur.	67.53645300000001	The vocalist disillusioned the connoisseur .	nounk
+541	The connoisseur disillusioned the vocalist.	64.695405	The connoisseur disillusioned the vocalist .	nounk
+542	The connoisseur was disillusioned by the vocalist.	69.267217	The connoisseur was disillusioned by the vocalist .	nounk
+543	The vocalist was disillusioned by the connoisseur.	68.455716	The vocalist was disillusioned by the connoisseur .	nounk
+544	The chauffeur drove the diplomat.	54.790873	The chauffeur drove the diplomat .	nounk
+545	The diplomat drove the chauffeur.	53.860443999999994	The diplomat drove the chauffeur .	nounk
+546	The diplomat was driven by the chauffeur.	55.974365999999996	The diplomat was driven by the chauffeur .	nounk
+547	The chauffeur was driven by the diplomat.	56.491647	The chauffeur was driven by the diplomat .	nounk
+548	The driver transported the ambassador.	56.04712299999999	The driver transported the ambassador .	nounk
+549	The ambassador transported the driver.	54.169731000000006	The ambassador transported the driver .	nounk
+550	The ambassador was transported by the driver.	57.122871	The ambassador was transported by the driver .	nounk
+551	The driver was transported by the ambassador.	57.388896	The driver was transported by the ambassador .	nounk
+552	The guard apprehended the prisoner.	55.161896	The guard apprehended the prisoner .	nounk
+553	The prisoner apprehended the guard.	55.06509600000001	The prisoner apprehended the guard .	nounk
+554	The prisoner was apprehended by the guard.	57.465201	The prisoner was apprehended by the guard .	nounk
+555	The guard was apprehended by the prisoner.	58.382324	The guard was apprehended by the prisoner .	nounk
+556	The warden caught the inmate.	54.138126	The warden caught the inmate .	nounk
+557	The inmate caught the warden.	52.191956	The inmate caught the warden .	nounk
+558	The inmate was caught by the warden.	59.470096999999996	The inmate was caught by the warden .	nounk
+559	The warden was caught by the inmate.	58.408229	The warden was caught by the inmate .	nounk
+560	The tailor costumed the dancer.	66.94046900000001	The tailor costumed the dancer .	nounk
+561	The dancer costumed the tailor.	64.21800400000001	The dancer costumed the tailor .	nounk
+562	The dancer was costumed by the tailor.	71.510008	The dancer was costumed by the tailor .	nounk
+563	The tailor was costumed by the dancer.	71.71418999999999	The tailor was costumed by the dancer .	nounk
+564	The dressmaker attired the ballerina.	70.59823800000001	The dressmaker attired the ballerina .	nounk
+565	The ballerina attired the dressmaker.	66.95620100000001	The ballerina attired the dressmaker .	nounk
+566	The ballerina was attired by the dressmaker.	70.67451299999999	The ballerina was attired by the dressmaker .	nounk
+567	The dressmaker was attired by the ballerina.	71.63383300000001	The dressmaker was attired by the ballerina .	nounk
+568	The principal scolded the child.	50.553228999999995	The principal scolded the child .	nounk
+569	The child scolded the principal.	51.899321	The child scolded the principal .	nounk
+570	The child was scolded by the principal.	57.834041	The child was scolded by the principal .	nounk
+571	The principal was scolded by the child.	56.569901	The principal was scolded by the child .	nounk
+572	The headmaster reprimanded the kid.	57.535140999999996	The headmaster reprimanded the kid .	nounk
+573	The kid reprimanded the headmaster.	57.635414999999995	The kid reprimanded the headmaster .	nounk
+574	The kid was reprimanded by the headmaster.	60.764297	The kid was reprimanded by the headmaster .	nounk
+575	The headmaster was reprimanded by the kid.	61.301289	The headmaster was reprimanded by the kid .	nounk
+576	The lord named the heir.	53.667851	The lord named the heir .	nounk
+577	The heir named the lord.	57.540181	The heir named the lord .	nounk
+578	The heir was named by the lord.	66.444608	The heir was named by the lord .	nounk
+579	The lord was named by the heir.	62.98013	The lord was named by the heir .	nounk
+580	The baron chose the successor.	52.03498	The baron chose the successor .	nounk
+581	The successor chose the baron.	51.730347	The successor chose the baron .	nounk
+582	The successor was chosen by the baron.	52.500958	The successor was chosen by the baron .	nounk
+583	The baron was chosen by the successor.	55.588402	The baron was chosen by the successor .	nounk
+584	The cop restrained the rioter.	54.656317	The cop restrained the UNK-LC-er .	unk
+585	The rioter restrained the cop.	54.201921999999996	The UNK-LC-er restrained the cop .	unk
+586	The rioter was restrained by the cop.	59.060767000000006	The UNK-LC-er was restrained by the cop .	unk
+587	The cop was restrained by the rioter.	57.111973000000006	The cop was restrained by the UNK-LC-er .	unk
+588	The policeman subdued the rabble-rouser.	64.32982	The policeman subdued the rabble-rouser .	nounk
+589	The rabble-rouser subdued the policeman.	65.081969	The rabble-rouser subdued the policeman .	nounk
+590	The rabble-rouser was subdued by the policeman.	70.372637	The rabble-rouser was subdued by the policeman .	nounk
+591	The policeman was subdued by the rabble-rouser.	69.70415	The policeman was subdued by the rabble-rouser .	nounk
+592	The dad coddled the baby.	57.526202999999995	The dad coddled the baby .	nounk
+593	The baby coddled the dad.	60.27965100000001	The baby coddled the dad .	nounk
+594	The baby was coddled by the dad.	62.27797	The baby was coddled by the dad .	nounk
+595	The dad was coddled by the baby.	62.20392199999999	The dad was coddled by the baby .	nounk
+596	The father pampered the infant.	55.308128	The father pampered the infant .	nounk
+597	The infant pampered the father.	53.68601699999999	The infant pampered the father .	nounk
+598	The infant was pampered by the father.	57.884921000000006	The infant was pampered by the father .	nounk
+599	The father was pampered by the infant.	58.500106	The father was pampered by the infant .	nounk
+600	The king exiled the rebel.	50.110333	The king exiled the rebel .	nounk
+601	The rebel exiled the king.	47.50435	The rebel exiled the king .	nounk
+602	The rebel was exiled by the king.	56.232001	The rebel was exiled by the king .	nounk
+603	The king was exiled by the rebel.	55.408387000000005	The king was exiled by the rebel .	nounk
+604	The monarch banished the insurgent.	55.752294000000006	The monarch banished the insurgent .	nounk
+605	The insurgent banished the monarch.	62.144527	The insurgent banished the monarch .	nounk
+606	The insurgent was banished by the monarch.	66.337616	The insurgent was banished by the monarch .	nounk
+607	The monarch was banished by the insurgent.	62.425969	The monarch was banished by the insurgent .	nounk
+608	The thief robbed the manufacturer.	50.841543	The thief robbed the manufacturer .	nounk
+609	The manufacturer robbed the thief.	52.274438999999994	The manufacturer robbed the thief .	nounk
+610	The manufacturer was robbed by the thief.	57.746916	The manufacturer was robbed by the thief .	nounk
+611	The thief was robbed by the manufacturer.	57.696579	The thief was robbed by the manufacturer .	nounk
+612	The robber burgled the industrialist.	59.730999000000004	The robber burgled the industrialist .	nounk
+613	The industrialist burgled the robber.	58.977069	The industrialist burgled the robber .	nounk
+614	The industrialist was burgled by the robber.	67.36777599999999	The industrialist was burgled by the robber .	nounk
+615	The robber was burgled by the industrialist.	67.38350500000001	The robber was burgled by the industrialist .	nounk
+616	The pessimist discouraged the contestant.	62.88248299999999	The pessimist discouraged the contestant .	nounk
+617	The contestant discouraged the pessimist.	60.379919	The contestant discouraged the pessimist .	nounk
+618	The contestant was discouraged by the pessimist.	63.234399	The contestant was discouraged by the pessimist .	nounk
+619	The pessimist was discouraged by the contestant.	67.110847	The pessimist was discouraged by the contestant .	nounk
+620	The cynic dissuaded the participant.	63.025369000000005	The cynic dissuaded the participant .	nounk
+621	The participant dissuaded the cynic.	65.051618	The participant dissuaded the cynic .	nounk
+622	The participant was dissuaded by the cynic.	64.04504399999999	The participant was dissuaded by the cynic .	nounk
+623	The cynic was dissuaded by the participant.	64.116006	The cynic was dissuaded by the participant .	nounk
+624	The loudmouth tormented the loner.	66.939672	The loudmouth tormented the loner .	nounk
+625	The loner tormented the loudmouth.	66.230304	The loner tormented the loudmouth .	nounk
+626	The loner was tormented by the loudmouth.	68.711513	The loner was tormented by the loudmouth .	nounk
+627	The loudmouth was tormented by the loner.	71.75075799999999	The loudmouth was tormented by the loner .	nounk
+628	The windbag taunted the recluse.	65.858429	The windbag taunted the recluse .	nounk
+629	The recluse taunted the windbag.	65.626159	The recluse taunted the windbag .	nounk
+630	The recluse was taunted by the windbag.	69.529356	The recluse was taunted by the windbag .	nounk
+631	The windbag was taunted by the recluse.	71.297701	The windbag was taunted by the recluse .	nounk
+632	The imitator fooled the investigator.	62.81274599999999	The imitator fooled the investigator .	nounk
+633	The investigator fooled the imitator.	62.244794	The investigator fooled the imitator .	nounk
+634	The investigator was fooled by the imitator.	63.608481	The investigator was fooled by the imitator .	nounk
+635	The imitator was fooled by the investigator.	66.62857699999999	The imitator was fooled by the investigator .	nounk
+636	The impersonator conned the inspector.	65.529493	The impersonator conned the inspector .	nounk
+637	The inspector conned the impersonator.	66.52508	The inspector conned the impersonator .	nounk
+638	The inspector was conned by the impersonator.	76.86453599999999	The inspector was conned by the impersonator .	nounk
+639	The impersonator was conned by the inspector.	76.60568599999999	The impersonator was conned by the inspector .	nounk
+640	The boss fired the worker.	42.59898999999999	The boss fired the worker .	nounk
+641	The worker fired the boss.	43.864719	The worker fired the boss .	nounk
+642	The worker was fired by the boss.	45.700392	The worker was fired by the boss .	nounk
+643	The boss was fired by the worker.	46.060668	The boss was fired by the worker .	nounk
+644	The pyromaniac unnerved the shopkeeper.	50.693875	The UNK-LC unnerved the shopkeeper .	unk
+645	The shopkeeper unnerved the pyromaniac.	52.391496000000004	The shopkeeper unnerved the UNK-LC .	unk
+646	The shopkeeper was unnerved by the pyromaniac.	53.381035999999995	The shopkeeper was unnerved by the UNK-LC .	unk
+647	The pyromaniac was unnerved by the shopkeeper.	57.707356000000004	The UNK-LC was unnerved by the shopkeeper .	unk
+648	The arsonist alarmed the vendor.	59.82970999999999	The arsonist alarmed the vendor .	nounk
+649	The vendor alarmed the arsonist.	61.74415199999999	The vendor alarmed the arsonist .	nounk
+650	The vendor was alarmed by the arsonist.	62.107213	The vendor was alarmed by the arsonist .	nounk
+651	The arsonist was alarmed by the vendor.	66.398962	The arsonist was alarmed by the vendor .	nounk
+652	The professional supported the beginner.	59.02992	The professional supported the beginner .	nounk
+653	The beginner supported the professional.	60.379027	The beginner supported the professional .	nounk
+654	The beginner was supported by the professional.	60.312509000000006	The beginner was supported by the professional .	nounk
+655	The professional was supported by the beginner.	60.639608	The professional was supported by the beginner .	nounk
+656	The master encouraged the rookie.	55.24714899999999	The master encouraged the rookie .	nounk
+657	The rookie encouraged the master.	56.008891	The rookie encouraged the master .	nounk
+658	The rookie was encouraged by the master.	60.129138999999995	The rookie was encouraged by the master .	nounk
+659	The master was encouraged by the rookie.	59.48860500000001	The master was encouraged by the rookie .	nounk
+660	The magician hypnotized the crowd.	53.341381	The magician hypnotized the crowd .	nounk
+661	The crowd hypnotized the magician.	57.648383	The crowd hypnotized the magician .	nounk
+662	The crowd was hypnotized by the magician.	62.020506	The crowd was hypnotized by the magician .	nounk
+663	The magician was hypnotized by the crowd.	58.141933	The magician was hypnotized by the crowd .	nounk
+664	The illusionist entranced the viewers.	64.617563	The illusionist entranced the viewers .	nounk
+665	The viewers entranced the illusionist.	66.273067	The viewers entranced the illusionist .	nounk
+666	The viewers were entranced by the illusionist.	64.597432	The viewers were entranced by the illusionist .	nounk
+667	The illusionist was entranced by the viewers.	65.534656	The illusionist was entranced by the viewers .	nounk
+668	The businessman employed the expert.	49.081435	The businessman employed the expert .	nounk
+669	The expert employed the businessman.	50.559565	The expert employed the businessman .	nounk
+670	The expert was employed by the businessman.	51.035965	The expert was employed by the businessman .	nounk
+671	The businessman was employed by the expert.	52.774356	The businessman was employed by the expert .	nounk
+672	The entrepreneur hired the specialist.	45.281957999999996	The entrepreneur hired the specialist .	nounk
+673	The specialist hired the entrepreneur.	44.492612	The specialist hired the entrepreneur .	nounk
+674	The specialist was hired by the entrepreneur.	47.532937000000004	The specialist was hired by the entrepreneur .	nounk
+675	The entrepreneur was hired by the specialist.	49.781987	The entrepreneur was hired by the specialist .	nounk
+676	The terrorist petrified the first lady.	64.776823	The terrorist petrified the first lady .	nounk
+677	The first lady petrified the terrorist.	62.327411999999995	The first lady petrified the terrorist .	nounk
+678	The first lady was petrified by the terrorist.	68.961262	The first lady was petrified by the terrorist .	nounk
+679	The terrorist was petrified by the first lady.	69.287115	The terrorist was petrified by the first lady .	nounk
+680	The hijacker terrified the president's wife.	56.755579	The hijacker terrified the president 's wife .	nounk
+681	The president's wife terrified the hijacker.	59.09815999999999	The president 's wife terrified the hijacker .	nounk
+682	The president's wife was terrified by the hijacker.	63.84426599999999	The president 's wife was terrified by the hijacker .	nounk
+683	The hijacker was terrified by the president's wife.	60.287738999999995	The hijacker was terrified by the president 's wife .	nounk
+684	The judge praised the gold medalist.	53.078503999999995	The judge praised the gold medalist .	nounk
+685	The gold medalist praised the judge.	52.669744	The gold medalist praised the judge .	nounk
+686	The gold medalist was praised by the judge.	57.127967	The gold medalist was praised by the judge .	nounk
+687	The judge was praised by the gold medalist.	57.539054	The judge was praised by the gold medalist .	nounk
+688	The panelist congratulated the winner.	54.614539	The panelist congratulated the winner .	nounk
+689	The winner congratulated the panelist.	53.62305	The winner congratulated the panelist .	nounk
+690	The winner was congratulated by the panelist.	59.371494	The winner was congratulated by the panelist .	nounk
+691	The panelist was congratulated by the winner.	59.365579	The panelist was congratulated by the winner .	nounk
+692	The liar emulated the victor.	59.144135000000006	The liar emulated the victor .	nounk
+693	The victor emulated the liar.	58.347585	The victor emulated the liar .	nounk
+694	The victor was emulated by the liar.	61.54432	The victor was emulated by the liar .	nounk
+695	The liar was emulated by the victor.	61.501771	The liar was emulated by the victor .	nounk
+696	The deceiver imitated the conqueror.	56.642905	The UNK-LC-er imitated the conqueror .	unk
+697	The conqueror imitated the deceiver.	56.654535	The conqueror imitated the UNK-LC-er .	unk
+698	The conqueror was imitated by the deceiver.	60.502624000000004	The conqueror was imitated by the UNK-LC-er .	unk
+699	The deceiver was imitated by the conqueror.	60.35139100000001	The UNK-LC-er was imitated by the conqueror .	unk
+700	The environmentalist cautioned the tobacconist.	67.42457	The environmentalist cautioned the tobacconist .	nounk
+701	The tobacconist cautioned the environmentalist.	66.60223099999999	The tobacconist cautioned the environmentalist .	nounk
+702	The tobacconist was cautioned by the environmentalist.	72.304539	The tobacconist was cautioned by the environmentalist .	nounk
+703	The environmentalist was cautioned by the tobacconist.	74.515151	The environmentalist was cautioned by the tobacconist .	nounk
+704	The ecologist warned the cigar-maker.	56.355682	The ecologist warned the UNK-LC-DASH .	unk
+705	The cigar-maker warned the ecologist.	57.211954000000006	The UNK-LC-DASH warned the ecologist .	unk
+706	The cigar-maker was warned by the ecologist.	58.455461	The UNK-LC-DASH was warned by the ecologist .	unk
+707	The ecologist was warned by the cigar-maker.	58.912017	The ecologist was warned by the UNK-LC-DASH .	unk
+708	The peasant idolized the ancestors.	62.97264800000001	The peasant idolized the ancestors .	nounk
+709	The ancestors idolized the peasant.	65.17926000000001	The ancestors idolized the peasant .	nounk
+710	The ancestors were idolized by the peasant.	68.41807800000001	The ancestors were idolized by the peasant .	nounk
+711	The peasant was idolized by the ancestors.	68.274732	The peasant was idolized by the ancestors .	nounk
+712	The serf worshipped the forefathers.	65.395104	The serf worshipped the forefathers .	nounk
+713	The forefathers worshipped the serf.	64.713092	The forefathers worshipped the serf .	nounk
+714	The forefathers were worshipped by the serf.	70.602896	The forefathers were worshipped by the serf .	nounk
+715	The serf was worshipped by the forefathers.	76.688804	The serf was worshipped by the forefathers .	nounk
+716	The alcoholic hassled the guest.	65.355721	The alcoholic hassled the guest .	nounk
+717	The guest hassled the alcoholic.	60.55625500000001	The guest hassled the alcoholic .	nounk
+718	The guest was hassled by the alcoholic.	63.316742000000005	The guest was hassled by the alcoholic .	nounk
+719	The alcoholic was hassled by the guest.	65.001587	The alcoholic was hassled by the guest .	nounk
+720	The drunk bothered the visitor.	55.941503000000004	The drunk bothered the visitor .	nounk
+721	The visitor bothered the drunk.	54.308659999999996	The visitor bothered the drunk .	nounk
+722	The visitor was bothered by the drunk.	55.538551999999996	The visitor was bothered by the drunk .	nounk
+723	The drunk was bothered by the visitor.	57.99785100000001	The drunk was bothered by the visitor .	nounk
+724	The commentator vexed the athlete.	61.911905	The commentator vexed the athlete .	nounk
+725	The athlete vexed the commentator.	62.34943	The athlete vexed the commentator .	nounk
+726	The athlete was vexed by the commentator.	67.599286	The athlete was vexed by the commentator .	nounk
+727	The commentator was vexed by the athlete.	68.74138099999999	The commentator was vexed by the athlete .	nounk
+728	The sportscaster peeved the jock.	68.173382	The sportscaster peeved the jock .	nounk
+729	The jock peeved the sportscaster.	70.2756	The jock peeved the sportscaster .	nounk
+730	The jock was peeved by the sportscaster.	68.81025199999999	The jock was peeved by the sportscaster .	nounk
+731	The sportscaster was peeved by the jock.	69.434362	The sportscaster was peeved by the jock .	nounk
+732	The preacher hugged the churchgoer.	52.059677	The preacher hugged the UNK-LC-er .	unk
+733	The churchgoer hugged the preacher.	52.029315	The UNK-LC-er hugged the preacher .	unk
+734	The churchgoer was hugged by the preacher.	59.228163	The UNK-LC-er was hugged by the preacher .	unk
+735	The preacher was hugged by the churchgoer.	59.333175	The preacher was hugged by the UNK-LC-er .	unk
+736	The pastor embraced the parishioner.	58.981010000000005	The pastor embraced the parishioner .	nounk
+737	The parishioner embraced the pastor.	62.452415	The parishioner embraced the pastor .	nounk
+738	The parishioner was embraced by the pastor.	61.805306	The parishioner was embraced by the pastor .	nounk
+739	The pastor was embraced by the parishioner.	62.439896	The pastor was embraced by the parishioner .	nounk
+740	The maniac mocked the clown.	60.79517	The maniac mocked the clown .	nounk
+741	The clown mocked the maniac.	64.825695	The clown mocked the maniac .	nounk
+742	The clown was mocked by the maniac.	67.839364	The clown was mocked by the maniac .	nounk
+743	The maniac was mocked by the clown.	65.477455	The maniac was mocked by the clown .	nounk
+744	The lunatic ridiculed the jester.	67.785469	The lunatic ridiculed the jester .	nounk
+745	The jester ridiculed the lunatic.	61.782546	The jester ridiculed the lunatic .	nounk
+746	The jester was ridiculed by the lunatic.	66.63878	The jester was ridiculed by the lunatic .	nounk
+747	The lunatic was ridiculed by the jester.	70.623887	The lunatic was ridiculed by the jester .	nounk
+748	The archivist contacted the inventor.	53.56995899999999	The archivist contacted the inventor .	nounk
+749	The inventor contacted the archivist.	54.757304999999995	The inventor contacted the archivist .	nounk
+750	The inventor was contacted by the archivist.	59.468925	The inventor was contacted by the archivist .	nounk
+751	The archivist was contacted by the inventor.	58.261579	The archivist was contacted by the inventor .	nounk
+752	The historian approached the innovator.	54.71560000000001	The historian approached the innovator .	nounk
+753	The innovator approached the historian.	56.804523999999994	The innovator approached the historian .	nounk
+754	The innovator was approached by the historian.	59.810728000000005	The innovator was approached by the historian .	nounk
+755	The historian was approached by the innovator.	60.038678999999995	The historian was approached by the innovator .	nounk
+756	The janitor called the landscaper.	51.227146000000005	The janitor called the landscaper .	nounk
+757	The landscaper called the janitor.	52.670856	The landscaper called the janitor .	nounk
+758	The landscaper was called by the janitor.	61.443821	The landscaper was called by the janitor .	nounk
+759	The janitor was called by the landscaper.	63.380297999999996	The janitor was called by the landscaper .	nounk
+760	The custodian phoned the gardener.	60.676543	The custodian phoned the gardener .	nounk
+761	The gardener phoned the custodian.	59.035312999999995	The gardener phoned the custodian .	nounk
+762	The gardener was phoned by the custodian.	67.964342	The gardener was phoned by the custodian .	nounk
+763	The custodian was phoned by the gardener.	67.57623799999999	The custodian was phoned by the gardener .	nounk
+764	The drummer annoyed the weatherman.	59.45677500000001	The drummer annoyed the weatherman .	nounk
+765	The weatherman annoyed the drummer.	56.70246	The weatherman annoyed the drummer .	nounk
+766	The weatherman was annoyed by the drummer.	62.603133	The weatherman was annoyed by the drummer .	nounk
+767	The drummer was annoyed by the weatherman.	62.337288	The drummer was annoyed by the weatherman .	nounk
+768	The percussionist displeased the meteorologist.	65.183324	The percussionist displeased the meteorologist .	nounk
+769	The meteorologist displeased the percussionist.	67.87415399999999	The meteorologist displeased the percussionist .	nounk
+770	The meteorologist was displeased by the percussionist.	70.493783	The meteorologist was displeased by the percussionist .	nounk
+771	The percussionist was displeased by the meteorologist.	68.20116300000001	The percussionist was displeased by the meteorologist .	nounk
+772	The go-between belittled the defendant.	61.564334	The go-between belittled the defendant .	nounk
+773	The defendant belittled the go-between.	59.44435	The defendant belittled the go-between .	nounk
+774	The defendant was belittled by the go-between.	61.937574999999995	The defendant was belittled by the go-between .	nounk
+775	The go-between was belittled by the defendant.	62.57781899999999	The go-between was belittled by the defendant .	nounk
+776	The intermediary deprecated the felon.	59.094159000000005	The intermediary UNK-LC-ed the felon .	unk
+777	The felon deprecated the intermediary.	58.652725000000004	The felon UNK-LC-ed the intermediary .	unk
+778	The felon was deprecated by the intermediary.	62.869788	The felon was UNK-LC-ed by the intermediary .	unk
+779	The intermediary was deprecated by the felon.	63.694354000000004	The intermediary was UNK-LC-ed by the felon .	unk
+780	The valet entertained the envoy.	64.10882600000001	The valet entertained the envoy .	nounk
+781	The envoy entertained the valet.	60.558425	The envoy entertained the valet .	nounk
+782	The envoy was entertained by the valet.	64.978031	The envoy was entertained by the valet .	nounk
+783	The valet was entertained by the envoy.	64.739202	The valet was entertained by the envoy .	nounk
+784	The manservant amused the emissary.	56.87318299999999	The UNK-LC amused the emissary .	unk
+785	The emissary amused the manservant.	56.966937	The emissary amused the UNK-LC .	unk
+786	The emissary was amused by the manservant.	58.113125999999994	The emissary was amused by the UNK-LC .	unk
+787	The manservant was amused by the emissary.	58.99654100000001	The UNK-LC was amused by the emissary .	unk
+788	The acrobat pushed the stranger.	59.494701	The acrobat pushed the stranger .	nounk
+789	The stranger pushed the acrobat.	60.23287599999999	The stranger pushed the acrobat .	nounk
+790	The stranger was pushed by the acrobat.	65.04953900000001	The stranger was pushed by the acrobat .	nounk
+791	The acrobat was pushed by the stranger.	63.734300999999995	The acrobat was pushed by the stranger .	nounk
+792	The gymnast shoved the outsider.	64.771905	The gymnast shoved the outsider .	nounk
+793	The outsider shoved the gymnast.	62.71695499999999	The outsider shoved the gymnast .	nounk
+794	The outsider was shoved by the gymnast.	67.053554	The outsider was shoved by the gymnast .	nounk
+795	The gymnast was shoved by the outsider.	69.112515	The gymnast was shoved by the outsider .	nounk
+796	The benefactor calmed the architect.	57.753985	The benefactor calmed the architect .	nounk
+797	The architect calmed the benefactor.	56.405216	The architect calmed the benefactor .	nounk
+798	The architect was calmed by the benefactor.	61.09536800000001	The architect was calmed by the benefactor .	nounk
+799	The benefactor was calmed by the architect.	59.665395999999994	The benefactor was calmed by the architect .	nounk
+800	The patron soothed the draftsman.	63.34118	The patron soothed the draftsman .	nounk
+801	The draftsman soothed the patron.	63.266249	The draftsman soothed the patron .	nounk
+802	The draftsman was soothed by the patron.	66.423243	The draftsman was soothed by the patron .	nounk
+803	The patron was soothed by the draftsman.	67.37993800000001	The patron was soothed by the draftsman .	nounk
+804	The therapist lauded the hairdresser.	60.76641400000001	The therapist lauded the hairdresser .	nounk
+805	The hairdresser lauded the therapist.	57.886668	The hairdresser lauded the therapist .	nounk
+806	The hairdresser was lauded by the therapist.	61.244975	The hairdresser was lauded by the therapist .	nounk
+807	The therapist was lauded by the hairdresser.	62.60611	The therapist was lauded by the hairdresser .	nounk
+808	The psychologist extolled the hairstylist.	49.13588300000001	The psychologist extolled the UNK-LC .	unk
+809	The hairstylist extolled the psychologist.	54.267033000000005	The UNK-LC extolled the psychologist .	unk
+810	The hairstylist was extolled by the psychologist.	59.508317000000005	The UNK-LC was extolled by the psychologist .	unk
+811	The psychologist was extolled by the hairstylist.	56.677158000000006	The psychologist was extolled by the UNK-LC .	unk
+812	The nobleman married the baroness.	51.09466199999999	The nobleman married the UNK-LC .	unk
+813	The baroness married the nobleman.	52.607851	The UNK-LC married the nobleman .	unk
+814	The baroness was married by the nobleman.	56.087593	The UNK-LC was married by the nobleman .	unk
+815	The nobleman was married by the baroness.	53.996017	The nobleman was married by the UNK-LC .	unk
+816	The aristocrat wed the countess.	62.879655	The aristocrat wed the countess .	nounk
+817	The countess wed the aristocrat.	64.573706	The countess wed the aristocrat .	nounk
+818	The countess was wed by the aristocrat.	71.728195	The countess was wed by the aristocrat .	nounk
+819	The aristocrat was wed by the countess.	71.131261	The aristocrat was wed by the countess .	nounk
+820	The actuary assuaged the creditor.	62.711915	The actuary assuaged the creditor .	nounk
+821	The creditor assuaged the actuary.	61.338336	The creditor assuaged the actuary .	nounk
+822	The creditor was assuaged by the actuary.	66.079895	The creditor was assuaged by the actuary .	nounk
+823	The actuary was assuaged by the creditor.	66.705824	The actuary was assuaged by the creditor .	nounk
+824	The analyst relieved the investor.	44.965248	The analyst relieved the investor .	nounk
+825	The investor relieved the analyst.	48.696082999999994	The investor relieved the analyst .	nounk
+826	The investor was relieved by the analyst.	50.952354	The investor was relieved by the analyst .	nounk
+827	The analyst was relieved by the investor.	50.338931	The analyst was relieved by the investor .	nounk
+828	The sailor frightened the psychic.	56.161325	The sailor frightened the psychic .	nounk
+829	The psychic frightened the sailor.	57.865245	The psychic frightened the sailor .	nounk
+830	The psychic was frightened by the sailor.	64.03608100000001	The psychic was frightened by the sailor .	nounk
+831	The sailor was frightened by the psychic.	60.143963	The sailor was frightened by the psychic .	nounk
+832	The mariner scared the fortune-teller.	68.379342	The mariner scared the fortune-teller .	nounk
+833	The fortune-teller scared the mariner.	62.712459	The fortune-teller scared the mariner .	nounk
+834	The fortune-teller was scared by the mariner.	67.422946	The fortune-teller was scared by the mariner .	nounk
+835	The mariner was scared by the fortune-teller.	72.26412300000001	The mariner was scared by the fortune-teller .	nounk
+836	The assistant flattered the auditor.	56.955925	The assistant flattered the auditor .	nounk
+837	The auditor flattered the assistant.	58.07455	The auditor flattered the assistant .	nounk
+838	The auditor was flattered by the assistant.	57.896454000000006	The auditor was flattered by the assistant .	nounk
+839	The assistant was flattered by the auditor.	62.652748	The assistant was flattered by the auditor .	nounk
+840	The helper complimented the appraiser.	65.001424	The helper complimented the appraiser .	nounk
+841	The appraiser complimented the helper.	60.771674000000004	The appraiser complimented the helper .	nounk
+842	The appraiser was complimented by the helper.	68.724266	The appraiser was complimented by the helper .	nounk
+843	The helper was complimented by the appraiser.	73.47054	The helper was complimented by the appraiser .	nounk
+844	The immigrant believed the trooper.	63.446101000000006	The immigrant believed the trooper .	nounk
+845	The trooper believed the immigrant.	60.622215000000004	The trooper believed the immigrant .	nounk
+846	The trooper was believed by the immigrant.	67.161497	The trooper was believed by the immigrant .	nounk
+847	The immigrant was believed by the trooper.	64.62868	The immigrant was believed by the trooper .	nounk
+848	The foreigner trusted the patrolman.	59.641604	The foreigner trusted the patrolman .	nounk
+849	The patrolman trusted the foreigner.	58.016528	The patrolman trusted the foreigner .	nounk
+850	The patrolman was trusted by the foreigner.	63.51225	The patrolman was trusted by the foreigner .	nounk
+851	The foreigner was trusted by the patrolman.	63.656515	The foreigner was trusted by the patrolman .	nounk
+852	The mapmaker affronted the farmer.	57.002134999999996	The UNK-LC-er affronted the farmer .	unk
+853	The farmer affronted the mapmaker.	55.935445	The farmer affronted the UNK-LC-er .	unk
+854	The farmer was affronted by the mapmaker.	61.191531	The farmer was affronted by the UNK-LC-er .	unk
+855	The mapmaker was affronted by the farmer.	62.414474	The UNK-LC-er was affronted by the farmer .	unk
+856	The cartographer insulted the rancher.	53.992474	The UNK-LC-er insulted the rancher .	unk
+857	The rancher insulted the cartographer.	52.811077000000004	The rancher insulted the UNK-LC-er .	unk
+858	The rancher was insulted by the cartographer.	56.989028000000005	The rancher was insulted by the UNK-LC-er .	unk
+859	The cartographer was insulted by the rancher.	59.553869	The UNK-LC-er was insulted by the rancher .	unk
+860	The poet awed the entertainer.	53.584171	The poet awed the entertainer .	nounk
+861	The entertainer awed the poet.	54.529900000000005	The entertainer awed the poet .	nounk
+862	The entertainer was awed by the poet.	57.18754700000001	The entertainer was awed by the poet .	nounk
+863	The poet was awed by the entertainer.	57.269058	The poet was awed by the entertainer .	nounk
+864	The lyricist dazzled the performer.	57.94753	The lyricist dazzled the performer .	nounk
+865	The performer dazzled the lyricist.	60.705647	The performer dazzled the lyricist .	nounk
+866	The performer was dazzled by the lyricist.	65.6662	The performer was dazzled by the lyricist .	nounk
+867	The lyricist was dazzled by the performer.	67.878281	The lyricist was dazzled by the performer .	nounk
+868	The peddler tested the manager.	54.191461000000004	The peddler tested the manager .	nounk
+869	The manager tested the peddler.	54.640651	The manager tested the peddler .	nounk
+870	The manager was tested by the peddler.	56.096576	The manager was tested by the peddler .	nounk
+871	The peddler was tested by the manager.	56.514899	The peddler was tested by the manager .	nounk
+872	The traveling salesman challenged the executive.	60.803922	The traveling salesman challenged the executive .	nounk
+873	The executive challenged the traveling salesman.	63.038394999999994	The executive challenged the traveling salesman .	nounk
+874	The executive was challenged by the traveling salesman.	62.356595	The executive was challenged by the traveling salesman .	nounk
+875	The traveling salesman was challenged by the executive.	63.49769499999999	The traveling salesman was challenged by the executive .	nounk
+876	The musician admired the diva.	57.684976999999996	The musician admired the diva .	nounk
+877	The diva admired the musician.	58.95774099999999	The diva admired the musician .	nounk
+878	The diva was admired by the musician.	62.20926299999999	The diva was admired by the musician .	nounk
+879	The musician was admired by the diva.	61.317582	The musician was admired by the diva .	nounk
+880	The instrumentalist adored the prima donna.	67.784328	The instrumentalist adored the prima donna .	nounk
+881	The prima donna adored the instrumentalist.	71.154361	The prima donna adored the instrumentalist .	nounk
+882	The prima donna was adored by the instrumentalist.	77.413298	The prima donna was adored by the instrumentalist .	nounk
+883	The instrumentalist was adored by the prima donna.	73.566001	The instrumentalist was adored by the prima donna .	nounk
+884	The general welcomed the hero.	51.365376	The general welcomed the hero .	nounk
+885	The hero welcomed the general.	50.921305999999994	The hero welcomed the general .	nounk
+886	The hero was welcomed by the general.	52.813461000000004	The hero was welcomed by the general .	nounk
+887	The general was welcomed by the hero.	52.524049000000005	The general was welcomed by the hero .	nounk
+888	The commander greeted the champion.	54.074327000000004	The commander greeted the champion .	nounk
+889	The champion greeted the commander.	55.287183	The champion greeted the commander .	nounk
+890	The champion was greeted by the commander.	57.258839	The champion was greeted by the commander .	nounk
+891	The commander was greeted by the champion.	55.711045	The commander was greeted by the champion .	nounk
+892	The cobbler disdained the stonecutter.	48.808341	The UNK-LC-er disdained the UNK-LC-er .	unk
+893	The stonecutter disdained the cobbler.	48.808341	The UNK-LC-er disdained the UNK-LC-er .	unk
+894	The stonecutter was disdained by the cobbler.	57.613246000000004	The UNK-LC-er was disdained by the UNK-LC-er .	unk
+895	The cobbler was disdained by the stonecutter.	57.613246000000004	The UNK-LC-er was disdained by the UNK-LC-er .	unk
+896	The shoemaker scorned the mason.	65.06324099999999	The shoemaker scorned the mason .	nounk
+897	The mason scorned the shoemaker.	64.34450400000001	The mason scorned the shoemaker .	nounk
+898	The mason was scorned by the shoemaker.	68.223015	The mason was scorned by the shoemaker .	nounk
+899	The shoemaker was scorned by the mason.	69.301613	The shoemaker was scorned by the mason .	nounk
+900	The postman noticed the chaplain.	61.248715000000004	The postman noticed the chaplain .	nounk
+901	The chaplain noticed the postman.	59.34462499999999	The chaplain noticed the postman .	nounk
+902	The chaplain was noticed by the postman.	63.493942999999994	The chaplain was noticed by the postman .	nounk
+903	The postman was noticed by the chaplain.	64.983633	The postman was noticed by the chaplain .	nounk
+904	The mailman saw the minister.	52.306789	The mailman saw the minister .	nounk
+905	The minister saw the mailman.	51.083542	The minister saw the mailman .	nounk
+906	The minister was seen by the mailman.	58.73346	The minister was seen by the mailman .	nounk
+907	The mailman was seen by the minister.	56.660039999999995	The mailman was seen by the minister .	nounk
+908	The composer begrudged the playwright.	55.49133500000001	The composer begrudged the playwright .	nounk
+909	The playwright begrudged the composer.	53.610862	The playwright begrudged the composer .	nounk
+910	The playwright was begrudged by the composer.	64.10667	The playwright was begrudged by the composer .	nounk
+911	The composer was begrudged by the playwright.	63.917478	The composer was begrudged by the playwright .	nounk
+912	The songwriter envied the dramatist.	64.489345	The songwriter envied the dramatist .	nounk
+913	The dramatist envied the songwriter.	64.672957	The dramatist envied the songwriter .	nounk
+914	The dramatist was envied by the songwriter.	68.664801	The dramatist was envied by the songwriter .	nounk
+915	The songwriter was envied by the dramatist.	68.485153	The songwriter was envied by the dramatist .	nounk
+916	The dictator angered the residents.	49.568425	The dictator angered the residents .	nounk
+917	The residents angered the dictator.	51.562118999999996	The residents angered the dictator .	nounk
+918	The residents were angered by the dictator.	55.036936	The residents were angered by the dictator .	nounk
+919	The dictator was angered by the residents.	57.636617	The dictator was angered by the residents .	nounk
+920	The despot enraged the townspeople.	57.125018	The despot enraged the townspeople .	nounk
+921	The townspeople enraged the despot.	61.655381000000006	The townspeople enraged the despot .	nounk
+922	The townspeople were enraged by the despot.	64.515958	The townspeople were enraged by the despot .	nounk
+923	The despot was enraged by the townspeople.	61.420823	The despot was enraged by the townspeople .	nounk
+924	The missionary baffled the oracle.	64.745942	The missionary baffled the oracle .	nounk
+925	The oracle baffled the missionary.	62.003671000000004	The oracle baffled the missionary .	nounk
+926	The oracle was baffled by the missionary.	66.962043	The oracle was baffled by the missionary .	nounk
+927	The missionary was baffled by the oracle.	64.518654	The missionary was baffled by the oracle .	nounk
+928	The evangelist mystified the soothsayer.	66.08659899999999	The evangelist mystified the soothsayer .	nounk
+929	The soothsayer mystified the evangelist.	62.301706	The soothsayer mystified the evangelist .	nounk
+930	The soothsayer was mystified by the evangelist.	65.26160399999999	The soothsayer was mystified by the evangelist .	nounk
+931	The evangelist was mystified by the soothsayer.	66.582797	The evangelist was mystified by the soothsayer .	nounk
+932	The trespasser choked the fighter.	54.225581999999996	The UNK-LC-er choked the fighter .	unk
+933	The fighter choked the trespasser.	53.128223000000006	The fighter choked the UNK-LC-er .	unk
+934	The fighter was choked by the trespasser.	56.426392	The fighter was choked by the UNK-LC-er .	unk
+935	The trespasser was choked by the fighter.	59.841037	The UNK-LC-er was choked by the fighter .	unk
+936	The encroacher strangled the warrior.	55.241	The UNK-LC-er strangled the warrior .	unk
+937	The warrior strangled the encroacher.	54.345127	The warrior strangled the UNK-LC-er .	unk
+938	The warrior was strangled by the encroacher.	61.002627000000004	The warrior was strangled by the UNK-LC-er .	unk
+939	The encroacher was strangled by the warrior.	61.460725	The UNK-LC-er was strangled by the warrior .	unk
+940	The broker introduced the donor.	53.046132	The broker introduced the donor .	nounk
+941	The donor introduced the broker.	52.066454	The donor introduced the broker .	nounk
+942	The donor was introduced by the broker.	51.184088	The donor was introduced by the broker .	nounk
+943	The broker was introduced by the donor.	53.806535	The broker was introduced by the donor .	nounk
+944	The dealer presented the sponsor.	51.11787	The dealer presented the sponsor .	nounk
+945	The sponsor presented the dealer.	51.482386	The sponsor presented the dealer .	nounk
+946	The sponsor was presented by the dealer.	53.920118	The sponsor was presented by the dealer .	nounk
+947	The dealer was presented by the sponsor.	54.475820000000006	The dealer was presented by the sponsor .	nounk
+948	The shrink commended the dean.	64.12031300000001	The shrink commended the dean .	nounk
+949	The dean commended the shrink.	59.558979	The dean commended the shrink .	nounk
+950	The dean was commended by the shrink.	68.39476099999999	The dean was commended by the shrink .	nounk
+951	The shrink was commended by the dean.	67.701707	The shrink was commended by the dean .	nounk
+952	The psychiatrist applauded the provost.	59.70698599999999	The psychiatrist applauded the provost .	nounk
+953	The provost applauded the psychiatrist.	58.162134	The provost applauded the psychiatrist .	nounk
+954	The provost was applauded by the psychiatrist.	60.024922000000004	The provost was applauded by the psychiatrist .	nounk
+955	The psychiatrist was applauded by the provost.	61.456639	The psychiatrist was applauded by the provost .	nounk
+956	The refugee provoked the homeless person.	71.33258000000001	The refugee provoked the homeless person .	nounk
+957	The homeless person provoked the refugee.	69.27298900000001	The homeless person provoked the refugee .	nounk
+958	The homeless person was provoked by the refugee.	73.853408	The homeless person was provoked by the refugee .	nounk
+959	The refugee was provoked by the homeless person.	71.705324	The refugee was provoked by the homeless person .	nounk
+960	The asylum seeker goaded the vagrant.	82.701696	The asylum seeker goaded the vagrant .	nounk
+961	The vagrant goaded the asylum seeker.	82.403684	The vagrant goaded the asylum seeker .	nounk
+962	The vagrant was goaded by the asylum seeker.	85.304823	The vagrant was goaded by the asylum seeker .	nounk
+963	The asylum seeker was goaded by the vagrant.	87.62985	The asylum seeker was goaded by the vagrant .	nounk
+964	The interpreter swindled the messenger.	60.067079	The interpreter swindled the messenger .	nounk
+965	The messenger swindled the interpreter.	61.058961	The messenger swindled the interpreter .	nounk
+966	The messenger was swindled by the interpreter.	65.14640700000001	The messenger was swindled by the interpreter .	nounk
+967	The interpreter was swindled by the messenger.	65.688559	The interpreter was swindled by the messenger .	nounk
+968	The translator deceived the courier.	60.878781999999994	The translator deceived the courier .	nounk
+969	The courier deceived the translator.	61.631392999999996	The courier deceived the translator .	nounk
+970	The courier was deceived by the translator.	64.725423	The courier was deceived by the translator .	nounk
+971	The translator was deceived by the courier.	64.32322400000001	The translator was deceived by the courier .	nounk
+972	The gangster hated the governor.	51.075272000000005	The gangster hated the governor .	nounk
+973	The governor hated the gangster.	52.25341600000001	The governor hated the gangster .	nounk
+974	The governor was hated by the gangster.	59.303422	The governor was hated by the gangster .	nounk
+975	The gangster was hated by the governor.	57.853	The gangster was hated by the governor .	nounk
+976	The hoodlum abhorred the chancellor.	61.497488	The hoodlum abhorred the chancellor .	nounk
+977	The chancellor abhorred the hoodlum.	63.568932	The chancellor abhorred the hoodlum .	nounk
+978	The chancellor was abhorred by the hoodlum.	69.548424	The chancellor was abhorred by the hoodlum .	nounk
+979	The hoodlum was abhorred by the chancellor.	66.64701600000001	The hoodlum was abhorred by the chancellor .	nounk
+980	The planner convinced the customer.	47.662382	The planner convinced the customer .	nounk
+981	The customer convinced the planner.	50.111846	The customer convinced the planner .	nounk
+982	The customer was convinced by the planner.	58.540873000000005	The customer was convinced by the planner .	nounk
+983	The planner was convinced by the customer.	57.681540000000005	The planner was convinced by the customer .	nounk
+984	The organizer persuaded the buyer.	50.191238	The organizer persuaded the buyer .	nounk
+985	The buyer persuaded the organizer.	52.230204	The buyer persuaded the organizer .	nounk
+986	The buyer was persuaded by the organizer.	55.687262000000004	The buyer was persuaded by the organizer .	nounk
+987	The organizer was persuaded by the buyer.	56.090849000000006	The organizer was persuaded by the buyer .	nounk
+988	The wizard protected the gnome.	62.949352	The wizard protected the gnome .	nounk
+989	The gnome protected the wizard.	63.967628	The gnome protected the wizard .	nounk
+990	The gnome was protected by the wizard.	68.190332	The gnome was protected by the wizard .	nounk
+991	The wizard was protected by the gnome.	65.21855299999999	The wizard was protected by the gnome .	nounk
+992	The sorcerer defended the dwarf.	62.74228599999999	The sorcerer defended the dwarf .	nounk
+993	The dwarf defended the sorcerer.	64.23077599999999	The dwarf defended the sorcerer .	nounk
+994	The dwarf was defended by the sorcerer.	68.44125600000001	The dwarf was defended by the sorcerer .	nounk
+995	The sorcerer was defended by the dwarf.	68.11644	The sorcerer was defended by the dwarf .	nounk
+996	The student befuddled the professor.	56.196034	The student befuddled the professor .	nounk
+997	The professor befuddled the student.	52.080431999999995	The professor befuddled the student .	nounk
+998	The professor was befuddled by the student.	55.971802	The professor was befuddled by the student .	nounk
+999	The student was befuddled by the professor.	59.947843	The student was befuddled by the professor .	nounk
+1000	The scholar confused the lecturer.	57.725876	The scholar confused the lecturer .	nounk
+1001	The lecturer confused the scholar.	58.588058999999994	The lecturer confused the scholar .	nounk
+1002	The lecturer was confused by the scholar.	63.000144000000006	The lecturer was confused by the scholar .	nounk
+1003	The scholar was confused by the lecturer.	61.759632999999994	The scholar was confused by the lecturer .	nounk
+1004	The invader spotted the sentry.	57.445465000000006	The invader spotted the sentry .	nounk
+1005	The sentry spotted the invader.	54.300881	The sentry spotted the invader .	nounk
+1006	The sentry was spotted by the invader.	60.943721000000004	The sentry was spotted by the invader .	nounk
+1007	The invader was spotted by the sentry.	62.15725	The invader was spotted by the sentry .	nounk
+1008	The intruder sighted the watchman.	60.530784999999995	The intruder sighted the watchman .	nounk
+1009	The watchman sighted the intruder.	62.927111	The watchman sighted the intruder .	nounk
+1010	The watchman was sighted by the intruder.	66.400984	The watchman was sighted by the intruder .	nounk
+1011	The intruder was sighted by the watchman.	67.117446	The intruder was sighted by the watchman .	nounk
+1012	The supplier reimbursed the merchant.	58.46382299999999	The supplier reimbursed the merchant .	nounk
+1013	The merchant reimbursed the supplier.	59.946028	The merchant reimbursed the supplier .	nounk
+1014	The merchant was reimbursed by the supplier.	63.128657000000004	The merchant was reimbursed by the supplier .	nounk
+1015	The supplier was reimbursed by the merchant.	62.474692000000005	The supplier was reimbursed by the merchant .	nounk
+1016	The wholesaler compensated the trader.	58.17828299999999	The wholesaler compensated the trader .	nounk
+1017	The trader compensated the wholesaler.	60.069548	The trader compensated the wholesaler .	nounk
+1018	The trader was compensated by the wholesaler.	62.462779999999995	The trader was compensated by the wholesaler .	nounk
+1019	The wholesaler was compensated by the trader.	60.788276999999994	The wholesaler was compensated by the trader .	nounk
+1020	The accuser confronted the vandal.	62.093816000000004	The accuser confronted the UNK-LC-al .	unk
+1021	The vandal confronted the accuser.	60.155508	The UNK-LC-al confronted the accuser .	unk
+1022	The vandal was confronted by the accuser.	62.117081999999996	The UNK-LC-al was confronted by the accuser .	unk
+1023	The accuser was confronted by the vandal.	61.799213	The accuser was confronted by the UNK-LC-al .	unk
+1024	The plaintiff accosted the thug.	61.273691	The plaintiff accosted the thug .	nounk
+1025	The thug accosted the plaintiff.	59.79533	The thug accosted the plaintiff .	nounk
+1026	The thug was accosted by the plaintiff.	60.28525900000001	The thug was accosted by the plaintiff .	nounk
+1027	The plaintiff was accosted by the thug.	61.283699999999996	The plaintiff was accosted by the thug .	nounk
+1028	The trickster bemused the idiot.	55.93223100000001	The UNK-LC-er bemused the idiot .	unk
+1029	The idiot bemused the trickster.	56.94894	The idiot bemused the UNK-LC-er .	unk
+1030	The idiot was bemused by the trickster.	60.337385	The idiot was bemused by the UNK-LC-er .	unk
+1031	The trickster was bemused by the idiot.	61.261467	The UNK-LC-er was bemused by the idiot .	unk
+1032	The swindler puzzled the fool.	64.275624	The swindler puzzled the fool .	nounk
+1033	The fool puzzled the swindler.	66.968418	The fool puzzled the swindler .	nounk
+1034	The fool was puzzled by the swindler.	70.076897	The fool was puzzled by the swindler .	nounk
+1035	The swindler was puzzled by the fool.	69.81268399999999	The swindler was puzzled by the fool .	nounk
+1036	The protestor quoted the leader.	54.25128099999999	The protestor quoted the leader .	nounk
+1037	The leader quoted the protestor.	53.832351	The leader quoted the protestor .	nounk
+1038	The leader was quoted by the protestor.	59.459424999999996	The leader was quoted by the protestor .	nounk
+1039	The protestor was quoted by the leader.	58.503419	The protestor was quoted by the leader .	nounk
+1040	The striker cited the chief.	54.269256	The striker cited the chief .	nounk
+1041	The chief cited the striker.	53.835339000000005	The chief cited the striker .	nounk
+1042	The chief was cited by the striker.	59.861733	The chief was cited by the striker .	nounk
+1043	The striker was cited by the chief.	58.796937	The striker was cited by the chief .	nounk
+1044	The postal worker repulsed the taxi-driver.	61.074046	The postal worker repulsed the UNK-LC-DASH .	unk
+1045	The taxi-driver repulsed the postal worker.	62.96249	The UNK-LC-DASH repulsed the postal worker .	unk
+1046	The taxi-driver was repulsed by the postal worker.	60.109289000000004	The UNK-LC-DASH was repulsed by the postal worker .	unk
+1047	The postal worker was repulsed by the taxi-driver.	63.108998	The postal worker was repulsed by the UNK-LC-DASH .	unk
+1048	The letter carrier disgusted the cabbie.	75.299713	The letter carrier disgusted the cabbie .	nounk
+1049	The cabbie disgusted the letter carrier.	73.86931	The cabbie disgusted the letter carrier .	nounk
+1050	The cabbie was disgusted by the letter carrier.	75.458608	The cabbie was disgusted by the letter carrier .	nounk
+1051	The letter carrier was disgusted by the cabbie.	79.957753	The letter carrier was disgusted by the cabbie .	nounk
+1052	The competitor agitated the rival.	59.21408600000001	The competitor agitated the rival .	nounk
+1053	The rival agitated the competitor.	61.554074	The rival agitated the competitor .	nounk
+1054	The rival was agitated by the competitor.	62.915961	The rival was agitated by the competitor .	nounk
+1055	The competitor was agitated by the rival.	60.948587	The competitor was agitated by the rival .	nounk
+1056	The contender flustered the opponent.	59.207227	The contender flustered the opponent .	nounk
+1057	The opponent flustered the contender.	59.30506200000001	The opponent flustered the contender .	nounk
+1058	The opponent was flustered by the contender.	62.857682999999994	The opponent was flustered by the contender .	nounk
+1059	The contender was flustered by the opponent.	62.680927999999994	The contender was flustered by the opponent .	nounk
+1060	The officer alerted the authorities.	48.27884	The officer alerted the authorities .	nounk
+1061	The authorities alerted the officer.	47.363306	The authorities alerted the officer .	nounk
+1062	The authorities were alerted by the officer.	55.213488	The authorities were alerted by the officer .	nounk
+1063	The officer was alerted by the authorities.	54.509004000000004	The officer was alerted by the authorities .	nounk
+1064	The deputy notified the higher-ups.	54.844297999999995	The deputy notified the higher-ups .	nounk
+1065	The higher-ups notified the deputy.	57.181404	The higher-ups notified the deputy .	nounk
+1066	The higher-ups were notified by the deputy.	60.838607	The higher-ups were notified by the deputy .	nounk
+1067	The deputy was notified by the higher-ups.	60.875253	The deputy was notified by the higher-ups .	nounk
+1068	The culprit betrayed the hunter.	56.699073999999996	The culprit betrayed the hunter .	nounk
+1069	The hunter betrayed the culprit.	51.507534	The hunter betrayed the culprit .	nounk
+1070	The hunter was betrayed by the culprit.	55.918884000000006	The hunter was betrayed by the culprit .	nounk
+1071	The culprit was betrayed by the hunter.	58.174687	The culprit was betrayed by the hunter .	nounk
+1072	The botanist respected the partner.	55.960452	The botanist respected the partner .	nounk
+1073	The partner respected the botanist.	57.729978	The partner respected the botanist .	nounk
+1074	The partner was respected by the botanist.	63.470173	The partner was respected by the botanist .	nounk
+1075	The botanist was respected by the partner.	64.814395	The botanist was respected by the partner .	nounk
+1076	The flora specialist esteemed the collaborator.	83.725653	The flora specialist esteemed the collaborator .	nounk
+1077	The collaborator esteemed the flora specialist.	86.030119	The collaborator esteemed the flora specialist .	nounk
+1078	The collaborator was esteemed by the flora specialist.	91.19808	The collaborator was esteemed by the flora specialist .	nounk
+1079	The flora specialist was esteemed by the collaborator.	91.27185300000001	The flora specialist was esteemed by the collaborator .	nounk
+1080	The pacifist placated the zealot.	75.66166199999999	The pacifist placated the zealot .	nounk
+1081	The zealot placated the pacifist.	70.400515	The zealot placated the pacifist .	nounk
+1082	The zealot was placated by the pacifist.	74.116575	The zealot was placated by the pacifist .	nounk
+1083	The pacifist was placated by the zealot.	76.337773	The pacifist was placated by the zealot .	nounk
+1084	The peace-lover mollified the fanatic.	56.531836000000006	The UNK-LC-DASH mollified the fanatic .	unk
+1085	The fanatic mollified the peace-lover.	58.592112	The fanatic mollified the UNK-LC-DASH .	unk
+1086	The fanatic was mollified by the peace-lover.	59.72282	The fanatic was mollified by the UNK-LC-DASH .	unk
+1087	The peace-lover was mollified by the fanatic.	60.086747	The UNK-LC-DASH was mollified by the fanatic .	unk
+1088	The scoundrel beat the protagonist.	57.582347999999996	The scoundrel beat the protagonist .	nounk
+1089	The protagonist beat the scoundrel.	54.792661	The protagonist beat the scoundrel .	nounk
+1090	The protagonist was beaten by the scoundrel.	60.102727	The protagonist was beaten by the scoundrel .	nounk
+1091	The scoundrel was beaten by the protagonist.	63.45002100000001	The scoundrel was beaten by the protagonist .	nounk
+1092	The rogue defeated the main character.	61.909470000000006	The rogue defeated the main character .	nounk
+1093	The main character defeated the rogue.	65.607776	The main character defeated the rogue .	nounk
+1094	The main character was defeated by the rogue.	65.861793	The main character was defeated by the rogue .	nounk
+1095	The rogue was defeated by the main character.	63.995184	The rogue was defeated by the main character .	nounk
+1096	The sociologist accepted the offer.	48.349509	The sociologist accepted the offer .	nounk
+1097	The offer accepted the sociologist.	54.453455000000005	The offer accepted the sociologist .	nounk
+1098	The offer was accepted by the sociologist.	49.613911	The offer was accepted by the sociologist .	nounk
+1099	The sociologist was accepted by the offer.	55.487460999999996	The sociologist was accepted by the offer .	nounk
+1100	The boyfriend basted the turkey.	54.471992	The boyfriend UNK-LC-ed the turkey .	unk
+1101	The turkey basted the boyfriend.	56.73451	The turkey UNK-LC-ed the boyfriend .	unk
+1102	The turkey was basted by the boyfriend.	60.343419	The turkey was UNK-LC-ed by the boyfriend .	unk
+1103	The boyfriend was basted by the turkey.	60.665391	The boyfriend was UNK-LC-ed by the turkey .	unk
+1104	The caseworker posed the question.	50.968656	The caseworker posed the question .	nounk
+1105	The question posed the caseworker.	52.862396	The question posed the caseworker .	nounk
+1106	The question was posed by the caseworker.	56.863333000000004	The question was posed by the caseworker .	nounk
+1107	The caseworker was posed by the question.	57.960838	The caseworker was posed by the question .	nounk
+1108	The ditch digger bent the wire.	83.266661	The ditch digger bent the wire .	nounk
+1109	The wire bent the ditch digger.	83.97393900000002	The wire bent the ditch digger .	nounk
+1110	The wire was bent by the ditch digger.	91.93560199999999	The wire was bent by the ditch digger .	nounk
+1111	The ditch digger was bent by the wire.	89.603994	The ditch digger was bent by the wire .	nounk
+1112	The box-office sold the tickets.	55.24943800000001	The box-office sold the tickets .	nounk
+1113	The tickets sold the box-office.	55.077949	The tickets sold the box-office .	nounk
+1114	The tickets were sold by the box-office.	57.393311999999995	The tickets were sold by the box-office .	nounk
+1115	The box-office was sold by the tickets.	61.365996	The box-office was sold by the tickets .	nounk
+1116	The uncle hung the ornament.	61.90407	The uncle hung the ornament .	nounk
+1117	The ornament hung the uncle.	62.070811	The ornament hung the uncle .	nounk
+1118	The ornament was hung by the uncle.	64.377971	The ornament was hung by the uncle .	nounk
+1119	The uncle was hung by the ornament.	66.645161	The uncle was hung by the ornament .	nounk
+1120	The attendant pressed the button.	54.650617	The attendant pressed the button .	nounk
+1121	The button pressed the attendant.	60.814391	The button pressed the attendant .	nounk
+1122	The button was pressed by the attendant.	62.292028	The button was pressed by the attendant .	nounk
+1123	The attendant was pressed by the button.	64.63246	The attendant was pressed by the button .	nounk
+1124	The bum stole the necklace.	62.649692	The bum stole the necklace .	nounk
+1125	The necklace stole the bum.	56.702127	The necklace stole the bum .	nounk
+1126	The necklace was stolen by the bum.	61.850751	The necklace was stolen by the bum .	nounk
+1127	The bum was stolen by the necklace.	64.59314	The bum was stolen by the necklace .	nounk
+1128	The potter molded the clay.	63.667308999999996	The potter molded the clay .	nounk
+1129	The clay molded the potter.	62.063944	The clay molded the potter .	nounk
+1130	The clay was molded by the potter.	66.89336399999999	The clay was molded by the potter .	nounk
+1131	The potter was molded by the clay.	69.90480199999999	The potter was molded by the clay .	nounk
+1132	The guarantor initialed the form.	58.389078999999995	The guarantor initialed the form .	nounk
+1133	The form initialed the guarantor.	62.954271	The form initialed the guarantor .	nounk
+1134	The form was initialed by the guarantor.	60.257539	The form was initialed by the guarantor .	nounk
+1135	The guarantor was initialed by the form.	63.988488999999994	The guarantor was initialed by the form .	nounk
+1136	The couch-potato forgot the umbrella.	70.495531	The couch-potato forgot the umbrella .	nounk
+1137	The umbrella forgot the couch-potato.	71.27913	The umbrella forgot the couch-potato .	nounk
+1138	The umbrella was forgotten by the couch-potato.	70.885524	The umbrella was forgotten by the couch-potato .	nounk
+1139	The couch-potato was forgotten by the umbrella.	71.803932	The couch-potato was forgotten by the umbrella .	nounk
+1140	The groupie attended the concert.	51.268831000000006	The groupie attended the concert .	nounk
+1141	The concert attended the groupie.	56.536539000000005	The concert attended the groupie .	nounk
+1142	The concert was attended by the groupie.	57.362437	The concert was attended by the groupie .	nounk
+1143	The groupie was attended by the concert.	59.537971	The groupie was attended by the concert .	nounk
+1144	The hacker memorized the password.	59.771667	The hacker memorized the password .	nounk
+1145	The password memorized the hacker.	64.23132199999999	The password memorized the hacker .	nounk
+1146	The password was memorized by the hacker.	66.649521	The password was memorized by the hacker .	nounk
+1147	The hacker was memorized by the password.	67.957813	The hacker was memorized by the password .	nounk
+1148	The marine packed the bag.	56.612869	The marine packed the bag .	nounk
+1149	The bag packed the marine.	54.360734	The bag packed the marine .	nounk
+1150	The bag was packed by the marine.	57.162037999999995	The bag was packed by the marine .	nounk
+1151	The marine was packed by the bag.	61.312912	The marine was packed by the bag .	nounk
+1152	The counselor emphasized the rules.	50.12454	The counselor emphasized the rules .	nounk
+1153	The rules emphasized the counselor.	53.224610000000006	The rules emphasized the counselor .	nounk
+1154	The rules were emphasized by the counselor.	59.40675	The rules were emphasized by the counselor .	nounk
+1155	The counselor was emphasized by the rules.	57.403643	The counselor was emphasized by the rules .	nounk
+1156	The seamstress ironed the shirt.	68.890464	The seamstress ironed the shirt .	nounk
+1157	The shirt ironed the seamstress.	70.565011	The shirt ironed the seamstress .	nounk
+1158	The shirt was ironed by the seamstress.	70.665125	The shirt was ironed by the seamstress .	nounk
+1159	The seamstress was ironed by the shirt.	73.922012	The seamstress was ironed by the shirt .	nounk
+1160	The confectioner sprinkled the sugar.	65.559212	The confectioner sprinkled the sugar .	nounk
+1161	The sugar sprinkled the confectioner.	64.849795	The sugar sprinkled the confectioner .	nounk
+1162	The sugar was sprinkled by the confectioner.	69.723294	The sugar was sprinkled by the confectioner .	nounk
+1163	The confectioner was sprinkled by the sugar.	71.801745	The confectioner was sprinkled by the sugar .	nounk
+1164	The voter sealed the envelope.	55.570899999999995	The voter sealed the envelope .	nounk
+1165	The envelope sealed the voter.	57.80346	The envelope sealed the voter .	nounk
+1166	The envelope was sealed by the voter.	58.359196999999995	The envelope was sealed by the voter .	nounk
+1167	The voter was sealed by the envelope.	64.781741	The voter was sealed by the envelope .	nounk
+1168	The fisherman emptied the trashcan.	70.77393099999999	The fisherman emptied the trashcan .	nounk
+1169	The trashcan emptied the fisherman.	69.28816800000001	The trashcan emptied the fisherman .	nounk
+1170	The trashcan was emptied by the fisherman.	71.475827	The trashcan was emptied by the fisherman .	nounk
+1171	The fisherman was emptied by the trashcan.	74.68402800000001	The fisherman was emptied by the trashcan .	nounk
+1172	The cellist received the prize.	45.741806	The cellist received the prize .	nounk
+1173	The prize received the cellist.	53.257121	The prize received the cellist .	nounk
+1174	The prize was received by the cellist.	54.997058	The prize was received by the cellist .	nounk
+1175	The cellist was received by the prize.	58.935606	The cellist was received by the prize .	nounk
+1176	The cheapskate rated the service.	54.289446999999996	The cheapskate rated the service .	nounk
+1177	The service rated the cheapskate.	54.510125	The service rated the cheapskate .	nounk
+1178	The service was rated by the cheapskate.	62.66414	The service was rated by the cheapskate .	nounk
+1179	The cheapskate was rated by the service.	63.64287899999999	The cheapskate was rated by the service .	nounk
+1180	The schoolgirl borrowed the key.	57.400101	The schoolgirl borrowed the key .	nounk
+1181	The key borrowed the schoolgirl.	62.708891	The key borrowed the schoolgirl .	nounk
+1182	The key was borrowed by the schoolgirl.	62.537959	The key was borrowed by the schoolgirl .	nounk
+1183	The schoolgirl was borrowed by the key.	65.25977	The schoolgirl was borrowed by the key .	nounk
+1184	The bookworm recited the poem.	51.471104	The UNK-LC recited the poem .	unk
+1185	The poem recited the bookworm.	46.724065	The poem recited the UNK-LC .	unk
+1186	The poem was recited by the bookworm.	57.440043	The poem was recited by the UNK-LC .	unk
+1187	The bookworm was recited by the poem.	60.231192	The UNK-LC was recited by the poem .	unk
+1188	The diver recharged the battery.	68.104585	The diver recharged the battery .	nounk
+1189	The battery recharged the diver.	67.58368599999999	The battery recharged the diver .	nounk
+1190	The battery was recharged by the diver.	71.022223	The battery was recharged by the diver .	nounk
+1191	The diver was recharged by the battery.	73.972747	The diver was recharged by the battery .	nounk
+1192	The poker player won the game.	50.475451	The poker player won the game .	nounk
+1193	The game won the poker player.	55.145619	The game won the poker player .	nounk
+1194	The game was won by the poker player.	56.658226	The game was won by the poker player .	nounk
+1195	The poker player was won by the game.	58.880617	The poker player was won by the game .	nounk
+1196	The copycat redecorated the apartment.	59.09852300000001	The copycat redecorated the apartment .	nounk
+1197	The apartment redecorated the copycat.	65.421536	The apartment redecorated the copycat .	nounk
+1198	The apartment was redecorated by the copycat.	70.05295	The apartment was redecorated by the copycat .	nounk
+1199	The copycat was redecorated by the apartment.	67.224765	The copycat was redecorated by the apartment .	nounk
+1200	The winemaker uncorked the bottle.	49.095693000000004	The UNK-LC-er uncorked the bottle .	unk
+1201	The bottle uncorked the winemaker.	54.955113000000004	The bottle uncorked the UNK-LC-er .	unk
+1202	The bottle was uncorked by the winemaker.	60.414112	The bottle was uncorked by the UNK-LC-er .	unk
+1203	The winemaker was uncorked by the bottle.	59.838958000000005	The UNK-LC-er was uncorked by the bottle .	unk
+1204	The laundress folded the clothes.	47.404993	The UNK-LC folded the clothes .	unk
+1205	The clothes folded the laundress.	47.528102000000004	The clothes folded the UNK-LC .	unk
+1206	The clothes were folded by the laundress.	51.248197000000005	The clothes were folded by the UNK-LC .	unk
+1207	The laundress was folded by the clothes.	55.390776	The UNK-LC was folded by the clothes .	unk
+1208	The travel-agent photocopied the passport.	65.883034	The travel-agent photocopied the passport .	nounk
+1209	The passport photocopied the travel-agent.	71.260105	The passport photocopied the travel-agent .	nounk
+1210	The passport was photocopied by the travel-agent.	75.181025	The passport was photocopied by the travel-agent .	nounk
+1211	The travel-agent was photocopied by the passport.	74.417806	The travel-agent was photocopied by the passport .	nounk
+1212	The exterminator filed the complaint.	47.860111	The exterminator filed the complaint .	nounk
+1213	The complaint filed the exterminator.	50.779207	The complaint filed the exterminator .	nounk
+1214	The complaint was filed by the exterminator.	52.193529	The complaint was filed by the exterminator .	nounk
+1215	The exterminator was filed by the complaint.	60.329296	The exterminator was filed by the complaint .	nounk
+1216	The minuteman loaded the gun.	43.677139999999994	The UNK-LC loaded the gun .	unk
+1217	The gun loaded the minuteman.	44.331089999999996	The gun loaded the UNK-LC .	unk
+1218	The gun was loaded by the minuteman.	49.339805	The gun was loaded by the UNK-LC .	unk
+1219	The minuteman was loaded by the gun.	50.007035	The UNK-LC was loaded by the gun .	unk
+1220	The bookseller calculated the profit.	55.283417	The bookseller calculated the profit .	nounk
+1221	The profit calculated the bookseller.	55.556667	The profit calculated the bookseller .	nounk
+1222	The profit was calculated by the bookseller.	56.91189800000001	The profit was calculated by the bookseller .	nounk
+1223	The bookseller was calculated by the profit.	63.351507999999995	The bookseller was calculated by the profit .	nounk
+1224	The count inherited the painting.	55.236020999999994	The count inherited the painting .	nounk
+1225	The painting inherited the count.	53.080316999999994	The painting inherited the count .	nounk
+1226	The painting was inherited by the count.	56.072185999999995	The painting was inherited by the count .	nounk
+1227	The count was inherited by the painting.	58.756322	The count was inherited by the painting .	nounk
+1228	The groundskeeper changed the light bulb.	54.634443000000005	The UNK-LC-er changed the light bulb .	unk
+1229	The light bulb changed the groundskeeper.	57.003082	The light bulb changed the UNK-LC-er .	unk
+1230	The light bulb was changed by the groundskeeper.	57.489055	The light bulb was changed by the UNK-LC-er .	unk
+1231	The groundskeeper was changed by the light bulb.	61.13745	The UNK-LC-er was changed by the light bulb .	unk
+1232	The marcher sang the anthem.	52.37713399999999	The UNK-LC-er sang the anthem .	unk
+1233	The anthem sang the marcher.	53.794760999999994	The anthem sang the UNK-LC-er .	unk
+1234	The anthem was sung by the marcher.	55.030588	The anthem was sung by the UNK-LC-er .	unk
+1235	The marcher was sung by the anthem.	56.92194500000001	The UNK-LC-er was sung by the anthem .	unk
+1236	The deckhand unlocked the door.	51.76976400000001	The deckhand unlocked the door .	nounk
+1237	The door unlocked the deckhand.	59.747917	The door unlocked the deckhand .	nounk
+1238	The door was unlocked by the deckhand.	65.625497	The door was unlocked by the deckhand .	nounk
+1239	The deckhand was unlocked by the door.	63.594614	The deckhand was unlocked by the door .	nounk
+1240	The supremacist established the fund.	60.825935	The supremacist established the fund .	nounk
+1241	The fund established the supremacist.	58.824200999999995	The fund established the supremacist .	nounk
+1242	The fund was established by the supremacist.	62.588638	The fund was established by the supremacist .	nounk
+1243	The supremacist was established by the fund.	61.495645	The supremacist was established by the fund .	nounk
+1244	The house sitter watered the plant.	72.873968	The house sitter watered the plant .	nounk
+1245	The plant watered the house sitter.	70.203874	The plant watered the house sitter .	nounk
+1246	The plant was watered by the house sitter.	76.100066	The plant was watered by the house sitter .	nounk
+1247	The house sitter was watered by the plant.	78.932755	The house sitter was watered by the plant .	nounk
+1248	The interviewee wrinkled the suit.	58.22920500000001	The interviewee wrinkled the suit .	nounk
+1249	The suit wrinkled the interviewee.	57.666371999999996	The suit wrinkled the interviewee .	nounk
+1250	The suit was wrinkled by the interviewee.	63.850656	The suit was wrinkled by the interviewee .	nounk
+1251	The interviewee was wrinkled by the suit.	63.966345999999994	The interviewee was wrinkled by the suit .	nounk
+1252	The cryptographer sent the letter.	50.023779	The cryptographer sent the letter .	nounk
+1253	The letter sent the cryptographer.	49.118451	The letter sent the cryptographer .	nounk
+1254	The letter was sent by the cryptographer.	54.293709	The letter was sent by the cryptographer .	nounk
+1255	The cryptographer was sent by the letter.	57.031252	The cryptographer was sent by the letter .	nounk
+1256	The bellboy erased the message.	49.629931	The UNK-LC-y erased the message .	unk
+1257	The message erased the bellboy.	49.44878	The message erased the UNK-LC-y .	unk
+1258	The message was erased by the bellboy.	53.089553	The message was erased by the UNK-LC-y .	unk
+1259	The bellboy was erased by the message.	54.450579000000005	The UNK-LC-y was erased by the message .	unk
+1260	The forger shipped the package.	56.978467	The forger shipped the package .	nounk
+1261	The package shipped the forger.	58.34082900000001	The package shipped the forger .	nounk
+1262	The package was shipped by the forger.	58.632042	The package was shipped by the forger .	nounk
+1263	The forger was shipped by the package.	64.89201	The forger was shipped by the package .	nounk
+1264	The crackhead smoked the pipe.	48.654661000000004	The UNK-LC smoked the pipe .	unk
+1265	The pipe smoked the crackhead.	49.288005000000005	The pipe smoked the UNK-LC .	unk
+1266	The pipe was smoked by the crackhead.	54.353139	The pipe was smoked by the UNK-LC .	unk
+1267	The crackhead was smoked by the pipe.	57.452193	The UNK-LC was smoked by the pipe .	unk
+1268	The manicurist rescheduled the appointment.	60.461217000000005	The manicurist rescheduled the appointment .	nounk
+1269	The appointment rescheduled the manicurist.	63.042646	The appointment rescheduled the manicurist .	nounk
+1270	The appointment was rescheduled by the manicurist.	62.744513	The appointment was rescheduled by the manicurist .	nounk
+1271	The manicurist was rescheduled by the appointment.	67.756973	The manicurist was rescheduled by the appointment .	nounk
+1272	The charlatan burned the contract.	54.478089999999995	The charlatan burned the contract .	nounk
+1273	The contract burned the charlatan.	56.983528	The contract burned the charlatan .	nounk
+1274	The contract was burnt by the charlatan.	65.77433500000001	The contract was burnt by the charlatan .	nounk
+1275	The charlatan was burnt by the contract.	70.750317	The charlatan was burnt by the contract .	nounk
+1276	The tanner placed the order.	44.412627	The UNK-LC-er placed the order .	unk
+1277	The order placed the tanner.	46.043646	The order placed the UNK-LC-er .	unk
+1278	The order was placed by the tanner.	48.519389000000004	The order was placed by the UNK-LC-er .	unk
+1279	The tanner was placed by the order.	50.65347799999999	The UNK-LC-er was placed by the order .	unk
+1280	The archaeologist canceled the trip.	51.062298	The archaeologist canceled the trip .	nounk
+1281	The trip canceled the archaeologist.	58.050503	The trip canceled the archaeologist .	nounk
+1282	The trip was canceled by the archaeologist.	56.978729	The trip was canceled by the archaeologist .	nounk
+1283	The archaeologist was canceled by the trip.	59.988696	The archaeologist was canceled by the trip .	nounk
+1284	The Frenchman sliced the baguette.	71.30510600000001	The Frenchman sliced the baguette .	nounk
+1285	The baguette sliced the Frenchman.	66.372825	The baguette sliced the Frenchman .	nounk
+1286	The baguette was sliced by the Frenchman.	68.860762	The baguette was sliced by the Frenchman .	nounk
+1287	The Frenchman was sliced by the baguette.	75.85190300000001	The Frenchman was sliced by the baguette .	nounk
+1288	The producer cast the actress.	50.889828	The producer cast the actress .	nounk
+1289	The actress cast the producer.	47.759527000000006	The actress cast the producer .	nounk
+1290	The actress was cast by the producer.	54.918448999999995	The actress was cast by the producer .	nounk
+1291	The producer was cast by the actress.	53.999132	The producer was cast by the actress .	nounk
+1292	The babysitter punished the twins.	60.04538799999999	The babysitter punished the twins .	nounk
+1293	The twins punished the babysitter.	59.584706	The twins punished the babysitter .	nounk
+1294	The twins were punished by the babysitter.	63.660574	The twins were punished by the babysitter .	nounk
+1295	The babysitter was punished by the twins.	65.455237	The babysitter was punished by the twins .	nounk
+1296	The exorcist vanquished the spirit.	49.263546	The UNK-LC vanquished the spirit .	unk
+1297	The spirit vanquished the exorcist.	55.818633999999996	The spirit vanquished the UNK-LC .	unk
+1298	The spirit was vanquished by the exorcist.	54.46244	The spirit was vanquished by the UNK-LC .	unk
+1299	The exorcist was vanquished by the spirit.	55.779482	The UNK-LC was vanquished by the spirit .	unk
+1300	The barber shaved the old man.	59.196312	The barber shaved the old man .	nounk
+1301	The old man shaved the barber.	58.892787	The old man shaved the barber .	nounk
+1302	The old man was shaved by the barber.	68.28117199999998	The old man was shaved by the barber .	nounk
+1303	The barber was shaved by the old man.	66.902793	The barber was shaved by the old man .	nounk
+1304	The paparazzi stalked the pop star.	65.163047	The paparazzi stalked the pop star .	nounk
+1305	The pop star stalked the paparazzi.	67.280403	The pop star stalked the paparazzi .	nounk
+1306	The pop star was stalked by the paparazzi.	68.741246	The pop star was stalked by the paparazzi .	nounk
+1307	The paparazzi was stalked by the pop star.	69.828866	The paparazzi was stalked by the pop star .	nounk
+1308	The brunette tipped the busboy.	61.560455	The brunette tipped the busboy .	nounk
+1309	The busboy tipped the brunette.	60.571338	The busboy tipped the brunette .	nounk
+1310	The busboy was tipped by the brunette.	66.979878	The busboy was tipped by the brunette .	nounk
+1311	The brunette was tipped by the busboy.	68.274443	The brunette was tipped by the busboy .	nounk
+1312	The roommate adopted the newborn.	62.737526	The roommate adopted the newborn .	nounk
+1313	The newborn adopted the roommate.	60.615035	The newborn adopted the roommate .	nounk
+1314	The newborn was adopted by the roommate.	62.368557	The newborn was adopted by the roommate .	nounk
+1315	The roommate was adopted by the newborn.	65.65651	The roommate was adopted by the newborn .	nounk
+1316	The cartoonist sketched the unicyclist.	51.554444999999994	The cartoonist sketched the UNK-LC .	unk
+1317	The unicyclist sketched the cartoonist.	52.740297999999996	The UNK-LC sketched the cartoonist .	unk
+1318	The unicyclist was sketched by the cartoonist.	55.470803000000004	The UNK-LC was sketched by the cartoonist .	unk
+1319	The cartoonist was sketched by the unicyclist.	57.204356000000004	The cartoonist was sketched by the UNK-LC .	unk
+1320	The streetwalker undercharged the seaman.	67.41680099999999	The streetwalker undercharged the seaman .	nounk
+1321	The seaman undercharged the streetwalker.	66.62974100000001	The seaman undercharged the streetwalker .	nounk
+1322	The seaman was undercharged by the streetwalker.	76.39957	The seaman was undercharged by the streetwalker .	nounk
+1323	The streetwalker was undercharged by the seaman.	75.544014	The streetwalker was undercharged by the seaman .	nounk
+1324	The urologist treated the widower.	59.360936	The urologist treated the widower .	nounk
+1325	The widower treated the urologist.	59.342545	The widower treated the urologist .	nounk
+1326	The widower was treated by the urologist.	63.457502	The widower was treated by the urologist .	nounk
+1327	The urologist was treated by the widower.	64.271485	The urologist was treated by the widower .	nounk
+1328	The jury acquitted the economist.	45.282746	The jury acquitted the economist .	nounk
+1329	The economist acquitted the jury.	46.171834	The economist acquitted the jury .	nounk
+1330	The economist was acquitted by the jury.	47.794539	The economist was acquitted by the jury .	nounk
+1331	The jury was acquitted by the economist.	52.57845	The jury was acquitted by the economist .	nounk
+1332	The freshman dodged the bully.	64.774123	The freshman dodged the bully .	nounk
+1333	The bully dodged the freshman.	63.363473000000006	The bully dodged the freshman .	nounk
+1334	The bully was dodged by the freshman.	71.730947	The bully was dodged by the freshman .	nounk
+1335	The freshman was dodged by the bully.	73.446106	The freshman was dodged by the bully .	nounk
+1336	The nun reproached the hedonist.	67.995761	The nun reproached the hedonist .	nounk
+1337	The hedonist reproached the nun.	66.631584	The hedonist reproached the nun .	nounk
+1338	The hedonist was reproached by the nun.	77.158889	The hedonist was reproached by the nun .	nounk
+1339	The nun was reproached by the hedonist.	77.653269	The nun was reproached by the hedonist .	nounk
+1340	The librarian admonished the plagiarist.	53.010311	The librarian admonished the UNK-LC .	unk
+1341	The plagiarist admonished the librarian.	55.063617	The UNK-LC admonished the librarian .	unk
+1342	The plagiarist was admonished by the librarian.	61.377453	The UNK-LC was admonished by the librarian .	unk
+1343	The librarian was admonished by the plagiarist.	59.554794	The librarian was admonished by the UNK-LC .	unk
+1344	The colonel supervised the cadet.	56.598777999999996	The colonel supervised the cadet .	nounk
+1345	The cadet supervised the colonel.	61.490543	The cadet supervised the colonel .	nounk
+1346	The cadet was supervised by the colonel.	57.922387	The cadet was supervised by the colonel .	nounk
+1347	The colonel was supervised by the cadet.	60.503474	The colonel was supervised by the cadet .	nounk
+1348	The abolitionist hid the slave.	68.89437099999999	The abolitionist hid the slave .	nounk
+1349	The slave hid the abolitionist.	69.343624	The slave hid the abolitionist .	nounk
+1350	The slave was hidden by the abolitionist.	72.039338	The slave was hidden by the abolitionist .	nounk
+1351	The abolitionist was hidden by the slave.	72.16537	The abolitionist was hidden by the slave .	nounk
+1352	The personal trainer weighed the Olympian.	71.619006	The personal trainer weighed the Olympian .	nounk
+1353	The Olympian weighed the personal trainer.	72.247139	The Olympian weighed the personal trainer .	nounk
+1354	The Olympian was weighed by the personal trainer.	74.28693299999999	The Olympian was weighed by the personal trainer .	nounk
+1355	The personal trainer was weighed by the Olympian.	74.427461	The personal trainer was weighed by the Olympian .	nounk
+1356	The zookeeper fed the giraffe.	62.130865	The zookeeper fed the giraffe .	nounk
+1357	The giraffe fed the zookeeper.	61.986138	The giraffe fed the zookeeper .	nounk
+1358	The giraffe was fed by the zookeeper.	64.639473	The giraffe was fed by the zookeeper .	nounk
+1359	The zookeeper was fed by the giraffe.	63.810538	The zookeeper was fed by the giraffe .	nounk
+1360	The masseuse relaxed the linebacker.	54.545555	The UNK-LC relaxed the linebacker .	unk
+1361	The linebacker relaxed the masseuse.	51.78836	The linebacker relaxed the UNK-LC .	unk
+1362	The linebacker was relaxed by the masseuse.	58.595560000000006	The linebacker was relaxed by the UNK-LC .	unk
+1363	The masseuse was relaxed by the linebacker.	59.472542000000004	The UNK-LC was relaxed by the linebacker .	unk
+1364	The page obeyed the noble.	63.69411	The page obeyed the noble .	nounk
+1365	The noble obeyed the page.	62.204368	The noble obeyed the page .	nounk
+1366	The noble was obeyed by the page.	66.825126	The noble was obeyed by the page .	nounk
+1367	The page was obeyed by the noble.	68.840282	The page was obeyed by the noble .	nounk
+1368	The lion chased the tour-guide.	49.926032000000006	The lion chased the UNK-LC-DASH .	unk
+1369	The tour-guide chased the lion.	48.564804	The UNK-LC-DASH chased the lion .	unk
+1370	The tour-guide was chased by the lion.	51.81136000000001	The UNK-LC-DASH was chased by the lion .	unk
+1371	The lion was chased by the tour-guide.	52.43048400000001	The lion was chased by the UNK-LC-DASH .	unk
+1372	The caretaker quieted the orphan.	63.749312	The caretaker quieted the orphan .	nounk
+1373	The orphan quieted the caretaker.	66.939155	The orphan quieted the caretaker .	nounk
+1374	The orphan was quieted by the caretaker.	70.225583	The orphan was quieted by the caretaker .	nounk
+1375	The caretaker was quieted by the orphan.	69.285067	The caretaker was quieted by the orphan .	nounk
+1376	The tennis player thanked the chiropractor.	62.75694300000001	The tennis player thanked the chiropractor .	nounk
+1377	The chiropractor thanked the tennis player.	60.54812999999999	The chiropractor thanked the tennis player .	nounk
+1378	The chiropractor was thanked by the tennis player.	66.376768	The chiropractor was thanked by the tennis player .	nounk
+1379	The tennis player was thanked by the chiropractor.	67.868873	The tennis player was thanked by the chiropractor .	nounk
+1380	The experimenter recruited the subject.	55.376759	The experimenter recruited the subject .	nounk
+1381	The subject recruited the experimenter.	60.824098	The subject recruited the experimenter .	nounk
+1382	The subject was recruited by the experimenter.	60.923441	The subject was recruited by the experimenter .	nounk
+1383	The experimenter was recruited by the subject.	58.310961000000006	The experimenter was recruited by the subject .	nounk
+1384	The mother disciplined the toddler.	54.117898000000004	The mother disciplined the toddler .	nounk
+1385	The toddler disciplined the mother.	53.20131000000001	The toddler disciplined the mother .	nounk
+1386	The toddler was disciplined by the mother.	57.387209	The toddler was disciplined by the mother .	nounk
+1387	The mother was disciplined by the toddler.	58.531533	The mother was disciplined by the toddler .	nounk
+1388	The assistant principal expelled the sociopath.	76.234463	The assistant principal expelled the sociopath .	nounk
+1389	The sociopath expelled the assistant principal.	78.55101	The sociopath expelled the assistant principal .	nounk
+1390	The sociopath was expelled by the assistant principal.	78.138693	The sociopath was expelled by the assistant principal .	nounk
+1391	The assistant principal was expelled by the sociopath.	79.487465	The assistant principal was expelled by the sociopath .	nounk
+1392	The channeler sensed the ghost.	62.707326	The channeler sensed the ghost .	nounk
+1393	The ghost sensed the channeler.	65.629697	The ghost sensed the channeler .	nounk
+1394	The ghost was sensed by the channeler.	71.96543	The ghost was sensed by the channeler .	nounk
+1395	The channeler was sensed by the ghost.	70.822668	The channeler was sensed by the ghost .	nounk
+1396	The union ousted the whistle-blower.	47.179713	The union ousted the whistle-blower .	nounk
+1397	The whistle-blower ousted the union.	49.076126	The whistle-blower ousted the union .	nounk
+1398	The whistle-blower was ousted by the union.	50.993747	The whistle-blower was ousted by the union .	nounk
+1399	The union was ousted by the whistle-blower.	51.391953	The union was ousted by the whistle-blower .	nounk
+1400	The huntsman trapped the deer.	49.361115	The UNK-LC trapped the deer .	unk
+1401	The deer trapped the huntsman.	48.473487999999996	The deer trapped the UNK-LC .	unk
+1402	The deer was trapped by the huntsman.	51.55994799999999	The deer was trapped by the UNK-LC .	unk
+1403	The huntsman was trapped by the deer.	54.250062	The UNK-LC was trapped by the deer .	unk
+1404	The cardiologist discredited the quack.	61.814769999999996	The cardiologist discredited the quack .	nounk
+1405	The quack discredited the cardiologist.	64.501869	The quack discredited the cardiologist .	nounk
+1406	The quack was discredited by the cardiologist.	69.14080799999999	The quack was discredited by the cardiologist .	nounk
+1407	The cardiologist was discredited by the quack.	65.47890699999999	The cardiologist was discredited by the quack .	nounk
+1408	The bailiff released the ruffian.	52.803375	The bailiff released the UNK-LC .	unk
+1409	The ruffian released the bailiff.	55.607307999999996	The UNK-LC released the bailiff .	unk
+1410	The ruffian was released by the bailiff.	57.677494	The UNK-LC was released by the bailiff .	unk
+1411	The bailiff was released by the ruffian.	57.04696199999999	The bailiff was released by the UNK-LC .	unk
+1412	The shark mauled the snorkeler.	55.189495	The shark mauled the UNK-LC-er .	unk
+1413	The snorkeler mauled the shark.	54.659726	The UNK-LC-er mauled the shark .	unk
+1414	The snorkeler was mauled by the shark.	58.356112	The UNK-LC-er was mauled by the shark .	unk
+1415	The shark was mauled by the snorkeler.	56.83458099999999	The shark was mauled by the UNK-LC-er .	unk
+1416	The president pardoned the traitor.	50.36006100000001	The president pardoned the traitor .	nounk
+1417	The traitor pardoned the president.	53.666357000000005	The traitor pardoned the president .	nounk
+1418	The traitor was pardoned by the president.	56.237611	The traitor was pardoned by the president .	nounk
+1419	The president was pardoned by the traitor.	54.909699	The president was pardoned by the traitor .	nounk
+1420	The au pair spanked the girl.	68.40064300000002	The au pair spanked the girl .	nounk
+1421	The girl spanked the au pair.	69.15744500000001	The girl spanked the au pair .	nounk
+1422	The girl was spanked by the au pair.	73.763406	The girl was spanked by the au pair .	nounk
+1423	The au pair was spanked by the girl.	75.52561499999999	The au pair was spanked by the girl .	nounk
+1424	The TV station head promoted the newsagent.	61.552234999999996	The TV station head promoted the UNK-LC .	unk
+1425	The newsagent promoted the TV station head.	61.228965	The UNK-LC promoted the TV station head .	unk
+1426	The newsagent was promoted by the TV station head.	64.009142	The UNK-LC was promoted by the TV station head .	unk
+1427	The TV station head was promoted by the newsagent.	65.805357	The TV station head was promoted by the UNK-LC .	unk
+1428	The policewoman handcuffed the offender.	61.371546	The policewoman handcuffed the offender .	nounk
+1429	The offender handcuffed the policewoman.	61.95756000000001	The offender handcuffed the policewoman .	nounk
+1430	The offender was handcuffed by the policewoman.	65.617143	The offender was handcuffed by the policewoman .	nounk
+1431	The policewoman was handcuffed by the offender.	66.502853	The policewoman was handcuffed by the offender .	nounk
+1432	The anthropologist studied the tribesman.	49.87351999999999	The anthropologist studied the UNK-LC .	unk
+1433	The tribesman studied the anthropologist.	53.220893	The UNK-LC studied the anthropologist .	unk
+1434	The tribesman was studied by the anthropologist.	55.741895	The UNK-LC was studied by the anthropologist .	unk
+1435	The anthropologist was studied by the tribesman.	56.802482	The anthropologist was studied by the UNK-LC .	unk
+1436	The police chief rewarded the firefighter.	65.13950200000001	The police chief rewarded the firefighter .	nounk
+1437	The firefighter rewarded the police chief.	66.17999799999998	The firefighter rewarded the police chief .	nounk
+1438	The firefighter was rewarded by the police chief.	67.158547	The firefighter was rewarded by the police chief .	nounk
+1439	The police chief was rewarded by the firefighter.	67.169842	The police chief was rewarded by the firefighter .	nounk
+1440	The miscreant kidnapped the beneficiary.	60.858295	The miscreant kidnapped the beneficiary .	nounk
+1441	The beneficiary kidnapped the miscreant.	63.57150300000001	The beneficiary kidnapped the miscreant .	nounk
+1442	The beneficiary was kidnapped by the miscreant.	64.245475	The beneficiary was kidnapped by the miscreant .	nounk
+1443	The miscreant was kidnapped by the beneficiary.	64.490993	The miscreant was kidnapped by the beneficiary .	nounk
+1444	The social worker comforted the abused woman.	76.991428	The social worker comforted the abused woman .	nounk
+1445	The abused woman comforted the social worker.	75.37502900000001	The abused woman comforted the social worker .	nounk
+1446	The abused woman was comforted by the social worker.	76.085369	The abused woman was comforted by the social worker .	nounk
+1447	The social worker was comforted by the abused woman.	76.78703599999999	The social worker was comforted by the abused woman .	nounk
+1448	The neuroscientist overwhelmed the lab assistant.	65.81236000000001	The UNK-LC overwhelmed the lab assistant .	unk
+1449	The lab assistant overwhelmed the neuroscientist.	61.966334	The lab assistant overwhelmed the UNK-LC .	unk
+1450	The lab assistant was overwhelmed by the neuroscientist.	63.609604000000004	The lab assistant was overwhelmed by the UNK-LC .	unk
+1451	The neuroscientist was overwhelmed by the lab assistant.	66.667378	The UNK-LC was overwhelmed by the lab assistant .	unk
+1452	The warmonger terrorized the gunsmith.	56.058872	The warmonger terrorized the UNK-LC .	unk
+1453	The gunsmith terrorized the warmonger.	56.72771	The UNK-LC terrorized the warmonger .	unk
+1454	The gunsmith was terrorized by the warmonger.	59.972787000000004	The UNK-LC was terrorized by the warmonger .	unk
+1455	The warmonger was terrorized by the gunsmith.	60.865578	The warmonger was terrorized by the UNK-LC .	unk
+1456	The conductor tolerated the violinist.	58.213787999999994	The conductor tolerated the violinist .	nounk
+1457	The violinist tolerated the conductor.	59.421508	The violinist tolerated the conductor .	nounk
+1458	The violinist was tolerated by the conductor.	62.074482	The violinist was tolerated by the conductor .	nounk
+1459	The conductor was tolerated by the violinist.	61.603462	The conductor was tolerated by the violinist .	nounk
+1460	The pitcher signaled the hitter.	59.18179000000001	The pitcher signaled the hitter .	nounk
+1461	The hitter signaled the pitcher.	60.778611	The hitter signaled the pitcher .	nounk
+1462	The hitter was signaled by the pitcher.	65.014128	The hitter was signaled by the pitcher .	nounk
+1463	The pitcher was signaled by the hitter.	65.035645	The pitcher was signaled by the hitter .	nounk
+1464	The quarterback kissed the cheerleader.	58.831632	The quarterback kissed the cheerleader .	nounk
+1465	The cheerleader kissed the quarterback.	57.775363000000006	The cheerleader kissed the quarterback .	nounk
+1466	The cheerleader was kissed by the quarterback.	64.738048	The cheerleader was kissed by the quarterback .	nounk
+1467	The quarterback was kissed by the cheerleader.	64.924505	The quarterback was kissed by the cheerleader .	nounk
+1468	The camper startled the bear.	59.587108	The camper startled the bear .	nounk
+1469	The bear startled the camper.	59.297647000000005	The bear startled the camper .	nounk
+1470	The bear was startled by the camper.	63.696101	The bear was startled by the camper .	nounk
+1471	The camper was startled by the bear.	63.418037	The camper was startled by the bear .	nounk
+1472	The admiral accompanied the lieutenant.	56.573305000000005	The admiral accompanied the lieutenant .	nounk
+1473	The lieutenant accompanied the admiral.	59.271387000000004	The lieutenant accompanied the admiral .	nounk
+1474	The lieutenant was accompanied by the admiral.	58.058036	The lieutenant was accompanied by the admiral .	nounk
+1475	The admiral was accompanied by the lieutenant.	57.84770399999999	The admiral was accompanied by the lieutenant .	nounk
+1476	The tenor loved the soprano.	54.369918	The tenor loved the soprano .	nounk
+1477	The soprano loved the tenor.	52.911525000000005	The soprano loved the tenor .	nounk
+1478	The soprano was loved by the tenor.	59.68122700000001	The soprano was loved by the tenor .	nounk
+1479	The tenor was loved by the soprano.	59.96425599999999	The tenor was loved by the soprano .	nounk
+1480	The photographer paid the barrister.	56.662624	The photographer paid the barrister .	nounk
+1481	The barrister paid the photographer.	55.437546	The barrister paid the photographer .	nounk
+1482	The barrister was paid by the photographer.	56.323043999999996	The barrister was paid by the photographer .	nounk
+1483	The photographer was paid by the barrister.	58.63063	The photographer was paid by the barrister .	nounk
+1484	The bachelor intrigued the blonde.	57.953905	The bachelor intrigued the blonde .	nounk
+1485	The blonde intrigued the bachelor.	59.554660000000005	The blonde intrigued the bachelor .	nounk
+1486	The blonde was intrigued by the bachelor.	65.346636	The blonde was intrigued by the bachelor .	nounk
+1487	The bachelor was intrigued by the blonde.	59.195859999999996	The bachelor was intrigued by the blonde .	nounk
+1488	The football player pursued the socialite.	64.514634	The football player pursued the socialite .	nounk
+1489	The socialite pursued the football player.	66.51885300000001	The socialite pursued the football player .	nounk
+1490	The socialite was pursued by the football player.	68.553885	The socialite was pursued by the football player .	nounk
+1491	The football player was pursued by the socialite.	67.567655	The football player was pursued by the socialite .	nounk
+1492	The neurologist consulted the geneticist.	66.505313	The neurologist consulted the geneticist .	nounk
+1493	The geneticist consulted the neurologist.	65.51697300000001	The geneticist consulted the neurologist .	nounk
+1494	The geneticist was consulted by the neurologist.	66.977439	The geneticist was consulted by the neurologist .	nounk
+1495	The neurologist was consulted by the geneticist.	66.75983599999999	The neurologist was consulted by the geneticist .	nounk
+1496	The fashionista humiliated the mode.	57.012297999999994	The UNK-LC humiliated the mode .	unk
+1497	The mode humiliated the fashionista.	57.651839	The mode humiliated the UNK-LC .	unk
+1498	The mode was humiliated by the fashionista.	59.274861	The mode was humiliated by the UNK-LC .	unk
+1499	The fashionista was humiliated by the mode.	61.69357	The UNK-LC was humiliated by the mode .	unk
+1500	The butcher accused the meatpacker.	52.373424	The butcher accused the meatpacker .	nounk
+1501	The meatpacker accused the butcher.	55.125257	The meatpacker accused the butcher .	nounk
+1502	The meatpacker was accused by the butcher.	62.251774000000005	The meatpacker was accused by the butcher .	nounk
+1503	The butcher was accused by the meatpacker.	58.181319	The butcher was accused by the meatpacker .	nounk
+1504	The niece embarrassed the aunt.	61.142739999999996	The niece embarrassed the aunt .	nounk
+1505	The aunt embarrassed the niece.	58.519655	The aunt embarrassed the niece .	nounk
+1506	The aunt was embarrassed by the niece.	63.65265000000001	The aunt was embarrassed by the niece .	nounk
+1507	The niece was embarrassed by the aunt.	64.111783	The niece was embarrassed by the aunt .	nounk
+1508	The warlord hailed the mercenary.	65.639207	The warlord hailed the mercenary .	nounk
+1509	The mercenary hailed the warlord.	64.697727	The mercenary hailed the warlord .	nounk
+1510	The mercenary was hailed by the warlord.	67.706227	The mercenary was hailed by the warlord .	nounk
+1511	The warlord was hailed by the mercenary.	65.73681499999999	The warlord was hailed by the mercenary .	nounk
+1512	The neighbor snubbed the newcomer.	55.383668	The neighbor snubbed the newcomer .	nounk
+1513	The newcomer snubbed the neighbor.	55.240154	The newcomer snubbed the neighbor .	nounk
+1514	The newcomer was snubbed by the neighbor.	58.610174	The newcomer was snubbed by the neighbor .	nounk
+1515	The neighbor was snubbed by the newcomer.	58.081019	The neighbor was snubbed by the newcomer .	nounk
+1516	The editor overheard the proofreader.	54.516009999999994	The editor overheard the proofreader .	nounk
+1517	The proofreader overheard the editor.	55.684594000000004	The proofreader overheard the editor .	nounk
+1518	The proofreader was overheard by the editor.	61.345821	The proofreader was overheard by the editor .	nounk
+1519	The editor was overheard by the proofreader.	61.907279	The editor was overheard by the proofreader .	nounk
+1520	The communist offended the capitalist.	65.814898	The communist offended the capitalist .	nounk
+1521	The capitalist offended the communist.	63.14947900000001	The capitalist offended the communist .	nounk
+1522	The capitalist was offended by the communist.	63.783118	The capitalist was offended by the communist .	nounk
+1523	The communist was offended by the capitalist.	65.191674	The communist was offended by the capitalist .	nounk
+1524	The curator misinformed the sculptor.	65.723384	The curator misinformed the sculptor .	nounk
+1525	The sculptor misinformed the curator.	64.896426	The sculptor misinformed the curator .	nounk
+1526	The sculptor was misinformed by the curator.	62.968664000000004	The sculptor was misinformed by the curator .	nounk
+1527	The curator was misinformed by the sculptor.	64.863935	The curator was misinformed by the sculptor .	nounk
+1528	The baker mentioned the miller.	60.901937	The baker mentioned the miller .	nounk
+1529	The miller mentioned the baker.	61.745558	The miller mentioned the baker .	nounk
+1530	The miller was mentioned by the baker.	67.612426	The miller was mentioned by the baker .	nounk
+1531	The baker was mentioned by the miller.	64.545969	The baker was mentioned by the miller .	nounk
+1532	The pollster shamed the statistician.	64.35573999999998	The pollster shamed the statistician .	nounk
+1533	The statistician shamed the pollster.	65.895859	The statistician shamed the pollster .	nounk
+1534	The statistician was shamed by the pollster.	70.725162	The statistician was shamed by the pollster .	nounk
+1535	The pollster was shamed by the statistician.	72.193407	The pollster was shamed by the statistician .	nounk
+1536	The screenwriter emailed the actor.	52.130642	The screenwriter UNK-LC-ed the actor .	unk
+1537	The actor emailed the screenwriter.	51.857186999999996	The actor UNK-LC-ed the screenwriter .	unk
+1538	The actor was emailed by the screenwriter.	56.52682	The actor was UNK-LC-ed by the screenwriter .	unk
+1539	The screenwriter was emailed by the actor.	56.439165	The screenwriter was UNK-LC-ed by the actor .	unk
+1540	The dermatologist contradicted the pathologist.	65.06036399999999	The dermatologist contradicted the pathologist .	nounk
+1541	The pathologist contradicted the dermatologist.	64.03706500000001	The pathologist contradicted the dermatologist .	nounk
+1542	The pathologist was contradicted by the dermatologist.	69.056915	The pathologist was contradicted by the dermatologist .	nounk
+1543	The dermatologist was contradicted by the pathologist.	68.488528	The dermatologist was contradicted by the pathologist .	nounk
+1544	The sharecropper misled the fieldworker.	55.747379	The sharecropper misled the UNK-LC-er .	unk
+1545	The fieldworker misled the sharecropper.	57.589313	The UNK-LC-er misled the sharecropper .	unk
+1546	The fieldworker was misled by the sharecropper.	61.041949	The UNK-LC-er was misled by the sharecropper .	unk
+1547	The sharecropper was misled by the fieldworker.	59.780749	The sharecropper was misled by the UNK-LC-er .	unk
+1548	The patriot saluted the veteran.	57.678761	The patriot saluted the veteran .	nounk
+1549	The veteran saluted the patriot.	58.77056	The veteran saluted the patriot .	nounk
+1550	The veteran was saluted by the patriot.	67.57054	The veteran was saluted by the patriot .	nounk
+1551	The patriot was saluted by the veteran.	68.92850899999999	The patriot was saluted by the veteran .	nounk
+1552	The welder visited the milkman.	56.96076300000001	The welder visited the milkman .	nounk
+1553	The milkman visited the welder.	60.951097	The milkman visited the welder .	nounk
+1554	The milkman was visited by the welder.	66.60420500000001	The milkman was visited by the welder .	nounk
+1555	The welder was visited by the milkman.	63.660647	The welder was visited by the milkman .	nounk
+1556	The teenager mortified the parent.	59.175071	The teenager mortified the parent .	nounk
+1557	The parent mortified the teenager.	59.057773999999995	The parent mortified the teenager .	nounk
+1558	The parent was mortified by the teenager.	64.64599799999999	The parent was mortified by the teenager .	nounk
+1559	The teenager was mortified by the parent.	60.61533299999999	The teenager was mortified by the parent .	nounk
+1560	The surfer impressed the swimmer.	62.378404999999994	The surfer impressed the swimmer .	nounk
+1561	The swimmer impressed the surfer.	59.20322	The swimmer impressed the surfer .	nounk
+1562	The swimmer was impressed by the surfer.	60.09570099999999	The swimmer was impressed by the surfer .	nounk
+1563	The surfer was impressed by the swimmer.	64.75067100000001	The surfer was impressed by the swimmer .	nounk
+1564	The miser antagonized the landlady.	63.164641	The miser antagonized the landlady .	nounk
+1565	The landlady antagonized the miser.	66.98356	The landlady antagonized the miser .	nounk
+1566	The landlady was antagonized by the miser.	70.350751	The landlady was antagonized by the miser .	nounk
+1567	The miser was antagonized by the landlady.	68.370784	The miser was antagonized by the landlady .	nounk
+1568	The infantryman upset the loyalist.	60.700410999999995	The infantryman upset the loyalist .	nounk
+1569	The loyalist upset the infantryman.	64.196068	The loyalist upset the infantryman .	nounk
+1570	The loyalist was upset by the infantryman.	70.647892	The loyalist was upset by the infantryman .	nounk
+1571	The infantryman was upset by the loyalist.	65.472874	The infantryman was upset by the loyalist .	nounk
+1572	The florist invoiced the grocer.	64.43395799999999	The florist invoiced the grocer .	nounk
+1573	The grocer invoiced the florist.	66.342927	The grocer invoiced the florist .	nounk
+1574	The grocer was invoiced by the florist.	71.074457	The grocer was invoiced by the florist .	nounk
+1575	The florist was invoiced by the grocer.	70.860992	The florist was invoiced by the grocer .	nounk
+1576	The claims adjuster harassed the retailer.	67.637522	The claims adjuster harassed the retailer .	nounk
+1577	The retailer harassed the claims adjuster.	69.896987	The retailer harassed the claims adjuster .	nounk
+1578	The retailer was harassed by the claims adjuster.	71.460873	The retailer was harassed by the claims adjuster .	nounk
+1579	The claims adjuster was harassed by the retailer.	69.10592899999999	The claims adjuster was harassed by the retailer .	nounk
+1580	The ex-wife punched the girlfriend.	55.011669	The ex-wife punched the girlfriend .	nounk
+1581	The girlfriend punched the ex-wife.	55.145329000000004	The girlfriend punched the ex-wife .	nounk
+1582	The girlfriend was punched by the ex-wife.	60.59898	The girlfriend was punched by the ex-wife .	nounk
+1583	The ex-wife was punched by the girlfriend.	60.461828999999994	The ex-wife was punched by the girlfriend .	nounk
+1584	The defender blamed the goalkeeper.	53.699920000000006	The defender blamed the UNK-LC-er .	unk
+1585	The goalkeeper blamed the defender.	53.987134	The UNK-LC-er blamed the defender .	unk
+1586	The goalkeeper was blamed by the defender.	60.100494000000005	The UNK-LC-er was blamed by the defender .	unk
+1587	The defender was blamed by the goalkeeper.	59.601001	The defender was blamed by the UNK-LC-er .	unk
+1588	The geologist reassured the excavator.	67.368274	The geologist reassured the excavator .	nounk
+1589	The excavator reassured the geologist.	63.273661999999995	The excavator reassured the geologist .	nounk
+1590	The excavator was reassured by the geologist.	67.38888999999999	The excavator was reassured by the geologist .	nounk
+1591	The geologist was reassured by the excavator.	68.603194	The geologist was reassured by the excavator .	nounk
+1592	The physicist nagged the mathematician.	65.04343399999999	The physicist nagged the mathematician .	nounk
+1593	The mathematician nagged the physicist.	64.22548400000001	The mathematician nagged the physicist .	nounk
+1594	The mathematician was nagged by the physicist.	67.550624	The mathematician was nagged by the physicist .	nounk
+1595	The physicist was nagged by the mathematician.	67.395094	The physicist was nagged by the mathematician .	nounk
+1596	The employee watched the embezzler.	53.226763999999996	The employee watched the embezzler .	nounk
+1597	The embezzler watched the employee.	52.045106	The embezzler watched the employee .	nounk
+1598	The embezzler was watched by the employee.	57.677564000000004	The embezzler was watched by the employee .	nounk
+1599	The employee was watched by the embezzler.	58.119935	The employee was watched by the embezzler .	nounk
+1600	The programmer distrusted the volunteer.	61.954287	The programmer distrusted the volunteer .	nounk
+1601	The volunteer distrusted the programmer.	59.890466999999994	The volunteer distrusted the programmer .	nounk
+1602	The volunteer was distrusted by the programmer.	67.73109600000001	The volunteer was distrusted by the programmer .	nounk
+1603	The programmer was distrusted by the volunteer.	66.152274	The programmer was distrusted by the volunteer .	nounk
+1604	The interviewer befriended the chairman.	52.015858	The interviewer befriended the chairman .	nounk
+1605	The chairman befriended the interviewer.	49.729351	The chairman befriended the interviewer .	nounk
+1606	The chairman was befriended by the interviewer.	52.43154	The chairman was befriended by the interviewer .	nounk
+1607	The interviewer was befriended by the chairman.	55.641198	The interviewer was befriended by the chairman .	nounk
+1608	The cinematographer favored the movie star.	61.866910000000004	The cinematographer favored the movie star .	nounk
+1609	The movie star favored the cinematographer.	64.54535	The movie star favored the cinematographer .	nounk
+1610	The movie star was favored by the cinematographer.	65.026267	The movie star was favored by the cinematographer .	nounk
+1611	The cinematographer was favored by the movie star.	64.89934600000001	The cinematographer was favored by the movie star .	nounk
+1612	The hockey player aggravated the skater.	69.88171	The hockey player aggravated the skater .	nounk
+1613	The skater aggravated the hockey player.	68.62414499999998	The skater aggravated the hockey player .	nounk
+1614	The skater was aggravated by the hockey player.	68.40916899999999	The skater was aggravated by the hockey player .	nounk
+1615	The hockey player was aggravated by the skater.	70.586825	The hockey player was aggravated by the skater .	nounk
+1616	The bricklayer outraged the crane operator.	74.064815	The bricklayer outraged the crane operator .	nounk
+1617	The crane operator outraged the bricklayer.	72.74358900000001	The crane operator outraged the bricklayer .	nounk
+1618	The crane operator was outraged by the bricklayer.	73.49877500000001	The crane operator was outraged by the bricklayer .	nounk
+1619	The bricklayer was outraged by the crane operator.	80.373612	The bricklayer was outraged by the crane operator .	nounk
+1620	The candidate approved the nominee.	41.500623000000004	The candidate approved the nominee .	nounk
+1621	The nominee approved the candidate.	42.077137	The nominee approved the candidate .	nounk
+1622	The nominee was approved by the candidate.	45.258878	The nominee was approved by the candidate .	nounk
+1623	The candidate was approved by the nominee.	44.256667	The candidate was approved by the nominee .	nounk
+1624	The entomologist disparaged the biologist.	63.953337000000005	The entomologist disparaged the biologist .	nounk
+1625	The biologist disparaged the entomologist.	64.368021	The biologist disparaged the entomologist .	nounk
+1626	The biologist was disparaged by the entomologist.	66.898035	The biologist was disparaged by the entomologist .	nounk
+1627	The entomologist was disparaged by the biologist.	65.587808	The entomologist was disparaged by the biologist .	nounk
+1628	The hypochondriac hounded the medic.	71.00575400000001	The hypochondriac hounded the medic .	nounk
+1629	The medic hounded the hypochondriac.	69.903562	The medic hounded the hypochondriac .	nounk
+1630	The medic was hounded by the hypochondriac.	69.281961	The medic was hounded by the hypochondriac .	nounk
+1631	The hypochondriac was hounded by the medic.	70.007144	The hypochondriac was hounded by the medic .	nounk
+1632	The chemist suspected the pharmacist.	59.518961999999995	The chemist suspected the pharmacist .	nounk
+1633	The pharmacist suspected the chemist.	59.578669	The pharmacist suspected the chemist .	nounk
+1634	The pharmacist was suspected by the chemist.	62.401424	The pharmacist was suspected by the chemist .	nounk
+1635	The chemist was suspected by the pharmacist.	63.733845	The chemist was suspected by the pharmacist .	nounk
+1636	The litigator begged the citizen.	60.39438899999999	The litigator begged the citizen .	nounk
+1637	The citizen begged the litigator.	59.71891899999999	The citizen begged the litigator .	nounk
+1638	The citizen was begged by the litigator.	69.186573	The citizen was begged by the litigator .	nounk
+1639	The litigator was begged by the citizen.	69.73333600000001	The litigator was begged by the citizen .	nounk
+1640	The plumber devastated the foreman.	57.71685900000001	The plumber devastated the foreman .	nounk
+1641	The foreman devastated the plumber.	57.731207000000005	The foreman devastated the plumber .	nounk
+1642	The foreman was devastated by the plumber.	60.48486100000001	The foreman was devastated by the plumber .	nounk
+1643	The plumber was devastated by the foreman.	61.86734	The plumber was devastated by the foreman .	nounk
+1644	The sergeant identified the sniper.	56.685643999999996	The sergeant identified the sniper .	nounk
+1645	The sniper identified the sergeant.	61.34592800000001	The sniper identified the sergeant .	nounk
+1646	The sniper was identified by the sergeant.	61.802681	The sniper was identified by the sergeant .	nounk
+1647	The sergeant was identified by the sniper.	60.69955	The sergeant was identified by the sniper .	nounk

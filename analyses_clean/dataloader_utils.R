@@ -57,6 +57,7 @@ clean_metric_name <- function(filename) {
   # tinyLSTM
   metric = str_replace(metric, "surprisal_scores_tinylstm", "tinyLSTM.surprisal")
   metric = str_replace(metric, "vassallo_tinyLSTM", "tinyLSTM")
+  metric = str_replace(metric, "tinylstm.surprisal_scores", "tinyLSTM.surprisal")
   # Bidirectional
   metric = str_replace(metric, "sentence-PLL", "PLL")
   metric = str_replace(metric, "sentence-l2r-PLL", "l2r")
@@ -69,15 +70,9 @@ clean_metric_name <- function(filename) {
   return(metric)
 }
 
-get_score_colnum <- function(metric, experiment) {
-  if (grepl("BERT", metric) || grepl("GPT2", metric) || grepl("thematicFit", metric)) {
+get_score_colnum <- function(metric) {
+  if (grepl("BERT", metric) || grepl("GPT2", metric) || grepl("LSTM", metric) || grepl("thematicFit", metric)) {
     score_colnum = 3
-  } else if (grepl("LSTM", metric)) {
-    if (experiment=="EventsRev") {
-      score_colnum = 4
-    } else {
-      score_colnum = 5
-    }
   } else if (grepl("PPMI", metric)) {
     score_colnum = 4
   } else if (grepl("SDM", metric)) {
@@ -88,13 +83,6 @@ get_score_colnum <- function(metric, experiment) {
   return(score_colnum)
 }
 
-get_sent_colnum <- function(metric, experiment) {
-  if (grepl("LSTM", metric) && grepl("EventsAdapt", experiment)) {
-    return(1)
-  } else {
-    return(2)
-  }
-}
 
 ################################
 ## ---- read in model data -----
@@ -122,8 +110,8 @@ read_data <- function(directory, filename, normalization_type) {
   sentnums = c(0:tgt_len)
   
   #COLUMNS
-  sent_colnum = get_sent_colnum(metric, experiment)
-  score_colnum = get_score_colnum(metric, experiment)
+  sent_colnum = 2
+  score_colnum = get_score_colnum(metric)
   
   # create cleaned-up dataframe
   d = d[,c(sent_colnum, score_colnum)] 

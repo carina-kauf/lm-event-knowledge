@@ -1,6 +1,8 @@
 [submodule "beh-ratings-events"]
 	path = beh-ratings-events
 	url = https://github.com/neuranna/beh-ratings-events.git
+        branch = main
 [submodule "Event_Knowledge_Model_Comparison"]
 	path = Event_Knowledge_Model_Comparison
 	url = https://github.com/giuliarambelli/Event_Knowledge_Model_Comparison.git
+        branch = master
