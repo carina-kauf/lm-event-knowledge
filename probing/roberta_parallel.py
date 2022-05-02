@@ -11,6 +11,7 @@ import sys
 
 layernum = int(sys.argv[1])
 layernum = layernum - 1
+dataset_input = str(sys.argv[2])
 
 def output(model_name, dataset_name):
   tokenizer = RobertaTokenizer.from_pretrained(model_name)
@@ -20,21 +21,13 @@ def output(model_name, dataset_name):
   model.eval()
 
   def get_vector(text, layer):
-      marked_text = "[CLS] " + text + " [SEP]"
-      tokenized_text = tokenizer.tokenize(marked_text)
-      indexed_tokens = tokenizer.convert_tokens_to_ids(tokenized_text)
-      segments_ids = [1] * len(tokenized_text)
-      tokens_tensor = torch.tensor([indexed_tokens])
-      segments_tensors = torch.tensor([segments_ids])
-
+      tokenized_text = tokenizer.tokenize("[CLS] " + text + " [SEP]")
+      tensor_input = torch.tensor([tokenizer.convert_tokens_to_ids(tokenized_text)])
       with torch.no_grad():
-          outputs = model(tokens_tensor, segments_tensors)
+          outputs = model(tensor_input)
           # `hidden_states` has shape [24 x 1 x 22 x 1024]
           hidden_states = outputs[2]
-      # `token_vecs` is a tensor with shape [22 x 1024], the first index in hidden_states determines which layer it's on
-      token_vecs = hidden_states[layer][0]
-      # get the first layer of token_vecs
-      sentence_embedding = token_vecs[0]
+      sentence_embedding = hidden_states[layer][0][0]
       return sentence_embedding.numpy()
 
   # Read in files
@@ -94,4 +87,4 @@ def output(model_name, dataset_name):
   df_out = pd.DataFrame(Accuracy)
   df_out = df_out.transpose()
   df_out.to_csv(output_path, header = False)
-output('roberta-large', '/om2/user/jshe/lm-event-knowledge/analyses_clean/clean_data/clean_EventsRev_SentenceSet.csv')
+output('roberta-large', dataset_input)

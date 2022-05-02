@@ -1,5 +1,5 @@
 import numpy as np
-from transformers import RobertaConfig, RobertaModel, RobertaTokenizer
+from transformers import BertTokenizer, BertModel
 import torch
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -11,45 +11,37 @@ import sys
 
 layernum = int(sys.argv[1])
 layernum = layernum - 1
+dataset_input = str(sys.argv[2])
 
 def output(model_name, dataset_name):
-  tokenizer = RobertaTokenizer.from_pretrained(model_name)
-  model = RobertaModel.from_pretrained(model_name,
+  tokenizer = BertTokenizer.from_pretrained(model_name)
+  model = BertModel.from_pretrained(model_name,
                                     output_hidden_states=True,  # Whether the model returns all hidden-states.
                                       )
   model.eval()
-
+  
   def get_vector(text, layer):
-      marked_text = "[CLS] " + text + " [SEP]"
-      tokenized_text = tokenizer.tokenize(marked_text)
-      indexed_tokens = tokenizer.convert_tokens_to_ids(tokenized_text)
-      segments_ids = [1] * len(tokenized_text)
-      tokens_tensor = torch.tensor([indexed_tokens])
-      segments_tensors = torch.tensor([segments_ids])
-
+      tokenized_text = tokenizer.tokenize("[CLS] " + text + " [SEP]")
+      tensor_input = torch.tensor([tokenizer.convert_tokens_to_ids(tokenized_text)])
       with torch.no_grad():
-          outputs = model(tokens_tensor, segments_tensors)
+          outputs = model(tensor_input)
           # `hidden_states` has shape [24 x 1 x 22 x 1024]
           hidden_states = outputs[2]
-      # `token_vecs` is a tensor with shape [22 x 1024], the first index in hidden_states determines which layer it's on
-      token_vecs = hidden_states[layer][0]
-      # get the first layer of token_vecs
-      sentence_embedding = token_vecs[0]
+      sentence_embedding = hidden_states[layer][0][0]
       return sentence_embedding.numpy()
 
   # Read in files
-  df_DT = pd.read_csv(dataset_name)
-
+  df_DT = pd.read_csv(dataset_name)  
   if dataset_name == '/om2/user/jshe/lm-event-knowledge/analyses_clean/clean_data/clean_EventsRev_SentenceSet.csv':
-    output_path = '/om2/user/jshe/lm-event-knowledge/probing/parallel_layers/roberta_EventsRev_'+ str(layernum) + '.csv'
+    output_path = '/om2/user/jshe/lm-event-knowledge/probing/parallel_layers/EventsRev_'+ str(layernum) + '.csv'
 
   if dataset_name == '/om2/user/jshe/lm-event-knowledge/analyses_clean/clean_data/clean_DTFit_SentenceSet.csv':
-    output_path = '/om2/user/jshe/lm-event-knowledge/probing/parallel_layers/roberta_DTFit_'+ str(layernum) + '.csv'
+    output_path = '/om2/user/jshe/lm-event-knowledge/probing/parallel_layers/DTFit_'+ str(layernum) + '.csv'
   # Exclude AAR rows only for EventsAdapt
   if dataset_name == '/om2/user/jshe/lm-event-knowledge/analyses_clean/clean_data/clean_EventsAdapt_SentenceSet.csv':
     df_DT = df_DT[df_DT.TrialType != "AAR"]
     df_DT = df_DT.reset_index()
-    output_path = '/om2/user/jshe/lm-event-knowledge/probing/parallel_layers/roberta_EventsAdapt_'+ str(layernum) + '.csv'
+    output_path = '/om2/user/jshe/lm-event-knowledge/probing/parallel_layers/EventsAdapt_'+ str(layernum) + '.csv'
 
   def split(dataset, train_ratio):
       unique_pairs_num = dataset['ItemNum'].nunique()
@@ -94,4 +86,4 @@ def output(model_name, dataset_name):
   df_out = pd.DataFrame(Accuracy)
   df_out = df_out.transpose()
   df_out.to_csv(output_path, header = False)
-output('roberta-large', '/om2/user/jshe/lm-event-knowledge/analyses_clean/clean_data/clean_EventsRev_SentenceSet.csv')
+output('bert-large-cased', dataset_input)
