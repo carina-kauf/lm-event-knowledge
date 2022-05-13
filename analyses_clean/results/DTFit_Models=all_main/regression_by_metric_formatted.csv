@@ -1,0 +1,6 @@
+"Category","Parameter","human","GPT2-xl.l2r","BERT-large.pverb","RoBERTa-large.pverb"
+"Core effects","Plausibility","-0.55 ***","-0.14 ***","-0.05 ***","-0.04 ***"
+"Surface-level effects","Agent frequency","","","",""
+"Surface-level effects","Patient frequency","","","-0.03 *","-0.02 *"
+"Surface-level effects","Verb frequency","","-0.01 *","-0.02 *","-0.01 *"
+"Surface-level effects","Avg. word frequency","","0.04 **","",""

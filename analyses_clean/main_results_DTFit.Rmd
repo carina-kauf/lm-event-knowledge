@@ -1,0 +1,502 @@
+---
+title: "DTFit_model_analysis_v2021-08-20"
+output: html_document
+---
+
+# SETUP
+
+```{r setup, include=FALSE, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rm(list=ls()) 
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(gridExtra)
+library(cocor)
+library(patchwork)
+library(lme4)
+library(lmerTest)
+library(gtools)
+
+source('dataloader_utils.R') #includes normalizations, read_data functions
+source('stats_utils.R')
+
+# Suppress summarise info
+options(dplyr.summarise.inform = FALSE)
+```
+
+### Print environment variables 
+```{r}
+#SET ENVIRONMENT VARIABLES
+which_models <- "llms_main" #can be "llms_all", "llms_main", or "all_main"
+# llms_main = human + main LLMs
+# all_main = human + main LLMs + main baselines
+# llms_all = human + all LLMs
+normalization <- "min-max" #can be "min-max", "zscore"
+
+path <- paste("results/")
+ifelse(!dir.exists(path), dir.create(path), FALSE)
+savedir <- paste(path,"DTFit_Models=",which_models,sep='')
+ifelse(!dir.exists(savedir), dir.create(savedir), FALSE)
+
+print(paste(savedir))
+message("Running with the following environment variables:")
+message(paste("which_models: ", which_models))
+message(paste("normalization: ", normalization))
+```
+```{r}
+if (grepl("min-max", normalization) == TRUE){
+  normalization <- function(x) {
+    return(min_max(x)) }
+  reference_value = 0.5
+} else {
+  normalization <- function(x) {
+    return(scale_this(x)) }
+  reference_value = 0
+}
+```
+
+# READ DATA
+```{r}
+#created via preprocess_scores.Rmd
+dat = read.csv('clean_data/clean_DTFit_df.csv')
+```
+
+# Select which models/metrics to plot
+```{r, utils.choose_models, echo=FALSE}
+human <- c("human")
+llms <- c("GPT2","BERT","RoBERTa")
+llms_main <- c("GPT2-xl.l2r","BERT-large.pverb","RoBERTa-large.pverb")
+baselines <- c("tinyLSTM.surprisal","syntax.PPMI","thematicFit.prod", "SDM")
+
+llms_main <- c(human, llms_main)
+all_main <- c(llms_main, baselines)
+
+unique_metrics = unique(dat$Metric)
+llms <- unique_metrics[grepl(paste(llms, collapse = "|"), unique_metrics)]
+llms = mixedsort(llms)
+
+llms_all <- llms
+
+# select which to use
+chosen_models = eval(parse(text=which_models))
+dat = dat %>% filter(Metric %in% chosen_models)
+
+message("Using these models/metrics:")
+dat$Metric = factor(dat$Metric, levels = chosen_models)
+print(unique(dat$Metric))
+```
+
+
+# CONTRASTS
+
+```{r}
+dat$Plausibility = factor(dat$Plausibility, levels=c("Plausible", "Implausible")) # dummy coding by default
+dat$ItemNum = as.factor(dat$ItemNum)
+```
+
+
+# BINARY ACCURACY
+
+## General plotting settings
+
+```{r}
+#Set plotting options for grid plots
+nr_models = length(chosen_models)
+ncols=nr_models
+nrows=round(nr_models/ncols)
+if (nrows * ncols < nr_models) {
+  nrows = nrows + 1
+}
+```
+
+```{r}
+
+lower_better = c("surprisal")
+lower_better_pat <- paste(lower_better, collapse = '|')
+
+#add Category color
+if (which_models == "llms_all") {
+  dat.binchoice = dat %>%
+  mutate(Metric = as.character(Metric)) %>%
+  mutate(Category = ifelse(startsWith(Metric, "BERT"), "BERT", "RoBERTa")) %>%
+  mutate(Category = ifelse(startsWith(Metric, "GPT2"), "GPT2", Category)) %>%
+  mutate(Category = ifelse(Metric=="human", "human", Category))
+} else {
+  dat.binchoice = dat %>%
+  mutate(Category = ifelse(Metric%in%llms, "LLMs", "baselines")) %>%
+  mutate(Category = ifelse(Metric=="human", "human", Category))
+}
+
+dat.binchoice = dat.binchoice %>%
+  mutate(LowerBetter = ifelse(grepl(lower_better_pat, Metric),TRUE,FALSE)) %>%
+  group_by(ItemNum, TrialType, Metric, LowerBetter, Category) %>%
+  summarize(ScoreDiff = FinalNormScore[Plausibility=="Plausible"]-FinalNormScore[Plausibility=="Implausible"]) %>%
+  mutate(FinalScoreDiff = ifelse(LowerBetter==TRUE, -ScoreDiff, ScoreDiff)) %>%
+  mutate(Accuracy = ifelse(FinalScoreDiff>0, 1, 0)) %>%
+  ungroup()
+
+# specify order for plotting
+dat.binchoice$Metric = factor(dat.binchoice$Metric, levels=chosen_models)
+
+if (which_models=="llms_all") {
+  dat.binchoice$Category = factor(dat.binchoice$Category, levels=c("human", "GPT2", "BERT", "RoBERTa", "tinyLSTM"))
+} else {
+  dat.binchoice$Category = factor(dat.binchoice$Category, levels=c("human", "LLMs", "baselines"))
+}
+```
+
+### Stats
+
+```{r}
+# get p values
+dat.binchoice.summary = dat.binchoice %>%
+  group_by(Category, Metric) %>%
+  summarize(NumCorrect=sum(Accuracy), NumTotal=length(Accuracy)) %>%
+  mutate(AccuracyScore = NumCorrect/NumTotal) %>%
+  ungroup() %>%
+  mutate(pVal = calculate_binom_pval(NumCorrect, NumTotal))
+
+# adjust for multiple comparisons within each category
+dat.binchoice.summary = dat.binchoice.summary %>%
+  group_by(Category) %>%
+  mutate(pValAdjusted = p.adjust(pVal, method="fdr", n=length(pVal)),
+         ntoadjust = length(pVal)) %>%
+  mutate(pLabel = ifelse(pValAdjusted<0.001, "***", 
+                         ifelse(pValAdjusted<0.01, "**",
+                                ifelse(pValAdjusted<0.05, "*", "")))) %>%
+  ungroup()
+```
+
+
+```{r}
+# get human responses separately
+human.results = dat.binchoice.summary %>%
+  filter(Metric=='human') %>%
+  select(NumCorrect, NumTotal) %>%
+  rename(NumCorrectHuman=NumCorrect, NumTotalHuman=NumTotal)
+dat.binchoice.summary.withchisq = merge(dat.binchoice.summary, human.results)
+dat.binchoice.summary.withchisq = dat.binchoice.summary.withchisq %>%
+  mutate(ChiSq = calculate_chisq_vectorized_chi(NumCorrect, NumTotal, NumCorrectHuman),
+         pVal2humans = calculate_chisq_vectorized_p(NumCorrect, NumTotal, NumCorrectHuman)) %>%
+  group_by(Category) %>%
+  mutate(pVal2humansAdjusted = p.adjust(pVal2humans, method="fdr", n=length(pVal2humans)),
+         ntoadjust = length(pVal2humans)) %>%
+  mutate(pLabel2humans = ifelse(pVal2humansAdjusted<0.001, "***", 
+                         ifelse(pVal2humansAdjusted<0.01, "**",
+                                ifelse(pVal2humansAdjusted<0.05, "*", "")))) 
+```
+
+### Plot
+
+```{r, echo=FALSE}
+
+plot.binacc = ggplot(data=dat.binchoice, 
+       mapping=aes(x=Metric, y=Accuracy, fill=Category))+
+  geom_hline(yintercept=1, color='gray50', linetype='dotted')+
+  stat_summary(geom='col', fun.y='mean',
+               color='black', width=0.8)+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               color = 'black', size = 0.5, width=0.1)+
+  geom_text(mapping=aes(x=Metric, y=0.05, label=pLabel), data=dat.binchoice.summary)+
+  coord_cartesian(ylim=c(0,1))+
+  geom_hline(yintercept=.5, linetype='dotted')+
+  theme_classic()+
+  labs(x=NULL)+
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+plot.binacc
+
+savename <- "1_binaryAccuracy.png"
+ggsave(paste(savedir,savename,sep="/"), width=15, height=9, units='cm')
+```
+
+## Error analysis
+
+```{r}
+acc_by_sentence.LLM = dat.binchoice %>% 
+  filter(Category=='LLMs') %>%
+  group_by(ItemNum) %>%
+  mutate(meanAccuracy=mean(Accuracy))
+```
+
+### Quick plot
+```{r}
+ggplot(acc_by_sentence.LLM, aes(x=meanAccuracy)) + geom_histogram()
+```
+
+### Save hard sentences
+
+```{r}
+hard_sents = acc_by_sentence.LLM %>%
+  filter(meanAccuracy<0.5) %>%
+  select(ItemNum, meanAccuracy)
+
+hard_sents = inner_join(hard_sents, dat) %>%
+  select(ItemNum, Plausibility, Sentence, meanAccuracy) %>% 
+  distinct() %>%
+  spread(Plausibility, Sentence)
+
+savename <- "hard_sentences_LLMs.csv"
+write.csv(hard_sents, paste(savedir,savename,sep="/"), row.names=FALSE)
+```
+
+### Compare with human scores
+
+```{r}
+dat.binchoice.human = dat.binchoice %>% filter(Metric=='human')
+dat.binchoice.human = inner_join(dat.binchoice.human, acc_by_sentence.LLM %>% select(ItemNum, meanAccuracy)) %>%
+  distinct()
+
+ggplot(dat.binchoice.human, aes(x=meanAccuracy, y=FinalScoreDiff)) + 
+  stat_summary(geom='col', fun.y='mean')+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               color = 'black', size = 0.5, width=0.1)
+```
+
+```{r}
+ggplot(dat.binchoice.human, aes(x=meanAccuracy, y=FinalScoreDiff)) + 
+  geom_jitter(width=0.02)
+
+cor(dat.binchoice.human$meanAccuracy, dat.binchoice.human$FinalScoreDiff)
+```
+
+# FOLLOWUPS
+
+```{r, fig.height=2,fig.width=5}
+plot.plaus.density = ggplot()+
+  geom_density(data=dat, mapping=aes(FinalNormScore, fill = Plausibility), alpha = 0.2)+
+  facet_wrap(~Metric,nrow=nrows, ncol=ncols)+
+  theme_classic()+
+  xlab("Normed score") +
+  ylab("Density")+
+  theme(legend.title = element_blank())
+plot.plaus.density
+```
+
+## Combine
+
+```{r combine}
+plot.binacc + plot.plaus.density + plot_layout(widths=c(1,2))
+
+savename <- "general_plot.png"
+ggsave(paste(savedir,savename,sep="/"), height=10,width=24, units='cm')
+```
+
+#REGRESSION
+
+## Stats Main
+
+```{r regression, echo=FALSE}
+
+metrics = llms_main
+results = data.frame()
+
+for(i in seq_along(metrics)){
+  metric = metrics[i]
+  print(metric)
+  dat.metric = dat %>% filter(Metric==metric)
+  m = lmer(FinalNormScore ~ Plausibility + agent_freq_norm + patient_freq_norm + verb_freq_norm + sentence_freq_norm + (1|ItemNum), 
+           data=dat.metric, REML=FALSE, 
+           control=lmerControl(optimizer="bobyqa", optCtrl=list(maxfun=2e6)))
+ d = data.frame(coef(summary(m)))
+ d = d %>% rename(pVal=Pr...t..)
+ d$Metric = metric 
+ d$Parameter = rownames(d)
+ d = d[,c(6,7,1:5)]
+ results = rbind(results, d)
+}
+```
+
+## Adjust for multiple comparisons
+
+```{r adjust pVals, echo=FALSE}
+results = results %>%
+  mutate(Category = ifelse(Metric%in%llms, "LLMs", "baselines")) %>%
+  mutate(Category = ifelse(Metric=="human", "human", Category))
+
+results = results %>%
+  group_by(Category, Parameter) %>%
+  mutate(pValAdjusted = p.adjust(pVal, method="fdr", n=length(pVal))) %>%
+  mutate(pLabel = ifelse(pValAdjusted<0.001, "***", 
+                         ifelse(pValAdjusted<0.01, "**",
+                                ifelse(pValAdjusted<0.05, "*", "")))) %>%
+  mutate(pValFinal = ifelse(pValAdjusted<0.001, "<0.001", as.character(round(pValAdjusted,3)))) %>%
+  ungroup()
+
+savename <- "regression_by_metric.csv"
+write.csv(results, paste(savedir,savename,sep="/"), row.names=FALSE)
+```
+
+## Format
+
+```{r format results, echo=FALSE}
+reported_params = c("PlausibilityImplausible",
+                    "agent_freq_norm",
+                    "patient_freq_norm",
+                    "verb_freq_norm",
+                    "sentence_freq_norm")
+
+# restructure 
+results.clean = results %>% 
+  filter(Parameter %in% reported_params) %>%
+  mutate(Value = ifelse(pValAdjusted<0.05, 
+                        paste(round(Estimate, 2), pLabel, sep=" "),
+                        "")) %>%
+  select(Metric, Parameter, Value) %>% 
+  spread(Metric, Value)
+
+# order and names
+results.clean = results.clean %>%
+  mutate(Category = ifelse(Parameter %in% c("PlausibilityImplausible"),
+                           "Core effects", "Surface-level effects")) %>%
+  select(c(Category, Parameter, metrics)) %>%
+  mutate(Parameter = factor(Parameter, levels=reported_params)) %>%
+  arrange(Parameter) %>%
+  mutate(Parameter = recode(Parameter, 
+                    "PlausibilityImplausible"="Plausibility",
+                    "agent_freq_norm"="Agent frequency",
+                    "patient_freq_norm"="Patient frequency",
+                    "verb_freq_norm"="Verb frequency",
+                    "sentence_freq_norm"="Avg. word frequency"))
+
+savename <- "regression_by_metric_formatted.csv"
+write.csv(results.clean, paste(savedir,savename,sep="/"), row.names=FALSE)  
+```
+
+
+# SI - PLAUSIBILITY
+```{r, echo=FALSE}
+# color scheme
+color_plaus = '#1b9e77'
+color_voice = '#d95f02'
+color_syn = '#7570b3'
+cortext_size = 3
+
+dat.plaus = dat %>% 
+  group_by(ItemNum, TrialType, Plausibility, Metric) %>%
+  summarize(meanScore = mean(FinalNormScore, na.rm=TRUE)) %>%
+  spread(Plausibility, meanScore)  
+
+dat.plaus = dat.plaus %>%
+  filter(Metric%in%chosen_models)
+```
+
+### Stats
+```{r}
+df_correlation = get_correlation_df("plausibility", "human", dat.plaus, chosen_models)
+```
+
+### Plot
+```{r}
+df_correlation$Metric = factor(df_correlation$Metric, levels=chosen_models)
+dat.plaus$Metric = factor(dat.plaus$Metric, levels=chosen_models)
+
+plot.plaus_llms = ggplot(data=subset(dat.plaus))+
+  geom_point(mapping=aes(x=Plausible, y=Implausible), size=0.2, color=color_plaus)+
+  facet_wrap(~Metric, ncol=ncols, nrow=nrows)+
+  geom_abline(slope=1, intercept=0, size=0.2)+
+  geom_point(mapping=aes(x=Plausible, y=Implausible), size=0.2, color=color_plaus)+
+  geom_text(mapping=aes(x=0.05, y=1, label=sprintf("r = %.2f%s", round(Correlation,2), pVal2zeroLabel)), 
+            data=df_correlation, size=cortext_size, hjust = 0)+
+  coord_cartesian(ylim=c(0,1), xlim=c(0,1))+
+  theme_classic()+
+  theme(panel.spacing.x = unit(1, "lines"))+
+  theme(plot.title = element_text(hjust=0.5,face='bold'))
+plot.plaus_llms
+
+savename <- "2_plausibility_scatter_llms.png"
+ggsave(paste(savedir,savename,sep="/"), width=20, height=8, units='cm')
+```
+
+
+
+
+
+# SI - MODEL HUMAN COMPARISON
+
+## Prep data
+
+```{r}
+dat.human = dat %>% filter(Metric=="human") %>%
+  select(ItemNum, TrialType, Sentence, Plausibility, FinalNormScore)
+dat.model = dat %>% filter(Metric!="human") %>%
+  select(ItemNum, TrialType, Sentence, Plausibility, FinalNormScore, Metric)
+dat.model2human = merge(dat.human, dat.model, 
+                        by=c("ItemNum", "TrialType", "Sentence", "Plausibility")) %>%
+  rename(HumanScore=FinalNormScore.x, ModelScore=FinalNormScore.y)
+```
+
+Formatting:
+
+```{r, echo=FALSE, fig.height=12, fig.width=15}
+dat.model2human = dat.model2human %>%
+  #add color info
+  mutate(Category = ifelse(Metric%in%llms, "LLMs", "baselines")) 
+
+# specify order for plotting
+dat.model2human$Metric = factor(dat.model2human$Metric, levels=chosen_models)
+dat.model2human$Category = factor(dat.model2human$Category, levels=c("human", "LLMs", "baselines"))
+```
+
+## Calculate correlations for the plot
+
+Cllmot do a human2human comparison because we only have mean data
+
+```{r}
+df_correlation = data.frame()
+metrics = unique(dat.model2human$Metric)
+
+trialTypes = unique(dat.model2human$TrialType)
+for (t in seq_along(trialTypes)){
+  dat.model2human.tt = dat.model2human %>%
+    filter(TrialType==trialTypes[t])
+  
+  for(i in seq_along(metrics)){
+      current_metric=metrics[i]
+      val1.model = dat.model2human.tt$ModelScore[dat.model2human.tt$Metric==current_metric]
+      val2.model = dat.model2human.tt$HumanScore[dat.model2human.tt$Metric==current_metric]
+      pval2zero = cor.test(val1.model, val2.model, method="pearson")$p.value
+      corval = cor(val1.model, val2.model, method="pearson")
+      
+      # add vector to a dataframe
+      df <- data.frame(current_metric, trialTypes[t], corval, pval2zero)
+      df_correlation <- rbind(df_correlation,df)
+  }
+}
+colnames(df_correlation) = c("Metric", "TrialType", "Correlation", "pVal2zero")
+
+# adjust for multiple comparisons
+df_correlation = df_correlation %>%
+  mutate(pVal2zeroAdjusted = p.adjust(pVal2zero, method="fdr", n=length(pVal2zero))) %>%
+  mutate(pVal2zeroLabel = ifelse(pVal2zeroAdjusted<0.001, "***", 
+                                 ifelse(pVal2zeroAdjusted<0.01, "**",
+                                        ifelse(pVal2zeroAdjusted<0.05, "*", ""))))
+
+```
+
+## Plot
+```{r}
+
+# text size 
+cortext_size = 3
+
+plot.model2human = ggplot(dat=dat.model2human)+  
+  geom_abline(slope=1, intercept=0, size=0.2)+
+  geom_point(mapping=aes(x=ModelScore, y=HumanScore), 
+             size=0.4, position=position_jitter(width=0.01), color='#00BFC4')+
+  facet_wrap(~Metric, ncol=ncols)+
+  geom_text(mapping=aes(x=0.05, y=1.05, 
+                        label=sprintf("r = %.2f%s", round(Correlation,2), pVal2zeroLabel)), 
+            data=df_correlation, size=cortext_size, hjust = 0)+
+  coord_cartesian(ylim=c(0,1.05), xlim=c(0,1))+
+  scale_x_continuous(breaks=c(0,0.5,1))+
+  scale_y_continuous(breaks=c(0,0.5,1))+
+  theme_classic()+
+  theme(panel.spacing.x = unit(1, "lines"))+
+  theme(legend.position="none")
+plot.model2human
+
+#savename <- "model2human_byTrialType_LLMs.png"
+#ggsave(paste(savedir,savename,sep="/"), height=15,width=25, units='cm')
+```
