@@ -1,5 +1,5 @@
 ---
-title: "DTFit_model_analysis_v2021-08-20"
+title: "DTFit_model_analysis"
 output: html_document
 ---
 
@@ -67,7 +67,7 @@ dat = read.csv('clean_data/clean_DTFit_df.csv')
 ```{r, utils.choose_models, echo=FALSE}
 human <- c("human")
 llms <- c("GPT2","BERT","RoBERTa")
-llms_main <- c("GPT2-xl.l2r","BERT-large.pverb","RoBERTa-large.pverb")
+llms_main <- c("GPT2-xl.l2r","BERT-large.plast","RoBERTa-large.plast")
 baselines <- c("tinyLSTM.surprisal","syntax.PPMI","thematicFit.prod", "SDM")
 
 llms_main <- c(human, llms_main)
@@ -86,8 +86,27 @@ dat = dat %>% filter(Metric %in% chosen_models)
 message("Using these models/metrics:")
 dat$Metric = factor(dat$Metric, levels = chosen_models)
 print(unique(dat$Metric))
+
+# shorten model names
+llms_main_short <- c("GPT2-xl","BERT-large","RoBERTa-large")
+baselines_short <- c("tinyLSTM","syntax-PPMI","thematicFit", "SDM")
+models_short = c(human, llms_main_short, baselines_short)
+dat = dat %>%
+  separate(Metric, c("Model", "ProbEstimate"), sep="\\.", remove=FALSE) %>%
+  mutate(Model = replace(Model, Model=="syntax", "syntax-PPMI"))
+dat$Model = factor(dat$Model, levels=models_short)
 ```
 
+
+## Avg word frequency
+
+```{r}
+dat.sentfreq = dat %>% 
+  select(TrialType, Sentence, sentence_freq) %>%
+  distinct() %>%
+  group_by(TrialType) %>%
+  summarize(avg_sent_freq = mean(sentence_freq))
+```
 
 # CONTRASTS
 
@@ -131,7 +150,7 @@ if (which_models == "llms_all") {
 
 dat.binchoice = dat.binchoice %>%
   mutate(LowerBetter = ifelse(grepl(lower_better_pat, Metric),TRUE,FALSE)) %>%
-  group_by(ItemNum, TrialType, Metric, LowerBetter, Category) %>%
+  group_by(ItemNum, TrialType, Metric, Model, LowerBetter, Category) %>%
   summarize(ScoreDiff = FinalNormScore[Plausibility=="Plausible"]-FinalNormScore[Plausibility=="Implausible"]) %>%
   mutate(FinalScoreDiff = ifelse(LowerBetter==TRUE, -ScoreDiff, ScoreDiff)) %>%
   mutate(Accuracy = ifelse(FinalScoreDiff>0, 1, 0)) %>%
@@ -152,7 +171,7 @@ if (which_models=="llms_all") {
 ```{r}
 # get p values
 dat.binchoice.summary = dat.binchoice %>%
-  group_by(Category, Metric) %>%
+  group_by(Category, Metric, Model) %>%
   summarize(NumCorrect=sum(Accuracy), NumTotal=length(Accuracy)) %>%
   mutate(AccuracyScore = NumCorrect/NumTotal) %>%
   ungroup() %>%
@@ -169,13 +188,13 @@ dat.binchoice.summary = dat.binchoice.summary %>%
   ungroup()
 ```
 
-
 ```{r}
 # get human responses separately
 human.results = dat.binchoice.summary %>%
   filter(Metric=='human') %>%
   select(NumCorrect, NumTotal) %>%
   rename(NumCorrectHuman=NumCorrect, NumTotalHuman=NumTotal)
+
 dat.binchoice.summary.withchisq = merge(dat.binchoice.summary, human.results)
 dat.binchoice.summary.withchisq = dat.binchoice.summary.withchisq %>%
   mutate(ChiSq = calculate_chisq_vectorized_chi(NumCorrect, NumTotal, NumCorrectHuman),
@@ -186,7 +205,17 @@ dat.binchoice.summary.withchisq = dat.binchoice.summary.withchisq %>%
   mutate(pLabel2humans = ifelse(pVal2humansAdjusted<0.001, "***", 
                          ifelse(pVal2humansAdjusted<0.01, "**",
                                 ifelse(pVal2humansAdjusted<0.05, "*", "")))) 
+
+# print the result
+for (i in seq_along(dat.binchoice.summary.withchisq$Model)) {
+  print(paste(dat.binchoice.summary.withchisq$Model[i], ": ",
+        round(dat.binchoice.summary.withchisq$AccuracyScore[i],2), 
+        ", χ2=", round(dat.binchoice.summary.withchisq$ChiSq[i],2), 
+        ", p=", round(dat.binchoice.summary.withchisq$pVal2humansAdjusted[i],3),
+        ";", sep=""))
+}
 ```
+
 
 ### Plot
 
@@ -209,6 +238,13 @@ plot.binacc
 
 savename <- "1_binaryAccuracy.png"
 ggsave(paste(savedir,savename,sep="/"), width=15, height=9, units='cm')
+```
+
+### Mean model results
+```{r}
+dat.binchoice.meanbycategory = dat.binchoice.summary %>%
+  group_by(Category) %>%
+  summarize(meanAccuracy = mean(AccuracyScore))
 ```
 
 ## Error analysis
@@ -261,7 +297,7 @@ ggplot(dat.binchoice.human, aes(x=meanAccuracy, y=FinalScoreDiff)) +
 cor(dat.binchoice.human$meanAccuracy, dat.binchoice.human$FinalScoreDiff)
 ```
 
-# FOLLOWUPS
+# HISTOGRAMS
 
 ```{r, fig.height=2,fig.width=5}
 plot.plaus.density = ggplot()+
@@ -274,7 +310,21 @@ plot.plaus.density = ggplot()+
 plot.plaus.density
 ```
 
-## Combine
+### Mean diff scores by category
+```{r mean diff, echo=FALSE}
+dat.meanDiff = dat.binchoice %>% 
+  group_by(Category, TrialType, Model) %>% 
+  summarize(meanDiff = mean(FinalScoreDiff)) %>%
+  ungroup() %>%
+  group_by(Category, TrialType) %>%
+  summarize(meanDiff = round(mean(meanDiff), 2)) %>%
+  ungroup()
+
+dat.meanDiff = dat.meanDiff %>% 
+  spread(TrialType, meanDiff)
+```
+
+# COMBINE
 
 ```{r combine}
 plot.binacc + plot.plaus.density + plot_layout(widths=c(1,2))

@@ -31,10 +31,10 @@ options(dplyr.summarise.inform = FALSE)
 ### Print environment variables 
 ```{r}
 #SET ENVIRONMENT VARIABLES
-which_models <- "anns_main" #can be "anns_all", "anns_main", or "all_main"
-# anns_main = human + main ANNs
-# all_main = human + main ANNs + main baselines
-# anns_all = human + all ANNs
+which_models <- "all_main" #can be "llms_all", "llms_main", or "all_main"
+# llms_main = human + main LLMs
+# all_main = human + main LLMs + main baselines
+# llms_all = human + all LLMs
 normalization <- "min-max" #can be "min-max", "zscore"
 
 path <- paste("results/")
@@ -64,11 +64,9 @@ human_dat = read.csv('clean_data/clean_EventsAdapt_human_dat.csv')
 
 ```{r}
 if (grepl("min-max", normalization) == TRUE){
-  normalization <- function(x) {
-    return(min_max(x)) }
+  normalization <- function(x) { return(min_max(x)) }
 } else {
-  normalization <- function(x) {
-    return(scale_this(x)) }
+  normalization <- function(x) { return(scale_this(x)) }
 }
 ```
 
@@ -76,18 +74,18 @@ if (grepl("min-max", normalization) == TRUE){
 
 ```{r, utils.choose_models, echo=FALSE}
 human <- c("human")
-anns <- c("GPT2","BERT","RoBERTa","tinyLSTM")
-anns_main <- c("GPT2-xl.l2r","BERT-large.pverb","RoBERTa-large.pverb","tinyLSTM.surprisal") 
-baselines <- c("syntax.PPMI","thematicFit.prod", "SDM")
+llms <- c("GPT2","BERT","RoBERTa")
+llms_main <- c("GPT2-xl.l2r","BERT-large.pverb","RoBERTa-large.pverb")
+baselines <- c("tinyLSTM.surprisal","syntax.PPMI","thematicFit.prod", "SDM")
 
-anns_main <- c(human, anns_main)
-all_main <- c(anns_main, baselines)
+llms_main <- c(human, llms_main)
+all_main <- c(llms_main, baselines)
 
 unique_metrics = unique(dat$Metric)
-anns <- unique_metrics[grepl(paste(anns, collapse = "|"), unique_metrics)]
-anns = mixedsort(anns)
+llms <- unique_metrics[grepl(paste(llms, collapse = "|"), unique_metrics)]
+llms = mixedsort(llms)
 
-anns_all <- c(human,anns)
+llms_all <- c(human,llms)
 
 # select which to use
 chosen_models = eval(parse(text=which_models))
@@ -129,16 +127,15 @@ if (nrows * ncols < nr_models) {
 ```{r, echo=FALSE, fig.height=12, fig.width=15}
 
 #add Category color
-if (which_models == "anns_all") {
+if (which_models == "llms_all") {
   dat.binchoice = dat %>%
   mutate(Metric = as.character(Metric)) %>%
   mutate(Category = ifelse(startsWith(Metric, "BERT"), "BERT", "RoBERTa")) %>%
   mutate(Category = ifelse(startsWith(Metric, "GPT2"), "GPT2", Category)) %>%
-  mutate(Category = ifelse(startsWith(Metric, "tiny"), "tinyLSTM", Category)) %>%
   mutate(Category = ifelse(Metric=="human", "human", Category))
 } else {
   dat.binchoice = dat %>%
-  mutate(Category = ifelse(Metric%in%anns, "ANNs", "baselines")) %>%
+  mutate(Category = ifelse(Metric%in%llms, "LLMs", "baselines")) %>%
   mutate(Category = ifelse(Metric=="human", "human", Category))
 }
 
@@ -153,10 +150,10 @@ dat.binchoice = dat.binchoice %>%
 dat.binchoice$Metric = factor(dat.binchoice$Metric, levels=chosen_models)
 dat.binchoice$TrialType = factor(dat.binchoice$TrialType, levels=c("AI", "AAN", "AAR"))
 
-if (which_models=="anns_all") {
-  dat.binchoice$Category = factor(dat.binchoice$Category, levels=c("human", "GPT2", "BERT", "RoBERTa", "tinyLSTM"))
+if (which_models=="llms_all") {
+  dat.binchoice$Category = factor(dat.binchoice$Category, levels=c("human", "GPT2", "BERT", "RoBERTa"))
 } else {
-  dat.binchoice$Category = factor(dat.binchoice$Category, levels=c("human", "ANNs", "baselines"))
+  dat.binchoice$Category = factor(dat.binchoice$Category, levels=c("human", "LLMs", "baselines"))
 }
 ```
 
@@ -207,7 +204,7 @@ dat.binchoice.summary.withchisq = dat.binchoice.summary.withchisq %>%
 
 plot.binacc = ggplot(data=subset(dat.binchoice, TrialType%in%c("AI","AAN")), 
        mapping=aes(x=Metric, y=Accuracy, fill=Category))+
-  facet_wrap(~TrialType, ncol = 1)+
+  facet_wrap(~TrialType, ncol = 2)+
   geom_hline(yintercept=1, color='gray50', linetype='dotted')+
   stat_summary(geom='col', fun.y='mean',
                color='black', width=0.8)+
@@ -377,27 +374,27 @@ ggsave(paste(savedir,savename,sep="/"), width=8, height=8, units='cm')
 ## Error analysis
 
 ```{r}
-acc_by_sentence.ANN = dat.binchoice %>% 
+acc_by_sentence.LLM = dat.binchoice %>% 
   filter(TrialType %in% c("AI", "AAN")) %>%
-  filter(Category=='ANNs') %>%
+  filter(Category=='LLMs') %>%
   group_by(ItemNum, Voice) %>%
   mutate(meanAccuracy=mean(Accuracy))
 ```
 
 ### Quick plots
 ```{r}
-ggplot(acc_by_sentence.ANN, aes(x=meanAccuracy)) + geom_histogram() + 
+ggplot(acc_by_sentence.LLM, aes(x=meanAccuracy)) + geom_histogram() + 
   facet_wrap(~Voice)
 ```
 ```{r}
 # can adjust bin width slightly to show it's actually evenly distributed
-ggplot(acc_by_sentence.ANN, aes(x=meanAccuracy, fill=Voice)) + geom_histogram(binwidth=0.1, position="dodge") 
+ggplot(acc_by_sentence.LLM, aes(x=meanAccuracy, fill=Voice)) + geom_histogram(binwidth=0.1, position="dodge") 
 ```
 
 ### Save hard sentences
 
 ```{r}
-hard_sents = acc_by_sentence.ANN %>%
+hard_sents = acc_by_sentence.LLM %>%
   filter(meanAccuracy<0.5) %>%
   select(ItemNum, Voice, meanAccuracy)
 
@@ -406,7 +403,7 @@ hard_sents = inner_join(hard_sents, dat) %>%
   distinct() %>%
   spread(Plausibility, Sentence)
 
-savename <- "hard_sentences_ANNs.csv"
+savename <- "hard_sentences_LLMs.csv"
 write.csv(hard_sents, paste(savedir,savename,sep="/"), row.names=FALSE)
 ```
 
@@ -414,7 +411,7 @@ write.csv(hard_sents, paste(savedir,savename,sep="/"), row.names=FALSE)
 
 ```{r}
 dat.binchoice.human = dat.binchoice %>% filter(Metric=='human')
-dat.binchoice.human = inner_join(dat.binchoice.human, acc_by_sentence.ANN %>% select(ItemNum, TrialType, Voice, meanAccuracy)) %>%
+dat.binchoice.human = inner_join(dat.binchoice.human, acc_by_sentence.LLM %>% select(ItemNum, TrialType, Voice, meanAccuracy)) %>%
   distinct()
 
 ggplot(dat.binchoice.human, aes(x=meanAccuracy, y=FinalScoreDiff)) + 
@@ -509,14 +506,14 @@ Formatting:
 ```{r, echo=FALSE, fig.height=12, fig.width=15}
 dat.model2human = dat.model2human %>%
   #add color info
-  mutate(Category = ifelse(Metric%in%anns, "ANNs", "baselines")) %>%
+  mutate(Category = ifelse(Metric%in%llms, "LLMs", "baselines")) %>%
   mutate(Category = ifelse(Metric=="singleHuman", "human", Category))
 
 # specify order for plotting
 metric_names = chosen_models
 metric_names[1] = "singleHuman"
 dat.model2human$Metric = factor(dat.model2human$Metric, levels=metric_names)
-dat.model2human$Category = factor(dat.model2human$Category, levels=c("human", "ANNs", "baselines"))
+dat.model2human$Category = factor(dat.model2human$Category, levels=c("human", "LLMs", "baselines"))
 dat.model2human$TrialType = factor(dat.model2human$TrialType, levels=c("AI", "AAN", "AAR"))
 ```
 
@@ -555,7 +552,7 @@ plot.model2human = ggplot(dat=dat.model2human)+
   facet_grid(TrialType~Metric)
 plot.model2human
 
-savename <- "model2human_byTrialType_ANNs.png"
+savename <- "model2human_byTrialType_LLMs.png"
 ggsave(paste(savedir,savename,sep="/"), height=12,width=24, units='cm')
 ```
 
@@ -589,7 +586,7 @@ plot.model2human.sub = ggplot(dat=dat.model2human.sub)+
   facet_grid(TrialType~Metric)
 plot.model2human.sub
 
-savename <- "model2human_byTrialType_ANNs_noAAR.png"
+savename <- "model2human_byTrialType_LLMs_noAAR.png"
 ggsave(paste(savedir,savename,sep="/"), height=10,width=25, units='cm')
 ```
 
@@ -1023,11 +1020,11 @@ for(i in seq_along(metrics)){
 }
 ```
 
-## Correct for MC within ANNs and baselines
+## Correct for MC within LLMs and baselines
 
 ```{r adjust pVals, echo=FALSE}
 results = results %>%
-  mutate(Category = ifelse(Metric%in%anns, "ANNs", "baselines")) %>%
+  mutate(Category = ifelse(Metric%in%llms, "LLMs", "baselines")) %>%
   mutate(Category = ifelse(Metric=="human", "human", Category))
 
 results = results %>%

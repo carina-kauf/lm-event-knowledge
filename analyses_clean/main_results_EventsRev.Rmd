@@ -87,17 +87,36 @@ llms_all <- c(human,llms)
 
 # select which to use
 chosen_models = eval(parse(text=which_models))
-model_dat = dat %>% filter(Metric %in% chosen_models)
+dat = dat %>% filter(Metric %in% chosen_models)
 
 message("Using these models/metrics:")
-model_dat$Metric = factor(model_dat$Metric, levels = chosen_models)
-print(levels(model_dat$Metric))
+dat$Metric = factor(dat$Metric, levels = chosen_models)
+print(levels(dat$Metric))
+
+# shorten model names
+llms_main_short <- c("GPT2-xl","BERT-large","RoBERTa-large")
+baselines_short <- c("tinyLSTM","syntax-PPMI","thematicFit", "SDM")
+models_short = c(human, llms_main_short, baselines_short)
+dat = dat %>%
+  separate(Metric, c("Model", "ProbEstimate"), sep="\\.", remove=FALSE) %>%
+  mutate(Model = replace(Model, Model=="syntax", "syntax-PPMI"))
+dat$Model = factor(dat$Model, levels=models_short)
+```
+
+## Avg word frequency
+
+```{r}
+dat.sentfreq = dat %>% 
+  filter(Voice=='active') %>%
+  select(TrialType, Sentence, sentence_freq) %>%
+  distinct() %>%
+  group_by(TrialType) %>%
+  summarize(avg_sent_freq = mean(sentence_freq))
 ```
 
 # CONTRASTS
 
 ```{r}
-dat = model_dat
 dat$Plausibility = factor(dat$Plausibility, levels=c("Plausible", "Implausible")) # dummy coding by default
 
 dat$Metric = factor(dat$Metric, levels = chosen_models)
@@ -125,18 +144,18 @@ if (nrows * ncols < nr_models) {
 #add Category color
 if (which_models == "llms_all") {
   dat.binchoice = dat %>%
-  mutate(Metric = as.character(Metric)) %>%
-  mutate(Category = ifelse(startsWith(Metric, "BERT"), "BERT", "RoBERTa")) %>%
-  mutate(Category = ifelse(startsWith(Metric, "GPT2"), "GPT2", Category)) %>%
-  mutate(Category = ifelse(Metric=="human", "human", Category))
+    mutate(Metric = as.character(Metric)) %>%
+    mutate(Category = ifelse(startsWith(Metric, "BERT"), "BERT", "RoBERTa")) %>%
+    mutate(Category = ifelse(startsWith(Metric, "GPT2"), "GPT2", Category)) %>%
+    mutate(Category = ifelse(Metric=="human", "human", Category))
 } else {
   dat.binchoice = dat %>%
-  mutate(Category = ifelse(Metric%in%llms, "LLMs", "baselines")) %>%
-  mutate(Category = ifelse(Metric=="human", "human", Category))
+    mutate(Category = ifelse(Metric%in%llms, "LLMs", "baselines")) %>%
+    mutate(Category = ifelse(Metric=="human", "human", Category))
 }
 
 dat.binchoice = dat.binchoice %>%
-  group_by(ItemNum, Metric, LowerBetter, Category) %>%
+  group_by(ItemNum, Metric, Model, LowerBetter, Category) %>%
   summarize(ScoreDiff = NormScore[Plausibility=="Plausible"]-NormScore[Plausibility=="Implausible"]) %>%
   mutate(FinalScoreDiff = ifelse(LowerBetter==TRUE, -ScoreDiff, ScoreDiff)) %>%
   mutate(Accuracy = ifelse(FinalScoreDiff>0, 1, 0)) %>%
@@ -157,15 +176,15 @@ if (which_models=="llms_all") {
 ```{r}
 # get p values
 dat.binchoice.summary = dat.binchoice %>%
-  group_by(Category, Metric) %>%
+  group_by(Category, Metric, Model) %>%
   summarize(NumCorrect=sum(Accuracy), NumTotal=length(Accuracy)) %>%
+  mutate(AccuracyScore = NumCorrect/NumTotal) %>%
   ungroup() %>%
   mutate(pVal = calculate_binom_pval(NumCorrect, NumTotal))
 
 # adjust for multiple comparisons within each category
 dat.binchoice.summary = dat.binchoice.summary %>%
   group_by(Category) %>%
-  mutate(Accuracy=NumCorrect/NumTotal) %>%
   mutate(pValAdjusted = p.adjust(pVal, method="fdr", n=length(pVal)),
          ntoadjust = length(pVal)) %>%
   mutate(pLabel = ifelse(pValAdjusted<0.001, "***", 
@@ -174,16 +193,14 @@ dat.binchoice.summary = dat.binchoice.summary %>%
   ungroup()
 ```
 
-Compare with human data (Chi Square)
-
 ```{r}
 # get human responses separately
 human.results = dat.binchoice.summary %>%
   filter(Metric=='human') %>%
   select(NumCorrect, NumTotal) %>%
   rename(NumCorrectHuman=NumCorrect, NumTotalHuman=NumTotal)
-dat.binchoice.summary.withchisq = merge(dat.binchoice.summary, human.results)
 
+dat.binchoice.summary.withchisq = merge(dat.binchoice.summary, human.results)
 dat.binchoice.summary.withchisq = dat.binchoice.summary.withchisq %>%
   mutate(ChiSq = calculate_chisq_vectorized_chi(NumCorrect, NumTotal, NumCorrectHuman),
          pVal2humans = calculate_chisq_vectorized_p(NumCorrect, NumTotal, NumCorrectHuman)) %>%
@@ -193,6 +210,15 @@ dat.binchoice.summary.withchisq = dat.binchoice.summary.withchisq %>%
   mutate(pLabel2humans = ifelse(pVal2humansAdjusted<0.001, "***", 
                          ifelse(pVal2humansAdjusted<0.01, "**",
                                 ifelse(pVal2humansAdjusted<0.05, "*", "")))) 
+
+# print the result
+for (i in seq_along(dat.binchoice.summary.withchisq$Model)) {
+  print(paste(dat.binchoice.summary.withchisq$Model[i], ": ",
+        round(dat.binchoice.summary.withchisq$AccuracyScore[i],2), 
+        ", χ2=", round(dat.binchoice.summary.withchisq$ChiSq[i],2), 
+        ", p=", round(dat.binchoice.summary.withchisq$pVal2humansAdjusted[i],3),
+        ";", sep=""))
+}
 ```
 
 ### Plot 
@@ -216,6 +242,13 @@ plot.binacc
 
 savename <- "1_binaryAccuracy.png"
 ggsave(paste(savedir,savename,sep="/"), width=15, height=12, units='cm')
+```
+
+### Mean model results
+```{r}
+dat.binchoice.meanbycategory = dat.binchoice.summary %>%
+  group_by(Category) %>%
+  summarize(meanAccuracy = mean(AccuracyScore))
 ```
 
 ## Error analysis
@@ -270,15 +303,11 @@ cor(dat.binchoice.human$meanAccuracy, dat.binchoice.human$FinalScoreDiff)
 ```
 
 
-# ADDITIONAL PLOTS
+# HISTOGRAMS
 
-## General settings
 ```{r}
 cortext_size = 3
 ```
-
-
-## Density plot
 
 ```{r, fig.height=2,fig.width=5}
 plot.plaus.density = ggplot()+
@@ -291,7 +320,18 @@ plot.plaus.density = ggplot()+
 plot.plaus.density
 ```
 
-## Combine
+### Mean diff scores by category
+```{r mean diff, echo=FALSE}
+dat.meanDiff = dat.binchoice %>% 
+  group_by(Category, Model) %>% 
+  summarize(meanDiff = mean(FinalScoreDiff)) %>%
+  ungroup() %>%
+  group_by(Category) %>%
+  summarize(meanDiff = round(mean(meanDiff), 2)) %>%
+  ungroup()
+```
+
+# COMBINE
 
 ```{r combine}
 plot.binacc + plot.plaus.density + plot_layout(widths=c(1,2))
