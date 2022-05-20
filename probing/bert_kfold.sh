@@ -5,5 +5,4 @@
 #SBATCH -p evlab     
 #SBATCH --array=1-25
 module load openmind/anaconda/3-2019.10       
-python roberta_parallel.py $SLURM_ARRAY_TASK_ID '/om2/user/jshe/lm-event-knowledge/analyses_clean/clean_data/clean_EventsRev_SentenceSet.csv'
-
+python bert_kfold.py $SLURM_ARRAY_TASK_ID 'normal' 'normal' '/om2/user/jshe/lm-event-knowledge/analyses_clean/clean_data/clean_DTFit_SentenceSet.csv'

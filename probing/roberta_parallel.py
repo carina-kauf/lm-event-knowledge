@@ -44,43 +44,39 @@ def output(model_name, dataset_name):
     df_DT = df_DT.reset_index()
     output_path = '/om2/user/jshe/lm-event-knowledge/probing/parallel_layers/roberta_EventsAdapt_'+ str(layernum) + '.csv'
 
-  def split(dataset, train_ratio):
-      unique_pairs_num = dataset['ItemNum'].nunique()
-      unique_index = dataset['ItemNum'].unique()
-      random_list_index = np.random.choice(unique_index, round(unique_pairs_num*train_ratio), replace = False)   # list of random indices to form training set
+fold_num = 10
+np.random.seed(42)
+unique_pairs_num = dataset['ItemNum'].nunique()
+unique_index = dataset['ItemNum'].unique()
 
-      train = pd.concat((dataset[dataset['ItemNum'] == i] for i in random_list_index))
+shuffled_unique_index = np.random.permutation(unique_index)
+pool = np.array_split(shuffled_unique_index, fold_num)
 
-      test_pool = [i for i in unique_index if i not in random_list_index]   #list of ItemNum indices to form testing set
-      test = pd.concat((dataset[dataset['ItemNum'] == i] for i in test_pool))
+Accuracy = []
+for reg_trial in fold_num:
+  test_index = pool[reg_trial]
+  train_index = [i for i in unique_index if i not in test_index]
+  test = pd.concat((dataset[dataset['ItemNum'] == j] for j in test_index))
+  train = pd.concat((dataset[dataset['ItemNum'] == k] for k in train_index))
 
-      train = train.reset_index()
-      test = test.reset_index()
-      return train, test
+  x_train = []
+  for i in range(len(train)):
+      x_train.append(get_vector(train["Sentence"][i], layernum))
+  x_train = np.array(x_train)
 
-  # Populating layer entries
-  Accuracy = []
-  for reg_trial in range(10):
-    # Splitting the dataset into training and testing
-    train, test = split(df_DT, 0.85)
-    x_train = []
-    for i in range(len(train)):
-        x_train.append(get_vector(train["Sentence"][i], layernum))
-    x_train = np.array(x_train)
+  x_test = []
+  for j in range(len(test)):
+      x_test.append(get_vector(test["Sentence"][j], layernum))
+  x_test = np.array(x_test)
 
-    x_test = []
-    for j in range(len(test)):
-        x_test.append(get_vector(test["Sentence"][j], layernum))
-    x_test = np.array(x_test)
+  y_train = np.array(train["Plausibility"])
+  y_test = np.array(test["Plausibility"])
 
-    y_train = np.array(train["Plausibility"])
-    y_test = np.array(test["Plausibility"])
-
-    # Fitting regression
-    logreg = LogisticRegression(max_iter=500, solver='liblinear')
-    logreg.fit(x_train, y_train)
-    y_pred = logreg.predict(x_test)
-    Accuracy.append(metrics.accuracy_score(y_test, y_pred))
+  # Fitting regression
+  logreg = LogisticRegression(max_iter=500, solver='liblinear')
+  logreg.fit(x_train, y_train)
+  y_pred = logreg.predict(x_test)
+  Accuracy.append(metrics.accuracy_score(y_test, y_pred))
 
   print(statistics.mean(Accuracy))
   print(Accuracy)
@@ -88,3 +84,5 @@ def output(model_name, dataset_name):
   df_out = df_out.transpose()
   df_out.to_csv(output_path, header = False)
 output('roberta-large', dataset_input)
+
+
