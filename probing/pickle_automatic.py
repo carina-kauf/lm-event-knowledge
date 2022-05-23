@@ -23,7 +23,10 @@ print(list(hidden_states.values())[0][0])
 # assert check_sentence == corresponding_sentence
 
 def get_vector(sentence, layer):
-    sentence_embedding = hidden_states[sentence][layer][0][-1]
+    if model_name == 'gpt2-xl':
+        sentence_embedding = hidden_states[sentence][layer][0][-1]
+    else:
+        sentence_embedding = hidden_states[sentence][layer][0][0]
     return sentence_embedding.numpy()
 
 dataset = f'/om2/user/jshe/lm-event-knowledge/analyses_clean/clean_data/clean_{dataset_name}_SentenceSet.csv'
