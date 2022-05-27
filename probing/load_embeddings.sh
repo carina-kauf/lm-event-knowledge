@@ -5,4 +5,4 @@
 #SBATCH --mem=20G
 #SBATCH -p evlab     
 module load openmind/anaconda/3-2019.10       
-python load_embeddings_gpt2.py 'EventsAdapt'
+python load_embeddings.py 'bert-large-cased' 'EventsRev'
