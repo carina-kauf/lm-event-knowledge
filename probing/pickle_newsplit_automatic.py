@@ -33,6 +33,75 @@ def break_array_tolist(array):
       a.append(it)
   return a
 
+def split_dataset_sentence(fold, dataset, voice_type, sentence_type):
+  AI_sentences = dataset[dataset['TrialType'] == 'AI']
+  AI_sentences = AI_sentences[AI_sentences['Voice'] == 'active']
+  AI_sentences = AI_sentences.reset_index(drop = True)
+
+  pool_ai = np.array_split(AI_sentences.index.values, fold_num)
+  train_index_ai = break_array_tolist(pool_ai[:fold] + pool_ai[fold+1:])
+  train_ai = pd.concat(AI_sentences[AI_sentences.index == j] for j in train_index_ai)
+  train_ai = train_ai.reset_index(drop = True)
+
+  test_index_ai = [x for x in AI_sentences.index.values if x not in train_index_ai]
+  test_ai = pd.concat((AI_sentences[AI_sentences.index == j] for j in test_index_ai))
+
+  AAN_sentences = dataset[dataset['TrialType'] == 'AAN']
+  AAN_sentences = AAN_sentences[AAN_sentences['Voice'] == 'active']
+  AAN_sentences = AAN_sentences.reset_index(drop = True)
+
+  pool_aan = np.array_split(AAN_sentences.index.values, fold_num)
+  train_index_aan = break_array_tolist(pool_aan[:fold] + pool_aan[fold+1:])
+  train_aan = pd.concat(AAN_sentences[AAN_sentences.index == j] for j in train_index_aan)
+  train_aan = train_aan.reset_index(drop = True)
+
+  test_index_aan = [x for x in AAN_sentences.index.values if x not in train_index_aan]
+  test_aan = pd.concat((AAN_sentences[AAN_sentences.index == j] for j in test_index_aan))
+  
+  AAR_sentences = dataset[dataset['TrialType'] == 'AAR']
+  AAR_sentences = AAR_sentences[AAR_sentences['Voice'] == 'active']
+  AAR_sentences = AAR_sentences.reset_index(drop = True)
+
+  if sentence_type == 'AI-AI':
+    train = train_ai
+    train = train.reset_index(drop = True)
+    test = test_ai
+    test = test.reset_index(drop = True)
+  elif sentence_type == 'AI-AAN':
+    train = train_ai
+    train = train.reset_index(drop = True)
+    test = AAN_sentences
+    test = test.reset_index(drop = True)
+  elif sentence_type == 'AAN-AAN':
+    train = train_aan
+    train = train.reset_index(drop = True)
+    test = test_aan
+    test = test_aan.reset_index(drop = True)  
+  elif sentence_type == 'AAN-AI':
+    train = train_aan
+    train = train.reset_index(drop = True)
+    test = AI_sentences
+    test = test.reset_index(drop = True)
+  elif sentence_type == 'AI-AAR':
+    train = train_ai
+    train = train.reset_index(drop = True)
+    test = AAR_sentences
+    test = test.reset_index(drop = True)
+  elif sentence_type == 'AAN-AAR':
+    train = train_aan
+    train = train.reset_index(drop = True)
+    test = AAR_sentences
+    test = test.reset_index(drop = True)
+  elif sentence_type == 'normal-AAR':
+    train = dataset[dataset.TrialType != "AAR"]
+    train = train.reset_index(drop = True)
+    test = AAR_sentences
+    test = test.reset_index(drop = True)    
+  else:
+    pass
+  
+  return train, test
+
 def split_dataset(fold, dataset, voice_type, sentence_type):
   #active/passive conditions
   if sentence_type == 'normal':
@@ -80,71 +149,7 @@ def split_dataset(fold, dataset, voice_type, sentence_type):
       pass
   #ai/aan/aar splitting conditions
   else:
-    AI_sentences = dataset[dataset['TrialType'] == 'AI']
-    AI_sentences = AI_sentences[AI_sentences['Voice'] == 'active']
-    AI_sentences = AI_sentences.reset_index(drop = True)
-
-    pool_ai = np.array_split(AI_sentences.index.values, fold_num)
-    train_index_ai = break_array_tolist(pool_ai[:fold] + pool_ai[fold+1:])
-    train_ai = pd.concat(AI_sentences[AI_sentences.index == j] for j in train_index_ai)
-    train_ai = train_ai.reset_index(drop = True)
-
-    test_index_ai = [x for x in AI_sentences.index.values if x not in train_index_ai]
-    test_ai = pd.concat((AI_sentences[AI_sentences.index == j] for j in test_index_ai))
-
-    AAN_sentences = dataset[dataset['TrialType'] == 'AAN']
-    AAN_sentences = AAN_sentences[AAN_sentences['Voice'] == 'active']
-    AAN_sentences = AAN_sentences.reset_index(drop = True)
-
-    pool_aan = np.array_split(AAN_sentences.index.values, fold_num)
-    train_index_aan = break_array_tolist(pool_aan[:fold] + pool_aan[fold+1:])
-    train_aan = pd.concat(AAN_sentences[AAN_sentences.index == j] for j in train_index_aan)
-    train_aan = train_aan.reset_index(drop = True)
-
-    test_index_aan = [x for x in AAN_sentences.index.values if x not in train_index_aan]
-    test_aan = pd.concat((AAN_sentences[AAN_sentences.index == j] for j in test_index_aan))
-    
-    AAR_sentences = dataset[dataset['TrialType'] == 'AAR']
-    AAR_sentences = AAR_sentences[AAR_sentences['Voice'] == 'active']
-    AAR_sentences = AAR_sentences.reset_index(drop = True)
-
-    if sentence_type == 'AI-AI':
-      train = train_ai
-      train = train.reset_index(drop = True)
-      test = test_ai
-      test = test.reset_index(drop = True)
-    elif sentence_type == 'AI-AAN':
-      train = train_ai
-      train = train.reset_index(drop = True)
-      test = AAN_sentences
-      test = test.reset_index(drop = True)
-    elif sentence_type == 'AAN-AAN':
-      train = train_aan
-      train = train.reset_index(drop = True)
-      test = test_aan
-      test = test_aan.reset_index(drop = True)  
-    elif sentence_type == 'AAN-AI':
-      train = train_aan
-      train = train.reset_index(drop = True)
-      test = AI_sentences
-      test = test.reset_index(drop = True)
-    elif sentence_type == 'AI-AAR':
-      train = train_ai
-      train = train.reset_index(drop = True)
-      test = AAR_sentences
-      test = test.reset_index(drop = True)
-    elif sentence_type == 'AAN-AAR':
-      train = train_aan
-      train = train.reset_index(drop = True)
-      test = AAR_sentences
-      test = test.reset_index(drop = True)
-    elif sentence_type == 'normal-AAR':
-      train = dataset[dataset.TrialType != "AAR"]
-      train = train.reset_index(drop = True)
-      test = AAR_sentences
-      test = test.reset_index(drop = True)    
-    else:
-      pass
+    train, test = split_dataset_sentence(reg_trial, df_DT, voice_type, sentence_type)
   
   return train, test
 
@@ -164,7 +169,8 @@ out = []
 for layer in range(layer_num):
   Accuracy = []
   for reg_trial in range(fold_num):
-    train, test = split_dataset(reg_trial, df_DT, voice_type, sentence_type)
+    #changed
+    train, test = split_dataset(reg_trial, dataset, voice_type, sentence_type)
 
     x_train = []
     for i in range(len(train)):
