@@ -166,32 +166,49 @@ if dataset_name == 'EventsAdapt':
 #df_DT = df_DT.head(10)
 
 out = []
-for layer in range(layer_num):
-  Accuracy = []
-  for reg_trial in range(fold_num):
-    train, test = split_dataset(reg_trial, df_DT, voice_type, sentence_type)
+Accuracy = []
+layer = 0
+for reg_trial in range(fold_num):
+  #changed
+  train, test = split_dataset(reg_trial, dataset, voice_type, sentence_type)
+  print('train', train)
+  print('test', test)
 
-    x_train = []
-    for i in range(len(train)):
-      x_train.append(get_vector(train['Sentence'][i], layer))
-    x_train = np.array(x_train)
+  print('senta', train['Sentence'][0])
+  print('sentb', test['Sentence'][0])
+  a = get_vector(train['Sentence'][0], 0)
+  b = get_vector(test['Sentence'][0], 0)
 
-    x_test = []
-    for j in range(len(test)):
-      x_test.append(get_vector(test['Sentence'][j], layer))
-    x_test = np.array(x_test)
+  print('a', a)
+  print('b', b)
+  print('a-b', a-b)
 
-    y_train = np.array(train["Plausibility"])
-    y_test = np.array(test["Plausibility"])
+  x_train = []
+  for i in range(len(train)):
+    x_train.append(get_vector(train['Sentence'][i], layer))
+  x_train = np.array(x_train)
+  print('xtrain', x_train)
 
-    # Fitting regression
-    logreg = LogisticRegression(max_iter=500, solver='liblinear')
-    logreg.fit(x_train, y_train)
-    y_pred = logreg.predict(x_test)
-    Accuracy.append(metrics.accuracy_score(y_test, y_pred))
-  print('layer', layer_num, statistics.mean(Accuracy))
-  print(Accuracy)
-  out.append(Accuracy)
+  x_test = []
+  for j in range(len(test)):
+    x_test.append(get_vector(test['Sentence'][j], layer))
+  x_test = np.array(x_test)
+  print('xtest', x_test)
+
+  y_train = np.array(train["Plausibility"])
+  y_test = np.array(test["Plausibility"])
+  print('ytrain', y_train)
+  print('ytest', y_test)
+
+  # Fitting regression
+  logreg = LogisticRegression(max_iter=500, solver='liblinear')
+  logreg.fit(x_train, y_train)
+  y_pred = logreg.predict(x_test)
+  print('ypred', y_pred)
+  Accuracy.append(metrics.accuracy_score(y_test, y_pred))
+print('layer', layer, statistics.mean(Accuracy))
+print(Accuracy)
+out.append(Accuracy)
   
 df_out = pd.DataFrame(out)
-df_out.to_csv(output_path, header = False)
+print(df_out)
