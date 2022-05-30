@@ -93,7 +93,7 @@ def split_dataset_sentence(fold, dataset, voice_type, sentence_type):
     test = AAR_sentences
     test = test.reset_index(drop = True)
   elif sentence_type == 'normal-AAR':
-    train = dataset[dataset.TrialType != "AAR"]
+    train = pd.concat([train_ai, train_aan])
     train = train.reset_index(drop = True)
     test = AAR_sentences
     test = test.reset_index(drop = True)    
@@ -154,7 +154,7 @@ def split_dataset(fold, dataset, voice_type, sentence_type):
   return train, test
 
 dataset = f'/om2/user/jshe/lm-event-knowledge/analyses_clean/clean_data/clean_{dataset_name}_SentenceSet.csv'
-output_path = f'/om2/user/jshe/lm-event-knowledge/probing/parallel_layers/new_splits/{model_name}_{dataset_name}_{voice_type}_{sentence_type}.csv'
+output_path = f'/om2/user/jshe/lm-event-knowledge/probing/parallel_layers/new_layers/{model_name}_{dataset_name}_{voice_type}_{sentence_type}.csv'
 df_DT = pd.read_csv(dataset)
 
 fold_num = 10
