@@ -1,0 +1,3225 @@
+,Sentence,YTest,YPred
+0,"0               The aviator maneuvered the jet.
+1               The jet maneuvered the aviator.
+2               The friend donned the pullover.
+3               The pullover donned the friend.
+4         The confectioner sprinkled the sugar.
+5         The sugar sprinkled the confectioner.
+6              The milliner adorned the fedora.
+7              The fedora adorned the milliner.
+8      The librarian admonished the plagiarist.
+9      The plagiarist admonished the librarian.
+10            The count inherited the painting.
+11            The painting inherited the count.
+12         The deceiver imitated the conqueror.
+13         The conqueror imitated the deceiver.
+14       The panelist congratulated the winner.
+15       The winner congratulated the panelist.
+16          The smuggler bribed the bureaucrat.
+17          The bureaucrat bribed the smuggler.
+18          The artisan trained the apprentice.
+19          The apprentice trained the artisan.
+20                The doctor closed the school.
+21                The school closed the doctor.
+22            The villager cultivated the crop.
+23            The crop cultivated the villager.
+24                   The king exiled the rebel.
+25                   The rebel exiled the king.
+26                   The nanny tutored the boy.
+27                   The boy tutored the nanny.
+28       The adventurer requested the beverage.
+29       The beverage requested the adventurer.
+30               The banker funded the program.
+31               The program funded the banker.
+32         The woodworker skimmed the brochure.
+33         The brochure skimmed the woodworker.
+34         The marauder contracted the disease.
+35         The disease contracted the marauder.
+36             The windbag taunted the recluse.
+37             The recluse taunted the windbag.
+38           The hacker memorized the password.
+39           The password memorized the hacker.
+40     The policewoman handcuffed the offender.
+41     The offender handcuffed the policewoman.
+42          The stewardess pulled the suitcase.
+43          The suitcase pulled the stewardess.
+44    The flight-attendant dragged the luggage.
+45    The luggage dragged the flight-attendant.
+46             The principal scolded the child.
+47             The child scolded the principal.
+48           The overseer provided the alcohol.
+49           The alcohol provided the overseer.
+Name: Sentence, dtype: object","[0.91666667 0.09259259 0.88333333 0.16       0.95238095 0.00724638
+ 0.81666667 0.36666667 0.8030303  0.5        0.67361111 0.08024691
+ 0.71666667 0.50666667 0.99074074 0.50833333 0.90666667 0.72727273
+ 0.94927536 0.2173913  0.5530303  0.00877193 0.96212121 0.05797101
+ 0.84782609 0.43209877 0.96969697 0.36666667 0.88888889 0.07333333
+ 0.93939394 0.43055556 0.88405797 0.04938272 0.78       0.07333333
+ 0.46212121 0.36231884 0.96527778 0.04545455 0.98666667 0.27333333
+ 0.93939394 0.06944444 0.925      0.15909091 0.95833333 0.34722222
+ 0.68666667 0.08333333]","[0.57621783 0.57621783 0.57621783 0.57621783 0.57621783 0.57621783
+ 0.57621783 0.57621783 0.571887   0.571887   0.577028   0.577028
+ 0.571887   0.571887   0.5907817  0.5907817  0.571887   0.571887
+ 0.577028   0.577028   0.577028   0.577028   0.5907817  0.5907817
+ 0.577028   0.577028   0.57621783 0.57621783 0.577028   0.577028
+ 0.577028   0.577028   0.571887   0.571887   0.5907817  0.5907817
+ 0.571887   0.571887   0.5907817  0.5907817  0.57621783 0.57621783
+ 0.57621783 0.57621783 0.571887   0.571887   0.5907817  0.5907817
+ 0.5907817  0.5907817 ]"
+1,"0                     The shark mauled the snorkeler.
+1                     The snorkeler mauled the shark.
+2                     The drunk bothered the visitor.
+3                     The visitor bothered the drunk.
+4         The tennis player thanked the chiropractor.
+5         The chiropractor thanked the tennis player.
+6            The attorney interrogated the bystander.
+7            The bystander interrogated the attorney.
+8                The sightseer misplaced the memento.
+9                The memento misplaced the sightseer.
+10                The paparazzi stalked the pop star.
+11                The pop star stalked the paparazzi.
+12    The assistant principal expelled the sociopath.
+13    The sociopath expelled the assistant principal.
+14               The judge praised the gold medalist.
+15               The gold medalist praised the judge.
+16                   The diver recharged the battery.
+17                   The battery recharged the diver.
+18                  The caretaker quieted the orphan.
+19                  The orphan quieted the caretaker.
+20                     The dietitian loathed the jam.
+21                     The jam loathed the dietitian.
+22                The president pardoned the traitor.
+23                The traitor pardoned the president.
+24                 The lawyer questioned the witness.
+25                 The witness questioned the lawyer.
+26             The cashier billed the senior citizen.
+27             The senior citizen billed the cashier.
+28                  The roommate adopted the newborn.
+29                  The newborn adopted the roommate.
+30              The comedian confirmed the itinerary.
+31              The itinerary confirmed the comedian.
+32                         The king exiled the rebel.
+33                         The rebel exiled the king.
+34                The skipper guaranteed the victory.
+35                The victory guaranteed the skipper.
+36                  The painter depicted the thinker.
+37                  The thinker depicted the painter.
+38                  The negotiator saved the captive.
+39                  The captive saved the negotiator.
+40                           The lord named the heir.
+41                           The heir named the lord.
+42                       The uncle hung the ornament.
+43                       The ornament hung the uncle.
+44               The marauder contracted the disease.
+45               The disease contracted the marauder.
+46                 The Frenchman sliced the baguette.
+47                 The baguette sliced the Frenchman.
+48                  The sheriff inspected the estate.
+49                  The estate inspected the sheriff.
+Name: Sentence, dtype: object","[0.87654321 0.31060606 0.92028986 0.81481481 0.94202899 0.70666667
+ 0.87121212 0.40972222 0.91666667 0.10869565 0.95833333 0.2173913
+ 0.79365079 0.1969697  0.94444444 0.84722222 0.85606061 0.02777778
+ 0.92361111 0.53787879 0.83333333 0.00757576 0.88636364 0.08695652
+ 1.         0.42105263 0.9469697  0.24       0.84090909 0.02777778
+ 0.84027778 0.23809524 0.84782609 0.43209877 0.80555556 0.09027778
+ 0.89473684 0.45454545 0.94444444 0.43333333 0.93055556 0.45454545
+ 0.98611111 0.00757576 0.78       0.07333333 0.92       0.07333333
+ 0.90151515 0.13888889]","[1.138722   1.0249085  0.9591222  0.93640065 0.35731077 0.41190386
+ 0.9257159  0.9155357  0.88887024 0.82758164 1.1648941  1.2456679
+ 0.9088104  0.9380772  1.4335151  1.4406943  0.46414328 0.5600834
+ 0.81448317 0.84625316 1.1115093  1.1083608  0.9889946  1.0639541
+ 0.8927777  0.8887696  0.73056746 0.70914435 0.7967787  0.8155098
+ 0.9713645  0.987741   1.0656676  1.0635042  0.8259504  0.82950735
+ 0.9602399  0.95844126 1.1762619  1.1788299  1.2676749  1.2550344
+ 0.9685724  0.9513202  0.6447904  0.6465912  0.70798445 0.97752404
+ 1.1470068  1.1479454 ]"
+2,"0                        The genius shocked the cousin.
+1                        The cousin shocked the genius.
+2               The cardiologist discredited the quack.
+3               The quack discredited the cardiologist.
+4                          The marcher sang the anthem.
+5                          The anthem sang the marcher.
+6                         The liar emulated the victor.
+7                         The victor emulated the liar.
+8              The librarian admonished the plagiarist.
+9              The plagiarist admonished the librarian.
+10                       The producer cast the actress.
+11                       The actress cast the producer.
+12              The experimenter recruited the subject.
+13              The subject recruited the experimenter.
+14      The assistant principal expelled the sociopath.
+15      The sociopath expelled the assistant principal.
+16                           The page obeyed the noble.
+17                           The noble obeyed the page.
+18    The neuroscientist overwhelmed the lab assistant.
+19    The lab assistant overwhelmed the neuroscientist.
+20             The miscreant kidnapped the beneficiary.
+21             The beneficiary kidnapped the miscreant.
+22                       The barber shaved the old man.
+23                       The old man shaved the barber.
+24                 The cynic dissuaded the participant.
+25                 The participant dissuaded the cynic.
+26         The hijacker terrified the president's wife.
+27         The president's wife terrified the hijacker.
+28                       The voter sealed the envelope.
+29                       The envelope sealed the voter.
+30                     The serviceman hoisted the flag.
+31                     The flag hoisted the serviceman.
+32                   The nomad cherished the clergyman.
+33                   The clergyman cherished the nomad.
+34                   The overseer provided the alcohol.
+35                   The alcohol provided the overseer.
+36                    The chauffeur drove the diplomat.
+37                    The diplomat drove the chauffeur.
+38                        The guide reached the target.
+39                        The target reached the guide.
+40                   The winemaker uncorked the bottle.
+41                   The bottle uncorked the winemaker.
+42                           The nanny tutored the boy.
+43                           The boy tutored the nanny.
+44                    The jury acquitted the economist.
+45                    The economist acquitted the jury.
+46          The tennis player thanked the chiropractor.
+47          The chiropractor thanked the tennis player.
+48             The policeman subdued the rabble-rouser.
+49             The rabble-rouser subdued the policeman.
+Name: Sentence, dtype: object","[0.82608696 0.72666667 0.79710145 0.46296296 0.88194444 0.0462963
+ 0.71212121 0.7173913  0.8030303  0.5        0.94927536 0.18666667
+ 0.85606061 0.2037037  0.79365079 0.1969697  0.5617284  0.34848485
+ 0.80555556 0.77272727 0.75       0.43939394 0.92857143 0.48484848
+ 0.84057971 0.69444444 0.84848485 0.40833333 0.94       0.04861111
+ 0.94666667 0.04545455 0.66666667 0.55555556 0.68666667 0.08333333
+ 0.8968254  0.16666667 0.87962963 0.37878788 0.99275362 0.06944444
+ 0.96969697 0.36666667 0.8245614  0.17424242 0.94202899 0.70666667
+ 0.90151515 0.55072464]","[0.9293593  0.8881421  1.2535954  1.7635145  0.80601907 1.0317472
+ 1.2563741  1.2386107  1.2830982  1.3195518  1.7180048  1.5129836
+ 1.1792074  1.1811942  1.7280295  1.7004755  0.6770177  0.23893261
+ 1.2432983  1.5723897  1.223475   1.2312133  1.0981917  1.0671204
+ 0.7292999  0.77125466 0.6424613  0.8673104  0.667114   1.0234388
+ 1.6159964  1.7980728  1.0449457  1.0204163  0.49799287 0.8644568
+ 1.199996   1.2554722  0.35880923 0.35263515 0.8749085  1.3065372
+ 0.45640743 0.37872434 1.2430192  1.1505413  1.4589032  1.4841042
+ 0.9918524  0.96289194]"
+3,"0             The flight-attendant dragged the luggage.
+1             The luggage dragged the flight-attendant.
+2                     The secretary organized the desk.
+3                     The desk organized the secretary.
+4     The neuroscientist overwhelmed the lab assistant.
+5     The lab assistant overwhelmed the neuroscientist.
+6                     The troublemaker crashed the car.
+7                     The car crashed the troublemaker.
+8                   The smuggler bribed the bureaucrat.
+9                   The bureaucrat bribed the smuggler.
+10                      The convict dreaded the prison.
+11                      The prison dreaded the convict.
+12                 The undertaker prepared the funeral.
+13                 The funeral prepared the undertaker.
+14                         The maid lifted the cushion.
+15                         The cushion lifted the maid.
+16                    The roommate adopted the newborn.
+17                    The newborn adopted the roommate.
+18                   The interviewee wrinkled the suit.
+19                   The suit wrinkled the interviewee.
+20                       The bookworm recited the poem.
+21                       The poem recited the bookworm.
+22                            The dad coddled the baby.
+23                            The baby coddled the dad.
+24                The clerk charged the elderly person.
+25                The elderly person charged the clerk.
+26                      The convalescent took the pill.
+27                      The pill took the convalescent.
+28                        The au pair spanked the girl.
+29                        The girl spanked the au pair.
+30                       The baron chose the successor.
+31                       The successor chose the baron.
+32                  The fisherman emptied the trashcan.
+33                  The trashcan emptied the fisherman.
+34                     The arsonist alarmed the vendor.
+35                     The vendor alarmed the arsonist.
+36                   The loudmouth tormented the loner.
+37                   The loner tormented the loudmouth.
+38                      The father pampered the infant.
+39                      The infant pampered the father.
+40                       The writer completed the book.
+41                       The book completed the writer.
+42                   The nurse helped the orthodontist.
+43                   The orthodontist helped the nurse.
+44             The policeman subdued the rabble-rouser.
+45             The rabble-rouser subdued the policeman.
+46                    The star autographed the picture.
+47                    The picture autographed the star.
+48                       The cop restrained the rioter.
+49                       The rioter restrained the cop.
+Name: Sentence, dtype: object","[0.925      0.15909091 0.97727273 0.04       0.80555556 0.77272727
+ 0.96969697 0.075      0.90666667 0.72727273 0.86805556 0.5530303
+ 0.90666667 0.11333333 0.98611111 0.15740741 0.84090909 0.02777778
+ 0.77777778 0.05555556 0.88636364 0.04166667 0.94166667 0.21212121
+ 0.85185185 0.41269841 0.79710145 0.08       0.71212121 0.27333333
+ 0.85416667 0.50694444 0.86363636 0.01449275 0.68333333 0.64
+ 0.91666667 0.62121212 0.98       0.15909091 0.99242424 0.10869565
+ 0.92424242 0.8        0.90151515 0.55072464 0.91666667 0.11594203
+ 0.95238095 0.52898551]","[0.6947916  1.0069089  1.3730702  1.4761405  0.9222     1.2946203
+ 0.8992887  1.0683231  0.5711196  0.6905127  0.8659151  0.94495445
+ 0.63186127 0.91943747 1.2385898  1.8159173  0.5570956  0.6624785
+ 0.7306581  0.7810307  0.18438965 0.2956329  0.81706125 1.1883402
+ 0.9971233  0.9815555  0.6524158  1.0308285  0.6171625  0.77055794
+ 0.5820201  0.8341089  0.3890167  0.61458427 1.303761   1.4528089
+ 0.746604   0.7720147  0.27131063 0.5698076  0.6321023  0.72736865
+ 1.2704186  0.9834843  1.1750126  0.8392356  0.19006878 0.45314938
+ 1.2023015  1.2604795 ]"
+4,"0               The loudmouth tormented the loner.
+1               The loner tormented the loudmouth.
+2                  The ditch digger bent the wire.
+3                  The wire bent the ditch digger.
+4                 The cyclist disobeyed the coach.
+5                 The coach disobeyed the cyclist.
+6                The reporter abandoned the story.
+7                The story abandoned the reporter.
+8                The troublemaker crashed the car.
+9                The car crashed the troublemaker.
+10                The alcoholic hassled the guest.
+11                The guest hassled the alcoholic.
+12       The groundskeeper changed the light bulb.
+13       The light bulb changed the groundskeeper.
+14           The anchorman garbled the expression.
+15           The expression garbled the anchorman.
+16         The cartoonist sketched the unicyclist.
+17         The unicyclist sketched the cartoonist.
+18              The nomad cherished the clergyman.
+19              The clergyman cherished the nomad.
+20           The announcer mispronounced the word.
+21           The word mispronounced the announcer.
+22         The singer disappointed the enthusiast.
+23         The enthusiast disappointed the singer.
+24           The robber burgled the industrialist.
+25           The industrialist burgled the robber.
+26        The extortionist menaced the legislator.
+27        The legislator menaced the extortionist.
+28               The sheriff inspected the estate.
+29               The estate inspected the sheriff.
+30                     The tourist exited the bus.
+31                     The bus exited the tourist.
+32           The artist portrayed the philosopher.
+33           The philosopher portrayed the artist.
+34           The clerk charged the elderly person.
+35           The elderly person charged the clerk.
+36    The hijacker terrified the president's wife.
+37    The president's wife terrified the hijacker.
+38             The exorcist vanquished the spirit.
+39             The spirit vanquished the exorcist.
+40        The policewoman handcuffed the offender.
+41        The offender handcuffed the policewoman.
+42                     The servant wiped the sink.
+43                     The sink wiped the servant.
+44                  The writer completed the book.
+45                  The book completed the writer.
+46              The urologist treated the widower.
+47              The widower treated the urologist.
+48                The sleuth located the attacker.
+49                The attacker located the sleuth.
+Name: Sentence, dtype: object","[0.91666667 0.62121212 0.74666667 0.14583333 0.95238095 0.49242424
+ 0.9375     0.09090909 0.96969697 0.075      0.98550725 0.69444444
+ 0.97727273 0.         0.875      0.28030303 0.95833333 0.41666667
+ 0.66666667 0.55555556 0.95138889 0.04       0.81818182 0.57575758
+ 0.75333333 0.32575758 0.71296296 0.65833333 0.90151515 0.13888889
+ 0.98333333 0.04545455 0.79861111 0.54320988 0.85185185 0.41269841
+ 0.84848485 0.40833333 0.83333333 0.26388889 0.98666667 0.27333333
+ 0.98611111 0.06060606 0.99242424 0.10869565 0.82575758 0.26
+ 0.76811594 0.75308642]","[ 1.1736298   1.1345146   0.8950203   1.1863799   1.2663016   0.9755332
+  0.901223    1.2030282   0.85637623  1.1293421   0.11794382 -0.07553405
+ -0.19985121  0.48560506  0.29554862  1.2229941   0.6269389   0.22402936
+  1.0545616   0.79699117  0.82696587  1.4567368   1.4950383   1.4449472
+  0.19913012  0.39475757  0.9167028   0.85518545  0.4332567   0.9349268
+  0.4190696   0.67534167  1.0339811   1.0267031   1.1251984   1.1020479
+  0.6906131   0.80370456  0.20795375  0.42640334  0.7521178   1.0744
+  0.8924528   1.3212409   0.46389967  0.70680934  0.29773074  0.4414454
+  1.2722337   1.0186377 ]"
+5,"0         The hacker memorized the password.
+1         The password memorized the hacker.
+2          The groupie attended the concert.
+3          The concert attended the groupie.
+4            The friend donned the pullover.
+5            The pullover donned the friend.
+6           The boyfriend basted the turkey.
+7           The turkey basted the boyfriend.
+8       The packrat concealed the stockpile.
+9       The stockpile concealed the packrat.
+10           The deckhand unlocked the door.
+11           The door unlocked the deckhand.
+12      The financier sponsored the project.
+13      The project sponsored the financier.
+14           The aviator maneuvered the jet.
+15           The jet maneuvered the aviator.
+16         The bookkeeper created the graph.
+17         The graph created the bookkeeper.
+18        The nurse helped the orthodontist.
+19        The orthodontist helped the nurse.
+20        The magician hypnotized the crowd.
+21        The crowd hypnotized the magician.
+22         The colonel supervised the cadet.
+23         The cadet supervised the colonel.
+24        The hit man killed the politician.
+25        The politician killed the hit man.
+26         The bailiff released the ruffian.
+27         The ruffian released the bailiff.
+28     The couch-potato forgot the umbrella.
+29     The umbrella forgot the couch-potato.
+30           The convict dreaded the prison.
+31           The prison dreaded the convict.
+32        The meat-eater devoured the filet.
+33        The filet devoured the meat-eater.
+34             The liar emulated the victor.
+35             The victor emulated the liar.
+36    The panelist congratulated the winner.
+37    The winner congratulated the panelist.
+38          The logger felled the pine tree.
+39          The pine tree felled the logger.
+40               The tycoon ran the company.
+41               The company ran the tycoon.
+42           The fan pestered the filmmaker.
+43           The filmmaker pestered the fan.
+44            The cop restrained the rioter.
+45            The rioter restrained the cop.
+46           The cellist received the prize.
+47           The prize received the cellist.
+48     The dressmaker attired the ballerina.
+49     The ballerina attired the dressmaker.
+Name: Sentence, dtype: object","[0.96527778 0.04545455 0.96       0.03333333 0.88333333 0.16
+ 0.92424242 0.01449275 0.74       0.51587302 0.82575758 0.02272727
+ 0.93478261 0.16025641 0.91666667 0.09259259 0.92753623 0.02666667
+ 0.92424242 0.8        0.79166667 0.22222222 0.92361111 0.25333333
+ 0.91666667 0.5        0.81944444 0.25694444 0.68115942 0.01333333
+ 0.86805556 0.5530303  0.88636364 0.01515152 0.71212121 0.7173913
+ 0.99074074 0.50833333 0.85833333 0.16666667 0.89855072 0.09722222
+ 0.9469697  0.48484848 0.95238095 0.52898551 0.91975309 0.05555556
+ 0.68518519 0.25      ]","[0.43655396 1.0849137  0.45768452 0.84293604 1.1593227  1.3571396
+ 0.3973589  1.198864   0.6681695  0.90989065 0.7061634  1.0792856
+ 1.0109749  1.5173912  0.8237872  1.1270885  0.40806103 1.4264865
+ 1.0102983  0.5127106  0.554544   0.7418566  0.4850254  1.0413971
+ 1.5610633  1.0467558  0.9113407  0.81336546 0.06668377 0.44187593
+ 1.1475611  1.2515512  1.0311732  1.3341703  0.80288506 0.69211054
+ 1.201664   1.6432714  0.25157404 0.7325573  1.2373419  1.6481795
+ 1.2207975  0.90384865 0.92544746 0.8872175  0.55287504 1.0616407
+ 0.6749306  0.5569    ]"
+6,"0                 The cellist received the prize.
+1                 The prize received the cellist.
+2               The colonel supervised the cadet.
+3               The cadet supervised the colonel.
+4               The negotiator saved the captive.
+5               The captive saved the negotiator.
+6     The tennis player thanked the chiropractor.
+7     The chiropractor thanked the tennis player.
+8          The panelist congratulated the winner.
+9          The winner congratulated the panelist.
+10       The attorney interrogated the bystander.
+11       The bystander interrogated the attorney.
+12                The call girl wasted the money.
+13                The money wasted the call girl.
+14                 The teacher bought the laptop.
+15                 The laptop bought the teacher.
+16             The novice irritated the virtuoso.
+17             The virtuoso irritated the novice.
+18        The pyromaniac unnerved the shopkeeper.
+19        The shopkeeper unnerved the pyromaniac.
+20                  The criminal feared the jail.
+21                  The jail feared the criminal.
+22             The joker tricked the distributor.
+23             The distributor tricked the joker.
+24               The hatter decorated the bowler.
+25               The bowler decorated the hatter.
+26           The representative gave the address.
+27           The address gave the representative.
+28                   The repairman fixed the tap.
+29                   The tap fixed the repairman.
+30              The secretary organized the desk.
+31              The desk organized the secretary.
+32              The jury acquitted the economist.
+33              The economist acquitted the jury.
+34         The adventurer requested the beverage.
+35         The beverage requested the adventurer.
+36            The mogul governed the corporation.
+37            The corporation governed the mogul.
+38                    The tourist exited the bus.
+39                    The bus exited the tourist.
+40          The exterminator filed the complaint.
+41          The complaint filed the exterminator.
+42              The townsperson farmed the grain.
+43              The grain farmed the townsperson.
+44             The receptionist tidied the table.
+45             The table tidied the receptionist.
+46            The headmaster reprimanded the kid.
+47            The kid reprimanded the headmaster.
+48             The admirer badgered the director.
+49             The director badgered the admirer.
+Name: Sentence, dtype: object","[0.91975309 0.05555556 0.92361111 0.25333333 0.94444444 0.43333333
+ 0.94202899 0.70666667 0.99074074 0.50833333 0.87121212 0.40972222
+ 0.84126984 0.01515152 1.         0.02666667 0.78472222 0.67592593
+ 0.79166667 0.53472222 0.94       0.11111111 0.89393939 0.58333333
+ 0.46527778 0.2962963  0.88666667 0.02083333 0.96527778 0.04545455
+ 0.97727273 0.04       0.8245614  0.17424242 0.88888889 0.07333333
+ 0.81333333 0.49242424 0.98333333 0.04545455 0.90972222 0.0530303
+ 0.77777778 0.04545455 0.93181818 0.05072464 0.97826087 0.27333333
+ 0.66666667 0.71428571]","[0.3161208  0.854752   0.5894832  1.0981913  1.1342857  1.1641946
+ 1.3175197  1.0621319  0.96899074 1.4171312  0.76840824 0.77976793
+ 0.4626693  0.97047395 0.6082129  1.3757212  0.8770825  0.8390524
+ 0.84193534 0.6578397  1.0721076  1.2992091  0.7860338  0.89471096
+ 1.0032444  0.59646267 0.48222965 1.0534325  0.22710222 0.83248657
+ 0.6905493  1.0025349  0.97478527 0.6274757  0.44569534 1.020453
+ 0.2645864  0.6900615  0.92178243 1.1849096  0.35677356 1.0224252
+ 0.08911699 0.98356    0.59257287 1.2854474  0.8083288  1.1412599
+ 0.97977656 0.79598325]"
+7,"0       The attorney interrogated the bystander.
+1       The bystander interrogated the attorney.
+2     The personal trainer weighed the Olympian.
+3     The Olympian weighed the personal trainer.
+4             The hit man killed the politician.
+5             The politician killed the hit man.
+6                     The page obeyed the noble.
+7                     The noble obeyed the page.
+8          The robber burgled the industrialist.
+9          The industrialist burgled the robber.
+10                    The king exiled the rebel.
+11                    The rebel exiled the king.
+12            The urologist treated the widower.
+13            The widower treated the urologist.
+14     The groundskeeper changed the light bulb.
+15     The light bulb changed the groundskeeper.
+16              The cyclist disobeyed the coach.
+17              The coach disobeyed the cyclist.
+18           The stewardess pulled the suitcase.
+19           The suitcase pulled the stewardess.
+20               The brunette tipped the busboy.
+21               The busboy tipped the brunette.
+22       The blackmailer threatened the senator.
+23       The senator threatened the blackmailer.
+24                The huntsman trapped the deer.
+25                The deer trapped the huntsman.
+26            The novice irritated the virtuoso.
+27            The virtuoso irritated the novice.
+28               The deckhand unlocked the door.
+29               The door unlocked the deckhand.
+30                 The owner evicted the tenant.
+31                 The tenant evicted the owner.
+32           The speaker engrossed the audience.
+33           The audience engrossed the speaker.
+34            The scientist discovered the cure.
+35            The cure discovered the scientist.
+36          The cynic dissuaded the participant.
+37          The participant dissuaded the cynic.
+38          The packrat concealed the stockpile.
+39          The stockpile concealed the packrat.
+40                The producer cast the actress.
+41                The actress cast the producer.
+42              The diver recharged the battery.
+43              The battery recharged the diver.
+44                The woman prepared the dinner.
+45                The dinner prepared the woman.
+46           The president pardoned the traitor.
+47           The traitor pardoned the president.
+48           The artisan trained the apprentice.
+49           The apprentice trained the artisan.
+Name: Sentence, dtype: object","[0.87121212 0.40972222 0.92666667 0.5530303  0.91666667 0.5
+ 0.5617284  0.34848485 0.75333333 0.32575758 0.84782609 0.43209877
+ 0.82575758 0.26       0.97727273 0.         0.95238095 0.49242424
+ 0.93939394 0.06944444 0.94444444 0.45138889 0.92424242 0.67361111
+ 0.97333333 0.26515152 0.78472222 0.67592593 0.82575758 0.02272727
+ 1.         0.125      0.98550725 0.36805556 0.97727273 0.07575758
+ 0.84057971 0.69444444 0.74       0.51587302 0.94927536 0.18666667
+ 0.85606061 0.02777778 0.98611111 0.07638889 0.88636364 0.08695652
+ 0.94927536 0.2173913 ]","[ 0.7883994   0.92986697  0.7365071   0.8298628   1.4215882   0.8963277
+  0.60189265 -0.43120986  0.37428778  0.550831    0.68808144  0.7302939
+  0.82981604  1.0300953  -0.27564365  0.5072047   1.4853342   1.3582032
+  0.04998368  0.81254643  0.54859847  0.8132116   1.1805437   1.25647
+  0.4498827   1.2657292   1.2605221   1.2829506   0.15182894  0.38300246
+  1.1167185   1.6117451   0.80836886  1.2134316   0.69695586  1.3315513
+  1.4418504   1.647064    0.3798229   0.7332975   1.0751255   1.2359979
+  0.37174338  0.87356967  0.17393798  0.7619783   1.6700785   1.716644
+  1.5685828   1.4058425 ]"
+8,"0              The driver transported the ambassador.
+1              The ambassador transported the driver.
+2                    The assassin shot the statesman.
+3                    The statesman shot the assassin.
+4                   The troublemaker crashed the car.
+5                   The car crashed the troublemaker.
+6          The police chief rewarded the firefighter.
+7          The firefighter rewarded the police chief.
+8                      The cop restrained the rioter.
+9                      The rioter restrained the cop.
+10             The adventurer requested the beverage.
+11             The beverage requested the adventurer.
+12                 The winemaker uncorked the bottle.
+13                 The bottle uncorked the winemaker.
+14        The manicurist rescheduled the appointment.
+15        The appointment rescheduled the manicurist.
+16                  The star autographed the picture.
+17                  The picture autographed the star.
+18                The patient swallowed the medicine.
+19                The medicine swallowed the patient.
+20                    The father pampered the infant.
+21                    The infant pampered the father.
+22                   The milliner adorned the fedora.
+23                   The fedora adorned the milliner.
+24    The environmentalist cautioned the tobacconist.
+25    The tobacconist cautioned the environmentalist.
+26                The fisherman emptied the trashcan.
+27                The trashcan emptied the fisherman.
+28                 The receptionist tidied the table.
+29                 The table tidied the receptionist.
+30                 The meat-eater devoured the filet.
+31                 The filet devoured the meat-eater.
+32              The couch-potato forgot the umbrella.
+33              The umbrella forgot the couch-potato.
+34               The representative gave the address.
+35               The address gave the representative.
+36                     The amateur irked the maestro.
+37                     The maestro irked the amateur.
+38                  The reporter abandoned the story.
+39                  The story abandoned the reporter.
+40                 The overseer provided the alcohol.
+41                 The alcohol provided the overseer.
+42            The terrorist petrified the first lady.
+43            The first lady petrified the terrorist.
+44              The confectioner sprinkled the sugar.
+45              The sugar sprinkled the confectioner.
+46                 The joker tricked the distributor.
+47                 The distributor tricked the joker.
+48                  The villager cultivated the crop.
+49                  The crop cultivated the villager.
+Name: Sentence, dtype: object","[0.97619048 0.34782609 0.91666667 0.44444444 0.96969697 0.075
+ 0.71929825 0.6        0.95238095 0.52898551 0.88888889 0.07333333
+ 0.99275362 0.06944444 0.91666667 0.12878788 0.91666667 0.11594203
+ 0.9691358  0.07142857 0.98       0.15909091 0.81666667 0.36666667
+ 0.74       0.58333333 0.86363636 0.01449275 0.93181818 0.05072464
+ 0.88636364 0.01515152 0.68115942 0.01333333 0.88666667 0.02083333
+ 0.84666667 0.79545455 0.9375     0.09090909 0.68666667 0.08333333
+ 0.84782609 0.48550725 0.95238095 0.00724638 0.89393939 0.58333333
+ 0.96212121 0.05797101]","[ 2.9449868e-01  2.8419518e-01  7.9680800e-01  8.3032918e-01
+  7.5050664e-01  1.4040272e+00  4.0167880e-01  5.3308797e-01
+  6.3681483e-01  7.7436948e-01  4.4459653e-01  8.8222528e-01
+  6.2276292e-01  8.9974046e-01  6.5471292e-01  1.5525558e+00
+ -3.2235789e-01 -8.6322069e-02  1.7572904e-01  2.7933335e-01
+ -3.5331488e-02  6.2815881e-01  2.6959062e-01  4.4238114e-01
+  1.0801289e+00  1.1276228e+00 -2.5259566e-01 -4.3967485e-02
+  2.8657699e-01  1.0294302e+00  3.2502532e-01  6.6046309e-01
+ -2.0450377e-01  1.1557078e-01  7.0595741e-04  5.0581384e-01
+  2.1251893e-01  4.3345213e-02  3.0712962e-01  1.0091460e+00
+  3.2686925e-01  1.1033947e+00  1.2836325e+00  1.4316537e+00
+ -2.1196914e-01  2.6774287e-01  4.8483729e-01  5.7505012e-01
+ -3.1254792e-01  4.5945668e-01]"
+9,"0                    The charlatan burned the contract.
+1                    The contract burned the charlatan.
+2                     The colonel supervised the cadet.
+3                     The cadet supervised the colonel.
+4                      The hatter decorated the bowler.
+5                      The bowler decorated the hatter.
+6     The neuroscientist overwhelmed the lab assistant.
+7     The lab assistant overwhelmed the neuroscientist.
+8                   The fisherman emptied the trashcan.
+9                   The trashcan emptied the fisherman.
+10          The TV station head promoted the newsagent.
+11          The newsagent promoted the TV station head.
+12               The cashier billed the senior citizen.
+13               The senior citizen billed the cashier.
+14           The police chief rewarded the firefighter.
+15           The firefighter rewarded the police chief.
+16                     The seamstress ironed the shirt.
+17                     The shirt ironed the seamstress.
+18                 The deceiver imitated the conqueror.
+19                 The conqueror imitated the deceiver.
+20                    The chauffeur drove the diplomat.
+21                    The diplomat drove the chauffeur.
+22                         The uncle hung the ornament.
+23                         The ornament hung the uncle.
+24                    The orderly assisted the dentist.
+25                    The dentist assisted the orderly.
+26                       The crackhead smoked the pipe.
+27                       The pipe smoked the crackhead.
+28                     The mechanic berated the intern.
+29                     The intern berated the mechanic.
+30                The critic attacked the conservative.
+31                The conservative attacked the critic.
+32                  The headmaster reprimanded the kid.
+33                  The kid reprimanded the headmaster.
+34                    The sheriff inspected the estate.
+35                    The estate inspected the sheriff.
+36                The supremacist established the fund.
+37                The fund established the supremacist.
+38                  The mogul governed the corporation.
+39                  The corporation governed the mogul.
+40                      The traveler lost the souvenir.
+41                      The souvenir lost the traveler.
+42                     The boyfriend basted the turkey.
+43                     The turkey basted the boyfriend.
+44                    The bookkeeper created the graph.
+45                    The graph created the bookkeeper.
+46                    The star autographed the picture.
+47                    The picture autographed the star.
+48                       The amateur irked the maestro.
+49                       The maestro irked the amateur.
+Name: Sentence, dtype: object","[0.83333333 0.06818182 0.92361111 0.25333333 0.46527778 0.2962963
+ 0.80555556 0.77272727 0.86363636 0.01449275 0.88194444 0.64583333
+ 0.9469697  0.24       0.71929825 0.6        0.92424242 0.
+ 0.71666667 0.50666667 0.8968254  0.16666667 0.98611111 0.00757576
+ 0.63888889 0.75       0.90666667 0.01515152 0.81481481 0.63888889
+ 0.84090909 0.90277778 0.97826087 0.27333333 0.90151515 0.13888889
+ 0.7826087  0.26       0.81333333 0.49242424 0.94       0.00694444
+ 0.92424242 0.01449275 0.92753623 0.02666667 0.91666667 0.11594203
+ 0.84666667 0.79545455]","[ 0.29783535  0.8210726   0.39506435  1.2834082   0.9160471   0.34737206
+  0.65474224  0.8251867   0.01418781  0.46289158  1.5943317   1.4403601
+  1.1149435   0.9765425   0.9364891   0.9811163   0.43380356  0.5534754
+  0.995801    0.89641476  0.88345337  1.034687    0.43775082  0.87560654
+  1.0814981   0.669116    0.16776085  0.6430788   0.3947296   0.45680714
+  1.1553621   1.1723185   0.54961395  0.73294353  0.12855816  1.5169611
+  1.06956     1.5858994   0.70537853  1.2201538   0.5666714   0.9459944
+  0.41975975  1.06849     0.3504305   1.6029396  -0.26739407  0.11186123
+  0.7638769   0.7376814 ]"
+10,"0                The financier sponsored the project.
+1                The project sponsored the financier.
+2                  The operative blew the assignment.
+3                  The assignment blew the operative.
+4                       The warden caught the inmate.
+5                       The inmate caught the warden.
+6                    The diver recharged the battery.
+7                    The battery recharged the diver.
+8                     The lion chased the tour-guide.
+9                     The tour-guide chased the lion.
+10                The mogul governed the corporation.
+11                The corporation governed the mogul.
+12                    The call girl wasted the money.
+13                    The money wasted the call girl.
+14                       The tanner placed the order.
+15                       The order placed the tanner.
+16                     The author finished the novel.
+17                     The novel finished the author.
+18                 The lawyer questioned the witness.
+19                 The witness questioned the lawyer.
+20              The ecologist warned the cigar-maker.
+21              The cigar-maker warned the ecologist.
+22                    The playboy courted the damsel.
+23                    The damsel courted the playboy.
+24                The exorcist vanquished the spirit.
+25                The spirit vanquished the exorcist.
+26                   The paramedic revived the youth.
+27                   The youth revived the paramedic.
+28    The environmentalist cautioned the tobacconist.
+29    The tobacconist cautioned the environmentalist.
+30             The driver transported the ambassador.
+31             The ambassador transported the driver.
+32                 The loudmouth tormented the loner.
+33                 The loner tormented the loudmouth.
+34         The police chief rewarded the firefighter.
+35         The firefighter rewarded the police chief.
+36              The imitator fooled the investigator.
+37              The investigator fooled the imitator.
+38                    The friend donned the pullover.
+39                    The pullover donned the friend.
+40                   The mechanic berated the intern.
+41                   The intern berated the mechanic.
+42             The instructor purchased the computer.
+43             The computer purchased the instructor.
+44                      The au pair spanked the girl.
+45                      The girl spanked the au pair.
+46              The robber burgled the industrialist.
+47              The industrialist burgled the robber.
+48                       The repairman fixed the tap.
+49                       The tap fixed the repairman.
+Name: Sentence, dtype: object","[0.93478261 0.16025641 0.91666667 0.18518519 0.96376812 0.30434783
+ 0.85606061 0.02777778 0.89855072 0.35507246 0.81333333 0.49242424
+ 0.84126984 0.01515152 0.81333333 0.13492063 1.         0.08
+ 1.         0.42105263 0.84848485 0.69565217 0.88888889 0.74691358
+ 0.83333333 0.26388889 0.88       0.49242424 0.74       0.58333333
+ 0.97619048 0.34782609 0.91666667 0.62121212 0.71929825 0.6
+ 0.84126984 0.6969697  0.88333333 0.16       0.81481481 0.63888889
+ 0.95333333 0.0530303  0.71212121 0.27333333 0.75333333 0.32575758
+ 0.96527778 0.04545455]","[ 0.347229    0.6652527   0.06498337  0.4072876   0.56139374  0.8433285
+ -0.18174171  0.43582916  1.3644981   1.0852737   0.13937569  1.0900536
+  0.1846199   0.9027176   0.05464554  0.4206047   0.22851562  0.98166656
+  0.23192406  0.5798073   0.402874    0.59942627  0.6667366   0.4565258
+  0.01488686  0.39595032  0.6511383   0.78914833  0.9207268   0.9258251
+  0.35482788  0.70821     0.42554855  0.10226822  0.8631058   0.882473
+  0.852129    0.581337    0.9099846   0.94978714  0.37550735  0.4219799
+  0.01713753  0.56025505 -0.07691193 -0.24810791  0.84653854  0.61299896
+  0.40066528  1.3358841 ]"
+11,"0                The milliner adorned the fedora.
+1                The fedora adorned the milliner.
+2                  The zookeeper fed the giraffe.
+3                  The giraffe fed the zookeeper.
+4             The EMT resuscitated the youngster.
+5             The youngster resuscitated the EMT.
+6                 The fan pestered the filmmaker.
+7                 The filmmaker pestered the fan.
+8                 The playboy courted the damsel.
+9                 The damsel courted the playboy.
+10               The mechanic berated the intern.
+11               The intern berated the mechanic.
+12             The winemaker uncorked the bottle.
+13             The bottle uncorked the winemaker.
+14          The dressmaker attired the ballerina.
+15          The ballerina attired the dressmaker.
+16            The stewardess pulled the suitcase.
+17            The suitcase pulled the stewardess.
+18           The deceiver imitated the conqueror.
+19           The conqueror imitated the deceiver.
+20             The receptionist tidied the table.
+21             The table tidied the receptionist.
+22           The domestic cleaned the wash basin.
+23           The wash basin cleaned the domestic.
+24                    The tycoon ran the company.
+25                    The company ran the tycoon.
+26                The tailor costumed the dancer.
+27                The dancer costumed the tailor.
+28               The sleuth located the attacker.
+29               The attacker located the sleuth.
+30               The nun reproached the hedonist.
+31               The hedonist reproached the nun.
+32                 The poker player won the game.
+33                 The game won the poker player.
+34             The nurse helped the orthodontist.
+35             The orthodontist helped the nurse.
+36    The tennis player thanked the chiropractor.
+37    The chiropractor thanked the tennis player.
+38                 The crackhead smoked the pipe.
+39                 The pipe smoked the crackhead.
+40             The scientist discovered the cure.
+41             The cure discovered the scientist.
+42              The groupie attended the concert.
+43              The concert attended the groupie.
+44            The house sitter watered the plant.
+45            The plant watered the house sitter.
+46                     The nanny tutored the boy.
+47                     The boy tutored the nanny.
+48                  The advisor edited the paper.
+49                  The paper edited the advisor.
+Name: Sentence, dtype: object","[0.81666667 0.36666667 0.97333333 0.03472222 0.88095238 0.41666667
+ 0.9469697  0.48484848 0.88888889 0.74691358 0.81481481 0.63888889
+ 0.99275362 0.06944444 0.68518519 0.25       0.93939394 0.06944444
+ 0.71666667 0.50666667 0.93181818 0.05072464 0.55555556 0.11805556
+ 0.89855072 0.09722222 0.82575758 0.34166667 0.76811594 0.75308642
+ 0.76388889 0.54320988 0.99242424 0.04166667 0.92424242 0.8
+ 0.94202899 0.70666667 0.90666667 0.01515152 0.97727273 0.07575758
+ 0.96       0.03333333 0.89393939 0.         0.96969697 0.36666667
+ 0.9        0.        ]","[ 0.21813488  0.0953064  -0.13244247  0.07888412  0.5206928   0.37178802
+  0.8410845   0.70480347 -0.22426033 -0.2879429   0.43654156  0.7277422
+ -0.16004848  0.37119293  0.20215607  0.01463127 -0.5916748   0.45776176
+  1.2058077   1.0255909   0.00961113  0.7713089  -0.29016495 -0.12888145
+  0.3122797   0.80270576  0.5038662   0.43090248  1.4637299   1.3160229
+  1.2549725   1.0481033  -0.46591568  0.29363346  0.8768606   0.8053131
+  1.2803545   0.84709644  0.2575302   0.5208044   0.43451977  1.1253014
+  0.392457    0.8651552   0.26056767  0.9703274   0.7706013   0.6791172
+ -0.2156496   0.6571665 ]"
+12,"0                 The cook grilled the octopus.
+1                 The octopus grilled the cook.
+2           The mogul governed the corporation.
+3           The corporation governed the mogul.
+4               The bellboy erased the message.
+5               The message erased the bellboy.
+6              The schoolgirl borrowed the key.
+7              The key borrowed the schoolgirl.
+8        The driver transported the ambassador.
+9        The ambassador transported the driver.
+10            The secretary organized the desk.
+11            The desk organized the secretary.
+12         The constable examined the property.
+13         The property examined the constable.
+14          The patient swallowed the medicine.
+15          The medicine swallowed the patient.
+16    The pessimist discouraged the contestant.
+17    The contestant discouraged the pessimist.
+18        The critic attacked the conservative.
+19        The conservative attacked the critic.
+20           The thief robbed the manufacturer.
+21           The manufacturer robbed the thief.
+22               The freshman dodged the bully.
+23               The bully dodged the freshman.
+24               The amateur irked the maestro.
+25               The maestro irked the amateur.
+26     The policewoman handcuffed the offender.
+27     The offender handcuffed the policewoman.
+28              The convalescent took the pill.
+29              The pill took the convalescent.
+30           The joker tricked the distributor.
+31           The distributor tricked the joker.
+32              The playboy courted the damsel.
+33              The damsel courted the playboy.
+34        The clerk charged the elderly person.
+35        The elderly person charged the clerk.
+36          The artisan trained the apprentice.
+37          The apprentice trained the artisan.
+38                The liar emulated the victor.
+39                The victor emulated the liar.
+40          The headmaster reprimanded the kid.
+41          The kid reprimanded the headmaster.
+42            The handyman repaired the faucet.
+43            The faucet repaired the handyman.
+44        The congressman delivered the speech.
+45        The speech delivered the congressman.
+46           The meat-eater devoured the filet.
+47           The filet devoured the meat-eater.
+48          The house sitter watered the plant.
+49          The plant watered the house sitter.
+Name: Sentence, dtype: object","[0.96212121 0.04166667 0.81333333 0.49242424 0.77777778 0.11363636
+ 0.96212121 0.02272727 0.97619048 0.34782609 0.97727273 0.04
+ 0.93181818 0.         0.9691358  0.07142857 0.90123457 0.54545455
+ 0.84090909 0.90277778 0.83333333 0.21333333 0.84       0.52
+ 0.84666667 0.79545455 0.98666667 0.27333333 0.79710145 0.08
+ 0.89393939 0.58333333 0.88888889 0.74691358 0.85185185 0.41269841
+ 0.94927536 0.2173913  0.71212121 0.7173913  0.97826087 0.27333333
+ 0.98       0.0530303  1.         0.02272727 0.88636364 0.01515152
+ 0.89393939 0.        ]","[ 0.6191006   0.89218044  0.27985477  0.94355583  0.25832176  0.57180977
+  0.2722292   0.2113657   0.24769497  0.59353447 -0.20701122  0.15510178
+  0.10580349  0.3946762   0.94839     0.43749905  1.1436548   0.9353018
+  1.2662582   0.85294724  0.65477276  0.7629223   0.75916386  0.5279541
+  0.3532505   0.44367886  0.01084423  0.71194077 -0.16907978  0.42242527
+  1.046771    0.83027744  0.02174377  0.09118652  0.4557848   0.93935204
+  0.9187689   0.666564   -0.29428387  0.01355171 -0.11054897  0.28509045
+ -0.01070404  0.14642334  0.1350174   0.61675453  0.84687614  1.161686
+ -0.22237682  0.6265249 ]"
+13,"0            The cryptographer sent the letter.
+1            The letter sent the cryptographer.
+2        The impersonator conned the inspector.
+3        The inspector conned the impersonator.
+4                The producer cast the actress.
+5                The actress cast the producer.
+6             The painter depicted the thinker.
+7             The thinker depicted the painter.
+8              The seamstress ironed the shirt.
+9              The shirt ironed the seamstress.
+10        The dressmaker attired the ballerina.
+11        The ballerina attired the dressmaker.
+12                  The servant wiped the sink.
+13                  The sink wiped the servant.
+14                 The uncle hung the ornament.
+15                 The ornament hung the uncle.
+16             The researcher found the remedy.
+17             The remedy found the researcher.
+18           The urologist treated the widower.
+19           The widower treated the urologist.
+20               The poker player won the game.
+21               The game won the poker player.
+22         The archaeologist canceled the trip.
+23         The trip canceled the archaeologist.
+24             The assassin shot the statesman.
+25             The statesman shot the assassin.
+26            The governess instructed the lad.
+27            The lad instructed the governess.
+28     The professional supported the beginner.
+29     The beginner supported the professional.
+30               The pixie mesmerized the ogre.
+31               The ogre mesmerized the pixie.
+32    The streetwalker undercharged the seaman.
+33    The seaman undercharged the streetwalker.
+34                The au pair spanked the girl.
+35                The girl spanked the au pair.
+36     The policewoman handcuffed the offender.
+37     The offender handcuffed the policewoman.
+38                  The lady cooked the supper.
+39                  The supper cooked the lady.
+40           The operative blew the assignment.
+41           The assignment blew the operative.
+42              The cellist received the prize.
+43              The prize received the cellist.
+44             The paramedic revived the youth.
+45             The youth revived the paramedic.
+46             The vacationer left the shuttle.
+47             The shuttle left the vacationer.
+48            The sheriff inspected the estate.
+49            The estate inspected the sheriff.
+Name: Sentence, dtype: object","[0.90909091 0.11666667 0.83333333 0.57638889 0.94927536 0.18666667
+ 0.89473684 0.45454545 0.92424242 0.         0.68518519 0.25
+ 0.98611111 0.06060606 0.98611111 0.00757576 0.90972222 0.15432099
+ 0.82575758 0.26       0.99242424 0.04166667 0.96296296 0.06818182
+ 0.91666667 0.44444444 0.81818182 0.49242424 0.94871795 0.67361111
+ 0.42424242 0.49242424 0.62       0.50757576 0.71212121 0.27333333
+ 0.98666667 0.27333333 0.98484848 0.03623188 0.91666667 0.18518519
+ 0.91975309 0.05555556 0.88       0.49242424 0.94202899 0.47222222
+ 0.90151515 0.13888889]","[ 0.7225728   1.2004137   0.987216    1.1547804   1.209095    1.9059458
+  0.85475445  0.6606107   0.8308253   1.3396583   0.94499683  0.9065261
+ -0.55105114  0.15062332 -0.16964054  0.5433893   0.9220748   0.84853745
+  0.44266987  0.5595279  -0.6422777  -0.15606833  0.3540039   0.6772747
+  0.31045818  0.18462896  0.13379526  0.42029667 -0.127491   -0.04106522
+ -0.2260375  -0.32446194 -0.16444731 -0.09763908 -0.0707736   0.04002905
+ -0.09364891  0.33937168  0.10674858  0.5579214   0.71480274  1.1122322
+ -0.36292553  0.2606988  -0.08786774  0.18468046 -0.05793476  0.5394583
+  1.2704287   1.632577  ]"
+14,"0                The negotiator saved the captive.
+1                The captive saved the negotiator.
+2                 The milliner adorned the fedora.
+3                 The fedora adorned the milliner.
+4           The impersonator conned the inspector.
+5           The inspector conned the impersonator.
+6                    The guide reached the target.
+7                    The target reached the guide.
+8                   The cop restrained the rioter.
+9                   The rioter restrained the cop.
+10               The master encouraged the rookie.
+11               The rookie encouraged the master.
+12      The police chief rewarded the firefighter.
+13      The firefighter rewarded the police chief.
+14    The hijacker terrified the president's wife.
+15    The president's wife terrified the hijacker.
+16     The tennis player thanked the chiropractor.
+17     The chiropractor thanked the tennis player.
+18              The joker tricked the distributor.
+19              The distributor tricked the joker.
+20               The prankster duped the marketer.
+21               The marketer duped the prankster.
+22                  The baron chose the successor.
+23                  The successor chose the baron.
+24                  The huntsman trapped the deer.
+25                  The deer trapped the huntsman.
+26           The ecologist warned the cigar-maker.
+27           The cigar-maker warned the ecologist.
+28        The nutritionist detested the marmalade.
+29        The marmalade detested the nutritionist.
+30                  The crackhead smoked the pipe.
+31                  The pipe smoked the crackhead.
+32              The scientist discovered the cure.
+33              The cure discovered the scientist.
+34                The logger felled the pine tree.
+35                The pine tree felled the logger.
+36                  The pixie mesmerized the ogre.
+37                  The ogre mesmerized the pixie.
+38                    The carnivore ate the steak.
+39                    The steak ate the carnivore.
+40                         The man drank the soda.
+41                         The soda drank the man.
+42                     The bum stole the necklace.
+43                     The necklace stole the bum.
+44         The cardiologist discredited the quack.
+45         The quack discredited the cardiologist.
+46                 The forger shipped the package.
+47                 The package shipped the forger.
+48                 The brunette tipped the busboy.
+49                 The busboy tipped the brunette.
+Name: Sentence, dtype: object","[0.94444444 0.43333333 0.81666667 0.36666667 0.83333333 0.57638889
+ 0.87962963 0.37878788 0.95238095 0.52898551 0.92666667 0.65151515
+ 0.71929825 0.6        0.84848485 0.40833333 0.94202899 0.70666667
+ 0.89393939 0.58333333 0.95454545 0.70289855 0.85416667 0.50694444
+ 0.97333333 0.26515152 0.84848485 0.69565217 0.86363636 0.1884058
+ 0.90666667 0.01515152 0.97727273 0.07575758 0.85833333 0.16666667
+ 0.42424242 0.49242424 0.96       0.03030303 0.98484848 0.03472222
+ 0.81060606 0.00666667 0.79710145 0.46296296 0.86111111 0.07017544
+ 0.94444444 0.45138889]","[ 0.31143236  0.2827897   0.16846228  0.42198038  0.5487113   0.443882
+ -0.51491404 -0.6081462   0.72871256  1.0576191   1.2365122   1.3375511
+  1.2869592   1.2737489   0.2072959   0.826735    0.9637027   0.40218306
+ -0.2665     -0.2047     -0.02971888  0.20356941 -0.71394825 -0.10061598
+ -0.04918718  0.37510157  1.3016582   1.8264613  -0.25252676  0.24999762
+  0.8530946   0.97594404  0.5919423   0.7273159   0.06844378  0.4680252
+  0.03447485 -0.21095324 -0.11800289 -0.02341557  0.44862986  1.1096582
+ -0.43402052 -0.22056103 -0.08559084  0.15188742 -0.53171396  0.09384298
+  0.89985514  0.6013117 ]"
+15,"0                       The drunk bothered the visitor.
+1                       The visitor bothered the drunk.
+2                         The minuteman loaded the gun.
+3                         The gun loaded the minuteman.
+4                      The cyclist disobeyed the coach.
+5                      The coach disobeyed the cyclist.
+6                           The chef sauteed the squid.
+7                           The squid sauteed the chef.
+8                          The repairman fixed the tap.
+9                          The tap fixed the repairman.
+10             The attorney interrogated the bystander.
+11             The bystander interrogated the attorney.
+12                           The boss fired the worker.
+13                           The worker fired the boss.
+14                        The cook grilled the octopus.
+15                        The octopus grilled the cook.
+16                    The jury acquitted the economist.
+17                    The economist acquitted the jury.
+18                The bookseller calculated the profit.
+19                The profit calculated the bookseller.
+20    The neuroscientist overwhelmed the lab assistant.
+21    The lab assistant overwhelmed the neuroscientist.
+22                     The mechanic berated the intern.
+23                     The intern berated the mechanic.
+24                      The pilot steered the airplane.
+25                      The airplane steered the pilot.
+26               The panelist congratulated the winner.
+27               The winner congratulated the panelist.
+28                  The headmaster reprimanded the kid.
+29                  The kid reprimanded the headmaster.
+30                  The sociologist accepted the offer.
+31                  The offer accepted the sociologist.
+32                       The raider caught the illness.
+33                       The illness caught the raider.
+34                   The scientist discovered the cure.
+35                   The cure discovered the scientist.
+36                       The soldier raised the banner.
+37                       The banner raised the soldier.
+38                    The bailiff released the ruffian.
+39                    The ruffian released the bailiff.
+40                     The technician rebuked the aide.
+41                     The aide rebuked the technician.
+42           The police chief rewarded the firefighter.
+43           The firefighter rewarded the police chief.
+44                        The liar emulated the victor.
+45                        The victor emulated the liar.
+46                      The convalescent took the pill.
+47                      The pill took the convalescent.
+48                    The craftsman taught the trainee.
+49                    The trainee taught the craftsman.
+Name: Sentence, dtype: object","[0.92028986 0.81481481 0.89583333 0.04166667 0.95238095 0.49242424
+ 0.84126984 0.         0.96527778 0.04545455 0.87121212 0.40972222
+ 0.96666667 0.05333333 0.96212121 0.04166667 0.8245614  0.17424242
+ 0.97727273 0.         0.80555556 0.77272727 0.81481481 0.63888889
+ 0.97530864 0.06349206 0.99074074 0.50833333 0.97826087 0.27333333
+ 0.94444444 0.09027778 0.75757576 0.34722222 0.97727273 0.07575758
+ 0.97101449 0.05797101 0.81944444 0.25694444 0.74166667 0.68939394
+ 0.71929825 0.6        0.71212121 0.7173913  0.79710145 0.08
+ 0.94166667 0.40151515]","[ 1.0099778   1.2008853   0.62605906  0.64166784  0.73786116  0.8834276
+  0.7887511   1.2344174   0.33694315  0.49303198  0.45186853  0.42749166
+  0.82977533  0.84784317  0.70135736  0.9249387   0.2594471   0.09223175
+  1.3574471   0.7688422   1.0367322   1.0910087   0.9620147   1.4931831
+  0.25019073  1.1954422   1.8773947   2.2542155   0.0717268   0.88179636
+  0.9890075   1.3137536   0.80200434  0.82767344  1.2278752   1.5392499
+  0.6607795   0.7383542   1.0034347   1.2029586   1.2715187   1.6652105
+  1.8485456   1.6302516   0.9993291   1.494612   -0.40526915 -0.10816574
+  0.22046232  0.97644234]"
+16,"0                The bellboy erased the message.
+1                The message erased the bellboy.
+2             The novice irritated the virtuoso.
+3             The virtuoso irritated the novice.
+4      The groundskeeper changed the light bulb.
+5      The light bulb changed the groundskeeper.
+6                   The marcher sang the anthem.
+7                   The anthem sang the marcher.
+8                        The man drank the soda.
+9                        The soda drank the man.
+10         The congressman delivered the speech.
+11         The speech delivered the congressman.
+12    The travel-agent photocopied the passport.
+13    The passport photocopied the travel-agent.
+14          The masseuse relaxed the linebacker.
+15          The linebacker relaxed the masseuse.
+16         The confectioner sprinkled the sugar.
+17         The sugar sprinkled the confectioner.
+18      The policewoman handcuffed the offender.
+19      The offender handcuffed the policewoman.
+20               The ditch digger bent the wire.
+21               The wire bent the ditch digger.
+22                 The advisor edited the paper.
+23                 The paper edited the advisor.
+24           The artisan trained the apprentice.
+25           The apprentice trained the artisan.
+26     The anthropologist studied the tribesman.
+27     The tribesman studied the anthropologist.
+28               The aviator maneuvered the jet.
+29               The jet maneuvered the aviator.
+30        The copycat redecorated the apartment.
+31        The apartment redecorated the copycat.
+32              The sleuth located the attacker.
+33              The attacker located the sleuth.
+34                 The guide reached the target.
+35                 The target reached the guide.
+36         The announcer mispronounced the word.
+37         The word mispronounced the announcer.
+38           The president pardoned the traitor.
+39           The traitor pardoned the president.
+40                The accountant made the chart.
+41                The chart made the accountant.
+42                The raider caught the illness.
+43                The illness caught the raider.
+44                 The criminal feared the jail.
+45                 The jail feared the criminal.
+46                The producer cast the actress.
+47                The actress cast the producer.
+48             The bailiff released the ruffian.
+49             The ruffian released the bailiff.
+Name: Sentence, dtype: object","[0.77777778 0.11363636 0.78472222 0.67592593 0.97727273 0.
+ 0.88194444 0.0462963  0.98484848 0.03472222 1.         0.02272727
+ 0.98550725 0.00724638 0.93055556 0.25       0.95238095 0.00724638
+ 0.98666667 0.27333333 0.74666667 0.14583333 0.9        0.
+ 0.94927536 0.2173913  0.86231884 0.57971014 0.91666667 0.09259259
+ 0.78703704 0.06666667 0.76811594 0.75308642 0.87962963 0.37878788
+ 0.95138889 0.04       0.88636364 0.08695652 1.         0.15
+ 0.75757576 0.34722222 0.94       0.11111111 0.94927536 0.18666667
+ 0.81944444 0.25694444]","[-0.03374982  0.33058357  0.88070416  0.83903456  0.8926654   1.1005366
+  0.24460125  1.2802193   0.52782774  1.4373641   0.34985542  1.1389549
+  0.38876987  0.9743457   0.6085782   0.39376593 -0.4258139  -0.2886045
+  0.441149    0.86327434  0.32450414  0.49337888 -0.24784303  0.73970985
+  1.4254482   1.3996522   0.63157725  0.92850304  0.46276784  0.8193126
+  0.63737965  0.6533201   1.0084782   1.1038423   0.61281204  0.6156945
+  0.47251582  0.6419027   0.7482271   0.7017231  -0.15554357  0.3196051
+  0.46513295  1.0717432   0.4511974   0.5644121   0.6780112   0.9795804
+  0.6804249   0.8388157 ]"
+17,"0     The neuroscientist overwhelmed the lab assistant.
+1     The lab assistant overwhelmed the neuroscientist.
+2                The warmonger terrorized the gunsmith.
+3                The gunsmith terrorized the warmonger.
+4                       The lion chased the tour-guide.
+5                       The tour-guide chased the lion.
+6                           The chef sauteed the squid.
+7                           The squid sauteed the chef.
+8                 The confectioner sprinkled the sugar.
+9                 The sugar sprinkled the confectioner.
+10                    The handyman repaired the faucet.
+11                    The faucet repaired the handyman.
+12                       The cop restrained the rioter.
+13                       The rioter restrained the cop.
+14                    The chauffeur drove the diplomat.
+15                    The diplomat drove the chauffeur.
+16                        The owner evicted the tenant.
+17                        The tenant evicted the owner.
+18                     The assassin shot the statesman.
+19                     The statesman shot the assassin.
+20             The professional supported the beginner.
+21             The beginner supported the professional.
+22                 The businessman employed the expert.
+23                 The expert employed the businessman.
+24                    The guarantor initialed the form.
+25                    The form initialed the guarantor.
+26                        The advisor edited the paper.
+27                        The paper edited the advisor.
+28                       The author finished the novel.
+29                       The novel finished the author.
+30                           The king exiled the rebel.
+31                           The rebel exiled the king.
+32                        The agent failed the mission.
+33                        The mission failed the agent.
+34                The ecologist warned the cigar-maker.
+35                The cigar-maker warned the ecologist.
+36            The pessimist discouraged the contestant.
+37            The contestant discouraged the pessimist.
+38             The librarian admonished the plagiarist.
+39             The plagiarist admonished the librarian.
+40                  The humorist verified the schedule.
+41                  The schedule verified the humorist.
+42                       The banker funded the program.
+43                       The program funded the banker.
+44                The anchorman garbled the expression.
+45                The expression garbled the anchorman.
+46            The reviewer criticized the right-winger.
+47            The right-winger criticized the reviewer.
+48                      The ditch digger bent the wire.
+49                      The wire bent the ditch digger.
+Name: Sentence, dtype: object","[0.80555556 0.77272727 0.68666667 0.56818182 0.89855072 0.35507246
+ 0.84126984 0.         0.95238095 0.00724638 0.98       0.0530303
+ 0.95238095 0.52898551 0.8968254  0.16666667 1.         0.125
+ 0.91666667 0.44444444 0.94871795 0.67361111 0.89814815 0.76515152
+ 0.88888889 0.11666667 0.9        0.         1.         0.08
+ 0.84782609 0.43209877 0.96212121 0.08333333 0.84848485 0.69565217
+ 0.90123457 0.54545455 0.8030303  0.5        0.73188406 0.16666667
+ 0.93939394 0.43055556 0.875      0.28030303 0.87654321 0.91269841
+ 0.74666667 0.14583333]","[ 0.7872513   0.7214628   0.23907453  0.06281143 -0.01758569  0.27290207
+  0.55868155  1.0776744  -0.13742965 -0.20204014  0.4291671   0.8626235
+  0.5663057   1.0749078   1.3688684   1.2195415   0.5490518   0.9017406
+  0.555188    0.9448543  -0.04591507  0.47807652  1.2251186   1.359844
+  0.5377646   0.87235934  0.07613617  0.7885166   0.6541298   0.5468536
+  1.131083    1.2821345   0.39402348  1.2177849   1.19403     1.4138632
+  0.8225351   0.68045     0.56615     0.2303248   0.3631459   1.0837367
+  0.22390991  1.1627052   0.30537587  0.61666447  1.8215618   1.6434517
+  0.57713157  0.632989  ]"
+18,"0               The hacker memorized the password.
+1               The password memorized the hacker.
+2           The instructor purchased the computer.
+3           The computer purchased the instructor.
+4               The joker tricked the distributor.
+5               The distributor tricked the joker.
+6                The painter depicted the thinker.
+7                The thinker depicted the painter.
+8             The marauder contracted the disease.
+9             The disease contracted the marauder.
+10               The negotiator saved the captive.
+11               The captive saved the negotiator.
+12              The operative blew the assignment.
+13              The assignment blew the operative.
+14                The assassin shot the statesman.
+15                The statesman shot the assassin.
+16           The comedian confirmed the itinerary.
+17           The itinerary confirmed the comedian.
+18               The bookkeeper created the graph.
+19               The graph created the bookkeeper.
+20                The arsonist alarmed the vendor.
+21                The vendor alarmed the arsonist.
+22            The archaeologist canceled the trip.
+23            The trip canceled the archaeologist.
+24    The hijacker terrified the president's wife.
+25    The president's wife terrified the hijacker.
+26                      The boss fired the worker.
+27                      The worker fired the boss.
+28                    The maid lifted the cushion.
+29                    The cushion lifted the maid.
+30                  The genius shocked the cousin.
+31                  The cousin shocked the genius.
+32            The businessman employed the expert.
+33            The expert employed the businessman.
+34                         The man drank the soda.
+35                         The soda drank the man.
+36               The villager cultivated the crop.
+37               The crop cultivated the villager.
+38           The anchorman garbled the expression.
+39           The expression garbled the anchorman.
+40                The seamstress ironed the shirt.
+41                The shirt ironed the seamstress.
+42              The cryptographer sent the letter.
+43              The letter sent the cryptographer.
+44                 The tailor costumed the dancer.
+45                 The dancer costumed the tailor.
+46             The artisan trained the apprentice.
+47             The apprentice trained the artisan.
+48                 The convict dreaded the prison.
+49                 The prison dreaded the convict.
+Name: Sentence, dtype: object","[0.96527778 0.04545455 0.95333333 0.0530303  0.89393939 0.58333333
+ 0.89473684 0.45454545 0.78       0.07333333 0.94444444 0.43333333
+ 0.91666667 0.18518519 0.91666667 0.44444444 0.84027778 0.23809524
+ 0.92753623 0.02666667 0.68333333 0.64       0.96296296 0.06818182
+ 0.84848485 0.40833333 0.96666667 0.05333333 0.98611111 0.15740741
+ 0.82608696 0.72666667 0.89814815 0.76515152 0.98484848 0.03472222
+ 0.96212121 0.05797101 0.875      0.28030303 0.92424242 0.
+ 0.90909091 0.11666667 0.82575758 0.34166667 0.94927536 0.2173913
+ 0.86805556 0.5530303 ]","[ 0.1057148  -0.17849183  0.6705086   0.55071616  0.57061315  0.29538202
+  0.38101315  0.37415147  0.02341819  0.02511621  0.8555758   0.53521657
+  0.5212705   0.8802397   0.38295674  0.7681253   0.48190308  0.9723468
+  0.38411856  0.8571911   0.63204837  0.8639777   0.09298921  0.29200506
+  0.4985807   0.42976475  0.4199531   0.50923896 -0.1835823   0.3673718
+  0.2514956   0.27881575  0.62919974  0.80458736  0.5519676   0.9926436
+  0.9241154   1.1657284  -0.08924484  0.3046913   1.0087855   1.0477624
+ -0.21375918  0.35698533  1.2147267   0.93476844  0.5408232   0.8774872
+  0.6016021   0.26643562]"
+19,"0                   The criminal feared the jail.
+1                   The jail feared the criminal.
+2                  The bookworm recited the poem.
+3                  The poem recited the bookworm.
+4              The magician hypnotized the crowd.
+5              The crowd hypnotized the magician.
+6        The librarian admonished the plagiarist.
+7        The plagiarist admonished the librarian.
+8                      The boss fired the worker.
+9                      The worker fired the boss.
+10              The cheapskate rated the service.
+11              The service rated the cheapskate.
+12                 The teacher bought the laptop.
+13                 The laptop bought the teacher.
+14    The manicurist rescheduled the appointment.
+15    The appointment rescheduled the manicurist.
+16               The hatter decorated the bowler.
+17               The bowler decorated the hatter.
+18               The boyfriend basted the turkey.
+19               The turkey basted the boyfriend.
+20      The pessimist discouraged the contestant.
+21      The contestant discouraged the pessimist.
+22          The robber burgled the industrialist.
+23          The industrialist burgled the robber.
+24            The paparazzi stalked the pop star.
+25            The pop star stalked the paparazzi.
+26          The critic attacked the conservative.
+27          The conservative attacked the critic.
+28                     The hoarder hid the stash.
+29                     The stash hid the hoarder.
+30          The anchorman garbled the expression.
+31          The expression garbled the anchorman.
+32           The representative gave the address.
+33           The address gave the representative.
+34              The colonel supervised the cadet.
+35              The cadet supervised the colonel.
+36                 The barber shaved the old man.
+37                 The old man shaved the barber.
+38           The packrat concealed the stockpile.
+39           The stockpile concealed the packrat.
+40                 The huntsman trapped the deer.
+41                 The deer trapped the huntsman.
+42                     The king exiled the rebel.
+43                     The rebel exiled the king.
+44                    The servant wiped the sink.
+45                    The sink wiped the servant.
+46               The logger felled the pine tree.
+47               The pine tree felled the logger.
+48                 The zookeeper fed the giraffe.
+49                 The giraffe fed the zookeeper.
+Name: Sentence, dtype: object","[0.94       0.11111111 0.88636364 0.04166667 0.79166667 0.22222222
+ 0.8030303  0.5        0.96666667 0.05333333 0.82098765 0.27777778
+ 1.         0.02666667 0.91666667 0.12878788 0.46527778 0.2962963
+ 0.92424242 0.01449275 0.90123457 0.54545455 0.75333333 0.32575758
+ 0.95833333 0.2173913  0.84090909 0.90277778 0.97222222 0.09333333
+ 0.875      0.28030303 0.88666667 0.02083333 0.92361111 0.25333333
+ 0.92857143 0.48484848 0.74       0.51587302 0.97333333 0.26515152
+ 0.84782609 0.43209877 0.98611111 0.06060606 0.85833333 0.16666667
+ 0.97333333 0.03472222]","[0.40532112 0.66269636 0.3363092  0.41576004 0.6180029  0.3427527
+ 0.38843966 0.18581653 0.80240345 0.7723212  1.0400791  1.0374885
+ 0.96367955 1.2225525  0.41461372 0.47334194 0.39721537 0.6044953
+ 0.3558395  0.5802777  0.839838   0.6935806  0.9544132  0.77873707
+ 1.4839358  1.154057   1.4898176  1.4832749  0.4160521  0.61123157
+ 0.44022322 0.72995377 0.22515535 0.33451653 0.814203   0.7344873
+ 0.35463738 0.85088944 0.68987393 0.7011092  0.6361356  0.6320076
+ 1.0910492  1.3047926  0.33838606 0.69254684 0.01307297 0.47960234
+ 0.07281542 0.40035152]"
+20,"0              The union ousted the whistle-blower.
+1              The whistle-blower ousted the union.
+2                     The advisor edited the paper.
+3                     The paper edited the advisor.
+4                        The page obeyed the noble.
+5                        The noble obeyed the page.
+6                      The repairman fixed the tap.
+7                      The tap fixed the repairman.
+8                 The attendant pressed the button.
+9                 The button pressed the attendant.
+10            The dressmaker attired the ballerina.
+11            The ballerina attired the dressmaker.
+12           The cashier billed the senior citizen.
+13           The senior citizen billed the cashier.
+14             The domestic cleaned the wash basin.
+15             The wash basin cleaned the domestic.
+16                   The poker player won the game.
+17                   The game won the poker player.
+18    The social worker comforted the abused woman.
+19    The abused woman comforted the social worker.
+20                The mediator rescued the hostage.
+21                The hostage rescued the mediator.
+22      The TV station head promoted the newsagent.
+23      The newsagent promoted the TV station head.
+24          The pyromaniac unnerved the shopkeeper.
+25          The shopkeeper unnerved the pyromaniac.
+26             The deceiver imitated the conqueror.
+27             The conqueror imitated the deceiver.
+28                  The traveler lost the souvenir.
+29                  The souvenir lost the traveler.
+30              The prostitute squandered the cash.
+31              The cash squandered the prostitute.
+32           The ship captain promised the triumph.
+33           The triumph promised the ship captain.
+34           The entrepreneur hired the specialist.
+35           The specialist hired the entrepreneur.
+36               The nomad cherished the clergyman.
+37               The clergyman cherished the nomad.
+38             The cynic dissuaded the participant.
+39             The participant dissuaded the cynic.
+40                      The tycoon ran the company.
+41                      The company ran the tycoon.
+42                  The deckhand unlocked the door.
+43                  The door unlocked the deckhand.
+44            The critic attacked the conservative.
+45            The conservative attacked the critic.
+46                    The agent failed the mission.
+47                    The mission failed the agent.
+48                 The sleuth located the attacker.
+49                 The attacker located the sleuth.
+Name: Sentence, dtype: object","[0.79545455 0.70289855 0.9        0.         0.5617284  0.34848485
+ 0.96527778 0.04545455 0.9375     0.04       0.68518519 0.25
+ 0.9469697  0.24       0.55555556 0.11805556 0.99242424 0.04166667
+ 0.94666667 0.40277778 0.875      0.31818182 0.88194444 0.64583333
+ 0.79166667 0.53472222 0.71666667 0.50666667 0.94       0.00694444
+ 0.95061728 0.04861111 0.65909091 0.06349206 0.96969697 0.79545455
+ 0.66666667 0.55555556 0.84057971 0.69444444 0.89855072 0.09722222
+ 0.82575758 0.02272727 0.84090909 0.90277778 0.96212121 0.08333333
+ 0.76811594 0.75308642]","[ 0.8570844   0.7047869   0.68094695  1.0897593   0.5054456  -0.04422426
+  0.86099684  0.88740146  0.5135561   0.7251009   0.7723826   0.6060053
+  0.7828493   0.47875714  0.12606144  0.44045305  0.53420746  0.9437349
+  0.777773    0.6836722   1.0426846   1.2197583   0.3486756   0.6189283
+  0.88881886  0.6688533   1.0026358   0.6668129   0.39807236  0.5052308
+  1.4967595   1.2025048   1.1586155   1.0272363   0.91621935  1.123178
+  1.301702    1.1280723   1.2099888   1.4176737   0.9193667   1.1321199
+  0.56727254  0.9607498   1.0292451   0.9506453   0.3196392   0.8585988
+  1.1975148   1.2373072 ]"
+21,"0                       The agent failed the mission.
+1                       The mission failed the agent.
+2                   The prankster duped the marketer.
+3                   The marketer duped the prankster.
+4                 The prostitute squandered the cash.
+5                 The cash squandered the prostitute.
+6                         The servant wiped the sink.
+7                         The sink wiped the servant.
+8                   The governess instructed the lad.
+9                   The lad instructed the governess.
+10    The environmentalist cautioned the tobacconist.
+11    The tobacconist cautioned the environmentalist.
+12                     The genius shocked the cousin.
+13                     The cousin shocked the genius.
+14                    The deckhand unlocked the door.
+15                    The door unlocked the deckhand.
+16                   The windbag taunted the recluse.
+17                   The recluse taunted the windbag.
+18                The paparazzi stalked the pop star.
+19                The pop star stalked the paparazzi.
+20                  The sheriff inspected the estate.
+21                  The estate inspected the sheriff.
+22                     The barber shaved the old man.
+23                     The old man shaved the barber.
+24                 The scientist discovered the cure.
+25                 The cure discovered the scientist.
+26                         The marine packed the bag.
+27                         The bag packed the marine.
+28             The copycat redecorated the apartment.
+29             The apartment redecorated the copycat.
+30             The adventurer requested the beverage.
+31             The beverage requested the adventurer.
+32                       The repairman fixed the tap.
+33                       The tap fixed the repairman.
+34                   The seamstress ironed the shirt.
+35                   The shirt ironed the seamstress.
+36        The TV station head promoted the newsagent.
+37        The newsagent promoted the TV station head.
+38                 The overseer provided the alcohol.
+39                 The alcohol provided the overseer.
+40                The house sitter watered the plant.
+41                The plant watered the house sitter.
+42                  The reporter abandoned the story.
+43                  The story abandoned the reporter.
+44                The patient swallowed the medicine.
+45                The medicine swallowed the patient.
+46          The pessimist discouraged the contestant.
+47          The contestant discouraged the pessimist.
+48                     The cop restrained the rioter.
+49                     The rioter restrained the cop.
+Name: Sentence, dtype: object","[0.96212121 0.08333333 0.95454545 0.70289855 0.95061728 0.04861111
+ 0.98611111 0.06060606 0.81818182 0.49242424 0.74       0.58333333
+ 0.82608696 0.72666667 0.82575758 0.02272727 0.46212121 0.36231884
+ 0.95833333 0.2173913  0.90151515 0.13888889 0.92857143 0.48484848
+ 0.97727273 0.07575758 0.91304348 0.0308642  0.78703704 0.06666667
+ 0.88888889 0.07333333 0.96527778 0.04545455 0.92424242 0.
+ 0.88194444 0.64583333 0.68666667 0.08333333 0.89393939 0.
+ 0.9375     0.09090909 0.9691358  0.07142857 0.90123457 0.54545455
+ 0.95238095 0.52898551]","[-0.2137711   0.2932148   0.486032    0.8120675   1.2586656   0.72346735
+  0.11327362  0.33077025  1.2839715   0.98171306  0.39034677  0.28777504
+  0.45005274  0.34473515  0.6107125   0.9289293   0.15597892 -0.03989172
+  0.6910641   0.41809273  0.8314085   0.887676    0.50076485  0.81623983
+  0.49950433  0.72179484  0.07730818  0.32052922  0.8313494   1.0087376
+  0.9614136   0.74005556  0.8854742   0.32858348  0.77743673  1.0325828
+  0.18189764  0.4756775   0.5491283   0.54060316  1.3562183   1.3539996
+  0.12122345  0.9090798   0.31922793  0.34745216  1.0593231   0.7806227
+  0.4272399   0.7115693 ]"
+22,"0                       The biker defied the trainer.
+1                       The trainer defied the biker.
+2                       The au pair spanked the girl.
+3                       The girl spanked the au pair.
+4                    The hatter decorated the bowler.
+5                    The bowler decorated the hatter.
+6                      The crackhead smoked the pipe.
+7                      The pipe smoked the crackhead.
+8     The environmentalist cautioned the tobacconist.
+9     The tobacconist cautioned the environmentalist.
+10                  The attendant pressed the button.
+11                  The button pressed the attendant.
+12                The supervisor supplied the liquor.
+13                The liquor supplied the supervisor.
+14                The headmaster reprimanded the kid.
+15                The kid reprimanded the headmaster.
+16                          The dad coddled the baby.
+17                          The baby coddled the dad.
+18                The artisan trained the apprentice.
+19                The apprentice trained the artisan.
+20                   The alcoholic hassled the guest.
+21                   The guest hassled the alcoholic.
+22                    The convict dreaded the prison.
+23                    The prison dreaded the convict.
+24                   The cyclist disobeyed the coach.
+25                   The coach disobeyed the cyclist.
+26         The police chief rewarded the firefighter.
+27         The firefighter rewarded the police chief.
+28               The constable examined the property.
+29               The property examined the constable.
+30          The streetwalker undercharged the seaman.
+31          The seaman undercharged the streetwalker.
+32                 The urologist treated the widower.
+33                 The widower treated the urologist.
+34             The cashier billed the senior citizen.
+35             The senior citizen billed the cashier.
+36             The ship captain promised the triumph.
+37             The triumph promised the ship captain.
+38                      The owner evicted the tenant.
+39                      The tenant evicted the owner.
+40            The terrorist petrified the first lady.
+41            The first lady petrified the terrorist.
+42                       The uncle hung the ornament.
+43                       The ornament hung the uncle.
+44           The attorney interrogated the bystander.
+45           The bystander interrogated the attorney.
+46               The marauder contracted the disease.
+47               The disease contracted the marauder.
+48                 The interviewee wrinkled the suit.
+49                 The suit wrinkled the interviewee.
+Name: Sentence, dtype: object","[0.8030303  0.6875     0.71212121 0.27333333 0.46527778 0.2962963
+ 0.90666667 0.01515152 0.74       0.58333333 0.9375     0.04
+ 0.85507246 0.11111111 0.97826087 0.27333333 0.94166667 0.21212121
+ 0.94927536 0.2173913  0.98550725 0.69444444 0.86805556 0.5530303
+ 0.95238095 0.49242424 0.71929825 0.6        0.93181818 0.
+ 0.62       0.50757576 0.82575758 0.26       0.9469697  0.24
+ 0.65909091 0.06349206 1.         0.125      0.84782609 0.48550725
+ 0.98611111 0.00757576 0.87121212 0.40972222 0.78       0.07333333
+ 0.77777778 0.05555556]","[ 1.1133657   0.5512004   0.34825492  0.5315635   0.46270108  0.43062305
+  1.4231491   1.3136735   0.24960804  0.21875954  0.9980278   1.0110445
+  0.85816     0.7639251   0.7588897   0.7837062   0.45183682  0.75237846
+  0.74597144  1.2494533   0.08928537  0.3090396   0.6802175   0.3021953
+  1.0793328   0.80335903  1.2578688   1.334043    1.0689821   0.9046507
+  0.0523181   0.13240075  0.8204448   0.88616085  0.89971733  0.5823078
+  1.3406968   1.2374601   0.38180256  0.78695536  0.6300113   1.0555925
+  0.1477201   0.3774705   0.76252794  0.9149504   0.6113057  -0.02482224
+  0.84345484  0.992749  ]"
+23,"0              The fan pestered the filmmaker.
+1              The filmmaker pestered the fan.
+2              The call girl wasted the money.
+3              The money wasted the call girl.
+4           The urologist treated the widower.
+5           The widower treated the urologist.
+6      The blackmailer threatened the senator.
+7      The senator threatened the blackmailer.
+8     The librarian admonished the plagiarist.
+9     The plagiarist admonished the librarian.
+10           The count inherited the painting.
+11           The painting inherited the count.
+12            The vagabond revered the priest.
+13            The priest revered the vagabond.
+14         The fisherman emptied the trashcan.
+15         The trashcan emptied the fisherman.
+16        The representative gave the address.
+17        The address gave the representative.
+18     The singer disappointed the enthusiast.
+19     The enthusiast disappointed the singer.
+20      The copycat redecorated the apartment.
+21      The apartment redecorated the copycat.
+22           The painter depicted the thinker.
+23           The thinker depicted the painter.
+24           The bookkeeper created the graph.
+25           The graph created the bookkeeper.
+26              The soldier raised the banner.
+27              The banner raised the soldier.
+28             The bellboy erased the message.
+29             The message erased the bellboy.
+30           The groupie attended the concert.
+31           The concert attended the groupie.
+32           The sheriff inspected the estate.
+33           The estate inspected the sheriff.
+34          The Frenchman sliced the baguette.
+35          The baguette sliced the Frenchman.
+36          The receptionist tidied the table.
+37          The table tidied the receptionist.
+38            The alcoholic hassled the guest.
+39            The guest hassled the alcoholic.
+40             The convalescent took the pill.
+41             The pill took the convalescent.
+42        The archaeologist canceled the trip.
+43        The trip canceled the archaeologist.
+44    The professional supported the beginner.
+45    The beginner supported the professional.
+46             The father pampered the infant.
+47             The infant pampered the father.
+48                  The hoarder hid the stash.
+49                  The stash hid the hoarder.
+Name: Sentence, dtype: object","[0.9469697  0.48484848 0.84126984 0.01515152 0.82575758 0.26
+ 0.92424242 0.67361111 0.8030303  0.5        0.67361111 0.08024691
+ 0.68333333 0.44       0.86363636 0.01449275 0.88666667 0.02083333
+ 0.81818182 0.57575758 0.78703704 0.06666667 0.89473684 0.45454545
+ 0.92753623 0.02666667 0.97101449 0.05797101 0.77777778 0.11363636
+ 0.96       0.03333333 0.90151515 0.13888889 0.92       0.07333333
+ 0.93181818 0.05072464 0.98550725 0.69444444 0.79710145 0.08
+ 0.96296296 0.06818182 0.94871795 0.67361111 0.98       0.15909091
+ 0.97222222 0.09333333]","[ 0.9185653   0.5652814   0.3200636   0.64786434  0.9944315   0.7151861
+  1.3152494   1.0633221   1.0156307   0.8187413   0.2691555   0.58151674
+  1.1164784   0.9556904   0.4896822   0.5121527   0.02047348  0.23598003
+  0.8971052   0.5074258   1.4237614   1.3887959   0.7885537   0.76243925
+  0.65904427 -0.0802784   0.56438065  0.65090656  0.4071536   0.01977301
+  0.3551941   0.2869234   0.7537203   0.73292065  0.1859827   0.24631357
+  0.83802223  1.0382962   0.39826393  0.639061    0.09651279 -0.266438
+  0.6129103   0.723691    0.16129875  0.75898695  0.57198715  0.6953621
+  0.47105217  0.48593235]"
+24,"0                The guide reached the target.
+1                The target reached the guide.
+2          The paparazzi stalked the pop star.
+3          The pop star stalked the paparazzi.
+4          The headmaster reprimanded the kid.
+5          The kid reprimanded the headmaster.
+6               The crackhead smoked the pipe.
+7               The pipe smoked the crackhead.
+8           The mortician arranged the burial.
+9           The burial arranged the mortician.
+10        The sightseer misplaced the memento.
+11        The memento misplaced the sightseer.
+12           The star autographed the picture.
+13           The picture autographed the star.
+14         The guard apprehended the prisoner.
+15         The prisoner apprehended the guard.
+16      The panelist congratulated the winner.
+17      The winner congratulated the panelist.
+18         The prodigy surprised the relative.
+19         The relative surprised the prodigy.
+20                The tanner placed the order.
+21                The order placed the tanner.
+22    The librarian admonished the plagiarist.
+23    The plagiarist admonished the librarian.
+24       The critic attacked the conservative.
+25       The conservative attacked the critic.
+26       The couch-potato forgot the umbrella.
+27       The umbrella forgot the couch-potato.
+28          The admirer badgered the director.
+29          The director badgered the admirer.
+30             The friend donned the pullover.
+31             The pullover donned the friend.
+32        The representative gave the address.
+33        The address gave the representative.
+34             The convalescent took the pill.
+35             The pill took the convalescent.
+36           The secretary organized the desk.
+37           The desk organized the secretary.
+38              The producer cast the actress.
+39              The actress cast the producer.
+40         The EMT resuscitated the youngster.
+41         The youngster resuscitated the EMT.
+42           The attendant pressed the button.
+43           The button pressed the attendant.
+44          The winemaker uncorked the bottle.
+45          The bottle uncorked the winemaker.
+46        The deceiver imitated the conqueror.
+47        The conqueror imitated the deceiver.
+48             The convict dreaded the prison.
+49             The prison dreaded the convict.
+Name: Sentence, dtype: object","[0.87962963 0.37878788 0.95833333 0.2173913  0.97826087 0.27333333
+ 0.90666667 0.01515152 0.96969697 0.06521739 0.91666667 0.10869565
+ 0.91666667 0.11594203 0.93333333 0.29333333 0.99074074 0.50833333
+ 0.7962963  0.73809524 0.81333333 0.13492063 0.8030303  0.5
+ 0.84090909 0.90277778 0.68115942 0.01333333 0.66666667 0.71428571
+ 0.88333333 0.16       0.88666667 0.02083333 0.79710145 0.08
+ 0.97727273 0.04       0.94927536 0.18666667 0.88095238 0.41666667
+ 0.9375     0.04       0.99275362 0.06944444 0.71666667 0.50666667
+ 0.86805556 0.5530303 ]","[ 0.50952864  0.37625122  0.7507057   0.33953714  0.3713236   0.12839222
+  1.20256     1.0866284   0.44178772  0.5742173   0.60330915  0.4079275
+ -0.33453894  0.04394913  0.52634525  1.0770397   0.58585787  0.47567606
+  1.2455807   0.6742778   1.2642064   0.95320797  0.8104496   0.47056627
+  1.149198    1.023519    0.0459199  -0.13348055  0.5318055   0.19054365
+  0.5801892   0.8392062   0.15434313  0.4736843   0.4436102   0.00142717
+  0.6842799   0.39073086  0.568665    0.5059657   1.0925708   0.6456628
+  0.51782465  0.43751097  0.31021166  0.49375105  0.7495308   0.7583771
+  0.05344725 -0.03779268]"
+25,"0                 The zookeeper fed the giraffe.
+1                 The giraffe fed the zookeeper.
+2              The villager cultivated the crop.
+3              The crop cultivated the villager.
+4                The fan pestered the filmmaker.
+5                The filmmaker pestered the fan.
+6               The milliner adorned the fedora.
+7               The fedora adorned the milliner.
+8           The archaeologist canceled the trip.
+9           The trip canceled the archaeologist.
+10          The marauder contracted the disease.
+11          The disease contracted the marauder.
+12             The governess instructed the lad.
+13             The lad instructed the governess.
+14           The paparazzi stalked the pop star.
+15           The pop star stalked the paparazzi.
+16              The nun reproached the hedonist.
+17              The hedonist reproached the nun.
+18              The windbag taunted the recluse.
+19              The recluse taunted the windbag.
+20                The dietitian loathed the jam.
+21                The jam loathed the dietitian.
+22             The prankster duped the marketer.
+23             The marketer duped the prankster.
+24               The friend donned the pullover.
+25               The pullover donned the friend.
+26                 The minuteman loaded the gun.
+27                 The gun loaded the minuteman.
+28          The woodworker skimmed the brochure.
+29          The brochure skimmed the woodworker.
+30                  The tanner placed the order.
+31                  The order placed the tanner.
+32           The prodigy surprised the relative.
+33           The relative surprised the prodigy.
+34               The deckhand unlocked the door.
+35               The door unlocked the deckhand.
+36           The guard apprehended the prisoner.
+37           The prisoner apprehended the guard.
+38          The cynic dissuaded the participant.
+39          The participant dissuaded the cynic.
+40    The police chief rewarded the firefighter.
+41    The firefighter rewarded the police chief.
+42           The exorcist vanquished the spirit.
+43           The spirit vanquished the exorcist.
+44            The joker tricked the distributor.
+45            The distributor tricked the joker.
+46           The supervisor supplied the liquor.
+47           The liquor supplied the supervisor.
+48       The cardiologist discredited the quack.
+49       The quack discredited the cardiologist.
+Name: Sentence, dtype: object","[0.97333333 0.03472222 0.96212121 0.05797101 0.9469697  0.48484848
+ 0.81666667 0.36666667 0.96296296 0.06818182 0.78       0.07333333
+ 0.81818182 0.49242424 0.95833333 0.2173913  0.76388889 0.54320988
+ 0.46212121 0.36231884 0.83333333 0.00757576 0.95454545 0.70289855
+ 0.88333333 0.16       0.89583333 0.04166667 0.88405797 0.04938272
+ 0.81333333 0.13492063 0.7962963  0.73809524 0.82575758 0.02272727
+ 0.93333333 0.29333333 0.84057971 0.69444444 0.71929825 0.6
+ 0.83333333 0.26388889 0.89393939 0.58333333 0.85507246 0.11111111
+ 0.79710145 0.46296296]","[ 0.20498371  0.25190353  0.20222282  0.44449663  0.7452297   0.6227732
+  0.34290552  1.1819549   0.49916458  0.5195885   0.25838852 -0.0258317
+  0.9151573   0.848361    0.8305092   0.31801128  0.24030161  0.3378024
+  0.3988824   0.22145224  0.88757133  1.2897067   0.71160173  1.1508493
+  0.47014093  0.8767729   0.6045232   0.38501453  1.0193534   1.4911971
+  1.3365593   1.2110271   0.9851041   0.5571642   0.42714548  0.8536401
+  0.6266556   0.80557346  0.57276297  1.1449862   0.9783869   0.859076
+  0.06330395  0.37211847  1.2478247   1.1489592   0.5245943   0.67768383
+  0.63407993  0.6352701 ]"
+26,"0              The loudmouth tormented the loner.
+1              The loner tormented the loudmouth.
+2                     The servant wiped the sink.
+3                     The sink wiped the servant.
+4                     The tycoon ran the company.
+5                     The company ran the tycoon.
+6             The prostitute squandered the cash.
+7             The cash squandered the prostitute.
+8           The imitator fooled the investigator.
+9           The investigator fooled the imitator.
+10           The archaeologist canceled the trip.
+11           The trip canceled the archaeologist.
+12                     The hoarder hid the stash.
+13                     The stash hid the hoarder.
+14                The father pampered the infant.
+15                The infant pampered the father.
+16              The governess instructed the lad.
+17              The lad instructed the governess.
+18             The cryptographer sent the letter.
+19             The letter sent the cryptographer.
+20                    The potter molded the clay.
+21                    The clay molded the potter.
+22                     The king exiled the rebel.
+23                     The rebel exiled the king.
+24             The nurse helped the orthodontist.
+25             The orthodontist helped the nurse.
+26          The comedian confirmed the itinerary.
+27          The itinerary confirmed the comedian.
+28               The vagabond revered the priest.
+29               The priest revered the vagabond.
+30                The cellist received the prize.
+31                The prize received the cellist.
+32         The impersonator conned the inspector.
+33         The inspector conned the impersonator.
+34            The supervisor supplied the liquor.
+35            The liquor supplied the supervisor.
+36        The pyromaniac unnerved the shopkeeper.
+37        The shopkeeper unnerved the pyromaniac.
+38               The serviceman hoisted the flag.
+39               The flag hoisted the serviceman.
+40          The dressmaker attired the ballerina.
+41          The ballerina attired the dressmaker.
+42                  The agent failed the mission.
+43                  The mission failed the agent.
+44              The guarantor initialed the form.
+45              The form initialed the guarantor.
+46            The exorcist vanquished the spirit.
+47            The spirit vanquished the exorcist.
+48    The vocalist disillusioned the connoisseur.
+49    The connoisseur disillusioned the vocalist.
+Name: Sentence, dtype: object","[0.91666667 0.62121212 0.98611111 0.06060606 0.89855072 0.09722222
+ 0.95061728 0.04861111 0.84126984 0.6969697  0.96296296 0.06818182
+ 0.97222222 0.09333333 0.98       0.15909091 0.81818182 0.49242424
+ 0.90909091 0.11666667 0.98148148 0.04545455 0.84782609 0.43209877
+ 0.92424242 0.8        0.84027778 0.23809524 0.68333333 0.44
+ 0.91975309 0.05555556 0.83333333 0.57638889 0.85507246 0.11111111
+ 0.79166667 0.53472222 0.94666667 0.04545455 0.68518519 0.25
+ 0.96212121 0.08333333 0.88888889 0.11666667 0.83333333 0.26388889
+ 0.52777778 0.54938272]","[ 0.40656805  0.6048274  -0.31222868  0.13943624  0.9141979   1.3072772
+  0.6902847   0.66251945  0.23088741  0.24786758  0.28799725  0.3068428
+  0.6783142   0.5687237  -0.02459002  0.21644545  1.0405927   0.8476629
+  0.5820017   0.24093056  0.23370266  0.4682417   0.81554127  0.6344032
+  0.39685678  0.44586325  0.01846218  0.11025143  0.5166769   0.3261981
+  0.14761162  0.11099577 -0.42467737 -0.23446798  0.46947575  0.38852644
+  0.94100094  0.9408612   0.27692223  0.61384964  1.2860336   0.86657286
+ -0.13345337  0.31159782  0.53986263  1.1318941   0.36315012  0.5974002
+ -0.27178574  0.1627469 ]"
+27,"0              The bailiff released the ruffian.
+1              The ruffian released the bailiff.
+2              The governess instructed the lad.
+3              The lad instructed the governess.
+4               The nun reproached the hedonist.
+5               The hedonist reproached the nun.
+6               The alcoholic hassled the guest.
+7               The guest hassled the alcoholic.
+8                The pilot steered the airplane.
+9                The airplane steered the pilot.
+10          The sightseer misplaced the memento.
+11          The memento misplaced the sightseer.
+12           The prodigy surprised the relative.
+13           The relative surprised the prodigy.
+14     The pessimist discouraged the contestant.
+15     The contestant discouraged the pessimist.
+16               The drunk bothered the visitor.
+17               The visitor bothered the drunk.
+18         The ecologist warned the cigar-maker.
+19         The cigar-maker warned the ecologist.
+20            The winemaker uncorked the bottle.
+21            The bottle uncorked the winemaker.
+22              The technician rebuked the aide.
+23              The aide rebuked the technician.
+24            The meat-eater devoured the filet.
+25            The filet devoured the meat-eater.
+26                 The minuteman loaded the gun.
+27                 The gun loaded the minuteman.
+28                  The repairman fixed the tap.
+29                  The tap fixed the repairman.
+30           The smuggler bribed the bureaucrat.
+31           The bureaucrat bribed the smuggler.
+32    The travel-agent photocopied the passport.
+33    The passport photocopied the travel-agent.
+34             The mediator rescued the hostage.
+35             The hostage rescued the mediator.
+36    The police chief rewarded the firefighter.
+37    The firefighter rewarded the police chief.
+38           The patient swallowed the medicine.
+39           The medicine swallowed the patient.
+40          The cynic dissuaded the participant.
+41          The participant dissuaded the cynic.
+42                   The servant wiped the sink.
+43                   The sink wiped the servant.
+44             The handyman repaired the faucet.
+45             The faucet repaired the handyman.
+46                The pixie mesmerized the ogre.
+47                The ogre mesmerized the pixie.
+48         The bookseller calculated the profit.
+49         The profit calculated the bookseller.
+Name: Sentence, dtype: object","[0.81944444 0.25694444 0.81818182 0.49242424 0.76388889 0.54320988
+ 0.98550725 0.69444444 0.97530864 0.06349206 0.91666667 0.10869565
+ 0.7962963  0.73809524 0.90123457 0.54545455 0.92028986 0.81481481
+ 0.84848485 0.69565217 0.99275362 0.06944444 0.74166667 0.68939394
+ 0.88636364 0.01515152 0.89583333 0.04166667 0.96527778 0.04545455
+ 0.90666667 0.72727273 0.98550725 0.00724638 0.875      0.31818182
+ 0.71929825 0.6        0.9691358  0.07142857 0.84057971 0.69444444
+ 0.98611111 0.06060606 0.98       0.0530303  0.42424242 0.49242424
+ 0.97727273 0.        ]","[ 0.78010035  0.80550957  1.2011805   0.9762926   0.34087467  0.25421953
+ -0.199152    0.27491808 -0.01506948  0.5958462   0.34400082  0.25541687
+  0.77782536  0.17482662  0.63845205  0.38600397 -0.24308205  0.19975185
+  0.48535204  0.99013233  0.5171356   0.53105545  0.3793912   0.45410156
+ -0.29823542 -0.01145601  0.6844225   0.5143099   0.92586994  0.38947916
+  1.1274161   1.0345311   0.34628344  0.39750957  0.3694172   0.09344244
+  1.0175376   1.0421796   0.1642456   0.2378025   0.4173813   0.9976592
+ -0.21012354  0.10639238  0.7634206   0.729404    0.35029364  0.3175192
+  1.2428055   0.79444695]"
+28,"0                 The negotiator saved the captive.
+1                 The captive saved the negotiator.
+2            The cashier billed the senior citizen.
+3            The senior citizen billed the cashier.
+4                    The zookeeper fed the giraffe.
+5                    The giraffe fed the zookeeper.
+6        The travel-agent photocopied the passport.
+7        The passport photocopied the travel-agent.
+8                   The channeler sensed the ghost.
+9                   The ghost sensed the channeler.
+10              The patient swallowed the medicine.
+11              The medicine swallowed the patient.
+12                          The man drank the soda.
+13                          The soda drank the man.
+14      The vocalist disillusioned the connoisseur.
+15      The connoisseur disillusioned the vocalist.
+16            The ecologist warned the cigar-maker.
+17            The cigar-maker warned the ecologist.
+18                    The guide reached the target.
+19                    The target reached the guide.
+20               The hacker memorized the password.
+21               The password memorized the hacker.
+22                 The hatter decorated the bowler.
+23                 The bowler decorated the hatter.
+24            The announcer mispronounced the word.
+25            The word mispronounced the announcer.
+26              The supervisor supplied the liquor.
+27              The liquor supplied the supervisor.
+28                The count inherited the painting.
+29                The painting inherited the count.
+30              The fisherman emptied the trashcan.
+31              The trashcan emptied the fisherman.
+32    The social worker comforted the abused woman.
+33    The abused woman comforted the social worker.
+34                 The schoolgirl borrowed the key.
+35                 The key borrowed the schoolgirl.
+36            The clerk charged the elderly person.
+37            The elderly person charged the clerk.
+38               The Frenchman sliced the baguette.
+39               The baguette sliced the Frenchman.
+40          The experimenter recruited the subject.
+41          The subject recruited the experimenter.
+42           The adventurer requested the beverage.
+43           The beverage requested the adventurer.
+44               The novice irritated the virtuoso.
+45               The virtuoso irritated the novice.
+46                 The nun reproached the hedonist.
+47                 The hedonist reproached the nun.
+48                  The ditch digger bent the wire.
+49                  The wire bent the ditch digger.
+Name: Sentence, dtype: object","[0.94444444 0.43333333 0.9469697  0.24       0.97333333 0.03472222
+ 0.98550725 0.00724638 0.81818182 0.4375     0.9691358  0.07142857
+ 0.98484848 0.03472222 0.52777778 0.54938272 0.84848485 0.69565217
+ 0.87962963 0.37878788 0.96527778 0.04545455 0.46527778 0.2962963
+ 0.95138889 0.04       0.85507246 0.11111111 0.67361111 0.08024691
+ 0.86363636 0.01449275 0.94666667 0.40277778 0.96212121 0.02272727
+ 0.85185185 0.41269841 0.92       0.07333333 0.85606061 0.2037037
+ 0.88888889 0.07333333 0.78472222 0.67592593 0.76388889 0.54320988
+ 0.74666667 0.14583333]","[ 0.7193351   0.12785244  0.20079374  0.49773502  0.36542416  0.38946724
+  0.46628094  0.4564438   0.3259735  -0.05086803  0.17355156  0.24862003
+  0.34303713  0.6080966  -0.29888725  0.19765568  0.24657106  0.67861986
+  0.5117922   0.27404022 -0.14676762  0.23597145  0.578701    0.625473
+  0.52525234  0.5853338   0.44980526  0.4981575  -0.22233486  0.3715191
+  0.21748543  0.54174757  0.71966743  0.33534193  0.73018265  0.44955444
+ -0.0624361   0.4204569   0.07509232  0.12021923  0.501142    0.59939957
+  0.4818921   0.7230873  -0.33295727 -0.16185379  0.37688303  0.36190748
+  0.00180626  0.32463074]"
+29,"0            The undertaker prepared the funeral.
+1            The funeral prepared the undertaker.
+2            The representative gave the address.
+3            The address gave the representative.
+4       The anthropologist studied the tribesman.
+5       The tribesman studied the anthropologist.
+6               The activist prejudiced the vote.
+7               The vote prejudiced the activist.
+8                     The potter molded the clay.
+9                     The clay molded the potter.
+10            The monarch banished the insurgent.
+11            The insurgent banished the monarch.
+12              The caretaker quieted the orphan.
+13              The orphan quieted the caretaker.
+14            The artisan trained the apprentice.
+15            The apprentice trained the artisan.
+16               The mechanic berated the intern.
+17               The intern berated the mechanic.
+18            The supervisor supplied the liquor.
+19            The liquor supplied the supervisor.
+20          The robber burgled the industrialist.
+21          The industrialist burgled the robber.
+22           The marauder contracted the disease.
+23           The disease contracted the marauder.
+24           The sightseer misplaced the memento.
+25           The memento misplaced the sightseer.
+26                  The cook grilled the octopus.
+27                  The octopus grilled the cook.
+28          The supremacist established the fund.
+29          The fund established the supremacist.
+30    The vocalist disillusioned the connoisseur.
+31    The connoisseur disillusioned the vocalist.
+32                The ditch digger bent the wire.
+33                The wire bent the ditch digger.
+34                 The cop restrained the rioter.
+35                 The rioter restrained the cop.
+36               The vagabond revered the priest.
+37               The priest revered the vagabond.
+38                  The au pair spanked the girl.
+39                  The girl spanked the au pair.
+40      The reviewer criticized the right-winger.
+41      The right-winger criticized the reviewer.
+42    The TV station head promoted the newsagent.
+43    The newsagent promoted the TV station head.
+44                   The repairman fixed the tap.
+45                   The tap fixed the repairman.
+46            The speaker engrossed the audience.
+47            The audience engrossed the speaker.
+48             The thief robbed the manufacturer.
+49             The manufacturer robbed the thief.
+Name: Sentence, dtype: object","[0.90666667 0.11333333 0.88666667 0.02083333 0.86231884 0.57971014
+ 0.62878788 0.37121212 0.98148148 0.04545455 0.85416667 0.54166667
+ 0.92361111 0.53787879 0.94927536 0.2173913  0.81481481 0.63888889
+ 0.85507246 0.11111111 0.75333333 0.32575758 0.78       0.07333333
+ 0.91666667 0.10869565 0.96212121 0.04166667 0.7826087  0.26
+ 0.52777778 0.54938272 0.74666667 0.14583333 0.95238095 0.52898551
+ 0.68333333 0.44       0.71212121 0.27333333 0.87654321 0.91269841
+ 0.88194444 0.64583333 0.96527778 0.04545455 0.98550725 0.36805556
+ 0.83333333 0.21333333]","[ 0.7176695   0.38461876  0.25393486  0.6218481   0.926075    1.3341913
+  0.16824913  0.24939823  0.70225525  0.67176104  0.7656393   0.8890319
+  0.90292263  0.78825665  0.74898195  1.0332828   0.21366787  0.5914154
+  0.50620747  0.686862    0.83953905  0.50541925  0.23853159 -0.25363302
+  0.34312487  0.09760809  0.69415617  0.73941994  0.72094154  0.31457806
+ -0.19430876  0.25300312  0.07975864 -0.04244995  0.93985844  1.0795774
+  0.6694312   0.35632896  0.6599741   0.7068367   0.77771044  0.9968271
+ -0.190238   -0.17391682  0.79249954  0.42752743  0.48295832  0.5131674
+  0.45592976  0.03476715]"
+30,"0                  The servant wiped the sink.
+1                  The sink wiped the servant.
+2          The exorcist vanquished the spirit.
+3          The spirit vanquished the exorcist.
+4               The producer cast the actress.
+5               The actress cast the producer.
+6         The representative gave the address.
+7         The address gave the representative.
+8      The cartoonist sketched the unicyclist.
+9      The unicyclist sketched the cartoonist.
+10         The fisherman emptied the trashcan.
+11         The trashcan emptied the fisherman.
+12            The milliner adorned the fedora.
+13            The fedora adorned the milliner.
+14       The exterminator filed the complaint.
+15       The complaint filed the exterminator.
+16            The assassin shot the statesman.
+17            The statesman shot the assassin.
+18    The miscreant kidnapped the beneficiary.
+19    The beneficiary kidnapped the miscreant.
+20           The handyman repaired the faucet.
+21           The faucet repaired the handyman.
+22          The thief robbed the manufacturer.
+23          The manufacturer robbed the thief.
+24           The prankster duped the marketer.
+25           The marketer duped the prankster.
+26             The channeler sensed the ghost.
+27             The ghost sensed the channeler.
+28                   The dad coddled the baby.
+29                   The baby coddled the dad.
+30      The entrepreneur hired the specialist.
+31      The specialist hired the entrepreneur.
+32          The detective found the assailant.
+33          The assailant found the detective.
+34           The painter depicted the thinker.
+35           The thinker depicted the painter.
+36      The impersonator conned the inspector.
+37      The inspector conned the impersonator.
+38           The count inherited the painting.
+39           The painting inherited the count.
+40              The freshman dodged the bully.
+41              The bully dodged the freshman.
+42             The deckhand unlocked the door.
+43             The door unlocked the deckhand.
+44           The groupie attended the concert.
+45           The concert attended the groupie.
+46               The biker defied the trainer.
+47               The trainer defied the biker.
+48      The ship captain promised the triumph.
+49      The triumph promised the ship captain.
+Name: Sentence, dtype: object","[0.98611111 0.06060606 0.83333333 0.26388889 0.94927536 0.18666667
+ 0.88666667 0.02083333 0.95833333 0.41666667 0.86363636 0.01449275
+ 0.81666667 0.36666667 0.90972222 0.0530303  0.91666667 0.44444444
+ 0.75       0.43939394 0.98       0.0530303  0.83333333 0.21333333
+ 0.95454545 0.70289855 0.81818182 0.4375     0.94166667 0.21212121
+ 0.96969697 0.79545455 0.97727273 0.44927536 0.89473684 0.45454545
+ 0.83333333 0.57638889 0.67361111 0.08024691 0.84       0.52
+ 0.82575758 0.02272727 0.96       0.03333333 0.8030303  0.6875
+ 0.65909091 0.06349206]","[-0.2884283  -0.04025078  0.6309328   0.41385078  0.91571045  0.7996664
+  0.21050835  0.26620674  1.0103216   0.63255596  0.38936043  0.2217102
+ -0.07356071  0.2961712   0.95534897  0.8125925   0.5063381   0.45105553
+  0.7620239   0.5177746   0.37290573  0.15447426  0.58368015  0.26347733
+  0.6546726   0.52534676 -0.06084442 -0.3195858   0.31408978  0.449358
+  1.3037777   1.02812     0.06370163 -0.33566093  0.43432617  0.14798069
+ -0.13475132 -0.20279694 -0.09025478  0.29849625  0.88248825  0.45191288
+  0.70420456  0.569293    0.211339    0.1099844   0.742012    0.32904243
+  0.4582672  -0.0553627 ]"
+31,"0           The pessimist discouraged the contestant.
+1           The contestant discouraged the pessimist.
+2                   The negotiator saved the captive.
+3                   The captive saved the negotiator.
+4                    The principal scolded the child.
+5                    The child scolded the principal.
+6               The critic attacked the conservative.
+7               The conservative attacked the critic.
+8                 The prodigy surprised the relative.
+9                 The relative surprised the prodigy.
+10            The terrorist petrified the first lady.
+11            The first lady petrified the terrorist.
+12                   The mechanic berated the intern.
+13                   The intern berated the mechanic.
+14                 The joker tricked the distributor.
+15                 The distributor tricked the joker.
+16                 The interviewee wrinkled the suit.
+17                 The suit wrinkled the interviewee.
+18          The flight-attendant dragged the luggage.
+19          The luggage dragged the flight-attendant.
+20                     The poker player won the game.
+21                     The game won the poker player.
+22                  The prankster duped the marketer.
+23                  The marketer duped the prankster.
+24              The ecologist warned the cigar-maker.
+25              The cigar-maker warned the ecologist.
+26              The comedian confirmed the itinerary.
+27              The itinerary confirmed the comedian.
+28    The assistant principal expelled the sociopath.
+29    The sociopath expelled the assistant principal.
+30             The driver transported the ambassador.
+31             The ambassador transported the driver.
+32                   The hatter decorated the bowler.
+33                   The bowler decorated the hatter.
+34              The clerk charged the elderly person.
+35              The elderly person charged the clerk.
+36                      The au pair spanked the girl.
+37                      The girl spanked the au pair.
+38                  The groupie attended the concert.
+39                  The concert attended the groupie.
+40             The impersonator conned the inspector.
+41             The inspector conned the impersonator.
+42                     The woman prepared the dinner.
+43                     The dinner prepared the woman.
+44          The anthropologist studied the tribesman.
+45          The tribesman studied the anthropologist.
+46                   The windbag taunted the recluse.
+47                   The recluse taunted the windbag.
+48               The marauder contracted the disease.
+49               The disease contracted the marauder.
+Name: Sentence, dtype: object","[0.90123457 0.54545455 0.94444444 0.43333333 0.95833333 0.34722222
+ 0.84090909 0.90277778 0.7962963  0.73809524 0.84782609 0.48550725
+ 0.81481481 0.63888889 0.89393939 0.58333333 0.77777778 0.05555556
+ 0.925      0.15909091 0.99242424 0.04166667 0.95454545 0.70289855
+ 0.84848485 0.69565217 0.84027778 0.23809524 0.79365079 0.1969697
+ 0.97619048 0.34782609 0.46527778 0.2962963  0.85185185 0.41269841
+ 0.71212121 0.27333333 0.96       0.03333333 0.83333333 0.57638889
+ 0.98611111 0.07638889 0.86231884 0.57971014 0.46212121 0.36231884
+ 0.78       0.07333333]","[ 0.3294716   0.01624584  0.7130861   0.06669903  0.4876747   0.74115753
+  0.894989    0.8088703   0.24123764 -0.349535   -0.08674622  0.264534
+ -0.0887804   0.3335352   0.5986204   0.2790022   0.5537281   0.08747673
+  1.0659246   0.73101044  0.36528683  0.5581169   0.40400982  0.21029282
+ -0.0928278   0.29400444 -0.13871288 -0.26766014  0.67252827  0.55327606
+  0.13005257  0.462842    0.6631603   0.7042074   0.15671444  0.61639595
+  0.520277    0.51151276  0.4199934   0.30906296 -0.14207649 -0.24724102
+  0.84736156  0.5379648   0.5423994   0.99861526  0.34951782  0.07244682
+  0.28342628 -0.16550827]"
+32,"0        The policeman subdued the rabble-rouser.
+1        The rabble-rouser subdued the policeman.
+2             The guard apprehended the prisoner.
+3             The prisoner apprehended the guard.
+4          The adventurer requested the beverage.
+5          The beverage requested the adventurer.
+6          The entrepreneur hired the specialist.
+7          The specialist hired the entrepreneur.
+8           The confectioner sprinkled the sugar.
+9           The sugar sprinkled the confectioner.
+10           The sightseer misplaced the memento.
+11           The memento misplaced the sightseer.
+12      The streetwalker undercharged the seaman.
+13      The seaman undercharged the streetwalker.
+14          The anchorman garbled the expression.
+15          The expression garbled the anchorman.
+16          The bookseller calculated the profit.
+17          The profit calculated the bookseller.
+18                  The owner evicted the tenant.
+19                  The tenant evicted the owner.
+20           The representative gave the address.
+21           The address gave the representative.
+22              The attendant pressed the button.
+23              The button pressed the attendant.
+24               The nun reproached the hedonist.
+25               The hedonist reproached the nun.
+26                 The writer completed the book.
+27                 The book completed the writer.
+28          The couch-potato forgot the umbrella.
+29          The umbrella forgot the couch-potato.
+30                 The amateur irked the maestro.
+31                 The maestro irked the amateur.
+32             The operative blew the assignment.
+33             The assignment blew the operative.
+34                The abolitionist hid the slave.
+35                The slave hid the abolitionist.
+36               The milliner adorned the fedora.
+37               The fedora adorned the milliner.
+38       The professional supported the beginner.
+39       The beginner supported the professional.
+40       The policewoman handcuffed the offender.
+41       The offender handcuffed the policewoman.
+42    The vocalist disillusioned the connoisseur.
+43    The connoisseur disillusioned the vocalist.
+44                The drunk bothered the visitor.
+45                The visitor bothered the drunk.
+46             The urologist treated the widower.
+47             The widower treated the urologist.
+48                  The au pair spanked the girl.
+49                  The girl spanked the au pair.
+Name: Sentence, dtype: object","[0.90151515 0.55072464 0.93333333 0.29333333 0.88888889 0.07333333
+ 0.96969697 0.79545455 0.95238095 0.00724638 0.91666667 0.10869565
+ 0.62       0.50757576 0.875      0.28030303 0.97727273 0.
+ 1.         0.125      0.88666667 0.02083333 0.9375     0.04
+ 0.76388889 0.54320988 0.99242424 0.10869565 0.68115942 0.01333333
+ 0.84666667 0.79545455 0.91666667 0.18518519 0.90151515 0.38333333
+ 0.81666667 0.36666667 0.94871795 0.67361111 0.98666667 0.27333333
+ 0.52777778 0.54938272 0.92028986 0.81481481 0.82575758 0.26
+ 0.71212121 0.27333333]","[ 0.74023914  0.82169724  0.5496659   1.0103893   0.77071285  0.76288414
+  1.247612    1.1115208   0.21339226  0.23712397  0.5307579   0.34992075
+ -0.20961761  0.1681118   0.5093188   0.46827126  1.0629239   0.8820152
+  0.2989893   0.5340576   0.30314827  0.5887089   0.48994207  0.42949104
+  0.6201253   0.67490435  0.5504236   0.6593332  -0.09743929 -0.45496368
+  0.76599216  0.9007063   0.97669363  0.61255693  0.3461604   0.97082233
+  0.36620426  0.7599735   0.20642471  0.07828093  0.7388272   0.81362724
+  0.11404467  0.41482687  0.14416122  0.2948079   1.2890663   1.0277357
+  0.6829548   0.43332767]"
+33,"0      The police chief rewarded the firefighter.
+1      The firefighter rewarded the police chief.
+2     The TV station head promoted the newsagent.
+3     The newsagent promoted the TV station head.
+4                 The brunette tipped the busboy.
+5                 The busboy tipped the brunette.
+6              The lawyer questioned the witness.
+7              The witness questioned the lawyer.
+8                   The agent failed the mission.
+9                   The mission failed the agent.
+10                The bellboy erased the message.
+11                The message erased the bellboy.
+12               The technician rebuked the aide.
+13               The aide rebuked the technician.
+14                    The potter molded the clay.
+15                    The clay molded the potter.
+16               The vagabond revered the priest.
+17               The priest revered the vagabond.
+18               The principal scolded the child.
+19               The child scolded the principal.
+20             The charlatan burned the contract.
+21             The contract burned the charlatan.
+22          The ecologist warned the cigar-maker.
+23          The cigar-maker warned the ecologist.
+24               The paramedic revived the youth.
+25               The youth revived the paramedic.
+26               The nun reproached the hedonist.
+27               The hedonist reproached the nun.
+28              The townsperson farmed the grain.
+29              The grain farmed the townsperson.
+30                 The huntsman trapped the deer.
+31                 The deer trapped the huntsman.
+32              The cheapskate rated the service.
+33              The service rated the cheapskate.
+34           The marauder contracted the disease.
+35           The disease contracted the marauder.
+36             The joker tricked the distributor.
+37             The distributor tricked the joker.
+38           The packrat concealed the stockpile.
+39           The stockpile concealed the packrat.
+40        The pyromaniac unnerved the shopkeeper.
+41        The shopkeeper unnerved the pyromaniac.
+42            The exorcist vanquished the spirit.
+43            The spirit vanquished the exorcist.
+44                The womanizer wooed the maiden.
+45                The maiden wooed the womanizer.
+46               The logger felled the pine tree.
+47               The pine tree felled the logger.
+48                The abolitionist hid the slave.
+49                The slave hid the abolitionist.
+Name: Sentence, dtype: object","[0.71929825 0.6        0.88194444 0.64583333 0.94444444 0.45138889
+ 1.         0.42105263 0.96212121 0.08333333 0.77777778 0.11363636
+ 0.74166667 0.68939394 0.98148148 0.04545455 0.68333333 0.44
+ 0.95833333 0.34722222 0.83333333 0.06818182 0.84848485 0.69565217
+ 0.88       0.49242424 0.76388889 0.54320988 0.77777778 0.04545455
+ 0.97333333 0.26515152 0.82098765 0.27777778 0.78       0.07333333
+ 0.89393939 0.58333333 0.74       0.51587302 0.79166667 0.53472222
+ 0.83333333 0.26388889 0.87878788 0.6884058  0.85833333 0.16666667
+ 0.90151515 0.38333333]","[ 7.9001093e-01  7.1651363e-01  5.6962013e-02  2.5498676e-01
+  2.9850006e-04  1.7406464e-01  6.4677954e-01  6.2050867e-01
+ -3.0904579e-01  1.0269451e-01 -4.6062565e-01 -5.8948421e-01
+  2.3707199e-01  2.9280376e-01  5.7449627e-01  5.7886696e-01
+  3.8878345e-01 -4.1470528e-02  6.0360909e-01  7.7065849e-01
+  6.9041252e-02  2.7546597e-01  6.1866760e-02  2.9699612e-01
+  3.7506390e-01  2.3118877e-01  5.2678490e-01  5.4808807e-01
+  4.2559338e-01  4.0766144e-01  6.9884253e-01  7.5089407e-01
+  7.0244026e-01  3.9645958e-01  6.8391323e-01  1.3449192e-01
+  8.5054684e-01  5.3930569e-01  1.3023720e+00  1.0999384e+00
+  6.7791176e-01  5.2634811e-01  3.5661697e-01 -1.6264248e-01
+  4.0038300e-01  5.4707527e-02  2.9787445e-01  6.3267708e-01
+  3.3699322e-01  8.3549976e-01]"
+34,"0         The cartoonist sketched the unicyclist.
+1         The unicyclist sketched the cartoonist.
+2             The house sitter watered the plant.
+3             The plant watered the house sitter.
+4             The paparazzi stalked the pop star.
+5             The pop star stalked the paparazzi.
+6       The streetwalker undercharged the seaman.
+7       The seaman undercharged the streetwalker.
+8                 The ditch digger bent the wire.
+9                 The wire bent the ditch digger.
+10            The stewardess pulled the suitcase.
+11            The suitcase pulled the stewardess.
+12              The jury acquitted the economist.
+13              The economist acquitted the jury.
+14              The reporter abandoned the story.
+15              The story abandoned the reporter.
+16    The vocalist disillusioned the connoisseur.
+17    The connoisseur disillusioned the vocalist.
+18          The dressmaker attired the ballerina.
+19          The ballerina attired the dressmaker.
+20              The groupie attended the concert.
+21              The concert attended the groupie.
+22              The villager cultivated the crop.
+23              The crop cultivated the villager.
+24           The deceiver imitated the conqueror.
+25           The conqueror imitated the deceiver.
+26             The nurse helped the orthodontist.
+27             The orthodontist helped the nurse.
+28           The judge praised the gold medalist.
+29           The gold medalist praised the judge.
+30                The womanizer wooed the maiden.
+31                The maiden wooed the womanizer.
+32                 The banker funded the program.
+33                 The program funded the banker.
+34                  The agent failed the mission.
+35                  The mission failed the agent.
+36                 The producer cast the actress.
+37                 The actress cast the producer.
+38                    The tycoon ran the company.
+39                    The company ran the tycoon.
+40            The mother disciplined the toddler.
+41            The toddler disciplined the mother.
+42                The convalescent took the pill.
+43                The pill took the convalescent.
+44         The warmonger terrorized the gunsmith.
+45         The gunsmith terrorized the warmonger.
+46            The humorist verified the schedule.
+47            The schedule verified the humorist.
+48             The detective found the assailant.
+49             The assailant found the detective.
+Name: Sentence, dtype: object","[0.95833333 0.41666667 0.89393939 0.         0.95833333 0.2173913
+ 0.62       0.50757576 0.74666667 0.14583333 0.93939394 0.06944444
+ 0.8245614  0.17424242 0.9375     0.09090909 0.52777778 0.54938272
+ 0.68518519 0.25       0.96       0.03333333 0.96212121 0.05797101
+ 0.71666667 0.50666667 0.92424242 0.8        0.94444444 0.84722222
+ 0.87878788 0.6884058  0.93939394 0.43055556 0.96212121 0.08333333
+ 0.94927536 0.18666667 0.89855072 0.09722222 0.95061728 0.09722222
+ 0.79710145 0.08       0.68666667 0.56818182 0.73188406 0.16666667
+ 0.97727273 0.44927536]","[ 1.0678906   1.0388737   0.60370827  1.021349    1.2166033   0.74858093
+ -0.06837225  0.21646643  0.05716848 -0.18050385  0.12148285  0.5009923
+  0.54298687  0.6226897   0.57646894  0.71767855 -0.01320028  0.35310364
+  1.0711479   0.7867851   0.77693367  0.7990489   0.5062227   0.37388325
+  0.5888567   0.54310036  0.06223774  0.18653488  0.38165045  0.32371807
+  0.5189576   0.3558321   0.41003513  0.99438953 -0.21601868  0.19431686
+  0.6904702   0.4735937   1.0607939   1.5297885   0.71221495  1.1358566
+  0.5374837   0.5641484   0.74560976  0.5263195   0.37315226  0.65245485
+  0.40144825 -0.04917192]"
+35,"0             The handyman repaired the faucet.
+1             The faucet repaired the handyman.
+2     The reviewer criticized the right-winger.
+3     The right-winger criticized the reviewer.
+4                The crackhead smoked the pipe.
+5                The pipe smoked the crackhead.
+6           The guard apprehended the prisoner.
+7           The prisoner apprehended the guard.
+8             The townsperson farmed the grain.
+9             The grain farmed the townsperson.
+10                 The maid lifted the cushion.
+11                 The cushion lifted the maid.
+12            The negotiator saved the captive.
+13            The captive saved the negotiator.
+14            The cheapskate rated the service.
+15            The service rated the cheapskate.
+16              The ditch digger bent the wire.
+17              The wire bent the ditch digger.
+18          The prostitute squandered the cash.
+19          The cash squandered the prostitute.
+20      The pyromaniac unnerved the shopkeeper.
+21      The shopkeeper unnerved the pyromaniac.
+22            The roommate adopted the newborn.
+23            The newborn adopted the roommate.
+24            The troublemaker crashed the car.
+25            The car crashed the troublemaker.
+26           The charlatan burned the contract.
+27           The contract burned the charlatan.
+28               The woman prepared the dinner.
+29               The dinner prepared the woman.
+30            The star autographed the picture.
+31            The picture autographed the star.
+32         The celebrity signed the photograph.
+33         The photograph signed the celebrity.
+34          The president pardoned the traitor.
+35          The traitor pardoned the president.
+36           The interviewee wrinkled the suit.
+37           The suit wrinkled the interviewee.
+38          The artisan trained the apprentice.
+39          The apprentice trained the artisan.
+40        The ecologist warned the cigar-maker.
+41        The cigar-maker warned the ecologist.
+42       The copycat redecorated the apartment.
+43       The apartment redecorated the copycat.
+44     The miscreant kidnapped the beneficiary.
+45     The beneficiary kidnapped the miscreant.
+46               The huntsman trapped the deer.
+47               The deer trapped the huntsman.
+48           The novice irritated the virtuoso.
+49           The virtuoso irritated the novice.
+Name: Sentence, dtype: object","[0.98       0.0530303  0.87654321 0.91269841 0.90666667 0.01515152
+ 0.93333333 0.29333333 0.77777778 0.04545455 0.98611111 0.15740741
+ 0.94444444 0.43333333 0.82098765 0.27777778 0.74666667 0.14583333
+ 0.95061728 0.04861111 0.79166667 0.53472222 0.84090909 0.02777778
+ 0.96969697 0.075      0.83333333 0.06818182 0.98611111 0.07638889
+ 0.91666667 0.11594203 0.96527778 0.08333333 0.88636364 0.08695652
+ 0.77777778 0.05555556 0.94927536 0.2173913  0.84848485 0.69565217
+ 0.78703704 0.06666667 0.75       0.43939394 0.97333333 0.26515152
+ 0.78472222 0.67592593]","[ 0.13144875  0.04765987  1.0258436   1.2094646   1.3180623   0.77677584
+  0.2743802   0.84142494  0.27367163  0.1627531  -0.11928749  0.14841366
+  0.4372177  -0.01351309  0.8171959   0.33158636  0.08027363 -0.24983692
+  0.90705013  0.8750024   0.7914705   0.5338516   0.9245901   0.99488306
+  1.140172    0.3277235  -0.08234596  0.11780167  0.65380144  0.9980707
+  0.11921835  0.46172953  0.44300318  0.574173    0.56307983  0.41275072
+  0.9674425   0.61924934  0.62383366  0.91324806  0.3822899   0.4804225
+  0.7969847   0.7077899   0.8970175   0.5242615   0.4702115   0.8018031
+  0.7074938   0.5034857 ]"
+36,"0         The woodworker skimmed the brochure.
+1         The brochure skimmed the woodworker.
+2                The cook grilled the octopus.
+3                The octopus grilled the cook.
+4              The cellist received the prize.
+5              The prize received the cellist.
+6               The cop restrained the rioter.
+7               The rioter restrained the cop.
+8                The criminal feared the jail.
+9                The jail feared the criminal.
+10         The mogul governed the corporation.
+11         The corporation governed the mogul.
+12               The guide reached the target.
+13               The target reached the guide.
+14          The cryptographer sent the letter.
+15          The letter sent the cryptographer.
+16         The president pardoned the traitor.
+17         The traitor pardoned the president.
+18        The deceiver imitated the conqueror.
+19        The conqueror imitated the deceiver.
+20    The extortionist menaced the legislator.
+21    The legislator menaced the extortionist.
+22            The paramedic revived the youth.
+23            The youth revived the paramedic.
+24        The financier sponsored the project.
+25        The project sponsored the financier.
+26              The raider caught the illness.
+27              The illness caught the raider.
+28         The monarch banished the insurgent.
+29         The insurgent banished the monarch.
+30        The union ousted the whistle-blower.
+31        The whistle-blower ousted the union.
+32                  The boss fired the worker.
+33                  The worker fired the boss.
+34            The researcher found the remedy.
+35            The remedy found the researcher.
+36            The serviceman hoisted the flag.
+37            The flag hoisted the serviceman.
+38           The caretaker quieted the orphan.
+39           The orphan quieted the caretaker.
+40          The caseworker posed the question.
+41          The question posed the caseworker.
+42     The cardiologist discredited the quack.
+43     The quack discredited the cardiologist.
+44       The congressman delivered the speech.
+45       The speech delivered the congressman.
+46         The paparazzi stalked the pop star.
+47         The pop star stalked the paparazzi.
+48               The biker defied the trainer.
+49               The trainer defied the biker.
+Name: Sentence, dtype: object","[0.88405797 0.04938272 0.96212121 0.04166667 0.91975309 0.05555556
+ 0.95238095 0.52898551 0.94       0.11111111 0.81333333 0.49242424
+ 0.87962963 0.37878788 0.90909091 0.11666667 0.88636364 0.08695652
+ 0.71666667 0.50666667 0.71296296 0.65833333 0.88       0.49242424
+ 0.93478261 0.16025641 0.75757576 0.34722222 0.85416667 0.54166667
+ 0.79545455 0.70289855 0.96666667 0.05333333 0.90972222 0.15432099
+ 0.94666667 0.04545455 0.92361111 0.53787879 0.88888889 0.11363636
+ 0.79710145 0.46296296 1.         0.02272727 0.95833333 0.2173913
+ 0.8030303  0.6875    ]","[0.5160456  0.62850857 0.802845   0.99246264 0.66813517 0.4380455
+ 0.8252349  0.88563156 0.45483398 0.72432804 0.620554   0.5293541
+ 0.7831774  0.6400523  1.2666988  1.3089166  0.588398   0.6110959
+ 0.374393   0.32451773 1.1556644  0.55432034 0.45810556 0.24521351
+ 0.8750677  0.975873   0.24405003 0.67301655 0.49337387 0.82541084
+ 0.3330407  0.5851612  1.0779657  1.2973804  0.08852243 0.22289705
+ 0.6619425  0.9865713  0.5047445  0.6376829  1.5648689  1.5275459
+ 0.80226755 0.6911106  0.6316476  0.9456372  0.8536906  0.3737383
+ 1.0444942  0.5909643 ]"
+37,"0             The roommate adopted the newborn.
+1             The newborn adopted the roommate.
+2            The admirer badgered the director.
+3            The director badgered the admirer.
+4         The supremacist established the fund.
+5         The fund established the supremacist.
+6           The president pardoned the traitor.
+7           The traitor pardoned the president.
+8            The receptionist tidied the table.
+9            The table tidied the receptionist.
+10               The zookeeper fed the giraffe.
+11               The giraffe fed the zookeeper.
+12           The caseworker posed the question.
+13           The question posed the caseworker.
+14                The cook grilled the octopus.
+15                The octopus grilled the cook.
+16            The activist prejudiced the vote.
+17            The vote prejudiced the activist.
+18           The detective found the assailant.
+19           The assailant found the detective.
+20           The joker tricked the distributor.
+21           The distributor tricked the joker.
+22             The arsonist alarmed the vendor.
+23             The vendor alarmed the arsonist.
+24               The freshman dodged the bully.
+25               The bully dodged the freshman.
+26           The hit man killed the politician.
+27           The politician killed the hit man.
+28     The extortionist menaced the legislator.
+29     The legislator menaced the extortionist.
+30             The diver recharged the battery.
+31             The battery recharged the diver.
+32      The blackmailer threatened the senator.
+33      The senator threatened the blackmailer.
+34          The mother disciplined the toddler.
+35          The toddler disciplined the mother.
+36              The cellist received the prize.
+37              The prize received the cellist.
+38                The warden caught the inmate.
+39                The inmate caught the warden.
+40            The chauffeur drove the diplomat.
+41            The diplomat drove the chauffeur.
+42          The supervisor supplied the liquor.
+43          The liquor supplied the supervisor.
+44    The pessimist discouraged the contestant.
+45    The contestant discouraged the pessimist.
+46              The playboy courted the damsel.
+47              The damsel courted the playboy.
+48                  The bum stole the necklace.
+49                  The necklace stole the bum.
+Name: Sentence, dtype: object","[0.84090909 0.02777778 0.66666667 0.71428571 0.7826087  0.26
+ 0.88636364 0.08695652 0.93181818 0.05072464 0.97333333 0.03472222
+ 0.88888889 0.11363636 0.96212121 0.04166667 0.62878788 0.37121212
+ 0.97727273 0.44927536 0.89393939 0.58333333 0.68333333 0.64
+ 0.84       0.52       0.91666667 0.5        0.71296296 0.65833333
+ 0.85606061 0.02777778 0.92424242 0.67361111 0.95061728 0.09722222
+ 0.91975309 0.05555556 0.96376812 0.30434783 0.8968254  0.16666667
+ 0.85507246 0.11111111 0.90123457 0.54545455 0.88888889 0.74691358
+ 0.81060606 0.00666667]","[ 0.8671279   0.76307726  0.55096483  0.06232738  0.4779439  -0.14256287
+  0.29582644  0.23468304  0.05767488  0.6318097   0.18205214  0.13352394
+  1.4738684   1.417068    0.6259575   0.42120028 -0.3789506  -0.33992434
+  0.26815176 -0.02308083  0.95121336  0.44884777  0.6194892   0.7841692
+  0.6721487   0.36378622  0.4588914   0.47160864  1.0223675   0.6325116
+  0.01570845 -0.08188486  1.1403332   1.1192346   0.79436636  1.0307755
+  0.65978193  0.39423943  0.42956352  0.21317339  0.13325071 -0.00732374
+  0.74852276  0.8147025   0.61388445  0.06396341  0.2953863   0.24471855
+  0.9047332   0.42809916]"
+38,"0                The representative gave the address.
+1                The address gave the representative.
+2                 The skipper guaranteed the victory.
+3                 The victory guaranteed the skipper.
+4                       The guide reached the target.
+5                       The target reached the guide.
+6                    The milliner adorned the fedora.
+7                    The fedora adorned the milliner.
+8              The copycat redecorated the apartment.
+9              The apartment redecorated the copycat.
+10                 The winemaker uncorked the bottle.
+11                 The bottle uncorked the winemaker.
+12                     The author finished the novel.
+13                     The novel finished the author.
+14                      The cook grilled the octopus.
+15                      The octopus grilled the cook.
+16                 The nomad cherished the clergyman.
+17                 The clergyman cherished the nomad.
+18        The vocalist disillusioned the connoisseur.
+19        The connoisseur disillusioned the vocalist.
+20                The exorcist vanquished the spirit.
+21                The spirit vanquished the exorcist.
+22    The environmentalist cautioned the tobacconist.
+23    The tobacconist cautioned the environmentalist.
+24                   The serviceman hoisted the flag.
+25                   The flag hoisted the serviceman.
+26                     The bookworm recited the poem.
+27                     The poem recited the bookworm.
+28              The confectioner sprinkled the sugar.
+29              The sugar sprinkled the confectioner.
+30               The woodworker skimmed the brochure.
+31               The brochure skimmed the woodworker.
+32                          The dad coddled the baby.
+33                          The baby coddled the dad.
+34               The masseuse relaxed the linebacker.
+35               The linebacker relaxed the masseuse.
+36                      The agent failed the mission.
+37                      The mission failed the agent.
+38           The policewoman handcuffed the offender.
+39           The offender handcuffed the policewoman.
+40                         The hoarder hid the stash.
+41                         The stash hid the hoarder.
+42                The stewardess pulled the suitcase.
+43                The suitcase pulled the stewardess.
+44                      The owner evicted the tenant.
+45                      The tenant evicted the owner.
+46             The ship captain promised the triumph.
+47             The triumph promised the ship captain.
+48                 The detective found the assailant.
+49                 The assailant found the detective.
+Name: Sentence, dtype: object","[0.88666667 0.02083333 0.80555556 0.09027778 0.87962963 0.37878788
+ 0.81666667 0.36666667 0.78703704 0.06666667 0.99275362 0.06944444
+ 1.         0.08       0.96212121 0.04166667 0.66666667 0.55555556
+ 0.52777778 0.54938272 0.83333333 0.26388889 0.74       0.58333333
+ 0.94666667 0.04545455 0.88636364 0.04166667 0.95238095 0.00724638
+ 0.88405797 0.04938272 0.94166667 0.21212121 0.93055556 0.25
+ 0.96212121 0.08333333 0.98666667 0.27333333 0.97222222 0.09333333
+ 0.93939394 0.06944444 1.         0.125      0.65909091 0.06349206
+ 0.97727273 0.44927536]","[ 0.5995908   0.6910653   1.0768623   0.87305117  0.5797558   0.46238756
+  0.4442644   0.9769192   1.3185744   1.2156911   0.524281    0.19269657
+ -0.08971262 -0.23579693  0.90680265  0.943213    0.9181056   0.5470886
+  0.09809113  0.2803583   0.61407375  0.03573656  0.94564724  1.07196
+  0.72202253  1.0188131  -0.02309275  0.34144688  0.13839102  0.10230827
+  0.40307903  0.48602915  0.7325406   1.0622654   0.7370353   0.8585844
+  0.02135038  0.48200226  1.0020657   1.1521177   1.0977731   0.33179903
+ -0.41418457 -0.11932087  0.669693    0.80137634  0.44008827  0.3829794
+  0.37140608  0.32235622]"
+39,"0              The cheapskate rated the service.
+1              The service rated the cheapskate.
+2          The robber burgled the industrialist.
+3          The industrialist burgled the robber.
+4                  The liar emulated the victor.
+5                  The victor emulated the liar.
+6         The driver transported the ambassador.
+7         The ambassador transported the driver.
+8      The flight-attendant dragged the luggage.
+9      The luggage dragged the flight-attendant.
+10         The anchorman garbled the expression.
+11         The expression garbled the anchorman.
+12             The painter depicted the thinker.
+13             The thinker depicted the painter.
+14                 The advisor edited the paper.
+15                 The paper edited the advisor.
+16               The pilot steered the airplane.
+17               The airplane steered the pilot.
+18              The seamstress ironed the shirt.
+19              The shirt ironed the seamstress.
+20             The handyman repaired the faucet.
+21             The faucet repaired the handyman.
+22         The supremacist established the fund.
+23         The fund established the supremacist.
+24             The bailiff released the ruffian.
+25             The ruffian released the bailiff.
+26                The bookworm recited the poem.
+27                The poem recited the bookworm.
+28       The singer disappointed the enthusiast.
+29       The enthusiast disappointed the singer.
+30             The craftsman taught the trainee.
+31             The trainee taught the craftsman.
+32         The artist portrayed the philosopher.
+33         The philosopher portrayed the artist.
+34             The hooligan wrecked the vehicle.
+35             The vehicle wrecked the hooligan.
+36              The nun reproached the hedonist.
+37              The hedonist reproached the nun.
+38                    The nanny tutored the boy.
+39                    The boy tutored the nanny.
+40    The police chief rewarded the firefighter.
+41    The firefighter rewarded the police chief.
+42                    The page obeyed the noble.
+43                    The noble obeyed the page.
+44             The bookkeeper created the graph.
+45             The graph created the bookkeeper.
+46           The journalist ditched the article.
+47           The article ditched the journalist.
+48       The cartoonist sketched the unicyclist.
+49       The unicyclist sketched the cartoonist.
+Name: Sentence, dtype: object","[0.82098765 0.27777778 0.75333333 0.32575758 0.71212121 0.7173913
+ 0.97619048 0.34782609 0.925      0.15909091 0.875      0.28030303
+ 0.89473684 0.45454545 0.9        0.         0.97530864 0.06349206
+ 0.92424242 0.         0.98       0.0530303  0.7826087  0.26
+ 0.81944444 0.25694444 0.88636364 0.04166667 0.81818182 0.57575758
+ 0.94166667 0.40151515 0.79861111 0.54320988 0.99275362 0.25
+ 0.76388889 0.54320988 0.96969697 0.36666667 0.71929825 0.6
+ 0.5617284  0.34848485 0.92753623 0.02666667 0.85606061 0.11333333
+ 0.95833333 0.41666667]","[ 1.457489    0.9705987   1.1826577   0.81392765  0.74213743  0.98622704
+  0.44340706  0.57157993  1.2918558   1.119987    0.450665    0.5776267
+  0.77564526  0.4903078   0.43296194  0.4697461   0.13071442  0.50152874
+  0.30794907  0.9891906   0.07915926  0.22223234  0.7443023   0.41466713
+  0.8339515   0.6282263  -0.2998562   0.12350607  1.2099509   0.7020669
+  0.9172807   0.6933255   1.1362352   0.784297    0.7472768   0.32587767
+  0.52869606  0.6431403   0.91817236  1.0979371   0.71699953  0.77680063
+  0.27430487  0.17861032  0.90647554  0.7407675   0.40015888  0.6183195
+  0.880023    0.8191929 ]"
+40,"0               The playboy courted the damsel.
+1               The damsel courted the playboy.
+2     The groundskeeper changed the light bulb.
+3     The light bulb changed the groundskeeper.
+4              The technician rebuked the aide.
+5              The aide rebuked the technician.
+6             The troublemaker crashed the car.
+7             The car crashed the troublemaker.
+8       The cardiologist discredited the quack.
+9       The quack discredited the cardiologist.
+10          The supervisor supplied the liquor.
+11          The liquor supplied the supervisor.
+12         The undertaker prepared the funeral.
+13         The funeral prepared the undertaker.
+14        The announcer mispronounced the word.
+15        The word mispronounced the announcer.
+16                The advisor edited the paper.
+17                The paper edited the advisor.
+18          The guard apprehended the prisoner.
+19          The prisoner apprehended the guard.
+20       The instructor purchased the computer.
+21       The computer purchased the instructor.
+22        The supremacist established the fund.
+23        The fund established the supremacist.
+24              The convict dreaded the prison.
+25              The prison dreaded the convict.
+26            The activist prejudiced the vote.
+27            The vote prejudiced the activist.
+28            The count inherited the painting.
+29            The painting inherited the count.
+30           The interviewee wrinkled the suit.
+31           The suit wrinkled the interviewee.
+32              The pilot steered the airplane.
+33              The airplane steered the pilot.
+34              The ditch digger bent the wire.
+35              The wire bent the ditch digger.
+36            The orderly assisted the dentist.
+37            The dentist assisted the orderly.
+38                The au pair spanked the girl.
+39                The girl spanked the au pair.
+40            The caretaker quieted the orphan.
+41            The orphan quieted the caretaker.
+42             The seamstress ironed the shirt.
+43             The shirt ironed the seamstress.
+44           The mentor revised the manuscript.
+45           The manuscript revised the mentor.
+46            The groupie attended the concert.
+47            The concert attended the groupie.
+48       The impersonator conned the inspector.
+49       The inspector conned the impersonator.
+Name: Sentence, dtype: object","[0.88888889 0.74691358 0.97727273 0.         0.74166667 0.68939394
+ 0.96969697 0.075      0.79710145 0.46296296 0.85507246 0.11111111
+ 0.90666667 0.11333333 0.95138889 0.04       0.9        0.
+ 0.93333333 0.29333333 0.95333333 0.0530303  0.7826087  0.26
+ 0.86805556 0.5530303  0.62878788 0.37121212 0.67361111 0.08024691
+ 0.77777778 0.05555556 0.97530864 0.06349206 0.74666667 0.14583333
+ 0.63888889 0.75       0.71212121 0.27333333 0.92361111 0.53787879
+ 0.92424242 0.         0.88888889 0.08666667 0.96       0.03333333
+ 0.83333333 0.57638889]","[0.42997432 0.6358166  0.80516386 0.756346   0.3402574  0.41600323
+ 0.83106995 0.16289473 0.38388062 0.16092157 0.30007648 0.59343815
+ 0.64241123 0.47376013 0.52306604 0.5287857  0.35236406 0.12244797
+ 0.4209237  0.8010142  0.7071879  0.14791536 0.94967127 0.5226798
+ 0.30874085 0.10191441 0.10394335 0.14334297 0.10071564 0.5071478
+ 0.57766867 0.13495493 0.25866365 0.39754248 0.2138896  0.22043514
+ 0.7939601  0.4987893  0.7694366  0.41671014 0.22426891 0.13070393
+ 0.43772745 0.95048356 0.77625346 0.36492896 0.87064815 0.3768673
+ 0.65861225 0.26715803]"
+41,"0                The warmonger terrorized the gunsmith.
+1                The gunsmith terrorized the warmonger.
+2                    The nomad cherished the clergyman.
+3                    The clergyman cherished the nomad.
+4                        The baron chose the successor.
+5                        The successor chose the baron.
+6                        The voter sealed the envelope.
+7                        The envelope sealed the voter.
+8                         The cook grilled the octopus.
+9                         The octopus grilled the cook.
+10                       The bookworm recited the poem.
+11                       The poem recited the bookworm.
+12                  The mogul governed the corporation.
+13                  The corporation governed the mogul.
+14                         The maid lifted the cushion.
+15                         The cushion lifted the maid.
+16                     The alcoholic hassled the guest.
+17                     The guest hassled the alcoholic.
+18                           The nanny tutored the boy.
+19                           The boy tutored the nanny.
+20                       The amateur irked the maestro.
+21                       The maestro irked the amateur.
+22                        The guide reached the target.
+23                        The target reached the guide.
+24                    The prankster duped the marketer.
+25                    The marketer duped the prankster.
+26                        The advisor edited the paper.
+27                        The paper edited the advisor.
+28                     The logger felled the pine tree.
+29                     The pine tree felled the logger.
+30                      The womanizer wooed the maiden.
+31                      The maiden wooed the womanizer.
+32                   The charlatan burned the contract.
+33                   The contract burned the charlatan.
+34                The exterminator filed the complaint.
+35                The complaint filed the exterminator.
+36                       The crackhead smoked the pipe.
+37                       The pipe smoked the crackhead.
+38              The terrorist petrified the first lady.
+39              The first lady petrified the terrorist.
+40                              The man drank the soda.
+41                              The soda drank the man.
+42                 The financier sponsored the project.
+43                 The project sponsored the financier.
+44               The impersonator conned the inspector.
+45               The inspector conned the impersonator.
+46                    The mediator rescued the hostage.
+47                    The hostage rescued the mediator.
+48    The neuroscientist overwhelmed the lab assistant.
+49    The lab assistant overwhelmed the neuroscientist.
+Name: Sentence, dtype: object","[0.68666667 0.56818182 0.66666667 0.55555556 0.85416667 0.50694444
+ 0.94       0.04861111 0.96212121 0.04166667 0.88636364 0.04166667
+ 0.81333333 0.49242424 0.98611111 0.15740741 0.98550725 0.69444444
+ 0.96969697 0.36666667 0.84666667 0.79545455 0.87962963 0.37878788
+ 0.95454545 0.70289855 0.9        0.         0.85833333 0.16666667
+ 0.87878788 0.6884058  0.83333333 0.06818182 0.90972222 0.0530303
+ 0.90666667 0.01515152 0.84782609 0.48550725 0.98484848 0.03472222
+ 0.93478261 0.16025641 0.83333333 0.57638889 0.875      0.31818182
+ 0.80555556 0.77272727]","[ 0.7278805   0.29242373  1.2561724   0.8846307   1.240066    0.98321223
+  0.7505126   0.9592359   0.87135386  0.81355286 -0.12215042  0.2724123
+  1.107188    0.55952144  0.02232599  0.31251144  0.08320999  0.23582602
+  1.275835    1.2585158   0.79055786  0.8401773   0.92162275  0.33378005
+  0.51443434  0.36844516  0.6994505   0.59418035  1.014291    1.066957
+  0.3499961   0.3229804  -0.0954895   0.17807436  1.0461745   1.0269096
+  1.4382775   1.0461669   0.73414254  0.9642935   1.0624237   1.0693226
+  0.6071031   0.556761    0.78078914  0.4524908   0.6046543   0.19319344
+  0.40832472  0.31257606]"
+42,"0             The nomad cherished the clergyman.
+1             The clergyman cherished the nomad.
+2          The ecologist warned the cigar-maker.
+3          The cigar-maker warned the ecologist.
+4           The domestic cleaned the wash basin.
+5           The wash basin cleaned the domestic.
+6              The governess instructed the lad.
+7              The lad instructed the governess.
+8              The master encouraged the rookie.
+9              The rookie encouraged the master.
+10              The assassin shot the statesman.
+11              The statesman shot the assassin.
+12                The barber shaved the old man.
+13                The old man shaved the barber.
+14          The masseuse relaxed the linebacker.
+15          The linebacker relaxed the masseuse.
+16                The fairy enchanted the troll.
+17                The troll enchanted the fairy.
+18        The driver transported the ambassador.
+19        The ambassador transported the driver.
+20                  The maid lifted the cushion.
+21                  The cushion lifted the maid.
+22            The charlatan burned the contract.
+23            The contract burned the charlatan.
+24                The amateur irked the maestro.
+25                The maestro irked the amateur.
+26            The thief robbed the manufacturer.
+27            The manufacturer robbed the thief.
+28        The cashier billed the senior citizen.
+29        The senior citizen billed the cashier.
+30            The mentor revised the manuscript.
+31            The manuscript revised the mentor.
+32                 The advisor edited the paper.
+33                 The paper edited the advisor.
+34             The cheapskate rated the service.
+35             The service rated the cheapskate.
+36            The urologist treated the widower.
+37            The widower treated the urologist.
+38           The mogul governed the corporation.
+39           The corporation governed the mogul.
+40           The EMT resuscitated the youngster.
+41           The youngster resuscitated the EMT.
+42              The windbag taunted the recluse.
+43              The recluse taunted the windbag.
+44            The admirer badgered the director.
+45            The director badgered the admirer.
+46    The personal trainer weighed the Olympian.
+47    The Olympian weighed the personal trainer.
+48                The cop restrained the rioter.
+49                The rioter restrained the cop.
+Name: Sentence, dtype: object","[0.66666667 0.55555556 0.84848485 0.69565217 0.55555556 0.11805556
+ 0.81818182 0.49242424 0.92666667 0.65151515 0.91666667 0.44444444
+ 0.92857143 0.48484848 0.93055556 0.25       0.5        0.42028986
+ 0.97619048 0.34782609 0.98611111 0.15740741 0.83333333 0.06818182
+ 0.84666667 0.79545455 0.83333333 0.21333333 0.9469697  0.24
+ 0.88888889 0.08666667 0.9        0.         0.82098765 0.27777778
+ 0.82575758 0.26       0.81333333 0.49242424 0.88095238 0.41666667
+ 0.46212121 0.36231884 0.66666667 0.71428571 0.92666667 0.5530303
+ 0.95238095 0.52898551]","[ 0.9909351   0.49794245  0.18171072  0.2519529   0.00167084  0.29417706
+  0.72836614  0.59360003  0.35591197  0.36761618  0.54962707  0.45198703
+  0.23909354  0.10799503  0.31523013  0.47078156 -0.07852554  0.08064795
+  0.16598868  0.38522172 -0.3338604   0.05998778 -0.60210395 -0.36691332
+  0.60876846  0.45088077  0.6891718   0.4049592   0.80618453  0.705071
+  0.75846505  0.32468915  0.49083543  0.4393108   0.7154095   0.4046209
+  1.2163476   1.0039914   0.755872    0.21128011  0.39378953  0.12192917
+ -0.14397502 -0.32050228  0.4433434   0.10911012  1.1806805   0.9493282
+  0.3895414   0.44024777]"
+43,"0     The personal trainer weighed the Olympian.
+1     The Olympian weighed the personal trainer.
+2            The guard apprehended the prisoner.
+3            The prisoner apprehended the guard.
+4           The undertaker prepared the funeral.
+5           The funeral prepared the undertaker.
+6          The exterminator filed the complaint.
+7          The complaint filed the exterminator.
+8                The bellboy erased the message.
+9                The message erased the bellboy.
+10              The sleuth located the attacker.
+11              The attacker located the sleuth.
+12            The urologist treated the widower.
+13            The widower treated the urologist.
+14                 The au pair spanked the girl.
+15                 The girl spanked the au pair.
+16                  The repairman fixed the tap.
+17                  The tap fixed the repairman.
+18                The dietitian loathed the jam.
+19                The jam loathed the dietitian.
+20           The journalist ditched the article.
+21           The article ditched the journalist.
+22                The barber shaved the old man.
+23                The old man shaved the barber.
+24          The businessman employed the expert.
+25          The expert employed the businessman.
+26                The author finished the novel.
+27                The novel finished the author.
+28                   The chef sauteed the squid.
+29                   The squid sauteed the chef.
+30           The patient swallowed the medicine.
+31           The medicine swallowed the patient.
+32    The police chief rewarded the firefighter.
+33    The firefighter rewarded the police chief.
+34           The humorist verified the schedule.
+35           The schedule verified the humorist.
+36             The reporter abandoned the story.
+37             The story abandoned the reporter.
+38           The mother disciplined the toddler.
+39           The toddler disciplined the mother.
+40            The loudmouth tormented the loner.
+41            The loner tormented the loudmouth.
+42              The alcoholic hassled the guest.
+43              The guest hassled the alcoholic.
+44          The woodworker skimmed the brochure.
+45          The brochure skimmed the woodworker.
+46              The mechanic berated the intern.
+47              The intern berated the mechanic.
+48                    The marine packed the bag.
+49                    The bag packed the marine.
+Name: Sentence, dtype: object","[0.92666667 0.5530303  0.93333333 0.29333333 0.90666667 0.11333333
+ 0.90972222 0.0530303  0.77777778 0.11363636 0.76811594 0.75308642
+ 0.82575758 0.26       0.71212121 0.27333333 0.96527778 0.04545455
+ 0.83333333 0.00757576 0.85606061 0.11333333 0.92857143 0.48484848
+ 0.89814815 0.76515152 1.         0.08       0.84126984 0.
+ 0.9691358  0.07142857 0.71929825 0.6        0.73188406 0.16666667
+ 0.9375     0.09090909 0.95061728 0.09722222 0.91666667 0.62121212
+ 0.98550725 0.69444444 0.88405797 0.04938272 0.81481481 0.63888889
+ 0.91304348 0.0308642 ]","[ 1.213877    1.0644827   0.24831057  0.46960664  0.39865112  0.49765825
+  0.541975    0.7996719  -0.09094667 -0.4478817   0.48773122  0.22037196
+  1.4051526   1.2137195   0.5159285   0.22533703  0.49712276  0.07004046
+  0.71647096  0.7884848  -0.03547764  0.4522686   0.4377265   0.16688609
+  0.6334126   0.7844856   0.39607286 -0.07066298  0.97106314  1.0099318
+  0.8450699   0.5081301   0.61125636  0.59188724  0.5017905   0.47286034
+  0.27035975  0.65625167  0.5377703   0.86553144  0.144001    0.0233016
+ -0.16662169  0.05213451  0.2910018   0.45539093  0.057796    0.46705198
+  0.03865147  0.3720982 ]"
+44,"0              The handyman repaired the faucet.
+1              The faucet repaired the handyman.
+2                  The doctor closed the school.
+3                  The school closed the doctor.
+4                     The hoarder hid the stash.
+5                     The stash hid the hoarder.
+6                  The agent failed the mission.
+7                  The mission failed the agent.
+8      The pessimist discouraged the contestant.
+9      The contestant discouraged the pessimist.
+10               The pilot steered the airplane.
+11               The airplane steered the pilot.
+12               The drunk bothered the visitor.
+13               The visitor bothered the drunk.
+14           The skipper guaranteed the victory.
+15           The victory guaranteed the skipper.
+16                The author finished the novel.
+17                The novel finished the author.
+18            The nomad cherished the clergyman.
+19            The clergyman cherished the nomad.
+20           The president pardoned the traitor.
+21           The traitor pardoned the president.
+22           The speaker engrossed the audience.
+23           The audience engrossed the speaker.
+24               The father pampered the infant.
+25               The infant pampered the father.
+26           The headmaster reprimanded the kid.
+27           The kid reprimanded the headmaster.
+28    The personal trainer weighed the Olympian.
+29    The Olympian weighed the personal trainer.
+30                  The uncle hung the ornament.
+31                  The ornament hung the uncle.
+32                The soldier raised the banner.
+33                The banner raised the soldier.
+34             The caretaker quieted the orphan.
+35             The orphan quieted the caretaker.
+36              The arsonist alarmed the vendor.
+37              The vendor alarmed the arsonist.
+38              The researcher found the remedy.
+39              The remedy found the researcher.
+40       The terrorist petrified the first lady.
+41       The first lady petrified the terrorist.
+42                   The potter molded the clay.
+43                   The clay molded the potter.
+44                    The boss fired the worker.
+45                    The worker fired the boss.
+46            The magician hypnotized the crowd.
+47            The crowd hypnotized the magician.
+48              The cyclist disobeyed the coach.
+49              The coach disobeyed the cyclist.
+Name: Sentence, dtype: object","[0.98       0.0530303  0.5530303  0.00877193 0.97222222 0.09333333
+ 0.96212121 0.08333333 0.90123457 0.54545455 0.97530864 0.06349206
+ 0.92028986 0.81481481 0.80555556 0.09027778 1.         0.08
+ 0.66666667 0.55555556 0.88636364 0.08695652 0.98550725 0.36805556
+ 0.98       0.15909091 0.97826087 0.27333333 0.92666667 0.5530303
+ 0.98611111 0.00757576 0.97101449 0.05797101 0.92361111 0.53787879
+ 0.68333333 0.64       0.90972222 0.15432099 0.84782609 0.48550725
+ 0.98148148 0.04545455 0.96666667 0.05333333 0.79166667 0.22222222
+ 0.95238095 0.49242424]","[ 0.26710773  0.24694848  0.0035224   0.34623075  0.49630153  0.14861476
+  0.26642025  0.48999202  0.46267438  0.271201    0.2535305   0.6034167
+  0.15885687  0.07839918  1.1446377   1.05195     0.3801099  -0.12528992
+  1.0451268   0.55955446  0.48779476  0.59151673  0.5383874   0.27131212
+  0.23069513  0.52615416  0.5646155   0.33713675  1.0498793   0.6044111
+ -0.3893931   0.06148529 -0.03338075  0.26519227  0.16250896  0.43752384
+  0.47065687  0.6883377   0.16645002 -0.16009188  0.4018873   0.51788795
+  0.11506999  0.6848577   0.79777896  0.8791435   0.6803564   0.41199112
+  0.72792137  0.5524074 ]"
+45,"0                  The tycoon ran the company.
+1                  The company ran the tycoon.
+2     The policeman subdued the rabble-rouser.
+3     The rabble-rouser subdued the policeman.
+4            The negotiator saved the captive.
+5            The captive saved the negotiator.
+6             The serviceman hoisted the flag.
+7             The flag hoisted the serviceman.
+8        The critic attacked the conservative.
+9        The conservative attacked the critic.
+10           The master encouraged the rookie.
+11           The rookie encouraged the master.
+12       The comedian confirmed the itinerary.
+13       The itinerary confirmed the comedian.
+14       The congressman delivered the speech.
+15       The speech delivered the congressman.
+16      The copycat redecorated the apartment.
+17      The apartment redecorated the copycat.
+18             The friend donned the pullover.
+19             The pullover donned the friend.
+20        The judge praised the gold medalist.
+21        The gold medalist praised the judge.
+22              The author finished the novel.
+23              The novel finished the author.
+24           The mediator rescued the hostage.
+25           The hostage rescued the mediator.
+26             The womanizer wooed the maiden.
+27             The maiden wooed the womanizer.
+28             The forger shipped the package.
+29             The package shipped the forger.
+30                  The hoarder hid the stash.
+31                  The stash hid the hoarder.
+32         The journalist ditched the article.
+33         The article ditched the journalist.
+34          The interviewee wrinkled the suit.
+35          The suit wrinkled the interviewee.
+36      The entrepreneur hired the specialist.
+37      The specialist hired the entrepreneur.
+38               The biker defied the trainer.
+39               The trainer defied the biker.
+40         The EMT resuscitated the youngster.
+41         The youngster resuscitated the EMT.
+42        The cynic dissuaded the participant.
+43        The participant dissuaded the cynic.
+44             The traveler lost the souvenir.
+45             The souvenir lost the traveler.
+46            The boyfriend basted the turkey.
+47            The turkey basted the boyfriend.
+48         The skipper guaranteed the victory.
+49         The victory guaranteed the skipper.
+Name: Sentence, dtype: object","[0.89855072 0.09722222 0.90151515 0.55072464 0.94444444 0.43333333
+ 0.94666667 0.04545455 0.84090909 0.90277778 0.92666667 0.65151515
+ 0.84027778 0.23809524 1.         0.02272727 0.78703704 0.06666667
+ 0.88333333 0.16       0.94444444 0.84722222 1.         0.08
+ 0.875      0.31818182 0.87878788 0.6884058  0.86111111 0.07017544
+ 0.97222222 0.09333333 0.85606061 0.11333333 0.77777778 0.05555556
+ 0.96969697 0.79545455 0.8030303  0.6875     0.88095238 0.41666667
+ 0.84057971 0.69444444 0.94       0.00694444 0.92424242 0.01449275
+ 0.80555556 0.09027778]","[ 1.1537747   1.2926295   1.2673376   1.2092919   0.5619649   0.01995426
+  0.13980108  0.63967127  0.7664663   0.709732    0.66540724  0.6628352
+  0.17967659  0.25612062 -0.12548476  0.43431783  1.0966063   0.853656
+  0.17576939  0.3448311  -0.09039235  0.17121607  0.23487502  0.00292873
+  0.20924383  0.09570307  0.05354244  0.40937954  0.45893055  0.38397747
+  0.65398794  0.22710681  0.14752507  0.31539255  0.3204301   0.41175634
+  1.0126402   0.82855874  0.31948823  0.101789    0.23628539 -0.08368301
+  0.83754426  1.1084232   0.20199126  0.28562903  0.0114314   0.6006732
+  0.90712315  0.73922926]"
+46,"0                 The channeler sensed the ghost.
+1                 The ghost sensed the channeler.
+2               The painter depicted the thinker.
+3               The thinker depicted the painter.
+4           The announcer mispronounced the word.
+5           The word mispronounced the announcer.
+6                  The teacher bought the laptop.
+7                  The laptop bought the teacher.
+8             The prostitute squandered the cash.
+9             The cash squandered the prostitute.
+10          The robber burgled the industrialist.
+11          The industrialist burgled the robber.
+12                The tailor costumed the dancer.
+13                The dancer costumed the tailor.
+14              The secretary organized the desk.
+15              The desk organized the secretary.
+16                 The banker funded the program.
+17                 The program funded the banker.
+18                 The raider caught the illness.
+19                 The illness caught the raider.
+20    The vocalist disillusioned the connoisseur.
+21    The connoisseur disillusioned the vocalist.
+22       The attorney interrogated the bystander.
+23       The bystander interrogated the attorney.
+24      The groundskeeper changed the light bulb.
+25      The light bulb changed the groundskeeper.
+26              The townsperson farmed the grain.
+27              The grain farmed the townsperson.
+28              The bookkeeper created the graph.
+29              The graph created the bookkeeper.
+30                The fan pestered the filmmaker.
+31                The filmmaker pestered the fan.
+32                  The warden caught the inmate.
+33                  The inmate caught the warden.
+34                 The crackhead smoked the pipe.
+35                 The pipe smoked the crackhead.
+36                 The bookworm recited the poem.
+37                 The poem recited the bookworm.
+38             The novice irritated the virtuoso.
+39             The virtuoso irritated the novice.
+40             The mentor revised the manuscript.
+41             The manuscript revised the mentor.
+42              The bailiff released the ruffian.
+43              The ruffian released the bailiff.
+44                     The nanny tutored the boy.
+45                     The boy tutored the nanny.
+46          The clerk charged the elderly person.
+47          The elderly person charged the clerk.
+48            The sociologist accepted the offer.
+49            The offer accepted the sociologist.
+Name: Sentence, dtype: object","[0.81818182 0.4375     0.89473684 0.45454545 0.95138889 0.04
+ 1.         0.02666667 0.95061728 0.04861111 0.75333333 0.32575758
+ 0.82575758 0.34166667 0.97727273 0.04       0.93939394 0.43055556
+ 0.75757576 0.34722222 0.52777778 0.54938272 0.87121212 0.40972222
+ 0.97727273 0.         0.77777778 0.04545455 0.92753623 0.02666667
+ 0.9469697  0.48484848 0.96376812 0.30434783 0.90666667 0.01515152
+ 0.88636364 0.04166667 0.78472222 0.67592593 0.88888889 0.08666667
+ 0.81944444 0.25694444 0.96969697 0.36666667 0.85185185 0.41269841
+ 0.94444444 0.09027778]","[ 0.65960974  0.25284857  0.52881604  0.4989305   0.84936804  0.0705294
+  0.631578    0.70702654  0.546341    0.41230863  0.8377266   0.56923085
+  0.17936915  0.26296908  0.4999283   0.1783678   0.43581885  0.78600866
+  0.5897239   0.87419564 -0.29609817 -0.02919191  0.8462141   0.49859303
+  0.60745555  0.59995514  0.32604986  0.52430874  0.6439081   0.01362139
+  0.83497065  0.5627442   0.7997673   0.50701636  1.1401772   0.9665198
+ -0.17064685 -0.00889164  0.2308051   0.01910597  0.7263687   0.0822708
+  0.8706916   0.76348037  0.6797667   0.67984474  0.12350124  0.5632716
+  0.8176461   0.5725947 ]"
+47,"0            The celebrity signed the photograph.
+1            The photograph signed the celebrity.
+2                  The poker player won the game.
+3                  The game won the poker player.
+4             The monarch banished the insurgent.
+5             The insurgent banished the monarch.
+6        The policewoman handcuffed the offender.
+7        The offender handcuffed the policewoman.
+8            The judge praised the gold medalist.
+9            The gold medalist praised the judge.
+10                 The voter sealed the envelope.
+11                 The envelope sealed the voter.
+12    The TV station head promoted the newsagent.
+13    The newsagent promoted the TV station head.
+14      The anthropologist studied the tribesman.
+15      The tribesman studied the anthropologist.
+16                 The banker funded the program.
+17                 The program funded the banker.
+18               The serviceman hoisted the flag.
+19               The flag hoisted the serviceman.
+20         The ship captain promised the triumph.
+21         The triumph promised the ship captain.
+22                    The tycoon ran the company.
+23                    The company ran the tycoon.
+24               The sleuth located the attacker.
+25               The attacker located the sleuth.
+26             The scientist discovered the cure.
+27             The cure discovered the scientist.
+28       The attorney interrogated the bystander.
+29       The bystander interrogated the attorney.
+30                The womanizer wooed the maiden.
+31                The maiden wooed the womanizer.
+32               The boyfriend basted the turkey.
+33               The turkey basted the boyfriend.
+34            The supervisor supplied the liquor.
+35            The liquor supplied the supervisor.
+36                 The genius shocked the cousin.
+37                 The cousin shocked the genius.
+38                 The writer completed the book.
+39                 The book completed the writer.
+40                The lion chased the tour-guide.
+41                The tour-guide chased the lion.
+42               The alcoholic hassled the guest.
+43               The guest hassled the alcoholic.
+44                  The minuteman loaded the gun.
+45                  The gun loaded the minuteman.
+46              The caretaker quieted the orphan.
+47              The orphan quieted the caretaker.
+48          The supremacist established the fund.
+49          The fund established the supremacist.
+Name: Sentence, dtype: object","[0.96527778 0.08333333 0.99242424 0.04166667 0.85416667 0.54166667
+ 0.98666667 0.27333333 0.94444444 0.84722222 0.94       0.04861111
+ 0.88194444 0.64583333 0.86231884 0.57971014 0.93939394 0.43055556
+ 0.94666667 0.04545455 0.65909091 0.06349206 0.89855072 0.09722222
+ 0.76811594 0.75308642 0.97727273 0.07575758 0.87121212 0.40972222
+ 0.87878788 0.6884058  0.92424242 0.01449275 0.85507246 0.11111111
+ 0.82608696 0.72666667 0.99242424 0.10869565 0.89855072 0.35507246
+ 0.98550725 0.69444444 0.89583333 0.04166667 0.92361111 0.53787879
+ 0.7826087  0.26      ]","[0.58427966 0.4987446  0.5724404  0.5821092  0.55818033 0.9991522
+ 0.86618674 1.0915965  0.32425416 0.41939425 0.24146509 0.44359744
+ 0.03517306 0.2884866  0.37544596 1.0165651  0.85070884 1.2298278
+ 0.80786455 1.1517874  0.50384676 0.38813996 0.8800415  0.9720504
+ 0.5123415  0.23078883 0.83973014 0.89185226 0.9156145  0.7844696
+ 0.04555976 0.15949154 0.69046664 0.73635304 0.42928863 0.49827027
+ 0.94470036 0.63265944 0.7514963  0.85857534 0.42069745 0.7338681
+ 0.05847132 0.10568118 0.587031   0.49733996 0.3924619  0.686115
+ 0.9185988  0.88833463]"
