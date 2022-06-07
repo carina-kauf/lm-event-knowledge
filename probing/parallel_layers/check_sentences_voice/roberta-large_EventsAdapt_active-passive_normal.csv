@@ -1,1608 +1,1201 @@
 ,Sentence,YTest,YPred
-0,"0               The jet was maneuvered by the aviator.
-1               The aviator was maneuvered by the jet.
-2               The pullover was donned by the friend.
-3               The friend was donned by the pullover.
-4         The sugar was sprinkled by the confectioner.
-5         The confectioner was sprinkled by the sugar.
-6              The fedora was adorned by the milliner.
-7              The milliner was adorned by the fedora.
-8      The plagiarist was admonished by the librarian.
-9      The librarian was admonished by the plagiarist.
-10            The painting was inherited by the count.
-11            The count was inherited by the painting.
-12         The conqueror was imitated by the deceiver.
-13         The deceiver was imitated by the conqueror.
-14       The winner was congratulated by the panelist.
-15       The panelist was congratulated by the winner.
-16          The bureaucrat was bribed by the smuggler.
-17          The smuggler was bribed by the bureaucrat.
-18          The apprentice was trained by the artisan.
-19          The artisan was trained by the apprentice.
-20                The school was closed by the doctor.
-21                The doctor was closed by the school.
-22            The crop was cultivated by the villager.
-23            The villager was cultivated by the crop.
-24                   The rebel was exiled by the king.
-25                   The king was exiled by the rebel.
-26                   The boy was tutored by the nanny.
-27                   The nanny was tutored by the boy.
-28       The beverage was requested by the adventurer.
-29       The adventurer was requested by the beverage.
-30               The program was funded by the banker.
-31               The banker was funded by the program.
-32         The brochure was skimmed by the woodworker.
-33         The woodworker was skimmed by the brochure.
-34         The disease was contracted by the marauder.
-35         The marauder was contracted by the disease.
-36             The recluse was taunted by the windbag.
-37             The windbag was taunted by the recluse.
-38           The password was memorized by the hacker.
-39           The hacker was memorized by the password.
-40     The offender was handcuffed by the policewoman.
-41     The policewoman was handcuffed by the offender.
-42          The suitcase was pulled by the stewardess.
-43          The stewardess was pulled by the suitcase.
-44    The luggage was dragged by the flight-attendant.
-45    The flight-attendant was dragged by the luggage.
-46             The child was scolded by the principal.
-47             The principal was scolded by the child.
-48           The alcohol was provided by the overseer.
-49           The overseer was provided by the alcohol.
-Name: Sentence, dtype: object","[0.99242424 0.07246377 0.86363636 0.14393939 0.89583333 0.10784314
- 0.73484848 0.31060606 0.825      0.5        0.72222222 0.12878788
- 0.67424242 0.56060606 0.96212121 0.47727273 0.92753623 0.7173913
- 0.92666667 0.24242424 0.46       0.03030303 0.98611111 0.06481481
- 0.80952381 0.43939394 0.97727273 0.28030303 0.85606061 0.02777778
- 0.9382716  0.54166667 0.68939394 0.         0.8125     0.13636364
- 0.51449275 0.47333333 0.94927536 0.24637681 0.99305556 0.1969697
- 0.94444444 0.18666667 0.97727273 0.14814815 0.9469697  0.33333333
- 0.7826087  0.02173913]","[0.5838139 0.5838139 0.5838139 0.5838139 0.5838139 0.5838139 0.5838139
- 0.5838139 0.5838139 0.5838139 0.5838139 0.5838139 0.5838139 0.5838139
- 0.5838139 0.5838139 0.5838139 0.5838139 0.5838139 0.5838139 0.5838139
- 0.5838139 0.5838139 0.5838139 0.5838139 0.5838139 0.5838139 0.5838139
- 0.5838139 0.5838139 0.5838139 0.5838139 0.5838139 0.5838139 0.5838139
- 0.5838139 0.5838139 0.5838139 0.5838139 0.5838139 0.5838139 0.5838139
- 0.5838139 0.5838139 0.5838139 0.5838139 0.5838139 0.5838139 0.5838139
- 0.5838139]"
-1,"0                The snorkeler was mauled by the shark.
-1                The shark was mauled by the snorkeler.
-2                The visitor was bothered by the drunk.
-3                The drunk was bothered by the visitor.
-4     The chiropractor was thanked by the tennis pla...
-5     The tennis player was thanked by the chiroprac...
-6       The bystander was interrogated by the attorney.
-7       The attorney was interrogated by the bystander.
-8           The memento was misplaced by the sightseer.
-9           The sightseer was misplaced by the memento.
-10           The pop star was stalked by the paparazzi.
-11           The paparazzi was stalked by the pop star.
-12    The sociopath was expelled by the assistant pr...
-13    The assistant principal was expelled by the so...
-14          The gold medalist was praised by the judge.
-15          The judge was praised by the gold medalist.
-16              The battery was recharged by the diver.
-17              The diver was recharged by the battery.
-18             The orphan was quieted by the caretaker.
-19             The caretaker was quieted by the orphan.
-20                The jam was loathed by the dietitian.
-21                The dietitian was loathed by the jam.
-22           The traitor was pardoned by the president.
-23           The president was pardoned by the traitor.
-24            The witness was questioned by the lawyer.
-25            The lawyer was questioned by the witness.
-26        The senior citizen was billed by the cashier.
-27        The cashier was billed by the senior citizen.
-28             The newborn was adopted by the roommate.
-29             The roommate was adopted by the newborn.
-30         The itinerary was confirmed by the comedian.
-31         The comedian was confirmed by the itinerary.
-32                    The rebel was exiled by the king.
-33                    The king was exiled by the rebel.
-34           The victory was guaranteed by the skipper.
-35           The skipper was guaranteed by the victory.
-36             The thinker was depicted by the painter.
-37             The painter was depicted by the thinker.
-38             The captive was saved by the negotiator.
-39             The negotiator was saved by the captive.
-40                      The heir was named by the lord.
-41                      The lord was named by the heir.
-42                  The ornament was hung by the uncle.
-43                  The uncle was hung by the ornament.
-44          The disease was contracted by the marauder.
-45          The marauder was contracted by the disease.
-46            The baguette was sliced by the Frenchman.
-47            The Frenchman was sliced by the baguette.
-48             The estate was inspected by the sheriff.
-49             The sheriff was inspected by the estate.
-Name: Sentence, dtype: object","[0.93939394 0.10606061 0.88888889 0.68181818 0.9469697  0.54347826
- 0.85185185 0.55797101 0.84057971 0.08666667 0.96       0.33333333
- 0.89130435 0.25925926 0.96212121 0.77083333 0.84166667 0.06060606
- 0.94       0.42       0.83333333 0.12       0.81884058 0.06
- 0.97727273 0.4469697  0.9        0.30555556 0.69753086 0.11805556
- 0.80666667 0.44666667 0.80952381 0.43939394 0.76       0.21428571
- 0.93650794 0.27777778 0.91666667 0.4469697  0.86       0.44666667
- 0.89333333 0.04       0.8125     0.13636364 0.99305556 0.06060606
- 0.92666667 0.20634921]","[0.5154447  0.5127877  0.6033933  0.60509545 0.6567029  0.6408632
- 0.61503434 0.6531027  0.61133355 0.5901262  0.54582655 0.5611887
- 0.59034926 0.5835061  0.58107185 0.6116195  0.58858454 0.5783177
- 0.5948717  0.58872265 0.62678707 0.60178053 0.6392298  0.6467665
- 0.5740202  0.576722   0.59854466 0.5941823  0.6453099  0.64519864
- 0.6467948  0.6556833  0.61520493 0.6205145  0.6252748  0.5922504
- 0.6588076  0.65410876 0.59807575 0.594758   0.6366069  0.63972855
- 0.60121286 0.6056292  0.62655437 0.5936844  0.56493187 0.59788996
- 0.5961528  0.5990297 ]"
-2,"0                 The cousin was shocked by the genius.
-1                 The genius was shocked by the cousin.
-2        The quack was discredited by the cardiologist.
-3        The cardiologist was discredited by the quack.
-4                   The anthem was sung by the marcher.
-5                   The marcher was sung by the anthem.
-6                  The victor was emulated by the liar.
-7                  The liar was emulated by the victor.
-8       The plagiarist was admonished by the librarian.
-9       The librarian was admonished by the plagiarist.
-10                The actress was cast by the producer.
-11                The producer was cast by the actress.
-12       The subject was recruited by the experimenter.
-13       The experimenter was recruited by the subject.
-14    The sociopath was expelled by the assistant pr...
-15    The assistant principal was expelled by the so...
-16                    The noble was obeyed by the page.
-17                    The page was obeyed by the noble.
-18    The lab assistant was overwhelmed by the neuro...
-19    The neuroscientist was overwhelmed by the lab ...
-20      The beneficiary was kidnapped by the miscreant.
-21      The miscreant was kidnapped by the beneficiary.
-22                The old man was shaved by the barber.
-23                The barber was shaved by the old man.
-24          The participant was dissuaded by the cynic.
-25          The cynic was dissuaded by the participant.
-26    The president's wife was terrified by the hija...
-27    The hijacker was terrified by the president's ...
-28                The envelope was sealed by the voter.
-29                The voter was sealed by the envelope.
-30              The flag was hoisted by the serviceman.
-31              The serviceman was hoisted by the flag.
-32            The clergyman was cherished by the nomad.
-33            The nomad was cherished by the clergyman.
-34            The alcohol was provided by the overseer.
-35            The overseer was provided by the alcohol.
-36            The diplomat was driven by the chauffeur.
-37            The chauffeur was driven by the diplomat.
-38                 The target was reached by the guide.
-39                 The guide was reached by the target.
-40            The bottle was uncorked by the winemaker.
-41            The winemaker was uncorked by the bottle.
-42                    The boy was tutored by the nanny.
-43                    The nanny was tutored by the boy.
-44             The economist was acquitted by the jury.
-45             The jury was acquitted by the economist.
-46    The chiropractor was thanked by the tennis pla...
-47    The tennis player was thanked by the chiroprac...
-48      The rabble-rouser was subdued by the policeman.
-49      The policeman was subdued by the rabble-rouser.
-Name: Sentence, dtype: object","[0.90151515 0.67391304 0.76984127 0.27272727 0.77272727 0.
- 0.63888889 0.5        0.825      0.5        0.96969697 0.12318841
- 0.89166667 0.26515152 0.89130435 0.25925926 0.57575758 0.44202899
- 0.96376812 0.72916667 0.70833333 0.39506173 0.99074074 0.39166667
- 0.74074074 0.74242424 0.84       0.40151515 0.9469697  0.01333333
- 0.97727273 0.04166667 0.6984127  0.70138889 0.7826087  0.02173913
- 0.94166667 0.30666667 0.96376812 0.20833333 0.98148148 0.03030303
- 0.97727273 0.28030303 0.88405797 0.19333333 0.9469697  0.54347826
- 0.92361111 0.44444444]","[0.6675112  0.6597046  0.5544657  0.55019176 0.58149433 0.5857481
- 0.5638962  0.5550318  0.60798746 0.60962284 0.6045682  0.6116663
- 0.6232851  0.62419254 0.6218431  0.6150583  0.6338584  0.62075377
- 0.59497726 0.6180512  0.49535853 0.5464737  0.646826   0.6455102
- 0.643345   0.6567894  0.58305633 0.53425884 0.52700543 0.5399891
- 0.5630517  0.57765746 0.59616363 0.5887236  0.60581845 0.61423594
- 0.5921488  0.62694484 0.6486309  0.6596998  0.5602763  0.5554954
- 0.5848809  0.5799778  0.6855407  0.6708972  0.6201468  0.6118373
- 0.6402606  0.6469865 ]"
-3,"0      The luggage was dragged by the flight-attendant.
-1      The flight-attendant was dragged by the luggage.
-2              The desk was organized by the secretary.
-3              The secretary was organized by the desk.
-4     The lab assistant was overwhelmed by the neuro...
-5     The neuroscientist was overwhelmed by the lab ...
-6              The car was crashed by the troublemaker.
-7              The troublemaker was crashed by the car.
-8            The bureaucrat was bribed by the smuggler.
-9            The smuggler was bribed by the bureaucrat.
-10               The prison was dreaded by the convict.
-11               The convict was dreaded by the prison.
-12          The funeral was prepared by the undertaker.
-13          The undertaker was prepared by the funeral.
-14                  The cushion was lifted by the maid.
-15                  The maid was lifted by the cushion.
-16             The newborn was adopted by the roommate.
-17             The roommate was adopted by the newborn.
-18            The suit was wrinkled by the interviewee.
-19            The interviewee was wrinkled by the suit.
-20                The poem was recited by the bookworm.
-21                The bookworm was recited by the poem.
-22                     The baby was coddled by the dad.
-23                     The dad was coddled by the baby.
-24         The elderly person was charged by the clerk.
-25         The clerk was charged by the elderly person.
-26              The pill was taken by the convalescent.
-27              The convalescent was taken by the pill.
-28                 The girl was spanked by the au pair.
-29                 The au pair was spanked by the girl.
-30               The successor was chosen by the baron.
-31               The baron was chosen by the successor.
-32           The trashcan was emptied by the fisherman.
-33           The fisherman was emptied by the trashcan.
-34              The vendor was alarmed by the arsonist.
-35              The arsonist was alarmed by the vendor.
-36            The loner was tormented by the loudmouth.
-37            The loudmouth was tormented by the loner.
-38               The infant was pampered by the father.
-39               The father was pampered by the infant.
-40                The book was completed by the writer.
-41                The writer was completed by the book.
-42            The orthodontist was helped by the nurse.
-43            The nurse was helped by the orthodontist.
-44      The rabble-rouser was subdued by the policeman.
-45      The policeman was subdued by the rabble-rouser.
-46             The picture was autographed by the star.
-47             The star was autographed by the picture.
-48                The rioter was restrained by the cop.
-49                The cop was restrained by the rioter.
-Name: Sentence, dtype: object","[0.97727273 0.14814815 0.96527778 0.0625     0.96376812 0.72916667
- 0.82666667 0.25757576 0.92753623 0.7173913  0.75       0.32098765
- 0.84027778 0.07575758 0.98484848 0.16666667 0.69753086 0.11805556
- 0.76515152 0.22222222 0.86805556 0.06666667 0.97619048 0.15740741
- 0.94927536 0.45138889 0.75757576 0.05797101 0.74666667 0.36805556
- 0.88       0.71428571 0.86231884 0.02       0.81060606 0.68253968
- 0.99074074 0.60833333 0.94927536 0.05072464 0.99305556 0.08823529
- 0.82666667 0.8030303  0.92361111 0.44444444 0.88271605 0.20454545
- 0.98148148 0.46825397]","[0.5534129  0.73796844 0.5120126  0.72165465 0.53367233 0.6910553
- 0.5548675  0.86491334 0.38718915 0.48285317 0.7282151  0.76460874
- 0.46543574 0.8864293  0.559374   0.65351856 0.64588    0.62347245
- 0.6704705  0.8682773  0.5824814  0.79469585 0.60452116 0.6297432
- 0.7124238  0.73675823 0.61606777 0.7806121  0.77145374 0.73064566
- 0.62793326 0.67111444 0.5775778  0.5387305  0.66643083 0.84198725
- 0.67334366 0.3943578  0.6333606  0.65374005 0.5330163  0.8559828
- 0.7160853  0.4888482  0.75070715 0.6227821  0.73251116 0.9060515
- 0.7096696  0.53803635]"
-4,"0             The loner was tormented by the loudmouth.
-1             The loudmouth was tormented by the loner.
-2                The wire was bent by the ditch digger.
-3                The ditch digger was bent by the wire.
-4               The coach was disobeyed by the cyclist.
-5               The cyclist was disobeyed by the coach.
-6              The story was abandoned by the reporter.
-7              The reporter was abandoned by the story.
-8              The car was crashed by the troublemaker.
-9              The troublemaker was crashed by the car.
-10              The guest was hassled by the alcoholic.
-11              The alcoholic was hassled by the guest.
-12     The light bulb was changed by the groundskeeper.
-13     The groundskeeper was changed by the light bulb.
-14         The expression was garbled by the anchorman.
-15         The anchorman was garbled by the expression.
-16       The unicyclist was sketched by the cartoonist.
-17       The cartoonist was sketched by the unicyclist.
-18            The clergyman was cherished by the nomad.
-19            The nomad was cherished by the clergyman.
-20         The word was mispronounced by the announcer.
-21         The announcer was mispronounced by the word.
-22       The enthusiast was disappointed by the singer.
-23       The singer was disappointed by the enthusiast.
-24         The industrialist was burgled by the robber.
-25         The robber was burgled by the industrialist.
-26      The legislator was menaced by the extortionist.
-27      The extortionist was menaced by the legislator.
-28             The estate was inspected by the sheriff.
-29             The sheriff was inspected by the estate.
-30                   The bus was exited by the tourist.
-31                   The tourist was exited by the bus.
-32         The philosopher was portrayed by the artist.
-33         The artist was portrayed by the philosopher.
-34         The elderly person was charged by the clerk.
-35         The clerk was charged by the elderly person.
-36    The president's wife was terrified by the hija...
-37    The hijacker was terrified by the president's ...
-38           The spirit was vanquished by the exorcist.
-39           The exorcist was vanquished by the spirit.
-40      The offender was handcuffed by the policewoman.
-41      The policewoman was handcuffed by the offender.
-42                   The sink was wiped by the servant.
-43                   The servant was wiped by the sink.
-44                The book was completed by the writer.
-45                The writer was completed by the book.
-46            The widower was treated by the urologist.
-47            The urologist was treated by the widower.
-48              The attacker was located by the sleuth.
-49              The sleuth was located by the attacker.
-Name: Sentence, dtype: object","[0.99074074 0.60833333 0.79365079 0.04666667 0.82407407 0.39166667
- 0.93055556 0.11111111 0.82666667 0.25757576 0.86111111 0.75
- 0.96666667 0.06818182 0.86363636 0.19444444 0.83333333 0.33333333
- 0.6984127  0.70138889 0.96212121 0.0625     0.83333333 0.67283951
- 0.875      0.22222222 0.85606061 0.59848485 0.92666667 0.20634921
- 0.70454545 0.28703704 0.78985507 0.63636364 0.94927536 0.45138889
- 0.84       0.40151515 0.5625     0.28666667 0.99305556 0.1969697
- 0.92666667 0.04666667 0.99305556 0.08823529 0.86       0.29861111
- 0.75757576 0.61363636]","[0.66340727 0.561668   0.5770013  0.7262947  0.6853729  0.67856604
- 0.6282169  0.73502487 0.59055585 0.7722234  0.6101323  0.6325725
- 0.6236723  0.6866339  0.58977646 0.737204   0.670095   0.6432449
- 0.6680257  0.61043566 0.61008495 0.70773035 0.6401982  0.649224
- 0.7351906  0.6367826  0.679491   0.735316   0.63541096 0.6972894
- 0.5826661  0.6159319  0.6188269  0.59035236 0.6921887  0.6694432
- 0.6767766  0.7516622  0.62265366 0.73880094 0.5417456  0.5908224
- 0.6013184  0.6485264  0.55736667 0.66478497 0.6003507  0.60253245
- 0.56535774 0.657479  ]"
-5,"0           The password was memorized by the hacker.
-1           The hacker was memorized by the password.
-2            The concert was attended by the groupie.
-3            The groupie was attended by the concert.
-4              The pullover was donned by the friend.
-5              The friend was donned by the pullover.
-6             The turkey was basted by the boyfriend.
-7             The boyfriend was basted by the turkey.
-8         The stockpile was concealed by the packrat.
-9         The packrat was concealed by the stockpile.
-10             The door was unlocked by the deckhand.
-11             The deckhand was unlocked by the door.
-12        The project was sponsored by the financier.
-13        The financier was sponsored by the project.
-14             The jet was maneuvered by the aviator.
-15             The aviator was maneuvered by the jet.
-16           The graph was created by the bookkeeper.
-17           The bookkeeper was created by the graph.
-18          The orthodontist was helped by the nurse.
-19          The nurse was helped by the orthodontist.
-20          The crowd was hypnotized by the magician.
-21          The magician was hypnotized by the crowd.
-22           The cadet was supervised by the colonel.
-23           The colonel was supervised by the cadet.
-24          The politician was killed by the hit man.
-25          The hit man was killed by the politician.
-26           The ruffian was released by the bailiff.
-27           The bailiff was released by the ruffian.
-28    The umbrella was forgotten by the couch-potato.
-29    The couch-potato was forgotten by the umbrella.
-30             The prison was dreaded by the convict.
-31             The convict was dreaded by the prison.
-32          The filet was devoured by the meat-eater.
-33          The meat-eater was devoured by the filet.
-34               The victor was emulated by the liar.
-35               The liar was emulated by the victor.
-36      The winner was congratulated by the panelist.
-37      The panelist was congratulated by the winner.
-38            The pine tree was felled by the logger.
-39            The logger was felled by the pine tree.
-40                 The company was run by the tycoon.
-41                 The tycoon was run by the company.
-42             The filmmaker was pestered by the fan.
-43             The fan was pestered by the filmmaker.
-44              The rioter was restrained by the cop.
-45              The cop was restrained by the rioter.
-46             The prize was received by the cellist.
-47             The cellist was received by the prize.
-48       The ballerina was attired by the dressmaker.
-49       The dressmaker was attired by the ballerina.
-Name: Sentence, dtype: object","[0.94927536 0.24637681 0.9375     0.12121212 0.86363636 0.14393939
- 0.86419753 0.06349206 0.82575758 0.68421053 0.94927536 0.04320988
- 0.9047619  0.20454545 0.99242424 0.07246377 0.92424242 0.05797101
- 0.82666667 0.8030303  0.92424242 0.24637681 0.9469697  0.3125
- 0.89333333 0.52       0.8        0.31060606 0.6969697  0.02173913
- 0.75       0.32098765 0.93333333 0.04666667 0.63888889 0.5
- 0.96212121 0.47727273 0.88636364 0.16666667 0.87037037 0.12878788
- 0.97222222 0.5        0.98148148 0.46825397 0.84090909 0.08695652
- 0.92028986 0.27083333]","[0.49065846 0.8385981  0.41147426 0.6957592  0.40089387 0.5031248
- 0.59062785 0.75072145 0.33149058 0.7043883  0.36673084 0.6992523
- 0.37920362 0.6925855  0.5408172  0.7473537  0.24755132 0.5376393
- 0.7764775  0.55315566 0.7065533  0.8912427  0.618686   0.6688172
- 0.6056722  0.60157996 0.37260944 0.4374569  0.39296478 0.5832804
- 0.45092303 0.58780235 0.60744077 0.6790715  0.7157022  0.62464017
- 0.36861664 0.71053374 0.36553168 0.40703335 0.22797951 0.4950118
- 0.8550005  0.6985652  0.62265414 0.51677454 0.30416706 0.71654636
- 0.67300713 0.7527054 ]"
-6,"0                The prize was received by the cellist.
-1                The cellist was received by the prize.
-2              The cadet was supervised by the colonel.
-3              The colonel was supervised by the cadet.
-4              The captive was saved by the negotiator.
-5              The negotiator was saved by the captive.
-6     The chiropractor was thanked by the tennis pla...
-7     The tennis player was thanked by the chiroprac...
-8         The winner was congratulated by the panelist.
-9         The panelist was congratulated by the winner.
-10      The bystander was interrogated by the attorney.
-11      The attorney was interrogated by the bystander.
-12               The money was wasted by the call girl.
-13               The call girl was wasted by the money.
-14                The laptop was bought by the teacher.
-15                The teacher was bought by the laptop.
-16            The virtuoso was irritated by the novice.
-17            The novice was irritated by the virtuoso.
-18       The shopkeeper was unnerved by the pyromaniac.
-19       The pyromaniac was unnerved by the shopkeeper.
-20                 The jail was feared by the criminal.
-21                 The criminal was feared by the jail.
-22            The distributor was tricked by the joker.
-23            The joker was tricked by the distributor.
-24              The bowler was decorated by the hatter.
-25              The hatter was decorated by the bowler.
-26         The address was given by the representative.
-27         The representative was given by the address.
-28                  The tap was fixed by the repairman.
-29                  The repairman was fixed by the tap.
-30             The desk was organized by the secretary.
-31             The secretary was organized by the desk.
-32             The economist was acquitted by the jury.
-33             The jury was acquitted by the economist.
-34        The beverage was requested by the adventurer.
-35        The adventurer was requested by the beverage.
-36           The corporation was governed by the mogul.
-37           The mogul was governed by the corporation.
-38                   The bus was exited by the tourist.
-39                   The tourist was exited by the bus.
-40         The complaint was filed by the exterminator.
-41         The exterminator was filed by the complaint.
-42             The grain was farmed by the townsperson.
-43             The townsperson was farmed by the grain.
-44            The table was tidied by the receptionist.
-45            The receptionist was tidied by the table.
-46           The kid was reprimanded by the headmaster.
-47           The headmaster was reprimanded by the kid.
-48            The director was badgered by the admirer.
-49            The admirer was badgered by the director.
-Name: Sentence, dtype: object","[0.84090909 0.08695652 0.9469697  0.3125     0.91666667 0.4469697
- 0.9469697  0.54347826 0.96212121 0.47727273 0.85185185 0.55797101
- 0.9057971  0.05769231 0.99275362 0.         0.87878788 0.84848485
- 0.72666667 0.64393939 0.56060606 0.36666667 0.775      0.59848485
- 0.40277778 0.43181818 0.93181818 0.08       0.91333333 0.04
- 0.96527778 0.0625     0.88405797 0.19333333 0.85606061 0.02777778
- 0.85606061 0.40833333 0.70454545 0.28703704 0.84666667 0.07333333
- 0.85606061 0.0942029  0.94202899 0.09333333 0.90909091 0.25362319
- 0.82638889 0.63194444]","[0.37378013 0.8282144  0.71193033 0.7641697  0.6845281  0.80179644
- 0.6886718  0.7189502  0.41355622 0.8270548  0.80122113 0.7475868
- 0.33908254 0.75618154 0.5166227  0.7108357  0.86115116 0.69759977
- 0.6767193  0.5554828  0.7378502  0.820149   0.71808565 0.83189976
- 0.8280285  0.6507619  0.3987239  0.71842873 0.42334586 0.8425586
- 0.48447782 0.77058506 0.79279804 0.7025922  0.559218   0.8151212
- 0.50424206 0.6206712  0.6378666  0.8972715  0.4617119  0.70909476
- 0.57903606 1.0657991  0.23956913 0.7036747  0.47233313 0.69678146
- 0.75447255 0.7417916 ]"
-7,"0       The bystander was interrogated by the attorney.
-1       The attorney was interrogated by the bystander.
-2     The Olympian was weighed by the personal trainer.
-3     The personal trainer was weighed by the Olympian.
-4             The politician was killed by the hit man.
-5             The hit man was killed by the politician.
-6                     The noble was obeyed by the page.
-7                     The page was obeyed by the noble.
-8          The industrialist was burgled by the robber.
-9          The robber was burgled by the industrialist.
-10                    The rebel was exiled by the king.
-11                    The king was exiled by the rebel.
-12            The widower was treated by the urologist.
-13            The urologist was treated by the widower.
-14     The light bulb was changed by the groundskeeper.
-15     The groundskeeper was changed by the light bulb.
-16              The coach was disobeyed by the cyclist.
-17              The cyclist was disobeyed by the coach.
-18           The suitcase was pulled by the stewardess.
-19           The stewardess was pulled by the suitcase.
-20               The busboy was tipped by the brunette.
-21               The brunette was tipped by the busboy.
-22       The senator was threatened by the blackmailer.
-23       The blackmailer was threatened by the senator.
-24                The deer was trapped by the huntsman.
-25                The huntsman was trapped by the deer.
-26            The virtuoso was irritated by the novice.
-27            The novice was irritated by the virtuoso.
-28               The door was unlocked by the deckhand.
-29               The deckhand was unlocked by the door.
-30                 The tenant was evicted by the owner.
-31                 The owner was evicted by the tenant.
-32           The audience was engrossed by the speaker.
-33           The speaker was engrossed by the audience.
-34            The cure was discovered by the scientist.
-35            The scientist was discovered by the cure.
-36          The participant was dissuaded by the cynic.
-37          The cynic was dissuaded by the participant.
-38          The stockpile was concealed by the packrat.
-39          The packrat was concealed by the stockpile.
-40                The actress was cast by the producer.
-41                The producer was cast by the actress.
-42              The battery was recharged by the diver.
-43              The diver was recharged by the battery.
-44                The dinner was prepared by the woman.
-45                The woman was prepared by the dinner.
-46           The traitor was pardoned by the president.
-47           The president was pardoned by the traitor.
-48           The apprentice was trained by the artisan.
-49           The artisan was trained by the apprentice.
-Name: Sentence, dtype: object","[0.85185185 0.55797101 0.96527778 0.38888889 0.89333333 0.52
- 0.57575758 0.44202899 0.875      0.22222222 0.80952381 0.43939394
- 0.86       0.29861111 0.96666667 0.06818182 0.82407407 0.39166667
- 0.94444444 0.18666667 0.85606061 0.28666667 0.91358025 0.63888889
- 0.95652174 0.21014493 0.87878788 0.84848485 0.94927536 0.04320988
- 0.97222222 0.         0.89814815 0.5        1.         0.05833333
- 0.74074074 0.74242424 0.82575758 0.68421053 0.96969697 0.12318841
- 0.84166667 0.06060606 0.99333333 0.04545455 0.81884058 0.06
- 0.92666667 0.24242424]","[0.7323811  0.79124796 0.5579494  0.59198785 0.63123477 0.6060662
- 0.668803   0.54670835 0.85964966 0.79100406 0.6392348  0.6576606
- 0.79806685 0.8276205  0.3789397  0.5570235  0.66737664 0.6631988
- 0.33931595 0.5431056  0.6162628  0.57593966 0.73361063 0.6972232
- 0.37311494 0.6990737  0.9142692  0.74314165 0.3450098  0.49058163
- 0.6176739  0.6721852  0.53717315 0.57322633 0.2932198  0.41349703
- 0.8165636  0.94877875 0.17813468 0.23715794 0.569301   0.6143974
- 0.48217857 0.50624156 0.49258375 0.56614923 0.6208221  0.63497543
- 0.6148914  0.6255442 ]"
-8,"0         The ambassador was transported by the driver.
-1         The driver was transported by the ambassador.
-2               The statesman was shot by the assassin.
-3               The assassin was shot by the statesman.
-4              The car was crashed by the troublemaker.
-5              The troublemaker was crashed by the car.
-6     The firefighter was rewarded by the police chief.
-7     The police chief was rewarded by the firefighter.
-8                 The rioter was restrained by the cop.
-9                 The cop was restrained by the rioter.
-10        The beverage was requested by the adventurer.
-11        The adventurer was requested by the beverage.
-12            The bottle was uncorked by the winemaker.
-13            The winemaker was uncorked by the bottle.
-14    The appointment was rescheduled by the manicur...
-15    The manicurist was rescheduled by the appointm...
-16             The picture was autographed by the star.
-17             The star was autographed by the picture.
-18           The medicine was swallowed by the patient.
-19           The patient was swallowed by the medicine.
-20               The infant was pampered by the father.
-21               The father was pampered by the infant.
-22              The fedora was adorned by the milliner.
-23              The milliner was adorned by the fedora.
-24    The tobacconist was cautioned by the environme...
-25    The environmentalist was cautioned by the toba...
-26           The trashcan was emptied by the fisherman.
-27           The fisherman was emptied by the trashcan.
-28            The table was tidied by the receptionist.
-29            The receptionist was tidied by the table.
-30            The filet was devoured by the meat-eater.
-31            The meat-eater was devoured by the filet.
-32      The umbrella was forgotten by the couch-potato.
-33      The couch-potato was forgotten by the umbrella.
-34         The address was given by the representative.
-35         The representative was given by the address.
-36                The maestro was irked by the amateur.
-37                The amateur was irked by the maestro.
-38             The story was abandoned by the reporter.
-39             The reporter was abandoned by the story.
-40            The alcohol was provided by the overseer.
-41            The overseer was provided by the alcohol.
-42       The first lady was petrified by the terrorist.
-43       The terrorist was petrified by the first lady.
-44         The sugar was sprinkled by the confectioner.
-45         The confectioner was sprinkled by the sugar.
-46            The distributor was tricked by the joker.
-47            The joker was tricked by the distributor.
-48             The crop was cultivated by the villager.
-49             The villager was cultivated by the crop.
-Name: Sentence, dtype: object","[0.95652174 0.3        0.93181818 0.63768116 0.82666667 0.25757576
- 0.84090909 0.68181818 0.98148148 0.46825397 0.85606061 0.02777778
- 0.98148148 0.03030303 0.95679012 0.14285714 0.88271605 0.20454545
- 1.         0.03623188 0.94927536 0.05072464 0.73484848 0.31060606
- 0.83333333 0.42361111 0.86231884 0.02       0.94202899 0.09333333
- 0.93333333 0.04666667 0.6969697  0.02173913 0.93181818 0.08
- 0.92424242 0.74166667 0.93055556 0.11111111 0.7826087  0.02173913
- 0.88       0.46212121 0.89583333 0.10784314 0.775      0.59848485
- 0.98611111 0.06481481]","[ 0.51972526  0.52543646  0.64089173  0.55437714  0.42390573  0.5216096
-  0.5328234   0.65686864  0.57664365  0.5919773   0.59204715  0.7181278
-  0.5898263   0.5142773   0.6233786   0.675476    0.55429584  0.53252906
-  0.45346993  0.4109782   0.6228687   0.64160675  0.2873428   0.2861181
-  0.6444666   0.56019324  0.4007011   0.34394175  0.36105245  0.5987057
-  0.47005618  0.34989607 -0.12816304 -0.09241134  0.39383906  0.318047
-  0.8809323   0.87936515  0.20543319  0.62302905  0.5368672   0.5340561
-  0.71175927  0.6504887   0.3978749   0.33151394  0.596042    0.5674793
-  0.45560712  0.4493273 ]"
-9,"0              The contract was burnt by the charlatan.
-1              The charlatan was burnt by the contract.
-2              The cadet was supervised by the colonel.
-3              The colonel was supervised by the cadet.
-4               The bowler was decorated by the hatter.
-5               The hatter was decorated by the bowler.
-6     The lab assistant was overwhelmed by the neuro...
-7     The neuroscientist was overwhelmed by the lab ...
-8            The trashcan was emptied by the fisherman.
-9            The fisherman was emptied by the trashcan.
-10    The newsagent was promoted by the TV station h...
-11    The TV station head was promoted by the newsag...
-12        The senior citizen was billed by the cashier.
-13        The cashier was billed by the senior citizen.
-14    The firefighter was rewarded by the police chief.
-15    The police chief was rewarded by the firefighter.
-16              The shirt was ironed by the seamstress.
-17              The seamstress was ironed by the shirt.
-18          The conqueror was imitated by the deceiver.
-19          The deceiver was imitated by the conqueror.
-20            The diplomat was driven by the chauffeur.
-21            The chauffeur was driven by the diplomat.
-22                  The ornament was hung by the uncle.
-23                  The uncle was hung by the ornament.
-24             The dentist was assisted by the orderly.
-25             The orderly was assisted by the dentist.
-26                The pipe was smoked by the crackhead.
-27                The crackhead was smoked by the pipe.
-28              The intern was berated by the mechanic.
-29              The mechanic was berated by the intern.
-30         The conservative was attacked by the critic.
-31         The critic was attacked by the conservative.
-32           The kid was reprimanded by the headmaster.
-33           The headmaster was reprimanded by the kid.
-34             The estate was inspected by the sheriff.
-35             The sheriff was inspected by the estate.
-36         The fund was established by the supremacist.
-37         The supremacist was established by the fund.
-38           The corporation was governed by the mogul.
-39           The mogul was governed by the corporation.
-40               The souvenir was lost by the traveler.
-41               The traveler was lost by the souvenir.
-42              The turkey was basted by the boyfriend.
-43              The boyfriend was basted by the turkey.
-44             The graph was created by the bookkeeper.
-45             The bookkeeper was created by the graph.
-46             The picture was autographed by the star.
-47             The star was autographed by the picture.
-48                The maestro was irked by the amateur.
-49                The amateur was irked by the maestro.
-Name: Sentence, dtype: object","[0.82608696 0.3115942  0.9469697  0.3125     0.40277778 0.43181818
- 0.96376812 0.72916667 0.86231884 0.02       0.95238095 0.4375
- 0.9        0.30555556 0.84090909 0.68181818 0.925      0.04
- 0.67424242 0.56060606 0.94166667 0.30666667 0.89333333 0.04
- 0.65972222 0.53703704 0.93055556 0.02083333 0.79545455 0.63194444
- 0.93209877 0.84027778 0.90909091 0.25362319 0.92666667 0.20634921
- 0.90909091 0.30434783 0.85606061 0.40833333 0.84848485 0.04666667
- 0.86419753 0.06349206 0.92424242 0.05797101 0.88271605 0.20454545
- 0.92424242 0.74166667]","[0.35352302 0.46724123 0.60106456 0.5333389  0.38784146 0.3555901
- 0.8589283  0.8844437  0.56807303 0.5076831  0.5923936  0.6001384
- 0.6414373  0.6024506  0.7734715  0.52510214 0.38789296 0.4429782
- 0.6589635  0.7574842  0.5632445  0.46620166 0.3549906  0.4088068
- 0.5467685  0.58984345 0.23555416 0.4113776  0.70065516 0.6720559
- 0.5201141  0.51360095 0.5183377  0.5810509  0.59206796 0.84554565
- 0.32038343 0.2333203  0.33217382 0.3925497  0.60903656 0.54892063
- 0.33258313 0.40973175 0.46226442 0.3930719  0.53422004 0.6578188
- 0.76504564 0.81761974]"
-10,"0           The project was sponsored by the financier.
-1           The financier was sponsored by the project.
-2            The assignment was blown by the operative.
-3            The operative was blown by the assignment.
-4                  The inmate was caught by the warden.
-5                  The warden was caught by the inmate.
-6               The battery was recharged by the diver.
-7               The diver was recharged by the battery.
-8                The tour-guide was chased by the lion.
-9                The lion was chased by the tour-guide.
-10           The corporation was governed by the mogul.
-11           The mogul was governed by the corporation.
-12               The money was wasted by the call girl.
-13               The call girl was wasted by the money.
-14                  The order was placed by the tanner.
-15                  The tanner was placed by the order.
-16                The novel was finished by the author.
-17                The author was finished by the novel.
-18            The witness was questioned by the lawyer.
-19            The lawyer was questioned by the witness.
-20         The cigar-maker was warned by the ecologist.
-21         The ecologist was warned by the cigar-maker.
-22               The damsel was courted by the playboy.
-23               The playboy was courted by the damsel.
-24           The spirit was vanquished by the exorcist.
-25           The exorcist was vanquished by the spirit.
-26              The youth was revived by the paramedic.
-27              The paramedic was revived by the youth.
-28    The tobacconist was cautioned by the environme...
-29    The environmentalist was cautioned by the toba...
-30        The ambassador was transported by the driver.
-31        The driver was transported by the ambassador.
-32            The loner was tormented by the loudmouth.
-33            The loudmouth was tormented by the loner.
-34    The firefighter was rewarded by the police chief.
-35    The police chief was rewarded by the firefighter.
-36         The investigator was fooled by the imitator.
-37         The imitator was fooled by the investigator.
-38               The pullover was donned by the friend.
-39               The friend was donned by the pullover.
-40              The intern was berated by the mechanic.
-41              The mechanic was berated by the intern.
-42        The computer was purchased by the instructor.
-43        The instructor was purchased by the computer.
-44                 The girl was spanked by the au pair.
-45                 The au pair was spanked by the girl.
-46         The industrialist was burgled by the robber.
-47         The robber was burgled by the industrialist.
-48                  The tap was fixed by the repairman.
-49                  The repairman was fixed by the tap.
-Name: Sentence, dtype: object","[0.9047619  0.20454545 0.8125     0.28030303 0.96666667 0.32575758
- 0.84166667 0.06060606 0.81333333 0.36363636 0.85606061 0.40833333
- 0.9057971  0.05769231 0.82575758 0.125      0.9469697  0.02272727
- 0.97727273 0.4469697  0.75925926 0.61904762 0.86805556 0.82575758
- 0.5625     0.28666667 0.96376812 0.36231884 0.83333333 0.42361111
- 0.95652174 0.3        0.99074074 0.60833333 0.84090909 0.68181818
- 0.89130435 0.70987654 0.86363636 0.14393939 0.79545455 0.63194444
- 0.94927536 0.         0.74666667 0.36805556 0.875      0.22222222
- 0.91333333 0.04      ]","[0.6427719  0.8117251  0.521648   0.6213314  0.7657143  0.5616667
- 0.47667158 0.65512407 0.8844913  0.74734914 0.60634875 0.51952887
- 0.55364054 0.597535   0.7077867  0.85365546 0.74761814 0.5548556
- 0.84299135 0.7176756  1.0137935  0.94405144 0.95675755 0.9397293
- 0.76421577 0.9079237  0.8060719  0.9767853  0.8709067  0.6346215
- 0.89665556 0.6143495  0.545828   0.6394129  0.9615177  0.62618566
- 0.8469952  0.9728905  0.86608446 0.56104875 0.8210054  0.6725055
- 0.6760453  0.57613    0.8418331  0.96968865 0.7481065  0.93673694
- 0.9428327  0.6269773 ]"
-11,"0               The fedora was adorned by the milliner.
-1               The milliner was adorned by the fedora.
-2                 The giraffe was fed by the zookeeper.
-3                 The zookeeper was fed by the giraffe.
-4            The youngster was resuscitated by the EMT.
-5            The EMT was resuscitated by the youngster.
-6                The filmmaker was pestered by the fan.
-7                The fan was pestered by the filmmaker.
-8                The damsel was courted by the playboy.
-9                The playboy was courted by the damsel.
-10              The intern was berated by the mechanic.
-11              The mechanic was berated by the intern.
-12            The bottle was uncorked by the winemaker.
-13            The winemaker was uncorked by the bottle.
-14         The ballerina was attired by the dressmaker.
-15         The dressmaker was attired by the ballerina.
-16           The suitcase was pulled by the stewardess.
-17           The stewardess was pulled by the suitcase.
-18          The conqueror was imitated by the deceiver.
-19          The deceiver was imitated by the conqueror.
-20            The table was tidied by the receptionist.
-21            The receptionist was tidied by the table.
-22          The wash basin was cleaned by the domestic.
-23          The domestic was cleaned by the wash basin.
-24                   The company was run by the tycoon.
-25                   The tycoon was run by the company.
-26               The dancer was costumed by the tailor.
-27               The tailor was costumed by the dancer.
-28              The attacker was located by the sleuth.
-29              The sleuth was located by the attacker.
-30              The hedonist was reproached by the nun.
-31              The nun was reproached by the hedonist.
-32                The game was won by the poker player.
-33                The poker player was won by the game.
-34            The orthodontist was helped by the nurse.
-35            The nurse was helped by the orthodontist.
-36    The chiropractor was thanked by the tennis pla...
-37    The tennis player was thanked by the chiroprac...
-38                The pipe was smoked by the crackhead.
-39                The crackhead was smoked by the pipe.
-40            The cure was discovered by the scientist.
-41            The scientist was discovered by the cure.
-42             The concert was attended by the groupie.
-43             The groupie was attended by the concert.
-44           The plant was watered by the house sitter.
-45           The house sitter was watered by the plant.
-46                    The boy was tutored by the nanny.
-47                    The nanny was tutored by the boy.
-48                 The paper was edited by the advisor.
-49                 The advisor was edited by the paper.
-Name: Sentence, dtype: object","[0.73484848 0.31060606 0.96212121 0.06666667 0.93478261 0.46296296
- 0.97222222 0.5        0.86805556 0.82575758 0.79545455 0.63194444
- 0.98148148 0.03030303 0.92028986 0.27083333 0.94444444 0.18666667
- 0.67424242 0.56060606 0.94202899 0.09333333 0.67333333 0.13636364
- 0.87037037 0.12878788 0.74666667 0.21969697 0.75757576 0.61363636
- 0.84027778 0.70454545 0.97530864 0.09722222 0.82666667 0.8030303
- 0.9469697  0.54347826 0.93055556 0.02083333 1.         0.05833333
- 0.9375     0.12121212 0.96       0.04166667 0.97727273 0.28030303
- 0.84027778 0.17361111]","[0.5187947  0.3927778  0.71926147 0.6165193  1.0047178  0.83357024
- 0.63007694 0.5992854  1.0421438  1.0584443  0.8236513  0.7518857
- 0.537896   0.47912252 0.69179887 0.78363025 0.84249395 0.8203856
- 0.8541732  0.94963104 0.5744135  0.63101614 0.4495963  0.63499737
- 0.96209764 0.93985224 0.65708554 0.6203968  0.59382373 0.644448
- 0.739102   0.760051   0.62947845 0.6924536  0.6593537  0.64646214
- 0.80178696 0.85506713 0.5374959  0.55280304 1.0010376  0.42497307
- 0.70081294 0.34751242 0.407077   0.38753963 0.67438316 0.72594446
- 0.32627448 0.43671995]"
-12,"0                 The octopus was grilled by the cook.
-1                 The cook was grilled by the octopus.
-2           The corporation was governed by the mogul.
-3           The mogul was governed by the corporation.
-4               The message was erased by the bellboy.
-5               The bellboy was erased by the message.
-6              The key was borrowed by the schoolgirl.
-7              The schoolgirl was borrowed by the key.
-8        The ambassador was transported by the driver.
-9        The driver was transported by the ambassador.
-10            The desk was organized by the secretary.
-11            The secretary was organized by the desk.
-12         The property was examined by the constable.
-13         The constable was examined by the property.
-14          The medicine was swallowed by the patient.
-15          The patient was swallowed by the medicine.
-16    The contestant was discouraged by the pessimist.
-17    The pessimist was discouraged by the contestant.
-18        The conservative was attacked by the critic.
-19        The critic was attacked by the conservative.
-20           The manufacturer was robbed by the thief.
-21           The thief was robbed by the manufacturer.
-22               The bully was dodged by the freshman.
-23               The freshman was dodged by the bully.
-24               The maestro was irked by the amateur.
-25               The amateur was irked by the maestro.
-26     The offender was handcuffed by the policewoman.
-27     The policewoman was handcuffed by the offender.
-28             The pill was taken by the convalescent.
-29             The convalescent was taken by the pill.
-30           The distributor was tricked by the joker.
-31           The joker was tricked by the distributor.
-32              The damsel was courted by the playboy.
-33              The playboy was courted by the damsel.
-34        The elderly person was charged by the clerk.
-35        The clerk was charged by the elderly person.
-36          The apprentice was trained by the artisan.
-37          The artisan was trained by the apprentice.
-38                The victor was emulated by the liar.
-39                The liar was emulated by the victor.
-40          The kid was reprimanded by the headmaster.
-41          The headmaster was reprimanded by the kid.
-42            The faucet was repaired by the handyman.
-43            The handyman was repaired by the faucet.
-44        The speech was delivered by the congressman.
-45        The congressman was delivered by the speech.
-46           The filet was devoured by the meat-eater.
-47           The meat-eater was devoured by the filet.
-48          The plant was watered by the house sitter.
-49          The house sitter was watered by the plant.
-Name: Sentence, dtype: object","[0.96527778 0.00666667 0.85606061 0.40833333 0.83333333 0.02469136
- 0.92592593 0.025      0.95652174 0.3        0.96527778 0.0625
- 0.88333333 0.12       1.         0.03623188 0.93939394 0.66666667
- 0.93209877 0.84027778 0.91333333 0.33333333 0.85507246 0.46969697
- 0.92424242 0.74166667 0.99305556 0.1969697  0.75757576 0.05797101
- 0.775      0.59848485 0.86805556 0.82575758 0.94927536 0.45138889
- 0.92666667 0.24242424 0.63888889 0.5        0.90909091 0.25362319
- 0.97222222 0.03472222 1.         0.         0.93333333 0.04666667
- 0.96       0.04166667]","[0.7187086  0.3596406  0.57254565 0.56677806 0.7651776  0.75187886
- 0.5389215  0.31952268 0.8801547  0.61817944 0.5055971  0.5303758
- 0.82438827 0.64100873 0.8522295  0.53589624 0.96258867 0.834072
- 0.5344499  0.48985237 0.7300557  0.77027905 0.68113965 0.7649361
- 0.71110237 0.9819912  0.7417468  0.75496554 0.46521038 0.3746761
- 0.84027827 0.80026996 0.8916782  0.91671574 0.9023011  0.7321598
- 0.7622639  0.82133484 0.6806776  0.82497716 0.8648603  0.66019726
- 0.8407799  0.7116498  0.94875515 0.4250722  0.6464726  0.50307775
- 0.32963663 0.30990404]"
-13,"0            The letter was sent by the cryptographer.
-1            The cryptographer was sent by the letter.
-2        The inspector was conned by the impersonator.
-3        The impersonator was conned by the inspector.
-4                The actress was cast by the producer.
-5                The producer was cast by the actress.
-6             The thinker was depicted by the painter.
-7             The painter was depicted by the thinker.
-8              The shirt was ironed by the seamstress.
-9              The seamstress was ironed by the shirt.
-10        The ballerina was attired by the dressmaker.
-11        The dressmaker was attired by the ballerina.
-12                  The sink was wiped by the servant.
-13                  The servant was wiped by the sink.
-14                 The ornament was hung by the uncle.
-15                 The uncle was hung by the ornament.
-16             The remedy was found by the researcher.
-17             The researcher was found by the remedy.
-18           The widower was treated by the urologist.
-19           The urologist was treated by the widower.
-20               The game was won by the poker player.
-21               The poker player was won by the game.
-22         The trip was canceled by the archaeologist.
-23         The archaeologist was canceled by the trip.
-24             The statesman was shot by the assassin.
-25             The assassin was shot by the statesman.
-26            The lad was instructed by the governess.
-27            The governess was instructed by the lad.
-28     The beginner was supported by the professional.
-29     The professional was supported by the beginner.
-30               The ogre was mesmerized by the pixie.
-31               The pixie was mesmerized by the ogre.
-32    The seaman was undercharged by the streetwalker.
-33    The streetwalker was undercharged by the seaman.
-34                The girl was spanked by the au pair.
-35                The au pair was spanked by the girl.
-36     The offender was handcuffed by the policewoman.
-37     The policewoman was handcuffed by the offender.
-38                  The supper was cooked by the lady.
-39                  The lady was cooked by the supper.
-40          The assignment was blown by the operative.
-41          The operative was blown by the assignment.
-42              The prize was received by the cellist.
-43              The cellist was received by the prize.
-44             The youth was revived by the paramedic.
-45             The paramedic was revived by the youth.
-46             The shuttle was left by the vacationer.
-47             The vacationer was left by the shuttle.
-48            The estate was inspected by the sheriff.
-49            The sheriff was inspected by the estate.
-Name: Sentence, dtype: object","[0.85333333 0.10606061 0.92361111 0.59333333 0.96969697 0.12318841
- 0.93650794 0.27777778 0.925      0.04       0.92028986 0.27083333
- 0.92666667 0.04666667 0.89333333 0.04       0.96527778 0.07575758
- 0.86       0.29861111 0.97530864 0.09722222 0.91304348 0.01388889
- 0.93181818 0.63768116 0.90833333 0.34       0.90151515 0.61805556
- 0.40740741 0.26515152 0.49275362 0.43478261 0.74666667 0.36805556
- 0.99305556 0.1969697  0.98765432 0.14285714 0.8125     0.28030303
- 0.84090909 0.08695652 0.96376812 0.36231884 0.62037037 0.85606061
- 0.92666667 0.20634921]","[0.57205945 0.48535544 0.8895573  0.89850473 0.7633305  0.52759856
- 0.63891864 0.4886598  0.7594234  0.41514105 0.7510962  0.7138657
- 0.51460373 0.76203483 0.56590384 0.49866307 0.74077135 0.10843182
- 0.736412   0.46812588 0.68537474 0.618617   0.7179874  0.71570456
- 0.8213964  0.9360111  0.84222    0.47441876 0.7545518  0.5319105
- 0.7029718  0.68137693 0.6531183  0.7093153  0.73758334 0.9173095
- 0.70549357 0.65275437 0.77486897 0.23840612 0.50849766 0.60599774
- 0.7246337  0.3356617  0.7942751  0.81037885 0.5935965  0.6086392
- 0.95519084 0.7074284 ]"
-14,"0              The captive was saved by the negotiator.
-1              The negotiator was saved by the captive.
-2               The fedora was adorned by the milliner.
-3               The milliner was adorned by the fedora.
-4         The inspector was conned by the impersonator.
-5         The impersonator was conned by the inspector.
-6                  The target was reached by the guide.
-7                  The guide was reached by the target.
-8                 The rioter was restrained by the cop.
-9                 The cop was restrained by the rioter.
-10             The rookie was encouraged by the master.
-11             The master was encouraged by the rookie.
-12    The firefighter was rewarded by the police chief.
-13    The police chief was rewarded by the firefighter.
-14    The president's wife was terrified by the hija...
-15    The hijacker was terrified by the president's ...
-16    The chiropractor was thanked by the tennis pla...
-17    The tennis player was thanked by the chiroprac...
-18            The distributor was tricked by the joker.
-19            The joker was tricked by the distributor.
-20             The marketer was duped by the prankster.
-21             The prankster was duped by the marketer.
-22               The successor was chosen by the baron.
-23               The baron was chosen by the successor.
-24                The deer was trapped by the huntsman.
-25                The huntsman was trapped by the deer.
-26         The cigar-maker was warned by the ecologist.
-27         The ecologist was warned by the cigar-maker.
-28      The marmalade was detested by the nutritionist.
-29      The nutritionist was detested by the marmalade.
-30                The pipe was smoked by the crackhead.
-31                The crackhead was smoked by the pipe.
-32            The cure was discovered by the scientist.
-33            The scientist was discovered by the cure.
-34              The pine tree was felled by the logger.
-35              The logger was felled by the pine tree.
-36                The ogre was mesmerized by the pixie.
-37                The pixie was mesmerized by the ogre.
-38                The steak was eaten by the carnivore.
-39                The carnivore was eaten by the steak.
-40                       The soda was drunk by the man.
-41                       The man was drunk by the soda.
-42                  The necklace was stolen by the bum.
-43                  The bum was stolen by the necklace.
-44       The quack was discredited by the cardiologist.
-45       The cardiologist was discredited by the quack.
-46               The package was shipped by the forger.
-47               The forger was shipped by the package.
-48               The busboy was tipped by the brunette.
-49               The brunette was tipped by the busboy.
-Name: Sentence, dtype: object","[0.91666667 0.4469697  0.73484848 0.31060606 0.92361111 0.59333333
- 0.96376812 0.20833333 0.98148148 0.46825397 0.97727273 0.625
- 0.84090909 0.68181818 0.84       0.40151515 0.9469697  0.54347826
- 0.775      0.59848485 0.92753623 0.70666667 0.88       0.71428571
- 0.95652174 0.21014493 0.75925926 0.61904762 0.76086957 0.10666667
- 0.93055556 0.02083333 1.         0.05833333 0.88636364 0.16666667
- 0.40740741 0.26515152 0.92753623 0.02083333 0.91666667 0.02
- 0.85333333 0.         0.76984127 0.27272727 0.84848485 0.06060606
- 0.85606061 0.28666667]","[0.79395    0.56764406 0.6272227  0.36832184 0.82785386 0.7696978
- 0.49413168 0.4234565  0.71084577 0.7036858  0.88914794 0.578527
- 0.7897615  0.39844042 0.62934554 0.8251481  0.79972893 0.8168993
- 0.79401237 0.7295758  0.89794433 1.0155072  0.6072724  0.4515612
- 0.6981596  0.6704009  0.7513931  0.63291574 0.74423754 0.63615817
- 0.62318516 0.39497405 1.0718116  0.2759053  0.6614777  0.46781546
- 0.62663776 0.64884275 0.7089101  0.32358778 0.6366943  0.42159986
- 0.5118681  0.13728368 0.8432301  0.63111234 0.6314218  0.37611848
- 0.62444997 0.7058061 ]"
-15,"0                The visitor was bothered by the drunk.
-1                The drunk was bothered by the visitor.
-2                  The gun was loaded by the minuteman.
-3                  The minuteman was loaded by the gun.
-4               The coach was disobeyed by the cyclist.
-5               The cyclist was disobeyed by the coach.
-6                    The squid was sauteed by the chef.
-7                    The chef was sauteed by the squid.
-8                   The tap was fixed by the repairman.
-9                   The repairman was fixed by the tap.
-10      The bystander was interrogated by the attorney.
-11      The attorney was interrogated by the bystander.
-12                    The worker was fired by the boss.
-13                    The boss was fired by the worker.
-14                 The octopus was grilled by the cook.
-15                 The cook was grilled by the octopus.
-16             The economist was acquitted by the jury.
-17             The jury was acquitted by the economist.
-18         The profit was calculated by the bookseller.
-19         The bookseller was calculated by the profit.
-20    The lab assistant was overwhelmed by the neuro...
-21    The neuroscientist was overwhelmed by the lab ...
-22              The intern was berated by the mechanic.
-23              The mechanic was berated by the intern.
-24               The airplane was steered by the pilot.
-25               The pilot was steered by the airplane.
-26        The winner was congratulated by the panelist.
-27        The panelist was congratulated by the winner.
-28           The kid was reprimanded by the headmaster.
-29           The headmaster was reprimanded by the kid.
-30           The offer was accepted by the sociologist.
-31           The sociologist was accepted by the offer.
-32                The illness was caught by the raider.
-33                The raider was caught by the illness.
-34            The cure was discovered by the scientist.
-35            The scientist was discovered by the cure.
-36                The banner was raised by the soldier.
-37                The soldier was raised by the banner.
-38             The ruffian was released by the bailiff.
-39             The bailiff was released by the ruffian.
-40              The aide was rebuked by the technician.
-41              The technician was rebuked by the aide.
-42    The firefighter was rewarded by the police chief.
-43    The police chief was rewarded by the firefighter.
-44                 The victor was emulated by the liar.
-45                 The liar was emulated by the victor.
-46              The pill was taken by the convalescent.
-47              The convalescent was taken by the pill.
-48             The trainee was taught by the craftsman.
-49             The craftsman was taught by the trainee.
-Name: Sentence, dtype: object","[0.88888889 0.68181818 0.84666667 0.03787879 0.82407407 0.39166667
- 0.87681159 0.07692308 0.91333333 0.04       0.85185185 0.55797101
- 0.94444444 0.18939394 0.96527778 0.00666667 0.88405797 0.19333333
- 0.93518519 0.09166667 0.96376812 0.72916667 0.79545455 0.63194444
- 0.99242424 0.14492754 0.96212121 0.47727273 0.90909091 0.25362319
- 0.91666667 0.1875     0.72222222 0.25694444 1.         0.05833333
- 0.96666667 0.09090909 0.8        0.31060606 0.82608696 0.7037037
- 0.84090909 0.68181818 0.63888889 0.5        0.75757576 0.05797101
- 1.         0.34259259]","[0.48081535 0.58726305 0.44686443 0.52816457 0.50606734 0.80700773
- 0.7760934  0.34696287 0.96798533 0.2804019  0.6800795  0.6780316
- 0.8763303  0.5566594  0.87157124 0.34229058 0.964879   0.60591274
- 0.8651746  0.4945051  0.89995974 0.96546155 0.78779477 0.73506314
- 0.72354335 0.670793   0.84591216 0.79839665 0.9416626  0.68057305
- 0.7261266  0.6623382  0.4083343  0.5397448  1.0880914  0.14277357
- 0.54884726 0.4050638  1.0005918  0.553778   0.6450059  0.666513
- 0.8677502  0.41429454 0.58262986 0.89517826 0.5872088  0.27038795
- 0.909965   0.7525758 ]"
-16,"0                The message was erased by the bellboy.
-1                The bellboy was erased by the message.
-2             The virtuoso was irritated by the novice.
-3             The novice was irritated by the virtuoso.
-4      The light bulb was changed by the groundskeeper.
-5      The groundskeeper was changed by the light bulb.
-6                   The anthem was sung by the marcher.
-7                   The marcher was sung by the anthem.
-8                        The soda was drunk by the man.
-9                        The man was drunk by the soda.
-10         The speech was delivered by the congressman.
-11         The congressman was delivered by the speech.
-12    The passport was photocopied by the travel-agent.
-13    The travel-agent was photocopied by the passport.
-14          The linebacker was relaxed by the masseuse.
-15          The masseuse was relaxed by the linebacker.
-16         The sugar was sprinkled by the confectioner.
-17         The confectioner was sprinkled by the sugar.
-18      The offender was handcuffed by the policewoman.
-19      The policewoman was handcuffed by the offender.
-20               The wire was bent by the ditch digger.
-21               The ditch digger was bent by the wire.
-22                 The paper was edited by the advisor.
-23                 The advisor was edited by the paper.
-24           The apprentice was trained by the artisan.
-25           The artisan was trained by the apprentice.
-26     The tribesman was studied by the anthropologist.
-27     The anthropologist was studied by the tribesman.
-28               The jet was maneuvered by the aviator.
-29               The aviator was maneuvered by the jet.
-30        The apartment was redecorated by the copycat.
-31        The copycat was redecorated by the apartment.
-32              The attacker was located by the sleuth.
-33              The sleuth was located by the attacker.
-34                 The target was reached by the guide.
-35                 The guide was reached by the target.
-36         The word was mispronounced by the announcer.
-37         The announcer was mispronounced by the word.
-38           The traitor was pardoned by the president.
-39           The president was pardoned by the traitor.
-40                The chart was made by the accountant.
-41                The accountant was made by the chart.
-42                The illness was caught by the raider.
-43                The raider was caught by the illness.
-44                 The jail was feared by the criminal.
-45                 The criminal was feared by the jail.
-46                The actress was cast by the producer.
-47                The producer was cast by the actress.
-48             The ruffian was released by the bailiff.
-49             The bailiff was released by the ruffian.
-Name: Sentence, dtype: object","[0.83333333 0.02469136 0.87878788 0.84848485 0.96666667 0.06818182
- 0.77272727 0.         0.91666667 0.02       1.         0.
- 0.96       0.         0.84090909 0.34057971 0.89583333 0.10784314
- 0.99305556 0.1969697  0.79365079 0.04666667 0.84027778 0.17361111
- 0.92666667 0.24242424 0.82       0.53030303 0.99242424 0.07246377
- 0.63636364 0.11363636 0.75757576 0.61363636 0.96376812 0.20833333
- 0.96212121 0.0625     0.81884058 0.06       0.97333333 0.04545455
- 0.72222222 0.25694444 0.56060606 0.36666667 0.96969697 0.12318841
- 0.8        0.31060606]","[0.73369193 0.48917955 0.9326371  1.0400004  0.86334085 0.3877624
- 0.6914831  0.18777972 0.74231964 0.3900255  0.9054754  0.04120973
- 0.8869959  0.39473772 0.7120147  0.4161129  0.7521591  0.25794256
- 0.7963942  0.68669844 0.63945866 0.63052607 0.49564123 0.23273621
- 0.7791989  0.88334084 0.8812008  0.5628506  0.8252934  0.55763394
- 0.59023255 0.17909065 0.66111326 0.50115335 0.6088818  0.5629568
- 0.99059284 0.73452383 1.0976171  0.61949986 0.6839925  0.12418646
- 0.34738106 0.63772535 0.41409668 0.55960065 0.8762894  0.5113318
- 0.9258098  0.58116424]"
-17,"0     The lab assistant was overwhelmed by the neuro...
-1     The neuroscientist was overwhelmed by the lab ...
-2         The gunsmith was terrorized by the warmonger.
-3         The warmonger was terrorized by the gunsmith.
-4                The tour-guide was chased by the lion.
-5                The lion was chased by the tour-guide.
-6                    The squid was sauteed by the chef.
-7                    The chef was sauteed by the squid.
-8          The sugar was sprinkled by the confectioner.
-9          The confectioner was sprinkled by the sugar.
-10             The faucet was repaired by the handyman.
-11             The handyman was repaired by the faucet.
-12                The rioter was restrained by the cop.
-13                The cop was restrained by the rioter.
-14            The diplomat was driven by the chauffeur.
-15            The chauffeur was driven by the diplomat.
-16                 The tenant was evicted by the owner.
-17                 The owner was evicted by the tenant.
-18              The statesman was shot by the assassin.
-19              The assassin was shot by the statesman.
-20      The beginner was supported by the professional.
-21      The professional was supported by the beginner.
-22          The expert was employed by the businessman.
-23          The businessman was employed by the expert.
-24             The form was initialed by the guarantor.
-25             The guarantor was initialed by the form.
-26                 The paper was edited by the advisor.
-27                 The advisor was edited by the paper.
-28                The novel was finished by the author.
-29                The author was finished by the novel.
-30                    The rebel was exiled by the king.
-31                    The king was exiled by the rebel.
-32                 The mission was failed by the agent.
-33                 The agent was failed by the mission.
-34         The cigar-maker was warned by the ecologist.
-35         The ecologist was warned by the cigar-maker.
-36     The contestant was discouraged by the pessimist.
-37     The pessimist was discouraged by the contestant.
-38      The plagiarist was admonished by the librarian.
-39      The librarian was admonished by the plagiarist.
-40           The schedule was verified by the humorist.
-41           The humorist was verified by the schedule.
-42                The program was funded by the banker.
-43                The banker was funded by the program.
-44         The expression was garbled by the anchorman.
-45         The anchorman was garbled by the expression.
-46     The right-winger was criticized by the reviewer.
-47     The reviewer was criticized by the right-winger.
-48               The wire was bent by the ditch digger.
-49               The ditch digger was bent by the wire.
-Name: Sentence, dtype: object","[0.96376812 0.72916667 0.62878788 0.61666667 0.81333333 0.36363636
- 0.87681159 0.07692308 0.89583333 0.10784314 0.97222222 0.03472222
- 0.98148148 0.46825397 0.94166667 0.30666667 0.97222222 0.
- 0.93181818 0.63768116 0.90151515 0.61805556 0.98550725 0.6875
- 0.91666667 0.17424242 0.84027778 0.17361111 0.9469697  0.02272727
- 0.80952381 0.43939394 0.89166667 0.1969697  0.75925926 0.61904762
- 0.93939394 0.66666667 0.825      0.5        0.66       0.03030303
- 0.9382716  0.54166667 0.86363636 0.19444444 0.92424242 0.94927536
- 0.79365079 0.04666667]","[0.88970405 0.9320335  1.0376089  0.82978874 0.86378425 0.7592508
- 0.7053141  0.2689399  0.7825478  0.23437315 1.1233757  0.6403261
- 0.778601   0.7371871  0.7258324  0.60833937 0.9910143  0.62668294
- 0.7792327  0.9004479  0.70260197 0.4794765  0.8873014  0.61151224
- 0.5817085  0.69867057 0.4664486  0.33124596 0.7677428  0.3303067
- 1.0978034  0.50271493 0.787857   0.73299104 0.98945504 0.7805136
- 1.1285021  0.8803404  1.4053035  0.92530745 0.8825727  0.780479
- 0.35966414 0.38013273 0.7417508  0.75071913 0.9738192  0.82032794
- 0.67544585 0.69622916]"
-18,"0             The password was memorized by the hacker.
-1             The hacker was memorized by the password.
-2         The computer was purchased by the instructor.
-3         The instructor was purchased by the computer.
-4             The distributor was tricked by the joker.
-5             The joker was tricked by the distributor.
-6              The thinker was depicted by the painter.
-7              The painter was depicted by the thinker.
-8           The disease was contracted by the marauder.
-9           The marauder was contracted by the disease.
-10             The captive was saved by the negotiator.
-11             The negotiator was saved by the captive.
-12           The assignment was blown by the operative.
-13           The operative was blown by the assignment.
-14              The statesman was shot by the assassin.
-15              The assassin was shot by the statesman.
-16         The itinerary was confirmed by the comedian.
-17         The comedian was confirmed by the itinerary.
-18             The graph was created by the bookkeeper.
-19             The bookkeeper was created by the graph.
-20              The vendor was alarmed by the arsonist.
-21              The arsonist was alarmed by the vendor.
-22          The trip was canceled by the archaeologist.
-23          The archaeologist was canceled by the trip.
-24    The president's wife was terrified by the hija...
-25    The hijacker was terrified by the president's ...
-26                    The worker was fired by the boss.
-27                    The boss was fired by the worker.
-28                  The cushion was lifted by the maid.
-29                  The maid was lifted by the cushion.
-30                The cousin was shocked by the genius.
-31                The genius was shocked by the cousin.
-32          The expert was employed by the businessman.
-33          The businessman was employed by the expert.
-34                       The soda was drunk by the man.
-35                       The man was drunk by the soda.
-36             The crop was cultivated by the villager.
-37             The villager was cultivated by the crop.
-38         The expression was garbled by the anchorman.
-39         The anchorman was garbled by the expression.
-40              The shirt was ironed by the seamstress.
-41              The seamstress was ironed by the shirt.
-42            The letter was sent by the cryptographer.
-43            The cryptographer was sent by the letter.
-44               The dancer was costumed by the tailor.
-45               The tailor was costumed by the dancer.
-46           The apprentice was trained by the artisan.
-47           The artisan was trained by the apprentice.
-48               The prison was dreaded by the convict.
-49               The convict was dreaded by the prison.
-Name: Sentence, dtype: object","[0.94927536 0.24637681 0.94927536 0.         0.775      0.59848485
- 0.93650794 0.27777778 0.8125     0.13636364 0.91666667 0.4469697
- 0.8125     0.28030303 0.93181818 0.63768116 0.80666667 0.44666667
- 0.92424242 0.05797101 0.81060606 0.68253968 0.91304348 0.01388889
- 0.84       0.40151515 0.94444444 0.18939394 0.98484848 0.16666667
- 0.90151515 0.67391304 0.98550725 0.6875     0.91666667 0.02
- 0.98611111 0.06481481 0.86363636 0.19444444 0.925      0.04
- 0.85333333 0.10606061 0.74666667 0.21969697 0.92666667 0.24242424
- 0.75       0.32098765]","[0.8212163  0.63874346 0.69255    0.29047137 0.86199075 0.6579736
- 0.55926067 0.31220275 0.5755723  0.79651386 0.6817573  0.55717975
- 0.6027736  0.6234725  0.7813373  0.85230666 0.7797666  0.4258576
- 0.68359286 0.25678688 0.6445102  0.63276094 0.8785892  0.6633602
- 0.6735069  0.933155   0.9692047  0.65078837 0.6806436  0.5947389
- 0.7161885  0.6576802  0.87825257 0.64041764 0.78205556 0.4263292
- 1.1295943  0.4722976  0.76931113 0.69110554 0.9714479  0.24531919
- 0.88673097 0.53858095 0.8521438  0.6204925  0.82154256 0.9996504
- 0.36459237 0.46315116]"
-19,"0                  The jail was feared by the criminal.
-1                  The criminal was feared by the jail.
-2                 The poem was recited by the bookworm.
-3                 The bookworm was recited by the poem.
-4             The crowd was hypnotized by the magician.
-5             The magician was hypnotized by the crowd.
-6       The plagiarist was admonished by the librarian.
-7       The librarian was admonished by the plagiarist.
-8                     The worker was fired by the boss.
-9                     The boss was fired by the worker.
-10             The service was rated by the cheapskate.
-11             The cheapskate was rated by the service.
-12                The laptop was bought by the teacher.
-13                The teacher was bought by the laptop.
-14    The appointment was rescheduled by the manicur...
-15    The manicurist was rescheduled by the appointm...
-16              The bowler was decorated by the hatter.
-17              The hatter was decorated by the bowler.
-18              The turkey was basted by the boyfriend.
-19              The boyfriend was basted by the turkey.
-20     The contestant was discouraged by the pessimist.
-21     The pessimist was discouraged by the contestant.
-22         The industrialist was burgled by the robber.
-23         The robber was burgled by the industrialist.
-24           The pop star was stalked by the paparazzi.
-25           The paparazzi was stalked by the pop star.
-26         The conservative was attacked by the critic.
-27         The critic was attacked by the conservative.
-28                 The stash was hidden by the hoarder.
-29                 The hoarder was hidden by the stash.
-30         The expression was garbled by the anchorman.
-31         The anchorman was garbled by the expression.
-32         The address was given by the representative.
-33         The representative was given by the address.
-34             The cadet was supervised by the colonel.
-35             The colonel was supervised by the cadet.
-36                The old man was shaved by the barber.
-37                The barber was shaved by the old man.
-38          The stockpile was concealed by the packrat.
-39          The packrat was concealed by the stockpile.
-40                The deer was trapped by the huntsman.
-41                The huntsman was trapped by the deer.
-42                    The rebel was exiled by the king.
-43                    The king was exiled by the rebel.
-44                   The sink was wiped by the servant.
-45                   The servant was wiped by the sink.
-46              The pine tree was felled by the logger.
-47              The logger was felled by the pine tree.
-48                The giraffe was fed by the zookeeper.
-49                The zookeeper was fed by the giraffe.
-Name: Sentence, dtype: object","[0.56060606 0.36666667 0.86805556 0.06666667 0.92424242 0.24637681
- 0.825      0.5        0.94444444 0.18939394 0.82575758 0.5625
- 0.99275362 0.         0.95679012 0.14285714 0.40277778 0.43181818
- 0.86419753 0.06349206 0.93939394 0.66666667 0.875      0.22222222
- 0.96       0.33333333 0.93209877 0.84027778 0.96212121 0.53472222
- 0.86363636 0.19444444 0.93181818 0.08       0.9469697  0.3125
- 0.99074074 0.39166667 0.82575758 0.68421053 0.95652174 0.21014493
- 0.80952381 0.43939394 0.92666667 0.04666667 0.88636364 0.16666667
- 0.96212121 0.06666667]","[0.4525214  0.6315706  0.66840106 0.46186376 1.1066357  1.1657029
- 1.3643881  0.9023132  1.0077962  0.73657197 0.69740653 0.67034364
- 0.97501695 0.37035924 0.7395333  0.6404479  0.53265476 0.60606307
- 0.53848195 0.40097454 1.0610958  0.80440617 0.7529657  0.72419
- 1.0004609  0.8294462  0.5310431  0.5095669  1.0182568  0.5459201
- 0.932539   0.8275314  0.69946015 0.33683488 1.0385792  0.6840718
- 0.99769235 0.9672493  0.6614867  0.4862951  0.87744164 0.7239192
- 1.0735283  0.529408   0.6692056  0.5975456  0.9273832  0.6132605
- 1.0480187  0.8667705 ]"
-20,"0           The whistle-blower was ousted by the union.
-1           The union was ousted by the whistle-blower.
-2                  The paper was edited by the advisor.
-3                  The advisor was edited by the paper.
-4                     The noble was obeyed by the page.
-5                     The page was obeyed by the noble.
-6                   The tap was fixed by the repairman.
-7                   The repairman was fixed by the tap.
-8              The button was pressed by the attendant.
-9              The attendant was pressed by the button.
-10         The ballerina was attired by the dressmaker.
-11         The dressmaker was attired by the ballerina.
-12        The senior citizen was billed by the cashier.
-13        The cashier was billed by the senior citizen.
-14          The wash basin was cleaned by the domestic.
-15          The domestic was cleaned by the wash basin.
-16                The game was won by the poker player.
-17                The poker player was won by the game.
-18    The abused woman was comforted by the social w...
-19    The social worker was comforted by the abused ...
-20             The hostage was rescued by the mediator.
-21             The mediator was rescued by the hostage.
-22    The newsagent was promoted by the TV station h...
-23    The TV station head was promoted by the newsag...
-24       The shopkeeper was unnerved by the pyromaniac.
-25       The pyromaniac was unnerved by the shopkeeper.
-26          The conqueror was imitated by the deceiver.
-27          The deceiver was imitated by the conqueror.
-28               The souvenir was lost by the traveler.
-29               The traveler was lost by the souvenir.
-30           The cash was squandered by the prostitute.
-31           The prostitute was squandered by the cash.
-32        The triumph was promised by the ship captain.
-33        The ship captain was promised by the triumph.
-34        The specialist was hired by the entrepreneur.
-35        The entrepreneur was hired by the specialist.
-36            The clergyman was cherished by the nomad.
-37            The nomad was cherished by the clergyman.
-38          The participant was dissuaded by the cynic.
-39          The cynic was dissuaded by the participant.
-40                   The company was run by the tycoon.
-41                   The tycoon was run by the company.
-42               The door was unlocked by the deckhand.
-43               The deckhand was unlocked by the door.
-44         The conservative was attacked by the critic.
-45         The critic was attacked by the conservative.
-46                 The mission was failed by the agent.
-47                 The agent was failed by the mission.
-48              The attacker was located by the sleuth.
-49              The sleuth was located by the attacker.
-Name: Sentence, dtype: object","[0.92592593 0.73809524 0.84027778 0.17361111 0.57575758 0.44202899
- 0.91333333 0.04       0.97727273 0.05555556 0.92028986 0.27083333
- 0.9        0.30555556 0.67333333 0.13636364 0.97530864 0.09722222
- 0.9469697  0.38666667 0.9375     0.29012346 0.95238095 0.4375
- 0.72666667 0.64393939 0.67424242 0.56060606 0.84848485 0.04666667
- 0.83333333 0.21527778 0.74074074 0.2        0.95       0.65277778
- 0.6984127  0.70138889 0.74074074 0.74242424 0.87037037 0.12878788
- 0.94927536 0.04320988 0.93209877 0.84027778 0.89166667 0.1969697
- 0.75757576 0.61363636]","[0.6883127  0.36404568 0.32245678 0.3330469  0.47577882 0.3817224
- 0.729127   0.24512398 0.42788106 0.21572912 0.6712236  0.5507037
- 0.6955895  0.588528   0.37430024 0.3244502  0.55432785 0.51488924
- 0.9067014  0.5967532  0.7692022  0.6898801  0.482862   0.4476425
- 0.724624   0.83395785 0.6523344  0.8715194  0.89644843 0.55553275
- 0.6246329  0.41691315 0.53889537 0.31187057 0.81734854 0.5527925
- 0.4996574  0.7855535  0.6535709  0.5952968  0.82135946 0.52761936
- 0.4282595  0.24364042 0.346667   0.36988235 0.5586061  0.5928919
- 0.5565004  0.3474682 ]"
-21,"0                  The mission was failed by the agent.
-1                  The agent was failed by the mission.
-2              The marketer was duped by the prankster.
-3              The prankster was duped by the marketer.
-4            The cash was squandered by the prostitute.
-5            The prostitute was squandered by the cash.
-6                    The sink was wiped by the servant.
-7                    The servant was wiped by the sink.
-8              The lad was instructed by the governess.
-9              The governess was instructed by the lad.
-10    The tobacconist was cautioned by the environme...
-11    The environmentalist was cautioned by the toba...
-12                The cousin was shocked by the genius.
-13                The genius was shocked by the cousin.
-14               The door was unlocked by the deckhand.
-15               The deckhand was unlocked by the door.
-16              The recluse was taunted by the windbag.
-17              The windbag was taunted by the recluse.
-18           The pop star was stalked by the paparazzi.
-19           The paparazzi was stalked by the pop star.
-20             The estate was inspected by the sheriff.
-21             The sheriff was inspected by the estate.
-22                The old man was shaved by the barber.
-23                The barber was shaved by the old man.
-24            The cure was discovered by the scientist.
-25            The scientist was discovered by the cure.
-26                    The bag was packed by the marine.
-27                    The marine was packed by the bag.
-28        The apartment was redecorated by the copycat.
-29        The copycat was redecorated by the apartment.
-30        The beverage was requested by the adventurer.
-31        The adventurer was requested by the beverage.
-32                  The tap was fixed by the repairman.
-33                  The repairman was fixed by the tap.
-34              The shirt was ironed by the seamstress.
-35              The seamstress was ironed by the shirt.
-36    The newsagent was promoted by the TV station h...
-37    The TV station head was promoted by the newsag...
-38            The alcohol was provided by the overseer.
-39            The overseer was provided by the alcohol.
-40           The plant was watered by the house sitter.
-41           The house sitter was watered by the plant.
-42             The story was abandoned by the reporter.
-43             The reporter was abandoned by the story.
-44           The medicine was swallowed by the patient.
-45           The patient was swallowed by the medicine.
-46     The contestant was discouraged by the pessimist.
-47     The pessimist was discouraged by the contestant.
-48                The rioter was restrained by the cop.
-49                The cop was restrained by the rioter.
-Name: Sentence, dtype: object","[0.89166667 0.1969697  0.92753623 0.70666667 0.83333333 0.21527778
- 0.92666667 0.04666667 0.90833333 0.34       0.83333333 0.42361111
- 0.90151515 0.67391304 0.94927536 0.04320988 0.51449275 0.47333333
- 0.96       0.33333333 0.92666667 0.20634921 0.99074074 0.39166667
- 1.         0.05833333 0.87121212 0.00757576 0.63636364 0.11363636
- 0.85606061 0.02777778 0.91333333 0.04       0.925      0.04
- 0.95238095 0.4375     0.7826087  0.02173913 0.96       0.04166667
- 0.93055556 0.11111111 1.         0.03623188 0.93939394 0.66666667
- 0.98148148 0.46825397]","[0.5637488  0.5798119  0.89682394 0.9005479  0.63737226 0.51345336
- 0.4104731  0.3494771  0.58500886 0.44643515 0.73680943 0.5566281
- 0.6583545  0.58163124 0.47064728 0.17207128 0.44370347 0.3759864
- 0.82777256 0.61894107 0.8014368  0.3078878  0.6436031  0.605889
- 0.87869126 0.28965795 0.538009   0.23040068 0.5106387  0.17301339
- 0.40558392 0.19257039 0.6724264  0.2837975  0.8319605  0.1944099
- 0.53057534 0.52357656 0.64348006 0.2199313  0.4571824  0.36874086
- 0.6458269  0.5501487  0.70684063 0.47453535 0.8264182  0.6465786
- 0.5675394  0.49984598]"
-22,"0                  The trainer was defied by the biker.
-1                  The biker was defied by the trainer.
-2                  The girl was spanked by the au pair.
-3                  The au pair was spanked by the girl.
-4               The bowler was decorated by the hatter.
-5               The hatter was decorated by the bowler.
-6                 The pipe was smoked by the crackhead.
-7                 The crackhead was smoked by the pipe.
-8     The tobacconist was cautioned by the environme...
-9     The environmentalist was cautioned by the toba...
-10             The button was pressed by the attendant.
-11             The attendant was pressed by the button.
-12           The liquor was supplied by the supervisor.
-13           The supervisor was supplied by the liquor.
-14           The kid was reprimanded by the headmaster.
-15           The headmaster was reprimanded by the kid.
-16                     The baby was coddled by the dad.
-17                     The dad was coddled by the baby.
-18           The apprentice was trained by the artisan.
-19           The artisan was trained by the apprentice.
-20              The guest was hassled by the alcoholic.
-21              The alcoholic was hassled by the guest.
-22               The prison was dreaded by the convict.
-23               The convict was dreaded by the prison.
-24              The coach was disobeyed by the cyclist.
-25              The cyclist was disobeyed by the coach.
-26    The firefighter was rewarded by the police chief.
-27    The police chief was rewarded by the firefighter.
-28          The property was examined by the constable.
-29          The constable was examined by the property.
-30     The seaman was undercharged by the streetwalker.
-31     The streetwalker was undercharged by the seaman.
-32            The widower was treated by the urologist.
-33            The urologist was treated by the widower.
-34        The senior citizen was billed by the cashier.
-35        The cashier was billed by the senior citizen.
-36        The triumph was promised by the ship captain.
-37        The ship captain was promised by the triumph.
-38                 The tenant was evicted by the owner.
-39                 The owner was evicted by the tenant.
-40       The first lady was petrified by the terrorist.
-41       The terrorist was petrified by the first lady.
-42                  The ornament was hung by the uncle.
-43                  The uncle was hung by the ornament.
-44      The bystander was interrogated by the attorney.
-45      The attorney was interrogated by the bystander.
-46          The disease was contracted by the marauder.
-47          The marauder was contracted by the disease.
-48            The suit was wrinkled by the interviewee.
-49            The interviewee was wrinkled by the suit.
-Name: Sentence, dtype: object","[0.61111111 0.68       0.74666667 0.36805556 0.40277778 0.43181818
- 0.93055556 0.02083333 0.83333333 0.42361111 0.97727273 0.05555556
- 0.73015873 0.00757576 0.90909091 0.25362319 0.97619048 0.15740741
- 0.92666667 0.24242424 0.86111111 0.75       0.75       0.32098765
- 0.82407407 0.39166667 0.84090909 0.68181818 0.88333333 0.12
- 0.49275362 0.43478261 0.86       0.29861111 0.9        0.30555556
- 0.74074074 0.2        0.97222222 0.         0.88       0.46212121
- 0.89333333 0.04       0.85185185 0.55797101 0.8125     0.13636364
- 0.76515152 0.22222222]","[0.40651512 0.3834105  0.68442637 0.6243369  0.32283413 0.30732566
- 0.5044964  0.36474487 0.6023667  0.48288918 0.43497002 0.22223008
- 0.53309643 0.09007889 0.6621326  0.4821203  0.5976474  0.49271554
- 0.47446212 0.44044876 0.57231104 0.44705573 0.28884304 0.36145222
- 0.54982394 0.45586875 0.6466198  0.37412798 0.6558236  0.23414677
- 0.68929386 0.5780363  0.67139995 0.3263222  0.61073506 0.45894995
- 0.3667756  0.1850161  0.5367456  0.30543068 0.3853547  0.5682787
- 0.4779835  0.36307088 0.45066726 0.40894672 0.43256655 0.57626915
- 0.5675788  0.49619746]"
-23,"0              The filmmaker was pestered by the fan.
-1              The fan was pestered by the filmmaker.
-2              The money was wasted by the call girl.
-3              The call girl was wasted by the money.
-4           The widower was treated by the urologist.
-5           The urologist was treated by the widower.
-6      The senator was threatened by the blackmailer.
-7      The blackmailer was threatened by the senator.
-8     The plagiarist was admonished by the librarian.
-9     The librarian was admonished by the plagiarist.
-10           The painting was inherited by the count.
-11           The count was inherited by the painting.
-12            The priest was revered by the vagabond.
-13            The vagabond was revered by the priest.
-14         The trashcan was emptied by the fisherman.
-15         The fisherman was emptied by the trashcan.
-16       The address was given by the representative.
-17       The representative was given by the address.
-18     The enthusiast was disappointed by the singer.
-19     The singer was disappointed by the enthusiast.
-20      The apartment was redecorated by the copycat.
-21      The copycat was redecorated by the apartment.
-22           The thinker was depicted by the painter.
-23           The painter was depicted by the thinker.
-24           The graph was created by the bookkeeper.
-25           The bookkeeper was created by the graph.
-26              The banner was raised by the soldier.
-27              The soldier was raised by the banner.
-28             The message was erased by the bellboy.
-29             The bellboy was erased by the message.
-30           The concert was attended by the groupie.
-31           The groupie was attended by the concert.
-32           The estate was inspected by the sheriff.
-33           The sheriff was inspected by the estate.
-34          The baguette was sliced by the Frenchman.
-35          The Frenchman was sliced by the baguette.
-36          The table was tidied by the receptionist.
-37          The receptionist was tidied by the table.
-38            The guest was hassled by the alcoholic.
-39            The alcoholic was hassled by the guest.
-40            The pill was taken by the convalescent.
-41            The convalescent was taken by the pill.
-42        The trip was canceled by the archaeologist.
-43        The archaeologist was canceled by the trip.
-44    The beginner was supported by the professional.
-45    The professional was supported by the beginner.
-46             The infant was pampered by the father.
-47             The father was pampered by the infant.
-48               The stash was hidden by the hoarder.
-49               The hoarder was hidden by the stash.
-Name: Sentence, dtype: object","[0.97222222 0.5        0.9057971  0.05769231 0.86       0.29861111
- 0.91358025 0.63888889 0.825      0.5        0.72222222 0.12878788
- 0.78787879 0.41666667 0.86231884 0.02       0.93181818 0.08
- 0.83333333 0.67283951 0.63636364 0.11363636 0.93650794 0.27777778
- 0.92424242 0.05797101 0.96666667 0.09090909 0.83333333 0.02469136
- 0.9375     0.12121212 0.92666667 0.20634921 0.99305556 0.06060606
- 0.94202899 0.09333333 0.86111111 0.75       0.75757576 0.05797101
- 0.91304348 0.01388889 0.90151515 0.61805556 0.94927536 0.05072464
- 0.96212121 0.53472222]","[0.56409645 0.593539   0.61342883 0.62562966 0.85364294 0.5483572
- 0.63607526 0.63768494 0.91459167 0.4591604  0.71376175 0.12484002
- 0.45495266 0.60334235 0.3462782  0.27410084 0.5159978  0.43575108
- 0.5212624  0.42730302 0.5420464  0.24696612 0.7700068  0.4357983
- 0.5323055  0.06236738 0.5575628  0.47651672 0.50099254 0.49146026
- 0.5371498  0.31772715 0.8187995  0.41181016 0.55417836 0.2662174
- 0.51804256 0.45801008 0.5304526  0.41568285 0.6572654  0.31946367
- 0.64256895 0.5469139  0.52766967 0.3430174  0.6894096  0.47999966
- 0.80507064 0.7243246 ]"
+0,The jet was maneuvered by the aviator.,0.9924242424242421,0.5838139057159424
+1,The aviator was maneuvered by the jet.,0.072463768115942,0.5838139057159424
+2,The pullover was donned by the friend.,0.8636363636363641,0.5838139057159424
+3,The friend was donned by the pullover.,0.143939393939394,0.5838139057159424
+4,The sugar was sprinkled by the confectioner.,0.895833333333333,0.5838139057159424
+5,The confectioner was sprinkled by the sugar.,0.107843137254902,0.5838139057159424
+6,The fedora was adorned by the milliner.,0.734848484848485,0.5838139057159424
+7,The milliner was adorned by the fedora.,0.31060606060606105,0.5838139057159424
+8,The plagiarist was admonished by the librarian.,0.825,0.5838139057159424
+9,The librarian was admonished by the plagiarist.,0.5,0.5838139057159424
+10,The painting was inherited by the count.,0.7222222222222221,0.5838139057159424
+11,The count was inherited by the painting.,0.128787878787879,0.5838139057159424
+12,The conqueror was imitated by the deceiver.,0.674242424242424,0.5838139057159424
+13,The deceiver was imitated by the conqueror.,0.5606060606060611,0.5838139057159424
+14,The winner was congratulated by the panelist.,0.962121212121212,0.5838139057159424
+15,The panelist was congratulated by the winner.,0.477272727272727,0.5838139057159424
+16,The bureaucrat was bribed by the smuggler.,0.927536231884058,0.5838139057159424
+17,The smuggler was bribed by the bureaucrat.,0.7173913043478259,0.5838139057159424
+18,The apprentice was trained by the artisan.,0.926666666666667,0.5838139057159424
+19,The artisan was trained by the apprentice.,0.24242424242424201,0.5838139057159424
+20,The school was closed by the doctor.,0.46,0.5838139057159424
+21,The doctor was closed by the school.,0.0303030303030303,0.5838139057159424
+22,The crop was cultivated by the villager.,0.9861111111111109,0.5838139057159424
+23,The villager was cultivated by the crop.,0.0648148148148148,0.5838139057159424
+24,The rebel was exiled by the king.,0.8095238095238091,0.5838139057159424
+25,The king was exiled by the rebel.,0.43939393939393895,0.5838139057159424
+26,The boy was tutored by the nanny.,0.9772727272727271,0.5838139057159424
+27,The nanny was tutored by the boy.,0.28030303030303,0.5838139057159424
+28,The beverage was requested by the adventurer.,0.856060606060606,0.5838139057159424
+29,The adventurer was requested by the beverage.,0.0277777777777778,0.5838139057159424
+30,The program was funded by the banker.,0.9382716049382719,0.5838139057159424
+31,The banker was funded by the program.,0.5416666666666671,0.5838139057159424
+32,The brochure was skimmed by the woodworker.,0.6893939393939389,0.5838139057159424
+33,The woodworker was skimmed by the brochure.,0.0,0.5838139057159424
+34,The disease was contracted by the marauder.,0.8125,0.5838139057159424
+35,The marauder was contracted by the disease.,0.136363636363636,0.5838139057159424
+36,The recluse was taunted by the windbag.,0.514492753623188,0.5838139057159424
+37,The windbag was taunted by the recluse.,0.4733333333333329,0.5838139057159424
+38,The password was memorized by the hacker.,0.9492753623188409,0.5838139057159424
+39,The hacker was memorized by the password.,0.246376811594203,0.5838139057159424
+40,The offender was handcuffed by the policewoman.,0.993055555555555,0.5838139057159424
+41,The policewoman was handcuffed by the offender.,0.196969696969697,0.5838139057159424
+42,The suitcase was pulled by the stewardess.,0.944444444444445,0.5838139057159424
+43,The stewardess was pulled by the suitcase.,0.18666666666666698,0.5838139057159424
+44,The luggage was dragged by the flight-attendant.,0.9772727272727271,0.5838139057159424
+45,The flight-attendant was dragged by the luggage.,0.148148148148148,0.5838139057159424
+46,The child was scolded by the principal.,0.946969696969697,0.5838139057159424
+47,The principal was scolded by the child.,0.33333333333333304,0.5838139057159424
+48,The alcohol was provided by the overseer.,0.7826086956521741,0.5838139057159424
+49,The overseer was provided by the alcohol.,0.0217391304347826,0.5838139057159424
+50,The snorkeler was mauled by the shark.,0.9393939393939391,0.5154446959495544
+51,The shark was mauled by the snorkeler.,0.106060606060606,0.5127876996994019
+52,The visitor was bothered by the drunk.,0.8888888888888891,0.6033933162689209
+53,The drunk was bothered by the visitor.,0.681818181818182,0.6050954461097717
+54,The chiropractor was thanked by the tennis player.,0.946969696969697,0.6567028760910034
+55,The tennis player was thanked by the chiropractor.,0.543478260869565,0.6408631801605225
+56,The bystander was interrogated by the attorney.,0.8518518518518521,0.6150343418121338
+57,The attorney was interrogated by the bystander.,0.557971014492754,0.653102695941925
+58,The memento was misplaced by the sightseer.,0.8405797101449279,0.6113335490226746
+59,The sightseer was misplaced by the memento.,0.0866666666666667,0.5901262164115906
+60,The pop star was stalked by the paparazzi.,0.96,0.5458265542984009
+61,The paparazzi was stalked by the pop star.,0.33333333333333304,0.5611886978149414
+62,The sociopath was expelled by the assistant principal.,0.891304347826087,0.5903492569923401
+63,The assistant principal was expelled by the sociopath.,0.25925925925925897,0.5835061073303223
+64,The gold medalist was praised by the judge.,0.962121212121212,0.5810718536376953
+65,The judge was praised by the gold medalist.,0.770833333333333,0.6116194725036621
+66,The battery was recharged by the diver.,0.841666666666667,0.5885845422744751
+67,The diver was recharged by the battery.,0.0606060606060606,0.5783177018165588
+68,The orphan was quieted by the caretaker.,0.94,0.5948716998100281
+69,The caretaker was quieted by the orphan.,0.42,0.5887226462364197
+70,The jam was loathed by the dietitian.,0.833333333333333,0.6267870664596558
+71,The dietitian was loathed by the jam.,0.12,0.6017805337905884
+72,The traitor was pardoned by the president.,0.818840579710145,0.6392297744750977
+73,The president was pardoned by the traitor.,0.06,0.6467664837837219
+74,The witness was questioned by the lawyer.,0.9772727272727271,0.5740202069282532
+75,The lawyer was questioned by the witness.,0.446969696969697,0.5767220258712769
+76,The senior citizen was billed by the cashier.,0.9,0.5985446572303772
+77,The cashier was billed by the senior citizen.,0.305555555555556,0.5941823124885559
+78,The newborn was adopted by the roommate.,0.6975308641975311,0.6453099250793457
+79,The roommate was adopted by the newborn.,0.11805555555555601,0.64519864320755
+80,The itinerary was confirmed by the comedian.,0.806666666666667,0.6467947959899902
+81,The comedian was confirmed by the itinerary.,0.4466666666666671,0.6556832790374756
+82,The rebel was exiled by the king.,0.8095238095238091,0.615204930305481
+83,The king was exiled by the rebel.,0.43939393939393895,0.6205145120620728
+84,The victory was guaranteed by the skipper.,0.76,0.6252747774124146
+85,The skipper was guaranteed by the victory.,0.214285714285714,0.592250406742096
+86,The thinker was depicted by the painter.,0.936507936507936,0.6588075757026672
+87,The painter was depicted by the thinker.,0.277777777777778,0.6541087627410889
+88,The captive was saved by the negotiator.,0.916666666666667,0.5980757474899292
+89,The negotiator was saved by the captive.,0.446969696969697,0.5947579741477966
+90,The heir was named by the lord.,0.86,0.6366068720817566
+91,The lord was named by the heir.,0.4466666666666671,0.6397285461425781
+92,The ornament was hung by the uncle.,0.893333333333333,0.6012128591537476
+93,The uncle was hung by the ornament.,0.04,0.6056292057037354
+94,The disease was contracted by the marauder.,0.8125,0.6265543699264526
+95,The marauder was contracted by the disease.,0.136363636363636,0.5936843752861023
+96,The baguette was sliced by the Frenchman.,0.993055555555555,0.5649318695068359
+97,The Frenchman was sliced by the baguette.,0.0606060606060606,0.5978899598121643
+98,The estate was inspected by the sheriff.,0.926666666666667,0.5961527824401855
+99,The sheriff was inspected by the estate.,0.206349206349206,0.5990297198295593
+100,The cousin was shocked by the genius.,0.9015151515151508,0.6675112247467041
+101,The genius was shocked by the cousin.,0.673913043478261,0.6597046256065369
+102,The quack was discredited by the cardiologist.,0.76984126984127,0.5544657111167908
+103,The cardiologist was discredited by the quack.,0.272727272727273,0.5501917600631714
+104,The anthem was sung by the marcher.,0.7727272727272729,0.5814943313598633
+105,The marcher was sung by the anthem.,0.0,0.5857480764389038
+106,The victor was emulated by the liar.,0.6388888888888891,0.5638961791992188
+107,The liar was emulated by the victor.,0.5,0.5550317764282227
+108,The plagiarist was admonished by the librarian.,0.825,0.6079874634742737
+109,The librarian was admonished by the plagiarist.,0.5,0.6096228361129761
+110,The actress was cast by the producer.,0.96969696969697,0.6045681834220886
+111,The producer was cast by the actress.,0.123188405797101,0.6116663217544556
+112,The subject was recruited by the experimenter.,0.891666666666667,0.6232851147651672
+113,The experimenter was recruited by the subject.,0.265151515151515,0.6241925358772278
+114,The sociopath was expelled by the assistant principal.,0.891304347826087,0.6218430995941162
+115,The assistant principal was expelled by the sociopath.,0.25925925925925897,0.6150583028793335
+116,The noble was obeyed by the page.,0.575757575757576,0.6338583827018738
+117,The page was obeyed by the noble.,0.442028985507246,0.6207537651062012
+118,The lab assistant was overwhelmed by the neuroscientist.,0.963768115942029,0.5949772596359253
+119,The neuroscientist was overwhelmed by the lab assistant.,0.729166666666667,0.6180511713027954
+120,The beneficiary was kidnapped by the miscreant.,0.708333333333333,0.49535852670669556
+121,The miscreant was kidnapped by the beneficiary.,0.39506172839506204,0.5464736819267273
+122,The old man was shaved by the barber.,0.9907407407407409,0.6468260288238525
+123,The barber was shaved by the old man.,0.3916666666666671,0.645510196685791
+124,The participant was dissuaded by the cynic.,0.7407407407407409,0.6433449983596802
+125,The cynic was dissuaded by the participant.,0.7424242424242421,0.6567894220352173
+126,The president's wife was terrified by the hijacker.,0.84,0.5830563306808472
+127,The hijacker was terrified by the president's wife.,0.401515151515152,0.5342588424682617
+128,The envelope was sealed by the voter.,0.946969696969697,0.5270054340362549
+129,The voter was sealed by the envelope.,0.0133333333333333,0.5399891138076782
+130,The flag was hoisted by the serviceman.,0.9772727272727271,0.563051700592041
+131,The serviceman was hoisted by the flag.,0.0416666666666667,0.5776574611663818
+132,The clergyman was cherished by the nomad.,0.698412698412698,0.5961636304855347
+133,The nomad was cherished by the clergyman.,0.7013888888888891,0.5887235999107361
+134,The alcohol was provided by the overseer.,0.7826086956521741,0.6058184504508972
+135,The overseer was provided by the alcohol.,0.0217391304347826,0.6142359375953674
+136,The diplomat was driven by the chauffeur.,0.941666666666667,0.5921487808227539
+137,The chauffeur was driven by the diplomat.,0.306666666666667,0.6269448399543762
+138,The target was reached by the guide.,0.963768115942029,0.6486309170722961
+139,The guide was reached by the target.,0.208333333333333,0.6596997976303101
+140,The bottle was uncorked by the winemaker.,0.9814814814814821,0.5602763295173645
+141,The winemaker was uncorked by the bottle.,0.0303030303030303,0.5554953813552856
+142,The boy was tutored by the nanny.,0.9772727272727271,0.5848808884620667
+143,The nanny was tutored by the boy.,0.28030303030303,0.579977810382843
+144,The economist was acquitted by the jury.,0.8840579710144929,0.6855406761169434
+145,The jury was acquitted by the economist.,0.19333333333333302,0.6708971858024597
+146,The chiropractor was thanked by the tennis player.,0.946969696969697,0.6201468110084534
+147,The tennis player was thanked by the chiropractor.,0.543478260869565,0.6118373274803162
+148,The rabble-rouser was subdued by the policeman.,0.9236111111111109,0.6402605772018433
+149,The policeman was subdued by the rabble-rouser.,0.444444444444444,0.6469864845275879
+150,The luggage was dragged by the flight-attendant.,0.9772727272727271,0.553412914276123
+151,The flight-attendant was dragged by the luggage.,0.148148148148148,0.7379684448242188
+152,The desk was organized by the secretary.,0.9652777777777779,0.5120126008987427
+153,The secretary was organized by the desk.,0.0625,0.7216546535491943
+154,The lab assistant was overwhelmed by the neuroscientist.,0.963768115942029,0.5336723327636719
+155,The neuroscientist was overwhelmed by the lab assistant.,0.729166666666667,0.6910552978515625
+156,The car was crashed by the troublemaker.,0.826666666666667,0.5548675060272217
+157,The troublemaker was crashed by the car.,0.257575757575758,0.8649133443832397
+158,The bureaucrat was bribed by the smuggler.,0.927536231884058,0.3871891498565674
+159,The smuggler was bribed by the bureaucrat.,0.7173913043478259,0.4828531742095947
+160,The prison was dreaded by the convict.,0.75,0.7282150983810425
+161,The convict was dreaded by the prison.,0.320987654320988,0.7646087408065796
+162,The funeral was prepared by the undertaker.,0.8402777777777779,0.4654357433319092
+163,The undertaker was prepared by the funeral.,0.0757575757575758,0.8864293098449707
+164,The cushion was lifted by the maid.,0.984848484848485,0.5593739748001099
+165,The maid was lifted by the cushion.,0.166666666666667,0.653518557548523
+166,The newborn was adopted by the roommate.,0.6975308641975311,0.6458799839019775
+167,The roommate was adopted by the newborn.,0.11805555555555601,0.6234724521636963
+168,The suit was wrinkled by the interviewee.,0.765151515151515,0.6704704761505127
+169,The interviewee was wrinkled by the suit.,0.222222222222222,0.8682773113250732
+170,The poem was recited by the bookworm.,0.868055555555555,0.5824813842773438
+171,The bookworm was recited by the poem.,0.0666666666666667,0.7946958541870117
+172,The baby was coddled by the dad.,0.9761904761904759,0.6045211553573608
+173,The dad was coddled by the baby.,0.15740740740740697,0.629743218421936
+174,The elderly person was charged by the clerk.,0.9492753623188409,0.7124238014221191
+175,The clerk was charged by the elderly person.,0.45138888888888895,0.7367582321166992
+176,The pill was taken by the convalescent.,0.7575757575757579,0.6160677671432495
+177,The convalescent was taken by the pill.,0.0579710144927536,0.7806121110916138
+178,The girl was spanked by the au pair.,0.746666666666667,0.7714537382125854
+179,The au pair was spanked by the girl.,0.368055555555556,0.7306456565856934
+180,The successor was chosen by the baron.,0.88,0.6279332637786865
+181,The baron was chosen by the successor.,0.7142857142857142,0.671114444732666
+182,The trashcan was emptied by the fisherman.,0.86231884057971,0.5775778293609619
+183,The fisherman was emptied by the trashcan.,0.02,0.5387305021286011
+184,The vendor was alarmed by the arsonist.,0.8106060606060609,0.6664308309555054
+185,The arsonist was alarmed by the vendor.,0.6825396825396819,0.8419872522354126
+186,The loner was tormented by the loudmouth.,0.9907407407407409,0.6733436584472656
+187,The loudmouth was tormented by the loner.,0.608333333333333,0.3943578004837036
+188,The infant was pampered by the father.,0.9492753623188409,0.6333606243133545
+189,The father was pampered by the infant.,0.0507246376811594,0.6537400484085083
+190,The book was completed by the writer.,0.993055555555555,0.5330163240432739
+191,The writer was completed by the book.,0.08823529411764698,0.855982780456543
+192,The orthodontist was helped by the nurse.,0.826666666666667,0.7160853147506714
+193,The nurse was helped by the orthodontist.,0.803030303030303,0.4888482093811035
+194,The rabble-rouser was subdued by the policeman.,0.9236111111111109,0.7507071495056152
+195,The policeman was subdued by the rabble-rouser.,0.444444444444444,0.6227821111679077
+196,The picture was autographed by the star.,0.882716049382716,0.7325111627578735
+197,The star was autographed by the picture.,0.20454545454545497,0.906051516532898
+198,The rioter was restrained by the cop.,0.9814814814814821,0.7096695899963379
+199,The cop was restrained by the rioter.,0.468253968253968,0.5380363464355469
+200,The loner was tormented by the loudmouth.,0.9907407407407409,0.6634072661399841
+201,The loudmouth was tormented by the loner.,0.608333333333333,0.5616679787635803
+202,The wire was bent by the ditch digger.,0.793650793650794,0.5770012736320496
+203,The ditch digger was bent by the wire.,0.0466666666666667,0.7262946963310242
+204,The coach was disobeyed by the cyclist.,0.8240740740740741,0.6853728890419006
+205,The cyclist was disobeyed by the coach.,0.3916666666666671,0.678566038608551
+206,The story was abandoned by the reporter.,0.930555555555555,0.6282169222831726
+207,The reporter was abandoned by the story.,0.111111111111111,0.7350248694419861
+208,The car was crashed by the troublemaker.,0.826666666666667,0.5905558466911316
+209,The troublemaker was crashed by the car.,0.257575757575758,0.7722234129905701
+210,The guest was hassled by the alcoholic.,0.8611111111111109,0.6101322770118713
+211,The alcoholic was hassled by the guest.,0.75,0.6325724720954895
+212,The light bulb was changed by the groundskeeper.,0.966666666666667,0.6236723065376282
+213,The groundskeeper was changed by the light bulb.,0.0681818181818182,0.6866338849067688
+214,The expression was garbled by the anchorman.,0.8636363636363641,0.5897764563560486
+215,The anchorman was garbled by the expression.,0.19444444444444395,0.7372040152549744
+216,The unicyclist was sketched by the cartoonist.,0.833333333333333,0.6700950264930725
+217,The cartoonist was sketched by the unicyclist.,0.33333333333333304,0.6432449221611023
+218,The clergyman was cherished by the nomad.,0.698412698412698,0.6680256724357605
+219,The nomad was cherished by the clergyman.,0.7013888888888891,0.6104356646537781
+220,The word was mispronounced by the announcer.,0.962121212121212,0.6100849509239197
+221,The announcer was mispronounced by the word.,0.0625,0.7077303528785706
+222,The enthusiast was disappointed by the singer.,0.833333333333333,0.6401981711387634
+223,The singer was disappointed by the enthusiast.,0.6728395061728389,0.6492239832878113
+224,The industrialist was burgled by the robber.,0.875,0.7351905703544617
+225,The robber was burgled by the industrialist.,0.222222222222222,0.6367825865745544
+226,The legislator was menaced by the extortionist.,0.856060606060606,0.6794909834861755
+227,The extortionist was menaced by the legislator.,0.5984848484848491,0.7353159785270691
+228,The estate was inspected by the sheriff.,0.926666666666667,0.6354109644889832
+229,The sheriff was inspected by the estate.,0.206349206349206,0.6972894072532654
+230,The bus was exited by the tourist.,0.704545454545455,0.5826660990715027
+231,The tourist was exited by the bus.,0.287037037037037,0.6159319281578064
+232,The philosopher was portrayed by the artist.,0.789855072463768,0.6188269257545471
+233,The artist was portrayed by the philosopher.,0.6363636363636359,0.5903523564338684
+234,The elderly person was charged by the clerk.,0.9492753623188409,0.6921886801719666
+235,The clerk was charged by the elderly person.,0.45138888888888895,0.6694431900978088
+236,The president's wife was terrified by the hijacker.,0.84,0.6767765879631042
+237,The hijacker was terrified by the president's wife.,0.401515151515152,0.7516621947288513
+238,The spirit was vanquished by the exorcist.,0.5625,0.6226536631584167
+239,The exorcist was vanquished by the spirit.,0.28666666666666696,0.7388009428977966
+240,The offender was handcuffed by the policewoman.,0.993055555555555,0.5417456030845642
+241,The policewoman was handcuffed by the offender.,0.196969696969697,0.5908223986625671
+242,The sink was wiped by the servant.,0.926666666666667,0.6013184189796448
+243,The servant was wiped by the sink.,0.0466666666666667,0.6485263705253601
+244,The book was completed by the writer.,0.993055555555555,0.557366669178009
+245,The writer was completed by the book.,0.08823529411764698,0.6647849678993225
+246,The widower was treated by the urologist.,0.86,0.6003506779670715
+247,The urologist was treated by the widower.,0.298611111111111,0.6025324463844299
+248,The attacker was located by the sleuth.,0.7575757575757579,0.5653577446937561
+249,The sleuth was located by the attacker.,0.6136363636363641,0.6574789881706238
+250,The password was memorized by the hacker.,0.9492753623188409,0.4906584620475769
+251,The hacker was memorized by the password.,0.246376811594203,0.8385980725288391
+252,The concert was attended by the groupie.,0.9375,0.4114742577075958
+253,The groupie was attended by the concert.,0.12121212121212101,0.6957591772079468
+254,The pullover was donned by the friend.,0.8636363636363641,0.4008938670158386
+255,The friend was donned by the pullover.,0.143939393939394,0.5031247735023499
+256,The turkey was basted by the boyfriend.,0.864197530864197,0.5906278491020203
+257,The boyfriend was basted by the turkey.,0.0634920634920635,0.7507214546203613
+258,The stockpile was concealed by the packrat.,0.8257575757575759,0.33149057626724243
+259,The packrat was concealed by the stockpile.,0.6842105263157889,0.7043883204460144
+260,The door was unlocked by the deckhand.,0.9492753623188409,0.36673083901405334
+261,The deckhand was unlocked by the door.,0.0432098765432099,0.6992523074150085
+262,The project was sponsored by the financier.,0.9047619047619051,0.3792036175727844
+263,The financier was sponsored by the project.,0.20454545454545497,0.6925855278968811
+264,The jet was maneuvered by the aviator.,0.9924242424242421,0.5408172011375427
+265,The aviator was maneuvered by the jet.,0.072463768115942,0.7473536729812622
+266,The graph was created by the bookkeeper.,0.9242424242424241,0.2475513219833374
+267,The bookkeeper was created by the graph.,0.0579710144927536,0.537639319896698
+268,The orthodontist was helped by the nurse.,0.826666666666667,0.7764775156974792
+269,The nurse was helped by the orthodontist.,0.803030303030303,0.5531556606292725
+270,The crowd was hypnotized by the magician.,0.9242424242424241,0.7065532803535461
+271,The magician was hypnotized by the crowd.,0.246376811594203,0.8912426829338074
+272,The cadet was supervised by the colonel.,0.946969696969697,0.6186860203742981
+273,The colonel was supervised by the cadet.,0.3125,0.6688172221183777
+274,The politician was killed by the hit man.,0.893333333333333,0.6056721806526184
+275,The hit man was killed by the politician.,0.52,0.6015799641609192
+276,The ruffian was released by the bailiff.,0.8,0.3726094365119934
+277,The bailiff was released by the ruffian.,0.31060606060606105,0.4374569058418274
+278,The umbrella was forgotten by the couch-potato.,0.696969696969697,0.39296478033065796
+279,The couch-potato was forgotten by the umbrella.,0.0217391304347826,0.5832803845405579
+280,The prison was dreaded by the convict.,0.75,0.45092302560806274
+281,The convict was dreaded by the prison.,0.320987654320988,0.5878023505210876
+282,The filet was devoured by the meat-eater.,0.933333333333333,0.6074407696723938
+283,The meat-eater was devoured by the filet.,0.0466666666666667,0.6790714859962463
+284,The victor was emulated by the liar.,0.6388888888888891,0.7157021760940552
+285,The liar was emulated by the victor.,0.5,0.624640166759491
+286,The winner was congratulated by the panelist.,0.962121212121212,0.36861664056777954
+287,The panelist was congratulated by the winner.,0.477272727272727,0.7105337381362915
+288,The pine tree was felled by the logger.,0.8863636363636359,0.36553168296813965
+289,The logger was felled by the pine tree.,0.166666666666667,0.40703335404396057
+290,The company was run by the tycoon.,0.87037037037037,0.22797951102256775
+291,The tycoon was run by the company.,0.128787878787879,0.4950118064880371
+292,The filmmaker was pestered by the fan.,0.9722222222222221,0.8550004959106445
+293,The fan was pestered by the filmmaker.,0.5,0.6985651850700378
+294,The rioter was restrained by the cop.,0.9814814814814821,0.622654139995575
+295,The cop was restrained by the rioter.,0.468253968253968,0.5167745351791382
+296,The prize was received by the cellist.,0.8409090909090909,0.3041670620441437
+297,The cellist was received by the prize.,0.0869565217391304,0.716546356678009
+298,The ballerina was attired by the dressmaker.,0.9202898550724641,0.6730071306228638
+299,The dressmaker was attired by the ballerina.,0.27083333333333304,0.7527053952217102
+300,The prize was received by the cellist.,0.8409090909090909,0.37378013134002686
+301,The cellist was received by the prize.,0.0869565217391304,0.8282144069671631
+302,The cadet was supervised by the colonel.,0.946969696969697,0.7119303345680237
+303,The colonel was supervised by the cadet.,0.3125,0.7641696929931641
+304,The captive was saved by the negotiator.,0.916666666666667,0.684528112411499
+305,The negotiator was saved by the captive.,0.446969696969697,0.8017964363098145
+306,The chiropractor was thanked by the tennis player.,0.946969696969697,0.6886718273162842
+307,The tennis player was thanked by the chiropractor.,0.543478260869565,0.7189502120018005
+308,The winner was congratulated by the panelist.,0.962121212121212,0.41355621814727783
+309,The panelist was congratulated by the winner.,0.477272727272727,0.8270547986030579
+310,The bystander was interrogated by the attorney.,0.8518518518518521,0.8012211322784424
+311,The attorney was interrogated by the bystander.,0.557971014492754,0.7475867867469788
+312,The money was wasted by the call girl.,0.905797101449275,0.3390825390815735
+313,The call girl was wasted by the money.,0.0576923076923077,0.756181538105011
+314,The laptop was bought by the teacher.,0.9927536231884059,0.5166227221488953
+315,The teacher was bought by the laptop.,0.0,0.7108356952667236
+316,The virtuoso was irritated by the novice.,0.878787878787879,0.8611511588096619
+317,The novice was irritated by the virtuoso.,0.8484848484848492,0.6975997686386108
+318,The shopkeeper was unnerved by the pyromaniac.,0.726666666666667,0.6767193078994751
+319,The pyromaniac was unnerved by the shopkeeper.,0.643939393939394,0.555482804775238
+320,The jail was feared by the criminal.,0.5606060606060611,0.7378501892089844
+321,The criminal was feared by the jail.,0.3666666666666671,0.8201490044593811
+322,The distributor was tricked by the joker.,0.775,0.7180856466293335
+323,The joker was tricked by the distributor.,0.5984848484848491,0.8318997621536255
+324,The bowler was decorated by the hatter.,0.402777777777778,0.8280285000801086
+325,The hatter was decorated by the bowler.,0.43181818181818205,0.6507619023323059
+326,The address was given by the representative.,0.931818181818182,0.39872390031814575
+327,The representative was given by the address.,0.08,0.7184287309646606
+328,The tap was fixed by the repairman.,0.913333333333333,0.4233458638191223
+329,The repairman was fixed by the tap.,0.04,0.8425586223602295
+330,The desk was organized by the secretary.,0.9652777777777779,0.48447781801223755
+331,The secretary was organized by the desk.,0.0625,0.7705850601196289
+332,The economist was acquitted by the jury.,0.8840579710144929,0.7927980422973633
+333,The jury was acquitted by the economist.,0.19333333333333302,0.7025921940803528
+334,The beverage was requested by the adventurer.,0.856060606060606,0.5592179894447327
+335,The adventurer was requested by the beverage.,0.0277777777777778,0.8151211738586426
+336,The corporation was governed by the mogul.,0.856060606060606,0.5042420625686646
+337,The mogul was governed by the corporation.,0.40833333333333294,0.6206712126731873
+338,The bus was exited by the tourist.,0.704545454545455,0.6378666162490845
+339,The tourist was exited by the bus.,0.287037037037037,0.8972715139389038
+340,The complaint was filed by the exterminator.,0.846666666666667,0.46171191334724426
+341,The exterminator was filed by the complaint.,0.0733333333333333,0.709094762802124
+342,The grain was farmed by the townsperson.,0.856060606060606,0.5790360569953918
+343,The townsperson was farmed by the grain.,0.0942028985507247,1.0657991170883179
+344,The table was tidied by the receptionist.,0.942028985507246,0.23956912755966187
+345,The receptionist was tidied by the table.,0.0933333333333333,0.7036746740341187
+346,The kid was reprimanded by the headmaster.,0.9090909090909091,0.4723331332206726
+347,The headmaster was reprimanded by the kid.,0.253623188405797,0.6967814564704895
+348,The director was badgered by the admirer.,0.8263888888888891,0.754472553730011
+349,The admirer was badgered by the director.,0.631944444444445,0.7417916059494019
+350,The bystander was interrogated by the attorney.,0.8518518518518521,0.7323811054229736
+351,The attorney was interrogated by the bystander.,0.557971014492754,0.7912479639053345
+352,The Olympian was weighed by the personal trainer.,0.9652777777777779,0.557949423789978
+353,The personal trainer was weighed by the Olympian.,0.38888888888888895,0.5919878482818604
+354,The politician was killed by the hit man.,0.893333333333333,0.6312347650527954
+355,The hit man was killed by the politician.,0.52,0.6060662269592285
+356,The noble was obeyed by the page.,0.575757575757576,0.6688029766082764
+357,The page was obeyed by the noble.,0.442028985507246,0.546708345413208
+358,The industrialist was burgled by the robber.,0.875,0.859649658203125
+359,The robber was burgled by the industrialist.,0.222222222222222,0.7910040616989136
+360,The rebel was exiled by the king.,0.8095238095238091,0.6392347812652588
+361,The king was exiled by the rebel.,0.43939393939393895,0.6576606035232544
+362,The widower was treated by the urologist.,0.86,0.7980668544769287
+363,The urologist was treated by the widower.,0.298611111111111,0.8276205062866211
+364,The light bulb was changed by the groundskeeper.,0.966666666666667,0.378939688205719
+365,The groundskeeper was changed by the light bulb.,0.0681818181818182,0.5570235252380371
+366,The coach was disobeyed by the cyclist.,0.8240740740740741,0.6673766374588013
+367,The cyclist was disobeyed by the coach.,0.3916666666666671,0.6631988286972046
+368,The suitcase was pulled by the stewardess.,0.944444444444445,0.3393159508705139
+369,The stewardess was pulled by the suitcase.,0.18666666666666698,0.5431056022644043
+370,The busboy was tipped by the brunette.,0.856060606060606,0.6162627935409546
+371,The brunette was tipped by the busboy.,0.28666666666666696,0.5759396553039551
+372,The senator was threatened by the blackmailer.,0.91358024691358,0.7336106300354004
+373,The blackmailer was threatened by the senator.,0.6388888888888891,0.6972231864929199
+374,The deer was trapped by the huntsman.,0.956521739130435,0.3731149435043335
+375,The huntsman was trapped by the deer.,0.21014492753623198,0.6990736722946167
+376,The virtuoso was irritated by the novice.,0.878787878787879,0.914269208908081
+377,The novice was irritated by the virtuoso.,0.8484848484848492,0.7431416511535645
+378,The door was unlocked by the deckhand.,0.9492753623188409,0.34500980377197266
+379,The deckhand was unlocked by the door.,0.0432098765432099,0.4905816316604614
+380,The tenant was evicted by the owner.,0.9722222222222221,0.6176738739013672
+381,The owner was evicted by the tenant.,0.0,0.6721851825714111
+382,The audience was engrossed by the speaker.,0.8981481481481479,0.5371731519699097
+383,The speaker was engrossed by the audience.,0.5,0.5732263326644897
+384,The cure was discovered by the scientist.,1.0,0.29321980476379395
+385,The scientist was discovered by the cure.,0.0583333333333333,0.41349703073501587
+386,The participant was dissuaded by the cynic.,0.7407407407407409,0.816563606262207
+387,The cynic was dissuaded by the participant.,0.7424242424242421,0.9487787485122681
+388,The stockpile was concealed by the packrat.,0.8257575757575759,0.17813467979431152
+389,The packrat was concealed by the stockpile.,0.6842105263157889,0.237157940864563
+390,The actress was cast by the producer.,0.96969696969697,0.5693010091781616
+391,The producer was cast by the actress.,0.123188405797101,0.614397406578064
+392,The battery was recharged by the diver.,0.841666666666667,0.48217856884002686
+393,The diver was recharged by the battery.,0.0606060606060606,0.5062415599822998
+394,The dinner was prepared by the woman.,0.993333333333333,0.4925837516784668
+395,The woman was prepared by the dinner.,0.0454545454545454,0.5661492347717285
+396,The traitor was pardoned by the president.,0.818840579710145,0.6208220720291138
+397,The president was pardoned by the traitor.,0.06,0.6349754333496094
+398,The apprentice was trained by the artisan.,0.926666666666667,0.6148914098739624
+399,The artisan was trained by the apprentice.,0.24242424242424201,0.6255441904067993
+400,The ambassador was transported by the driver.,0.956521739130435,0.5197252631187439
+401,The driver was transported by the ambassador.,0.3,0.5254364609718323
+402,The statesman was shot by the assassin.,0.931818181818182,0.6408917307853699
+403,The assassin was shot by the statesman.,0.63768115942029,0.5543771386146545
+404,The car was crashed by the troublemaker.,0.826666666666667,0.42390573024749756
+405,The troublemaker was crashed by the car.,0.257575757575758,0.5216096043586731
+406,The firefighter was rewarded by the police chief.,0.8409090909090909,0.532823383808136
+407,The police chief was rewarded by the firefighter.,0.681818181818182,0.6568686366081238
+408,The rioter was restrained by the cop.,0.9814814814814821,0.5766436457633972
+409,The cop was restrained by the rioter.,0.468253968253968,0.5919772982597351
+410,The beverage was requested by the adventurer.,0.856060606060606,0.5920471549034119
+411,The adventurer was requested by the beverage.,0.0277777777777778,0.7181277871131897
+412,The bottle was uncorked by the winemaker.,0.9814814814814821,0.5898262858390808
+413,The winemaker was uncorked by the bottle.,0.0303030303030303,0.5142772793769836
+414,The appointment was rescheduled by the manicurist.,0.95679012345679,0.623378574848175
+415,The manicurist was rescheduled by the appointment.,0.14285714285714302,0.6754760146141052
+416,The picture was autographed by the star.,0.882716049382716,0.5542958378791809
+417,The star was autographed by the picture.,0.20454545454545497,0.5325290560722351
+418,The medicine was swallowed by the patient.,1.0,0.4534699320793152
+419,The patient was swallowed by the medicine.,0.036231884057971,0.41097819805145264
+420,The infant was pampered by the father.,0.9492753623188409,0.6228687167167664
+421,The father was pampered by the infant.,0.0507246376811594,0.6416067481040955
+422,The fedora was adorned by the milliner.,0.734848484848485,0.28734278678894043
+423,The milliner was adorned by the fedora.,0.31060606060606105,0.2861180901527405
+424,The tobacconist was cautioned by the environmentalist.,0.833333333333333,0.6444665789604187
+425,The environmentalist was cautioned by the tobacconist.,0.42361111111111105,0.5601932406425476
+426,The trashcan was emptied by the fisherman.,0.86231884057971,0.400701105594635
+427,The fisherman was emptied by the trashcan.,0.02,0.34394174814224243
+428,The table was tidied by the receptionist.,0.942028985507246,0.3610524535179138
+429,The receptionist was tidied by the table.,0.0933333333333333,0.5987057089805603
+430,The filet was devoured by the meat-eater.,0.933333333333333,0.4700561761856079
+431,The meat-eater was devoured by the filet.,0.0466666666666667,0.34989607334136963
+432,The umbrella was forgotten by the couch-potato.,0.696969696969697,-0.12816303968429565
+433,The couch-potato was forgotten by the umbrella.,0.0217391304347826,-0.0924113392829895
+434,The address was given by the representative.,0.931818181818182,0.3938390612602234
+435,The representative was given by the address.,0.08,0.3180469870567322
+436,The maestro was irked by the amateur.,0.9242424242424241,0.8809322714805603
+437,The amateur was irked by the maestro.,0.741666666666667,0.8793651461601257
+438,The story was abandoned by the reporter.,0.930555555555555,0.205433189868927
+439,The reporter was abandoned by the story.,0.111111111111111,0.6230290532112122
+440,The alcohol was provided by the overseer.,0.7826086956521741,0.5368672013282776
+441,The overseer was provided by the alcohol.,0.0217391304347826,0.5340561270713806
+442,The first lady was petrified by the terrorist.,0.88,0.7117592692375183
+443,The terrorist was petrified by the first lady.,0.46212121212121204,0.6504886746406555
+444,The sugar was sprinkled by the confectioner.,0.895833333333333,0.3978748917579651
+445,The confectioner was sprinkled by the sugar.,0.107843137254902,0.3315139412879944
+446,The distributor was tricked by the joker.,0.775,0.5960419774055481
+447,The joker was tricked by the distributor.,0.5984848484848491,0.5674793124198914
+448,The crop was cultivated by the villager.,0.9861111111111109,0.4556071162223816
+449,The villager was cultivated by the crop.,0.0648148148148148,0.449327290058136
+450,The contract was burnt by the charlatan.,0.826086956521739,0.35352301597595215
+451,The charlatan was burnt by the contract.,0.31159420289855105,0.46724122762680054
+452,The cadet was supervised by the colonel.,0.946969696969697,0.6010645627975464
+453,The colonel was supervised by the cadet.,0.3125,0.5333389043807983
+454,The bowler was decorated by the hatter.,0.402777777777778,0.38784146308898926
+455,The hatter was decorated by the bowler.,0.43181818181818205,0.3555901050567627
+456,The lab assistant was overwhelmed by the neuroscientist.,0.963768115942029,0.8589283227920532
+457,The neuroscientist was overwhelmed by the lab assistant.,0.729166666666667,0.8844437003135681
+458,The trashcan was emptied by the fisherman.,0.86231884057971,0.568073034286499
+459,The fisherman was emptied by the trashcan.,0.02,0.5076830983161926
+460,The newsagent was promoted by the TV station head.,0.9523809523809521,0.5923935770988464
+461,The TV station head was promoted by the newsagent.,0.4375,0.6001384258270264
+462,The senior citizen was billed by the cashier.,0.9,0.641437292098999
+463,The cashier was billed by the senior citizen.,0.305555555555556,0.6024506092071533
+464,The firefighter was rewarded by the police chief.,0.8409090909090909,0.773471474647522
+465,The police chief was rewarded by the firefighter.,0.681818181818182,0.5251021385192871
+466,The shirt was ironed by the seamstress.,0.925,0.3878929615020752
+467,The seamstress was ironed by the shirt.,0.04,0.4429782032966614
+468,The conqueror was imitated by the deceiver.,0.674242424242424,0.6589635014533997
+469,The deceiver was imitated by the conqueror.,0.5606060606060611,0.7574841976165771
+470,The diplomat was driven by the chauffeur.,0.941666666666667,0.5632445216178894
+471,The chauffeur was driven by the diplomat.,0.306666666666667,0.46620166301727295
+472,The ornament was hung by the uncle.,0.893333333333333,0.3549906015396118
+473,The uncle was hung by the ornament.,0.04,0.40880680084228516
+474,The dentist was assisted by the orderly.,0.659722222222222,0.5467684864997864
+475,The orderly was assisted by the dentist.,0.537037037037037,0.5898434519767761
+476,The pipe was smoked by the crackhead.,0.930555555555555,0.23555415868759155
+477,The crackhead was smoked by the pipe.,0.0208333333333333,0.41137760877609253
+478,The intern was berated by the mechanic.,0.795454545454545,0.7006551623344421
+479,The mechanic was berated by the intern.,0.631944444444445,0.6720559000968933
+480,The conservative was attacked by the critic.,0.9320987654320991,0.5201141238212585
+481,The critic was attacked by the conservative.,0.8402777777777779,0.5136009454727173
+482,The kid was reprimanded by the headmaster.,0.9090909090909091,0.5183377265930176
+483,The headmaster was reprimanded by the kid.,0.253623188405797,0.5810508728027344
+484,The estate was inspected by the sheriff.,0.926666666666667,0.5920679569244385
+485,The sheriff was inspected by the estate.,0.206349206349206,0.8455456495285034
+486,The fund was established by the supremacist.,0.9090909090909091,0.3203834295272827
+487,The supremacist was established by the fund.,0.304347826086957,0.23332029581069946
+488,The corporation was governed by the mogul.,0.856060606060606,0.33217382431030273
+489,The mogul was governed by the corporation.,0.40833333333333294,0.39254969358444214
+490,The souvenir was lost by the traveler.,0.8484848484848492,0.6090365648269653
+491,The traveler was lost by the souvenir.,0.0466666666666667,0.5489206314086914
+492,The turkey was basted by the boyfriend.,0.864197530864197,0.33258312940597534
+493,The boyfriend was basted by the turkey.,0.0634920634920635,0.40973174571990967
+494,The graph was created by the bookkeeper.,0.9242424242424241,0.46226441860198975
+495,The bookkeeper was created by the graph.,0.0579710144927536,0.39307188987731934
+496,The picture was autographed by the star.,0.882716049382716,0.5342200398445129
+497,The star was autographed by the picture.,0.20454545454545497,0.6578187942504883
+498,The maestro was irked by the amateur.,0.9242424242424241,0.7650456428527832
+499,The amateur was irked by the maestro.,0.741666666666667,0.8176197409629822
+500,The project was sponsored by the financier.,0.9047619047619051,0.6427718997001648
+501,The financier was sponsored by the project.,0.20454545454545497,0.8117250800132751
+502,The assignment was blown by the operative.,0.8125,0.5216479897499084
+503,The operative was blown by the assignment.,0.28030303030303,0.6213313937187195
+504,The inmate was caught by the warden.,0.966666666666667,0.7657142877578735
+505,The warden was caught by the inmate.,0.325757575757576,0.56166672706604
+506,The battery was recharged by the diver.,0.841666666666667,0.47667157649993896
+507,The diver was recharged by the battery.,0.0606060606060606,0.6551240682601929
+508,The tour-guide was chased by the lion.,0.813333333333333,0.8844913244247437
+509,The lion was chased by the tour-guide.,0.36363636363636404,0.7473491430282593
+510,The corporation was governed by the mogul.,0.856060606060606,0.6063487529754639
+511,The mogul was governed by the corporation.,0.40833333333333294,0.519528865814209
+512,The money was wasted by the call girl.,0.905797101449275,0.5536405444145203
+513,The call girl was wasted by the money.,0.0576923076923077,0.5975350141525269
+514,The order was placed by the tanner.,0.8257575757575759,0.7077866792678833
+515,The tanner was placed by the order.,0.125,0.8536554574966431
+516,The novel was finished by the author.,0.946969696969697,0.7476181387901306
+517,The author was finished by the novel.,0.0227272727272727,0.5548555850982666
+518,The witness was questioned by the lawyer.,0.9772727272727271,0.8429913520812988
+519,The lawyer was questioned by the witness.,0.446969696969697,0.7176756262779236
+520,The cigar-maker was warned by the ecologist.,0.7592592592592591,1.0137934684753418
+521,The ecologist was warned by the cigar-maker.,0.6190476190476191,0.9440514445304871
+522,The damsel was courted by the playboy.,0.868055555555555,0.9567575454711914
+523,The playboy was courted by the damsel.,0.8257575757575759,0.9397292733192444
+524,The spirit was vanquished by the exorcist.,0.5625,0.7642157673835754
+525,The exorcist was vanquished by the spirit.,0.28666666666666696,0.907923698425293
+526,The youth was revived by the paramedic.,0.963768115942029,0.8060718774795532
+527,The paramedic was revived by the youth.,0.36231884057971003,0.9767853021621704
+528,The tobacconist was cautioned by the environmentalist.,0.833333333333333,0.8709067106246948
+529,The environmentalist was cautioned by the tobacconist.,0.42361111111111105,0.6346215009689331
+530,The ambassador was transported by the driver.,0.956521739130435,0.8966555595397949
+531,The driver was transported by the ambassador.,0.3,0.6143494844436646
+532,The loner was tormented by the loudmouth.,0.9907407407407409,0.5458279848098755
+533,The loudmouth was tormented by the loner.,0.608333333333333,0.6394128799438477
+534,The firefighter was rewarded by the police chief.,0.8409090909090909,0.9615176916122437
+535,The police chief was rewarded by the firefighter.,0.681818181818182,0.6261856555938721
+536,The investigator was fooled by the imitator.,0.891304347826087,0.8469951748847961
+537,The imitator was fooled by the investigator.,0.709876543209877,0.9728904962539673
+538,The pullover was donned by the friend.,0.8636363636363641,0.8660844564437866
+539,The friend was donned by the pullover.,0.143939393939394,0.5610487461090088
+540,The intern was berated by the mechanic.,0.795454545454545,0.8210054039955139
+541,The mechanic was berated by the intern.,0.631944444444445,0.6725054979324341
+542,The computer was purchased by the instructor.,0.9492753623188409,0.676045298576355
+543,The instructor was purchased by the computer.,0.0,0.5761299729347229
+544,The girl was spanked by the au pair.,0.746666666666667,0.8418331146240234
+545,The au pair was spanked by the girl.,0.368055555555556,0.9696886539459229
+546,The industrialist was burgled by the robber.,0.875,0.7481064796447754
+547,The robber was burgled by the industrialist.,0.222222222222222,0.9367369413375854
+548,The tap was fixed by the repairman.,0.913333333333333,0.9428327083587646
+549,The repairman was fixed by the tap.,0.04,0.6269773244857788
+550,The fedora was adorned by the milliner.,0.734848484848485,0.5187947154045105
+551,The milliner was adorned by the fedora.,0.31060606060606105,0.39277780055999756
+552,The giraffe was fed by the zookeeper.,0.962121212121212,0.7192614674568176
+553,The zookeeper was fed by the giraffe.,0.0666666666666667,0.6165192723274231
+554,The youngster was resuscitated by the EMT.,0.934782608695652,1.0047178268432617
+555,The EMT was resuscitated by the youngster.,0.46296296296296297,0.8335702419281006
+556,The filmmaker was pestered by the fan.,0.9722222222222221,0.6300769448280334
+557,The fan was pestered by the filmmaker.,0.5,0.5992854237556458
+558,The damsel was courted by the playboy.,0.868055555555555,1.0421438217163086
+559,The playboy was courted by the damsel.,0.8257575757575759,1.0584442615509033
+560,The intern was berated by the mechanic.,0.795454545454545,0.8236513137817383
+561,The mechanic was berated by the intern.,0.631944444444445,0.751885712146759
+562,The bottle was uncorked by the winemaker.,0.9814814814814821,0.5378959774971008
+563,The winemaker was uncorked by the bottle.,0.0303030303030303,0.479122519493103
+564,The ballerina was attired by the dressmaker.,0.9202898550724641,0.6917988657951355
+565,The dressmaker was attired by the ballerina.,0.27083333333333304,0.7836302518844604
+566,The suitcase was pulled by the stewardess.,0.944444444444445,0.8424939513206482
+567,The stewardess was pulled by the suitcase.,0.18666666666666698,0.8203855752944946
+568,The conqueror was imitated by the deceiver.,0.674242424242424,0.8541731834411621
+569,The deceiver was imitated by the conqueror.,0.5606060606060611,0.9496310353279114
+570,The table was tidied by the receptionist.,0.942028985507246,0.5744134783744812
+571,The receptionist was tidied by the table.,0.0933333333333333,0.6310161352157593
+572,The wash basin was cleaned by the domestic.,0.673333333333333,0.4495962858200073
+573,The domestic was cleaned by the wash basin.,0.136363636363636,0.6349973678588867
+574,The company was run by the tycoon.,0.87037037037037,0.9620976448059082
+575,The tycoon was run by the company.,0.128787878787879,0.939852237701416
+576,The dancer was costumed by the tailor.,0.746666666666667,0.6570855379104614
+577,The tailor was costumed by the dancer.,0.21969696969696997,0.6203967928886414
+578,The attacker was located by the sleuth.,0.7575757575757579,0.5938237309455872
+579,The sleuth was located by the attacker.,0.6136363636363641,0.6444479823112488
+580,The hedonist was reproached by the nun.,0.8402777777777779,0.7391020059585571
+581,The nun was reproached by the hedonist.,0.704545454545455,0.7600510120391846
+582,The game was won by the poker player.,0.9753086419753091,0.6294784545898438
+583,The poker player was won by the game.,0.0972222222222222,0.6924536228179932
+584,The orthodontist was helped by the nurse.,0.826666666666667,0.6593536734580994
+585,The nurse was helped by the orthodontist.,0.803030303030303,0.6464621424674988
+586,The chiropractor was thanked by the tennis player.,0.946969696969697,0.8017869591712952
+587,The tennis player was thanked by the chiropractor.,0.543478260869565,0.8550671339035034
+588,The pipe was smoked by the crackhead.,0.930555555555555,0.5374959111213684
+589,The crackhead was smoked by the pipe.,0.0208333333333333,0.5528030395507812
+590,The cure was discovered by the scientist.,1.0,1.00103759765625
+591,The scientist was discovered by the cure.,0.0583333333333333,0.4249730706214905
+592,The concert was attended by the groupie.,0.9375,0.7008129358291626
+593,The groupie was attended by the concert.,0.12121212121212101,0.347512423992157
+594,The plant was watered by the house sitter.,0.96,0.40707701444625854
+595,The house sitter was watered by the plant.,0.0416666666666667,0.3875396251678467
+596,The boy was tutored by the nanny.,0.9772727272727271,0.6743831634521484
+597,The nanny was tutored by the boy.,0.28030303030303,0.725944459438324
+598,The paper was edited by the advisor.,0.8402777777777779,0.32627448439598083
+599,The advisor was edited by the paper.,0.173611111111111,0.43671995401382446
+600,The octopus was grilled by the cook.,0.9652777777777779,0.7187085747718811
+601,The cook was grilled by the octopus.,0.0066666666666666706,0.35964059829711914
+602,The corporation was governed by the mogul.,0.856060606060606,0.5725456476211548
+603,The mogul was governed by the corporation.,0.40833333333333294,0.5667780637741089
+604,The message was erased by the bellboy.,0.833333333333333,0.7651776075363159
+605,The bellboy was erased by the message.,0.0246913580246914,0.7518788576126099
+606,The key was borrowed by the schoolgirl.,0.9259259259259259,0.5389214754104614
+607,The schoolgirl was borrowed by the key.,0.025,0.3195226788520813
+608,The ambassador was transported by the driver.,0.956521739130435,0.8801547288894653
+609,The driver was transported by the ambassador.,0.3,0.618179440498352
+610,The desk was organized by the secretary.,0.9652777777777779,0.5055971145629883
+611,The secretary was organized by the desk.,0.0625,0.5303757786750793
+612,The property was examined by the constable.,0.883333333333333,0.8243882656097412
+613,The constable was examined by the property.,0.12,0.641008734703064
+614,The medicine was swallowed by the patient.,1.0,0.8522294759750366
+615,The patient was swallowed by the medicine.,0.036231884057971,0.5358962416648865
+616,The contestant was discouraged by the pessimist.,0.9393939393939391,0.9625886678695679
+617,The pessimist was discouraged by the contestant.,0.666666666666667,0.8340719938278198
+618,The conservative was attacked by the critic.,0.9320987654320991,0.5344498753547668
+619,The critic was attacked by the conservative.,0.8402777777777779,0.4898523688316345
+620,The manufacturer was robbed by the thief.,0.913333333333333,0.7300556898117065
+621,The thief was robbed by the manufacturer.,0.33333333333333304,0.770279049873352
+622,The bully was dodged by the freshman.,0.855072463768116,0.6811396479606628
+623,The freshman was dodged by the bully.,0.46969696969697,0.764936089515686
+624,The maestro was irked by the amateur.,0.9242424242424241,0.7111023664474487
+625,The amateur was irked by the maestro.,0.741666666666667,0.981991171836853
+626,The offender was handcuffed by the policewoman.,0.993055555555555,0.7417467832565308
+627,The policewoman was handcuffed by the offender.,0.196969696969697,0.7549655437469482
+628,The pill was taken by the convalescent.,0.7575757575757579,0.4652103781700134
+629,The convalescent was taken by the pill.,0.0579710144927536,0.3746761083602905
+630,The distributor was tricked by the joker.,0.775,0.8402782678604126
+631,The joker was tricked by the distributor.,0.5984848484848491,0.8002699613571167
+632,The damsel was courted by the playboy.,0.868055555555555,0.8916782140731812
+633,The playboy was courted by the damsel.,0.8257575757575759,0.9167157411575317
+634,The elderly person was charged by the clerk.,0.9492753623188409,0.9023010730743408
+635,The clerk was charged by the elderly person.,0.45138888888888895,0.7321597933769226
+636,The apprentice was trained by the artisan.,0.926666666666667,0.7622638940811157
+637,The artisan was trained by the apprentice.,0.24242424242424201,0.8213348388671875
+638,The victor was emulated by the liar.,0.6388888888888891,0.680677592754364
+639,The liar was emulated by the victor.,0.5,0.8249771595001221
+640,The kid was reprimanded by the headmaster.,0.9090909090909091,0.8648602962493896
+641,The headmaster was reprimanded by the kid.,0.253623188405797,0.6601972579956055
+642,The faucet was repaired by the handyman.,0.9722222222222221,0.8407799005508423
+643,The handyman was repaired by the faucet.,0.0347222222222222,0.7116497755050659
+644,The speech was delivered by the congressman.,1.0,0.948755145072937
+645,The congressman was delivered by the speech.,0.0,0.42507219314575195
+646,The filet was devoured by the meat-eater.,0.933333333333333,0.6464725732803345
+647,The meat-eater was devoured by the filet.,0.0466666666666667,0.5030777454376221
+648,The plant was watered by the house sitter.,0.96,0.3296366333961487
+649,The house sitter was watered by the plant.,0.0416666666666667,0.3099040389060974
+650,The letter was sent by the cryptographer.,0.8533333333333329,0.5720594525337219
+651,The cryptographer was sent by the letter.,0.106060606060606,0.4853554368019104
+652,The inspector was conned by the impersonator.,0.9236111111111109,0.8895573019981384
+653,The impersonator was conned by the inspector.,0.5933333333333329,0.8985047340393066
+654,The actress was cast by the producer.,0.96969696969697,0.7633305191993713
+655,The producer was cast by the actress.,0.123188405797101,0.5275985598564148
+656,The thinker was depicted by the painter.,0.936507936507936,0.6389186382293701
+657,The painter was depicted by the thinker.,0.277777777777778,0.4886597990989685
+658,The shirt was ironed by the seamstress.,0.925,0.7594233751296997
+659,The seamstress was ironed by the shirt.,0.04,0.4151410460472107
+660,The ballerina was attired by the dressmaker.,0.9202898550724641,0.7510961890220642
+661,The dressmaker was attired by the ballerina.,0.27083333333333304,0.7138656973838806
+662,The sink was wiped by the servant.,0.926666666666667,0.5146037340164185
+663,The servant was wiped by the sink.,0.0466666666666667,0.7620348334312439
+664,The ornament was hung by the uncle.,0.893333333333333,0.5659038424491882
+665,The uncle was hung by the ornament.,0.04,0.498663067817688
+666,The remedy was found by the researcher.,0.9652777777777779,0.7407713532447815
+667,The researcher was found by the remedy.,0.0757575757575758,0.10843181610107422
+668,The widower was treated by the urologist.,0.86,0.736411988735199
+669,The urologist was treated by the widower.,0.298611111111111,0.4681258797645569
+670,The game was won by the poker player.,0.9753086419753091,0.6853747367858887
+671,The poker player was won by the game.,0.0972222222222222,0.6186169981956482
+672,The trip was canceled by the archaeologist.,0.91304347826087,0.7179874181747437
+673,The archaeologist was canceled by the trip.,0.0138888888888889,0.7157045602798462
+674,The statesman was shot by the assassin.,0.931818181818182,0.8213964104652405
+675,The assassin was shot by the statesman.,0.63768115942029,0.9360110759735107
+676,The lad was instructed by the governess.,0.908333333333333,0.8422200083732605
+677,The governess was instructed by the lad.,0.34,0.4744187593460083
+678,The beginner was supported by the professional.,0.9015151515151508,0.7545518279075623
+679,The professional was supported by the beginner.,0.618055555555555,0.5319104790687561
+680,The ogre was mesmerized by the pixie.,0.407407407407407,0.7029718160629272
+681,The pixie was mesmerized by the ogre.,0.265151515151515,0.6813769340515137
+682,The seaman was undercharged by the streetwalker.,0.492753623188406,0.6531183123588562
+683,The streetwalker was undercharged by the seaman.,0.43478260869565205,0.709315299987793
+684,The girl was spanked by the au pair.,0.746666666666667,0.737583339214325
+685,The au pair was spanked by the girl.,0.368055555555556,0.9173095226287842
+686,The offender was handcuffed by the policewoman.,0.993055555555555,0.7054935693740845
+687,The policewoman was handcuffed by the offender.,0.196969696969697,0.6527543663978577
+688,The supper was cooked by the lady.,0.987654320987654,0.7748689651489258
+689,The lady was cooked by the supper.,0.14285714285714302,0.23840612173080444
+690,The assignment was blown by the operative.,0.8125,0.5084976553916931
+691,The operative was blown by the assignment.,0.28030303030303,0.6059977412223816
+692,The prize was received by the cellist.,0.8409090909090909,0.7246336936950684
+693,The cellist was received by the prize.,0.0869565217391304,0.33566170930862427
+694,The youth was revived by the paramedic.,0.963768115942029,0.7942751049995422
+695,The paramedic was revived by the youth.,0.36231884057971003,0.8103788495063782
+696,The shuttle was left by the vacationer.,0.62037037037037,0.5935965180397034
+697,The vacationer was left by the shuttle.,0.856060606060606,0.6086391806602478
+698,The estate was inspected by the sheriff.,0.926666666666667,0.9551908373832703
+699,The sheriff was inspected by the estate.,0.206349206349206,0.7074283957481384
+700,The captive was saved by the negotiator.,0.916666666666667,0.7939500212669373
+701,The negotiator was saved by the captive.,0.446969696969697,0.5676440596580505
+702,The fedora was adorned by the milliner.,0.734848484848485,0.6272227168083191
+703,The milliner was adorned by the fedora.,0.31060606060606105,0.36832183599472046
+704,The inspector was conned by the impersonator.,0.9236111111111109,0.8278538584709167
+705,The impersonator was conned by the inspector.,0.5933333333333329,0.7696977853775024
+706,The target was reached by the guide.,0.963768115942029,0.4941316843032837
+707,The guide was reached by the target.,0.208333333333333,0.42345649003982544
+708,The rioter was restrained by the cop.,0.9814814814814821,0.7108457684516907
+709,The cop was restrained by the rioter.,0.468253968253968,0.7036858201026917
+710,The rookie was encouraged by the master.,0.9772727272727271,0.889147937297821
+711,The master was encouraged by the rookie.,0.625,0.5785269737243652
+712,The firefighter was rewarded by the police chief.,0.8409090909090909,0.789761483669281
+713,The police chief was rewarded by the firefighter.,0.681818181818182,0.398440420627594
+714,The president's wife was terrified by the hijacker.,0.84,0.6293455362319946
+715,The hijacker was terrified by the president's wife.,0.401515151515152,0.8251481056213379
+716,The chiropractor was thanked by the tennis player.,0.946969696969697,0.7997289299964905
+717,The tennis player was thanked by the chiropractor.,0.543478260869565,0.816899299621582
+718,The distributor was tricked by the joker.,0.775,0.7940123677253723
+719,The joker was tricked by the distributor.,0.5984848484848491,0.7295758128166199
+720,The marketer was duped by the prankster.,0.927536231884058,0.8979443311691284
+721,The prankster was duped by the marketer.,0.706666666666667,1.0155072212219238
+722,The successor was chosen by the baron.,0.88,0.6072723865509033
+723,The baron was chosen by the successor.,0.7142857142857142,0.45156121253967285
+724,The deer was trapped by the huntsman.,0.956521739130435,0.6981595754623413
+725,The huntsman was trapped by the deer.,0.21014492753623198,0.6704009175300598
+726,The cigar-maker was warned by the ecologist.,0.7592592592592591,0.7513930797576904
+727,The ecologist was warned by the cigar-maker.,0.6190476190476191,0.632915735244751
+728,The marmalade was detested by the nutritionist.,0.7608695652173909,0.7442375421524048
+729,The nutritionist was detested by the marmalade.,0.10666666666666699,0.6361581683158875
+730,The pipe was smoked by the crackhead.,0.930555555555555,0.6231851577758789
+731,The crackhead was smoked by the pipe.,0.0208333333333333,0.3949740529060364
+732,The cure was discovered by the scientist.,1.0,1.071811556816101
+733,The scientist was discovered by the cure.,0.0583333333333333,0.2759053111076355
+734,The pine tree was felled by the logger.,0.8863636363636359,0.6614776849746704
+735,The logger was felled by the pine tree.,0.166666666666667,0.46781545877456665
+736,The ogre was mesmerized by the pixie.,0.407407407407407,0.6266377568244934
+737,The pixie was mesmerized by the ogre.,0.265151515151515,0.6488427519798279
+738,The steak was eaten by the carnivore.,0.927536231884058,0.7089101076126099
+739,The carnivore was eaten by the steak.,0.0208333333333333,0.3235877752304077
+740,The soda was drunk by the man.,0.916666666666667,0.6366943120956421
+741,The man was drunk by the soda.,0.02,0.4215998649597168
+742,The necklace was stolen by the bum.,0.8533333333333329,0.5118681192398071
+743,The bum was stolen by the necklace.,0.0,0.13728368282318115
+744,The quack was discredited by the cardiologist.,0.76984126984127,0.843230128288269
+745,The cardiologist was discredited by the quack.,0.272727272727273,0.6311123371124268
+746,The package was shipped by the forger.,0.8484848484848492,0.6314218044281006
+747,The forger was shipped by the package.,0.0606060606060606,0.3761184811592102
+748,The busboy was tipped by the brunette.,0.856060606060606,0.6244499683380127
+749,The brunette was tipped by the busboy.,0.28666666666666696,0.7058060765266418
+750,The visitor was bothered by the drunk.,0.8888888888888891,0.4808153510093689
+751,The drunk was bothered by the visitor.,0.681818181818182,0.5872630476951599
+752,The gun was loaded by the minuteman.,0.846666666666667,0.44686442613601685
+753,The minuteman was loaded by the gun.,0.0378787878787879,0.5281645655632019
+754,The coach was disobeyed by the cyclist.,0.8240740740740741,0.5060673356056213
+755,The cyclist was disobeyed by the coach.,0.3916666666666671,0.8070077300071716
+756,The squid was sauteed by the chef.,0.876811594202899,0.7760934233665466
+757,The chef was sauteed by the squid.,0.0769230769230769,0.3469628691673279
+758,The tap was fixed by the repairman.,0.913333333333333,0.9679853320121765
+759,The repairman was fixed by the tap.,0.04,0.28040188550949097
+760,The bystander was interrogated by the attorney.,0.8518518518518521,0.6800795197486877
+761,The attorney was interrogated by the bystander.,0.557971014492754,0.6780316233634949
+762,The worker was fired by the boss.,0.944444444444445,0.8763303160667419
+763,The boss was fired by the worker.,0.189393939393939,0.5566594004631042
+764,The octopus was grilled by the cook.,0.9652777777777779,0.8715712428092957
+765,The cook was grilled by the octopus.,0.0066666666666666706,0.34229058027267456
+766,The economist was acquitted by the jury.,0.8840579710144929,0.9648789763450623
+767,The jury was acquitted by the economist.,0.19333333333333302,0.6059127449989319
+768,The profit was calculated by the bookseller.,0.9351851851851851,0.8651745915412903
+769,The bookseller was calculated by the profit.,0.0916666666666667,0.4945051074028015
+770,The lab assistant was overwhelmed by the neuroscientist.,0.963768115942029,0.8999597430229187
+771,The neuroscientist was overwhelmed by the lab assistant.,0.729166666666667,0.9654615521430969
+772,The intern was berated by the mechanic.,0.795454545454545,0.7877947688102722
+773,The mechanic was berated by the intern.,0.631944444444445,0.7350631356239319
+774,The airplane was steered by the pilot.,0.9924242424242421,0.7235433459281921
+775,The pilot was steered by the airplane.,0.144927536231884,0.6707929968833923
+776,The winner was congratulated by the panelist.,0.962121212121212,0.8459121584892273
+777,The panelist was congratulated by the winner.,0.477272727272727,0.798396646976471
+778,The kid was reprimanded by the headmaster.,0.9090909090909091,0.941662609577179
+779,The headmaster was reprimanded by the kid.,0.253623188405797,0.680573046207428
+780,The offer was accepted by the sociologist.,0.916666666666667,0.7261266112327576
+781,The sociologist was accepted by the offer.,0.1875,0.6623381972312927
+782,The illness was caught by the raider.,0.7222222222222221,0.40833431482315063
+783,The raider was caught by the illness.,0.256944444444444,0.5397447943687439
+784,The cure was discovered by the scientist.,1.0,1.0880913734436035
+785,The scientist was discovered by the cure.,0.0583333333333333,0.1427735686302185
+786,The banner was raised by the soldier.,0.966666666666667,0.5488472580909729
+787,The soldier was raised by the banner.,0.0909090909090909,0.40506380796432495
+788,The ruffian was released by the bailiff.,0.8,1.00059175491333
+789,The bailiff was released by the ruffian.,0.31060606060606105,0.5537779927253723
+790,The aide was rebuked by the technician.,0.826086956521739,0.6450058817863464
+791,The technician was rebuked by the aide.,0.703703703703704,0.6665130257606506
+792,The firefighter was rewarded by the police chief.,0.8409090909090909,0.8677502274513245
+793,The police chief was rewarded by the firefighter.,0.681818181818182,0.4142945408821106
+794,The victor was emulated by the liar.,0.6388888888888891,0.5826298594474792
+795,The liar was emulated by the victor.,0.5,0.8951782584190369
+796,The pill was taken by the convalescent.,0.7575757575757579,0.5872088074684143
+797,The convalescent was taken by the pill.,0.0579710144927536,0.2703879475593567
+798,The trainee was taught by the craftsman.,1.0,0.9099649786949158
+799,The craftsman was taught by the trainee.,0.342592592592593,0.7525758147239685
+800,The message was erased by the bellboy.,0.833333333333333,0.733691930770874
+801,The bellboy was erased by the message.,0.0246913580246914,0.4891795516014099
+802,The virtuoso was irritated by the novice.,0.878787878787879,0.932637095451355
+803,The novice was irritated by the virtuoso.,0.8484848484848492,1.0400004386901855
+804,The light bulb was changed by the groundskeeper.,0.966666666666667,0.8633408546447754
+805,The groundskeeper was changed by the light bulb.,0.0681818181818182,0.3877623975276947
+806,The anthem was sung by the marcher.,0.7727272727272729,0.6914830803871155
+807,The marcher was sung by the anthem.,0.0,0.1877797245979309
+808,The soda was drunk by the man.,0.916666666666667,0.742319643497467
+809,The man was drunk by the soda.,0.02,0.3900254964828491
+810,The speech was delivered by the congressman.,1.0,0.905475378036499
+811,The congressman was delivered by the speech.,0.0,0.04120972752571106
+812,The passport was photocopied by the travel-agent.,0.96,0.8869959115982056
+813,The travel-agent was photocopied by the passport.,0.0,0.39473772048950195
+814,The linebacker was relaxed by the masseuse.,0.8409090909090909,0.7120146751403809
+815,The masseuse was relaxed by the linebacker.,0.34057971014492794,0.41611289978027344
+816,The sugar was sprinkled by the confectioner.,0.895833333333333,0.7521591186523438
+817,The confectioner was sprinkled by the sugar.,0.107843137254902,0.2579425573348999
+818,The offender was handcuffed by the policewoman.,0.993055555555555,0.7963942289352417
+819,The policewoman was handcuffed by the offender.,0.196969696969697,0.6866984367370605
+820,The wire was bent by the ditch digger.,0.793650793650794,0.6394586563110352
+821,The ditch digger was bent by the wire.,0.0466666666666667,0.630526065826416
+822,The paper was edited by the advisor.,0.8402777777777779,0.49564123153686523
+823,The advisor was edited by the paper.,0.173611111111111,0.23273621499538422
+824,The apprentice was trained by the artisan.,0.926666666666667,0.7791988849639893
+825,The artisan was trained by the apprentice.,0.24242424242424201,0.8833408355712891
+826,The tribesman was studied by the anthropologist.,0.82,0.8812007904052734
+827,The anthropologist was studied by the tribesman.,0.53030303030303,0.5628505945205688
+828,The jet was maneuvered by the aviator.,0.9924242424242421,0.8252934217453003
+829,The aviator was maneuvered by the jet.,0.072463768115942,0.5576339364051819
+830,The apartment was redecorated by the copycat.,0.6363636363636359,0.5902325510978699
+831,The copycat was redecorated by the apartment.,0.11363636363636401,0.17909064888954163
+832,The attacker was located by the sleuth.,0.7575757575757579,0.6611132621765137
+833,The sleuth was located by the attacker.,0.6136363636363641,0.5011533498764038
+834,The target was reached by the guide.,0.963768115942029,0.6088817715644836
+835,The guide was reached by the target.,0.208333333333333,0.5629568099975586
+836,The word was mispronounced by the announcer.,0.962121212121212,0.9905928373336792
+837,The announcer was mispronounced by the word.,0.0625,0.7345238327980042
+838,The traitor was pardoned by the president.,0.818840579710145,1.0976171493530273
+839,The president was pardoned by the traitor.,0.06,0.6194998621940613
+840,The chart was made by the accountant.,0.9733333333333329,0.6839925050735474
+841,The accountant was made by the chart.,0.0454545454545454,0.1241864562034607
+842,The illness was caught by the raider.,0.7222222222222221,0.347381055355072
+843,The raider was caught by the illness.,0.256944444444444,0.6377253532409668
+844,The jail was feared by the criminal.,0.5606060606060611,0.4140966832637787
+845,The criminal was feared by the jail.,0.3666666666666671,0.5596006512641907
+846,The actress was cast by the producer.,0.96969696969697,0.876289427280426
+847,The producer was cast by the actress.,0.123188405797101,0.5113317966461182
+848,The ruffian was released by the bailiff.,0.8,0.9258098006248474
+849,The bailiff was released by the ruffian.,0.31060606060606105,0.5811642408370972
+850,The lab assistant was overwhelmed by the neuroscientist.,0.963768115942029,0.8897040486335754
+851,The neuroscientist was overwhelmed by the lab assistant.,0.729166666666667,0.9320334792137146
+852,The gunsmith was terrorized by the warmonger.,0.628787878787879,1.0376088619232178
+853,The warmonger was terrorized by the gunsmith.,0.616666666666667,0.8297887444496155
+854,The tour-guide was chased by the lion.,0.813333333333333,0.8637842535972595
+855,The lion was chased by the tour-guide.,0.36363636363636404,0.759250819683075
+856,The squid was sauteed by the chef.,0.876811594202899,0.7053140997886658
+857,The chef was sauteed by the squid.,0.0769230769230769,0.26893991231918335
+858,The sugar was sprinkled by the confectioner.,0.895833333333333,0.7825477719306946
+859,The confectioner was sprinkled by the sugar.,0.107843137254902,0.23437315225601196
+860,The faucet was repaired by the handyman.,0.9722222222222221,1.123375654220581
+861,The handyman was repaired by the faucet.,0.0347222222222222,0.6403260827064514
+862,The rioter was restrained by the cop.,0.9814814814814821,0.7786009907722473
+863,The cop was restrained by the rioter.,0.468253968253968,0.7371870875358582
+864,The diplomat was driven by the chauffeur.,0.941666666666667,0.7258324027061462
+865,The chauffeur was driven by the diplomat.,0.306666666666667,0.6083393692970276
+866,The tenant was evicted by the owner.,0.9722222222222221,0.991014301776886
+867,The owner was evicted by the tenant.,0.0,0.6266829371452332
+868,The statesman was shot by the assassin.,0.931818181818182,0.7792326807975769
+869,The assassin was shot by the statesman.,0.63768115942029,0.9004479050636292
+870,The beginner was supported by the professional.,0.9015151515151508,0.702601969242096
+871,The professional was supported by the beginner.,0.618055555555555,0.4794765114784241
+872,The expert was employed by the businessman.,0.985507246376812,0.8873013854026794
+873,The businessman was employed by the expert.,0.6875,0.6115122437477112
+874,The form was initialed by the guarantor.,0.916666666666667,0.5817084908485413
+875,The guarantor was initialed by the form.,0.174242424242424,0.6986705660820007
+876,The paper was edited by the advisor.,0.8402777777777779,0.4664486050605774
+877,The advisor was edited by the paper.,0.173611111111111,0.33124595880508423
+878,The novel was finished by the author.,0.946969696969697,0.7677428126335144
+879,The author was finished by the novel.,0.0227272727272727,0.3303067088127136
+880,The rebel was exiled by the king.,0.8095238095238091,1.0978033542633057
+881,The king was exiled by the rebel.,0.43939393939393895,0.5027149319648743
+882,The mission was failed by the agent.,0.891666666666667,0.7878569960594177
+883,The agent was failed by the mission.,0.196969696969697,0.7329910397529602
+884,The cigar-maker was warned by the ecologist.,0.7592592592592591,0.9894550442695618
+885,The ecologist was warned by the cigar-maker.,0.6190476190476191,0.7805135846138
+886,The contestant was discouraged by the pessimist.,0.9393939393939391,1.1285021305084229
+887,The pessimist was discouraged by the contestant.,0.666666666666667,0.8803403973579407
+888,The plagiarist was admonished by the librarian.,0.825,1.4053034782409668
+889,The librarian was admonished by the plagiarist.,0.5,0.9253074526786804
+890,The schedule was verified by the humorist.,0.66,0.8825727105140686
+891,The humorist was verified by the schedule.,0.0303030303030303,0.7804790139198303
+892,The program was funded by the banker.,0.9382716049382719,0.3596641421318054
+893,The banker was funded by the program.,0.5416666666666671,0.3801327347755432
+894,The expression was garbled by the anchorman.,0.8636363636363641,0.7417507767677307
+895,The anchorman was garbled by the expression.,0.19444444444444395,0.7507191300392151
+896,The right-winger was criticized by the reviewer.,0.9242424242424241,0.9738191962242126
+897,The reviewer was criticized by the right-winger.,0.9492753623188409,0.8203279376029968
+898,The wire was bent by the ditch digger.,0.793650793650794,0.6754458546638489
+899,The ditch digger was bent by the wire.,0.0466666666666667,0.6962291598320007
+900,The password was memorized by the hacker.,0.9492753623188409,0.8212162852287292
+901,The hacker was memorized by the password.,0.246376811594203,0.6387434601783752
+902,The computer was purchased by the instructor.,0.9492753623188409,0.692550003528595
+903,The instructor was purchased by the computer.,0.0,0.2904713749885559
+904,The distributor was tricked by the joker.,0.775,0.861990749835968
+905,The joker was tricked by the distributor.,0.5984848484848491,0.65797358751297
+906,The thinker was depicted by the painter.,0.936507936507936,0.5592606663703918
+907,The painter was depicted by the thinker.,0.277777777777778,0.3122027516365051
+908,The disease was contracted by the marauder.,0.8125,0.5755723118782043
+909,The marauder was contracted by the disease.,0.136363636363636,0.7965138554573059
+910,The captive was saved by the negotiator.,0.916666666666667,0.6817572712898254
+911,The negotiator was saved by the captive.,0.446969696969697,0.5571797490119934
+912,The assignment was blown by the operative.,0.8125,0.6027736067771912
+913,The operative was blown by the assignment.,0.28030303030303,0.6234725117683411
+914,The statesman was shot by the assassin.,0.931818181818182,0.781337320804596
+915,The assassin was shot by the statesman.,0.63768115942029,0.8523066639900208
+916,The itinerary was confirmed by the comedian.,0.806666666666667,0.7797666192054749
+917,The comedian was confirmed by the itinerary.,0.4466666666666671,0.4258576035499573
+918,The graph was created by the bookkeeper.,0.9242424242424241,0.6835928559303284
+919,The bookkeeper was created by the graph.,0.0579710144927536,0.25678688287734985
+920,The vendor was alarmed by the arsonist.,0.8106060606060609,0.6445102095603943
+921,The arsonist was alarmed by the vendor.,0.6825396825396819,0.6327609419822693
+922,The trip was canceled by the archaeologist.,0.91304347826087,0.8785892128944397
+923,The archaeologist was canceled by the trip.,0.0138888888888889,0.6633601784706116
+924,The president's wife was terrified by the hijacker.,0.84,0.6735069155693054
+925,The hijacker was terrified by the president's wife.,0.401515151515152,0.9331550002098083
+926,The worker was fired by the boss.,0.944444444444445,0.9692047238349915
+927,The boss was fired by the worker.,0.189393939393939,0.6507883667945862
+928,The cushion was lifted by the maid.,0.984848484848485,0.680643618106842
+929,The maid was lifted by the cushion.,0.166666666666667,0.5947389006614685
+930,The cousin was shocked by the genius.,0.9015151515151508,0.7161884903907776
+931,The genius was shocked by the cousin.,0.673913043478261,0.6576802134513855
+932,The expert was employed by the businessman.,0.985507246376812,0.8782525658607483
+933,The businessman was employed by the expert.,0.6875,0.6404176354408264
+934,The soda was drunk by the man.,0.916666666666667,0.7820555567741394
+935,The man was drunk by the soda.,0.02,0.42632919549942017
+936,The crop was cultivated by the villager.,0.9861111111111109,1.129594326019287
+937,The villager was cultivated by the crop.,0.0648148148148148,0.4722976088523865
+938,The expression was garbled by the anchorman.,0.8636363636363641,0.7693111300468445
+939,The anchorman was garbled by the expression.,0.19444444444444395,0.6911055445671082
+940,The shirt was ironed by the seamstress.,0.925,0.9714478850364685
+941,The seamstress was ironed by the shirt.,0.04,0.2453191876411438
+942,The letter was sent by the cryptographer.,0.8533333333333329,0.886730968952179
+943,The cryptographer was sent by the letter.,0.106060606060606,0.5385809540748596
+944,The dancer was costumed by the tailor.,0.746666666666667,0.8521438241004944
+945,The tailor was costumed by the dancer.,0.21969696969696997,0.6204925179481506
+946,The apprentice was trained by the artisan.,0.926666666666667,0.8215425610542297
+947,The artisan was trained by the apprentice.,0.24242424242424201,0.9996504187583923
+948,The prison was dreaded by the convict.,0.75,0.36459237337112427
+949,The convict was dreaded by the prison.,0.320987654320988,0.46315115690231323
+950,The jail was feared by the criminal.,0.5606060606060611,0.452521413564682
+951,The criminal was feared by the jail.,0.3666666666666671,0.63157057762146
+952,The poem was recited by the bookworm.,0.868055555555555,0.6684010624885559
+953,The bookworm was recited by the poem.,0.0666666666666667,0.46186375617980957
+954,The crowd was hypnotized by the magician.,0.9242424242424241,1.1066356897354126
+955,The magician was hypnotized by the crowd.,0.246376811594203,1.1657029390335083
+956,The plagiarist was admonished by the librarian.,0.825,1.364388108253479
+957,The librarian was admonished by the plagiarist.,0.5,0.9023131728172302
+958,The worker was fired by the boss.,0.944444444444445,1.0077961683273315
+959,The boss was fired by the worker.,0.189393939393939,0.7365719676017761
+960,The service was rated by the cheapskate.,0.8257575757575759,0.697406530380249
+961,The cheapskate was rated by the service.,0.5625,0.6703436374664307
+962,The laptop was bought by the teacher.,0.9927536231884059,0.9750169515609741
+963,The teacher was bought by the laptop.,0.0,0.37035924196243286
+964,The appointment was rescheduled by the manicurist.,0.95679012345679,0.7395333051681519
+965,The manicurist was rescheduled by the appointment.,0.14285714285714302,0.6404479146003723
+966,The bowler was decorated by the hatter.,0.402777777777778,0.5326547622680664
+967,The hatter was decorated by the bowler.,0.43181818181818205,0.6060630679130554
+968,The turkey was basted by the boyfriend.,0.864197530864197,0.5384819507598877
+969,The boyfriend was basted by the turkey.,0.0634920634920635,0.4009745419025421
+970,The contestant was discouraged by the pessimist.,0.9393939393939391,1.0610958337783813
+971,The pessimist was discouraged by the contestant.,0.666666666666667,0.8044061660766602
+972,The industrialist was burgled by the robber.,0.875,0.7529656887054443
+973,The robber was burgled by the industrialist.,0.222222222222222,0.7241899967193604
+974,The pop star was stalked by the paparazzi.,0.96,1.0004608631134033
+975,The paparazzi was stalked by the pop star.,0.33333333333333304,0.8294461965560913
+976,The conservative was attacked by the critic.,0.9320987654320991,0.5310431122779846
+977,The critic was attacked by the conservative.,0.8402777777777779,0.5095669031143188
+978,The stash was hidden by the hoarder.,0.962121212121212,1.0182567834854126
+979,The hoarder was hidden by the stash.,0.534722222222222,0.5459200739860535
+980,The expression was garbled by the anchorman.,0.8636363636363641,0.9325389862060547
+981,The anchorman was garbled by the expression.,0.19444444444444395,0.8275313973426819
+982,The address was given by the representative.,0.931818181818182,0.6994601488113403
+983,The representative was given by the address.,0.08,0.3368348777294159
+984,The cadet was supervised by the colonel.,0.946969696969697,1.0385792255401611
+985,The colonel was supervised by the cadet.,0.3125,0.6840717792510986
+986,The old man was shaved by the barber.,0.9907407407407409,0.997692346572876
+987,The barber was shaved by the old man.,0.3916666666666671,0.9672492742538452
+988,The stockpile was concealed by the packrat.,0.8257575757575759,0.6614866852760315
+989,The packrat was concealed by the stockpile.,0.6842105263157889,0.48629510402679443
+990,The deer was trapped by the huntsman.,0.956521739130435,0.8774416446685791
+991,The huntsman was trapped by the deer.,0.21014492753623198,0.7239192128181458
+992,The rebel was exiled by the king.,0.8095238095238091,1.0735282897949219
+993,The king was exiled by the rebel.,0.43939393939393895,0.5294079780578613
+994,The sink was wiped by the servant.,0.926666666666667,0.6692056059837341
+995,The servant was wiped by the sink.,0.0466666666666667,0.5975456237792969
+996,The pine tree was felled by the logger.,0.8863636363636359,0.9273831844329834
+997,The logger was felled by the pine tree.,0.166666666666667,0.6132605075836182
+998,The giraffe was fed by the zookeeper.,0.962121212121212,1.0480186939239502
+999,The zookeeper was fed by the giraffe.,0.0666666666666667,0.8667705059051514
+1000,The whistle-blower was ousted by the union.,0.9259259259259259,0.6883127093315125
+1001,The union was ousted by the whistle-blower.,0.7380952380952379,0.3640456795692444
+1002,The paper was edited by the advisor.,0.8402777777777779,0.3224567770957947
+1003,The advisor was edited by the paper.,0.173611111111111,0.33304691314697266
+1004,The noble was obeyed by the page.,0.575757575757576,0.47577881813049316
+1005,The page was obeyed by the noble.,0.442028985507246,0.3817223906517029
+1006,The tap was fixed by the repairman.,0.913333333333333,0.7291269898414612
+1007,The repairman was fixed by the tap.,0.04,0.2451239824295044
+1008,The button was pressed by the attendant.,0.9772727272727271,0.42788106203079224
+1009,The attendant was pressed by the button.,0.0555555555555555,0.21572911739349365
+1010,The ballerina was attired by the dressmaker.,0.9202898550724641,0.6712235808372498
+1011,The dressmaker was attired by the ballerina.,0.27083333333333304,0.5507037043571472
+1012,The senior citizen was billed by the cashier.,0.9,0.6955894827842712
+1013,The cashier was billed by the senior citizen.,0.305555555555556,0.5885279774665833
+1014,The wash basin was cleaned by the domestic.,0.673333333333333,0.3743002414703369
+1015,The domestic was cleaned by the wash basin.,0.136363636363636,0.32445019483566284
+1016,The game was won by the poker player.,0.9753086419753091,0.5543278455734253
+1017,The poker player was won by the game.,0.0972222222222222,0.5148892402648926
+1018,The abused woman was comforted by the social worker.,0.946969696969697,0.906701385974884
+1019,The social worker was comforted by the abused woman.,0.3866666666666671,0.5967531800270081
+1020,The hostage was rescued by the mediator.,0.9375,0.7692021727561951
+1021,The mediator was rescued by the hostage.,0.29012345679012297,0.6898800730705261
+1022,The newsagent was promoted by the TV station head.,0.9523809523809521,0.4828619956970215
+1023,The TV station head was promoted by the newsagent.,0.4375,0.4476425051689148
+1024,The shopkeeper was unnerved by the pyromaniac.,0.726666666666667,0.72462397813797
+1025,The pyromaniac was unnerved by the shopkeeper.,0.643939393939394,0.833957850933075
+1026,The conqueror was imitated by the deceiver.,0.674242424242424,0.6523343920707703
+1027,The deceiver was imitated by the conqueror.,0.5606060606060611,0.8715193867683411
+1028,The souvenir was lost by the traveler.,0.8484848484848492,0.8964484333992004
+1029,The traveler was lost by the souvenir.,0.0466666666666667,0.5555327534675598
+1030,The cash was squandered by the prostitute.,0.833333333333333,0.6246328949928284
+1031,The prostitute was squandered by the cash.,0.215277777777778,0.41691315174102783
+1032,The triumph was promised by the ship captain.,0.7407407407407409,0.5388953685760498
+1033,The ship captain was promised by the triumph.,0.2,0.3118705749511719
+1034,The specialist was hired by the entrepreneur.,0.95,0.8173485398292542
+1035,The entrepreneur was hired by the specialist.,0.652777777777778,0.552792489528656
+1036,The clergyman was cherished by the nomad.,0.698412698412698,0.49965739250183105
+1037,The nomad was cherished by the clergyman.,0.7013888888888891,0.785553514957428
+1038,The participant was dissuaded by the cynic.,0.7407407407407409,0.6535708904266357
+1039,The cynic was dissuaded by the participant.,0.7424242424242421,0.5952968001365662
+1040,The company was run by the tycoon.,0.87037037037037,0.8213594555854797
+1041,The tycoon was run by the company.,0.128787878787879,0.5276193618774414
+1042,The door was unlocked by the deckhand.,0.9492753623188409,0.4282594919204712
+1043,The deckhand was unlocked by the door.,0.0432098765432099,0.24364042282104492
+1044,The conservative was attacked by the critic.,0.9320987654320991,0.34666699171066284
+1045,The critic was attacked by the conservative.,0.8402777777777779,0.36988234519958496
+1046,The mission was failed by the agent.,0.891666666666667,0.5586060881614685
+1047,The agent was failed by the mission.,0.196969696969697,0.5928918719291687
+1048,The attacker was located by the sleuth.,0.7575757575757579,0.5565003752708435
+1049,The sleuth was located by the attacker.,0.6136363636363641,0.34746819734573364
+1050,The mission was failed by the agent.,0.891666666666667,0.5637487769126892
+1051,The agent was failed by the mission.,0.196969696969697,0.5798118710517883
+1052,The marketer was duped by the prankster.,0.927536231884058,0.8968239426612854
+1053,The prankster was duped by the marketer.,0.706666666666667,0.9005479216575623
+1054,The cash was squandered by the prostitute.,0.833333333333333,0.6373722553253174
+1055,The prostitute was squandered by the cash.,0.215277777777778,0.5134533643722534
+1056,The sink was wiped by the servant.,0.926666666666667,0.410473108291626
+1057,The servant was wiped by the sink.,0.0466666666666667,0.3494771122932434
+1058,The lad was instructed by the governess.,0.908333333333333,0.5850088596343994
+1059,The governess was instructed by the lad.,0.34,0.4464351534843445
+1060,The tobacconist was cautioned by the environmentalist.,0.833333333333333,0.7368094325065613
+1061,The environmentalist was cautioned by the tobacconist.,0.42361111111111105,0.5566281080245972
+1062,The cousin was shocked by the genius.,0.9015151515151508,0.6583545207977295
+1063,The genius was shocked by the cousin.,0.673913043478261,0.5816312432289124
+1064,The door was unlocked by the deckhand.,0.9492753623188409,0.47064727544784546
+1065,The deckhand was unlocked by the door.,0.0432098765432099,0.17207127809524536
+1066,The recluse was taunted by the windbag.,0.514492753623188,0.44370347261428833
+1067,The windbag was taunted by the recluse.,0.4733333333333329,0.37598639726638794
+1068,The pop star was stalked by the paparazzi.,0.96,0.8277725577354431
+1069,The paparazzi was stalked by the pop star.,0.33333333333333304,0.618941068649292
+1070,The estate was inspected by the sheriff.,0.926666666666667,0.8014367818832397
+1071,The sheriff was inspected by the estate.,0.206349206349206,0.3078877925872803
+1072,The old man was shaved by the barber.,0.9907407407407409,0.6436030864715576
+1073,The barber was shaved by the old man.,0.3916666666666671,0.6058890223503113
+1074,The cure was discovered by the scientist.,1.0,0.8786912560462952
+1075,The scientist was discovered by the cure.,0.0583333333333333,0.28965795040130615
+1076,The bag was packed by the marine.,0.871212121212121,0.538008987903595
+1077,The marine was packed by the bag.,0.00757575757575757,0.2304006814956665
+1078,The apartment was redecorated by the copycat.,0.6363636363636359,0.5106387138366699
+1079,The copycat was redecorated by the apartment.,0.11363636363636401,0.17301338911056519
+1080,The beverage was requested by the adventurer.,0.856060606060606,0.405583918094635
+1081,The adventurer was requested by the beverage.,0.0277777777777778,0.19257038831710815
+1082,The tap was fixed by the repairman.,0.913333333333333,0.6724264025688171
+1083,The repairman was fixed by the tap.,0.04,0.2837975025177002
+1084,The shirt was ironed by the seamstress.,0.925,0.8319604992866516
+1085,The seamstress was ironed by the shirt.,0.04,0.19440990686416626
+1086,The newsagent was promoted by the TV station head.,0.9523809523809521,0.5305753350257874
+1087,The TV station head was promoted by the newsagent.,0.4375,0.523576557636261
+1088,The alcohol was provided by the overseer.,0.7826086956521741,0.6434800624847412
+1089,The overseer was provided by the alcohol.,0.0217391304347826,0.21993130445480347
+1090,The plant was watered by the house sitter.,0.96,0.4571824073791504
+1091,The house sitter was watered by the plant.,0.0416666666666667,0.36874085664749146
+1092,The story was abandoned by the reporter.,0.930555555555555,0.6458268761634827
+1093,The reporter was abandoned by the story.,0.111111111111111,0.5501487255096436
+1094,The medicine was swallowed by the patient.,1.0,0.7068406343460083
+1095,The patient was swallowed by the medicine.,0.036231884057971,0.47453534603118896
+1096,The contestant was discouraged by the pessimist.,0.9393939393939391,0.8264182209968567
+1097,The pessimist was discouraged by the contestant.,0.666666666666667,0.6465786099433899
+1098,The rioter was restrained by the cop.,0.9814814814814821,0.567539393901825
+1099,The cop was restrained by the rioter.,0.468253968253968,0.4998459815979004
+1100,The trainer was defied by the biker.,0.6111111111111109,0.40651512145996094
+1101,The biker was defied by the trainer.,0.68,0.3834105134010315
+1102,The girl was spanked by the au pair.,0.746666666666667,0.6844263672828674
+1103,The au pair was spanked by the girl.,0.368055555555556,0.6243368983268738
+1104,The bowler was decorated by the hatter.,0.402777777777778,0.3228341341018677
+1105,The hatter was decorated by the bowler.,0.43181818181818205,0.30732566118240356
+1106,The pipe was smoked by the crackhead.,0.930555555555555,0.5044963955879211
+1107,The crackhead was smoked by the pipe.,0.0208333333333333,0.3647448718547821
+1108,The tobacconist was cautioned by the environmentalist.,0.833333333333333,0.6023666858673096
+1109,The environmentalist was cautioned by the tobacconist.,0.42361111111111105,0.48288917541503906
+1110,The button was pressed by the attendant.,0.9772727272727271,0.43497002124786377
+1111,The attendant was pressed by the button.,0.0555555555555555,0.22223007678985596
+1112,The liquor was supplied by the supervisor.,0.73015873015873,0.533096432685852
+1113,The supervisor was supplied by the liquor.,0.00757575757575757,0.09007889032363892
+1114,The kid was reprimanded by the headmaster.,0.9090909090909091,0.6621326208114624
+1115,The headmaster was reprimanded by the kid.,0.253623188405797,0.4821203052997589
+1116,The baby was coddled by the dad.,0.9761904761904759,0.5976474285125732
+1117,The dad was coddled by the baby.,0.15740740740740697,0.4927155375480652
+1118,The apprentice was trained by the artisan.,0.926666666666667,0.4744621217250824
+1119,The artisan was trained by the apprentice.,0.24242424242424201,0.4404487609863281
+1120,The guest was hassled by the alcoholic.,0.8611111111111109,0.5723110437393188
+1121,The alcoholic was hassled by the guest.,0.75,0.44705572724342346
+1122,The prison was dreaded by the convict.,0.75,0.288843035697937
+1123,The convict was dreaded by the prison.,0.320987654320988,0.36145222187042236
+1124,The coach was disobeyed by the cyclist.,0.8240740740740741,0.5498239398002625
+1125,The cyclist was disobeyed by the coach.,0.3916666666666671,0.45586875081062317
+1126,The firefighter was rewarded by the police chief.,0.8409090909090909,0.6466197967529297
+1127,The police chief was rewarded by the firefighter.,0.681818181818182,0.37412798404693604
+1128,The property was examined by the constable.,0.883333333333333,0.6558235883712769
+1129,The constable was examined by the property.,0.12,0.23414677381515503
+1130,The seaman was undercharged by the streetwalker.,0.492753623188406,0.6892938613891602
+1131,The streetwalker was undercharged by the seaman.,0.43478260869565205,0.5780363082885742
+1132,The widower was treated by the urologist.,0.86,0.6713999509811401
+1133,The urologist was treated by the widower.,0.298611111111111,0.32632219791412354
+1134,The senior citizen was billed by the cashier.,0.9,0.6107350587844849
+1135,The cashier was billed by the senior citizen.,0.305555555555556,0.4589499533176422
+1136,The triumph was promised by the ship captain.,0.7407407407407409,0.36677560210227966
+1137,The ship captain was promised by the triumph.,0.2,0.18501609563827515
+1138,The tenant was evicted by the owner.,0.9722222222222221,0.5367456078529358
+1139,The owner was evicted by the tenant.,0.0,0.30543068051338196
+1140,The first lady was petrified by the terrorist.,0.88,0.3853546977043152
+1141,The terrorist was petrified by the first lady.,0.46212121212121204,0.5682786703109741
+1142,The ornament was hung by the uncle.,0.893333333333333,0.4779835045337677
+1143,The uncle was hung by the ornament.,0.04,0.36307087540626526
+1144,The bystander was interrogated by the attorney.,0.8518518518518521,0.45066726207733154
+1145,The attorney was interrogated by the bystander.,0.557971014492754,0.4089467227458954
+1146,The disease was contracted by the marauder.,0.8125,0.4325665533542633
+1147,The marauder was contracted by the disease.,0.136363636363636,0.5762691497802734
+1148,The suit was wrinkled by the interviewee.,0.765151515151515,0.5675787925720215
+1149,The interviewee was wrinkled by the suit.,0.222222222222222,0.4961974620819092
+1150,The filmmaker was pestered by the fan.,0.9722222222222221,0.5640964508056641
+1151,The fan was pestered by the filmmaker.,0.5,0.5935389995574951
+1152,The money was wasted by the call girl.,0.905797101449275,0.6134288311004639
+1153,The call girl was wasted by the money.,0.0576923076923077,0.6256296634674072
+1154,The widower was treated by the urologist.,0.86,0.8536429405212402
+1155,The urologist was treated by the widower.,0.298611111111111,0.5483571887016296
+1156,The senator was threatened by the blackmailer.,0.91358024691358,0.6360752582550049
+1157,The blackmailer was threatened by the senator.,0.6388888888888891,0.6376849412918091
+1158,The plagiarist was admonished by the librarian.,0.825,0.9145916700363159
+1159,The librarian was admonished by the plagiarist.,0.5,0.45916038751602173
+1160,The painting was inherited by the count.,0.7222222222222221,0.7137617468833923
+1161,The count was inherited by the painting.,0.128787878787879,0.12484002113342285
+1162,The priest was revered by the vagabond.,0.787878787878788,0.4549526572227478
+1163,The vagabond was revered by the priest.,0.4166666666666671,0.6033423542976379
+1164,The trashcan was emptied by the fisherman.,0.86231884057971,0.34627819061279297
+1165,The fisherman was emptied by the trashcan.,0.02,0.2741008400917053
+1166,The address was given by the representative.,0.931818181818182,0.5159978270530701
+1167,The representative was given by the address.,0.08,0.4357510805130005
+1168,The enthusiast was disappointed by the singer.,0.833333333333333,0.5212624073028564
+1169,The singer was disappointed by the enthusiast.,0.6728395061728389,0.4273030161857605
+1170,The apartment was redecorated by the copycat.,0.6363636363636359,0.5420464277267456
+1171,The copycat was redecorated by the apartment.,0.11363636363636401,0.24696612358093262
+1172,The thinker was depicted by the painter.,0.936507936507936,0.7700067758560181
+1173,The painter was depicted by the thinker.,0.277777777777778,0.4357982873916626
+1174,The graph was created by the bookkeeper.,0.9242424242424241,0.5323054790496826
+1175,The bookkeeper was created by the graph.,0.0579710144927536,0.062367379665374756
+1176,The banner was raised by the soldier.,0.966666666666667,0.5575628280639648
+1177,The soldier was raised by the banner.,0.0909090909090909,0.4765167236328125
+1178,The message was erased by the bellboy.,0.833333333333333,0.5009925365447998
+1179,The bellboy was erased by the message.,0.0246913580246914,0.49146026372909546
+1180,The concert was attended by the groupie.,0.9375,0.5371497869491577
+1181,The groupie was attended by the concert.,0.12121212121212101,0.31772714853286743
+1182,The estate was inspected by the sheriff.,0.926666666666667,0.8187994956970215
+1183,The sheriff was inspected by the estate.,0.206349206349206,0.41181015968322754
+1184,The baguette was sliced by the Frenchman.,0.993055555555555,0.5541783571243286
+1185,The Frenchman was sliced by the baguette.,0.0606060606060606,0.2662174105644226
+1186,The table was tidied by the receptionist.,0.942028985507246,0.5180425643920898
+1187,The receptionist was tidied by the table.,0.0933333333333333,0.45801007747650146
+1188,The guest was hassled by the alcoholic.,0.8611111111111109,0.5304526090621948
+1189,The alcoholic was hassled by the guest.,0.75,0.415682852268219
+1190,The pill was taken by the convalescent.,0.7575757575757579,0.6572654247283936
+1191,The convalescent was taken by the pill.,0.0579710144927536,0.31946367025375366
+1192,The trip was canceled by the archaeologist.,0.91304347826087,0.6425689458847046
+1193,The archaeologist was canceled by the trip.,0.0138888888888889,0.5469139218330383
+1194,The beginner was supported by the professional.,0.9015151515151508,0.5276696681976318
+1195,The professional was supported by the beginner.,0.618055555555555,0.3430173993110657
+1196,The infant was pampered by the father.,0.9492753623188409,0.689409613609314
+1197,The father was pampered by the infant.,0.0507246376811594,0.4799996614456177
+1198,The stash was hidden by the hoarder.,0.962121212121212,0.8050706386566162
+1199,The hoarder was hidden by the stash.,0.534722222222222,0.7243245840072632
