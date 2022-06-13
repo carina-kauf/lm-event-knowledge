@@ -1,0 +1,141 @@
+,Unnamed: 0,Dataset,Model,VoiceType,TrialType,Fold,Iteration,Accuracy,Plot
+0,0,DTFit,bert-large-cased,normal,normal,1,1,0.925,BERT DTFit
+1,1,DTFit,bert-large-cased,normal,normal,2,1,0.9375,BERT DTFit
+2,2,DTFit,bert-large-cased,normal,normal,3,1,0.925,BERT DTFit
+3,3,DTFit,bert-large-cased,normal,normal,4,1,0.95,BERT DTFit
+4,4,DTFit,bert-large-cased,normal,normal,5,1,0.9125,BERT DTFit
+5,5,DTFit,bert-large-cased,normal,normal,6,1,0.925,BERT DTFit
+6,6,DTFit,bert-large-cased,normal,normal,7,1,0.95,BERT DTFit
+7,7,DTFit,bert-large-cased,normal,normal,8,1,0.9743589743589745,BERT DTFit
+8,8,DTFit,bert-large-cased,normal,normal,9,1,0.935897435897436,BERT DTFit
+9,9,DTFit,bert-large-cased,normal,normal,10,1,0.9102564102564102,BERT DTFit
+10,10,EventsAdapt,bert-large-cased,normal,normal,1,1,0.9519230769230768,BERT EventsAdapt
+11,11,EventsAdapt,bert-large-cased,normal,normal,2,1,0.8846153846153846,BERT EventsAdapt
+12,12,EventsAdapt,bert-large-cased,normal,normal,3,1,0.8846153846153846,BERT EventsAdapt
+13,13,EventsAdapt,bert-large-cased,normal,normal,4,1,0.9230769230769232,BERT EventsAdapt
+14,14,EventsAdapt,bert-large-cased,normal,normal,5,1,0.8846153846153846,BERT EventsAdapt
+15,15,EventsAdapt,bert-large-cased,normal,normal,6,1,0.9326923076923076,BERT EventsAdapt
+16,16,EventsAdapt,bert-large-cased,normal,normal,7,1,0.8653846153846154,BERT EventsAdapt
+17,17,EventsAdapt,bert-large-cased,normal,normal,8,1,0.9423076923076924,BERT EventsAdapt
+18,18,EventsAdapt,bert-large-cased,normal,normal,9,1,0.9423076923076924,BERT EventsAdapt
+19,19,EventsAdapt,bert-large-cased,normal,normal,10,1,0.94,BERT EventsAdapt
+20,20,EventsAdapt,bert-large-cased,active-active,normal,1,1,0.9615384615384616,BERT EventsAdapt a-a
+21,21,EventsAdapt,bert-large-cased,active-active,normal,2,1,0.8653846153846154,BERT EventsAdapt a-a
+22,22,EventsAdapt,bert-large-cased,active-active,normal,3,1,0.903846153846154,BERT EventsAdapt a-a
+23,23,EventsAdapt,bert-large-cased,active-active,normal,4,1,0.9423076923076924,BERT EventsAdapt a-a
+24,24,EventsAdapt,bert-large-cased,active-active,normal,5,1,0.8846153846153846,BERT EventsAdapt a-a
+25,25,EventsAdapt,bert-large-cased,active-active,normal,6,1,0.9423076923076924,BERT EventsAdapt a-a
+26,26,EventsAdapt,bert-large-cased,active-active,normal,7,1,0.8653846153846154,BERT EventsAdapt a-a
+27,27,EventsAdapt,bert-large-cased,active-active,normal,8,1,0.9423076923076924,BERT EventsAdapt a-a
+28,28,EventsAdapt,bert-large-cased,active-active,normal,9,1,0.9423076923076924,BERT EventsAdapt a-a
+29,29,EventsAdapt,bert-large-cased,active-active,normal,10,1,0.94,BERT EventsAdapt a-a
+30,30,EventsAdapt,bert-large-cased,passive-passive,normal,1,1,0.9423076923076924,BERT EventsAdapt p-p
+31,31,EventsAdapt,bert-large-cased,passive-passive,normal,2,1,0.8846153846153846,BERT EventsAdapt p-p
+32,32,EventsAdapt,bert-large-cased,passive-passive,normal,3,1,0.8653846153846154,BERT EventsAdapt p-p
+33,33,EventsAdapt,bert-large-cased,passive-passive,normal,4,1,0.903846153846154,BERT EventsAdapt p-p
+34,34,EventsAdapt,bert-large-cased,passive-passive,normal,5,1,0.8461538461538461,BERT EventsAdapt p-p
+35,35,EventsAdapt,bert-large-cased,passive-passive,normal,6,1,0.9230769230769232,BERT EventsAdapt p-p
+36,36,EventsAdapt,bert-large-cased,passive-passive,normal,7,1,0.8461538461538461,BERT EventsAdapt p-p
+37,37,EventsAdapt,bert-large-cased,passive-passive,normal,8,1,0.9615384615384616,BERT EventsAdapt p-p
+38,38,EventsAdapt,bert-large-cased,passive-passive,normal,9,1,0.9230769230769232,BERT EventsAdapt p-p
+39,39,EventsAdapt,bert-large-cased,passive-passive,normal,10,1,0.94,BERT EventsAdapt p-p
+40,40,EventsAdapt,bert-large-cased,active-passive,normal,1,1,0.9423076923076924,BERT EventsAdapt a-p
+41,41,EventsAdapt,bert-large-cased,active-passive,normal,2,1,0.8846153846153846,BERT EventsAdapt a-p
+42,42,EventsAdapt,bert-large-cased,active-passive,normal,3,1,0.8653846153846154,BERT EventsAdapt a-p
+43,43,EventsAdapt,bert-large-cased,active-passive,normal,4,1,0.903846153846154,BERT EventsAdapt a-p
+44,44,EventsAdapt,bert-large-cased,active-passive,normal,5,1,0.8653846153846154,BERT EventsAdapt a-p
+45,45,EventsAdapt,bert-large-cased,active-passive,normal,6,1,0.9230769230769232,BERT EventsAdapt a-p
+46,46,EventsAdapt,bert-large-cased,active-passive,normal,7,1,0.8461538461538461,BERT EventsAdapt a-p
+47,47,EventsAdapt,bert-large-cased,active-passive,normal,8,1,0.9615384615384616,BERT EventsAdapt a-p
+48,48,EventsAdapt,bert-large-cased,active-passive,normal,9,1,0.9230769230769232,BERT EventsAdapt a-p
+49,49,EventsAdapt,bert-large-cased,active-passive,normal,10,1,0.94,BERT EventsAdapt a-p
+50,50,EventsAdapt,bert-large-cased,passive-active,normal,1,1,0.9615384615384616,BERT EventsAdapt p-a
+51,51,EventsAdapt,bert-large-cased,passive-active,normal,2,1,0.8653846153846154,BERT EventsAdapt p-a
+52,52,EventsAdapt,bert-large-cased,passive-active,normal,3,1,0.903846153846154,BERT EventsAdapt p-a
+53,53,EventsAdapt,bert-large-cased,passive-active,normal,4,1,0.9423076923076924,BERT EventsAdapt p-a
+54,54,EventsAdapt,bert-large-cased,passive-active,normal,5,1,0.8846153846153846,BERT EventsAdapt p-a
+55,55,EventsAdapt,bert-large-cased,passive-active,normal,6,1,0.9423076923076924,BERT EventsAdapt p-a
+56,56,EventsAdapt,bert-large-cased,passive-active,normal,7,1,0.8653846153846154,BERT EventsAdapt p-a
+57,57,EventsAdapt,bert-large-cased,passive-active,normal,8,1,0.9423076923076924,BERT EventsAdapt p-a
+58,58,EventsAdapt,bert-large-cased,passive-active,normal,9,1,0.9423076923076924,BERT EventsAdapt p-a
+59,59,EventsAdapt,bert-large-cased,passive-active,normal,10,1,0.94,BERT EventsAdapt p-a
+60,60,EventsAdapt,bert-large-cased,active-active,AI-AI,1,1,1.0,BERT EventsAdapt ai-ai
+61,61,EventsAdapt,bert-large-cased,active-active,AI-AI,2,1,1.0,BERT EventsAdapt ai-ai
+62,62,EventsAdapt,bert-large-cased,active-active,AI-AI,3,1,1.0,BERT EventsAdapt ai-ai
+63,63,EventsAdapt,bert-large-cased,active-active,AI-AI,4,1,0.9230769230769232,BERT EventsAdapt ai-ai
+64,64,EventsAdapt,bert-large-cased,active-active,AI-AI,5,1,0.9615384615384616,BERT EventsAdapt ai-ai
+65,65,EventsAdapt,bert-large-cased,active-active,AI-AI,6,1,1.0,BERT EventsAdapt ai-ai
+66,66,EventsAdapt,bert-large-cased,active-active,AI-AI,7,1,1.0,BERT EventsAdapt ai-ai
+67,67,EventsAdapt,bert-large-cased,active-active,AI-AI,8,1,0.9230769230769232,BERT EventsAdapt ai-ai
+68,68,EventsAdapt,bert-large-cased,active-active,AI-AI,9,1,1.0,BERT EventsAdapt ai-ai
+69,69,EventsAdapt,bert-large-cased,active-active,AI-AI,10,1,0.9583333333333334,BERT EventsAdapt ai-ai
+70,70,EventsAdapt,bert-large-cased,active-active,AAN-AAN,1,1,0.8846153846153846,BERT EventsAdapt aan-aan
+71,71,EventsAdapt,bert-large-cased,active-active,AAN-AAN,2,1,0.8461538461538461,BERT EventsAdapt aan-aan
+72,72,EventsAdapt,bert-large-cased,active-active,AAN-AAN,3,1,0.7692307692307693,BERT EventsAdapt aan-aan
+73,73,EventsAdapt,bert-large-cased,active-active,AAN-AAN,4,1,0.9615384615384616,BERT EventsAdapt aan-aan
+74,74,EventsAdapt,bert-large-cased,active-active,AAN-AAN,5,1,0.7307692307692307,BERT EventsAdapt aan-aan
+75,75,EventsAdapt,bert-large-cased,active-active,AAN-AAN,6,1,0.8076923076923077,BERT EventsAdapt aan-aan
+76,76,EventsAdapt,bert-large-cased,active-active,AAN-AAN,7,1,0.8461538461538461,BERT EventsAdapt aan-aan
+77,77,EventsAdapt,bert-large-cased,active-active,AAN-AAN,8,1,0.9230769230769232,BERT EventsAdapt aan-aan
+78,78,EventsAdapt,bert-large-cased,active-active,AAN-AAN,9,1,0.8461538461538461,BERT EventsAdapt aan-aan
+79,79,EventsAdapt,bert-large-cased,active-active,AAN-AAN,10,1,0.8076923076923077,BERT EventsAdapt aan-aan
+80,80,EventsAdapt,bert-large-cased,active-active,AI-AAN,1,1,0.7307692307692307,BERT EventsAdapt ai-aan
+81,81,EventsAdapt,bert-large-cased,active-active,AI-AAN,2,1,0.7307692307692307,BERT EventsAdapt ai-aan
+82,82,EventsAdapt,bert-large-cased,active-active,AI-AAN,3,1,0.7307692307692307,BERT EventsAdapt ai-aan
+83,83,EventsAdapt,bert-large-cased,active-active,AI-AAN,4,1,0.7307692307692307,BERT EventsAdapt ai-aan
+84,84,EventsAdapt,bert-large-cased,active-active,AI-AAN,5,1,0.7307692307692307,BERT EventsAdapt ai-aan
+85,85,EventsAdapt,bert-large-cased,active-active,AI-AAN,6,1,0.7307692307692307,BERT EventsAdapt ai-aan
+86,86,EventsAdapt,bert-large-cased,active-active,AI-AAN,7,1,0.7307692307692307,BERT EventsAdapt ai-aan
+87,87,EventsAdapt,bert-large-cased,active-active,AI-AAN,8,1,0.7307692307692307,BERT EventsAdapt ai-aan
+88,88,EventsAdapt,bert-large-cased,active-active,AI-AAN,9,1,0.7307692307692307,BERT EventsAdapt ai-aan
+89,89,EventsAdapt,bert-large-cased,active-active,AI-AAN,10,1,0.7307692307692307,BERT EventsAdapt ai-aan
+90,90,EventsAdapt,bert-large-cased,active-active,AAN-AI,1,1,0.9767441860465116,BERT EventsAdapt aan-ai
+91,91,EventsAdapt,bert-large-cased,active-active,AAN-AI,2,1,0.9767441860465116,BERT EventsAdapt aan-ai
+92,92,EventsAdapt,bert-large-cased,active-active,AAN-AI,3,1,0.9767441860465116,BERT EventsAdapt aan-ai
+93,93,EventsAdapt,bert-large-cased,active-active,AAN-AI,4,1,0.9767441860465116,BERT EventsAdapt aan-ai
+94,94,EventsAdapt,bert-large-cased,active-active,AAN-AI,5,1,0.9767441860465116,BERT EventsAdapt aan-ai
+95,95,EventsAdapt,bert-large-cased,active-active,AAN-AI,6,1,0.9767441860465116,BERT EventsAdapt aan-ai
+96,96,EventsAdapt,bert-large-cased,active-active,AAN-AI,7,1,0.9806201550387597,BERT EventsAdapt aan-ai
+97,97,EventsAdapt,bert-large-cased,active-active,AAN-AI,8,1,0.9806201550387597,BERT EventsAdapt aan-ai
+98,98,EventsAdapt,bert-large-cased,active-active,AAN-AI,9,1,0.9767441860465116,BERT EventsAdapt aan-ai
+99,99,EventsAdapt,bert-large-cased,active-active,AAN-AI,10,1,0.9806201550387597,BERT EventsAdapt aan-ai
+100,100,EventsAdapt,bert-large-cased,active-active,AI-AAR,1,1,0.5036764705882353,BERT EventsAdapt ai-aar
+101,101,EventsAdapt,bert-large-cased,active-active,AI-AAR,2,1,0.5036764705882353,BERT EventsAdapt ai-aar
+102,102,EventsAdapt,bert-large-cased,active-active,AI-AAR,3,1,0.5,BERT EventsAdapt ai-aar
+103,103,EventsAdapt,bert-large-cased,active-active,AI-AAR,4,1,0.5036764705882353,BERT EventsAdapt ai-aar
+104,104,EventsAdapt,bert-large-cased,active-active,AI-AAR,5,1,0.5036764705882353,BERT EventsAdapt ai-aar
+105,105,EventsAdapt,bert-large-cased,active-active,AI-AAR,6,1,0.5036764705882353,BERT EventsAdapt ai-aar
+106,106,EventsAdapt,bert-large-cased,active-active,AI-AAR,7,1,0.5036764705882353,BERT EventsAdapt ai-aar
+107,107,EventsAdapt,bert-large-cased,active-active,AI-AAR,8,1,0.5073529411764706,BERT EventsAdapt ai-aar
+108,108,EventsAdapt,bert-large-cased,active-active,AI-AAR,9,1,0.5036764705882353,BERT EventsAdapt ai-aar
+109,109,EventsAdapt,bert-large-cased,active-active,AI-AAR,10,1,0.5073529411764706,BERT EventsAdapt ai-aar
+110,110,EventsAdapt,bert-large-cased,active-active,AAN-AAR,1,1,0.5110294117647058,BERT EventsAdapt aan-aar
+111,111,EventsAdapt,bert-large-cased,active-active,AAN-AAR,2,1,0.5220588235294118,BERT EventsAdapt aan-aar
+112,112,EventsAdapt,bert-large-cased,active-active,AAN-AAR,3,1,0.5110294117647058,BERT EventsAdapt aan-aar
+113,113,EventsAdapt,bert-large-cased,active-active,AAN-AAR,4,1,0.5110294117647058,BERT EventsAdapt aan-aar
+114,114,EventsAdapt,bert-large-cased,active-active,AAN-AAR,5,1,0.5110294117647058,BERT EventsAdapt aan-aar
+115,115,EventsAdapt,bert-large-cased,active-active,AAN-AAR,6,1,0.5110294117647058,BERT EventsAdapt aan-aar
+116,116,EventsAdapt,bert-large-cased,active-active,AAN-AAR,7,1,0.5110294117647058,BERT EventsAdapt aan-aar
+117,117,EventsAdapt,bert-large-cased,active-active,AAN-AAR,8,1,0.5110294117647058,BERT EventsAdapt aan-aar
+118,118,EventsAdapt,bert-large-cased,active-active,AAN-AAR,9,1,0.5110294117647058,BERT EventsAdapt aan-aar
+119,119,EventsAdapt,bert-large-cased,active-active,AAN-AAR,10,1,0.5110294117647058,BERT EventsAdapt aan-aar
+120,120,EventsAdapt,bert-large-cased,active-active,normal-AAR,1,1,0.5036764705882353,BERT EventsAdapt normal-aar
+121,121,EventsAdapt,bert-large-cased,active-active,normal-AAR,2,1,0.5110294117647058,BERT EventsAdapt normal-aar
+122,122,EventsAdapt,bert-large-cased,active-active,normal-AAR,3,1,0.5073529411764706,BERT EventsAdapt normal-aar
+123,123,EventsAdapt,bert-large-cased,active-active,normal-AAR,4,1,0.5036764705882353,BERT EventsAdapt normal-aar
+124,124,EventsAdapt,bert-large-cased,active-active,normal-AAR,5,1,0.5036764705882353,BERT EventsAdapt normal-aar
+125,125,EventsAdapt,bert-large-cased,active-active,normal-AAR,6,1,0.5073529411764706,BERT EventsAdapt normal-aar
+126,126,EventsAdapt,bert-large-cased,active-active,normal-AAR,7,1,0.5036764705882353,BERT EventsAdapt normal-aar
+127,127,EventsAdapt,bert-large-cased,active-active,normal-AAR,8,1,0.5036764705882353,BERT EventsAdapt normal-aar
+128,128,EventsAdapt,bert-large-cased,active-active,normal-AAR,9,1,0.5073529411764706,BERT EventsAdapt normal-aar
+129,129,EventsAdapt,bert-large-cased,active-active,normal-AAR,10,1,0.5036764705882353,BERT EventsAdapt normal-aar
+130,130,EventsRev,bert-large-cased,normal,normal,1,1,1.0,BERT EventsRev
+131,131,EventsRev,bert-large-cased,normal,normal,2,1,0.875,BERT EventsRev
+132,132,EventsRev,bert-large-cased,normal,normal,3,1,1.0,BERT EventsRev
+133,133,EventsRev,bert-large-cased,normal,normal,4,1,1.0,BERT EventsRev
+134,134,EventsRev,bert-large-cased,normal,normal,5,1,1.0,BERT EventsRev
+135,135,EventsRev,bert-large-cased,normal,normal,6,1,1.0,BERT EventsRev
+136,136,EventsRev,bert-large-cased,normal,normal,7,1,1.0,BERT EventsRev
+137,137,EventsRev,bert-large-cased,normal,normal,8,1,1.0,BERT EventsRev
+138,138,EventsRev,bert-large-cased,normal,normal,9,1,1.0,BERT EventsRev
+139,139,EventsRev,bert-large-cased,normal,normal,10,1,1.0,BERT EventsRev
