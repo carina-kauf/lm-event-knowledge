@@ -1,8 +1,3 @@
-pickle_human_predict_plausibility.py:159: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame
-
-See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  df_DT['Plausibility'][df_DT['Plausibility'] == 'Implausible'] = 0
 train                                 Sentence  ItemNum  ...  LowerBetter FinalNormScore
 0          The au pair spanked the girl.      360  ...        False       0.712121
 1          The girl spanked the au pair.      360  ...        False       0.273333
@@ -56,6 +51,8 @@ The domestic cleaned the wash basin.
 The campaigner biased the ballot.
 150
 The activist prejudiced the vote.
+[42, 48, 82, 88, 148, 150]
+Accuracy:  0.9767441860465116
 train                                     Sentence  ...  FinalNormScore
 0    The terrorist petrified the first lady.  ...        0.847826
 1    The first lady petrified the terrorist.  ...        0.485507
@@ -109,6 +106,8 @@ The domestic cleaned the wash basin.
 The campaigner biased the ballot.
 150
 The activist prejudiced the vote.
+[42, 48, 82, 88, 148, 150]
+Accuracy:  0.9767441860465116
 train                                      Sentence  ...  FinalNormScore
 0    The extortionist menaced the legislator.  ...        0.712963
 1    The legislator menaced the extortionist.  ...        0.658333
@@ -162,6 +161,8 @@ The domestic cleaned the wash basin.
 The campaigner biased the ballot.
 150
 The activist prejudiced the vote.
+[42, 48, 82, 88, 148, 150]
+Accuracy:  0.9767441860465116
 train                                     Sentence  ...  FinalNormScore
 0         The admirer badgered the director.  ...        0.666667
 1         The director badgered the admirer.  ...        0.714286
@@ -215,6 +216,8 @@ The domestic cleaned the wash basin.
 The campaigner biased the ballot.
 150
 The activist prejudiced the vote.
+[42, 48, 82, 88, 148, 150]
+Accuracy:  0.9767441860465116
 train                                      Sentence  ...  FinalNormScore
 0             The father pampered the infant.  ...        0.980000
 1             The infant pampered the father.  ...        0.159091
@@ -268,6 +271,8 @@ The domestic cleaned the wash basin.
 The campaigner biased the ballot.
 150
 The activist prejudiced the vote.
+[42, 48, 82, 88, 148, 150]
+Accuracy:  0.9767441860465116
 train                                         Sentence  ...  FinalNormScore
 0    The TV station head promoted the newsagent.  ...        0.881944
 1    The newsagent promoted the TV station head.  ...        0.645833
@@ -321,6 +326,8 @@ The domestic cleaned the wash basin.
 The campaigner biased the ballot.
 150
 The activist prejudiced the vote.
+[42, 48, 82, 88, 148, 150]
+Accuracy:  0.9767441860465116
 train                                    Sentence  ...  FinalNormScore
 0          The windbag taunted the recluse.  ...        0.462121
 1          The recluse taunted the windbag.  ...        0.362319
@@ -372,6 +379,8 @@ The domestic cleaned the wash basin.
 The campaigner biased the ballot.
 150
 The activist prejudiced the vote.
+[48, 82, 88, 148, 150]
+Accuracy:  0.9806201550387597
 train                                      Sentence  ...  FinalNormScore
 0             The brunette tipped the busboy.  ...        0.944444
 1             The busboy tipped the brunette.  ...        0.451389
@@ -423,6 +432,8 @@ The domestic cleaned the wash basin.
 The campaigner biased the ballot.
 150
 The activist prejudiced the vote.
+[48, 82, 88, 148, 150]
+Accuracy:  0.9806201550387597
 train                                     Sentence  ...  FinalNormScore
 0            The shark mauled the snorkeler.  ...        0.876543
 1            The snorkeler mauled the shark.  ...        0.310606
@@ -476,6 +487,8 @@ The domestic cleaned the wash basin.
 The campaigner biased the ballot.
 150
 The activist prejudiced the vote.
+[42, 48, 82, 88, 148, 150]
+Accuracy:  0.9767441860465116
 train                                    Sentence  ...  FinalNormScore
 0    The impersonator conned the inspector.  ...        0.833333
 1    The inspector conned the impersonator.  ...        0.576389
@@ -527,3 +540,5 @@ The domestic cleaned the wash basin.
 The campaigner biased the ballot.
 150
 The activist prejudiced the vote.
+[48, 82, 88, 148, 150]
+Accuracy:  0.9806201550387597
