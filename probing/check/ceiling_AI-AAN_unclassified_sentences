@@ -1,0 +1,1830 @@
+train                                 Sentence  ItemNum  ...  LowerBetter FinalNormScore
+0    The prostitute squandered the cash.        5  ...        False       0.950617
+1    The cash squandered the prostitute.        5  ...        False       0.048611
+2       The seamstress ironed the shirt.      294  ...        False       0.924242
+3       The shirt ironed the seamstress.      294  ...        False       0.000000
+4    The fisherman emptied the trashcan.      297  ...        False       0.863636
+..                                   ...      ...  ...          ...            ...
+227    The form initialed the guarantor.      288  ...        False       0.116667
+228  The journalist ditched the article.       56  ...        False       0.856061
+229  The article ditched the journalist.       56  ...        False       0.113333
+230    The cheapskate rated the service.      299  ...        False       0.820988
+231    The service rated the cheapskate.      299  ...        False       0.277778
+
+[232 rows x 21 columns]
+test                                               Sentence  ...  FinalNormScore
+0                           The nanny tutored the boy.  ...        0.969697
+1                           The boy tutored the nanny.  ...        0.366667
+2                    The governess instructed the lad.  ...        0.818182
+3                    The lad instructed the governess.  ...        0.492424
+4              The blackmailer threatened the senator.  ...        0.924242
+..                                                 ...  ...             ...
+255      The abused woman comforted the social worker.  ...        0.402778
+256  The neuroscientist overwhelmed the lab assistant.  ...        0.805556
+257  The lab assistant overwhelmed the neuroscientist.  ...        0.772727
+258             The warmonger terrorized the gunsmith.  ...        0.686667
+259             The gunsmith terrorized the warmonger.  ...        0.568182
+
+[260 rows x 21 columns]
+x_train.shape (232, 1)
+x_test.shape (260, 1)
+[ 0  0  0  1  0  1  0  1  0  1  0  0  0  1  0  1  0  0 -1  1  0  1  0  1
+  0  0  0  1  0  1  0  1  0  1  0  1  0  0  0  1  0  1  0  1  0  1  0  1
+  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  1
+  0  1  0  0  0  1  0  1  0  1  0  1  0  1  0  0  0  0  0  1  0  1  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  1  0  1  0  0
+  0  0  0  0  0  1  0  0  0  0  0  1  0  1  0  1 -1  0  0  1  0  1  0  0
+  0  1  0  1  0  1  0  1  0  0  0  1  0  1  0  1  0  0  0  1  0  1  0  1
+  0  1  0  1  0  1  0  1  0  1  0  0  0  0  0  1  0  0  0  0  0  0  0  0
+  0  1  0  0  0  0  0  1  0  1  0  1  0  0  0  0  0  1  0  0  0  0  0  0
+  0  0  0  1  0  1  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0
+  0  0  0  0  0  1  0  0  0  1  0  1  0  0  0  0  0  1  0  1]
+3
+The lad instructed the governess.
+5
+The senator threatened the blackmailer.
+7
+The legislator menaced the extortionist.
+9
+The philosopher portrayed the artist.
+13
+The intern berated the mechanic.
+15
+The aide rebuked the technician.
+18
+The pixie mesmerized the ogre.
+19
+The ogre mesmerized the pixie.
+21
+The dentist assisted the orderly.
+23
+The orthodontist helped the nurse.
+27
+The conservative attacked the critic.
+29
+The right-winger criticized the reviewer.
+31
+The director badgered the admirer.
+33
+The filmmaker pestered the fan.
+35
+The youth revived the paramedic.
+39
+The marketer duped the prankster.
+41
+The distributor tricked the joker.
+43
+The damsel courted the playboy.
+45
+The maiden wooed the womanizer.
+47
+The clergyman cherished the nomad.
+53
+The politician killed the hit man.
+65
+The attacker located the sleuth.
+71
+The trainer defied the biker.
+73
+The coach disobeyed the cyclist.
+77
+The cousin shocked the genius.
+79
+The relative surprised the prodigy.
+81
+The bureaucrat bribed the smuggler.
+83
+The maestro irked the amateur.
+85
+The virtuoso irritated the novice.
+91
+The enthusiast disappointed the singer.
+93
+The connoisseur disillusioned the vocalist.
+113
+The successor chose the baron.
+115
+The rioter restrained the cop.
+117
+The rabble-rouser subdued the policeman.
+125
+The insurgent banished the monarch.
+131
+The contestant discouraged the pessimist.
+133
+The participant dissuaded the cynic.
+135
+The loner tormented the loudmouth.
+136
+The windbag taunted the recluse.
+139
+The investigator fooled the imitator.
+141
+The inspector conned the impersonator.
+145
+The shopkeeper unnerved the pyromaniac.
+147
+The vendor alarmed the arsonist.
+149
+The beginner supported the professional.
+151
+The rookie encouraged the master.
+155
+The expert employed the businessman.
+157
+The specialist hired the entrepreneur.
+159
+The first lady petrified the terrorist.
+163
+The gold medalist praised the judge.
+165
+The winner congratulated the panelist.
+167
+The victor emulated the liar.
+169
+The conqueror imitated the deceiver.
+171
+The tobacconist cautioned the environmentalist.
+173
+The cigar-maker warned the ecologist.
+175
+The guest hassled the alcoholic.
+177
+The visitor bothered the drunk.
+183
+The old man shaved the barber.
+193
+The seaman undercharged the streetwalker.
+199
+The bully dodged the freshman.
+201
+The hedonist reproached the nun.
+203
+The plagiarist admonished the librarian.
+209
+The Olympian weighed the personal trainer.
+219
+The orphan quieted the caretaker.
+221
+The chiropractor thanked the tennis player.
+231
+The whistle-blower ousted the union.
+245
+The newsagent promoted the TV station head.
+249
+The tribesman studied the anthropologist.
+251
+The firefighter rewarded the police chief.
+257
+The lab assistant overwhelmed the neuroscientist.
+259
+The gunsmith terrorized the warmonger.
+[3, 5, 7, 9, 13, 15, 18, 19, 21, 23, 27, 29, 31, 33, 35, 39, 41, 43, 45, 47, 53, 65, 71, 73, 77, 79, 81, 83, 85, 91, 93, 113, 115, 117, 125, 131, 133, 135, 136, 139, 141, 145, 147, 149, 151, 155, 157, 159, 163, 165, 167, 169, 171, 173, 175, 177, 183, 193, 199, 201, 203, 209, 219, 221, 231, 245, 249, 251, 257, 259]
+Accuracy:  0.7307692307692307
+train                                      Sentence  ...  FinalNormScore
+0                 The servant wiped the sink.  ...        0.986111
+1                 The sink wiped the servant.  ...        0.060606
+2                The marcher sang the anthem.  ...        0.881944
+3                The anthem sang the marcher.  ...        0.046296
+4       The bookseller calculated the profit.  ...        0.977273
+..                                        ...  ...             ...
+227      The property examined the constable.  ...        0.000000
+228  The nutritionist detested the marmalade.  ...        0.863636
+229  The marmalade detested the nutritionist.  ...        0.188406
+230      The archaeologist canceled the trip.  ...        0.962963
+231      The trip canceled the archaeologist.  ...        0.068182
+
+[232 rows x 21 columns]
+test                                               Sentence  ...  FinalNormScore
+0                           The nanny tutored the boy.  ...        0.969697
+1                           The boy tutored the nanny.  ...        0.366667
+2                    The governess instructed the lad.  ...        0.818182
+3                    The lad instructed the governess.  ...        0.492424
+4              The blackmailer threatened the senator.  ...        0.924242
+..                                                 ...  ...             ...
+255      The abused woman comforted the social worker.  ...        0.402778
+256  The neuroscientist overwhelmed the lab assistant.  ...        0.805556
+257  The lab assistant overwhelmed the neuroscientist.  ...        0.772727
+258             The warmonger terrorized the gunsmith.  ...        0.686667
+259             The gunsmith terrorized the warmonger.  ...        0.568182
+
+[260 rows x 21 columns]
+x_train.shape (232, 1)
+x_test.shape (260, 1)
+[ 0  0  0  1  0  1  0  1  0  1  0  0  0  1  0  1  0  0 -1  1  0  1  0  1
+  0  0  0  1  0  1  0  1  0  1  0  1  0  0  0  1  0  1  0  1  0  1  0  1
+  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  1
+  0  1  0  0  0  1  0  1  0  1  0  1  0  1  0  0  0  0  0  1  0  1  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  1  0  1  0  0
+  0  0  0  0  0  1  0  0  0  0  0  1  0  1  0  1 -1  0  0  1  0  1  0  0
+  0  1  0  1  0  1  0  1  0  0  0  1  0  1  0  1  0  0  0  1  0  1  0  1
+  0  1  0  1  0  1  0  1  0  1  0  0  0  0  0  1  0  0  0  0  0  0  0  0
+  0  1  0  0  0  0  0  1  0  1  0  1  0  0  0  0  0  1  0  0  0  0  0  0
+  0  0  0  1  0  1  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0
+  0  0  0  0  0  1  0  0  0  1  0  1  0  0  0  0  0  1  0  1]
+3
+The lad instructed the governess.
+5
+The senator threatened the blackmailer.
+7
+The legislator menaced the extortionist.
+9
+The philosopher portrayed the artist.
+13
+The intern berated the mechanic.
+15
+The aide rebuked the technician.
+18
+The pixie mesmerized the ogre.
+19
+The ogre mesmerized the pixie.
+21
+The dentist assisted the orderly.
+23
+The orthodontist helped the nurse.
+27
+The conservative attacked the critic.
+29
+The right-winger criticized the reviewer.
+31
+The director badgered the admirer.
+33
+The filmmaker pestered the fan.
+35
+The youth revived the paramedic.
+39
+The marketer duped the prankster.
+41
+The distributor tricked the joker.
+43
+The damsel courted the playboy.
+45
+The maiden wooed the womanizer.
+47
+The clergyman cherished the nomad.
+53
+The politician killed the hit man.
+65
+The attacker located the sleuth.
+71
+The trainer defied the biker.
+73
+The coach disobeyed the cyclist.
+77
+The cousin shocked the genius.
+79
+The relative surprised the prodigy.
+81
+The bureaucrat bribed the smuggler.
+83
+The maestro irked the amateur.
+85
+The virtuoso irritated the novice.
+91
+The enthusiast disappointed the singer.
+93
+The connoisseur disillusioned the vocalist.
+113
+The successor chose the baron.
+115
+The rioter restrained the cop.
+117
+The rabble-rouser subdued the policeman.
+125
+The insurgent banished the monarch.
+131
+The contestant discouraged the pessimist.
+133
+The participant dissuaded the cynic.
+135
+The loner tormented the loudmouth.
+136
+The windbag taunted the recluse.
+139
+The investigator fooled the imitator.
+141
+The inspector conned the impersonator.
+145
+The shopkeeper unnerved the pyromaniac.
+147
+The vendor alarmed the arsonist.
+149
+The beginner supported the professional.
+151
+The rookie encouraged the master.
+155
+The expert employed the businessman.
+157
+The specialist hired the entrepreneur.
+159
+The first lady petrified the terrorist.
+163
+The gold medalist praised the judge.
+165
+The winner congratulated the panelist.
+167
+The victor emulated the liar.
+169
+The conqueror imitated the deceiver.
+171
+The tobacconist cautioned the environmentalist.
+173
+The cigar-maker warned the ecologist.
+175
+The guest hassled the alcoholic.
+177
+The visitor bothered the drunk.
+183
+The old man shaved the barber.
+193
+The seaman undercharged the streetwalker.
+199
+The bully dodged the freshman.
+201
+The hedonist reproached the nun.
+203
+The plagiarist admonished the librarian.
+209
+The Olympian weighed the personal trainer.
+219
+The orphan quieted the caretaker.
+221
+The chiropractor thanked the tennis player.
+231
+The whistle-blower ousted the union.
+245
+The newsagent promoted the TV station head.
+249
+The tribesman studied the anthropologist.
+251
+The firefighter rewarded the police chief.
+257
+The lab assistant overwhelmed the neuroscientist.
+259
+The gunsmith terrorized the warmonger.
+[3, 5, 7, 9, 13, 15, 18, 19, 21, 23, 27, 29, 31, 33, 35, 39, 41, 43, 45, 47, 53, 65, 71, 73, 77, 79, 81, 83, 85, 91, 93, 113, 115, 117, 125, 131, 133, 135, 136, 139, 141, 145, 147, 149, 151, 155, 157, 159, 163, 165, 167, 169, 171, 173, 175, 177, 183, 193, 199, 201, 203, 209, 219, 221, 231, 245, 249, 251, 257, 259]
+Accuracy:  0.7307692307692307
+train                                        Sentence  ...  FinalNormScore
+0        The ship captain promised the triumph.  ...        0.659091
+1        The triumph promised the ship captain.  ...        0.063492
+2             The handyman repaired the faucet.  ...        0.980000
+3             The faucet repaired the handyman.  ...        0.053030
+4    The travel-agent photocopied the passport.  ...        0.985507
+..                                          ...  ...             ...
+227        The trip canceled the archaeologist.  ...        0.068182
+228              The writer completed the book.  ...        0.992424
+229              The book completed the writer.  ...        0.108696
+230              The crackhead smoked the pipe.  ...        0.906667
+231              The pipe smoked the crackhead.  ...        0.015152
+
+[232 rows x 21 columns]
+test                                               Sentence  ...  FinalNormScore
+0                           The nanny tutored the boy.  ...        0.969697
+1                           The boy tutored the nanny.  ...        0.366667
+2                    The governess instructed the lad.  ...        0.818182
+3                    The lad instructed the governess.  ...        0.492424
+4              The blackmailer threatened the senator.  ...        0.924242
+..                                                 ...  ...             ...
+255      The abused woman comforted the social worker.  ...        0.402778
+256  The neuroscientist overwhelmed the lab assistant.  ...        0.805556
+257  The lab assistant overwhelmed the neuroscientist.  ...        0.772727
+258             The warmonger terrorized the gunsmith.  ...        0.686667
+259             The gunsmith terrorized the warmonger.  ...        0.568182
+
+[260 rows x 21 columns]
+x_train.shape (232, 1)
+x_test.shape (260, 1)
+[ 0  0  0  1  0  1  0  1  0  1  0  0  0  1  0  1  0  0 -1  1  0  1  0  1
+  0  0  0  1  0  1  0  1  0  1  0  1  0  0  0  1  0  1  0  1  0  1  0  1
+  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  1
+  0  1  0  0  0  1  0  1  0  1  0  1  0  1  0  0  0  0  0  1  0  1  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  1  0  1  0  0
+  0  0  0  0  0  1  0  0  0  0  0  1  0  1  0  1 -1  0  0  1  0  1  0  0
+  0  1  0  1  0  1  0  1  0  0  0  1  0  1  0  1  0  0  0  1  0  1  0  1
+  0  1  0  1  0  1  0  1  0  1  0  0  0  0  0  1  0  0  0  0  0  0  0  0
+  0  1  0  0  0  0  0  1  0  1  0  1  0  0  0  0  0  1  0  0  0  0  0  0
+  0  0  0  1  0  1  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0
+  0  0  0  0  0  1  0  0  0  1  0  1  0  0  0  0  0  1  0  1]
+3
+The lad instructed the governess.
+5
+The senator threatened the blackmailer.
+7
+The legislator menaced the extortionist.
+9
+The philosopher portrayed the artist.
+13
+The intern berated the mechanic.
+15
+The aide rebuked the technician.
+18
+The pixie mesmerized the ogre.
+19
+The ogre mesmerized the pixie.
+21
+The dentist assisted the orderly.
+23
+The orthodontist helped the nurse.
+27
+The conservative attacked the critic.
+29
+The right-winger criticized the reviewer.
+31
+The director badgered the admirer.
+33
+The filmmaker pestered the fan.
+35
+The youth revived the paramedic.
+39
+The marketer duped the prankster.
+41
+The distributor tricked the joker.
+43
+The damsel courted the playboy.
+45
+The maiden wooed the womanizer.
+47
+The clergyman cherished the nomad.
+53
+The politician killed the hit man.
+65
+The attacker located the sleuth.
+71
+The trainer defied the biker.
+73
+The coach disobeyed the cyclist.
+77
+The cousin shocked the genius.
+79
+The relative surprised the prodigy.
+81
+The bureaucrat bribed the smuggler.
+83
+The maestro irked the amateur.
+85
+The virtuoso irritated the novice.
+91
+The enthusiast disappointed the singer.
+93
+The connoisseur disillusioned the vocalist.
+113
+The successor chose the baron.
+115
+The rioter restrained the cop.
+117
+The rabble-rouser subdued the policeman.
+125
+The insurgent banished the monarch.
+131
+The contestant discouraged the pessimist.
+133
+The participant dissuaded the cynic.
+135
+The loner tormented the loudmouth.
+136
+The windbag taunted the recluse.
+139
+The investigator fooled the imitator.
+141
+The inspector conned the impersonator.
+145
+The shopkeeper unnerved the pyromaniac.
+147
+The vendor alarmed the arsonist.
+149
+The beginner supported the professional.
+151
+The rookie encouraged the master.
+155
+The expert employed the businessman.
+157
+The specialist hired the entrepreneur.
+159
+The first lady petrified the terrorist.
+163
+The gold medalist praised the judge.
+165
+The winner congratulated the panelist.
+167
+The victor emulated the liar.
+169
+The conqueror imitated the deceiver.
+171
+The tobacconist cautioned the environmentalist.
+173
+The cigar-maker warned the ecologist.
+175
+The guest hassled the alcoholic.
+177
+The visitor bothered the drunk.
+183
+The old man shaved the barber.
+193
+The seaman undercharged the streetwalker.
+199
+The bully dodged the freshman.
+201
+The hedonist reproached the nun.
+203
+The plagiarist admonished the librarian.
+209
+The Olympian weighed the personal trainer.
+219
+The orphan quieted the caretaker.
+221
+The chiropractor thanked the tennis player.
+231
+The whistle-blower ousted the union.
+245
+The newsagent promoted the TV station head.
+249
+The tribesman studied the anthropologist.
+251
+The firefighter rewarded the police chief.
+257
+The lab assistant overwhelmed the neuroscientist.
+259
+The gunsmith terrorized the warmonger.
+[3, 5, 7, 9, 13, 15, 18, 19, 21, 23, 27, 29, 31, 33, 35, 39, 41, 43, 45, 47, 53, 65, 71, 73, 77, 79, 81, 83, 85, 91, 93, 113, 115, 117, 125, 131, 133, 135, 136, 139, 141, 145, 147, 149, 151, 155, 157, 159, 163, 165, 167, 169, 171, 173, 175, 177, 183, 193, 199, 201, 203, 209, 219, 221, 231, 245, 249, 251, 257, 259]
+Accuracy:  0.7307692307692307
+train                                        Sentence  ...  FinalNormScore
+0                  The uncle hung the ornament.  ...        0.986111
+1                  The ornament hung the uncle.  ...        0.007576
+2            The Frenchman sliced the baguette.  ...        0.920000
+3            The baguette sliced the Frenchman.  ...        0.073333
+4              The milliner adorned the fedora.  ...        0.816667
+..                                          ...  ...             ...
+227  The passport photocopied the travel-agent.  ...        0.007246
+228                 The tycoon ran the company.  ...        0.898551
+229                 The company ran the tycoon.  ...        0.097222
+230   The flight-attendant dragged the luggage.  ...        0.925000
+231   The luggage dragged the flight-attendant.  ...        0.159091
+
+[232 rows x 21 columns]
+test                                               Sentence  ...  FinalNormScore
+0                           The nanny tutored the boy.  ...        0.969697
+1                           The boy tutored the nanny.  ...        0.366667
+2                    The governess instructed the lad.  ...        0.818182
+3                    The lad instructed the governess.  ...        0.492424
+4              The blackmailer threatened the senator.  ...        0.924242
+..                                                 ...  ...             ...
+255      The abused woman comforted the social worker.  ...        0.402778
+256  The neuroscientist overwhelmed the lab assistant.  ...        0.805556
+257  The lab assistant overwhelmed the neuroscientist.  ...        0.772727
+258             The warmonger terrorized the gunsmith.  ...        0.686667
+259             The gunsmith terrorized the warmonger.  ...        0.568182
+
+[260 rows x 21 columns]
+x_train.shape (232, 1)
+x_test.shape (260, 1)
+[ 0  0  0  1  0  1  0  1  0  1  0  0  0  1  0  1  0  0 -1  1  0  1  0  1
+  0  0  0  1  0  1  0  1  0  1  0  1  0  0  0  1  0  1  0  1  0  1  0  1
+  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  1
+  0  1  0  0  0  1  0  1  0  1  0  1  0  1  0  0  0  0  0  1  0  1  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  1  0  1  0  0
+  0  0  0  0  0  1  0  0  0  0  0  1  0  1  0  1 -1  0  0  1  0  1  0  0
+  0  1  0  1  0  1  0  1  0  0  0  1  0  1  0  1  0  0  0  1  0  1  0  1
+  0  1  0  1  0  1  0  1  0  1  0  0  0  0  0  1  0  0  0  0  0  0  0  0
+  0  1  0  0  0  0  0  1  0  1  0  1  0  0  0  0  0  1  0  0  0  0  0  0
+  0  0  0  1  0  1  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0
+  0  0  0  0  0  1  0  0  0  1  0  1  0  0  0  0  0  1  0  1]
+3
+The lad instructed the governess.
+5
+The senator threatened the blackmailer.
+7
+The legislator menaced the extortionist.
+9
+The philosopher portrayed the artist.
+13
+The intern berated the mechanic.
+15
+The aide rebuked the technician.
+18
+The pixie mesmerized the ogre.
+19
+The ogre mesmerized the pixie.
+21
+The dentist assisted the orderly.
+23
+The orthodontist helped the nurse.
+27
+The conservative attacked the critic.
+29
+The right-winger criticized the reviewer.
+31
+The director badgered the admirer.
+33
+The filmmaker pestered the fan.
+35
+The youth revived the paramedic.
+39
+The marketer duped the prankster.
+41
+The distributor tricked the joker.
+43
+The damsel courted the playboy.
+45
+The maiden wooed the womanizer.
+47
+The clergyman cherished the nomad.
+53
+The politician killed the hit man.
+65
+The attacker located the sleuth.
+71
+The trainer defied the biker.
+73
+The coach disobeyed the cyclist.
+77
+The cousin shocked the genius.
+79
+The relative surprised the prodigy.
+81
+The bureaucrat bribed the smuggler.
+83
+The maestro irked the amateur.
+85
+The virtuoso irritated the novice.
+91
+The enthusiast disappointed the singer.
+93
+The connoisseur disillusioned the vocalist.
+113
+The successor chose the baron.
+115
+The rioter restrained the cop.
+117
+The rabble-rouser subdued the policeman.
+125
+The insurgent banished the monarch.
+131
+The contestant discouraged the pessimist.
+133
+The participant dissuaded the cynic.
+135
+The loner tormented the loudmouth.
+136
+The windbag taunted the recluse.
+139
+The investigator fooled the imitator.
+141
+The inspector conned the impersonator.
+145
+The shopkeeper unnerved the pyromaniac.
+147
+The vendor alarmed the arsonist.
+149
+The beginner supported the professional.
+151
+The rookie encouraged the master.
+155
+The expert employed the businessman.
+157
+The specialist hired the entrepreneur.
+159
+The first lady petrified the terrorist.
+163
+The gold medalist praised the judge.
+165
+The winner congratulated the panelist.
+167
+The victor emulated the liar.
+169
+The conqueror imitated the deceiver.
+171
+The tobacconist cautioned the environmentalist.
+173
+The cigar-maker warned the ecologist.
+175
+The guest hassled the alcoholic.
+177
+The visitor bothered the drunk.
+183
+The old man shaved the barber.
+193
+The seaman undercharged the streetwalker.
+199
+The bully dodged the freshman.
+201
+The hedonist reproached the nun.
+203
+The plagiarist admonished the librarian.
+209
+The Olympian weighed the personal trainer.
+219
+The orphan quieted the caretaker.
+221
+The chiropractor thanked the tennis player.
+231
+The whistle-blower ousted the union.
+245
+The newsagent promoted the TV station head.
+249
+The tribesman studied the anthropologist.
+251
+The firefighter rewarded the police chief.
+257
+The lab assistant overwhelmed the neuroscientist.
+259
+The gunsmith terrorized the warmonger.
+[3, 5, 7, 9, 13, 15, 18, 19, 21, 23, 27, 29, 31, 33, 35, 39, 41, 43, 45, 47, 53, 65, 71, 73, 77, 79, 81, 83, 85, 91, 93, 113, 115, 117, 125, 131, 133, 135, 136, 139, 141, 145, 147, 149, 151, 155, 157, 159, 163, 165, 167, 169, 171, 173, 175, 177, 183, 193, 199, 201, 203, 209, 219, 221, 231, 245, 249, 251, 257, 259]
+Accuracy:  0.7307692307692307
+train                                    Sentence  ...  FinalNormScore
+0      The constable examined the property.  ...        0.931818
+1      The property examined the constable.  ...        0.000000
+2        The cryptographer sent the letter.  ...        0.909091
+3        The letter sent the cryptographer.  ...        0.116667
+4              The maid lifted the cushion.  ...        0.986111
+..                                      ...  ...             ...
+227  The apartment redecorated the copycat.  ...        0.066667
+228         The traveler lost the souvenir.  ...        0.940000
+229         The souvenir lost the traveler.  ...        0.006944
+230   The comedian confirmed the itinerary.  ...        0.840278
+231   The itinerary confirmed the comedian.  ...        0.238095
+
+[232 rows x 21 columns]
+test                                               Sentence  ...  FinalNormScore
+0                           The nanny tutored the boy.  ...        0.969697
+1                           The boy tutored the nanny.  ...        0.366667
+2                    The governess instructed the lad.  ...        0.818182
+3                    The lad instructed the governess.  ...        0.492424
+4              The blackmailer threatened the senator.  ...        0.924242
+..                                                 ...  ...             ...
+255      The abused woman comforted the social worker.  ...        0.402778
+256  The neuroscientist overwhelmed the lab assistant.  ...        0.805556
+257  The lab assistant overwhelmed the neuroscientist.  ...        0.772727
+258             The warmonger terrorized the gunsmith.  ...        0.686667
+259             The gunsmith terrorized the warmonger.  ...        0.568182
+
+[260 rows x 21 columns]
+x_train.shape (232, 1)
+x_test.shape (260, 1)
+[ 0  0  0  1  0  1  0  1  0  1  0  0  0  1  0  1  0  0 -1  1  0  1  0  1
+  0  0  0  1  0  1  0  1  0  1  0  1  0  0  0  1  0  1  0  1  0  1  0  1
+  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  1
+  0  1  0  0  0  1  0  1  0  1  0  1  0  1  0  0  0  0  0  1  0  1  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  1  0  1  0  0
+  0  0  0  0  0  1  0  0  0  0  0  1  0  1  0  1 -1  0  0  1  0  1  0  0
+  0  1  0  1  0  1  0  1  0  0  0  1  0  1  0  1  0  0  0  1  0  1  0  1
+  0  1  0  1  0  1  0  1  0  1  0  0  0  0  0  1  0  0  0  0  0  0  0  0
+  0  1  0  0  0  0  0  1  0  1  0  1  0  0  0  0  0  1  0  0  0  0  0  0
+  0  0  0  1  0  1  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0
+  0  0  0  0  0  1  0  0  0  1  0  1  0  0  0  0  0  1  0  1]
+3
+The lad instructed the governess.
+5
+The senator threatened the blackmailer.
+7
+The legislator menaced the extortionist.
+9
+The philosopher portrayed the artist.
+13
+The intern berated the mechanic.
+15
+The aide rebuked the technician.
+18
+The pixie mesmerized the ogre.
+19
+The ogre mesmerized the pixie.
+21
+The dentist assisted the orderly.
+23
+The orthodontist helped the nurse.
+27
+The conservative attacked the critic.
+29
+The right-winger criticized the reviewer.
+31
+The director badgered the admirer.
+33
+The filmmaker pestered the fan.
+35
+The youth revived the paramedic.
+39
+The marketer duped the prankster.
+41
+The distributor tricked the joker.
+43
+The damsel courted the playboy.
+45
+The maiden wooed the womanizer.
+47
+The clergyman cherished the nomad.
+53
+The politician killed the hit man.
+65
+The attacker located the sleuth.
+71
+The trainer defied the biker.
+73
+The coach disobeyed the cyclist.
+77
+The cousin shocked the genius.
+79
+The relative surprised the prodigy.
+81
+The bureaucrat bribed the smuggler.
+83
+The maestro irked the amateur.
+85
+The virtuoso irritated the novice.
+91
+The enthusiast disappointed the singer.
+93
+The connoisseur disillusioned the vocalist.
+113
+The successor chose the baron.
+115
+The rioter restrained the cop.
+117
+The rabble-rouser subdued the policeman.
+125
+The insurgent banished the monarch.
+131
+The contestant discouraged the pessimist.
+133
+The participant dissuaded the cynic.
+135
+The loner tormented the loudmouth.
+136
+The windbag taunted the recluse.
+139
+The investigator fooled the imitator.
+141
+The inspector conned the impersonator.
+145
+The shopkeeper unnerved the pyromaniac.
+147
+The vendor alarmed the arsonist.
+149
+The beginner supported the professional.
+151
+The rookie encouraged the master.
+155
+The expert employed the businessman.
+157
+The specialist hired the entrepreneur.
+159
+The first lady petrified the terrorist.
+163
+The gold medalist praised the judge.
+165
+The winner congratulated the panelist.
+167
+The victor emulated the liar.
+169
+The conqueror imitated the deceiver.
+171
+The tobacconist cautioned the environmentalist.
+173
+The cigar-maker warned the ecologist.
+175
+The guest hassled the alcoholic.
+177
+The visitor bothered the drunk.
+183
+The old man shaved the barber.
+193
+The seaman undercharged the streetwalker.
+199
+The bully dodged the freshman.
+201
+The hedonist reproached the nun.
+203
+The plagiarist admonished the librarian.
+209
+The Olympian weighed the personal trainer.
+219
+The orphan quieted the caretaker.
+221
+The chiropractor thanked the tennis player.
+231
+The whistle-blower ousted the union.
+245
+The newsagent promoted the TV station head.
+249
+The tribesman studied the anthropologist.
+251
+The firefighter rewarded the police chief.
+257
+The lab assistant overwhelmed the neuroscientist.
+259
+The gunsmith terrorized the warmonger.
+[3, 5, 7, 9, 13, 15, 18, 19, 21, 23, 27, 29, 31, 33, 35, 39, 41, 43, 45, 47, 53, 65, 71, 73, 77, 79, 81, 83, 85, 91, 93, 113, 115, 117, 125, 131, 133, 135, 136, 139, 141, 145, 147, 149, 151, 155, 157, 159, 163, 165, 167, 169, 171, 173, 175, 177, 183, 193, 199, 201, 203, 209, 219, 221, 231, 245, 249, 251, 257, 259]
+Accuracy:  0.7307692307692307
+train                                 Sentence  ItemNum  ...  LowerBetter FinalNormScore
+0          The agent failed the mission.       28  ...        False       0.962121
+1          The mission failed the agent.       28  ...        False       0.083333
+2             The hoarder hid the stash.       53  ...        False       0.972222
+3             The stash hid the hoarder.       53  ...        False       0.093333
+4    The humorist verified the schedule.       67  ...        False       0.731884
+..                                   ...      ...  ...          ...            ...
+227   The letter sent the cryptographer.      318  ...        False       0.116667
+228   The meat-eater devoured the filet.       58  ...        False       0.886364
+229   The filet devoured the meat-eater.       58  ...        False       0.015152
+230     The logger felled the pine tree.       76  ...        False       0.858333
+231     The pine tree felled the logger.       76  ...        False       0.166667
+
+[232 rows x 21 columns]
+test                                               Sentence  ...  FinalNormScore
+0                           The nanny tutored the boy.  ...        0.969697
+1                           The boy tutored the nanny.  ...        0.366667
+2                    The governess instructed the lad.  ...        0.818182
+3                    The lad instructed the governess.  ...        0.492424
+4              The blackmailer threatened the senator.  ...        0.924242
+..                                                 ...  ...             ...
+255      The abused woman comforted the social worker.  ...        0.402778
+256  The neuroscientist overwhelmed the lab assistant.  ...        0.805556
+257  The lab assistant overwhelmed the neuroscientist.  ...        0.772727
+258             The warmonger terrorized the gunsmith.  ...        0.686667
+259             The gunsmith terrorized the warmonger.  ...        0.568182
+
+[260 rows x 21 columns]
+x_train.shape (232, 1)
+x_test.shape (260, 1)
+[ 0  0  0  1  0  1  0  1  0  1  0  0  0  1  0  1  0  0 -1  1  0  1  0  1
+  0  0  0  1  0  1  0  1  0  1  0  1  0  0  0  1  0  1  0  1  0  1  0  1
+  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  1
+  0  1  0  0  0  1  0  1  0  1  0  1  0  1  0  0  0  0  0  1  0  1  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  1  0  1  0  0
+  0  0  0  0  0  1  0  0  0  0  0  1  0  1  0  1 -1  0  0  1  0  1  0  0
+  0  1  0  1  0  1  0  1  0  0  0  1  0  1  0  1  0  0  0  1  0  1  0  1
+  0  1  0  1  0  1  0  1  0  1  0  0  0  0  0  1  0  0  0  0  0  0  0  0
+  0  1  0  0  0  0  0  1  0  1  0  1  0  0  0  0  0  1  0  0  0  0  0  0
+  0  0  0  1  0  1  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0
+  0  0  0  0  0  1  0  0  0  1  0  1  0  0  0  0  0  1  0  1]
+3
+The lad instructed the governess.
+5
+The senator threatened the blackmailer.
+7
+The legislator menaced the extortionist.
+9
+The philosopher portrayed the artist.
+13
+The intern berated the mechanic.
+15
+The aide rebuked the technician.
+18
+The pixie mesmerized the ogre.
+19
+The ogre mesmerized the pixie.
+21
+The dentist assisted the orderly.
+23
+The orthodontist helped the nurse.
+27
+The conservative attacked the critic.
+29
+The right-winger criticized the reviewer.
+31
+The director badgered the admirer.
+33
+The filmmaker pestered the fan.
+35
+The youth revived the paramedic.
+39
+The marketer duped the prankster.
+41
+The distributor tricked the joker.
+43
+The damsel courted the playboy.
+45
+The maiden wooed the womanizer.
+47
+The clergyman cherished the nomad.
+53
+The politician killed the hit man.
+65
+The attacker located the sleuth.
+71
+The trainer defied the biker.
+73
+The coach disobeyed the cyclist.
+77
+The cousin shocked the genius.
+79
+The relative surprised the prodigy.
+81
+The bureaucrat bribed the smuggler.
+83
+The maestro irked the amateur.
+85
+The virtuoso irritated the novice.
+91
+The enthusiast disappointed the singer.
+93
+The connoisseur disillusioned the vocalist.
+113
+The successor chose the baron.
+115
+The rioter restrained the cop.
+117
+The rabble-rouser subdued the policeman.
+125
+The insurgent banished the monarch.
+131
+The contestant discouraged the pessimist.
+133
+The participant dissuaded the cynic.
+135
+The loner tormented the loudmouth.
+136
+The windbag taunted the recluse.
+139
+The investigator fooled the imitator.
+141
+The inspector conned the impersonator.
+145
+The shopkeeper unnerved the pyromaniac.
+147
+The vendor alarmed the arsonist.
+149
+The beginner supported the professional.
+151
+The rookie encouraged the master.
+155
+The expert employed the businessman.
+157
+The specialist hired the entrepreneur.
+159
+The first lady petrified the terrorist.
+163
+The gold medalist praised the judge.
+165
+The winner congratulated the panelist.
+167
+The victor emulated the liar.
+169
+The conqueror imitated the deceiver.
+171
+The tobacconist cautioned the environmentalist.
+173
+The cigar-maker warned the ecologist.
+175
+The guest hassled the alcoholic.
+177
+The visitor bothered the drunk.
+183
+The old man shaved the barber.
+193
+The seaman undercharged the streetwalker.
+199
+The bully dodged the freshman.
+201
+The hedonist reproached the nun.
+203
+The plagiarist admonished the librarian.
+209
+The Olympian weighed the personal trainer.
+219
+The orphan quieted the caretaker.
+221
+The chiropractor thanked the tennis player.
+231
+The whistle-blower ousted the union.
+245
+The newsagent promoted the TV station head.
+249
+The tribesman studied the anthropologist.
+251
+The firefighter rewarded the police chief.
+257
+The lab assistant overwhelmed the neuroscientist.
+259
+The gunsmith terrorized the warmonger.
+[3, 5, 7, 9, 13, 15, 18, 19, 21, 23, 27, 29, 31, 33, 35, 39, 41, 43, 45, 47, 53, 65, 71, 73, 77, 79, 81, 83, 85, 91, 93, 113, 115, 117, 125, 131, 133, 135, 136, 139, 141, 145, 147, 149, 151, 155, 157, 159, 163, 165, 167, 169, 171, 173, 175, 177, 183, 193, 199, 201, 203, 209, 219, 221, 231, 245, 249, 251, 257, 259]
+Accuracy:  0.7307692307692307
+train                                    Sentence  ...  FinalNormScore
+0         The reporter abandoned the story.  ...        0.937500
+1         The story abandoned the reporter.  ...        0.090909
+2              The uncle hung the ornament.  ...        0.986111
+3              The ornament hung the uncle.  ...        0.007576
+4    The adventurer requested the beverage.  ...        0.888889
+..                                      ...  ...             ...
+227  The apartment redecorated the copycat.  ...        0.066667
+228         The deckhand unlocked the door.  ...        0.825758
+229         The door unlocked the deckhand.  ...        0.022727
+230   The comedian confirmed the itinerary.  ...        0.840278
+231   The itinerary confirmed the comedian.  ...        0.238095
+
+[232 rows x 21 columns]
+test                                               Sentence  ...  FinalNormScore
+0                           The nanny tutored the boy.  ...        0.969697
+1                           The boy tutored the nanny.  ...        0.366667
+2                    The governess instructed the lad.  ...        0.818182
+3                    The lad instructed the governess.  ...        0.492424
+4              The blackmailer threatened the senator.  ...        0.924242
+..                                                 ...  ...             ...
+255      The abused woman comforted the social worker.  ...        0.402778
+256  The neuroscientist overwhelmed the lab assistant.  ...        0.805556
+257  The lab assistant overwhelmed the neuroscientist.  ...        0.772727
+258             The warmonger terrorized the gunsmith.  ...        0.686667
+259             The gunsmith terrorized the warmonger.  ...        0.568182
+
+[260 rows x 21 columns]
+x_train.shape (232, 1)
+x_test.shape (260, 1)
+[ 0  0  0  1  0  1  0  1  0  1  0  0  0  1  0  1  0  0 -1  1  0  1  0  1
+  0  0  0  1  0  1  0  1  0  1  0  1  0  0  0  1  0  1  0  1  0  1  0  1
+  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  1
+  0  1  0  0  0  1  0  1  0  1  0  1  0  1  0  0  0  0  0  1  0  1  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  1  0  1  0  0
+  0  0  0  0  0  1  0  0  0  0  0  1  0  1  0  1 -1  0  0  1  0  1  0  0
+  0  1  0  1  0  1  0  1  0  0  0  1  0  1  0  1  0  0  0  1  0  1  0  1
+  0  1  0  1  0  1  0  1  0  1  0  0  0  0  0  1  0  0  0  0  0  0  0  0
+  0  1  0  0  0  0  0  1  0  1  0  1  0  0  0  0  0  1  0  0  0  0  0  0
+  0  0  0  1  0  1  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0
+  0  0  0  0  0  1  0  0  0  1  0  1  0  0  0  0  0  1  0  1]
+3
+The lad instructed the governess.
+5
+The senator threatened the blackmailer.
+7
+The legislator menaced the extortionist.
+9
+The philosopher portrayed the artist.
+13
+The intern berated the mechanic.
+15
+The aide rebuked the technician.
+18
+The pixie mesmerized the ogre.
+19
+The ogre mesmerized the pixie.
+21
+The dentist assisted the orderly.
+23
+The orthodontist helped the nurse.
+27
+The conservative attacked the critic.
+29
+The right-winger criticized the reviewer.
+31
+The director badgered the admirer.
+33
+The filmmaker pestered the fan.
+35
+The youth revived the paramedic.
+39
+The marketer duped the prankster.
+41
+The distributor tricked the joker.
+43
+The damsel courted the playboy.
+45
+The maiden wooed the womanizer.
+47
+The clergyman cherished the nomad.
+53
+The politician killed the hit man.
+65
+The attacker located the sleuth.
+71
+The trainer defied the biker.
+73
+The coach disobeyed the cyclist.
+77
+The cousin shocked the genius.
+79
+The relative surprised the prodigy.
+81
+The bureaucrat bribed the smuggler.
+83
+The maestro irked the amateur.
+85
+The virtuoso irritated the novice.
+91
+The enthusiast disappointed the singer.
+93
+The connoisseur disillusioned the vocalist.
+113
+The successor chose the baron.
+115
+The rioter restrained the cop.
+117
+The rabble-rouser subdued the policeman.
+125
+The insurgent banished the monarch.
+131
+The contestant discouraged the pessimist.
+133
+The participant dissuaded the cynic.
+135
+The loner tormented the loudmouth.
+136
+The windbag taunted the recluse.
+139
+The investigator fooled the imitator.
+141
+The inspector conned the impersonator.
+145
+The shopkeeper unnerved the pyromaniac.
+147
+The vendor alarmed the arsonist.
+149
+The beginner supported the professional.
+151
+The rookie encouraged the master.
+155
+The expert employed the businessman.
+157
+The specialist hired the entrepreneur.
+159
+The first lady petrified the terrorist.
+163
+The gold medalist praised the judge.
+165
+The winner congratulated the panelist.
+167
+The victor emulated the liar.
+169
+The conqueror imitated the deceiver.
+171
+The tobacconist cautioned the environmentalist.
+173
+The cigar-maker warned the ecologist.
+175
+The guest hassled the alcoholic.
+177
+The visitor bothered the drunk.
+183
+The old man shaved the barber.
+193
+The seaman undercharged the streetwalker.
+199
+The bully dodged the freshman.
+201
+The hedonist reproached the nun.
+203
+The plagiarist admonished the librarian.
+209
+The Olympian weighed the personal trainer.
+219
+The orphan quieted the caretaker.
+221
+The chiropractor thanked the tennis player.
+231
+The whistle-blower ousted the union.
+245
+The newsagent promoted the TV station head.
+249
+The tribesman studied the anthropologist.
+251
+The firefighter rewarded the police chief.
+257
+The lab assistant overwhelmed the neuroscientist.
+259
+The gunsmith terrorized the warmonger.
+[3, 5, 7, 9, 13, 15, 18, 19, 21, 23, 27, 29, 31, 33, 35, 39, 41, 43, 45, 47, 53, 65, 71, 73, 77, 79, 81, 83, 85, 91, 93, 113, 115, 117, 125, 131, 133, 135, 136, 139, 141, 145, 147, 149, 151, 155, 157, 159, 163, 165, 167, 169, 171, 173, 175, 177, 183, 193, 199, 201, 203, 209, 219, 221, 231, 245, 249, 251, 257, 259]
+Accuracy:  0.7307692307692307
+train                                   Sentence  ...  FinalNormScore
+0              The bum stole the necklace.  ...        0.810606
+1              The necklace stole the bum.  ...        0.006667
+2           The raider caught the illness.  ...        0.757576
+3           The illness caught the raider.  ...        0.347222
+4    The announcer mispronounced the word.  ...        0.951389
+..                                     ...  ...             ...
+227   The memento misplaced the sightseer.  ...        0.108696
+228   The financier sponsored the project.  ...        0.934783
+229   The project sponsored the financier.  ...        0.160256
+230      The handyman repaired the faucet.  ...        0.980000
+231      The faucet repaired the handyman.  ...        0.053030
+
+[232 rows x 21 columns]
+test                                               Sentence  ...  FinalNormScore
+0                           The nanny tutored the boy.  ...        0.969697
+1                           The boy tutored the nanny.  ...        0.366667
+2                    The governess instructed the lad.  ...        0.818182
+3                    The lad instructed the governess.  ...        0.492424
+4              The blackmailer threatened the senator.  ...        0.924242
+..                                                 ...  ...             ...
+255      The abused woman comforted the social worker.  ...        0.402778
+256  The neuroscientist overwhelmed the lab assistant.  ...        0.805556
+257  The lab assistant overwhelmed the neuroscientist.  ...        0.772727
+258             The warmonger terrorized the gunsmith.  ...        0.686667
+259             The gunsmith terrorized the warmonger.  ...        0.568182
+
+[260 rows x 21 columns]
+x_train.shape (232, 1)
+x_test.shape (260, 1)
+[ 0  0  0  1  0  1  0  1  0  1  0  0  0  1  0  1  0  0 -1  1  0  1  0  1
+  0  0  0  1  0  1  0  1  0  1  0  1  0  0  0  1  0  1  0  1  0  1  0  1
+  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  1
+  0  1  0  0  0  1  0  1  0  1  0  1  0  1  0  0  0  0  0  1  0  1  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  1  0  1  0  0
+  0  0  0  0  0  1  0  0  0  0  0  1  0  1  0  1 -1  0  0  1  0  1  0  0
+  0  1  0  1  0  1  0  1  0  0  0  1  0  1  0  1  0  0  0  1  0  1  0  1
+  0  1  0  1  0  1  0  1  0  1  0  0  0  0  0  1  0  0  0  0  0  0  0  0
+  0  1  0  0  0  0  0  1  0  1  0  1  0  0  0  0  0  1  0  0  0  0  0  0
+  0  0  0  1  0  1  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0
+  0  0  0  0  0  1  0  0  0  1  0  1  0  0  0  0  0  1  0  1]
+3
+The lad instructed the governess.
+5
+The senator threatened the blackmailer.
+7
+The legislator menaced the extortionist.
+9
+The philosopher portrayed the artist.
+13
+The intern berated the mechanic.
+15
+The aide rebuked the technician.
+18
+The pixie mesmerized the ogre.
+19
+The ogre mesmerized the pixie.
+21
+The dentist assisted the orderly.
+23
+The orthodontist helped the nurse.
+27
+The conservative attacked the critic.
+29
+The right-winger criticized the reviewer.
+31
+The director badgered the admirer.
+33
+The filmmaker pestered the fan.
+35
+The youth revived the paramedic.
+39
+The marketer duped the prankster.
+41
+The distributor tricked the joker.
+43
+The damsel courted the playboy.
+45
+The maiden wooed the womanizer.
+47
+The clergyman cherished the nomad.
+53
+The politician killed the hit man.
+65
+The attacker located the sleuth.
+71
+The trainer defied the biker.
+73
+The coach disobeyed the cyclist.
+77
+The cousin shocked the genius.
+79
+The relative surprised the prodigy.
+81
+The bureaucrat bribed the smuggler.
+83
+The maestro irked the amateur.
+85
+The virtuoso irritated the novice.
+91
+The enthusiast disappointed the singer.
+93
+The connoisseur disillusioned the vocalist.
+113
+The successor chose the baron.
+115
+The rioter restrained the cop.
+117
+The rabble-rouser subdued the policeman.
+125
+The insurgent banished the monarch.
+131
+The contestant discouraged the pessimist.
+133
+The participant dissuaded the cynic.
+135
+The loner tormented the loudmouth.
+136
+The windbag taunted the recluse.
+139
+The investigator fooled the imitator.
+141
+The inspector conned the impersonator.
+145
+The shopkeeper unnerved the pyromaniac.
+147
+The vendor alarmed the arsonist.
+149
+The beginner supported the professional.
+151
+The rookie encouraged the master.
+155
+The expert employed the businessman.
+157
+The specialist hired the entrepreneur.
+159
+The first lady petrified the terrorist.
+163
+The gold medalist praised the judge.
+165
+The winner congratulated the panelist.
+167
+The victor emulated the liar.
+169
+The conqueror imitated the deceiver.
+171
+The tobacconist cautioned the environmentalist.
+173
+The cigar-maker warned the ecologist.
+175
+The guest hassled the alcoholic.
+177
+The visitor bothered the drunk.
+183
+The old man shaved the barber.
+193
+The seaman undercharged the streetwalker.
+199
+The bully dodged the freshman.
+201
+The hedonist reproached the nun.
+203
+The plagiarist admonished the librarian.
+209
+The Olympian weighed the personal trainer.
+219
+The orphan quieted the caretaker.
+221
+The chiropractor thanked the tennis player.
+231
+The whistle-blower ousted the union.
+245
+The newsagent promoted the TV station head.
+249
+The tribesman studied the anthropologist.
+251
+The firefighter rewarded the police chief.
+257
+The lab assistant overwhelmed the neuroscientist.
+259
+The gunsmith terrorized the warmonger.
+[3, 5, 7, 9, 13, 15, 18, 19, 21, 23, 27, 29, 31, 33, 35, 39, 41, 43, 45, 47, 53, 65, 71, 73, 77, 79, 81, 83, 85, 91, 93, 113, 115, 117, 125, 131, 133, 135, 136, 139, 141, 145, 147, 149, 151, 155, 157, 159, 163, 165, 167, 169, 171, 173, 175, 177, 183, 193, 199, 201, 203, 209, 219, 221, 231, 245, 249, 251, 257, 259]
+Accuracy:  0.7307692307692307
+train                                   Sentence  ...  FinalNormScore
+0      The sociologist accepted the offer.  ...        0.944444
+1      The offer accepted the sociologist.  ...        0.090278
+2    The comedian confirmed the itinerary.  ...        0.840278
+3    The itinerary confirmed the comedian.  ...        0.238095
+4      The stewardess pulled the suitcase.  ...        0.939394
+..                                     ...  ...             ...
+227       The shuttle left the vacationer.  ...        0.472222
+228         The poker player won the game.  ...        0.992424
+229         The game won the poker player.  ...        0.041667
+230     The cryptographer sent the letter.  ...        0.909091
+231     The letter sent the cryptographer.  ...        0.116667
+
+[232 rows x 21 columns]
+test                                               Sentence  ...  FinalNormScore
+0                           The nanny tutored the boy.  ...        0.969697
+1                           The boy tutored the nanny.  ...        0.366667
+2                    The governess instructed the lad.  ...        0.818182
+3                    The lad instructed the governess.  ...        0.492424
+4              The blackmailer threatened the senator.  ...        0.924242
+..                                                 ...  ...             ...
+255      The abused woman comforted the social worker.  ...        0.402778
+256  The neuroscientist overwhelmed the lab assistant.  ...        0.805556
+257  The lab assistant overwhelmed the neuroscientist.  ...        0.772727
+258             The warmonger terrorized the gunsmith.  ...        0.686667
+259             The gunsmith terrorized the warmonger.  ...        0.568182
+
+[260 rows x 21 columns]
+x_train.shape (232, 1)
+x_test.shape (260, 1)
+[ 0  0  0  1  0  1  0  1  0  1  0  0  0  1  0  1  0  0 -1  1  0  1  0  1
+  0  0  0  1  0  1  0  1  0  1  0  1  0  0  0  1  0  1  0  1  0  1  0  1
+  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  1
+  0  1  0  0  0  1  0  1  0  1  0  1  0  1  0  0  0  0  0  1  0  1  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  1  0  1  0  0
+  0  0  0  0  0  1  0  0  0  0  0  1  0  1  0  1 -1  0  0  1  0  1  0  0
+  0  1  0  1  0  1  0  1  0  0  0  1  0  1  0  1  0  0  0  1  0  1  0  1
+  0  1  0  1  0  1  0  1  0  1  0  0  0  0  0  1  0  0  0  0  0  0  0  0
+  0  1  0  0  0  0  0  1  0  1  0  1  0  0  0  0  0  1  0  0  0  0  0  0
+  0  0  0  1  0  1  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0
+  0  0  0  0  0  1  0  0  0  1  0  1  0  0  0  0  0  1  0  1]
+3
+The lad instructed the governess.
+5
+The senator threatened the blackmailer.
+7
+The legislator menaced the extortionist.
+9
+The philosopher portrayed the artist.
+13
+The intern berated the mechanic.
+15
+The aide rebuked the technician.
+18
+The pixie mesmerized the ogre.
+19
+The ogre mesmerized the pixie.
+21
+The dentist assisted the orderly.
+23
+The orthodontist helped the nurse.
+27
+The conservative attacked the critic.
+29
+The right-winger criticized the reviewer.
+31
+The director badgered the admirer.
+33
+The filmmaker pestered the fan.
+35
+The youth revived the paramedic.
+39
+The marketer duped the prankster.
+41
+The distributor tricked the joker.
+43
+The damsel courted the playboy.
+45
+The maiden wooed the womanizer.
+47
+The clergyman cherished the nomad.
+53
+The politician killed the hit man.
+65
+The attacker located the sleuth.
+71
+The trainer defied the biker.
+73
+The coach disobeyed the cyclist.
+77
+The cousin shocked the genius.
+79
+The relative surprised the prodigy.
+81
+The bureaucrat bribed the smuggler.
+83
+The maestro irked the amateur.
+85
+The virtuoso irritated the novice.
+91
+The enthusiast disappointed the singer.
+93
+The connoisseur disillusioned the vocalist.
+113
+The successor chose the baron.
+115
+The rioter restrained the cop.
+117
+The rabble-rouser subdued the policeman.
+125
+The insurgent banished the monarch.
+131
+The contestant discouraged the pessimist.
+133
+The participant dissuaded the cynic.
+135
+The loner tormented the loudmouth.
+136
+The windbag taunted the recluse.
+139
+The investigator fooled the imitator.
+141
+The inspector conned the impersonator.
+145
+The shopkeeper unnerved the pyromaniac.
+147
+The vendor alarmed the arsonist.
+149
+The beginner supported the professional.
+151
+The rookie encouraged the master.
+155
+The expert employed the businessman.
+157
+The specialist hired the entrepreneur.
+159
+The first lady petrified the terrorist.
+163
+The gold medalist praised the judge.
+165
+The winner congratulated the panelist.
+167
+The victor emulated the liar.
+169
+The conqueror imitated the deceiver.
+171
+The tobacconist cautioned the environmentalist.
+173
+The cigar-maker warned the ecologist.
+175
+The guest hassled the alcoholic.
+177
+The visitor bothered the drunk.
+183
+The old man shaved the barber.
+193
+The seaman undercharged the streetwalker.
+199
+The bully dodged the freshman.
+201
+The hedonist reproached the nun.
+203
+The plagiarist admonished the librarian.
+209
+The Olympian weighed the personal trainer.
+219
+The orphan quieted the caretaker.
+221
+The chiropractor thanked the tennis player.
+231
+The whistle-blower ousted the union.
+245
+The newsagent promoted the TV station head.
+249
+The tribesman studied the anthropologist.
+251
+The firefighter rewarded the police chief.
+257
+The lab assistant overwhelmed the neuroscientist.
+259
+The gunsmith terrorized the warmonger.
+[3, 5, 7, 9, 13, 15, 18, 19, 21, 23, 27, 29, 31, 33, 35, 39, 41, 43, 45, 47, 53, 65, 71, 73, 77, 79, 81, 83, 85, 91, 93, 113, 115, 117, 125, 131, 133, 135, 136, 139, 141, 145, 147, 149, 151, 155, 157, 159, 163, 165, 167, 169, 171, 173, 175, 177, 183, 193, 199, 201, 203, 209, 219, 221, 231, 245, 249, 251, 257, 259]
+Accuracy:  0.7307692307692307
+train                                  Sentence  ItemNum  ...  LowerBetter FinalNormScore
+0      The hacker memorized the password.      291  ...        False       0.965278
+1      The password memorized the hacker.      291  ...        False       0.045455
+2         The bellboy erased the message.      319  ...        False       0.777778
+3         The message erased the bellboy.      319  ...        False       0.113636
+4                 The man drank the soda.       59  ...        False       0.984848
+..                                    ...      ...  ...          ...            ...
+229  The brochure skimmed the woodworker.       68  ...        False       0.049383
+230  The marauder contracted the disease.        2  ...        False       0.780000
+231  The disease contracted the marauder.        2  ...        False       0.073333
+232      The hatter decorated the bowler.       25  ...        False       0.465278
+233      The bowler decorated the hatter.       25  ...        False       0.296296
+
+[234 rows x 21 columns]
+test                                               Sentence  ...  FinalNormScore
+0                           The nanny tutored the boy.  ...        0.969697
+1                           The boy tutored the nanny.  ...        0.366667
+2                    The governess instructed the lad.  ...        0.818182
+3                    The lad instructed the governess.  ...        0.492424
+4              The blackmailer threatened the senator.  ...        0.924242
+..                                                 ...  ...             ...
+255      The abused woman comforted the social worker.  ...        0.402778
+256  The neuroscientist overwhelmed the lab assistant.  ...        0.805556
+257  The lab assistant overwhelmed the neuroscientist.  ...        0.772727
+258             The warmonger terrorized the gunsmith.  ...        0.686667
+259             The gunsmith terrorized the warmonger.  ...        0.568182
+
+[260 rows x 21 columns]
+x_train.shape (234, 1)
+x_test.shape (260, 1)
+[ 0  0  0  1  0  1  0  1  0  1  0  0  0  1  0  1  0  0 -1  1  0  1  0  1
+  0  0  0  1  0  1  0  1  0  1  0  1  0  0  0  1  0  1  0  1  0  1  0  1
+  0  0  0  0  0  1  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  1
+  0  1  0  0  0  1  0  1  0  1  0  1  0  1  0  0  0  0  0  1  0  1  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  1  0  1  0  0
+  0  0  0  0  0  1  0  0  0  0  0  1  0  1  0  1 -1  0  0  1  0  1  0  0
+  0  1  0  1  0  1  0  1  0  0  0  1  0  1  0  1  0  0  0  1  0  1  0  1
+  0  1  0  1  0  1  0  1  0  1  0  0  0  0  0  1  0  0  0  0  0  0  0  0
+  0  1  0  0  0  0  0  1  0  1  0  1  0  0  0  0  0  1  0  0  0  0  0  0
+  0  0  0  1  0  1  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0  0  0  0
+  0  0  0  0  0  1  0  0  0  1  0  1  0  0  0  0  0  1  0  1]
+3
+The lad instructed the governess.
+5
+The senator threatened the blackmailer.
+7
+The legislator menaced the extortionist.
+9
+The philosopher portrayed the artist.
+13
+The intern berated the mechanic.
+15
+The aide rebuked the technician.
+18
+The pixie mesmerized the ogre.
+19
+The ogre mesmerized the pixie.
+21
+The dentist assisted the orderly.
+23
+The orthodontist helped the nurse.
+27
+The conservative attacked the critic.
+29
+The right-winger criticized the reviewer.
+31
+The director badgered the admirer.
+33
+The filmmaker pestered the fan.
+35
+The youth revived the paramedic.
+39
+The marketer duped the prankster.
+41
+The distributor tricked the joker.
+43
+The damsel courted the playboy.
+45
+The maiden wooed the womanizer.
+47
+The clergyman cherished the nomad.
+53
+The politician killed the hit man.
+65
+The attacker located the sleuth.
+71
+The trainer defied the biker.
+73
+The coach disobeyed the cyclist.
+77
+The cousin shocked the genius.
+79
+The relative surprised the prodigy.
+81
+The bureaucrat bribed the smuggler.
+83
+The maestro irked the amateur.
+85
+The virtuoso irritated the novice.
+91
+The enthusiast disappointed the singer.
+93
+The connoisseur disillusioned the vocalist.
+113
+The successor chose the baron.
+115
+The rioter restrained the cop.
+117
+The rabble-rouser subdued the policeman.
+125
+The insurgent banished the monarch.
+131
+The contestant discouraged the pessimist.
+133
+The participant dissuaded the cynic.
+135
+The loner tormented the loudmouth.
+136
+The windbag taunted the recluse.
+139
+The investigator fooled the imitator.
+141
+The inspector conned the impersonator.
+145
+The shopkeeper unnerved the pyromaniac.
+147
+The vendor alarmed the arsonist.
+149
+The beginner supported the professional.
+151
+The rookie encouraged the master.
+155
+The expert employed the businessman.
+157
+The specialist hired the entrepreneur.
+159
+The first lady petrified the terrorist.
+163
+The gold medalist praised the judge.
+165
+The winner congratulated the panelist.
+167
+The victor emulated the liar.
+169
+The conqueror imitated the deceiver.
+171
+The tobacconist cautioned the environmentalist.
+173
+The cigar-maker warned the ecologist.
+175
+The guest hassled the alcoholic.
+177
+The visitor bothered the drunk.
+183
+The old man shaved the barber.
+193
+The seaman undercharged the streetwalker.
+199
+The bully dodged the freshman.
+201
+The hedonist reproached the nun.
+203
+The plagiarist admonished the librarian.
+209
+The Olympian weighed the personal trainer.
+219
+The orphan quieted the caretaker.
+221
+The chiropractor thanked the tennis player.
+231
+The whistle-blower ousted the union.
+245
+The newsagent promoted the TV station head.
+249
+The tribesman studied the anthropologist.
+251
+The firefighter rewarded the police chief.
+257
+The lab assistant overwhelmed the neuroscientist.
+259
+The gunsmith terrorized the warmonger.
+[3, 5, 7, 9, 13, 15, 18, 19, 21, 23, 27, 29, 31, 33, 35, 39, 41, 43, 45, 47, 53, 65, 71, 73, 77, 79, 81, 83, 85, 91, 93, 113, 115, 117, 125, 131, 133, 135, 136, 139, 141, 145, 147, 149, 151, 155, 157, 159, 163, 165, 167, 169, 171, 173, 175, 177, 183, 193, 199, 201, 203, 209, 219, 221, 231, 245, 249, 251, 257, 259]
+Accuracy:  0.7307692307692307

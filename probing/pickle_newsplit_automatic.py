@@ -29,8 +29,7 @@ def get_vector(sentence, layer):
 def break_array_tolist(array):
   a = []
   for item in array:
-    for it in item:
-      a.append(it)
+    a.append(item)
   return a
 
 def split_dataset_sentence(fold, dataset, voice_type, sentence_type):
@@ -38,26 +37,28 @@ def split_dataset_sentence(fold, dataset, voice_type, sentence_type):
   AI_sentences = AI_sentences[AI_sentences['Voice'] == 'active']
   AI_sentences = AI_sentences.reset_index(drop = True)
 
-  pool_ai = np.array_split(AI_sentences.index.values, fold_num)
-  train_index_ai = break_array_tolist(pool_ai[:fold] + pool_ai[fold+1:])
-  train_ai = pd.concat(AI_sentences[AI_sentences.index == j] for j in train_index_ai)
+  unique_index_ai = np.random.permutation(AI_sentences['ItemNum'].unique())
+  pool_ai = np.array_split(unique_index_ai, fold_num)
+  test_index_ai = break_array_tolist(pool_ai[fold])
+  train_index_ai = [i for i in unique_index_ai if i not in test_index_ai]
+  train_ai = pd.concat((AI_sentences[AI_sentences['ItemNum'] == j] for j in train_index_ai))
+  test_ai = pd.concat((AI_sentences[AI_sentences['ItemNum'] == k] for k in test_index_ai))
   train_ai = train_ai.reset_index(drop = True)
-
-  test_index_ai = [x for x in AI_sentences.index.values if x not in train_index_ai]
-  test_ai = pd.concat((AI_sentences[AI_sentences.index == j] for j in test_index_ai))
+  test_ai = test_ai.reset_index(drop = True)
 
   AAN_sentences = dataset[dataset['TrialType'] == 'AAN']
   AAN_sentences = AAN_sentences[AAN_sentences['Voice'] == 'active']
   AAN_sentences = AAN_sentences.reset_index(drop = True)
 
-  pool_aan = np.array_split(AAN_sentences.index.values, fold_num)
-  train_index_aan = break_array_tolist(pool_aan[:fold] + pool_aan[fold+1:])
-  train_aan = pd.concat(AAN_sentences[AAN_sentences.index == j] for j in train_index_aan)
+  unique_index_aan = np.random.permutation(AAN_sentences['ItemNum'].unique())
+  pool_aan = np.array_split(unique_index_aan, fold_num)
+  test_index_aan = pool_aan[fold]
+  train_index_aan = [i for i in unique_index_aan if i not in test_index_aan]
+  train_aan = pd.concat((AAN_sentences[AAN_sentences['ItemNum'] == j] for j in train_index_aan))
+  test_aan = pd.concat((AAN_sentences[AAN_sentences['ItemNum'] == k] for k in test_index_aan))
   train_aan = train_aan.reset_index(drop = True)
+  test_aan = test_aan.reset_index(drop = True)
 
-  test_index_aan = [x for x in AAN_sentences.index.values if x not in train_index_aan]
-  test_aan = pd.concat((AAN_sentences[AAN_sentences.index == j] for j in test_index_aan))
-  
   AAR_sentences = dataset[dataset['TrialType'] == 'AAR']
   AAR_sentences = AAR_sentences[AAR_sentences['Voice'] == 'active']
   AAR_sentences = AAR_sentences.reset_index(drop = True)
@@ -93,7 +94,7 @@ def split_dataset_sentence(fold, dataset, voice_type, sentence_type):
     test = AAR_sentences
     test = test.reset_index(drop = True)
   elif sentence_type == 'normal-AAR':
-    train = pd.concat([train_ai, train_aan])
+    train = pd.concat([train_ai, train_aan])    
     train = train.reset_index(drop = True)
     test = AAR_sentences
     test = test.reset_index(drop = True)    
@@ -119,8 +120,8 @@ def split_dataset(fold, dataset, voice_type, sentence_type):
 
     test_index = pool[fold]
     train_index = [i for i in unique_index if i not in test_index]
-    test = pd.concat((df_DT[df_DT['ItemNum'] == j] for j in test_index))
-    train = pd.concat((df_DT[df_DT['ItemNum'] == k] for k in train_index))
+    test = pd.concat((dataset[dataset['ItemNum'] == j] for j in test_index))
+    train = pd.concat((dataset[dataset['ItemNum'] == k] for k in train_index))
 
     test = test.reset_index()
     train = train.reset_index()
@@ -170,7 +171,7 @@ for layer in range(layer_num):
   Accuracy = []
   for reg_trial in range(fold_num):
     #changed
-    train, test = split_dataset(reg_trial, dataset, voice_type, sentence_type)
+    train, test = split_dataset(reg_trial, df_DT, voice_type, sentence_type)
 
     x_train = []
     for i in range(len(train)):

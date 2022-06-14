@@ -1,0 +1,544 @@
+train                                 Sentence  ItemNum  ...  LowerBetter FinalNormScore
+0          The au pair spanked the girl.      360  ...        False       0.712121
+1          The girl spanked the au pair.      360  ...        False       0.273333
+2     The loudmouth tormented the loner.      158  ...        False       0.916667
+3     The loner tormented the loudmouth.      158  ...        False       0.621212
+4    The speaker engrossed the audience.      127  ...        False       0.985507
+..                                   ...      ...  ...          ...            ...
+229    The economist acquitted the jury.      337  ...        False       0.174242
+230     The cyclist disobeyed the coach.      126  ...        False       0.952381
+231     The coach disobeyed the cyclist.      126  ...        False       0.492424
+232           The king exiled the rebel.      152  ...        False       0.847826
+233           The rebel exiled the king.      152  ...        False       0.432099
+
+[234 rows x 21 columns]
+test                                  Sentence  ItemNum  ...  LowerBetter FinalNormScore
+0          The raider caught the illness.        1  ...        False       0.757576
+1          The illness caught the raider.        1  ...        False       0.347222
+2    The marauder contracted the disease.        2  ...        False       0.780000
+3    The disease contracted the marauder.        2  ...        False       0.073333
+4         The convict dreaded the prison.        3  ...        False       0.868056
+..                                    ...      ...  ...          ...            ...
+253          The order placed the tanner.      324  ...        False       0.134921
+254  The archaeologist canceled the trip.      325  ...        False       0.962963
+255  The trip canceled the archaeologist.      325  ...        False       0.068182
+256    The Frenchman sliced the baguette.      326  ...        False       0.920000
+257    The baguette sliced the Frenchman.      326  ...        False       0.073333
+
+[258 rows x 21 columns]
+x_train.shape (234, 1)
+x_test.shape (258, 1)
+[ 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 -1  0  0  0  0  0
+ -1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0 -1  0  0  0  0  0 -1  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0 -1  0 -1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0]
+42
+The ship captain promised the triumph.
+48
+The hatter decorated the bowler.
+82
+The doctor closed the school.
+88
+The domestic cleaned the wash basin.
+148
+The campaigner biased the ballot.
+150
+The activist prejudiced the vote.
+[42, 48, 82, 88, 148, 150]
+Accuracy:  0.9767441860465116
+train                                     Sentence  ...  FinalNormScore
+0    The terrorist petrified the first lady.  ...        0.847826
+1    The first lady petrified the terrorist.  ...        0.485507
+2       The union ousted the whistle-blower.  ...        0.795455
+3       The whistle-blower ousted the union.  ...        0.702899
+4          The craftsman taught the trainee.  ...        0.941667
+..                                       ...  ...             ...
+229        The economist acquitted the jury.  ...        0.174242
+230         The assassin shot the statesman.  ...        0.916667
+231         The statesman shot the assassin.  ...        0.444444
+232           The genius shocked the cousin.  ...        0.826087
+233           The cousin shocked the genius.  ...        0.726667
+
+[234 rows x 21 columns]
+test                                  Sentence  ItemNum  ...  LowerBetter FinalNormScore
+0          The raider caught the illness.        1  ...        False       0.757576
+1          The illness caught the raider.        1  ...        False       0.347222
+2    The marauder contracted the disease.        2  ...        False       0.780000
+3    The disease contracted the marauder.        2  ...        False       0.073333
+4         The convict dreaded the prison.        3  ...        False       0.868056
+..                                    ...      ...  ...          ...            ...
+253          The order placed the tanner.      324  ...        False       0.134921
+254  The archaeologist canceled the trip.      325  ...        False       0.962963
+255  The trip canceled the archaeologist.      325  ...        False       0.068182
+256    The Frenchman sliced the baguette.      326  ...        False       0.920000
+257    The baguette sliced the Frenchman.      326  ...        False       0.073333
+
+[258 rows x 21 columns]
+x_train.shape (234, 1)
+x_test.shape (258, 1)
+[ 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 -1  0  0  0  0  0
+ -1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0 -1  0  0  0  0  0 -1  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0 -1  0 -1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0]
+42
+The ship captain promised the triumph.
+48
+The hatter decorated the bowler.
+82
+The doctor closed the school.
+88
+The domestic cleaned the wash basin.
+148
+The campaigner biased the ballot.
+150
+The activist prejudiced the vote.
+[42, 48, 82, 88, 148, 150]
+Accuracy:  0.9767441860465116
+train                                      Sentence  ...  FinalNormScore
+0    The extortionist menaced the legislator.  ...        0.712963
+1    The legislator menaced the extortionist.  ...        0.658333
+2    The policeman subdued the rabble-rouser.  ...        0.901515
+3    The rabble-rouser subdued the policeman.  ...        0.550725
+4           The colonel supervised the cadet.  ...        0.923611
+..                                        ...  ...             ...
+229          The vendor alarmed the arsonist.  ...        0.640000
+230       The exorcist vanquished the spirit.  ...        0.833333
+231       The spirit vanquished the exorcist.  ...        0.263889
+232                The page obeyed the noble.  ...        0.561728
+233                The noble obeyed the page.  ...        0.348485
+
+[234 rows x 21 columns]
+test                                  Sentence  ItemNum  ...  LowerBetter FinalNormScore
+0          The raider caught the illness.        1  ...        False       0.757576
+1          The illness caught the raider.        1  ...        False       0.347222
+2    The marauder contracted the disease.        2  ...        False       0.780000
+3    The disease contracted the marauder.        2  ...        False       0.073333
+4         The convict dreaded the prison.        3  ...        False       0.868056
+..                                    ...      ...  ...          ...            ...
+253          The order placed the tanner.      324  ...        False       0.134921
+254  The archaeologist canceled the trip.      325  ...        False       0.962963
+255  The trip canceled the archaeologist.      325  ...        False       0.068182
+256    The Frenchman sliced the baguette.      326  ...        False       0.920000
+257    The baguette sliced the Frenchman.      326  ...        False       0.073333
+
+[258 rows x 21 columns]
+x_train.shape (234, 1)
+x_test.shape (258, 1)
+[ 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 -1  0  0  0  0  0
+ -1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0 -1  0  0  0  0  0 -1  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0 -1  0 -1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0]
+42
+The ship captain promised the triumph.
+48
+The hatter decorated the bowler.
+82
+The doctor closed the school.
+88
+The domestic cleaned the wash basin.
+148
+The campaigner biased the ballot.
+150
+The activist prejudiced the vote.
+[42, 48, 82, 88, 148, 150]
+Accuracy:  0.9767441860465116
+train                                     Sentence  ...  FinalNormScore
+0         The admirer badgered the director.  ...        0.666667
+1         The director badgered the admirer.  ...        0.714286
+2     The entrepreneur hired the specialist.  ...        0.969697
+3     The specialist hired the entrepreneur.  ...        0.795455
+4           The cyclist disobeyed the coach.  ...        0.952381
+..                                       ...  ...             ...
+229  The senator threatened the blackmailer.  ...        0.673611
+230         The mechanic berated the intern.  ...        0.814815
+231         The intern berated the mechanic.  ...        0.638889
+232          The channeler sensed the ghost.  ...        0.818182
+233          The ghost sensed the channeler.  ...        0.437500
+
+[234 rows x 21 columns]
+test                                  Sentence  ItemNum  ...  LowerBetter FinalNormScore
+0          The raider caught the illness.        1  ...        False       0.757576
+1          The illness caught the raider.        1  ...        False       0.347222
+2    The marauder contracted the disease.        2  ...        False       0.780000
+3    The disease contracted the marauder.        2  ...        False       0.073333
+4         The convict dreaded the prison.        3  ...        False       0.868056
+..                                    ...      ...  ...          ...            ...
+253          The order placed the tanner.      324  ...        False       0.134921
+254  The archaeologist canceled the trip.      325  ...        False       0.962963
+255  The trip canceled the archaeologist.      325  ...        False       0.068182
+256    The Frenchman sliced the baguette.      326  ...        False       0.920000
+257    The baguette sliced the Frenchman.      326  ...        False       0.073333
+
+[258 rows x 21 columns]
+x_train.shape (234, 1)
+x_test.shape (258, 1)
+[ 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 -1  0  0  0  0  0
+ -1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0 -1  0  0  0  0  0 -1  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0 -1  0 -1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0]
+42
+The ship captain promised the triumph.
+48
+The hatter decorated the bowler.
+82
+The doctor closed the school.
+88
+The domestic cleaned the wash basin.
+148
+The campaigner biased the ballot.
+150
+The activist prejudiced the vote.
+[42, 48, 82, 88, 148, 150]
+Accuracy:  0.9767441860465116
+train                                      Sentence  ...  FinalNormScore
+0             The father pampered the infant.  ...        0.980000
+1             The infant pampered the father.  ...        0.159091
+2         The paparazzi stalked the pop star.  ...        0.958333
+3         The pop star stalked the paparazzi.  ...        0.217391
+4          The lawyer questioned the witness.  ...        1.000000
+..                                        ...  ...             ...
+229  The beneficiary kidnapped the miscreant.  ...        0.439394
+230                The boss fired the worker.  ...        0.966667
+231                The worker fired the boss.  ...        0.053333
+232          The cyclist disobeyed the coach.  ...        0.952381
+233          The coach disobeyed the cyclist.  ...        0.492424
+
+[234 rows x 21 columns]
+test                                  Sentence  ItemNum  ...  LowerBetter FinalNormScore
+0          The raider caught the illness.        1  ...        False       0.757576
+1          The illness caught the raider.        1  ...        False       0.347222
+2    The marauder contracted the disease.        2  ...        False       0.780000
+3    The disease contracted the marauder.        2  ...        False       0.073333
+4         The convict dreaded the prison.        3  ...        False       0.868056
+..                                    ...      ...  ...          ...            ...
+253          The order placed the tanner.      324  ...        False       0.134921
+254  The archaeologist canceled the trip.      325  ...        False       0.962963
+255  The trip canceled the archaeologist.      325  ...        False       0.068182
+256    The Frenchman sliced the baguette.      326  ...        False       0.920000
+257    The baguette sliced the Frenchman.      326  ...        False       0.073333
+
+[258 rows x 21 columns]
+x_train.shape (234, 1)
+x_test.shape (258, 1)
+[ 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 -1  0  0  0  0  0
+ -1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0 -1  0  0  0  0  0 -1  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0 -1  0 -1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0]
+42
+The ship captain promised the triumph.
+48
+The hatter decorated the bowler.
+82
+The doctor closed the school.
+88
+The domestic cleaned the wash basin.
+148
+The campaigner biased the ballot.
+150
+The activist prejudiced the vote.
+[42, 48, 82, 88, 148, 150]
+Accuracy:  0.9767441860465116
+train                                         Sentence  ...  FinalNormScore
+0    The TV station head promoted the newsagent.  ...        0.881944
+1    The newsagent promoted the TV station head.  ...        0.645833
+2          The artist portrayed the philosopher.  ...        0.798611
+3          The philosopher portrayed the artist.  ...        0.543210
+4                 The huntsman trapped the deer.  ...        0.973333
+..                                           ...  ...             ...
+229             The attacker located the sleuth.  ...        0.753086
+230                     The lord named the heir.  ...        0.930556
+231                     The heir named the lord.  ...        0.454545
+232             The windbag taunted the recluse.  ...        0.462121
+233             The recluse taunted the windbag.  ...        0.362319
+
+[234 rows x 21 columns]
+test                                  Sentence  ItemNum  ...  LowerBetter FinalNormScore
+0          The raider caught the illness.        1  ...        False       0.757576
+1          The illness caught the raider.        1  ...        False       0.347222
+2    The marauder contracted the disease.        2  ...        False       0.780000
+3    The disease contracted the marauder.        2  ...        False       0.073333
+4         The convict dreaded the prison.        3  ...        False       0.868056
+..                                    ...      ...  ...          ...            ...
+253          The order placed the tanner.      324  ...        False       0.134921
+254  The archaeologist canceled the trip.      325  ...        False       0.962963
+255  The trip canceled the archaeologist.      325  ...        False       0.068182
+256    The Frenchman sliced the baguette.      326  ...        False       0.920000
+257    The baguette sliced the Frenchman.      326  ...        False       0.073333
+
+[258 rows x 21 columns]
+x_train.shape (234, 1)
+x_test.shape (258, 1)
+[ 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 -1  0  0  0  0  0
+ -1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0 -1  0  0  0  0  0 -1  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0 -1  0 -1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0]
+42
+The ship captain promised the triumph.
+48
+The hatter decorated the bowler.
+82
+The doctor closed the school.
+88
+The domestic cleaned the wash basin.
+148
+The campaigner biased the ballot.
+150
+The activist prejudiced the vote.
+[42, 48, 82, 88, 148, 150]
+Accuracy:  0.9767441860465116
+train                                    Sentence  ...  FinalNormScore
+0          The windbag taunted the recluse.  ...        0.462121
+1          The recluse taunted the windbag.  ...        0.362319
+2        The loudmouth tormented the loner.  ...        0.916667
+3        The loner tormented the loudmouth.  ...        0.621212
+4          The arsonist alarmed the vendor.  ...        0.683333
+..                                      ...  ...             ...
+229  The gunsmith terrorized the warmonger.  ...        0.568182
+230      The urologist treated the widower.  ...        0.825758
+231      The widower treated the urologist.  ...        0.260000
+232     The prodigy surprised the relative.  ...        0.796296
+233     The relative surprised the prodigy.  ...        0.738095
+
+[234 rows x 21 columns]
+test                                  Sentence  ItemNum  ...  LowerBetter FinalNormScore
+0          The raider caught the illness.        1  ...        False       0.757576
+1          The illness caught the raider.        1  ...        False       0.347222
+2    The marauder contracted the disease.        2  ...        False       0.780000
+3    The disease contracted the marauder.        2  ...        False       0.073333
+4         The convict dreaded the prison.        3  ...        False       0.868056
+..                                    ...      ...  ...          ...            ...
+253          The order placed the tanner.      324  ...        False       0.134921
+254  The archaeologist canceled the trip.      325  ...        False       0.962963
+255  The trip canceled the archaeologist.      325  ...        False       0.068182
+256    The Frenchman sliced the baguette.      326  ...        False       0.920000
+257    The baguette sliced the Frenchman.      326  ...        False       0.073333
+
+[258 rows x 21 columns]
+x_train.shape (234, 1)
+x_test.shape (258, 1)
+[ 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+ -1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0 -1  0  0  0  0  0 -1  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0 -1  0 -1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0]
+48
+The hatter decorated the bowler.
+82
+The doctor closed the school.
+88
+The domestic cleaned the wash basin.
+148
+The campaigner biased the ballot.
+150
+The activist prejudiced the vote.
+[48, 82, 88, 148, 150]
+Accuracy:  0.9806201550387597
+train                                      Sentence  ...  FinalNormScore
+0             The brunette tipped the busboy.  ...        0.944444
+1             The busboy tipped the brunette.  ...        0.451389
+2        The deceiver imitated the conqueror.  ...        0.716667
+3        The conqueror imitated the deceiver.  ...        0.506667
+4    The librarian admonished the plagiarist.  ...        0.803030
+..                                        ...  ...             ...
+229       The bureaucrat bribed the smuggler.  ...        0.727273
+230  The miscreant kidnapped the beneficiary.  ...        0.750000
+231  The beneficiary kidnapped the miscreant.  ...        0.439394
+232   The blackmailer threatened the senator.  ...        0.924242
+233   The senator threatened the blackmailer.  ...        0.673611
+
+[234 rows x 21 columns]
+test                                  Sentence  ItemNum  ...  LowerBetter FinalNormScore
+0          The raider caught the illness.        1  ...        False       0.757576
+1          The illness caught the raider.        1  ...        False       0.347222
+2    The marauder contracted the disease.        2  ...        False       0.780000
+3    The disease contracted the marauder.        2  ...        False       0.073333
+4         The convict dreaded the prison.        3  ...        False       0.868056
+..                                    ...      ...  ...          ...            ...
+253          The order placed the tanner.      324  ...        False       0.134921
+254  The archaeologist canceled the trip.      325  ...        False       0.962963
+255  The trip canceled the archaeologist.      325  ...        False       0.068182
+256    The Frenchman sliced the baguette.      326  ...        False       0.920000
+257    The baguette sliced the Frenchman.      326  ...        False       0.073333
+
+[258 rows x 21 columns]
+x_train.shape (234, 1)
+x_test.shape (258, 1)
+[ 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+ -1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0 -1  0  0  0  0  0 -1  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0 -1  0 -1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0]
+48
+The hatter decorated the bowler.
+82
+The doctor closed the school.
+88
+The domestic cleaned the wash basin.
+148
+The campaigner biased the ballot.
+150
+The activist prejudiced the vote.
+[48, 82, 88, 148, 150]
+Accuracy:  0.9806201550387597
+train                                     Sentence  ...  FinalNormScore
+0            The shark mauled the snorkeler.  ...        0.876543
+1            The snorkeler mauled the shark.  ...        0.310606
+2          The painter depicted the thinker.  ...        0.894737
+3          The thinker depicted the painter.  ...        0.454545
+4    The pyromaniac unnerved the shopkeeper.  ...        0.791667
+..                                       ...  ...             ...
+229       The witness questioned the lawyer.  ...        0.421053
+230        The craftsman taught the trainee.  ...        0.941667
+231        The trainee taught the craftsman.  ...        0.401515
+232   The driver transported the ambassador.  ...        0.976190
+233   The ambassador transported the driver.  ...        0.347826
+
+[234 rows x 21 columns]
+test                                  Sentence  ItemNum  ...  LowerBetter FinalNormScore
+0          The raider caught the illness.        1  ...        False       0.757576
+1          The illness caught the raider.        1  ...        False       0.347222
+2    The marauder contracted the disease.        2  ...        False       0.780000
+3    The disease contracted the marauder.        2  ...        False       0.073333
+4         The convict dreaded the prison.        3  ...        False       0.868056
+..                                    ...      ...  ...          ...            ...
+253          The order placed the tanner.      324  ...        False       0.134921
+254  The archaeologist canceled the trip.      325  ...        False       0.962963
+255  The trip canceled the archaeologist.      325  ...        False       0.068182
+256    The Frenchman sliced the baguette.      326  ...        False       0.920000
+257    The baguette sliced the Frenchman.      326  ...        False       0.073333
+
+[258 rows x 21 columns]
+x_train.shape (234, 1)
+x_test.shape (258, 1)
+[ 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0 -1  0  0  0  0  0
+ -1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0 -1  0  0  0  0  0 -1  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0 -1  0 -1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0]
+42
+The ship captain promised the triumph.
+48
+The hatter decorated the bowler.
+82
+The doctor closed the school.
+88
+The domestic cleaned the wash basin.
+148
+The campaigner biased the ballot.
+150
+The activist prejudiced the vote.
+[42, 48, 82, 88, 148, 150]
+Accuracy:  0.9767441860465116
+train                                    Sentence  ...  FinalNormScore
+0    The impersonator conned the inspector.  ...        0.833333
+1    The inspector conned the impersonator.  ...        0.576389
+2           The channeler sensed the ghost.  ...        0.818182
+3           The ghost sensed the channeler.  ...        0.437500
+4          The windbag taunted the recluse.  ...        0.462121
+..                                      ...  ...             ...
+229        The guest hassled the alcoholic.  ...        0.694444
+230       The mediator rescued the hostage.  ...        0.875000
+231       The hostage rescued the mediator.  ...        0.318182
+232       The craftsman taught the trainee.  ...        0.941667
+233       The trainee taught the craftsman.  ...        0.401515
+
+[234 rows x 21 columns]
+test                                  Sentence  ItemNum  ...  LowerBetter FinalNormScore
+0          The raider caught the illness.        1  ...        False       0.757576
+1          The illness caught the raider.        1  ...        False       0.347222
+2    The marauder contracted the disease.        2  ...        False       0.780000
+3    The disease contracted the marauder.        2  ...        False       0.073333
+4         The convict dreaded the prison.        3  ...        False       0.868056
+..                                    ...      ...  ...          ...            ...
+253          The order placed the tanner.      324  ...        False       0.134921
+254  The archaeologist canceled the trip.      325  ...        False       0.962963
+255  The trip canceled the archaeologist.      325  ...        False       0.068182
+256    The Frenchman sliced the baguette.      326  ...        False       0.920000
+257    The baguette sliced the Frenchman.      326  ...        False       0.073333
+
+[258 rows x 21 columns]
+x_train.shape (234, 1)
+x_test.shape (258, 1)
+[ 0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+ -1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0 -1  0  0  0  0  0 -1  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0 -1  0 -1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0]
+48
+The hatter decorated the bowler.
+82
+The doctor closed the school.
+88
+The domestic cleaned the wash basin.
+148
+The campaigner biased the ballot.
+150
+The activist prejudiced the vote.
+[48, 82, 88, 148, 150]
+Accuracy:  0.9806201550387597
