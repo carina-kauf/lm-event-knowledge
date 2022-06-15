@@ -201,5 +201,5 @@ for reg_trial in range(fold_num):
   xtestsent.append(test['Sentence'])
 df_out = pd.DataFrame(accuracy)
 df_out.to_csv(output_path, header = False)
-check = pd.DataFrame.from_dict({'sentence': xtestsent, 'ytest': ytest, 'ypred': ypred})
-check.to_csv('check_aanai.csv')
+#check = pd.DataFrame.from_dict({'sentence': xtestsent, 'ytest': ytest, 'ypred': ypred})
+#check.to_csv('check_aanai.csv')

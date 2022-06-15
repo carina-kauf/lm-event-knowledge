@@ -198,16 +198,9 @@ for layer in range(layer_num):
     
     # Getting unclassified sentences
     y_diff = y_pred - y_test
-    max_ind = np.argpartition(y_diff, -5)[-5:]
-    for i in max_ind:
-      sent_highest_mismatch_r2.append(test['Sentence'][i])
   print('layer', layer_num, statistics.mean(r_2))
   print(r_2)
-  print('mismatched sentences', sent_highest_mismatch_r2)
   out.append(r_2)
-  unclassified.append(sent_highest_mismatch_r2)
 
 df_out = pd.DataFrame(out)
 df_out.to_csv(output_path, header = False)
-df_unclassified = pd.DataFrame(unclassified)
-df_unclassified.to_csv(output_path_unclassified, header = False)
