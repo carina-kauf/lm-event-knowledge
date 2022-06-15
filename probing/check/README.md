@@ -1,5 +1,7 @@
 # check
 
-### `pickle_newsplit_automatic.py`
-* most up-to-date [embeddings --> plausibility]. Metric: accuracy with logit regression
-* run on commandline: `python pickle
+### `check_token_same_embeddings.py`
+* sanity-check: making sure that sentences of the same token length have the same embeddings
+* output: should return True
+
+
