@@ -22,8 +22,11 @@
 * output files: 14 conditions per model = 42 csv files in total, named as probing/parallel_layers/human_predictions/{model_name}_{dataset_name}_{voice_type}_{sentence_type}.csv
 
 > :construction: issue 2 unresolved: waiting to find a bounded regression method that works
+> 
 > issue 1: weird-shaped mse plot (06/02/22, email). A huge bump in bert's plot, and very high mse values for gpt2
+> 
 > solved: plotted y_pred against y_test (06/07, slack), and found that much of y_pred exceeds the (0,1) y_test bound, thus started looking for bounded regression method. 
+> 
 > issue 2: `sm.GLM(y_train, x_train, family=sm.families.Binomial())` returned `statsmodels.tools.sm_exceptions.PerfectSeparationError: Perfect separation detected, results not available` and `sm.Logit(y_train, x_train)` returned `numpy.linalg.LinAlgError: Singular matrix`
 
 
