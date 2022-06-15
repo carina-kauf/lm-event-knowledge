@@ -29,7 +29,7 @@
 > 
 > * issue 2: `sm.GLM(y_train, x_train, family=sm.families.Binomial())` returned `statsmodels.tools.sm_exceptions.PerfectSeparationError: Perfect separation detected, results not available` and `sm.Logit(y_train, x_train)` returned `numpy.linalg.LinAlgError: Singular matrix`
 
-### `pickle_linear_human_mse.py`
+### `pickle_linear_human_r_squared.py`
 * predicting human ratings [embeddings --> normed human ratings]. Metric: R-squared with Ridge regression
 * same as `pickle_linear_human_mse.py`. Only difference is the r^2 metric
 
