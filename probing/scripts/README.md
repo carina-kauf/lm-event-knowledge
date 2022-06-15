@@ -1,4 +1,6 @@
-# probing
+# scripts
+
+
 
 ### `pickle_newsplit_automatic.py`
 * most up-to-date [embeddings --> plausibility]. Metric: accuracy with logit regression
@@ -38,7 +40,5 @@
 ### `pickle_linear_human_r_squared.py`
 * predicting human ratings [embeddings --> normed human ratings]. Metric: R-squared with Ridge regression
 * same as `pickle_linear_human_mse.py`. Only difference is the r^2 metric
-
-
 
 
