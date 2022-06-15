@@ -10,12 +10,11 @@ from sklearn import metrics
 import sys
 import pickle
 
-layer_num = int(sys.argv[1])
+layer_num = str(sys.argv[1])
 voice_type = str(sys.argv[2])
 sentence_type = str(sys.argv[3])
 dataset_name = str(sys.argv[4])
 model_name = str(sys.argv[5])
-
 
 def break_array_tolist(array):
   a = []
