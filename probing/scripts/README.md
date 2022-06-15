@@ -1,5 +1,11 @@
 # scripts
 
+The analysis has four parts:
+
+## 1. loading the embeddings and saving them as pickle files
+
+This is a new approach. We had previously extracted embeddings directly in the scripts, that is, to tokenize and get the hidden layers for every sentence. This approach took significant amount of time even with parallel coding, which was approximately ~60-80 minutes per layer. We then decided to first save the hidden layers of all sentences as pickle files, and load them in each script. The scripts to load these embeddings are below:
+
 ### `load_embeddings_bert.py`
 * load bert embeddings
 * run on commandline: `python load_embeddings_bert.py [model_name] [dataset_name]`
@@ -18,6 +24,12 @@
 ### `NOTWORKING_load_embeddings.py`
 * :construction: An attempt to standarlize the process to load different models with dictionaries. Has some unfixed errors, but moved on to other priorities. The current pickle files were generated with the above three files.
 
+> :warning: the probing/sentence_embeddings directory with all the pickle files are too large to push, so you'd need to run these loading scipts on your local machine, and save them as probing/sentence_embeddings/{dataset_name}_{model_name}.pickle. Saving with this particular file name will allow you to directly load them with `pickle_newsplit_automatic.py` and `pickle_linear_human_mse.py`.
+
+## 2. Predicting plausibilities from model embeddings
+
+This file reads the pre-loaded pickle files, and outputs accuracy matrices of the classification accuracies for all 24/48 layers and all 10 folds. It takes five commandline arguments: layer_num, voice_type, sentence_type, dataset_name, and model_name. Details below:
+
 ### `pickle_newsplit_automatic.py`
 * most up-to-date [embeddings --> plausibility]. Metric: accuracy with logit regression
 * run on commandline: `python pickle_newsplit_automatic.py [layer_num] [voice_type] [sentence_type] [dataset_name] [model_name]`
@@ -28,6 +40,12 @@
 > * issue 1: non-all-zero first layer accuracies of AAR sentences (05/29/22, email)
 > * solved: trialtypes were splitted with indices, not ItemNum. Now both VoiceType and TrialType are splitted using ItemNum, and AAR conditions all have 0 for the first layer.
 
+## 3. Creating ceilings for model predictions with human ratings
+
+Classification performances across conditions are varied. Therefore, it's good to establish a ceiling (gold standard) for each condition, which would be the classification accuracies of human ratings --> plausibility. 
+
+🚧 TODO: norming the models' classification accuracies with ceiling scores. Each should be converted as original score/ceiling score
+
 ### `human_predict_plausibility.py`
 * ceilings for model predictions [normed human ratings --> plausibility].  Metric: accuracy with logit regression
 * run on commandline: `python human_predict_plausibility.py 24 [voice_type] [sentence_type] [dataset_name] bert-large-cased`
@@ -37,6 +55,10 @@
 * also outputs (in slurm.out): printed train, test dataframes and unclassified sentences across folds
 
 > `layer_num` and `model_name` do not matter here, thus pre-set to `24` and 'bert-large-cased'.They were kept only because it's easier to combine for plotting with the current plotting code. Remember to confirm it's only 14 files when plotting. 
+
+## 4. Predicting human scores with model embeddings
+
+This is a work-in-progress. We want to see how well the embeddings can predict normed human scores. We originally used Ridge regression and recorded the mean squared error or r^2 as a metric for classification accuracy. However, the plot turned out weird (issue 1) so we want to switch to another regression that bounds the output to (0,1). This is currently unresolved (issue 2). 
 
 ### `pickle_linear_human_mse.py`
 * predicting human ratings [embeddings --> normed human ratings]. Metric: mean squared error with Ridge regression
