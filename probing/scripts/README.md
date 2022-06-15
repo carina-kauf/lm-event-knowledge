@@ -1,7 +1,5 @@
 # scripts
 
-
-
 ### `pickle_newsplit_automatic.py`
 * most up-to-date [embeddings --> plausibility]. Metric: accuracy with logit regression
 * run on commandline: `python pickle_newsplit_automatic.py [layer_num] [voice_type] [sentence_type] [dataset_name] [model_name]`
