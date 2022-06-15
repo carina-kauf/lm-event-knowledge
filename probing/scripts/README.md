@@ -15,7 +15,7 @@
 * run on commandline: `python load_embeddings_gpt2.py [model_name] [dataset_name]`
 * output files: probing/sentence_embeddings/{dataset_name}_{model_name}.pickle
 
-### `load_embeddings.py`
+### `NOTWORKING_load_embeddings.py`
 * :construction: An attempt to standarlize the process to load different models with dictionaries. Has some unfixed errors, but moved on to other priorities. The current pickle files were generated with the above three files.
 
 ### `pickle_newsplit_automatic.py`
