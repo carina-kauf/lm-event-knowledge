@@ -13,6 +13,7 @@
 * ceilings for model predictions [normed human ratings --> plausibility].  Metric: accuracy with logit regression
 * run on commandline: `python human_predict_plausibility.py 24 [voice_type] [sentence_type] [dataset_name] bert-large-cased`
 * output files: 14 conditions = 14 csv files in total, named as probing/parallel_layers/model_human_ceiling/bert-large-cased_{dataset_name}_{voice_type}_{sentence_type}.csv
+* a combined file of the above 14 conditions: probing/parallel_layers/human_plausibility_ceilings.csv
 * also outputs: `check.csv` in probing/. Sanity check of the dataframe: whether plausible/implausible is converted to 1/0, and whether AAR contains all 1's.
 * also outputs (in slurm.out): printed train, test dataframes and unclassified sentences across folds
 
