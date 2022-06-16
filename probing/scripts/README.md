@@ -6,25 +6,12 @@ The analysis has four parts:
 
 This is a new approach. We had previously extracted embeddings directly in the scripts, that is, to tokenize and get the hidden layers for every sentence. This approach took significant amount of time even with parallel coding, which was approximately ~60-80 minutes per layer. We then decided to first save the hidden layers of all sentences as pickle files, and load them in each script. The scripts to load these embeddings are below:
 
-### `load_embeddings_bert.py`
-* load bert embeddings
-* run on commandline: `python load_embeddings_bert.py [model_name] [dataset_name]`
+### `load_embeddings.py`
+* load embeddings for specified model and dataset
+* run on commandline: `python load_embeddings.py [model_name] [dataset_name]`
 * output files: probing/sentence_embeddings/{dataset_name}_{model_name}.pickle
 
-### `load_embeddings_roberta.py`
-* load roberta embeddings
-* run on commandline: `python load_embeddings_roberta.py [model_name] [dataset_name]`
-* output files: probing/sentence_embeddings/{dataset_name}_{model_name}.pickle
-
-### `load_embeddings_gpt2.py`
-* load gpt2 embeddings
-* run on commandline: `python load_embeddings_gpt2.py [model_name] [dataset_name]`
-* output files: probing/sentence_embeddings/{dataset_name}_{model_name}.pickle
-
-### `NOTWORKING_load_embeddings.py`
-* :construction: An attempt to standarlize the process to load different models with dictionaries. Has some unfixed errors, but moved on to other priorities. The current pickle files were generated with the above three files.
-
-> :warning: the probing/sentence_embeddings directory with all the pickle files are too large to push, so you'd need to run the above loading scipts on your local machine, and run `mkdir sentence_embeddings` so the pickle fileswill be saved as save them as probing/sentence_embeddings/{dataset_name}_{model_name}.pickle. Doing so will allow you to directly load them with `pickle_newsplit_automatic.py` and `pickle_linear_human_mse.py`.
+> :warning: the probing/sentence_embeddings directory with all the pickle files are too large to push, so you'd need to run the above loading scipts on your local machine, and make sure to `mkdir sentence_embeddings` so the pickle fileswill be saved as probing/sentence_embeddings/{dataset_name}_{model_name}.pickle. Doing so will allow you to load them with the current code in `pickle_newsplit_automatic.py` and `pickle_linear_human_mse.py`.
 
 ## 2. Predicting plausibilities from model embeddings
 
