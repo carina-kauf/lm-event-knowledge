@@ -24,7 +24,7 @@ This is a new approach. We had previously extracted embeddings directly in the s
 ### `NOTWORKING_load_embeddings.py`
 * :construction: An attempt to standarlize the process to load different models with dictionaries. Has some unfixed errors, but moved on to other priorities. The current pickle files were generated with the above three files.
 
-> :warning: the probing/sentence_embeddings directory with all the pickle files are too large to push, so you'd need to run these loading scipts on your local machine, and save them as probing/sentence_embeddings/{dataset_name}_{model_name}.pickle. Saving with this particular file name will allow you to directly load them with `pickle_newsplit_automatic.py` and `pickle_linear_human_mse.py`.
+> :warning: the probing/sentence_embeddings directory with all the pickle files are too large to push, so you'd need to run the above loading scipts on your local machine, and run `mkdir sentence_embeddings` so the pickle fileswill be saved as save them as probing/sentence_embeddings/{dataset_name}_{model_name}.pickle. Doing so will allow you to directly load them with `pickle_newsplit_automatic.py` and `pickle_linear_human_mse.py`.
 
 ## 2. Predicting plausibilities from model embeddings
 
