@@ -3,5 +3,5 @@
 #SBATCH -n 1
 #SBATCH -p evlab 
 module load openmind/anaconda/3-2019.10
-python pickle_human_predict_plausibility.py 24 'active-active' 'normal-AAR' 'EventsAdapt' 'bert-large-cased'
+python pickle_newsplit_automatic_check.py 24 'active-active' 'AI-AAR' 'EventsAdapt' 'roberta-large'
 

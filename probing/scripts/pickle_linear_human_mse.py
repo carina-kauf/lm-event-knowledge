@@ -33,6 +33,23 @@ def break_array_tolist(array):
   return a
 
 def split_dataset_sentence(fold, dataset, voice_type, sentence_type):
+    """
+  Split the dataset by sentence type, returns train and test dataframes.
+  
+  Current train-test splits: AI-AI and AAN-AAN: train on 9/10, test on 1/10; AI-AAN/AAN-A  I/AI-AAR/AAN-AAR: train on 9/10 of former, and test on all of later; normal-AAR: train   on AI and AAN, test on all AAR.
+
+  Parameters
+  ---------
+  fold: int
+        default = 10
+  dataset: pd.Dataframe
+        default = df_DT
+  voice_type: str
+        'normal', 'active-active', 'passive-passive', 'active-passive', 'passive-active'
+  sentence_type: str
+        'normal', 'AI-AI', 'AAN-AAN', 'AI-AAN', 'AAN-AI'
+  """
+
   AI_sentences = dataset[dataset['TrialType'] == 'AI']
   AI_sentences = AI_sentences[AI_sentences['Voice'] == 'active']
   AI_sentences = AI_sentences.reset_index(drop = True)
@@ -104,7 +121,23 @@ def split_dataset_sentence(fold, dataset, voice_type, sentence_type):
   return train, test
 
 def split_dataset(fold, dataset, voice_type, sentence_type):
-  #active/passive conditions
+    """
+  Split the dataset by voice type, returns train and test dataframes.
+  
+  This split runs when sentence_type == 'normal', otherwise, it automatically triggers sp  lit_dataset_sentence() to only splitting by sentence types
+
+  Parameters
+  ---------
+  fold: int
+        default = 10
+  dataset: pd.Dataframe
+        default = df_DT
+  voice_type: str
+        'normal', 'active-active', 'passive-passive', 'active-passive', 'passive-active'
+  sentence_type: str
+        'normal', 'AI-AI', 'AAN-AAN', 'AI-AAN', 'AAN-AI'
+  """
+
   if sentence_type == 'normal':
     if dataset_name == 'EventsAdapt':
       dataset = dataset[dataset.TrialType != "AAR"]

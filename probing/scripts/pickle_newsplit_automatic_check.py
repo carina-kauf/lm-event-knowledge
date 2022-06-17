@@ -3,7 +3,7 @@ import torch
 import matplotlib.pyplot as plt
 import pandas as pd
 import statistics
-from sklearn.linear_model import Ridge
+from sklearn.linear_model import LogisticRegression
 from sklearn import metrics
 import sys
 import pickle
@@ -94,7 +94,7 @@ def split_dataset_sentence(fold, dataset, voice_type, sentence_type):
     test = AAR_sentences
     test = test.reset_index(drop = True)
   elif sentence_type == 'normal-AAR':
-    train = pd.concat([train_ai, train_aan])
+    train = pd.concat([train_ai, train_aan])    
     train = train.reset_index(drop = True)
     test = AAR_sentences
     test = test.reset_index(drop = True)    
@@ -154,29 +154,26 @@ def split_dataset(fold, dataset, voice_type, sentence_type):
   
   return train, test
 
-dataset = f'/om2/user/jshe/lm-event-knowledge/analyses_clean/clean_data/clean_{dataset_name}_df.csv'
-output_path = f'/om2/user/jshe/lm-event-knowledge/probing/parallel_layers/human_predictions/{model_name}_{dataset_name}_{voice_type}_{sentence_type}.csv'
-output_path_unclassified = f'/om2/user/jshe/lm-event-knowledge/probing/parallel_layers/unclassified_sentences/{model_name}_{dataset_name}_{voice_type}_{sentence_type}.csv'
-
-df_DT = pd.read_csv(dataset, low_memory=False)
+dataset = f'/om2/user/jshe/lm-event-knowledge/analyses_clean/clean_data/clean_{dataset_name}_SentenceSet.csv'
+output_path = f'/om2/user/jshe/lm-event-knowledge/probing/parallel_layers/new_layers/{model_name}_{dataset_name}_{voice_type}_{sentence_type}.csv'
+df_DT = pd.read_csv(dataset)
 
 fold_num = 10
 np.random.seed(42)
+if dataset_name == 'EventsAdapt':
+  df_DT.loc[df_DT['TrialType'] == 'AAR', 'Plausibility'] = 'Plausible'
 
-df_DT = df_DT[df_DT['Metric'] == 'human']
-
-df_DT = df_DT.reset_index(drop = True)
+df_DT.loc[df_DT['Plausibility'] == 'Plausible', 'Plausibility'] = 1
+df_DT.loc[df_DT['Plausibility'] == 'Implausible', 'Plausibility'] = 0
 ######for testing only
 #df_DT = df_DT.head(10)
 
 out = []
-unclassified = []
 for layer in range(layer_num):
-  r_2 = []
-  sent_highest_mismatch_r2 = []
+  Accuracy = []
   for reg_trial in range(fold_num):
+    #changed
     train, test = split_dataset(reg_trial, df_DT, voice_type, sentence_type)
-
     x_train = []
     for i in range(len(train)):
       x_train.append(get_vector(train['Sentence'][i], layer))
@@ -187,20 +184,23 @@ for layer in range(layer_num):
       x_test.append(get_vector(test['Sentence'][j], layer))
     x_test = np.array(x_test)
 
-    y_train = np.array(train["NormScore"])
-    y_test = np.array(test["NormScore"])
+    y_train = np.array(train["Plausibility"])
+    y_test = np.array(test["Plausibility"])
 
     # Fitting regression
-    linearreg = Ridge(max_iter = 500)
-    linearreg.fit(x_train, y_train)
-    y_pred = linearreg.predict(x_test)
-    r_2.append(metrics.r2_score(y_test, y_pred))
-    
-    # Getting unclassified sentences
+    logreg = LogisticRegression(max_iter=500, solver='liblinear')
+    logreg.fit(x_train, y_train)
+    y_pred = logreg.predict(x_test)
     y_diff = y_pred - y_test
-  print('layer', layer_num, statistics.mean(r_2))
-  print(r_2)
-  out.append(r_2)
-
+    print(y_diff)
+    #for i in range(len(y_diff)):
+      #if y_diff[i] != 0:
+        #print(i)
+        #print(test['Sentence'][i])
+    Accuracy.append(metrics.accuracy_score(y_test, y_pred))
+  print('layer', layer_num, statistics.mean(Accuracy))
+  print(Accuracy)
+  out.append(Accuracy)
+  
 df_out = pd.DataFrame(out)
 df_out.to_csv(output_path, header = False)
