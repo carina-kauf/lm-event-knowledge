@@ -18,7 +18,7 @@
 ### `human_plausibility_ceilings.csv`
 * combined long-form file of files in `model_human_ceiling` above
 
-### `model_plausibility_with_ceiling.csv.csv`
+### `model_plausibility_ceiling_new.csv`
 * combined long-form file of files in `new_layers` and `model_human_ceiling` above
 
 
