@@ -62,8 +62,4 @@ This is a work-in-progress. We want to see how well the embeddings can predict n
 > * :construction: issue 2 unresolved: waiting to find a bounded regression method that works
 
 
-### `pickle_linear_human_r_squared.py`
-* predicting human ratings [embeddings --> normed human ratings]. Metric: R-squared with Ridge regression
-* same as `pickle_linear_human_mse.py`. Only difference is the r^2 metric
-
 
