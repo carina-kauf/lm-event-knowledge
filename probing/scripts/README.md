@@ -31,8 +31,6 @@ This file reads the pre-loaded pickle files, and outputs accuracy matrices of th
 
 Classification performances across conditions are varied. Therefore, it's good to establish a ceiling (gold standard) for each condition, which would be the classification accuracies of human ratings --> plausibility. 
 
-🚧 TODO: norming the models' classification accuracies with ceiling scores. Each should be converted as original score/ceiling score
-
 ### `human_predict_plausibility.py`
 * ceilings for model predictions [normed human ratings --> plausibility].  Metric: accuracy with logit regression
 * run on commandline: `python human_predict_plausibility.py 24 [voice_type] [sentence_type] [dataset_name] bert-large-cased`
