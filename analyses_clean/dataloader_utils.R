@@ -54,6 +54,10 @@ clean_metric_name <- function(filename) {
   metric = str_replace(metric, "gpt2-medium", "GPT2-medium")
   metric = str_replace(metric, "gpt2-xl", "GPT2-xl")
   metric = str_replace(metric, "sentence-prob", "l2r")
+  # GPT-Neo
+  metric = str_replace(metric, "gpt-neo", "GPT-neo")
+  # GPT-J
+  metric = str_replace(metric, "gpt-j", "GPT-J")
   # tinyLSTM
   metric = str_replace(metric, "surprisal_scores_tinylstm", "tinyLSTM.surprisal")
   metric = str_replace(metric, "vassallo_tinyLSTM", "tinyLSTM")
@@ -71,12 +75,13 @@ clean_metric_name <- function(filename) {
 }
 
 get_score_colnum <- function(metric) {
-  if (grepl("BERT", metric) || grepl("GPT2", metric) || grepl("LSTM", metric) || grepl("thematicFit", metric)) {
+  if (grepl("BERT", metric) || grepl("GPT", metric) || grepl("LSTM", metric) || grepl("thematicFit", metric)) {
     score_colnum = 3
   } else if (grepl("PPMI", metric)) {
     score_colnum = 4
   } else if (grepl("SDM", metric)) {
     score_colnum = 6
+    paste("SDM", score_colnum)
   } else {
     stop(paste("unknown metric: ", metric))
   }
@@ -121,6 +126,7 @@ read_data <- function(directory, filename, normalization_type) {
     mutate(SentenceNum = sentnums) %>%
     mutate(ItemNum = SentenceNum %/% target_trialnr) %>%
     mutate(Metric = metric) %>%
+    filter(!Score=="None")  %>%
     mutate(NormScore = normalization(Score)) %>%
     #strip space before final period 
     mutate(Sentence = str_replace(Sentence, " [.]", ".")) %>%

@@ -81,7 +81,7 @@ if (grepl("min-max", normalization) == TRUE){
 human <- c("human")
 llms <- c("RoBERTa","BERT","GPT2")
 #llms_main <- c("GPT2-xl.l2r","BERT-large.pverb","RoBERTa-large.pverb")
-llms_main <- c("RoBERTa-large.PLL.average", "BERT-large.PLL.average", "GPT2-xl.l2r")
+llms_main <- c("RoBERTa-large.PLL.average", "BERT-large.PLL.average", "GPT-J.l2r.average", "GPT2-xl.l2r.average")
 baselines <- c("tinyLSTM.surprisal","SDM", "thematicFit.prod", "syntax.PPMI")
 
 llms_main <- c(human, llms_main)
@@ -99,12 +99,12 @@ dat = dat %>% filter(Metric %in% chosen_models)
 
 if (grepl("llms_all", which_models) == FALSE){
 # shorten model names
-llms_main_short <- c("RoBERTa-large", "BERT-large", "GPT2-xl")
+llms_main_short <- c("RoBERTa-large", "BERT-large", "GPT-J", "GPT2-xl")
 baselines_short <- c("tinyLSTM","SDM", "thematicFit", "syntax-PPMI")
 models_short = c(human, llms_main_short, baselines_short)
 
   convert_metric_names <- function(col) {
-    gsub(".surprisal|.prod|.pverb|.l2r|.PLL.average", "", col)
+    gsub(".surprisal|.prod|.pverb|.l2r.average|.l2r|.PLL.average", "", col)
   }
 
 dat = dat %>%
@@ -178,7 +178,7 @@ if (which_models == "llms_all") {
   dat.binchoice = dat %>%
   mutate(Metric = as.character(Metric)) %>%
   mutate(Category = ifelse(startsWith(Metric, "BERT"), "BERT", "RoBERTa")) %>%
-  mutate(Category = ifelse(startsWith(Metric, "GPT2"), "GPT2", Category)) %>%
+  mutate(Category = ifelse(startsWith(Metric, "GPT"), "GPT", Category)) %>%
   mutate(Category = ifelse(Metric=="human", "human", Category))
 } else {
   dat.binchoice = dat %>%
@@ -198,7 +198,7 @@ dat.binchoice$Metric = factor(dat.binchoice$Metric, levels=chosen_models)
 dat.binchoice$TrialType = factor(dat.binchoice$TrialType, levels=c("AI", "AAN", "AAR"))
 
 if (which_models=="llms_all") {
-  dat.binchoice$Category = factor(dat.binchoice$Category, levels=c("human", "RoBERTa", "BERT", "GPT2"))
+  dat.binchoice$Category = factor(dat.binchoice$Category, levels=c("human", "RoBERTa", "BERT", "GPT"))
 } else {
   dat.binchoice$Category = factor(dat.binchoice$Category, levels=c("human", "LLMs", "baselines"))
 }
@@ -206,7 +206,7 @@ if (which_models=="llms_all") {
 
 
 ```{r}
-# leave only active sentences here (since SDM & PPMI-syntax cannot deal with passive structures, put full plot in appendix)
+# leave only active sentences here (since SDM & PPMI-syntax cannot deal with passive structures, put full plot in SI)
 dat.binchoice.active = dat.binchoice %>%
   filter(Voice=="active")
 ```
@@ -289,12 +289,12 @@ plot.binacc = ggplot(data=subset(dat.binchoice.active, TrialType%in%c("AI","AAN"
   theme_classic()+
   labs(x=NULL)+
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
-plot.binacc
+#plot.binacc
 
 savename <- "1_binaryAccuracy_split.png"
 ggsave(paste(savedir,savename,sep="/"), width=15, height=9, units='cm')
 ```
-### With logos
+### Add logos
 ```{r}
 # source: https://www.markhw.com/blog/logos
 
@@ -315,7 +315,7 @@ plot.binacc.logos <- gridExtra::grid.arrange(p3, plot.binacc, heights = c(.05, .
 savename <- "1_binaryAccuracy_split_logos.png"
 ggsave(paste(savedir,savename,sep="/"), plot.binacc.logos, width=15, height=9, units='cm')
 ```
-### Binary accuracy plot with active AND passive sentences (for appendix)
+### Binary accuracy plot with active AND passive sentences (for SI)
 ```{r}
 # get p values
 dat.binchoice.summary = dat.binchoice %>%
@@ -515,8 +515,73 @@ dat.meanDiff = dat.meanDiff %>%
   spread(TrialType, meanDiff)
 ```
 
+
+#### Singular plots for TrialTypes for main figure generation below
+```{r singular binacc plots}
+
+dat.sub.AI = dat.sub %>%
+  filter(TrialType%in%c("AI"))
+
+plot.plaus.density.AI = ggplot()+
+  geom_density(data=dat.sub.AI, mapping=aes(FinalNormScore, fill = factor(Plausibility, levels=c("Implausible","Plausible"))), alpha = 0.2)+
+  facet_grid(TrialType~Metric, labeller = labeller(TrialType = as_labeller(label_names)))+
+  #ggtitle('PLAUSIBILITY')+
+  geom_vline(xintercept=reference_value, linetype='dotted')+
+  theme_classic()+
+  scale_x_continuous(breaks=c(0,0.5,1))+
+  scale_y_continuous(breaks=c(0,0.5,1))+
+  xlab("Normed score") +
+  ylab(" ")+
+  theme(plot.title = element_text(hjust=0.5,face='bold'))+
+  theme(axis.ticks.y = element_blank(),
+        axis.text.y = element_blank(),
+        legend.title=element_blank(),
+        legend.position="none")
+plot.plaus.density.AI
+
+dat.sub.AAN = dat.sub %>%
+  filter(TrialType%in%c("AAN"))
+
+plot.plaus.density.AAN = ggplot()+
+  geom_density(data=dat.sub.AAN, mapping=aes(FinalNormScore, fill = factor(Plausibility, levels=c("Implausible","Plausible"))), alpha = 0.2)+
+  facet_grid(TrialType~Metric, labeller = labeller(TrialType = as_labeller(label_names)))+
+  #ggtitle('PLAUSIBILITY')+
+  geom_vline(xintercept=reference_value, linetype='dotted')+
+  theme_classic()+
+  scale_x_continuous(breaks=c(0,0.5,1))+
+  scale_y_continuous(breaks=c(0,0.5,1))+
+  xlab("Normed score") +
+  ylab(" ")+
+  theme(plot.title = element_text(hjust=0.5,face='bold'))+
+  theme(axis.ticks.y = element_blank(),
+        axis.text.y = element_blank(),
+        legend.title=element_blank())
+#plot.plaus.density.AAN
+
+legend.plaus <- cowplot::get_legend(plot.plaus.density.AAN)
+
+plot.plaus.density.AAN = ggplot()+
+  geom_density(data=dat.sub.AAN, mapping=aes(FinalNormScore, fill = factor(Plausibility, levels=c("Implausible","Plausible"))), alpha = 0.2)+
+  facet_grid(TrialType~Metric, labeller = labeller(TrialType = as_labeller(label_names)))+
+  #ggtitle('PLAUSIBILITY')+
+  geom_vline(xintercept=reference_value, linetype='dotted')+
+  theme_classic()+
+  scale_x_continuous(breaks=c(0,0.5,1))+
+  scale_y_continuous(breaks=c(0,0.5,1))+
+  xlab("Normed score") +
+  ylab(" ")+
+  theme(plot.title = element_text(hjust=0.5,face='bold'))+
+  theme(axis.ticks.y = element_blank(),
+        axis.text.y = element_blank(),
+        legend.title=element_blank(),
+        legend.position="none")
+plot.plaus.density.AAN
+
+```
+
 ## PLAUSIBILITY
 
+## AI & AAN JOINT
 ### Prep data
 
 ```{r, echo=FALSE}
@@ -542,7 +607,7 @@ dat.plaus$Metric = factor(dat.plaus$Metric, levels=plotting_models)
 df_correlation.plaus = get_correlation_df("plausibility", "human", dat.plaus, plotting_models)
 ```
 
-### Plot
+### Plot JOINT
 
 ```{r}
 df_correlation.plaus$Metric = factor(df_correlation.plaus$Metric, levels=plotting_models)
@@ -566,6 +631,57 @@ plot.plaus = ggplot(data=dat.plaus)+
   theme(plot.title = element_text(hjust=0.5,face='bold'))
 plot.plaus
 ```
+
+## AI & AAN INDIVIDUAL
+```{r}
+df_correlation.plaus.AI = get_correlation_df("plausibility", "human", subset(dat.plaus, TrialType=="AI"), plotting_models)
+df_correlation.plaus.AAN = get_correlation_df("plausibility", "human", subset(dat.plaus, TrialType=="AAN"), plotting_models)
+```
+
+### Plot INDIVIDUAL
+
+```{r}
+df_correlation.plaus.AI$Metric = factor(df_correlation.plaus.AI$Metric, levels=plotting_models)
+df_correlation.plaus.AAN$Metric = factor(df_correlation.plaus.AAN$Metric, levels=plotting_models)
+dat.plaus$Metric = factor(dat.plaus$Metric, levels=plotting_models)
+
+plot.plaus.AI = ggplot(data=subset(dat.plaus, TrialType=="AI"))+
+  facet_wrap(~Metric, ncol=ncols, nrow=nrows)+
+  geom_abline(slope=1, intercept=0, size=0.2)+
+  geom_point(mapping=aes(x=Plausible, y=Implausible), size=0.2, color=color_plaus)+
+  geom_text(mapping=aes(x=0, y=1.10, 
+                        label=sprintf("r = %.2f%s", round(Correlation,2), pVal2zeroLabel)), 
+            data=df_correlation.plaus.AI, size=cortext_size, hjust = 0)+
+  coord_cartesian(ylim=c(0,1.15), xlim=c(0,1))+
+  scale_x_continuous(breaks=c(0,0.5,1))+
+  scale_y_continuous(breaks=c(0,0.5,1))+
+  theme_classic()+
+  facet_grid(~Metric)+
+  #ggtitle('PLAUSIBILITY')+
+  xlab("Plausible")+
+  ylab("Implausible")+
+  theme(plot.title = element_text(hjust=0.5,face='bold'))
+plot.plaus.AI
+
+plot.plaus.AAN = ggplot(data=subset(dat.plaus, TrialType=="AAN"))+
+  facet_wrap(~Metric, ncol=ncols, nrow=nrows)+
+  geom_abline(slope=1, intercept=0, size=0.2)+
+  geom_point(mapping=aes(x=Plausible, y=Implausible), size=0.2, color=color_plaus)+
+  geom_text(mapping=aes(x=0, y=1.10, 
+                        label=sprintf("r = %.2f%s", round(Correlation,2), pVal2zeroLabel)), 
+            data=df_correlation.plaus.AAN, size=cortext_size, hjust = 0)+
+  coord_cartesian(ylim=c(0,1.15), xlim=c(0,1))+
+  scale_x_continuous(breaks=c(0,0.5,1))+
+  scale_y_continuous(breaks=c(0,0.5,1))+
+  theme_classic()+
+  facet_grid(~Metric)+
+  #ggtitle('PLAUSIBILITY')+
+  xlab("Plausible")+
+  ylab("Implausible")+
+  theme(plot.title = element_text(hjust=0.5,face='bold'))
+plot.plaus.AAN
+```
+
 ### GENERATE MAIN FIGURE
 
 ```{r, echo=FALSE}
@@ -585,6 +701,32 @@ cowplot
 
 savename <- "new_main.png"
 ggsave(paste(savedir,savename,sep="/"), height=18,width=25, units='cm')
+```
+
+### ALTERNATIVE MAIN FIGURE
+
+```{r, echo=FALSE}
+
+mid_row <- plot_grid(NULL, plot.plaus.density.AI, NULL, plot.plaus.density.AAN, legend.plaus, label_size = 15, rel_widths = c(0.04, 0.9,0.03, 0.9, 0.2), nrow=1)
+bottom_row <- plot_grid(plot.plaus.AI, plot.plaus.AAN, label_size = 15)
+bottom_row <- plot_grid(bottom_row, NULL,
+                   rel_widths = c(0.9, 0.1),
+                   nrow = 1)
+
+title <- ggdraw() + draw_label("PLAUSIBILITY", fontface='bold') + theme(plot.background = element_rect(fill="#F5F5F5", color=NA))
+mid_row_title <- plot_grid(title, mid_row, ncol=1, rel_heights=c(0.1, 1)) # rel_heights values control title margins
+
+(p3 <- ggplot(mapping = aes(x = 0:1, y = 1)) +
+  theme_void() +
+  annotation_custom(img_ai, xmin = .18, xmax = .28) +
+  annotation_custom(img_aa, xmin = .64, xmax = .74))
+top_row <- gridExtra::grid.arrange(p3, plot.binacc, heights = c(.05, .95))
+
+cowplot <- plot_grid(top_row, mid_row_title, bottom_row, labels = c('A', 'B', 'C'), label_size = 15, ncol = 1, rel_heights = c(1.5,0.9,0.9))
+cowplot
+
+savename <- "alternative_main.png"
+ggsave(paste(savedir,savename,sep="/"), height=20, width=25, units='cm')
 ```
 
 
@@ -787,7 +929,7 @@ ggplot(dat.binchoice.human, aes(x=meanAccuracy, y=FinalScoreDiff)) +
   geom_text(mapping=aes(x=0, y=1.10, 
                       label=sprintf("r = %.2f%s", round(Correlation,2), pLabel)), 
           data=cor_df, size=cortext_size, hjust = 0)+
-  scale_x_continuous(breaks=c(0,.33,.66,1), labels=c(0,1,2,3))+
+  scale_x_continuous(breaks=c(0,.25,.5, .75, 1), labels=c(0,1,2,3,4))+
   labs(x="# correct LLM responses", y="Human score difference")+
   theme_classic()
 
