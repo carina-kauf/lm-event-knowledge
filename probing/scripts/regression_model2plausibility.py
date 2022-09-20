@@ -3,36 +3,25 @@ import torch
 import matplotlib.pyplot as plt
 import pandas as pd
 import statistics
-from sklearn.multiclass import OneVsRestClassifier
-from sklearn.linear_model import LogisticRegression, RidgeClassifierCV
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.svm import SVC
-from sklearn.metrics import precision_recall_fscore_support, accuracy_score,classification_report
-
-#from ordinalClassif import OrdinalClassifier
-from ordinal import OrdinalClassifier
-
+from sklearn.linear_model import LogisticRegression
 from sklearn import metrics
 import sys
 import pickle
+import os
+import os.path
 
-import warnings
-warnings.filterwarnings("ignore")
+model_name = str(sys.argv[1])
+dataset_name = str(sys.argv[2])
+voice_type = str(sys.argv[3])
+sentence_type = str(sys.argv[4])
 
-layer_num = int(sys.argv[1])
-voice_type = str(sys.argv[2])
-sentence_type = str(sys.argv[3])
-dataset_name = str(sys.argv[4])
-model_name = str(sys.argv[5])
-print(voice_type, sentence_type, dataset_name, model_name)
-
-with open(f'/home/giulia.rambelli/lm-event-knowledge/probing/sentence_embeddings/{dataset_name}_{model_name}.pickle', 'rb') as f:
-  hidden_states = pickle.load(f)
-
-#print('check if it matches pickle output', list(hidden_states.values())[0][0])
+with open(os.path.abspath(f'./sentence_embeddings/{dataset_name}_{model_name}.pickle'), 'rb') as f:
+    hidden_states = pickle.load(f)
+    
+layer_num = len(hidden_states)
 
 def get_vector(sentence, layer):
-  if model_name == 'gpt2-xl':
+  if 'gpt' in model_name:
       sentence_embedding = hidden_states[sentence][layer][0][-1]
   else:
       sentence_embedding = hidden_states[sentence][layer][0][0]
@@ -47,21 +36,20 @@ def break_array_tolist(array):
 def split_dataset_sentence(fold, dataset, voice_type, sentence_type):
   """
   Split the dataset by sentence type, returns train and test dataframes.
-  
+
   Current train-test splits: AI-AI and AAN-AAN: train on 9/10, test on 1/10; AI-AAN/AAN-A  I/AI-AAR/AAN-AAR: train on 9/10 of former, and test on all of later; normal-AAR: train   on AI and AAN, test on all AAR.
 
   Parameters
   ---------
   fold: int
-        default = 10
+	default = 10
   dataset: pd.Dataframe
-        default = df_DT
+	default = df
   voice_type: str
-        'normal', 'active-active', 'passive-passive', 'active-passive', 'passive-active'
+	'normal', 'active-active', 'passive-passive', 'active-passive', 'passive-active'
   sentence_type: str
-        'normal', 'AI-AI', 'AAN-AAN', 'AI-AAN', 'AAN-AI'
+	'normal', 'AI-AI', 'AAN-AAN', 'AI-AAN', 'AAN-AI'
   """
-
   AI_sentences = dataset[dataset['TrialType'] == 'AI']
   AI_sentences = AI_sentences[AI_sentences['Voice'] == 'active']
   AI_sentences = AI_sentences.reset_index(drop = True)
@@ -106,7 +94,7 @@ def split_dataset_sentence(fold, dataset, voice_type, sentence_type):
     train = train_aan
     train = train.reset_index(drop = True)
     test = test_aan
-    test = test_aan.reset_index(drop = True)  
+    test = test_aan.reset_index(drop = True)
   elif sentence_type == 'AAN-AI':
     train = train_aan
     train = train.reset_index(drop = True)
@@ -126,24 +114,24 @@ def split_dataset_sentence(fold, dataset, voice_type, sentence_type):
     train = pd.concat([train_ai, train_aan])
     train = train.reset_index(drop = True)
     test = AAR_sentences
-    test = test.reset_index(drop = True)    
+    test = test.reset_index(drop = True)
   else:
     pass
-  
+
   return train, test
 
 def split_dataset(fold, dataset, voice_type, sentence_type):
   """
   Split the dataset by voice type, returns train and test dataframes.
-  
-  This split runs when sentence_type == 'normal', otherwise, it automatically triggers split_dataset_sentence() to only splitting by sentence types
+
+  This split runs when sentence_type == 'normal', otherwise, it automatically triggers sp  lit_dataset_sentence() to only splitting by sentence types
 
   Parameters
   ---------
   fold: int
         default = 10
   dataset: pd.Dataframe
-        default = df_DT
+        default = df
   voice_type: str
         'normal', 'active-active', 'passive-passive', 'active-passive', 'passive-active'
   sentence_type: str
@@ -154,7 +142,7 @@ def split_dataset(fold, dataset, voice_type, sentence_type):
     if dataset_name == 'EventsAdapt':
       dataset = dataset[dataset.TrialType != "AAR"]
       dataset = dataset.reset_index()
-    else: 
+    else:
       pass
 
     unique_pairs_num = dataset['ItemNum'].nunique()
@@ -178,7 +166,7 @@ def split_dataset(fold, dataset, voice_type, sentence_type):
       train = train.reset_index(drop = True)
     elif voice_type == 'passive-passive':
       train = train[train['Voice'] == 'passive']
-      test = test[test['Voice'] == 'passive']     
+      test = test[test['Voice'] == 'passive']
       test = test.reset_index(drop = True)
       train = train.reset_index(drop = True)
     elif voice_type == 'active-passive':
@@ -195,32 +183,28 @@ def split_dataset(fold, dataset, voice_type, sentence_type):
       pass
   #ai/aan/aar splitting conditions
   else:
-    train, test = split_dataset_sentence(reg_trial, df_DT, voice_type, sentence_type)
-  
+    train, test = split_dataset_sentence(reg_trial, df, voice_type, sentence_type)
+
   return train, test
 
-dataset = f'/home/giulia.rambelli/lm-event-knowledge/analyses_clean/clean_data/clean_{dataset_name}_df.csv'
-output_path = f'/home/giulia.rambelli/lm-event-knowledge/probing/parallel_layers/human_predictions/classification_3classes/{model_name}_{dataset_name}_{voice_type}_{sentence_type}.csv'
-df_DT = pd.read_csv(dataset, low_memory=False)
+dataset = os.path.abspath(f'../../clean_data/clean_{dataset_name}_SentenceSet.csv')
+out_dir = os.path.abspath(f'../results/model2plausibility/{model_name}_{dataset_name}_{voice_type}_{sentence_type}.csv')
+df = pd.read_csv(dataset)
 
 fold_num = 10
 np.random.seed(42)
+if dataset_name == 'EventsAdapt':
+  df.loc[df['TrialType'] == 'AAR', 'Plausibility'] = 'Plausible'
 
-df_DT = df_DT[df_DT['Metric'] == 'human']
-from collections import Counter
-
-#print(Counter(df_DT["Score"].apply(lambda x: round(x, 0))))
-#ss
-
-df_DT = df_DT.reset_index(drop = True)
 ######for testing only
-#df_DT = df_DT.head(10)
+#df = df.head(10)
 
 out = []
 for layer in range(layer_num):
   Accuracy = []
   for reg_trial in range(fold_num):
-    train, test = split_dataset(reg_trial, df_DT, voice_type, sentence_type)
+    #changed
+    train, test = split_dataset(reg_trial, df, voice_type, sentence_type)
 
     x_train = []
     for i in range(len(train)):
@@ -232,32 +216,17 @@ for layer in range(layer_num):
       x_test.append(get_vector(test['Sentence'][j], layer))
     x_test = np.array(x_test)
 
-    mapdic = {1:0,2:0,3:1,4:1,5:1,6:2,7:2}
+    y_train = np.array(train["Plausibility"])
+    y_test = np.array(test["Plausibility"])
 
-    y_train = np.array(train["Score"].apply(lambda x: mapdic[round(x, 0)]))
-    y_test = np.array(test["Score"].apply(lambda x: mapdic[round(x, 0)]))
-    #y_train = np.array(train["Score"].apply(lambda x: round(x, 0)))
-    #y_test = np.array(test["Score"].apply(lambda x: round(x, 0)))
-
-    # Fitting classification
-
-    svc_bal = SVC(kernel='linear', class_weight="balanced", probability=True)
-    svc_imb = SVC(kernel='linear', class_weight=None, probability=True)
-    clf = LogisticRegression(solver="saga",multi_class="multinomial",penalty="l1",max_iter=30,random_state=42)
-
-    clf = svc_bal 
-    clf.fit(x_train, y_train)
-
-
-    #print(clf.__repr__())
-
-    y_pred = clf.predict(x_test)
-    print(classification_report(y_test, clf.predict(x_test)))
-    Accuracy.append(accuracy_score(y_test, y_pred)) #clf.score(y_test, y_pred))
-
-  print('layer', layer, statistics.mean(Accuracy))
+    # Fitting regression
+    logreg = LogisticRegression(max_iter=500, solver='liblinear')
+    logreg.fit(x_train, y_train)
+    y_pred = logreg.predict(x_test)
+    Accuracy.append(metrics.accuracy_score(y_test, y_pred))
+  print('layer', layer_num, statistics.mean(Accuracy))
   print(Accuracy)
   out.append(Accuracy)
-  
+
 df_out = pd.DataFrame(out)
 df_out.to_csv(output_path, header = False)
