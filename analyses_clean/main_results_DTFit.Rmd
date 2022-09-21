@@ -18,6 +18,7 @@ library(patchwork)
 library(lme4)
 library(lmerTest)
 library(gtools)
+library(cowplot)
 
 source('dataloader_utils.R') #includes normalizations, read_data functions
 source('stats_utils.R')
@@ -29,7 +30,7 @@ options(dplyr.summarise.inform = FALSE)
 ### Print environment variables 
 ```{r}
 #SET ENVIRONMENT VARIABLES
-which_models <- "llms_main" #can be "llms_all", "llms_main", or "all_main"
+which_models <- "all_main" #can be "all_main", "llms_main", "baselines", or "all_main"
 # llms_main = human + main LLMs
 # all_main = human + main LLMs + main baselines
 # llms_all = human + all LLMs
@@ -66,35 +67,55 @@ dat = read.csv('clean_data/clean_DTFit_df.csv')
 # Select which models/metrics to plot
 ```{r, utils.choose_models, echo=FALSE}
 human <- c("human")
-llms <- c("GPT2","BERT","RoBERTa")
-llms_main <- c("GPT2-xl.l2r","BERT-large.plast","RoBERTa-large.plast")
-baselines <- c("tinyLSTM.surprisal","syntax.PPMI","thematicFit.prod", "SDM")
+llms <- c("RoBERTa","BERT","GPT2")
+#llms_main <- c("GPT2-xl.l2r","BERT-large.pverb","RoBERTa-large.pverb")
+llms_main <- c("RoBERTa-large.PLL.average", "BERT-large.PLL.average", "GPT2-xl.l2r")
+baselines <- c("tinyLSTM.surprisal","SDM", "thematicFit.prod", "syntax.PPMI")
 
 llms_main <- c(human, llms_main)
 all_main <- c(llms_main, baselines)
+baselines <- c(human, baselines)
 
 unique_metrics = unique(dat$Metric)
-llms <- unique_metrics[grepl(paste(llms, collapse = "|"), unique_metrics)]
-llms = mixedsort(llms)
+llms <- c("human","RoBERTa-large.PLL.average","RoBERTa-large.pverb.average","RoBERTa-large.plast.average", "BERT-large.PLL.average","BERT-large.pverb.average","BERT-large.plast.average")
 
-llms_all <- llms
+llms_all <- c(human,llms)
 
 # select which to use
 chosen_models = eval(parse(text=which_models))
 dat = dat %>% filter(Metric %in% chosen_models)
 
+if (grepl("llms_all", which_models) == FALSE){
+# shorten model names
+llms_main_short <- c("RoBERTa-large", "BERT-large", "GPT2-xl")
+baselines_short <- c("tinyLSTM","SDM", "thematicFit", "syntax-PPMI")
+models_short = c(human, llms_main_short, baselines_short)
+
+  convert_metric_names <- function(col) {
+    gsub(".surprisal|.prod|.pverb|.l2r|.PLL.average", "", col)
+  }
+
+dat = dat %>%
+  mutate(MetricModel = Metric) %>%
+  mutate(Metric = convert_metric_names(Metric)) %>%
+  mutate(Metric = ifelse(dat$Metric=="syntax.PPMI", "syntax-PPMI", Metric))
+
+chosen_models = unique(dat$Metric)
+chosen_models = chosen_models[order(match(chosen_models,models_short))]
+}else{
+    convert_metric_names <- function(col) {
+    gsub(".average", "", col)
+    }
+  dat = dat %>%
+    mutate(MetricModel = Metric) %>%
+    mutate(Metric = convert_metric_names(Metric))
+  chosen_models = unique(dat$Metric)
+  mlm_order = c("human","RoBERTa-large.PLL","RoBERTa-large.l2r","RoBERTa-large.pverb","RoBERTa-large.plast", "BERT-large.PLL","BERT-large.l2r","BERT-large.pverb","BERT-large.plast")
+  chosen_models = chosen_models[order(match(chosen_models,mlm_order))]
+}
 message("Using these models/metrics:")
 dat$Metric = factor(dat$Metric, levels = chosen_models)
-print(unique(dat$Metric))
-
-# shorten model names
-llms_main_short <- c("GPT2-xl","BERT-large","RoBERTa-large")
-baselines_short <- c("tinyLSTM","syntax-PPMI","thematicFit", "SDM")
-models_short = c(human, llms_main_short, baselines_short)
-dat = dat %>%
-  separate(Metric, c("Model", "ProbEstimate"), sep="\\.", remove=FALSE) %>%
-  mutate(Model = replace(Model, Model=="syntax", "syntax-PPMI"))
-dat$Model = factor(dat$Model, levels=models_short)
+print(chosen_models)
 ```
 
 
@@ -131,36 +152,31 @@ if (nrows * ncols < nr_models) {
 ```
 
 ```{r}
-
-lower_better = c("surprisal")
-lower_better_pat <- paste(lower_better, collapse = '|')
-
 #add Category color
 if (which_models == "llms_all") {
   dat.binchoice = dat %>%
-  mutate(Metric = as.character(Metric)) %>%
-  mutate(Category = ifelse(startsWith(Metric, "BERT"), "BERT", "RoBERTa")) %>%
-  mutate(Category = ifelse(startsWith(Metric, "GPT2"), "GPT2", Category)) %>%
-  mutate(Category = ifelse(Metric=="human", "human", Category))
+    mutate(Metric = as.character(Metric)) %>%
+    mutate(Category = ifelse(startsWith(Metric, "BERT"), "BERT", "RoBERTa")) %>%
+    mutate(Category = ifelse(startsWith(Metric, "GPT2"), "GPT2", Category)) %>%
+    mutate(Category = ifelse(Metric=="human", "human", Category))
 } else {
   dat.binchoice = dat %>%
-  mutate(Category = ifelse(Metric%in%llms, "LLMs", "baselines")) %>%
-  mutate(Category = ifelse(Metric=="human", "human", Category))
+    mutate(Category = ifelse(Metric%in%llms_main_short, "LLMs", "baselines")) %>%
+    mutate(Category = ifelse(Metric=="human", "human", Category))
 }
 
 dat.binchoice = dat.binchoice %>%
-  mutate(LowerBetter = ifelse(grepl(lower_better_pat, Metric),TRUE,FALSE)) %>%
-  group_by(ItemNum, TrialType, Metric, Model, LowerBetter, Category) %>%
-  summarize(ScoreDiff = FinalNormScore[Plausibility=="Plausible"]-FinalNormScore[Plausibility=="Implausible"]) %>%
+  group_by(ItemNum, Metric, LowerBetter, Category) %>%
+  summarize(ScoreDiff = NormScore[Plausibility=="Plausible"]-NormScore[Plausibility=="Implausible"]) %>%
   mutate(FinalScoreDiff = ifelse(LowerBetter==TRUE, -ScoreDiff, ScoreDiff)) %>%
-  mutate(Accuracy = ifelse(FinalScoreDiff>0, 1, 0)) %>%
+  mutate(Accuracy = ifelse(FinalScoreDiff>0, 1, ifelse(FinalScoreDiff<0, 0, NA))) %>%
   ungroup()
 
 # specify order for plotting
 dat.binchoice$Metric = factor(dat.binchoice$Metric, levels=chosen_models)
 
 if (which_models=="llms_all") {
-  dat.binchoice$Category = factor(dat.binchoice$Category, levels=c("human", "GPT2", "BERT", "RoBERTa", "tinyLSTM"))
+  dat.binchoice$Category = factor(dat.binchoice$Category, levels=c("human", "RoBERTa", "BERT", "GPT2"))
 } else {
   dat.binchoice$Category = factor(dat.binchoice$Category, levels=c("human", "LLMs", "baselines"))
 }
@@ -171,8 +187,8 @@ if (which_models=="llms_all") {
 ```{r}
 # get p values
 dat.binchoice.summary = dat.binchoice %>%
-  group_by(Category, Metric, Model) %>%
-  summarize(NumCorrect=sum(Accuracy), NumTotal=length(Accuracy)) %>%
+  group_by(Category, Metric) %>%
+  summarize(NumCorrect=sum(Accuracy[!is.na(Accuracy)]), NumTotal=length(Accuracy[!is.na(Accuracy)])) %>%
   mutate(AccuracyScore = NumCorrect/NumTotal) %>%
   ungroup() %>%
   mutate(pVal = calculate_binom_pval(NumCorrect, NumTotal))
@@ -207,8 +223,8 @@ dat.binchoice.summary.withchisq = dat.binchoice.summary.withchisq %>%
                                 ifelse(pVal2humansAdjusted<0.05, "*", "")))) 
 
 # print the result
-for (i in seq_along(dat.binchoice.summary.withchisq$Model)) {
-  print(paste(dat.binchoice.summary.withchisq$Model[i], ": ",
+for (i in seq_along(dat.binchoice.summary.withchisq$Metric)) {
+  print(paste(dat.binchoice.summary.withchisq$Metric[i], ": ",
         round(dat.binchoice.summary.withchisq$AccuracyScore[i],2), 
         ", χ2=", round(dat.binchoice.summary.withchisq$ChiSq[i],2), 
         ", p=", round(dat.binchoice.summary.withchisq$pVal2humansAdjusted[i],3),
@@ -224,7 +240,7 @@ for (i in seq_along(dat.binchoice.summary.withchisq$Model)) {
 plot.binacc = ggplot(data=dat.binchoice, 
        mapping=aes(x=Metric, y=Accuracy, fill=Category))+
   geom_hline(yintercept=1, color='gray50', linetype='dotted')+
-  stat_summary(geom='col', fun.y='mean',
+  stat_summary(geom='col', fun='mean',
                color='black', width=0.8)+
   stat_summary(geom='errorbar', fun.data='mean_se',
                color = 'black', size = 0.5, width=0.1)+
@@ -233,18 +249,19 @@ plot.binacc = ggplot(data=dat.binchoice,
   geom_hline(yintercept=.5, linetype='dotted')+
   theme_classic()+
   labs(x=NULL)+
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),
+        legend.position="none")
 plot.binacc
 
 savename <- "1_binaryAccuracy.png"
-ggsave(paste(savedir,savename,sep="/"), width=15, height=9, units='cm')
+ggsave(paste(savedir,savename,sep="/"), width=15, height=10, units='cm')
 ```
 
 ### Mean model results
 ```{r}
 dat.binchoice.meanbycategory = dat.binchoice.summary %>%
   group_by(Category) %>%
-  summarize(meanAccuracy = mean(AccuracyScore))
+  summarize(meanAccuracy = mean(AccuracyScore, rm.na=T))
 ```
 
 ## Error analysis
@@ -253,7 +270,7 @@ dat.binchoice.meanbycategory = dat.binchoice.summary %>%
 acc_by_sentence.LLM = dat.binchoice %>% 
   filter(Category=='LLMs') %>%
   group_by(ItemNum) %>%
-  mutate(meanAccuracy=mean(Accuracy))
+  mutate(meanAccuracy=mean(Accuracy, rm.na=T))
 ```
 
 ### Quick plot
@@ -265,7 +282,7 @@ ggplot(acc_by_sentence.LLM, aes(x=meanAccuracy)) + geom_histogram()
 
 ```{r}
 hard_sents = acc_by_sentence.LLM %>%
-  filter(meanAccuracy<0.5) %>%
+  filter(meanAccuracy<0.33) %>%
   select(ItemNum, meanAccuracy)
 
 hard_sents = inner_join(hard_sents, dat) %>%
@@ -281,27 +298,53 @@ write.csv(hard_sents, paste(savedir,savename,sep="/"), row.names=FALSE)
 
 ```{r}
 dat.binchoice.human = dat.binchoice %>% filter(Metric=='human')
+
+if (grepl("baselines",which_models)==FALSE){
 dat.binchoice.human = inner_join(dat.binchoice.human, acc_by_sentence.LLM %>% select(ItemNum, meanAccuracy)) %>%
   distinct()
+}else{
+  acc_by_sentence = dat.binchoice %>% 
+  filter(Category=='baselines') %>%
+  group_by(ItemNum) %>%
+  mutate(meanAccuracy=mean(Accuracy, rm.na=T))
+  
+  dat.binchoice.human = inner_join(dat.binchoice.human, acc_by_sentence %>% select(ItemNum, meanAccuracy)) %>%
+  distinct()
+}
+
+cortext_size = 4
+
+# calculate correlation
+cor_df = dat.binchoice.human %>% 
+  summarize(Correlation = cor(meanAccuracy, FinalScoreDiff),
+            pVal = cor.test(meanAccuracy, FinalScoreDiff, method="pearson")$p.value) %>%
+  mutate(pLabel = ifelse(pVal<0.001, "***",
+                               ifelse(pVal<0.01, "**",
+                                      ifelse(pVal<0.05, "*", ""))))
 
 ggplot(dat.binchoice.human, aes(x=meanAccuracy, y=FinalScoreDiff)) + 
-  stat_summary(geom='col', fun.y='mean')+
+  stat_summary(geom='col', fun='mean', fill='gray80')+
   stat_summary(geom='errorbar', fun.data='mean_se',
-               color = 'black', size = 0.5, width=0.1)
+               color = 'black', size = 0.7, width=0.07)+
+  geom_hline(yintercept=1, color='gray50', linetype='dotted')+
+  geom_jitter(width=0.01, size=0.7, color='gray50')+
+  geom_text(mapping=aes(x=0, y=1.10, 
+                      label=sprintf("r = %.2f%s", round(Correlation,2), pLabel)), 
+          data=cor_df, size=cortext_size, hjust = 0)+
+  scale_x_continuous(breaks=c(0,.33,.66,1), labels=c(0,1,2,3))+
+  labs(x="# correct LLM responses", y="Human score difference")+
+  theme_classic()
+
+savename <- "LLM correct vs human score diff.png"
+ggsave(paste(savedir,savename,sep="/"), width=8, height=8, units='cm')
 ```
 
-```{r}
-ggplot(dat.binchoice.human, aes(x=meanAccuracy, y=FinalScoreDiff)) + 
-  geom_jitter(width=0.02)
-
-cor(dat.binchoice.human$meanAccuracy, dat.binchoice.human$FinalScoreDiff)
-```
 
 # HISTOGRAMS
 
 ```{r, fig.height=2,fig.width=5}
 plot.plaus.density = ggplot()+
-  geom_density(data=dat, mapping=aes(FinalNormScore, fill = Plausibility), alpha = 0.2)+
+  geom_density(data=dat, mapping=aes(FinalNormScore, fill = factor(Plausibility, levels=c("Implausible","Plausible"))), alpha = 0.2)+
   facet_wrap(~Metric,nrow=nrows, ncol=ncols)+
   theme_classic()+
   xlab("Normed score") +
@@ -313,24 +356,21 @@ plot.plaus.density
 ### Mean diff scores by category
 ```{r mean diff, echo=FALSE}
 dat.meanDiff = dat.binchoice %>% 
-  group_by(Category, TrialType, Model) %>% 
+  group_by(Category, Metric) %>% 
   summarize(meanDiff = mean(FinalScoreDiff)) %>%
   ungroup() %>%
-  group_by(Category, TrialType) %>%
+  group_by(Category) %>%
   summarize(meanDiff = round(mean(meanDiff), 2)) %>%
   ungroup()
-
-dat.meanDiff = dat.meanDiff %>% 
-  spread(TrialType, meanDiff)
 ```
 
 # COMBINE
 
 ```{r combine}
-plot.binacc + plot.plaus.density + plot_layout(widths=c(1,2))
+plot_grid(plot.binacc, plot.plaus.density, labels = c('A', 'B'), rel_widths =c(1,1.5), label_size = 15)
 
 savename <- "general_plot.png"
-ggsave(paste(savedir,savename,sep="/"), height=10,width=24, units='cm')
+ggsave(paste(savedir,savename,sep="/"), height=9,width=30, units='cm')
 ```
 
 #REGRESSION
@@ -339,7 +379,7 @@ ggsave(paste(savedir,savename,sep="/"), height=10,width=24, units='cm')
 
 ```{r regression, echo=FALSE}
 
-metrics = llms_main
+metrics = chosen_models
 results = data.frame()
 
 for(i in seq_along(metrics)){
@@ -461,8 +501,6 @@ ggsave(paste(savedir,savename,sep="/"), width=20, height=8, units='cm')
 
 
 
-
-
 # SI - MODEL HUMAN COMPARISON
 
 ## Prep data
@@ -547,6 +585,15 @@ plot.model2human = ggplot(dat=dat.model2human)+
   theme(legend.position="none")
 plot.model2human
 
-#savename <- "model2human_byTrialType_LLMs.png"
-#ggsave(paste(savedir,savename,sep="/"), height=15,width=25, units='cm')
+savename <- "model2human_byTrialType_LLMs.png"
+ggsave(paste(savedir,savename,sep="/"), height=15,width=25, units='cm')
+```
+
+```{r}
+top_row <- plot_grid(plot.binacc, plot.model2human, labels = c('A', 'B'), rel_widths = c(1,1), label_size = 15)
+bottom_row <- plot_grid(plot.plaus.density, plot.plaus_llms, labels = c('C', 'D'), label_size = 15)
+cowplot <- plot_grid(top_row, bottom_row, ncol = 1)
+
+savename <- "general_plot_all.png"
+ggsave(paste(savedir,savename,sep="/"), height=15,width=30, units='cm')
 ```
