@@ -7,17 +7,18 @@ import pickle
 import os
 import os.path
 import argparse
+from tqdm import tqdm
 
 from transformers import BertTokenizer, RobertaTokenizer, GPT2Tokenizer, BertModel, RobertaModel, GPT2LMHeadModel, AutoModelForCausalLM, AutoTokenizer
 
-def get_vector(sentence, args):
+def get_vector(sentence, args, tokenizer, model):
     if 'gpt' in args.model_name:
         tokenized_text = tokenizer.tokenize(tokenizer.eos_token + sentence + tokenizer.eos_token)
     else:
         tokenized_text = tokenizer.tokenize(tokenizer.cls_token + sentence + tokenizer.sep_token)
-        tensor_input = torch.tensor([tokenizer.convert_tokens_to_ids(tokenized_text)])
+    tensor_input = torch.tensor([tokenizer.convert_tokens_to_ids(tokenized_text)])
     with torch.no_grad():
-        outputs = args.model(tensor_input)
+        outputs = model(tensor_input)
         # `hidden_states` has shape [24 x 1 x 22 x 1024]
         hidden_states = outputs[2]
     return hidden_states
@@ -28,6 +29,7 @@ def main():
     parser.add_argument('--model_name', required=True)
     parser.add_argument('--dataset_name', required=True, help="Should be one of {'DTFit', 'EventsRev', 'EventsAdapt'}")
     args = parser.parse_args()
+    print(f"{args}", flush=True)
     
     dic_tokenizers = {'bert-large-cased': BertTokenizer.from_pretrained('bert-large-cased'),
                   'roberta-large': RobertaTokenizer.from_pretrained('roberta-large'),
@@ -46,10 +48,10 @@ def main():
     model.eval()
     
     embedding_dict = {}
-    for i in range(len(dataset['Sentence'])):
-        embedding_dict[dataset['Sentence'][i]] = get_vector(dataset['Sentence'][i], args)
+    for i in tqdm(range(len(dataset['Sentence']))):
+        embedding_dict[dataset['Sentence'][i]] = get_vector(dataset['Sentence'][i], args, tokenizer, model)
     
-    savedir = os.path.abspath('../sentence_embeddings')
+    savedir = os.path.abspath(os.path.join(os.getcwd(),'../sentence_embeddings'))
     os.makedirs(savedir, exist_ok=True)
 
     with open(f'{savedir}/{args.dataset_name}_{args.model_name}.pickle', 'wb') as handle:

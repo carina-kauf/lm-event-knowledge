@@ -3,18 +3,16 @@ import torch
 import matplotlib.pyplot as plt
 import pandas as pd
 import statistics
-from sklearn.multiclass import OneVsRestClassifier
-from sklearn.linear_model import LogisticRegression, RidgeClassifierCV
-from sklearn.tree import DecisionTreeClassifier
+from sklearn.linear_model import LogisticRegression
 from sklearn.svm import SVC
-from sklearn.metrics import precision_recall_fscore_support, accuracy_score,classification_report
-
-#from ordinalClassif import OrdinalClassifier
-from ordinal import OrdinalClassifier
+from sklearn.metrics import accuracy_score,classification_report
+import os
 
 from sklearn import metrics
 import sys
 import pickle
+
+from tqdm import tqdm
 
 import warnings
 warnings.filterwarnings("ignore")
@@ -26,10 +24,11 @@ sentence_type = str(sys.argv[4])
 
 print(model_name, dataset_name, voice_type, sentence_type)
 
-with open(os.path.abspath(f'./sentence_embeddings/{dataset_name}_{model_name}.pickle'), 'rb') as f:
+with open(os.path.abspath(os.path.join(os.getcwd(),f'../sentence_embeddings/{dataset_name}_{model_name}.pickle')), 'rb') as f:
     hidden_states = pickle.load(f)
     
-layer_num = len(hidden_states)
+sent_key = list(hidden_states.keys())[0]
+layer_num = np.shape(hidden_states[sent_key])[0]
 
 def get_vector(sentence, layer):
   if 'gpt' in model_name:
@@ -199,16 +198,16 @@ def split_dataset(fold, dataset, voice_type, sentence_type):
   
   return train, test
 
-dataset = os.path.abspath(f'../../clean_data/clean_{dataset_name}_SentenceSet.csv')
-out_dir = os.path.abspath(f'../results/model2human/{model_name}_{dataset_name}_{voice_type}_{sentence_type}.csv')
+dataset = os.path.abspath(f'../../analyses_clean/clean_data/clean_{dataset_name}_df.csv')
+output_path = os.path.abspath(f'../results/model2human/{model_name}_{dataset_name}_{voice_type}_{sentence_type}.csv')
 df = pd.read_csv(dataset, low_memory=False)
 
 fold_num = 10
 np.random.seed(42)
 
 df = df[df['Metric'] == 'human']
-from collections import Counter
 
+# from collections import Counter
 #print(Counter(df["Score"].apply(lambda x: round(x, 0))))
 #ss
 
@@ -217,7 +216,7 @@ df = df.reset_index(drop = True)
 #df = df.head(10)
 
 out = []
-for layer in range(layer_num):
+for layer in tqdm(range(layer_num)):
   Accuracy = []
   for reg_trial in range(fold_num):
     train, test = split_dataset(reg_trial, df, voice_type, sentence_type)
@@ -255,7 +254,7 @@ for layer in range(layer_num):
     print(classification_report(y_test, clf.predict(x_test)))
     Accuracy.append(accuracy_score(y_test, y_pred)) #clf.score(y_test, y_pred))
 
-  print('layer', layer, statistics.mean(Accuracy))
+  print('layer', layer, statistics.mean(Accuracy), flush=True)
   print(Accuracy)
   out.append(Accuracy)
   

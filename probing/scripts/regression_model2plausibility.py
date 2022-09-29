@@ -15,10 +15,11 @@ dataset_name = str(sys.argv[2])
 voice_type = str(sys.argv[3])
 sentence_type = str(sys.argv[4])
 
-with open(os.path.abspath(f'./sentence_embeddings/{dataset_name}_{model_name}.pickle'), 'rb') as f:
+with open(os.path.abspath(f'../sentence_embeddings/{dataset_name}_{model_name}.pickle'), 'rb') as f:
     hidden_states = pickle.load(f)
-    
-layer_num = len(hidden_states)
+
+sent_key = list(hidden_states.keys())[0]
+layer_num = np.shape(hidden_states[sent_key])[0]
 
 def get_vector(sentence, layer):
   if 'gpt' in model_name:
@@ -187,8 +188,8 @@ def split_dataset(fold, dataset, voice_type, sentence_type):
 
   return train, test
 
-dataset = os.path.abspath(f'../../clean_data/clean_{dataset_name}_SentenceSet.csv')
-out_dir = os.path.abspath(f'../results/model2plausibility/{model_name}_{dataset_name}_{voice_type}_{sentence_type}.csv')
+dataset = os.path.abspath(f'../../clean_data/clean_{dataset_name}_df.csv')
+output_path = os.path.abspath(f'../results/model2plausibility/{model_name}_{dataset_name}_{voice_type}_{sentence_type}.csv')
 df = pd.read_csv(dataset)
 
 fold_num = 10
