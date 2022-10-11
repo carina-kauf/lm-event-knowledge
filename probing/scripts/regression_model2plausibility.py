@@ -9,13 +9,16 @@ import sys
 import pickle
 import os
 import os.path
+from tqdm import tqdm
 
 model_name = str(sys.argv[1])
 dataset_name = str(sys.argv[2])
 voice_type = str(sys.argv[3])
 sentence_type = str(sys.argv[4])
 
-with open(os.path.abspath(f'../sentence_embeddings/{dataset_name}_{model_name}.pickle'), 'rb') as f:
+print(f"{model_name} | {dataset_name} | {voice_type} | {sentence_type}", flush=True)
+
+with open(os.path.abspath(os.path.join(os.getcwd(),f'../sentence_embeddings/{dataset_name}_{model_name}.pickle')), 'rb') as f:
     hidden_states = pickle.load(f)
 
 sent_key = list(hidden_states.keys())[0]
@@ -188,9 +191,9 @@ def split_dataset(fold, dataset, voice_type, sentence_type):
 
   return train, test
 
-dataset = os.path.abspath(f'../../clean_data/clean_{dataset_name}_df.csv')
+dataset = os.path.abspath(f'../../analyses_clean/clean_data/clean_{dataset_name}_df.csv')
 output_path = os.path.abspath(f'../results/model2plausibility/{model_name}_{dataset_name}_{voice_type}_{sentence_type}.csv')
-df = pd.read_csv(dataset)
+df = pd.read_csv(dataset, low_memory=False)
 
 fold_num = 10
 np.random.seed(42)
@@ -201,7 +204,7 @@ if dataset_name == 'EventsAdapt':
 #df = df.head(10)
 
 out = []
-for layer in range(layer_num):
+for layer in tqdm(range(layer_num)):
   Accuracy = []
   for reg_trial in range(fold_num):
     #changed

@@ -22,7 +22,7 @@ dataset_name = str(sys.argv[2])
 voice_type = str(sys.argv[3])
 sentence_type = str(sys.argv[4])
 
-print(model_name, dataset_name, voice_type, sentence_type)
+print(model_name, dataset_name, voice_type, sentence_type, flush=True)
 
 with open(os.path.abspath(os.path.join(os.getcwd(),f'../sentence_embeddings/{dataset_name}_{model_name}.pickle')), 'rb') as f:
     hidden_states = pickle.load(f)
