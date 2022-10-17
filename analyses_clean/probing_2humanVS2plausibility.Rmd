@@ -1,0 +1,170 @@
+---
+title: "Probing results"
+output: html_document #with html_notebook you get a printout of the notebook
+---
+
+# SETUP
+
+```{r setup, include=FALSE, echo=TRUE}
+knitr::opts_chunk$set(echo = TRUE)
+rm(list=ls()) 
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(grid)
+library(gridExtra)
+library(operator.tools)
+library(lme4)
+library(lmerTest)
+library(cocor)
+library(patchwork)
+library(gtools)
+library(cowplot)
+
+source('dataloader_utils.R') #includes normalizations, read_data functions
+source('stats_utils.R')
+
+# Suppress summarise info
+options(dplyr.summarise.inform = FALSE)
+```
+
+## Output dir
+```{r}
+path <- paste("results/")
+ifelse(!dir.exists(path), dir.create(path), FALSE)
+savedir <- paste(path,"Probing",sep='')
+ifelse(!dir.exists(savedir), dir.create(savedir), FALSE)
+```
+
+
+# READ DATA
+```{r}
+model2plausibility_dir = "../probing/results/model2plausibility"
+datafile = "all_combined_kfold_new.csv"
+
+dat = read.csv(paste(model2plausibility_dir, datafile, sep="/"))
+
+
+dat <- subset(dat, select = -X)
+dat$Layer = as.factor(dat$Layer)
+dat$Model = factor(dat$Model, levels=c("bert-large-cased", "roberta-large", "gpt2-xl"))
+```
+
+# STATS
+
+```{r}
+dat.DTFit = dat %>% filter(Dataset=="DTFit")
+
+m.DTFit = lm(Accuracy~Layer:Model, data=dat.DTFit)
+summary(m.DTFit)
+```
+
+# READ HUMAN CEILING DATA
+```{r}
+dat$Layer = as.numeric(as.character(dat$Layer))
+
+
+model2plausibility_dir = "../probing/results/model2human_ceiling"
+
+read_data <- function(directory, filename) {
+  print(paste(filename))
+  metadata = str_split(filename, "_")[[1]]
+  d = read.delim(paste(model2plausibility_dir, filename, sep='/'), 
+                 header=FALSE, sep=',')
+  d = d %>%
+    mutate(Dataset = metadata[[2]]) %>%
+    mutate(VoiceType = metadata[[3]]) %>%
+    mutate(TrialType = metadata[[4]]) %>%
+    mutate(TrialType = str_replace(TrialType, ".csv", "")) %>%
+    rename(Iteration = V1)  %>%
+    rename(Accuracy = V2)  %>%
+    mutate(Plot = "HumanCeiling")
+}
+
+filenames = list.files(path=model2plausibility_dir, pattern='*.csv')
+dat.ceiling = do.call(rbind, lapply(filenames, function(x) read_data(model2plausibility_dir, x)))
+
+add_info <- function(dataframe, model_name) {
+  if (grepl("gpt2-xl",model_name) == FALSE){
+    toadd = 5
+  }else{
+    toadd = 10
+  }
+  dataframe = dataframe %>%
+    mutate(Layer = max(subset(dat, Model==model_name)$Layer) + toadd) %>%
+    mutate(Model = model_name)
+}
+
+models = unique(c(dat$Model))
+  
+dat.ceiling.full = do.call(rbind, lapply(models, function(x) add_info(dat.ceiling, x)))
+```
+```{r}
+merged <- rbind(dat, dat.ceiling.full)
+```
+
+# PLOT
+
+## breaks function x axis
+```{r}
+breaks_fun <- function(x) {
+  if (max(x) > 40) {
+    c(seq(0, 50, 10), max(x) + 10)
+  } else {
+    c(seq(0, 25, 5), max(x) + 5)
+  }
+}
+
+```
+
+## All datasets
+```{r, fig.width=15, fig.height=8}
+plot_data = merged %>% filter(TrialType=="normal", VoiceType=="normal",Plot!="HumanCeiling")
+plot_data$Layer = as.numeric(as.character(plot_data$Layer))
+
+ceil_data = merged %>% filter(TrialType=="normal", VoiceType=="normal",Plot=="HumanCeiling")
+ceil_summary <- ceil_data %>%
+  group_by(Dataset) %>%
+  summarise(
+    MeanAccuracy = mean(Accuracy),
+    sd = sd(Accuracy),
+    n = n(),
+    SE = sd / sqrt(n)
+  )
+
+datasets = c(ceil_summary$Dataset)
+
+ceil_data = ceil_data %>% 
+  mutate(MeanAccuracy = NA) %>%
+  mutate(SE = NA)
+
+for( dt in datasets){
+  ceil_data = ceil_data %>%
+    mutate(MeanAccuracy = ifelse(ceil_data$Dataset==dt, subset(ceil_summary, Dataset == dt)$MeanAccuracy, ceil_data$MeanAccuracy)) %>%
+    mutate(SE = ifelse(ceil_data$Dataset==dt, subset(ceil_summary, Dataset == dt)$SE, ceil_data$SE))
+}
+
+ggplot(data = plot_data,
+       mapping = aes(x=Layer, y=Accuracy, color=Dataset, group = Dataset))+
+  facet_grid(~Model, scales="free_x")+
+  geom_hline(yintercept=.5, linetype='dotted')+
+  geom_hline(yintercept=1, linetype='dotted')+
+  stat_summary(geom='line', fun='mean')+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               size = 0.2, width=0.1)+
+  geom_point(data = ceil_data, aes(x=Layer, y=MeanAccuracy, color=Dataset), size=0.2)+
+  geom_errorbar(data = ceil_data, aes(x=Layer, ymin=MeanAccuracy-SE, ymax=MeanAccuracy+SE, color=Dataset),width = 0.05) +
+  geom_text(data = ceil_data, group=ceil_data$Dataset, x =ifelse(ceil_data$Model=="gpt2-xl", ceil_data$Layer - 6, ceil_data$Layer - 3),  y = 0.98,
+            size = 2.5,
+            label = "ceiling", 
+            colour = "#6d6d6d") +
+  theme_classic()+
+  scale_x_continuous(breaks=breaks_fun)+
+  scale_y_continuous(breaks=seq(0.4,1.2,0.1))
+
+savename <- "model2plausibility_all_datasets_ceiled.png"
+ggsave(paste(savedir,savename,sep="/"), width=20, height=8, units='cm', device='tiff', dpi=700)
+```
+
+

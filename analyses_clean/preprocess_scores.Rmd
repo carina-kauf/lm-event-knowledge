@@ -1,6 +1,6 @@
 ---
 title: "preprocess_dataframes"
-output: html_document
+output: html_notebook
 ---
 
 Returns clean dataframes (after excluding sentences that are mismatched between models/humans) for:
@@ -157,6 +157,7 @@ dat.models$Plausibility = recode(dat.models$Plausibility,
 ```{r}
 # check that sentences match & exclude items where they don't
 shared_sentences = intersect(unique(dat.models$Sentence), unique(dat.human.mean$Sentence))
+
 if (any(sapply(dat.models$Sentence, function(x) {!(x %in% shared_sentences)}))) {
   excluded = dat.models %>% filter(!(Sentence %in% shared_sentences)) %>%
     select(ItemNum, Sentence) %>% distinct()
@@ -171,7 +172,9 @@ if (any(sapply(dat.human.mean$Sentence, function(x) {!(x %in% shared_sentences)}
   warning(paste(excluded$Sentence, '\n'))
   dat.human.mean = dat.human.mean %>% filter(!(ItemNum %in% excluded$ItemNum))
 }
+```
 
+```{r}
 # use human data as a reference for item numbers
 sentence_itemnums = dat.human.mean %>%
   select(ItemNum, Sentence) %>% distinct()
@@ -184,8 +187,9 @@ dat.human.mean$Metric = "human"
 dat.human.mean = dat.human.mean %>% select(-Plausibility)
 
 #get model plausibility assignment
+assignment_metric = dat.models$Metric[1]
 dat.models.plausibility.assignment = dat.models %>%
-  filter(Metric == "RoBERTa-large.pverb") %>%
+  filter(Metric == assignment_metric) %>%
   select(Sentence,ItemNum,Plausibility)
 dat.human.mean = merge(dat.human.mean,dat.models.plausibility.assignment,by=c("Sentence","ItemNum"))
 
@@ -252,6 +256,8 @@ if (length(unique(item_sent_combos$SentenceCount))>1) {
   print (item_sent_combos %>% filter(SentenceCount!=correctNum))
   stop('Not all metrics have the same sentences')
 }
+
+print(paste(unique(dat$Metric)))
 ```
 
 # Plausibility
@@ -259,16 +265,17 @@ if (length(unique(item_sent_combos$SentenceCount))>1) {
 We need to define for which models a higher score for plausible sentences is desirable:
 
 1. HIGHER = MORE PLAUSIBLE
-    * ANNs >> metric is probability
+    * (Ro)BERT(a) >> metric is avg PLL
     * PPMI >> higher PMI indicates a plausible sentence
     * Vector similarity
     * TFit similarity (sum of vector similarities to prototype vector)
     * SDM (sum of some vector similarities)
 2. LOWER = MORE PLAUSIBLE
     * Surprisal
+    * GPT >> metric is avg NLL loss
 
 ```{r pressure, echo=FALSE}
-lower_better = c("surprisal")
+lower_better = c("surprisal","GPT")
 lower_better_pat <- paste(lower_better, collapse = '|')
 
 # Add FinalNormScore for NormScores plotting in the same direction for all metrics (i.e., Plausible is more positive)

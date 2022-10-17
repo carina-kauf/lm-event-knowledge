@@ -103,9 +103,9 @@ llms_main_short <- c("RoBERTa-large", "BERT-large", "GPT-J", "GPT2-xl")
 baselines_short <- c("tinyLSTM","SDM", "thematicFit", "syntax-PPMI")
 models_short = c(human, llms_main_short, baselines_short)
 
-  convert_metric_names <- function(col) {
-    gsub(".surprisal|.prod|.pverb|.l2r.average|.l2r|.PLL.average", "", col)
-  }
+convert_metric_names <- function(col) {
+  gsub(".surprisal|.prod|.pverb|.l2r.average|.l2r|.PLL.average|.PLL", "", col)
+}
 
 dat = dat %>%
   mutate(MetricModel = Metric) %>%
@@ -125,6 +125,7 @@ chosen_models = chosen_models[order(match(chosen_models,models_short))]
   mlm_order = c("human","RoBERTa-large.PLL","RoBERTa-large.l2r","RoBERTa-large.pverb","RoBERTa-large.plast", "BERT-large.PLL","BERT-large.l2r","BERT-large.pverb","BERT-large.plast")
   chosen_models = chosen_models[order(match(chosen_models,mlm_order))]
 }
+print(paste(unique(dat$Metric)))
 message("Using these models/metrics:")
 dat$Metric = factor(dat$Metric, levels = chosen_models)
 print(chosen_models)

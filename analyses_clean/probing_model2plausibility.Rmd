@@ -20,6 +20,8 @@ library(lmerTest)
 library(cocor)
 library(patchwork)
 library(gtools)
+library(cowplot)
+
 
 source('dataloader_utils.R') #includes normalizations, read_data functions
 source('stats_utils.R')
@@ -40,15 +42,31 @@ ifelse(!dir.exists(savedir), dir.create(savedir), FALSE)
 # READ DATA
 ```{r}
 model2plausibility_dir = "../probing/results/model2plausibility"
-datafile = "all_combined_kfold_new.csv"
 
-dat = read.csv(paste(model2plausibility_dir, datafile, sep="/"))
+read_data <- function(directory, filename) {
+  print(paste(filename))
+  if (!"combined" %in% filename){
+  metadata = str_split(filename, "_")[[1]]
+  d = read.delim(paste(model2plausibility_dir, filename, sep='/'), 
+                 header=FALSE, sep=',')
+  d = d %>%
+    mutate(Dataset = metadata[[2]]) %>%
+    mutate(VoiceType = metadata[[3]]) %>%
+    mutate(TrialType = metadata[[4]]) %>%
+    mutate(TrialType = str_replace(TrialType, ".csv", "")) %>%
+    rename(Iteration = V1)  %>%
+    rename(Accuracy = V2)  %>%
+    mutate(Plot = metadata[[1]])
+  }
+}
 
+filenames = list.files(path=model2plausibility_dir, pattern='*.csv')
+dat.models = do.call(rbind, lapply(filenames, function(x) read_data(model2plausibility_dir, x)))
 
-dat <- subset(dat, select = -X)
+dat = dat.models
 
 dat$Layer = as.factor(dat$Layer)
-dat$Model = factor(dat$Model, levels=c("bert-large-cased", "roberta-large", "gpt2-xl"))
+dat$Model = factor(dat$Model, levels=c("roberta-large","bert-large-cased", "gpt-j", "gpt2-xl"))
 ```
 
 # STATS
@@ -65,12 +83,12 @@ summary(m.DTFit)
 dat$Layer = as.numeric(as.character(dat$Layer))
 
 
-model2plausibility_dir = "../probing/results/model2human_ceiling"
+model2human_dir = "../probing/results/model2human_ceiling"
 
 read_data <- function(directory, filename) {
   print(paste(filename))
   metadata = str_split(filename, "_")[[1]]
-  d = read.delim(paste(model2plausibility_dir, filename, sep='/'), 
+  d = read.delim(paste(model2human_dir, filename, sep='/'), 
                  header=FALSE, sep=',')
   d = d %>%
     mutate(Dataset = metadata[[2]]) %>%
@@ -82,8 +100,8 @@ read_data <- function(directory, filename) {
     mutate(Plot = "HumanCeiling")
 }
 
-filenames = list.files(path=model2plausibility_dir, pattern='*.csv')
-dat.ceiling = do.call(rbind, lapply(filenames, function(x) read_data(model2plausibility_dir, x)))
+filenames = list.files(path=model2human_dir, pattern='*.csv')
+dat.ceiling = do.call(rbind, lapply(filenames, function(x) read_data(model2human_dir, x)))
 
 add_info <- function(dataframe, model_name) {
   if (grepl("gpt2-xl",model_name) == FALSE){
@@ -116,6 +134,13 @@ breaks_fun <- function(x) {
   }
 }
 
+label_names <- c(
+  "roberta-large" = "RoBERTa-large",
+  "bert-large-cased" = "BERT-large",
+  "gpt-j" = "GPT-J",
+  "gpt2-xl" = "GPT2-xl"
+)
+
 ```
 
 ## All datasets
@@ -147,7 +172,7 @@ for( dt in datasets){
 
 ggplot(data = plot_data,
        mapping = aes(x=Layer, y=Accuracy, color=Dataset, group = Dataset))+
-  facet_grid(~Model, scales="free_x")+
+  facet_grid(~Model, scales="free_x", labeller = labeller(Model = as_labeller(label_names)))+
   geom_hline(yintercept=.5, linetype='dotted')+
   geom_hline(yintercept=1, linetype='dotted')+
   stat_summary(geom='line', fun='mean')+
@@ -213,7 +238,7 @@ dataset = "EventsAdapt"
 
 ggplot(data = dat %>% filter(Dataset==dataset, TrialType=="normal"),
        mapping = aes(x=Layer, y=Accuracy, color=VoiceType, group=VoiceType))+
-  facet_grid(~Model, scales="free_x")+ 
+  facet_grid(~Model, scales="free_x", labeller = labeller(Model = as_labeller(label_names)))+
   scale_x_continuous(breaks = breaks_fun, limits = c(0, NA)) + 
   geom_hline(yintercept=.5, linetype='dotted')+
   geom_hline(yintercept=1, linetype='dotted')+
@@ -226,7 +251,7 @@ savename <- "model2plausibility_EventsAdapt_active-passive.png"
 ggsave(paste(savedir,savename,sep="/"), width=20, height=8, units='cm')
 ```
 
-###Attempt with human ceiling
+###With human ceiling
 ```{r, fig.width=15, fig.height=8}
 dataset = "EventsAdapt"
 plot_data = merged %>% filter(Dataset==dataset, TrialType=="normal",Plot!="HumanCeiling")
@@ -253,9 +278,9 @@ for( vt in voice_types){
     mutate(SE = ifelse(ceil_data$VoiceType==vt, subset(ceil_summary, VoiceType == vt)$se, ceil_data$SE))
 }
 
-ggplot(data = plot_data,
+plot.gen.voice <- ggplot(data = plot_data,
        mapping = aes(x=Layer, y=Accuracy, color=VoiceType, group=VoiceType))+
-  facet_grid(~Model, scales="free_x")+
+  facet_grid(~Model, scales="free_x", labeller = labeller(Model = as_labeller(label_names)))+
   geom_hline(yintercept=.5, linetype='dotted')+
   geom_hline(yintercept=1, linetype='dotted')+
   stat_summary(geom='line', fun='mean')+
@@ -281,7 +306,7 @@ dataset = "EventsAdapt"
 
 ggplot(data = dat %>% filter(Dataset==dataset, VoiceType=="active-active", !grepl('AAR', TrialType)),
        mapping = aes(x=Layer, y=Accuracy, color=TrialType, group=TrialType))+
-  facet_wrap(~Model, scales="free_x")+
+  facet_wrap(~Model, scales="free_x", labeller = labeller(Model = as_labeller(label_names)))+
   scale_x_continuous(breaks = breaks_fun, limits = c(0, NA)) + 
   geom_hline(yintercept=.5, linetype='dotted')+
   geom_hline(yintercept=1, linetype='dotted')+
@@ -321,9 +346,9 @@ for( tt in trial_types){
     mutate(SE = ifelse(ceil_data$TrialType==tt, subset(ceil_summary, TrialType == tt)$se, ceil_data$SE))
 }
 
-ggplot(data = plot_data,
+plot.gen.trialtype <- ggplot(data = plot_data,
        mapping = aes(x=Layer, y=Accuracy, color=TrialType, group=TrialType))+
-  facet_grid(~Model, scales="free_x")+
+  facet_grid(~Model, scales="free_x", labeller = labeller(Model = as_labeller(label_names)))+
   geom_hline(yintercept=.5, linetype='dotted')+
   geom_hline(yintercept=1, linetype='dotted')+
   stat_summary(geom='line', fun='mean')+
@@ -341,4 +366,11 @@ ggplot(data = plot_data,
 
 savename <- "model2plausibility_EventsAdapt_AI-AAN_ceiled.png"
 ggsave(paste(savedir,savename,sep="/"), width=20, height=8, units='cm', device='tiff', dpi=700)
+```
+
+```{r}
+plot_grid(plot.gen.voice, plot.gen.trialtype, labels = c('A', 'B'), label_size = 15, ncol = 1)
+
+savename <- "generalization_combined_plot.png"
+ggsave(paste(savedir,savename,sep="/"), height=20, width=25, units='cm')
 ```

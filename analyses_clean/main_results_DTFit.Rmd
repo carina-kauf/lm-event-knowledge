@@ -68,8 +68,9 @@ dat = read.csv('clean_data/clean_DTFit_df.csv')
 ```{r, utils.choose_models, echo=FALSE}
 human <- c("human")
 llms <- c("RoBERTa","BERT","GPT2")
-#llms_main <- c("GPT2-xl.l2r","BERT-large.pverb","RoBERTa-large.pverb")
-llms_main <- c("RoBERTa-large.PLL.average", "BERT-large.PLL.average", "GPT2-xl.l2r")
+
+llms_main <- c("RoBERTa-large.PLL.average", "BERT-large.PLL.average", "GPT-J.l2r.average", "GPT2-xl.l2r.average")
+#llms_main <- c("RoBERTa-large.PLL.average", "BERT-large.PLL.average", "GPT-J.l2r.average", "GPT2-xl.l2r.average")
 baselines <- c("tinyLSTM.surprisal","SDM", "thematicFit.prod", "syntax.PPMI")
 
 llms_main <- c(human, llms_main)
@@ -87,12 +88,12 @@ dat = dat %>% filter(Metric %in% chosen_models)
 
 if (grepl("llms_all", which_models) == FALSE){
 # shorten model names
-llms_main_short <- c("RoBERTa-large", "BERT-large", "GPT2-xl")
+llms_main_short <- c("RoBERTa-large", "BERT-large", "GPT-J", "GPT2-xl")
 baselines_short <- c("tinyLSTM","SDM", "thematicFit", "syntax-PPMI")
 models_short = c(human, llms_main_short, baselines_short)
 
   convert_metric_names <- function(col) {
-    gsub(".surprisal|.prod|.pverb|.l2r|.PLL.average", "", col)
+    gsub(".surprisal|.prod|.pverb|.l2r.average|.l2r|.PLL.average", "", col)
   }
 
 dat = dat %>%
