@@ -50,26 +50,29 @@ clean_metric_name <- function(filename) {
   # thematic fit
   metric = str_replace(metric, "deps.update-model.TF-prod.n200", "thematicFit.prod")
   metric = str_replace(metric, "update-model.TF-prod.n200", "thematicFit.prod")
-  # GPT2
+  # GPT
   metric = str_replace(metric, "gpt2-medium", "GPT2-medium")
   metric = str_replace(metric, "gpt2-xl", "GPT2-xl")
-  metric = str_replace(metric, "sentence-prob", "l2r")
-  # GPT-Neo
   metric = str_replace(metric, "gpt-neo", "GPT-neo")
-  # GPT-J
   metric = str_replace(metric, "gpt-j", "GPT-J")
   # tinyLSTM
   metric = str_replace(metric, "surprisal_scores_tinylstm", "tinyLSTM.surprisal")
   metric = str_replace(metric, "vassallo_tinyLSTM", "tinyLSTM")
   metric = str_replace(metric, "tinylstm.surprisal_scores", "tinyLSTM.surprisal")
-  # Bidirectional
-  metric = str_replace(metric, "sentence-PLL", "PLL")
-  metric = str_replace(metric, "sentence-l2r-PLL", "l2r")
-  metric = str_replace(metric, ".verb-PLL", ".pverb")
-  metric = str_replace(metric, ".last-word-PLL", ".plast")
-  # BERT
+  # (Ro)BERT(a)
   metric = str_replace(metric, "bert-large-cased", "BERT-large")
   metric = str_replace(metric, "roberta-large", "RoBERTa-large")
+  # All
+  metric = str_replace(metric, "sentence-l2r-PLL.sentence_surp", "l2r")
+  metric = str_replace(metric, "sentence-PLL.sentence_surp", "PLL")
+  metric = str_replace(metric, "sentence_surp", "l2r")
+  metric = str_replace(metric, ".average_byNrTokens", ".average")
+  metric = str_replace(metric, ".average_byNrWords", ".averageByNrWords")
+  #metric = str_replace(metric, "l2r.sentence_surp", "l2r")
+  #metric = str_replace(metric, "sentence-PLL", "PLL")
+  #metric = str_replace(metric, "sentence-l2r-PLL", "l2r")
+  #metric = str_replace(metric, ".verb-PLL", ".pverb")
+  #metric = str_replace(metric, ".last-word-PLL", ".plast")
   
   return(metric)
 }
