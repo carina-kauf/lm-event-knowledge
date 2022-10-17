@@ -309,18 +309,18 @@ img_aa <- get_png("./animate-animate.png")
 (p3 <- ggplot(mapping = aes(x = 0:1, y = 1)) +
   theme_void() +
   annotation_custom(img_ai, xmin = .2, xmax = .3) +
-  annotation_custom(img_aa, xmin = .59, xmax = .69))
+  annotation_custom(img_aa, xmin = .62, xmax = .72))
 
 plot.binacc.logos <- gridExtra::grid.arrange(p3, plot.binacc, heights = c(.05, .95))
 
 savename <- "1_binaryAccuracy_split_logos.png"
 ggsave(paste(savedir,savename,sep="/"), plot.binacc.logos, width=15, height=9, units='cm')
 ```
-### Binary accuracy plot with active AND passive sentences (for SI)
+### Binary accuracy plot for passive sentences (for SI)
 ```{r}
 # get p values
-dat.binchoice.summary = dat.binchoice %>%
-  filter(TrialType %in% c("AI", "AAN")) %>%
+dat.binchoice.summary.passive = dat.binchoice %>%
+  filter(TrialType %in% c("AI", "AAN"), Voice=="passive") %>%
   group_by(Category, Metric, TrialType) %>%
   summarize(NumCorrect=sum(Accuracy), NumTotal=length(Accuracy)) %>%
   mutate(AccuracyScore = NumCorrect/NumTotal) %>%
@@ -328,7 +328,7 @@ dat.binchoice.summary = dat.binchoice %>%
   mutate(pVal = calculate_binom_pval(NumCorrect, NumTotal))
 
 # adjust for multiple comparisons within each category
-dat.binchoice.summary = dat.binchoice.summary %>%
+dat.binchoice.summary.passive = dat.binchoice.summary.passive %>%
   group_by(Category) %>%
   mutate(pValAdjusted = p.adjust(pVal, method="fdr", n=length(pVal)),
          ntoadjust = length(pVal)) %>%
@@ -340,12 +340,12 @@ dat.binchoice.summary = dat.binchoice.summary %>%
 
 ```{r}
 # get human responses separately
-human.results = dat.binchoice.summary %>%
+human.results = dat.binchoice.summary.passive %>%
   filter(Metric=='human') %>%
   select(TrialType, NumCorrect, NumTotal) %>%
   rename(NumCorrectHuman=NumCorrect, NumTotalHuman=NumTotal)
 
-dat.binchoice.summary.withchisq = merge(dat.binchoice.summary, human.results)
+dat.binchoice.summary.withchisq = merge(dat.binchoice.summary.passive, human.results)
 dat.binchoice.summary.withchisq = dat.binchoice.summary.withchisq %>%
   mutate(ChiSq = calculate_chisq_vectorized_chi(NumCorrect, NumTotal, NumCorrectHuman),
          pVal2humans = calculate_chisq_vectorized_p(NumCorrect, NumTotal, NumCorrectHuman)) %>%
@@ -367,7 +367,8 @@ for (i in seq_along(dat.binchoice.summary.withchisq$Metric)) {
 ```
 
 ```{r}
-plot.binacc.activeandpassive = ggplot(data=subset(dat.binchoice, TrialType%in%c("AI","AAN")), 
+plot.binacc.passive = ggplot(data=dat.binchoice %>%
+                                         filter(TrialType%in%c("AI","AAN"), Voice=='passive'), 
        mapping=aes(x=Metric, y=Accuracy, fill=Category))+
   facet_wrap(~TrialType, ncol = 2, labeller = as_labeller(label_names))+
   geom_hline(yintercept=1, color='gray50', linetype='dotted')+
@@ -375,38 +376,18 @@ plot.binacc.activeandpassive = ggplot(data=subset(dat.binchoice, TrialType%in%c(
                color='black', width=0.8)+
   stat_summary(geom='errorbar', fun.data='mean_se',
                color = 'black', size = 0.5, width=0.1)+
-  geom_text(mapping=aes(x=Metric, y=0.05, label=pLabel), data=dat.binchoice.summary)+
+  geom_text(mapping=aes(x=Metric, y=0.05, label=pLabel), data=dat.binchoice.summary.passive)+
   coord_cartesian(ylim=c(0,1))+
   geom_hline(yintercept=.5, linetype='dotted')+
   theme_classic()+
   labs(x=NULL)+
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
-plot.binacc.activeandpassive
+plot.binacc.passive
 
-savename <- "1_binaryAccuracy_split_activeandpassive.png"
+savename <- "1_binaryAccuracy_split_passive.png"
 ggsave(paste(savedir,savename,sep="/"), width=20, height=10, units='cm')
 ```
 
-
-```{r, echo=FALSE}
-
-ggplot(data=subset(dat.binchoice.active, TrialType%in%c("AI","AAN")), 
-       mapping=aes(x=Metric, y=Accuracy, fill=Category))+
-  geom_hline(yintercept=1, color='gray50', linetype='dotted')+
-  stat_summary(geom='col', fun='mean',
-               color='black', width=0.8)+
-  stat_summary(geom='errorbar', fun.data='mean_se',
-               color = 'black', size = 0.5, width=0.1)+
-  geom_text(mapping=aes(x=Metric, y=0.05, label=pLabel), data=dat.binchoice.summary)+
-  coord_cartesian(ylim=c(0,1))+
-  geom_hline(yintercept=.5, linetype='dotted')+
-  theme_classic()+
-  labs(x=NULL)+
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
-
-savename <- "1_binaryAccuracy_split_onecol.png"
-ggsave(paste(savedir,savename,sep="/"), width=15, height=10, units='cm')
-```
 
 ### Stats: difference between AI & AAN conditions
 

@@ -679,6 +679,10 @@
 "177","The tobacconist cautioned the environmentalist.","Implausible","active","AAN",84,"Version1"
 "177","The tobacconist was cautioned by the environmentalist.","Plausible","passive","AAN",84,"Version1"
 "177","The environmentalist was cautioned by the tobacconist.","Implausible","passive","AAN",84,"Version1"
+"178","The ecologist warned the cigar-maker.","Plausible","active","AAN",84,"Version2"
+"178","The cigar-maker warned the ecologist.","Implausible","active","AAN",84,"Version2"
+"178","The cigar-maker was warned by the ecologist.","Plausible","passive","AAN",84,"Version2"
+"178","The ecologist was warned by the cigar-maker.","Implausible","passive","AAN",84,"Version2"
 "181","The alcoholic hassled the guest.","Plausible","active","AAN",86,"Version1"
 "181","The guest hassled the alcoholic.","Implausible","active","AAN",86,"Version1"
 "181","The guest was hassled by the alcoholic.","Plausible","passive","AAN",86,"Version1"
@@ -891,6 +895,10 @@
 "235","The fighter choked the trespasser.","Implausible","active","AAR",113,"Version1"
 "235","The fighter was choked by the trespasser.","Plausible","passive","AAR",113,"Version1"
 "235","The trespasser was choked by the fighter.","Implausible","passive","AAR",113,"Version1"
+"236","The encroacher strangled the warrior.","Plausible","active","AAR",113,"Version2"
+"236","The warrior strangled the encroacher.","Implausible","active","AAR",113,"Version2"
+"236","The warrior was strangled by the encroacher.","Plausible","passive","AAR",113,"Version2"
+"236","The encroacher was strangled by the warrior.","Implausible","passive","AAR",113,"Version2"
 "237","The broker introduced the donor.","Plausible","active","AAR",114,"Version1"
 "237","The donor introduced the broker.","Implausible","active","AAR",114,"Version1"
 "237","The donor was introduced by the broker.","Plausible","passive","AAR",114,"Version1"
@@ -1027,6 +1035,10 @@
 "275","The zealot placated the pacifist.","Implausible","active","AAR",133,"Version1"
 "275","The zealot was placated by the pacifist.","Plausible","passive","AAR",133,"Version1"
 "275","The pacifist was placated by the zealot.","Implausible","passive","AAR",133,"Version1"
+"276","The peace-lover mollified the fanatic.","Plausible","active","AAR",133,"Version2"
+"276","The fanatic mollified the peace-lover.","Implausible","active","AAR",133,"Version2"
+"276","The fanatic was mollified by the peace-lover.","Plausible","passive","AAR",133,"Version2"
+"276","The peace-lover was mollified by the fanatic.","Implausible","passive","AAR",133,"Version2"
 "277","The scoundrel beat the protagonist.","Plausible","active","AAR",134,"Version1"
 "277","The protagonist beat the scoundrel.","Implausible","active","AAR",134,"Version1"
 "277","The protagonist was beaten by the scoundrel.","Plausible","passive","AAR",134,"Version1"
@@ -1135,6 +1147,10 @@
 "305","The bottle uncorked the winemaker.","Implausible","active","AI",NA,NA
 "305","The bottle was uncorked by the winemaker.","Plausible","passive","AI",NA,NA
 "305","The winemaker was uncorked by the bottle.","Implausible","passive","AI",NA,NA
+"307","The travel-agent photocopied the passport.","Plausible","active","AI",NA,NA
+"307","The passport photocopied the travel-agent.","Implausible","active","AI",NA,NA
+"307","The passport was photocopied by the travel-agent.","Plausible","passive","AI",NA,NA
+"307","The travel-agent was photocopied by the passport.","Implausible","passive","AI",NA,NA
 "308","The exterminator filed the complaint.","Plausible","active","AI",NA,NA
 "308","The complaint filed the exterminator.","Implausible","active","AI",NA,NA
 "308","The complaint was filed by the exterminator.","Plausible","passive","AI",NA,NA
