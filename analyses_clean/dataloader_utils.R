@@ -124,7 +124,7 @@ read_data <- function(directory, filename, normalization_type) {
   # create cleaned-up dataframe
   d = d[,c(sent_colnum, score_colnum)] 
   colnames(d) = c("Sentence", "Score")
-  d$Score = as.numeric(d$Score)
+  d$Score = as.numeric(as.character(d$Score))
   d = d %>%
     mutate(SentenceNum = sentnums) %>%
     mutate(ItemNum = SentenceNum %/% target_trialnr) %>%
