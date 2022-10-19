@@ -21,7 +21,7 @@ if (!dir.exists(savedir)) {dir.create(savedir)}
 ```
 
 ```{r}
-experiment = "EventsRev" # can be "EventsAdapt" or "EventsRev" or "DTFit"
+experiment = "EventsAdapt" # can be "EventsAdapt" or "EventsRev" or "DTFit"
 normalization_type = "min-max" #can be "min-max", "zscore", "none"
 ```
 
@@ -266,17 +266,18 @@ print(paste(unique(dat$Metric)))
 We need to define for which models a higher score for plausible sentences is desirable:
 
 1. HIGHER = MORE PLAUSIBLE
-    * (Ro)BERT(a) >> metric is avg PLL
+    * (Ro)BERT(a) >> metric is sentence PLL
+    * GPT >> metric is sentence LL
     * PPMI >> higher PMI indicates a plausible sentence
     * Vector similarity
     * TFit similarity (sum of vector similarities to prototype vector)
     * SDM (sum of some vector similarities)
 2. LOWER = MORE PLAUSIBLE
-    * Surprisal
-    * GPT >> metric is avg NLL loss
+    * LSTM >> Surprisal
+
 
 ```{r, echo=FALSE}
-lower_better = c("surprisal","GPT")
+lower_better = c("surprisal")
 lower_better_pat <- paste(lower_better, collapse = '|')
 
 # Add FinalNormScore for NormScores plotting in the same direction for all metrics (i.e., Plausible is more positive)
