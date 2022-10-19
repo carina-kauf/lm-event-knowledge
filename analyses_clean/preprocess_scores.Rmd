@@ -130,9 +130,10 @@ dat.human.mean = dat.human %>%
   ungroup() 
 dat.human.mean$ItemNum = as.factor(dat.human.mean$ItemNum)
 
-#scale scores
+#scale scores and add NA column for token number (to match models)
 dat.human.mean = dat.human.mean %>%
-  mutate(NormScore = normalization(MeanScore))
+  mutate(NormScore = normalization(MeanScore),
+         NumTokens = NA)
 ```
 
 # Read model scores
@@ -194,7 +195,7 @@ dat.models.plausibility.assignment = dat.models %>%
 dat.human.mean = merge(dat.human.mean,dat.models.plausibility.assignment,by=c("Sentence","ItemNum"))
 
 # combine
-dat.models = dat.models %>% select(-SentenceNum) 
+dat.models = dat.models %>% select(colnames(dat.human.mean))
 dat = rbind(dat.models, dat.human.mean)
 ```
 

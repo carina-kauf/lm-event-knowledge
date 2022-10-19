@@ -42,8 +42,8 @@ clean_metric_name <- function(filename) {
   
   ##Assimilate model names between datasets & determine names for plotting
   # ppmi
-  metric = str_replace(metric, "deps.scores_baseline1", "syntax.PPMI")
-  metric = str_replace(metric, "scores_baseline1", "syntax.PPMI")
+  metric = str_replace(metric, "deps.scores_baseline1", "syntax-PPMI")
+  metric = str_replace(metric, "scores_baseline1", "syntax-PPMI")
   # SDM model names
   metric = str_replace(metric, "v2.sdm-scores", "SDM")
   metric = str_replace(metric, "deps_SDM", "SDM")
@@ -51,8 +51,8 @@ clean_metric_name <- function(filename) {
   metric = str_replace(metric, "deps.update-model.TF-prod.n200", "thematicFit.prod")
   metric = str_replace(metric, "update-model.TF-prod.n200", "thematicFit.prod")
   # GPT
-  metric = str_replace(metric, "gpt2-medium", "GPT2-medium")
-  metric = str_replace(metric, "gpt2-xl", "GPT2-xl")
+  metric = str_replace(metric, "gpt2-medium", "GPT-2-medium")
+  metric = str_replace(metric, "gpt2-xl", "GPT-2-xl")
   metric = str_replace(metric, "gpt-neo", "GPT-neo")
   metric = str_replace(metric, "gpt-j", "GPT-J")
   # tinyLSTM
@@ -66,13 +66,6 @@ clean_metric_name <- function(filename) {
   metric = str_replace(metric, "sentence-l2r-PLL.sentence_surp", "l2r")
   metric = str_replace(metric, "sentence-PLL.sentence_surp", "PLL")
   metric = str_replace(metric, "sentence_surp", "l2r")
-  metric = str_replace(metric, ".average_byNrTokens", ".average")
-  metric = str_replace(metric, ".average_byNrWords", ".averageByNrWords")
-  #metric = str_replace(metric, "l2r.sentence_surp", "l2r")
-  #metric = str_replace(metric, "sentence-PLL", "PLL")
-  #metric = str_replace(metric, "sentence-l2r-PLL", "l2r")
-  #metric = str_replace(metric, ".verb-PLL", ".pverb")
-  #metric = str_replace(metric, ".last-word-PLL", ".plast")
   
   return(metric)
 }
@@ -91,6 +84,14 @@ get_score_colnum <- function(metric) {
   return(score_colnum)
 }
 
+get_num_tokens_colnum <- function(metric) {
+  if ((grepl("BERT", metric) || grepl("GPT", metric)) && (grepl("sentence-PLL", metric) || grepl("sentence-LL", metric))) {
+    num_tokens_colnum = 4
+  } else {
+    num_tokens_colnum = NA
+  }
+  return(num_tokens_colnum)
+}
 
 ################################
 ## ---- read in model data -----
@@ -120,10 +121,19 @@ read_data <- function(directory, filename, normalization_type) {
   #COLUMNS
   sent_colnum = 2
   score_colnum = get_score_colnum(metric)
+  num_tokens_colnum = get_num_tokens_colnum(metric)
   
+  # if no number of tokens provided, add NA
+  if (is.na(num_tokens_colnum)) {
+    token_col = NA
+  } else {
+    token_col = d[,num_tokens_colnum]
+  }
   # create cleaned-up dataframe
   d = d[,c(sent_colnum, score_colnum)] 
   colnames(d) = c("Sentence", "Score")
+  d["NumTokens"] <- token_col
+  
   d$Score = as.numeric(as.character(d$Score))
   d = d %>%
     mutate(SentenceNum = sentnums) %>%
