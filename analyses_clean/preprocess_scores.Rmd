@@ -123,7 +123,7 @@ if (experiment=='EventsRev') {
 
 ## Get the human mean score (to compare w models)
 
-```{r pressure, echo=FALSE}
+```{r, echo=FALSE}
 dat.human.mean = dat.human %>% 
   group_by(ItemNum, Sentence, Plausibility) %>%
   summarize(MeanScore = mean(Score, na.rm=TRUE)) %>%
@@ -136,7 +136,7 @@ dat.human.mean = dat.human.mean %>%
 ```
 
 # Read model scores
-```{r read data, echo=FALSE}
+```{r, echo=FALSE}
 dirname = paste('..', 'model_scores', experiment, sep='/')
 
 message(paste('Loading', experiment, 'model data ...'))
@@ -274,7 +274,7 @@ We need to define for which models a higher score for plausible sentences is des
     * Surprisal
     * GPT >> metric is avg NLL loss
 
-```{r pressure, echo=FALSE}
+```{r, echo=FALSE}
 lower_better = c("surprisal","GPT")
 lower_better_pat <- paste(lower_better, collapse = '|')
 

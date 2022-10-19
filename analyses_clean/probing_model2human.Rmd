@@ -40,15 +40,57 @@ ifelse(!dir.exists(savedir), dir.create(savedir), FALSE)
 # READ DATA
 ```{r}
 model2human_dir = "../probing/results/model2human"
-datafile = "all_combined_kfold.csv"
 
-dat = read.csv(paste(model2human_dir, datafile, sep="/"))
+read_data <- function(directory, filename) {
+  if (!filename =="all_combined_kfold.csv"){
+    metadata = str_split(filename, "_")[[1]]
+    d = read.delim(paste(directory, filename, sep='/'), 
+                   header=FALSE, sep=',')
+    # stacking data from iterations
+    d = data.frame(d[1], stack(d[2:ncol(d)]))
+    d = d %>%
+      mutate(Model = metadata[[1]]) %>%
+      mutate(Model = ifelse(grepl("roberta", Model), "RoBERTa", Model)) %>%
+      mutate(Model = ifelse(grepl("bert", Model), "BERT", Model)) %>%
+      mutate(Model = ifelse(grepl("gpt2", Model), "GPT2-xl", Model)) %>%
+      mutate(Model = ifelse(grepl("gpt-j", Model), "GPT-J", Model))  %>%
+      mutate(Dataset = metadata[[2]]) %>%
+      mutate(VoiceType = metadata[[3]]) %>%
+      mutate(VoiceType = ifelse(grepl("EventsAdapt",Dataset),
+                                ifelse(length(str_split(VoiceType, "-")[[1]]) > 1,
+                                      paste0("TrainOn:",str_split(VoiceType, "-")[[1]][1],"-TestOn:",str_split(VoiceType, "-")[[1]][2]),
+                                VoiceType),
+                          VoiceType)) %>%
+      mutate(TrialType = metadata[[4]]) %>%
+      mutate(TrialType = str_replace(TrialType, ".csv", "")) %>%
+      mutate(TrialType = ifelse(grepl("EventsAdapt",Dataset),
+                                ifelse(length(str_split(TrialType, "-")[[1]]) > 1,
+                                       paste0("TrainOn:",str_split(TrialType, "-")[[1]][1],"-TestOn:",str_split(TrialType, "-")[[1]][2]),
+                                TrialType),
+                          TrialType)) %>%
+      dplyr::rename(Layer = V1) %>%
+      dplyr::rename(Accuracy = values)  %>%
+      dplyr::rename(Iteration = ind)  %>%
+      mutate(Iteration = str_replace(as.character(Iteration), "V", "")) %>%
+      mutate(Iteration = as.numeric(Iteration)-2) %>%
+      mutate(Plot = paste(Model, Dataset, VoiceType, TrialType, sep = " ")) %>%
+      mutate(Plot = str_replace(Plot, "normal normal", "")) %>%
+      mutate(Plot = ifelse(length(str_split(TrialType, "-")[[1]]) > 1, str_replace(Plot, "normal", "AI/AAN"), Plot))
 
+    #reorder columns
+    d <- d[, c("Dataset", "Model", "VoiceType", "TrialType", "Layer", "Iteration", "Accuracy", "Plot")]
+  }
+}
+```
 
-dat <- subset(dat, select = -X)
+```{r}
+filenames = list.files(path=model2human_dir, pattern='*.csv')
+dat.models = do.call(rbind, lapply(filenames, function(x) read_data(model2human_dir, x)))
+
+dat = dat.models
 
 dat$Layer = as.factor(dat$Layer)
-dat$Model = factor(dat$Model, levels=c("bert-large-cased", "roberta-large", "gpt2-xl"))
+dat$Model = factor(dat$Model, levels=c("RoBERTa","BERT", "GPT-J", "GPT2-xl"))
 ```
 
 # STATS
@@ -59,111 +101,34 @@ dat.DTFit = dat %>% filter(Dataset=="DTFit")
 m.DTFit = lm(Accuracy~Layer:Model, data=dat.DTFit)
 summary(m.DTFit)
 ```
-
-# READ HUMAN CEILING DATA
-```{r}
-dat$Layer = as.numeric(as.character(dat$Layer))
-
-
-model2human_dir = "../probing/results/model2human_ceiling"
-
-read_data <- function(directory, filename) {
-  print(paste(filename))
-  metadata = str_split(filename, "_")[[1]]
-  d = read.delim(paste(model2human_dir, filename, sep='/'), 
-                 header=FALSE, sep=',')
-  d = d %>%
-    mutate(Dataset = metadata[[2]]) %>%
-    mutate(VoiceType = metadata[[3]]) %>%
-    mutate(TrialType = metadata[[4]]) %>%
-    mutate(TrialType = str_replace(TrialType, ".csv", "")) %>%
-    rename(Iteration = V1)  %>%
-    rename(Accuracy = V2)  %>%
-    mutate(Plot = "HumanCeiling")
-}
-
-filenames = list.files(path=model2human_dir, pattern='*.csv')
-dat.ceiling = do.call(rbind, lapply(filenames, function(x) read_data(model2human_dir, x)))
-
-add_info <- function(dataframe, model_name) {
-  if (grepl("gpt2-xl",model_name) == FALSE){
-    toadd = 5
-  }else{
-    toadd = 10
-  }
-  dataframe = dataframe %>%
-    mutate(Layer = max(subset(dat, Model==model_name)$Layer) + toadd) %>%
-    mutate(Model = model_name)
-}
-
-models = unique(c(dat$Model))
-  
-dat.ceiling.full = do.call(rbind, lapply(models, function(x) add_info(dat.ceiling, x)))
-```
-```{r}
-merged <- rbind(dat, dat.ceiling.full)
-```
-
-# PLOT
-
-## breaks function x axis
 ```{r}
 breaks_fun <- function(x) {
   if (max(x) > 40) {
-    c(seq(0, 50, 10), max(x) + 10)
+    breaks = c(seq(0, 50, 10))
   } else {
-    c(seq(0, 25, 5), max(x) + 5)
+    breaks = c(seq(0, 25, 5))
   }
 }
-
 ```
 
 ## All datasets
 ```{r, fig.width=15, fig.height=8}
-plot_data = merged %>% filter(TrialType=="normal", VoiceType=="normal",Plot!="HumanCeiling")
+plot_data = dat %>% filter(TrialType=="normal", VoiceType=="normal")
 plot_data$Layer = as.numeric(as.character(plot_data$Layer))
-
-ceil_data = merged %>% filter(TrialType=="normal", VoiceType=="normal",Plot=="HumanCeiling")
-ceil_summary <- ceil_data %>%
-  group_by(Dataset) %>%
-  summarise(
-    MeanAccuracy = mean(Accuracy),
-    sd = sd(Accuracy),
-    n = n(),
-    SE = sd / sqrt(n)
-  )
-
-datasets = c(ceil_summary$Dataset)
-
-ceil_data = ceil_data %>% 
-  mutate(MeanAccuracy = NA) %>%
-  mutate(SE = NA)
-
-for( dt in datasets){
-  ceil_data = ceil_data %>%
-    mutate(MeanAccuracy = ifelse(ceil_data$Dataset==dt, subset(ceil_summary, Dataset == dt)$MeanAccuracy, ceil_data$MeanAccuracy)) %>%
-    mutate(SE = ifelse(ceil_data$Dataset==dt, subset(ceil_summary, Dataset == dt)$SE, ceil_data$SE))
-}
 
 ggplot(data = plot_data,
        mapping = aes(x=Layer, y=Accuracy, color=Dataset, group = Dataset))+
   facet_grid(~Model, scales="free_x")+
-  geom_hline(yintercept=.5, linetype='dotted')+
+  geom_hline(yintercept=.33, linetype='dotted')+
   geom_hline(yintercept=1, linetype='dotted')+
   stat_summary(geom='line', fun='mean')+
   stat_summary(geom='errorbar', fun.data='mean_se',
                size = 0.2, width=0.1)+
-  geom_point(data = ceil_data, aes(x=Layer, y=MeanAccuracy, color=Dataset), size=0.2)+
-  geom_errorbar(data = ceil_data, aes(x=Layer, ymin=MeanAccuracy-SE, ymax=MeanAccuracy+SE, color=Dataset),width = 0.05) +
-  geom_text(data = ceil_data, group=ceil_data$Dataset, x =ifelse(ceil_data$Model=="gpt2-xl", ceil_data$Layer - 6, ceil_data$Layer - 3),  y = 0.98,
-            size = 2.5,
-            label = "ceiling", 
-            colour = "#6d6d6d") +
   theme_classic()+
-  scale_x_continuous(breaks=breaks_fun)+
-  scale_y_continuous(breaks=seq(0.4,1.2,0.1))
+  scale_x_continuous(breaks = breaks_fun, limits = c(0, NA)) + 
+  scale_y_continuous(breaks=seq(0.3,1.2,0.1))
 
-savename <- "model2human_all_datasets_ceiled.png"
+savename <- "model2human_all_datasets.png"
 ggsave(paste(savedir,savename,sep="/"), width=20, height=8, units='cm', device='tiff', dpi=700)
 ```
 
@@ -174,13 +139,14 @@ dataset = "DTFit"
 ggplot(data = dat %>% filter(Dataset==dataset),
        mapping = aes(x=Layer, y=Accuracy, group=dataset))+
   facet_wrap(~Plot, scales="free_x")+
-  scale_x_continuous(breaks = breaks_fun, limits = c(0, NA)) + 
-  geom_hline(yintercept=.5, linetype='dotted')+
+  geom_hline(yintercept=.33, linetype='dotted')+
   geom_hline(yintercept=1, linetype='dotted')+
   stat_summary(geom='line', fun='mean')+
   stat_summary(geom='errorbar', fun.data='mean_se',
                color = 'black', size = 0.5, width=0.1)+
-  theme_classic()
+  theme_classic()#+
+  #scale_x_continuous(breaks = breaks_fun, limits = c(0, NA)) + 
+  #scale_y_continuous(breaks=seq(0.3,1.2,0.1))
 
 savename <- "model2human_DTFit.png"
 ggsave(paste(savedir,savename,sep="/"), width=16, height=8, units='cm')
@@ -193,8 +159,7 @@ dataset = "EventsRev"
 ggplot(data = dat %>% filter(Dataset==dataset),
        mapping = aes(x=Layer, y=Accuracy, group=dataset))+
   facet_grid(~Plot, scales="free_x")+
-  scale_x_continuous(breaks = breaks_fun, limits = c(0, NA)) + 
-  geom_hline(yintercept=.5, linetype='dotted')+
+  geom_hline(yintercept=.33, linetype='dotted')+
   geom_hline(yintercept=1, linetype='dotted')+
   stat_summary(geom='line', fun='mean')+
   stat_summary(geom='errorbar', fun.data='mean_se',
@@ -208,137 +173,53 @@ ggsave(paste(savedir,savename,sep="/"), width=16, height=8, units='cm')
 ## EventsAdapt
 
 ### Active Passive
-```{r}
-dataset = "EventsAdapt"
-
-ggplot(data = dat %>% filter(Dataset==dataset, TrialType=="normal"),
-       mapping = aes(x=Layer, y=Accuracy, color=VoiceType, group=VoiceType))+
-  facet_grid(~Model, scales="free_x")+ 
-  scale_x_continuous(breaks = breaks_fun, limits = c(0, NA)) + 
-  geom_hline(yintercept=.5, linetype='dotted')+
-  geom_hline(yintercept=1, linetype='dotted')+
-  stat_summary(geom='line', fun='mean')+
-  stat_summary(geom='errorbar', fun.data='mean_se',
-               size = 0.2, width=0)+
-  theme_classic()
-
-savename <- "model2human_EventsAdapt_active-passive.png"
-ggsave(paste(savedir,savename,sep="/"), width=20, height=8, units='cm')
-```
-
-###Attempt with human ceiling
 ```{r, fig.width=15, fig.height=8}
 dataset = "EventsAdapt"
-plot_data = merged %>% filter(Dataset==dataset, TrialType=="normal",Plot!="HumanCeiling")
-
-ceil_data = merged %>% filter(TrialType=="normal",Plot=="HumanCeiling")
-ceil_summary <- ceil_data %>%
-  group_by(VoiceType) %>%
-  summarise(
-    MeanAccuracy = mean(Accuracy),
-    sd = sd(Accuracy),
-    n = n(),
-    se = sd / sqrt(n)
-  )
-
-voice_types = c(ceil_summary$VoiceType)
-
-ceil_data = ceil_data %>%
-  mutate(MeanAccuracy = NA) %>%
-  mutate(SE = NA)
-
-for( vt in voice_types){
-  ceil_data = ceil_data %>%
-    mutate(MeanAccuracy = ifelse(ceil_data$VoiceType==vt, subset(ceil_summary, VoiceType == vt)$MeanAccuracy, ceil_data$MeanAccuracy)) %>%
-    mutate(SE = ifelse(ceil_data$VoiceType==vt, subset(ceil_summary, VoiceType == vt)$se, ceil_data$SE))
-}
+plot_data = dat %>% filter(Dataset==dataset, TrialType=="normal")
 
 ggplot(data = plot_data,
        mapping = aes(x=Layer, y=Accuracy, color=VoiceType, group=VoiceType))+
   facet_grid(~Model, scales="free_x")+
-  geom_hline(yintercept=.5, linetype='dotted')+
+  geom_hline(yintercept=.33, linetype='dotted')+
   geom_hline(yintercept=1, linetype='dotted')+
   stat_summary(geom='line', fun='mean')+
   stat_summary(geom='errorbar', fun.data='mean_se',
                size = 0.2, width=0.1)+
-  geom_point(inherit.aes=FALSE, data = ceil_data, aes(x=Layer, y=MeanAccuracy, color=VoiceType), size=0.2)+
-  geom_errorbar(inherit.aes=FALSE, data = ceil_data, aes(x=Layer, ymin=MeanAccuracy-SE, ymax=MeanAccuracy+SE, color=VoiceType),width = 0.05) +
-    geom_text(data = ceil_data, group=ceil_data$VoiceType, x =ifelse(ceil_data$Model=="gpt2-xl", ceil_data$Layer - 6, ceil_data$Layer - 3),  y = 0.98,
-            size = 2.5,
-           label = "ceiling", 
-           colour = "#6d6d6d") +
   theme_classic()+
-  scale_x_continuous(breaks=breaks_fun)+
-  scale_y_continuous(breaks=seq(0.2,1,0.1))
+  scale_color_manual(values = c("normal" = brewer.pal(12, "Paired")[[2]],
+                                "TrainOn:active-TestOn:active" = brewer.pal(12, "Paired")[[4]],
+                                "TrainOn:passive-TestOn:passive" = brewer.pal(12, "Paired")[[3]],
+                                "TrainOn:active-TestOn:passive" = brewer.pal(12, "Paired")[[6]],
+                                "TrainOn:passive-TestOn:active" = brewer.pal(12, "Paired")[[5]]
+                                ))
+  #scale_x_continuous(breaks=breaks_fun)+
+  #scale_y_continuous(breaks=seq(0.2,1,0.1))
 
-savename <- "model2human_EventsAdapt_active-passive_ceiled.png"
+savename <- "model2human_EventsAdapt_active-passive.png"
 ggsave(paste(savedir,savename,sep="/"), width=20, height=8, units='cm', device='tiff', dpi=700)
 ```
 
 ### TrialTypes
-```{r}
-dataset = "EventsAdapt"
-
-ggplot(data = dat %>% filter(Dataset==dataset, VoiceType=="active-active", !grepl('AAR', TrialType)),
-       mapping = aes(x=Layer, y=Accuracy, color=TrialType, group=TrialType))+
-  facet_wrap(~Model, scales="free_x")+
-  scale_x_continuous(breaks = breaks_fun, limits = c(0, NA)) + 
-  geom_hline(yintercept=.5, linetype='dotted')+
-  geom_hline(yintercept=1, linetype='dotted')+
-  stat_summary(geom='line', fun='mean')+
-  stat_summary(geom='errorbar', fun.data='mean_se',
-               size = 0.2, width=0)+
-  theme_classic()
-
-savename <- "model2human_EventsAdapt_AI-AAN.png"
-ggsave(paste(savedir,savename,sep="/"), width=20, height=8, units='cm')
-```
-
-###Attempt with human ceiling
 ```{r, fig.width=15, fig.height=8}
 dataset = "EventsAdapt"
-plot_data = merged %>% filter(Dataset==dataset, VoiceType=="active-active", !grepl('AAR', TrialType),Plot!="HumanCeiling")
-ceil_data = merged %>% filter(VoiceType=="active-active",Plot=="HumanCeiling",!grepl('AAR', TrialType))
-
-ceil_summary <- ceil_data %>%
-  group_by(TrialType) %>%
-  summarise(
-    MeanAccuracy = mean(Accuracy),
-    sd = sd(Accuracy),
-    n = n(),
-    se = sd / sqrt(n)
-  )
-
-trial_types = c(ceil_summary$TrialType)
-
-ceil_data = ceil_data %>%
-  mutate(MeanAccuracy = NA) %>%
-  mutate(SE = NA)
-
-for( tt in trial_types){
-  ceil_data = ceil_data %>%
-    mutate(MeanAccuracy = ifelse(ceil_data$TrialType==tt, subset(ceil_summary, TrialType == tt)$MeanAccuracy, ceil_data$MeanAccuracy)) %>%
-    mutate(SE = ifelse(ceil_data$TrialType==tt, subset(ceil_summary, TrialType == tt)$se, ceil_data$SE))
-}
+plot_data = dat %>% filter(Dataset==dataset, VoiceType=="TrainOn:active-TestOn:active", !grepl('AAR', TrialType))
 
 ggplot(data = plot_data,
        mapping = aes(x=Layer, y=Accuracy, color=TrialType, group=TrialType))+
   facet_grid(~Model, scales="free_x")+
-  geom_hline(yintercept=.5, linetype='dotted')+
+  geom_hline(yintercept=.33, linetype='dotted')+
   geom_hline(yintercept=1, linetype='dotted')+
   stat_summary(geom='line', fun='mean')+
   stat_summary(geom='errorbar', fun.data='mean_se',
                size = 0.2, width=0.1)+
-  geom_point(data = ceil_data, aes(x=Layer, y=MeanAccuracy, color=TrialType), size=0.2)+
-  geom_errorbar(data = ceil_data, aes(x=Layer, ymin=MeanAccuracy-SE, ymax=MeanAccuracy+SE, color=TrialType), width = 0.05) +
-  geom_text(data = ceil_data, group=ceil_data$TrialType, x =ifelse(ceil_data$Model=="gpt2-xl", ceil_data$Layer - 6, ceil_data$Layer - 3),  y = 0.98,
-        size = 2.5,
-       label = "ceiling", 
-       colour = "#6d6d6d") +
   theme_classic()+
-  scale_x_continuous(breaks=breaks_fun)+
-  scale_y_continuous(breaks=seq(0.5,1,0.1))
+  scale_color_manual(values = c("normal" = brewer.pal(12, "Paired")[[2]],
+                                "TrainOn:AI-TestOn:AI" = brewer.pal(12, "Paired")[[4]],
+                                "TrainOn:AAN-TestOn:AAN" = brewer.pal(12, "Paired")[[3]],
+                                "TrainOn:AI-TestOn:AAN" = brewer.pal(12, "Paired")[[6]],
+                                "TrainOn:AAN-TestOn:AI" = brewer.pal(12, "Paired")[[5]]
+                                )) 
 
-savename <- "model2human_EventsAdapt_AI-AAN_ceiled.png"
+savename <- "model2human_EventsAdapt_AI-AAN.png"
 ggsave(paste(savedir,savename,sep="/"), width=20, height=8, units='cm', device='tiff', dpi=700)
 ```
