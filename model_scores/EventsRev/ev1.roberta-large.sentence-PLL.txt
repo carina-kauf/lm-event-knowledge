@@ -1,80 +1,79 @@
-0	The cop is arresting the criminal.	-19.827277958393097
-1	The criminal is arresting the cop.	-18.533032476902008
-2	The babysitter is scolding the child.	-6.302056476648431
-3	The child is scolding the babysitter.	-8.067298289010068
-4	The doctor is using a stethoscope on the patient.	-4.7697766416076774
-5	The patient is using a stethoscope on the doctor.	-11.164730664124363
-6	The fireman is rescuing the grandmother.	-22.948686212301254
-7	The grandmother is rescuing the fireman.	-21.95739021897316
-8	The dentist is treating the patient.	-17.749552309513092
-9	The patient is treating the dentist.	-23.7611476033926
-10	The ghost is frightening the girl.	-18.40731742978096
-11	The girl is frightening the ghost.	-23.529876336455345
-12	The mother is feeding the baby.	-6.947016060352325
-13	The baby is feeding the mother.	-14.320950880646706
-14	The artist is painting the businessman.	-27.758530110120773
-15	The businessman is painting the artist.	-31.88066879659891
-16	The groom is carrying the bride.	-6.555069908499718
-17	The bride is carrying the groom.	-10.752999305725098
-18	The jester is entertaining the king.	-13.570951852016151
-19	The king is entertaining the jester.	-13.869445760268718
-20	The lion is pouncing on the Safari guide.	-28.64483075402677
-21	The Safari guide is pouncing on the lion.	-29.51205883966759
-22	The photographer is taking a picture of the model.	-10.910209201276302
-23	The model is taking a picture of the photographer.	-14.985791005194187
-24	The pirate is kidnapping the princess.	-15.04298222064972
-25	The princess is kidnapping the pirate.	-25.626586318016052
-26	The priest is blessing the bride.	-9.045778173953295
-27	The bride is blessing the priest.	-22.789954528212547
-28	The shark is biting the snorkeler.	-9.548688593200495
-29	The snorkeler is biting the shark.	-17.1268378631994
-30	The professor is lecturing to the student.	-12.547204278758727
-31	The student is lecturing to the professor.	-11.345717407763004
-32	The vampire is biting the woman.	-20.83082501590252
-33	The woman is biting the vampire.	-26.763153925538063
-34	The waiter is serving the customer.	-17.27258489280939
-35	The customer is serving the waiter.	-16.336461395025253
-36	The lawyer is giving money to the beggar.	-14.682460599578917
-37	The beggar is giving money to the lawyer.	-13.72745473869145
-38	The chef is cooking for the lady.	-15.970820546150208
-39	The lady is cooking for the chef.	-25.0051471889019
-40	The ballerina is dancing for the grandpa.	-17.949926500568836
-41	The grandpa is dancing for the ballerina.	-25.22005096192879
-42	The journalist is interviewing the sportsstar.	-24.927347421646118
-43	The sportsstar is interviewing the journalist.	-36.71500265598297
-44	The judge is sentencing the criminal.	-21.02646052837372
-45	The criminal is sentencing the judge.	-27.153394147753716
-46	The father is pulling the child on the sled.	-12.731073644012213
-47	The child is pulling the father on the sled.	-21.135346740484238
-48	Santa is giving the girl a present.	-16.387159526348114
-49	The girl is giving Santa a present.	-17.269887402653694
-50	The peasant is bowing to the queen.	-16.2533285561949
-51	The queen is bowing to the peasant.	-18.349919164553285
-52	The lady is applauding the athlete.	-23.869127487763762
-53	The athlete is applauding the lady.	-28.575411321944557
-54	The father is tying the son's shoes.	-10.620097555336542
-55	The son is tying the father's shoes.	-14.324038800608832
-56	The thief is stealing the purse from the grandma.	-22.905245438218117
-57	The grandma is stealing the purse from the thief.	-27.64533554762602
-58	The cat is chasing the mouse.	-5.50855890661478
-59	The mouse is chasing the cat.	-8.605272851884365
-60	The visitor is pushing the patient.	-29.96171075105667
-61	The patient is pushing the visitor.	-29.606314439326525
-62	The relative is bringing flowers to the patient.	-23.613230265676975
-63	The patient is bringing flowers to the relative.	-26.68519838899374
-64	The boss is yelling at the worker.	-15.274647591635585
-65	The worker is yelling at the boss.	-15.57764782011509
-66	The dog is leading the blind person.	-20.44172016903758
-67	The blind person is leading the dog.	-20.48555578291416
-68	The bouncer is preventing the woman from entering.	-10.050557627982926
-69	The woman is preventing the bouncer from entering.	-10.598538223071955
-70	The dog is licking the girl on the face.	-11.734253980219364
-71	The girl is licking the dog on the face.	-17.657974533736706
-72	The man is proposing to the woman.	-7.132329495623708
-73	The woman is proposing to the man.	-7.985911203548312
-74	The tailor is measuring the princess.	-26.397281005978584
-75	The princess is measuring the tailor.	-29.31446824222803
-76	The lifeguard is saving the grandmother.	-28.967552855610847
-77	The grandmother is saving the lifeguard.	-28.255489826202393
-78	The chauffeur is opening the door for the lady.	-9.562494165694261
-79	The lady is opening the door for the chauffeur.	-11.808720322689624
+1	The criminal is arresting the cop.	-18.533032476902008	7	6
+2	The babysitter is scolding the child.	-6.302056476648432	9	6
+3	The child is scolding the babysitter.	-8.067298289010067	9	6
+4	The doctor is using a stethoscope on the patient.	-4.769776641607677	12	9
+5	The patient is using a stethoscope on the doctor.	-11.164730664124363	12	9
+6	The fireman is rescuing the grandmother.	-22.94868621230125	8	6
+7	The grandmother is rescuing the fireman.	-21.95739021897316	8	6
+8	The dentist is treating the patient.	-17.749552309513096	7	6
+9	The patient is treating the dentist.	-23.7611476033926	7	6
+10	The ghost is frightening the girl.	-18.40731742978096	7	6
+11	The girl is frightening the ghost.	-23.529876336455345	7	6
+12	The mother is feeding the baby.	-6.947016060352325	7	6
+13	The baby is feeding the mother.	-14.320950880646706	7	6
+14	The artist is painting the businessman.	-27.75853011012077	7	6
+15	The businessman is painting the artist.	-31.88066879659891	7	6
+16	The groom is carrying the bride.	-6.555069908499718	7	6
+17	The bride is carrying the groom.	-10.752999305725098	7	6
+18	The jester is entertaining the king.	-13.570951852016153	8	6
+19	The king is entertaining the jester.	-13.869445760268716	8	6
+20	The lion is pouncing on the Safari guide.	-28.64483075402677	10	8
+21	The Safari guide is pouncing on the lion.	-29.512058839667592	10	8
+22	The photographer is taking a picture of the model.	-10.910209201276302	10	9
+23	The model is taking a picture of the photographer.	-14.985791005194187	10	9
+24	The pirate is kidnapping the princess.	-15.042982220649721	7	6
+25	The princess is kidnapping the pirate.	-25.626586318016052	7	6
+26	The priest is blessing the bride.	-9.045778173953297	7	6
+27	The bride is blessing the priest.	-22.78995452821255	7	6
+28	The shark is biting the snorkeler.	-9.548688593200497	10	6
+29	The snorkeler is biting the shark.	-17.126837863199402	10	6
+30	The professor is lecturing to the student.	-12.547204278758725	9	7
+31	The student is lecturing to the professor.	-11.345717407763006	9	7
+32	The vampire is biting the woman.	-20.83082501590252	7	6
+33	The woman is biting the vampire.	-26.763153925538067	7	6
+34	The waiter is serving the customer.	-17.27258489280939	7	6
+35	The customer is serving the waiter.	-16.33646139502525	7	6
+36	The lawyer is giving money to the beggar.	-14.682460599578915	10	8
+37	The beggar is giving money to the lawyer.	-13.72745473869145	10	8
+38	The chef is cooking for the lady.	-15.970820546150208	8	7
+39	The lady is cooking for the chef.	-25.005147188901898	8	7
+40	The ballerina is dancing for the grandpa.	-17.949926500568836	11	7
+41	The grandpa is dancing for the ballerina.	-25.220050961928788	11	7
+42	The journalist is interviewing the sportsstar.	-24.92734742164612	8	6
+43	The sportsstar is interviewing the journalist.	-36.715002655982964	8	6
+44	The judge is sentencing the criminal.	-21.02646052837372	7	6
+45	The criminal is sentencing the judge.	-27.15339414775372	7	6
+46	The father is pulling the child on the sled.	-12.731073644012213	10	9
+47	The child is pulling the father on the sled.	-21.135346740484238	10	9
+48	Santa is giving the girl a present.	-16.387159526348118	8	7
+49	The girl is giving Santa a present.	-17.269887402653694	8	7
+50	The peasant is bowing to the queen.	-16.2533285561949	9	7
+51	The queen is bowing to the peasant.	-18.349919164553285	9	7
+52	The lady is applauding the athlete.	-23.869127487763762	8	6
+53	The athlete is applauding the lady.	-28.575411321944557	8	6
+54	The father is tying the son's shoes.	-10.620097555336544	9	7
+55	The son is tying the father's shoes.	-14.324038800608832	9	7
+56	The thief is stealing the purse from the grandma.	-22.90524543821812	10	9
+57	The grandma is stealing the purse from the thief.	-27.64533554762602	10	9
+58	The cat is chasing the mouse.	-5.50855890661478	7	6
+59	The mouse is chasing the cat.	-8.605272851884365	7	6
+60	The visitor is pushing the patient.	-29.96171075105667	7	6
+61	The patient is pushing the visitor.	-29.606314439326525	7	6
+62	The relative is bringing flowers to the patient.	-23.61323026567697	9	8
+63	The patient is bringing flowers to the relative.	-26.68519838899374	9	8
+64	The boss is yelling at the worker.	-15.274647591635585	8	7
+65	The worker is yelling at the boss.	-15.57764782011509	8	7
+66	The dog is leading the blind person.	-20.441720169037577	8	7
+67	The blind person is leading the dog.	-20.485555782914158	8	7
+68	The bouncer is preventing the woman from entering.	-10.050557627982926	10	8
+69	The woman is preventing the bouncer from entering.	-10.598538223071957	10	8
+70	The dog is licking the girl on the face.	-11.734253980219364	10	9
+71	The girl is licking the dog on the face.	-17.657974533736702	10	9
+72	The man is proposing to the woman.	-7.132329495623707	8	7
+73	The woman is proposing to the man.	-7.985911203548312	8	7
+74	The tailor is measuring the princess.	-26.397281005978584	7	6
+75	The princess is measuring the tailor.	-29.31446824222803	7	6
+76	The lifeguard is saving the grandmother.	-28.96755285561085	8	6
+77	The grandmother is saving the lifeguard.	-28.255489826202393	8	6
+78	The chauffeur is opening the door for the lady.	-9.56249416569426	12	9
+79	The lady is opening the door for the chauffeur.	-11.808720322689624	12	9

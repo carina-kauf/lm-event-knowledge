@@ -1,798 +1,797 @@
-0	The actor won the battle.	-18.592206865549088
-1	The actor won the award.	-13.24626475572586
-2	The anchorman told the parable.	-18.633405977860093
-3	The anchorman told the news.	-21.680365471169353
-4	The animal found the map.	-26.802170395851135
-5	The animal found the food.	-16.841216683387756
-6	The ant stacked the suitcase.	-36.76286922395229
-7	The ant stacked the supply.	-37.97647741436958
-8	The archeologist examined the dog.	-21.301159609109163
-9	The archeologist examined the epigraph.	-8.261742644011974
-10	The archer released the interview.	-40.57576967775822
-11	The archer released the arrow.	-4.545097908994649
-12	The artist assembled the tent.	-24.871977388858795
-13	The artist assembled the art.	-20.72849613428116
-14	The artist hung the motorcycle.	-27.54282921552658
-15	The artist hung the picture.	-18.323454916477203
-16	The assistant helped the soldier.	-21.70690158382058
-17	The assistant helped the cook.	-19.698158860206604
-18	The astronaut reached the baker.	-33.904610976576805
-19	The astronaut reached the moon.	-17.585742686409503
-20	The astronaut touched the guitar.	-23.951705396175385
-21	The astronaut touched the ground.	-17.00324008986354
-22	The athlete celebrated the marriage.	-30.512523412704468
-23	The athlete celebrated the victory.	-15.662950620055199
-24	The athlete started the vacuum.	-26.986518561840057
-25	The athlete started the match.	-21.816070407629013
-26	The athlete won the toy.	-27.92768257856369
-27	The athlete won the cup.	-24.076283365488052
-28	The author signed the check.	-17.701665841042995
-29	The author signed the book.	-14.348375191912055
-30	The baker gathered the soldier.	-35.89738319441676
-31	The baker gathered the bread.	-18.780251890420914
-32	The baker sold the stroller.	-16.962507363408804
-33	The baker sold the bread.	-10.942589148879051
-34	The bank assigned the book.	-27.920421048998833
-35	The bank assigned the code.	-24.287334851920605
-36	The barber cut the cake.	-10.344834484159946
-37	The barber cut the hair.	-7.959811599430395
-38	The barber used the microscope.	-21.308253914117813
-39	The barber used the razor.	-12.828918993473053
-40	The bartender handed the lancet.	-15.745753309456632
-41	The bartender handed the drink.	-13.937437016516924
-42	The bartender shook the flag.	-27.378005992621183
-43	The bartender shook the drink.	-16.454889941960573
-44	The beautician spread the paint.	-28.379626750946045
-45	The beautician spread the cream.	-23.01411259174347
-46	The biker started the lesson.	-25.11890460550785
-47	The biker started the motorcycle.	-11.135967668145895
-48	The biker wore the swimsuit.	-14.778638616204262
-49	The biker wore the helmet.	-13.24075505323708
-50	The billionaire donated the book.	-23.54474499821663
-51	The billionaire donated the money.	-20.60690987110138
-52	The binman collected the flower.	-24.89727932214737
-53	The binman collected the trash.	-18.31830171495676
-54	The biologist used the razor.	-24.382401436567307
-55	The biologist used the microscope.	-18.25164359807968
-56	The blacksmith poured the wine.	-10.37619473412633
-57	The blacksmith poured the metal.	-15.071385998278856
-58	The bodybuilder lifted the flag.	-20.130771666765213
-59	The bodybuilder lifted the weight.	-16.900011502206326
-60	The boss assigned the medal.	-31.990958720445633
-61	The boss assigned the job.	-16.301143169403076
-62	The boss promised the heaven.	-34.89416387677193
-63	The boss promised the promotion.	-19.33431050181389
-64	The botanist examined the tire.	-12.916675683343783
-65	The botanist examined the plant.	-7.191661445147474
-66	The boxer delivered the drink.	-27.877409800887108
-67	The boxer delivered the punch.	-11.873876377940178
-68	The breeder sold the cigarette.	-23.380476717080455
-69	The breeder sold the dog.	-7.201409907685957
-70	The burglar climbed the rock.	-17.345103912055492
-71	The burglar climbed the wall.	-4.713993640616536
-72	The businessman read the fable.	-20.150853246450424
-73	The businessman read the report.	-20.854736305773258
-74	The businessman tied the prisoner.	-30.733642518520355
-75	The businessman tied the necktie.	-17.831053271889687
-76	The businessman wore the uniform.	-18.08175180852413
-77	The businessman wore the tie.	-21.69187006354332
-78	The butcher carved the stone.	-21.404752999544144
-79	The butcher carved the meat.	-14.260912954807281
-80	The butcher cut the tree.	-16.795028135180473
-81	The butcher cut the meat.	-5.465228468179703
-82	The butcher sold the weapon.	-25.914025124162436
-83	The butcher sold the meat.	-10.510948926210403
-84	The butcher used the camera.	-26.417792066931725
-85	The butcher used the knife.	-19.347273036837578
-86	The cameraman recorded the sale.	-12.27294416015502
-87	The cameraman recorded the video.	-10.44388960901415
-88	The candidate celebrated the holiday.	-25.150896936655045
-89	The candidate celebrated the victory.	-19.11184647679329
-90	The carpenter fixed the shoe.	-12.135655186197255
-91	The carpenter fixed the chair.	-9.983091847330797
-92	The carpenter flipped the hair.	-26.29114008799661
-93	The carpenter flipped the board.	-18.048922179383226
-94	The carpenter grabbed the ball.	-12.73836154473247
-95	The carpenter grabbed the board.	-13.692769280867651
-96	The carver built the house.	-15.950809359550476
-97	The carver built the sculpture.	-17.4498450756073
-98	The cat chased the kite.	-9.856457874178886
-99	The cat chased the bird.	-10.08358846604824
-100	The cat drank the coffee.	-9.865794390439987
-101	The cat drank the milk.	-8.1509308218956
-102	The champion held the guitar.	-27.086084976792336
-103	The champion held the cup.	-18.605159677565098
-104	The chauffeur carried the rifle.	-17.427066787595322
-105	The chauffeur carried the passenger.	-12.204487225168123
-106	The cheerleader carried the rifle.	-21.442391581833363
-107	The cheerleader carried the flag.	-10.312995463609695
-108	The cheerleader performed the spell.	-16.882502853870392
-109	The cheerleader performed the dance.	-13.515444874763489
-110	The cheerleader shook the drink.	-20.05635068938136
-111	The cheerleader shook the flag.	-16.16513754427433
-112	The chemist mixed the music.	-30.276440262794495
-113	The chemist mixed the substance.	-10.736635215580463
-114	The chemist poured the juice.	-12.184427633881569
-115	The chemist poured the compound.	-15.263424381613731
-116	The chemist sold the dog.	-25.558832056820393
-117	The chemist sold the drug.	-16.743542172014713
-118	The child ate the bone.	-17.477270901203156
-119	The child ate the candy.	-11.350991949439049
-120	The child built the sculpture.	-23.006316483020782
-121	The child built the snowman.	-12.014755964279175
-122	The child celebrated the victory.	-18.98922833800316
-123	The child celebrated the birthday.	-20.278577983379364
-124	The child chased the thief.	-18.875215582549572
-125	The child chased the toy.	-19.271360993385315
-126	The child climbed the mountain.	-13.772849172353745
-127	The child climbed the tree.	-8.717736214399338
-128	The child crossed the river.	-14.507895089685917
-129	The child crossed the park.	-22.445226224139333
-130	The child cut the tree.	-17.958734571933746
-131	The child cut the paper.	-16.981045812368393
-132	The child drank the beer.	-13.969655193388462
-133	The child drank the coke.	-9.433931727340678
-134	The child drew the horse.	-20.974745213985443
-135	The child drew the flower.	-19.191486716270447
-136	The child enjoyed the lecture.	-17.928834330290556
-137	The child enjoyed the ride.	-12.499582521617413
-138	The child found the corpse.	-15.430790022015572
-139	The child found the doll.	-15.408024668693542
-140	The child grabbed the tyre.	-20.846738874912262
-141	The child grabbed the frisbee.	-11.853963853680398
-142	The child lent the car.	-30.983499348163605
-143	The child lent the pen.	-26.4375861287117
-144	The child opened the congress.	-36.98464372754097
-145	The child opened the present.	-23.747499980032444
-146	The child picked the investment.	-30.737223714590073
-147	The child picked the flower.	-15.450086697936058
-148	The child rode the bull.	-15.589989677071571
-149	The child rode the bus.	-13.448136895895004
-150	The child threw the bottle.	-15.465860098600388
-151	The child threw the ball.	-12.037496238946915
-152	The child threw the spear.	-18.441668964922428
-153	The child threw the snowball.	-13.547588497400284
-154	The child told the verdict.	-32.45481690764427
-155	The child told the lie.	-20.286139249801636
-156	The child visited the president.	-24.90487729012966
-157	The child visited the grandmother.	-20.968030661344528
-158	The child visited the prisoner.	-24.54408499598503
-159	The child visited the zoo.	-16.78118023276329
-160	The child wrote the diagnosis.	-27.231989204883575
-161	The child wrote the conjugation.	-21.857887626159936
-162	The climber climbed the staircase.	-10.828605914954096
-163	The climber climbed the rock.	-11.18590162601322
-164	The climber faced the ocean.	-18.74965927004814
-165	The climber faced the wall.	-17.75032303109765
-166	The climber used the blackboard.	-26.540341418236494
-167	The climber used the rope.	-14.26494449051097
-168	The coach checked the car.	-21.39793023467064
-169	The coach checked the team.	-17.83897030353546
-170	The cobbler fixed the phone.	-15.72842822750681
-171	The cobbler fixed the shoe.	-10.303842186025577
-172	The cobbler sewed the parachute.	-12.276575928321108
-173	The cobbler sewed the shoe.	-8.007222671207273
-174	The collector donated the blood.	-27.25149293243885
-175	The collector donated the painting.	-13.412360399961472
-176	The comedian entertained the soldier.	-27.433429479599
-177	The comedian entertained the audience.	-12.911128729581833
-178	The confectioner decorated the tree.	-16.26442820302327
-179	The confectioner decorated the cake.	-12.254679777532147
-180	The confectioner spread the cement.	-21.602821552194655
-181	The confectioner spread the icing.	-16.967914405126066
-182	The cook bought the ticket.	-18.22061973065138
-183	The cook bought the food.	-19.57400731742382
-184	The cook checked the tire.	-26.054784394800663
-185	The cook checked the groceries.	-24.242689214646816
-186	The cook cleaned the window.	-22.24194571375847
-187	The cook cleaned the fish.	-14.608042247593403
-188	The cook cut the grass.	-17.207714945077896
-189	The cook cut the fish.	-17.010188817977905
-190	The cook flipped the hair.	-28.90332790464163
-191	The cook flipped the pancake.	-9.64780431194231
-192	The cook mixed the paint.	-22.74706582725048
-193	The cook mixed the ingredient.	-21.20452471077442
-194	The cowboy enjoyed the snack.	-20.744461093097925
-195	The cowboy enjoyed the ride.	-12.753197446465492
-196	The cowboy rode the bike.	-18.626154020428658
-197	The cowboy rode the bull.	-10.687423810362816
-198	The crew loaded the stroller.	-13.473571181297302
-199	The crew loaded the container.	-13.940272532403469
-200	The customer read the music.	-28.62977546453476
-201	The customer read the menu.	-13.359475743025541
-202	The cyclist completed the project.	-23.82902240753174
-203	The cyclist completed the race.	-14.278604224324226
-204	The cyclist fixed the hair.	-30.698483556509018
-205	The cyclist fixed the bike.	-18.54437431693077
-206	The cyclist rode the skates.	-23.17557665705681
-207	The cyclist rode the bike.	-16.822337836027145
-208	The dealer checked the net.	-24.861113995313644
-209	The dealer checked the car.	-15.574615217745304
-210	The dealer examined the plant.	-22.632781371474266
-211	The dealer examined the car.	-13.625774694606662
-212	The dealer sold the meat.	-17.661225333809853
-213	The dealer sold the car.	-5.698112413287163
-214	The deejay mixed the ingredient.	-26.705101266968995
-215	The deejay mixed the music.	-10.928275482932804
-216	The demonstrator carried the ball.	-20.44735291413963
-217	The demonstrator carried the flag.	-13.55663588270545
-218	The demonstrator signed the shirt.	-19.181837694719434
-219	The demonstrator signed the petition.	-9.03318552672863
-220	The demonstrator threw the frisbee.	-10.349212114568218
-221	The demonstrator threw the stone.	-16.75824509235099
-222	The diplomat carried the dog.	-25.209809884428978
-223	The diplomat carried the message.	-22.390455543994904
-224	The doctor helped the cook.	-22.404616713523865
-225	The doctor helped the woman.	-13.978056401014328
-226	The doctor offered the breakfast.	-24.401996672153473
-227	The doctor offered the support.	-24.57948213815689
-228	The doctor sewed the shoe.	-12.574954509735107
-229	The doctor sewed the wound.	-3.677707865834236
-230	The doctor used the shovel.	-20.442669823765755
-231	The doctor used the stethoscope.	-7.731564889974834
-232	The doctor visited the museum.	-17.811701864004135
-233	The doctor visited the patient.	-9.434547573328018
-234	The doctor wrote the conjugation.	-18.665428917855024
-235	The doctor wrote the diagnosis.	-12.917272716760635
-236	The dog ate the plant.	-11.98429274559021
-237	The dog ate the bone.	-9.743447259068489
-238	The dog carried the flag.	-18.542644321918488
-239	The dog carried the ball.	-17.374629944562912
-240	The dog caught the wave.	-21.576914489269257
-241	The dog caught the ball.	-14.767921905964613
-242	The dog chased the tank.	-19.922124415636063
-243	The dog chased the ball.	-9.49919793009758
-244	The dog dug the grave.	-14.628758609294891
-245	The dog dug the hole.	-10.341715186834335
-246	The dog fetched the tray.	-17.870830163359642
-247	The dog fetched the ball.	-11.84732799232006
-248	The dog pulled the trigger.	-10.947004728019238
-249	The dog pulled the sled.	-11.495193794369698
-250	The driver heard the baby.	-22.216731265187263
-251	The driver heard the horn.	-13.123989939689636
-252	The electrician checked the rifle.	-18.760045021772385
-253	The electrician checked the device.	-12.337244972586632
-254	The employee passed the rifle.	-25.41070058941841
-255	The employee passed the report.	-29.535443425178528
-256	The employer offered the candy.	-29.713799357414246
-257	The employer offered the job.	-11.38997745513916
-258	The engineer completed the painting.	-22.391825795173645
-259	The engineer completed the project.	-14.9147295281291
-260	The engineer drew the flower.	-27.25167852640152
-261	The engineer drew the turbine.	-21.35179376602173
-262	The farmer picked the killer.	-26.789700485765934
-263	The farmer picked the vegetable.	-16.095690310001373
-264	The farmer plowed the sand.	-15.498984031379223
-265	The farmer plowed the field.	-7.4461860954761505
-266	The farmer sold the drug.	-21.10555063188076
-267	The farmer sold the corn.	-11.683416724205017
-268	The farmer sprayed the cream.	-24.74802365154028
-269	The farmer sprayed the pesticide.	-12.336769074201584
-270	The farmer used the computer.	-18.800269424915314
-271	The farmer used the shovel.	-17.172003537416458
-272	The fighter kicked the television.	-21.971250370144844
-273	The fighter kicked the opponent.	-22.171424865722656
-274	The firefighter fought the crime.	-27.91826683282852
-275	The firefighter fought the fire.	-14.081007599830627
-276	The fisherman caught the ball.	-17.602219596505165
-277	The fisherman caught the fish.	-9.816029354929924
-278	The fisherman checked the car.	-25.880172908306122
-279	The fisherman checked the net.	-15.253420859575272
-280	The fisherman sold the drug.	-25.141461864113808
-281	The fisherman sold the fish.	-11.560079246759415
-282	The florist sold the bike.	-13.548570171929896
-283	The florist sold the flower.	-11.538181033545698
-284	The footballer chased the toy.	-29.93406879901886
-285	The footballer chased the ball.	-18.5837534442544
-286	The footballer delivered the lecture.	-21.919965505599976
-287	The footballer delivered the kick.	-21.78256845474243
-288	The footballer hit the car.	-27.569679349660873
-289	The footballer hit the ball.	-18.528275839984417
-290	The footballer kicked the vase.	-14.623105382546782
-291	The footballer kicked the ball.	-12.530002921819687
-292	The footballer passed the knife.	-28.216930255293846
-293	The footballer passed the ball.	-20.74525505490601
-294	The gardener cut the fish.	-17.591236564330757
-295	The gardener cut the grass.	-3.42476956686005
-296	The gardener decorated the book.	-20.52193834539503
-297	The gardener decorated the garden.	-15.380121816881001
-298	The gardener gathered the flag.	-18.537158789113164
-299	The gardener gathered the grass.	-16.34070391766727
-300	The gardener pushed the demonstrator.	-15.01489955931902
-301	The gardener pushed the mower.	-5.062085371464491
-302	The general gathered the bread.	-30.309318974614143
-303	The general gathered the soldier.	-23.903177589178085
-304	The general sent the postcard.	-23.763562481850386
-305	The general sent the soldier.	-23.2890385389328
-306	The general won the toy.	-37.79110446572304
-307	The general won the battle.	-11.586622573435307
-308	The goalkeeper caught the fish.	-24.941600471735
-309	The goalkeeper caught the ball.	-10.6078094644472
-310	The goalkeeper grabbed the phone.	-18.32230257242918
-311	The goalkeeper grabbed the ball.	-11.272070561535656
-312	The goalkeeper held the child.	-25.22207435965538
-313	The goalkeeper held the ball.	-13.177343476563692
-314	The goalkeeper threw the bomb.	-24.419349767267704
-315	The goalkeeper threw the ball.	-13.540969580411911
-316	The government offered the drink.	-31.688850350677967
-317	The government offered the protection.	-19.10612091422081
-318	The grandfather told the strategy.	-34.1095130443573
-319	The grandfather told the story.	-18.01823389530182
-320	The guard opened the present.	-32.51088383793831
-321	The guard opened the jail.	-24.019977632910013
-322	The guard tied the roast.	-28.591131269931793
-323	The guard tied the prisoner.	-13.50598694384098
-324	The guest held the camera.	-18.493809938430786
-325	The guest held the drink.	-22.073937505483627
-326	The guest hung the laundry.	-18.647335447371006
-327	The guest hung the coat.	-21.831089541316032
-328	The guide described the software.	-27.705431669950485
-329	The guide described the monument.	-23.664442874491215
-330	The hairstylist fixed the bike.	-18.01174449743121
-331	The hairstylist fixed the hair.	-11.77946994904778
-332	The hairstylist flipped the board.	-20.4071192847332
-333	The hairstylist flipped the hair.	-13.339467236073688
-334	The hairstylist sprayed the pesticide.	-13.500340151047567
-335	The hairstylist sprayed the foam.	-12.30106219620211
-336	The hairstylist washed the infant.	-20.213215881231008
-337	The hairstylist washed the hair.	-11.039483099943027
-338	The hiker faced the camera.	-15.68182790465653
-339	The hiker faced the mountain.	-15.208068534731865
-340	The horse drew the trailer.	-24.451269507408142
-341	The horse drew the carriage.	-11.743805073201656
-342	The horse moved the suitcase.	-20.96320489048958
-343	The horse moved the cart.	-12.404842920601368
-344	The horse pulled the suitcase.	-19.571286022663116
-345	The horse pulled the cart.	-6.34727519005537
-346	The hostess explained the poem.	-26.598651802167296
-347	The hostess explained the procedure.	-12.516265474259853
-348	The hound fetched the money.	-8.780008272035047
-349	The hound fetched the bird.	-8.72558357694652
-350	The housemaid cleaned the fish.	-16.73410229384899
-351	The housemaid cleaned the dish.	-16.543891668319702
-352	The housemaid cleaned the street.	-23.911955919116735
-353	The housemaid cleaned the window.	-14.836557880043983
-354	The housemaid mopped the barracks.	-19.148074064403772
-355	The housemaid mopped the floor.	-4.99716744062971
-356	The housemaid washed the boat.	-20.694377332925797
-357	The housemaid washed the floor.	-11.969975739717484
-358	The housewife cleaned the shoe.	-18.77377352118492
-359	The housewife cleaned the table.	-12.223175432533026
-360	The illusionist performed the surgery.	-18.270120076835155
-361	The illusionist performed the trick.	-7.295462474226952
-362	The illustrator decorated the garden.	-17.90464197471738
-363	The illustrator decorated the book.	-15.815409487113357
-364	The illustrator drew the carriage.	-14.232190277427435
-365	The illustrator drew the picture.	-10.102189108729362
-366	The investor rented the bicycle.	-24.25689521431923
-367	The investor rented the land.	-18.12335515022278
-368	The jockey rode the wave.	-6.654516624286771
-369	The jockey rode the horse.	-5.0755180874839425
-370	The journalist carried the milk.	-29.75917437672615
-371	The journalist carried the article.	-26.913116812705994
-372	The journalist wrote the song.	-24.91106617450714
-373	The journalist wrote the article.	-13.428681075572968
-374	The killer pulled the cart.	-27.952788919210434
-375	The killer pulled the trigger.	-6.961106680333614
-376	The knight held the camera.	-22.2978850081563
-377	The knight held the sword.	-11.941476158797741
-378	The librarian climbed the tree.	-9.851153194904327
-379	The librarian climbed the ladder.	-3.222731065005064
-380	The librarian stacked the supply.	-23.2963974326849
-381	The librarian stacked the book.	-13.298577901092358
-382	The lumberjack cut the meat.	-14.208518669009209
-383	The lumberjack cut the tree.	-5.8078834265470505
-384	The lumberjack stacked the book.	-18.047832548618317
-385	The lumberjack stacked the wood.	-7.542519612703472
-386	The lumberjack used the lancet.	-11.889719378319569
-387	The lumberjack used the saw.	-15.745777983218431
-388	The magician read the newspaper.	-16.16566900908947
-389	The magician read the hand.	-23.563138458877802
-390	The manager rented the kayak.	-17.405676990747452
-391	The manager rented the room.	-21.199161410331726
-392	The mason built the snowman.	-14.344782505184412
-393	The mason built the house.	-4.835187904536724
-394	The mason fixed the bike.	-15.419081225991249
-395	The mason fixed the roof.	-7.866342621244257
-396	The mason fixed the tire.	-15.239106215536594
-397	The mason fixed the wall.	-9.874204917112365
-398	The mason mixed the soup.	-21.431881923228502
-399	The mason mixed the cement.	-7.842216826742515
-400	The mechanic assembled the art.	-33.74894040822983
-401	The mechanic assembled the bicycle.	-14.323267713189125
-402	The mechanic checked the groceries.	-25.609763130545616
-403	The mechanic checked the tire.	-9.782891772687435
-404	The mechanic fixed the roof.	-11.997272811830044
-405	The mechanic fixed the tire.	-9.1476762406528
-406	The mechanic rented the boat.	-21.778331115841866
-407	The mechanic rented the truck.	-18.8165166079998
-408	The mechanic spread the chocolate.	-26.290393725037575
-409	The mechanic spread the coating.	-30.219941332936287
-410	The milkman carried the flag.	-20.421151652932167
-411	The milkman carried the bottle.	-16.132918149232864
-412	The model faced the mountain.	-32.40411666035652
-413	The model faced the camera.	-19.248947523534298
-414	The monkey grabbed the board.	-20.85488796234131
-415	The monkey grabbed the banana.	-16.496692456305027
-416	The mother decorated the car.	-23.75954382121563
-417	The mother decorated the house.	-18.979821279644966
-418	The mother held the flag.	-21.640444740653038
-419	The mother held the child.	-8.418530821800232
-420	The mother hung the rifle.	-26.677759673446417
-421	The mother hung the laundry.	-18.45594412088394
-422	The mother prepared the gun.	-27.21195451915264
-423	The mother prepared the food.	-11.40535032749176
-424	The mother pushed the trash can.	-17.597842574119568
-425	The mother pushed the stroller.	-6.714546406874433
-426	The mover moved the horse.	-17.532090954482555
-427	The mover moved the furniture.	-6.275100350379944
-428	The musician entertained the demonstrator.	-19.981502443552017
-429	The musician entertained the crowd.	-13.55197109375149
-430	The musician held the stone.	-21.56276834011078
-431	The musician held the guitar.	-16.37335355579853
-432	The musician played the soccer.	-36.05786445736885
-433	The musician played the song.	-16.553890138864517
-434	The musician read the menu.	-21.533519104123116
-435	The musician read the music.	-20.3843135535717
-436	The musician touched the base.	-27.501304179430008
-437	The musician touched the instrument.	-15.86254284530878
-438	The nanny heard the speech.	-15.856523737311363
-439	The nanny heard the baby.	-16.080469033680856
-440	The nanny watched the landscape.	-23.01966566592455
-441	The nanny watched the child.	-10.945882226806134
-442	The nurse handed the hose.	-23.133415430784225
-443	The nurse handed the lancet.	-10.969050330051687
-444	The nurse pushed the mower.	-15.179988995194435
-445	The nurse pushed the wheelchair.	-14.87633416056633
-446	The nurse washed the car.	-21.349300727248192
-447	The nurse washed the infant.	-16.335150256752968
-448	The painter completed the race.	-28.690485447645187
-449	The painter completed the painting.	-12.522473722696304
-450	The painter decorated the cake.	-20.393195122480392
-451	The painter decorated the wall.	-18.31952467560768
-452	The painter mixed the drink.	-25.13196349143982
-453	The painter mixed the paint.	-15.306416377425194
-454	The painter painted the toenail.	-12.336295543878805
-455	The painter painted the picture.	-11.652033418416977
-456	The painter signed the agreement.	-17.423658028244972
-457	The painter signed the paint.	-20.82094343006611
-458	The parent gave the gun.	-26.119402289390564
-459	The parent gave the present.	-23.888329833745956
-460	The passenger bought the table.	-26.87830652296543
-461	The passenger bought the ticket.	-10.994667321443558
-462	The passenger passed the ball.	-21.00950463116169
-463	The passenger passed the check.	-16.149921000003815
-464	The passenger pulled the corpse.	-26.14594092965126
-465	The passenger pulled the suitcase.	-19.01835662126541
-466	The patient fought the fire.	-20.448779731988907
-467	The patient fought the cancer.	-14.748938471078873
-468	The patient reported the crime.	-18.738008558750153
-469	The patient reported the symptom.	-18.725584238767624
-470	The philologist examined the camera.	-30.48519080877304
-471	The philologist examined the book.	-13.470899879932404
-472	The photographer captured the thief.	-24.432894378900528
-473	The photographer captured the image.	-13.836434602737427
-474	The photographer examined the dog.	-23.156236745417118
-475	The photographer examined the camera.	-19.335478574037552
-476	The photographer prepared the food.	-22.222455069422722
-477	The photographer prepared the camera.	-17.14405307173729
-478	The photographer used the stethoscope.	-17.099709917743894
-479	The photographer used the camera.	-19.4297017455101
-480	The pilot began the performance.	-27.381182378157973
-481	The pilot began the race.	-21.367589697241783
-482	The pilot started the concert.	-27.433704666793346
-483	The pilot started the race.	-20.559598460793495
-484	The pilot won the lottery.	-12.817400645464659
-485	The pilot won the race.	-9.828626662492752
-486	The player began the class.	-33.52750952541828
-487	The player began the match.	-20.022366881370544
-488	The player enjoyed the beer.	-22.68468677997589
-489	The player enjoyed the game.	-13.223407328128815
-490	The player gained the degree.	-25.281237363815308
-491	The player gained the ball.	-22.904446005821228
-492	The player gathered the grass.	-29.427447021007538
-493	The player gathered the ball.	-20.31904646754265
-494	The player passed the exam.	-11.817182645201683
-495	The player passed the ball.	-19.927019268274307
-496	The player reached the moon.	-25.127793960273266
-497	The player reached the goal.	-19.35763990879059
-498	The player touched the flower.	-21.565277591347694
-499	The player touched the base.	-28.953676864504814
-500	The poet wrote the menu.	-22.519775182008743
-501	The poet wrote the sonet.	-26.394293040037155
-502	The policeman captured the image.	-20.66999614238739
-503	The policeman captured the thief.	-14.591803178191185
-504	The policeman checked the groceries.	-19.641151577234268
-505	The policeman checked the bag.	-11.578622698783875
-506	The policeman examined the patient.	-16.707568012177944
-507	The policeman examined the car.	-15.36281756311655
-508	The policeman fought the obesity.	-41.05765700340271
-509	The policeman fought the crime.	-19.821419209241867
-510	The policeman hit the ball.	-19.872873172163963
-511	The policeman hit the demonstrator.	-15.44329000916332
-512	The policeman pushed the stroller.	-13.042577743530273
-513	The policeman pushed the demonstrator.	-13.95383682451211
-514	The politician signed the paint.	-33.93321132659912
-515	The politician signed the agreement.	-16.422802329063416
-516	The porter carried the flag.	-13.395310489460826
-517	The porter carried the bag.	-9.241055563092232
-518	The porter loaded the file.	-23.931802988052368
-519	The porter loaded the luggage.	-9.52975937910378
-520	The porter stacked the wood.	-13.094332162290812
-521	The porter stacked the suitcase.	-16.039359526708722
-522	The postman delivered the punch.	-23.151572108268738
-523	The postman delivered the mail.	-5.642982982099056
-524	The president delivered the kick.	-27.657168373465538
-525	The president delivered the speech.	-8.18487405590713
-526	The president gave the book.	-26.241380404680967
-527	The president gave the speech.	-9.859494961798191
-528	The president promised the bicycle.	-31.64099634811282
-529	The president promised the reform.	-21.187491161748767
-530	The president visited the grandmother.	-26.64866352081299
-531	The president visited the school.	-15.643651746213436
-532	The priest celebrated the graduation.	-21.898560106754303
-533	The priest celebrated the marriage.	-13.254297822713852
-534	The priest promised the promotion.	-27.425087228417397
-535	The priest promised the salvation.	-21.829596266150475
-536	The priest taught the chemistry.	-27.400658071041107
-537	The priest taught the bible.	-20.864226549863815
-538	The producer released the prisoner.	-25.70266266912222
-539	The producer released the film.	-23.302065320312977
-540	The professor delivered the kick.	-26.832847580313683
-541	The professor delivered the lecture.	-10.923323333263397
-542	The professor donated the organ.	-20.85331380367279
-543	The professor donated the book.	-16.258649736642838
-544	The professor opened the jail.	-31.075150847434998
-545	The professor opened the congress.	-30.793079311028123
-546	The professor taught the karate.	-15.735237385728396
-547	The professor taught the language.	-21.226091265678406
-548	The professor wore the goggles.	-20.263106405735016
-549	The professor wore the tie.	-20.208772510290146
-550	The professor wrote the magazine.	-25.817699372768402
-551	The professor wrote the book.	-21.16920393705368
-552	The programmer described the monument.	-32.15393078327179
-553	The programmer described the software.	-21.086969137191772
-554	The programmer loaded the ammunition.	-27.224850609898567
-555	The programmer loaded the file.	-16.719736993312836
-556	The programmer used the shovel.	-28.22670614719391
-557	The programmer used the computer.	-23.091069728136063
-558	The pupil drew the turbine.	-31.3964641392231
-559	The pupil drew the flower.	-25.493372529745102
-560	The pusher sold the chocolate.	-21.10146637260914
-561	The pusher sold the drug.	-9.014824315905571
-562	The pyromaniac started the computer.	-20.880145745468326
-563	The pyromaniac started the fire.	-7.4833914692171675
-564	The receiver caught the wave.	-20.91945970058441
-565	The receiver caught the baseball.	-18.873113945126534
-566	The referee moved the furniture.	-21.154984824359417
-567	The referee moved the ball.	-9.54150415584445
-568	The refugee found the doll.	-27.50979894399643
-569	The refugee found the shelter.	-28.13791513442993
-570	The reporter brought the cake.	-22.494686484336853
-571	The reporter brought the news.	-14.939923226833344
-572	The reporter held the knife.	-18.84911474585533
-573	The reporter held the camera.	-11.538788110017776
-574	The roofer climbed the rock.	-23.24009408056736
-575	The roofer climbed the ladder.	-5.919402629137039
-576	The sailor faced the wall.	-16.568031400442123
-577	The sailor faced the ocean.	-15.039778034668416
-578	The sailor mopped the classroom.	-26.091233301907778
-579	The sailor mopped the deck.	-10.284870589151978
-580	The sailor tied the necktie.	-16.94049382209778
-581	The sailor tied the rope.	-13.995071351528168
-582	The salesperson sent the gun.	-22.374768659472466
-583	The salesperson sent the questionnaire.	-20.836320221424103
-584	The scientist reported the marriage.	-34.86439448595047
-585	The scientist reported the finding.	-22.644206166267395
-586	The scoutmaster assembled the sailboat.	-22.598200134932995
-587	The scoutmaster assembled the tent.	-23.306415885686874
-588	The sculptor carved the meat.	-17.203301206231117
-589	The sculptor carved the stone.	-13.337315503507853
-590	The sculptor taught the skydiving.	-24.992704512245837
-591	The sculptor taught the art.	-18.706632047891617
-592	The secretary wrote the sonet.	-34.504864543676376
-593	The secretary wrote the note.	-20.31417605280876
-594	The sergeant assigned the homework.	-22.127069413661957
-595	The sergeant assigned the mission.	-19.34073317050934
-596	The singer began the race.	-26.978828322142363
-597	The singer began the performance.	-15.480235233902931
-598	The singer held the sword.	-22.303830951452255
-599	The singer held the microphone.	-11.387146458029747
-600	The singer performed the trick.	-17.23792353272438
-601	The singer performed the music.	-19.84434014558792
-602	The singer recorded the recipe.	-23.230400756001472
-603	The singer recorded the song.	-13.603956639766693
-604	The singer started the videogame.	-20.481391951441765
-605	The singer started the concert.	-14.910102635622025
-606	The skater rode the bus.	-18.20244088768959
-607	The skater rode the skates.	-18.352139361202717
-608	The skier gained the ball.	-19.401843070983887
-609	The skier gained the speed.	-20.25357161462307
-610	The skipper assembled the bicycle.	-24.722619146108627
-611	The skipper assembled the sailboat.	-16.61944394931197
-612	The smuggler sold the flower.	-18.82882028957829
-613	The smuggler sold the weapon.	-13.478949712589383
-614	The snowboarder flipped the bike.	-16.93107198178768
-615	The snowboarder flipped the board.	-16.196050768718123
-616	The soldier carried the ball.	-22.110947996377945
-617	The soldier carried the rifle.	-17.054127871990204
-618	The soldier celebrated the graduation.	-29.434422820806503
-619	The soldier celebrated the victory.	-15.457297593355179
-620	The soldier checked the burner.	-22.125032797455788
-621	The soldier checked the rifle.	-14.863393038511276
-622	The soldier crossed the stage.	-19.66030521504581
-623	The soldier crossed the river.	-11.156329449266195
-624	The soldier dug the pool.	-24.634289473295212
-625	The soldier dug the trench.	-14.553428769111633
-626	The soldier fought the cancer.	-22.02255816757679
-627	The soldier fought the enemy.	-13.788819417357445
-628	The soldier gathered the ball.	-21.006072022020817
-629	The soldier gathered the ammunition.	-15.582638159394264
-630	The soldier gathered the grass.	-25.930312395095825
-631	The soldier gathered the flag.	-20.186409190297127
-632	The soldier heard the poem.	-25.52227544784546
-633	The soldier heard the command.	-16.941645815968513
-634	The soldier held the comb.	-23.545103527605534
-635	The soldier held the flag.	-14.275538474321365
-636	The soldier hung the picture.	-22.818945854902267
-637	The soldier hung the rifle.	-17.99858875013888
-638	The soldier reached the supermarket.	-22.40138828754425
-639	The soldier reached the trench.	-17.864527761936188
-640	The soldier released the film.	-30.91749197244644
-641	The soldier released the prisoner.	-12.420066460967064
-642	The soldier threw the ball.	-16.224396362900734
-643	The soldier threw the bomb.	-14.072346836328506
-644	The soldier threw the snowball.	-19.253127112984657
-645	The soldier threw the bomb.	-14.072346836328506
-646	The soldier used the brush.	-27.989846348762512
-647	The soldier used the knife.	-21.08236062526703
-648	The soldier wore the jeans.	-24.981042236089706
-649	The soldier wore the helmet.	-17.54293555021286
-650	The soldier wore the pajamas.	-17.509020498138852
-651	The soldier wore the uniform.	-14.483346939086914
-652	The speaker entertained the dog.	-31.124651670455933
-653	The speaker entertained the audience.	-16.79995933547616
-654	The spectator bought the car.	-24.943512976169586
-655	The spectator bought the ticket.	-14.056818693876266
-656	The spectator enjoyed the breakfast.	-25.9692764878273
-657	The spectator enjoyed the game.	-16.116127770394087
-658	The spectator heard the horn.	-21.285162389278412
-659	The spectator heard the speech.	-22.904954195022583
-660	The spectator watched the bird.	-20.3083605915308
-661	The spectator watched the game.	-17.513756468892097
-662	The speleologist examined the book.	-15.95296311751008
-663	The speleologist examined the cave.	-17.989942197687924
-664	The spy passed the frisbee.	-18.180139889894235
-665	The spy passed the information.	-22.54099541902542
-666	The student began the match.	-26.415941536426544
-667	The student began the trip.	-23.42291522026062
-668	The student celebrated the marriage.	-25.93608158826828
-669	The student celebrated the graduation.	-22.968206733465195
-670	The student completed the marathon.	-20.09021657705307
-671	The student completed the project.	-15.525292038917542
-672	The student drank the gasoline.	-19.319983534514904
-673	The student drank the beer.	-13.95673382282257
-674	The student drank the milk.	-14.495896004140377
-675	The student drank the coffee.	-14.23897261172533
-676	The student enjoyed the marriage.	-25.236170664429665
-677	The student enjoyed the beer.	-21.34958688914776
-678	The student heard the command.	-21.765356466174126
-679	The student heard the lecture.	-15.031374454498291
-680	The student passed the river.	-35.25978347659111
-681	The student passed the exam.	-5.507648602128029
-682	The student read the hand.	-26.79272237420082
-683	The student read the book.	-12.969229862093925
-684	The student sent the bomb.	-25.555373787879944
-685	The student sent the email.	-14.08261153101921
-686	The student threw the garbage.	-23.455063939094543
-687	The student threw the frisbee.	-11.51158859948373
-688	The student used the saw.	-21.756348133087158
-689	The student used the computer.	-15.323102593421936
-690	The student wore the armor.	-23.453431218862534
-691	The student wore the glasses.	-21.66431897878647
-692	The student wore the harness.	-22.75043734908104
-693	The student wore the glasses.	-21.66431897878647
-694	The surfer caught the baseball.	-14.349251845327672
-695	The surfer caught the wave.	-7.182787519006524
-696	The surfer flipped the pancake.	-11.329104847623967
-697	The surfer flipped the board.	-15.707270352169871
-698	The surfer grabbed the frisbee.	-8.213460857296923
-699	The surfer grabbed the board.	-9.971680075628683
-700	The surfer rode the camel.	-18.64977779239416
-701	The surfer rode the wave.	-5.585680739721283
-702	The surfer wore the tie.	-21.907468233257532
-703	The surfer wore the sunglasses.	-15.300901793758385
-704	The surfer wore the tuxedo.	-13.339172413802771
-705	The surfer wore the swimsuit.	-12.079861665493809
-706	The surgeon examined the car.	-22.5360113568604
-707	The surgeon examined the patient.	-9.504367999732494
-708	The surgeon performed the dance.	-26.704045474529266
-709	The surgeon performed the surgery.	-5.793701276183128
-710	The surgeon used the rifle.	-24.55494710803032
-711	The surgeon used the lancet.	-12.386345911363605
-712	The sweeper cleaned the window.	-12.507967861572979
-713	The sweeper cleaned the street.	-8.953776430338621
-714	The swimmer wore the cloak.	-22.214491272345185
-715	The swimmer wore the goggles.	-13.771513652056456
-716	The tailor sewed the wound.	-18.840176176279783
-717	The tailor sewed the dress.	-8.598562873201445
-718	The teacher explained the tactic.	-21.127597823739052
-719	The teacher explained the exercise.	-16.740834325551987
-720	The teacher gave the drug.	-22.91428852081299
-721	The teacher gave the homework.	-16.172667518258095
-722	The teacher helped the patient.	-18.85575759410858
-723	The teacher helped the child.	-11.173209607601166
-724	The teacher lent the gun.	-26.74125936627388
-725	The teacher lent the book.	-19.066508024930954
-726	The teacher used the knife.	-21.230603903532028
-727	The teacher used the blackboard.	-11.44680842757225
-728	The teenager heard the lecture.	-19.584698855876923
-729	The teenager heard the music.	-16.515265494585037
-730	The terrorist released the book.	-28.405083805322647
-731	The terrorist released the hostage.	-16.614978350698948
-732	The thief grabbed the banana.	-16.977364778518677
-733	The thief grabbed the money.	-10.783487692475319
-734	The tourist read the bible.	-22.21045109629631
-735	The tourist read the map.	-16.411508575081825
-736	The tourist rode the skates.	-27.91916186362505
-737	The tourist rode the camel.	-19.350381523370743
-738	The tourist visited the patient.	-27.374739110469818
-739	The tourist visited the museum.	-18.01874142885208
-740	The traveller checked the groceries.	-26.946738302707672
-741	The traveller checked the bag.	-19.904113233089447
-742	The traveller checked the team.	-34.39302188158035
-743	The traveller checked the watch.	-23.069697096943855
-744	The traveller handed the screwdriver.	-17.79580473783426
-745	The traveller handed the bag.	-20.352910310029984
-746	The truck hit the bag.	-19.745017290115356
-747	The truck hit the car.	-7.440989583730698
-748	The truck plowed the garden.	-16.98126244544983
-749	The truck plowed the snow.	-13.314975921064615
-750	The undertaker dug the trench.	-8.394533608108759
-751	The undertaker dug the grave.	-3.1238060565665364
-752	The usurer lent the toy.	-29.890563368797302
-753	The usurer lent the money.	-26.031786039471626
-754	The vandal sprayed the perfume.	-29.049699366092682
-755	The vandal sprayed the paint.	-21.817264437675476
-756	The veterinarian examined the plant.	-13.996491771191359
-757	The veterinarian examined the dog.	-5.891542004887015
-758	The violinist played the trumpet.	-11.158374216407537
-759	The violinist played the violin.	-6.731085665524006
-760	The violinist wore the helmet.	-17.894891880452633
-761	The violinist wore the tuxedo.	-9.89476852607595
-762	The volunteer brought the hatchet.	-22.492767652496696
-763	The volunteer brought the food.	-17.455044448375702
-764	The waiter brought the guitar.	-21.663088105618954
-765	The waiter brought the glass.	-17.75262039154768
-766	The waiter carried the rifle.	-26.57266779243946
-767	The waiter carried the tray.	-11.628940135240555
-768	The waiter cleared the road.	-26.7161808013916
-769	The waiter cleared the bar.	-14.126975007355213
-770	The waiter cleared the tube.	-31.280904158949852
-771	The waiter cleared the table.	-4.68830644339323
-772	The waiter cut the hair.	-20.39800773561001
-773	The waiter cut the cake.	-12.019394243136048
-774	The waiter delivered the speech.	-26.329605102539062
-775	The waiter delivered the drink.	-11.536111317574978
-776	The waiter fetched the ball.	-17.124079428613186
-777	The waiter fetched the water.	-15.458650888875127
-778	The waiter held the flag.	-21.002323746681213
-779	The waiter held the bottle.	-15.666808173060417
-780	The waiter mixed the cement.	-24.90773969888687
-781	The waiter mixed the drink.	-13.722548484802246
-782	The waiter opened the sarcophagus.	-11.376875988549727
-783	The waiter opened the bottle.	-11.583300851285458
-784	The waiter poured the gasoline.	-18.86346250027418
-785	The waiter poured the wine.	-5.123525716364384
-786	The waiter prepared the bomb.	-26.761262625455856
-787	The waiter prepared the drink.	-12.845564842224121
-788	The witness explained the equation.	-25.09462322294712
-789	The witness explained the circumstances.	-16.38193916901946
-790	The witness reported the birth.	-31.164822816848755
-791	The witness reported the crime.	-16.025856167078018
-792	The woman carried the stone.	-18.38281601667404
-793	The woman carried the bag.	-13.983529686927795
-794	The woman opened the manhole.	-10.084797650575638
-795	The woman opened the bag.	-10.631374776363373
-796	The woman painted the sign.	-18.962707102298737
-797	The woman painted the toenail.	-16.83149200041953
+1	The actor won the award.	-13.246264755725859	6	5
+2	The anchorman told the parable.	-18.633405977860093	8	5
+3	The anchorman told the news.	-21.680365471169356	7	5
+4	The animal found the map.	-26.80217039585113	6	5
+5	The animal found the food.	-16.841216683387756	6	5
+6	The ant stacked the suitcase.	-36.762869223952286	6	5
+7	The ant stacked the supply.	-37.976477414369576	6	5
+8	The archeologist examined the dog.	-21.301159609109163	7	5
+9	The archeologist examined the epigraph.	-8.261742644011973	8	5
+10	The archer released the interview.	-40.57576967775822	7	5
+11	The archer released the arrow.	-4.545097908994649	7	5
+12	The artist assembled the tent.	-24.871977388858795	6	5
+13	The artist assembled the art.	-20.728496134281162	6	5
+14	The artist hung the motorcycle.	-27.542829215526577	6	5
+15	The artist hung the picture.	-18.323454916477203	6	5
+16	The assistant helped the soldier.	-21.706901583820578	6	5
+17	The assistant helped the cook.	-19.698158860206608	6	5
+18	The astronaut reached the baker.	-33.904610976576805	6	5
+19	The astronaut reached the moon.	-17.585742686409507	6	5
+20	The astronaut touched the guitar.	-23.951705396175385	6	5
+21	The astronaut touched the ground.	-17.00324008986354	6	5
+22	The athlete celebrated the marriage.	-30.512523412704468	6	5
+23	The athlete celebrated the victory.	-15.662950620055199	6	5
+24	The athlete started the vacuum.	-26.986518561840054	6	5
+25	The athlete started the match.	-21.816070407629013	6	5
+26	The athlete won the toy.	-27.92768257856369	6	5
+27	The athlete won the cup.	-24.076283365488052	6	5
+28	The author signed the check.	-17.701665841042995	6	5
+29	The author signed the book.	-14.348375191912055	6	5
+30	The baker gathered the soldier.	-35.897383194416754	6	5
+31	The baker gathered the bread.	-18.780251890420914	6	5
+32	The baker sold the stroller.	-16.962507363408804	7	5
+33	The baker sold the bread.	-10.942589148879053	6	5
+34	The bank assigned the book.	-27.920421048998836	6	5
+35	The bank assigned the code.	-24.287334851920605	6	5
+36	The barber cut the cake.	-10.344834484159945	7	5
+37	The barber cut the hair.	-7.959811599430394	7	5
+38	The barber used the microscope.	-21.308253914117813	7	5
+39	The barber used the razor.	-12.828918993473053	7	5
+40	The bartender handed the lancet.	-15.745753309456632	8	5
+41	The bartender handed the drink.	-13.937437016516926	6	5
+42	The bartender shook the flag.	-27.378005992621183	6	5
+43	The bartender shook the drink.	-16.454889941960573	6	5
+44	The beautician spread the paint.	-28.379626750946045	7	5
+45	The beautician spread the cream.	-23.01411259174347	7	5
+46	The biker started the lesson.	-25.11890460550785	7	5
+47	The biker started the motorcycle.	-11.135967668145897	7	5
+48	The biker wore the swimsuit.	-14.778638616204262	8	5
+49	The biker wore the helmet.	-13.24075505323708	7	5
+50	The billionaire donated the book.	-23.54474499821663	6	5
+51	The billionaire donated the money.	-20.60690987110138	6	5
+52	The binman collected the flower.	-24.89727932214737	7	5
+53	The binman collected the trash.	-18.318301714956764	7	5
+54	The biologist used the razor.	-24.382401436567307	6	5
+55	The biologist used the microscope.	-18.251643598079678	6	5
+56	The blacksmith poured the wine.	-10.376194734126331	7	5
+57	The blacksmith poured the metal.	-15.071385998278856	7	5
+58	The bodybuilder lifted the flag.	-20.13077166676521	7	5
+59	The bodybuilder lifted the weight.	-16.900011502206322	7	5
+60	The boss assigned the medal.	-31.990958720445636	6	5
+61	The boss assigned the job.	-16.301143169403073	6	5
+62	The boss promised the heaven.	-34.894163876771934	6	5
+63	The boss promised the promotion.	-19.334310501813892	6	5
+64	The botanist examined the tire.	-12.916675683343785	8	5
+65	The botanist examined the plant.	-7.191661445147473	8	5
+66	The boxer delivered the drink.	-27.877409800887108	6	5
+67	The boxer delivered the punch.	-11.873876377940178	6	5
+68	The breeder sold the cigarette.	-23.38047671708045	7	5
+69	The breeder sold the dog.	-7.201409907685957	7	5
+70	The burglar climbed the rock.	-17.345103912055492	7	5
+71	The burglar climbed the wall.	-4.713993640616536	7	5
+72	The businessman read the fable.	-20.150853246450428	7	5
+73	The businessman read the report.	-20.854736305773255	6	5
+74	The businessman tied the prisoner.	-30.733642518520355	6	5
+75	The businessman tied the necktie.	-17.831053271889687	7	5
+76	The businessman wore the uniform.	-18.081751808524128	6	5
+77	The businessman wore the tie.	-21.69187006354332	6	5
+78	The butcher carved the stone.	-21.404752999544144	6	5
+79	The butcher carved the meat.	-14.26091295480728	6	5
+80	The butcher cut the tree.	-16.795028135180473	6	5
+81	The butcher cut the meat.	-5.465228468179703	6	5
+82	The butcher sold the weapon.	-25.91402512416244	6	5
+83	The butcher sold the meat.	-10.510948926210405	6	5
+84	The butcher used the camera.	-26.417792066931725	6	5
+85	The butcher used the knife.	-19.347273036837574	6	5
+86	The cameraman recorded the sale.	-12.272944160155019	7	5
+87	The cameraman recorded the video.	-10.44388960901415	7	5
+88	The candidate celebrated the holiday.	-25.150896936655045	6	5
+89	The candidate celebrated the victory.	-19.11184647679329	6	5
+90	The carpenter fixed the shoe.	-12.135655186197257	7	5
+91	The carpenter fixed the chair.	-9.983091847330797	7	5
+92	The carpenter flipped the hair.	-26.291140087996613	7	5
+93	The carpenter flipped the board.	-18.048922179383226	7	5
+94	The carpenter grabbed the ball.	-12.73836154473247	7	5
+95	The carpenter grabbed the board.	-13.692769280867653	7	5
+96	The carver built the house.	-15.950809359550474	7	5
+97	The carver built the sculpture.	-17.4498450756073	7	5
+98	The cat chased the kite.	-9.856457874178886	7	5
+99	The cat chased the bird.	-10.08358846604824	6	5
+100	The cat drank the coffee.	-9.865794390439989	6	5
+101	The cat drank the milk.	-8.1509308218956	6	5
+102	The champion held the guitar.	-27.086084976792336	6	5
+103	The champion held the cup.	-18.605159677565094	6	5
+104	The chauffeur carried the rifle.	-17.427066787595322	8	5
+105	The chauffeur carried the passenger.	-12.204487225168126	8	5
+106	The cheerleader carried the rifle.	-21.442391581833363	7	5
+107	The cheerleader carried the flag.	-10.312995463609695	7	5
+108	The cheerleader performed the spell.	-16.882502853870392	7	5
+109	The cheerleader performed the dance.	-13.515444874763489	7	5
+110	The cheerleader shook the drink.	-20.056350689381357	7	5
+111	The cheerleader shook the flag.	-16.16513754427433	7	5
+112	The chemist mixed the music.	-30.27644026279449	6	5
+113	The chemist mixed the substance.	-10.736635215580463	6	5
+114	The chemist poured the juice.	-12.184427633881569	6	5
+115	The chemist poured the compound.	-15.263424381613731	6	5
+116	The chemist sold the dog.	-25.558832056820393	6	5
+117	The chemist sold the drug.	-16.743542172014713	6	5
+118	The child ate the bone.	-17.477270901203152	6	5
+119	The child ate the candy.	-11.350991949439047	6	5
+120	The child built the sculpture.	-23.006316483020786	6	5
+121	The child built the snowman.	-12.014755964279175	7	5
+122	The child celebrated the victory.	-18.989228338003162	6	5
+123	The child celebrated the birthday.	-20.278577983379364	6	5
+124	The child chased the thief.	-18.87521558254957	6	5
+125	The child chased the toy.	-19.27136099338532	6	5
+126	The child climbed the mountain.	-13.772849172353745	6	5
+127	The child climbed the tree.	-8.717736214399338	6	5
+128	The child crossed the river.	-14.507895089685915	6	5
+129	The child crossed the park.	-22.445226224139333	6	5
+130	The child cut the tree.	-17.958734571933746	6	5
+131	The child cut the paper.	-16.981045812368393	6	5
+132	The child drank the beer.	-13.969655193388462	6	5
+133	The child drank the coke.	-9.433931727340678	7	5
+134	The child drew the horse.	-20.974745213985447	6	5
+135	The child drew the flower.	-19.19148671627045	6	5
+136	The child enjoyed the lecture.	-17.928834330290552	6	5
+137	The child enjoyed the ride.	-12.499582521617413	6	5
+138	The child found the corpse.	-15.430790022015572	6	5
+139	The child found the doll.	-15.408024668693542	6	5
+140	The child grabbed the tyre.	-20.846738874912266	6	5
+141	The child grabbed the frisbee.	-11.853963853680398	8	5
+142	The child lent the car.	-30.983499348163605	6	5
+143	The child lent the pen.	-26.4375861287117	6	5
+144	The child opened the congress.	-36.98464372754097	6	5
+145	The child opened the present.	-23.747499980032444	6	5
+146	The child picked the investment.	-30.737223714590073	6	5
+147	The child picked the flower.	-15.450086697936056	6	5
+148	The child rode the bull.	-15.589989677071571	6	5
+149	The child rode the bus.	-13.448136895895006	6	5
+150	The child threw the bottle.	-15.465860098600388	6	5
+151	The child threw the ball.	-12.037496238946915	6	5
+152	The child threw the spear.	-18.441668964922425	6	5
+153	The child threw the snowball.	-13.547588497400286	6	5
+154	The child told the verdict.	-32.45481690764427	6	5
+155	The child told the lie.	-20.28613924980164	6	5
+156	The child visited the president.	-24.90487729012966	6	5
+157	The child visited the grandmother.	-20.968030661344528	6	5
+158	The child visited the prisoner.	-24.54408499598503	6	5
+159	The child visited the zoo.	-16.781180232763287	6	5
+160	The child wrote the diagnosis.	-27.231989204883572	6	5
+161	The child wrote the conjugation.	-21.857887626159936	8	5
+162	The climber climbed the staircase.	-10.828605914954094	7	5
+163	The climber climbed the rock.	-11.185901626013221	7	5
+164	The climber faced the ocean.	-18.74965927004814	7	5
+165	The climber faced the wall.	-17.750323031097647	7	5
+166	The climber used the blackboard.	-26.54034141823649	8	5
+167	The climber used the rope.	-14.264944490510972	7	5
+168	The coach checked the car.	-21.397930234670643	6	5
+169	The coach checked the team.	-17.83897030353546	6	5
+170	The cobbler fixed the phone.	-15.72842822750681	8	5
+171	The cobbler fixed the shoe.	-10.303842186025577	8	5
+172	The cobbler sewed the parachute.	-12.276575928321106	9	5
+173	The cobbler sewed the shoe.	-8.007222671207273	9	5
+174	The collector donated the blood.	-27.25149293243885	6	5
+175	The collector donated the painting.	-13.412360399961472	6	5
+176	The comedian entertained the soldier.	-27.433429479599	6	5
+177	The comedian entertained the audience.	-12.911128729581833	6	5
+178	The confectioner decorated the tree.	-16.264428203023268	8	5
+179	The confectioner decorated the cake.	-12.254679777532148	8	5
+180	The confectioner spread the cement.	-21.60282155219465	8	5
+181	The confectioner spread the icing.	-16.967914405126063	8	5
+182	The cook bought the ticket.	-18.22061973065138	6	5
+183	The cook bought the food.	-19.57400731742382	6	5
+184	The cook checked the tire.	-26.054784394800663	6	5
+185	The cook checked the groceries.	-24.242689214646816	6	5
+186	The cook cleaned the window.	-22.24194571375847	6	5
+187	The cook cleaned the fish.	-14.608042247593405	6	5
+188	The cook cut the grass.	-17.207714945077893	6	5
+189	The cook cut the fish.	-17.010188817977905	6	5
+190	The cook flipped the hair.	-28.90332790464163	6	5
+191	The cook flipped the pancake.	-9.647804311942311	7	5
+192	The cook mixed the paint.	-22.74706582725048	6	5
+193	The cook mixed the ingredient.	-21.20452471077442	6	5
+194	The cowboy enjoyed the snack.	-20.744461093097925	6	5
+195	The cowboy enjoyed the ride.	-12.753197446465492	6	5
+196	The cowboy rode the bike.	-18.626154020428654	6	5
+197	The cowboy rode the bull.	-10.687423810362816	6	5
+198	The crew loaded the stroller.	-13.473571181297302	7	5
+199	The crew loaded the container.	-13.940272532403467	6	5
+200	The customer read the music.	-28.62977546453476	6	5
+201	The customer read the menu.	-13.35947574302554	6	5
+202	The cyclist completed the project.	-23.82902240753174	6	5
+203	The cyclist completed the race.	-14.278604224324225	6	5
+204	The cyclist fixed the hair.	-30.698483556509018	6	5
+205	The cyclist fixed the bike.	-18.544374316930767	6	5
+206	The cyclist rode the skates.	-23.17557665705681	7	5
+207	The cyclist rode the bike.	-16.822337836027145	6	5
+208	The dealer checked the net.	-24.861113995313644	6	5
+209	The dealer checked the car.	-15.574615217745304	6	5
+210	The dealer examined the plant.	-22.632781371474266	6	5
+211	The dealer examined the car.	-13.625774694606662	6	5
+212	The dealer sold the meat.	-17.661225333809853	6	5
+213	The dealer sold the car.	-5.698112413287162	6	5
+214	The deejay mixed the ingredient.	-26.705101266968995	8	5
+215	The deejay mixed the music.	-10.928275482932804	8	5
+216	The demonstrator carried the ball.	-20.44735291413963	7	5
+217	The demonstrator carried the flag.	-13.55663588270545	7	5
+218	The demonstrator signed the shirt.	-19.181837694719434	7	5
+219	The demonstrator signed the petition.	-9.033185526728632	7	5
+220	The demonstrator threw the frisbee.	-10.349212114568218	9	5
+221	The demonstrator threw the stone.	-16.75824509235099	7	5
+222	The diplomat carried the dog.	-25.209809884428978	6	5
+223	The diplomat carried the message.	-22.390455543994907	6	5
+224	The doctor helped the cook.	-22.404616713523865	6	5
+225	The doctor helped the woman.	-13.978056401014328	6	5
+226	The doctor offered the breakfast.	-24.401996672153476	6	5
+227	The doctor offered the support.	-24.57948213815689	6	5
+228	The doctor sewed the shoe.	-12.574954509735107	7	5
+229	The doctor sewed the wound.	-3.677707865834236	7	5
+230	The doctor used the shovel.	-20.442669823765755	6	5
+231	The doctor used the stethoscope.	-7.731564889974834	8	5
+232	The doctor visited the museum.	-17.81170186400414	6	5
+233	The doctor visited the patient.	-9.434547573328016	6	5
+234	The doctor wrote the conjugation.	-18.665428917855024	8	5
+235	The doctor wrote the diagnosis.	-12.917272716760635	6	5
+236	The dog ate the plant.	-11.98429274559021	6	5
+237	The dog ate the bone.	-9.743447259068487	6	5
+238	The dog carried the flag.	-18.542644321918488	6	5
+239	The dog carried the ball.	-17.374629944562912	6	5
+240	The dog caught the wave.	-21.576914489269253	6	5
+241	The dog caught the ball.	-14.767921905964613	6	5
+242	The dog chased the tank.	-19.922124415636066	6	5
+243	The dog chased the ball.	-9.49919793009758	6	5
+244	The dog dug the grave.	-14.628758609294893	6	5
+245	The dog dug the hole.	-10.341715186834337	6	5
+246	The dog fetched the tray.	-17.87083016335964	7	5
+247	The dog fetched the ball.	-11.84732799232006	7	5
+248	The dog pulled the trigger.	-10.947004728019238	6	5
+249	The dog pulled the sled.	-11.495193794369698	6	5
+250	The driver heard the baby.	-22.216731265187263	6	5
+251	The driver heard the horn.	-13.123989939689634	6	5
+252	The electrician checked the rifle.	-18.760045021772388	7	5
+253	The electrician checked the device.	-12.337244972586632	7	5
+254	The employee passed the rifle.	-25.41070058941841	6	5
+255	The employee passed the report.	-29.53544342517853	6	5
+256	The employer offered the candy.	-29.71379935741425	6	5
+257	The employer offered the job.	-11.38997745513916	6	5
+258	The engineer completed the painting.	-22.391825795173645	6	5
+259	The engineer completed the project.	-14.9147295281291	6	5
+260	The engineer drew the flower.	-27.25167852640152	6	5
+261	The engineer drew the turbine.	-21.351793766021732	6	5
+262	The farmer picked the killer.	-26.78970048576593	6	5
+263	The farmer picked the vegetable.	-16.095690310001373	6	5
+264	The farmer plowed the sand.	-15.498984031379225	7	5
+265	The farmer plowed the field.	-7.4461860954761505	7	5
+266	The farmer sold the drug.	-21.105550631880764	6	5
+267	The farmer sold the corn.	-11.683416724205015	6	5
+268	The farmer sprayed the cream.	-24.74802365154028	6	5
+269	The farmer sprayed the pesticide.	-12.336769074201586	6	5
+270	The farmer used the computer.	-18.800269424915317	6	5
+271	The farmer used the shovel.	-17.172003537416458	6	5
+272	The fighter kicked the television.	-21.971250370144844	6	5
+273	The fighter kicked the opponent.	-22.171424865722656	6	5
+274	The firefighter fought the crime.	-27.91826683282852	6	5
+275	The firefighter fought the fire.	-14.081007599830627	6	5
+276	The fisherman caught the ball.	-17.602219596505165	6	5
+277	The fisherman caught the fish.	-9.816029354929924	6	5
+278	The fisherman checked the car.	-25.880172908306122	6	5
+279	The fisherman checked the net.	-15.253420859575273	6	5
+280	The fisherman sold the drug.	-25.141461864113808	6	5
+281	The fisherman sold the fish.	-11.560079246759415	6	5
+282	The florist sold the bike.	-13.548570171929894	8	5
+283	The florist sold the flower.	-11.538181033545698	8	5
+284	The footballer chased the toy.	-29.93406879901886	6	5
+285	The footballer chased the ball.	-18.5837534442544	6	5
+286	The footballer delivered the lecture.	-21.919965505599976	6	5
+287	The footballer delivered the kick.	-21.78256845474243	6	5
+288	The footballer hit the car.	-27.569679349660873	6	5
+289	The footballer hit the ball.	-18.528275839984413	6	5
+290	The footballer kicked the vase.	-14.623105382546782	7	5
+291	The footballer kicked the ball.	-12.530002921819687	6	5
+292	The footballer passed the knife.	-28.21693025529385	6	5
+293	The footballer passed the ball.	-20.74525505490601	6	5
+294	The gardener cut the fish.	-17.591236564330757	7	5
+295	The gardener cut the grass.	-3.42476956686005	7	5
+296	The gardener decorated the book.	-20.521938345395032	7	5
+297	The gardener decorated the garden.	-15.380121816881001	7	5
+298	The gardener gathered the flag.	-18.537158789113164	7	5
+299	The gardener gathered the grass.	-16.34070391766727	7	5
+300	The gardener pushed the demonstrator.	-15.01489955931902	8	5
+301	The gardener pushed the mower.	-5.062085371464492	8	5
+302	The general gathered the bread.	-30.309318974614143	6	5
+303	The general gathered the soldier.	-23.903177589178085	6	5
+304	The general sent the postcard.	-23.763562481850386	7	5
+305	The general sent the soldier.	-23.2890385389328	6	5
+306	The general won the toy.	-37.79110446572304	6	5
+307	The general won the battle.	-11.586622573435307	6	5
+308	The goalkeeper caught the fish.	-24.941600471735	6	5
+309	The goalkeeper caught the ball.	-10.607809464447199	6	5
+310	The goalkeeper grabbed the phone.	-18.32230257242918	6	5
+311	The goalkeeper grabbed the ball.	-11.272070561535655	6	5
+312	The goalkeeper held the child.	-25.22207435965538	6	5
+313	The goalkeeper held the ball.	-13.177343476563694	6	5
+314	The goalkeeper threw the bomb.	-24.419349767267704	6	5
+315	The goalkeeper threw the ball.	-13.540969580411911	6	5
+316	The government offered the drink.	-31.688850350677967	6	5
+317	The government offered the protection.	-19.106120914220806	6	5
+318	The grandfather told the strategy.	-34.1095130443573	6	5
+319	The grandfather told the story.	-18.018233895301822	6	5
+320	The guard opened the present.	-32.51088383793831	6	5
+321	The guard opened the jail.	-24.019977632910013	6	5
+322	The guard tied the roast.	-28.591131269931797	6	5
+323	The guard tied the prisoner.	-13.50598694384098	6	5
+324	The guest held the camera.	-18.493809938430786	6	5
+325	The guest held the drink.	-22.073937505483627	6	5
+326	The guest hung the laundry.	-18.64733544737101	6	5
+327	The guest hung the coat.	-21.831089541316032	6	5
+328	The guide described the software.	-27.705431669950485	6	5
+329	The guide described the monument.	-23.66444287449121	6	5
+330	The hairstylist fixed the bike.	-18.011744497431213	8	5
+331	The hairstylist fixed the hair.	-11.77946994904778	8	5
+332	The hairstylist flipped the board.	-20.4071192847332	8	5
+333	The hairstylist flipped the hair.	-13.339467236073688	8	5
+334	The hairstylist sprayed the pesticide.	-13.500340151047569	8	5
+335	The hairstylist sprayed the foam.	-12.301062196202109	8	5
+336	The hairstylist washed the infant.	-20.213215881231008	8	5
+337	The hairstylist washed the hair.	-11.039483099943027	8	5
+338	The hiker faced the camera.	-15.68182790465653	7	5
+339	The hiker faced the mountain.	-15.208068534731865	7	5
+340	The horse drew the trailer.	-24.451269507408146	6	5
+341	The horse drew the carriage.	-11.743805073201655	6	5
+342	The horse moved the suitcase.	-20.96320489048958	6	5
+343	The horse moved the cart.	-12.404842920601368	6	5
+344	The horse pulled the suitcase.	-19.57128602266312	6	5
+345	The horse pulled the cart.	-6.34727519005537	6	5
+346	The hostess explained the poem.	-26.598651802167296	7	5
+347	The hostess explained the procedure.	-12.516265474259852	7	5
+348	The hound fetched the money.	-8.780008272035047	8	5
+349	The hound fetched the bird.	-8.72558357694652	8	5
+350	The housemaid cleaned the fish.	-16.73410229384899	7	5
+351	The housemaid cleaned the dish.	-16.543891668319702	7	5
+352	The housemaid cleaned the street.	-23.911955919116732	7	5
+353	The housemaid cleaned the window.	-14.836557880043983	7	5
+354	The housemaid mopped the barracks.	-19.148074064403765	8	5
+355	The housemaid mopped the floor.	-4.99716744062971	8	5
+356	The housemaid washed the boat.	-20.6943773329258	7	5
+357	The housemaid washed the floor.	-11.969975739717484	7	5
+358	The housewife cleaned the shoe.	-18.77377352118492	7	5
+359	The housewife cleaned the table.	-12.223175432533026	7	5
+360	The illusionist performed the surgery.	-18.270120076835155	7	5
+361	The illusionist performed the trick.	-7.295462474226952	7	5
+362	The illustrator decorated the garden.	-17.90464197471738	7	5
+363	The illustrator decorated the book.	-15.815409487113357	7	5
+364	The illustrator drew the carriage.	-14.232190277427435	7	5
+365	The illustrator drew the picture.	-10.102189108729364	7	5
+366	The investor rented the bicycle.	-24.25689521431923	6	5
+367	The investor rented the land.	-18.123355150222782	6	5
+368	The jockey rode the wave.	-6.654516624286772	7	5
+369	The jockey rode the horse.	-5.075518087483943	7	5
+370	The journalist carried the milk.	-29.75917437672615	6	5
+371	The journalist carried the article.	-26.913116812705997	6	5
+372	The journalist wrote the song.	-24.91106617450714	6	5
+373	The journalist wrote the article.	-13.428681075572968	6	5
+374	The killer pulled the cart.	-27.952788919210434	6	5
+375	The killer pulled the trigger.	-6.9611066803336135	6	5
+376	The knight held the camera.	-22.2978850081563	6	5
+377	The knight held the sword.	-11.941476158797741	6	5
+378	The librarian climbed the tree.	-9.85115319490433	7	5
+379	The librarian climbed the ladder.	-3.222731065005064	7	5
+380	The librarian stacked the supply.	-23.2963974326849	7	5
+381	The librarian stacked the book.	-13.298577901092358	7	5
+382	The lumberjack cut the meat.	-14.208518669009207	7	5
+383	The lumberjack cut the tree.	-5.8078834265470505	7	5
+384	The lumberjack stacked the book.	-18.04783254861832	7	5
+385	The lumberjack stacked the wood.	-7.542519612703472	7	5
+386	The lumberjack used the lancet.	-11.889719378319569	9	5
+387	The lumberjack used the saw.	-15.745777983218431	7	5
+388	The magician read the newspaper.	-16.16566900908947	6	5
+389	The magician read the hand.	-23.563138458877802	6	5
+390	The manager rented the kayak.	-17.405676990747455	7	5
+391	The manager rented the room.	-21.199161410331726	6	5
+392	The mason built the snowman.	-14.344782505184412	8	5
+393	The mason built the house.	-4.835187904536723	7	5
+394	The mason fixed the bike.	-15.419081225991249	7	5
+395	The mason fixed the roof.	-7.866342621244257	7	5
+396	The mason fixed the tire.	-15.239106215536596	7	5
+397	The mason fixed the wall.	-9.874204917112364	7	5
+398	The mason mixed the soup.	-21.431881923228506	7	5
+399	The mason mixed the cement.	-7.842216826742514	7	5
+400	The mechanic assembled the art.	-33.74894040822983	6	5
+401	The mechanic assembled the bicycle.	-14.323267713189125	6	5
+402	The mechanic checked the groceries.	-25.609763130545613	6	5
+403	The mechanic checked the tire.	-9.782891772687435	6	5
+404	The mechanic fixed the roof.	-11.997272811830044	6	5
+405	The mechanic fixed the tire.	-9.147676240652801	6	5
+406	The mechanic rented the boat.	-21.778331115841866	6	5
+407	The mechanic rented the truck.	-18.8165166079998	6	5
+408	The mechanic spread the chocolate.	-26.29039372503757	6	5
+409	The mechanic spread the coating.	-30.219941332936287	6	5
+410	The milkman carried the flag.	-20.421151652932167	7	5
+411	The milkman carried the bottle.	-16.132918149232864	7	5
+412	The model faced the mountain.	-32.40411666035652	6	5
+413	The model faced the camera.	-19.248947523534298	6	5
+414	The monkey grabbed the board.	-20.85488796234131	6	5
+415	The monkey grabbed the banana.	-16.496692456305027	6	5
+416	The mother decorated the car.	-23.75954382121563	6	5
+417	The mother decorated the house.	-18.97982127964497	6	5
+418	The mother held the flag.	-21.640444740653038	6	5
+419	The mother held the child.	-8.418530821800232	6	5
+420	The mother hung the rifle.	-26.677759673446413	6	5
+421	The mother hung the laundry.	-18.45594412088394	6	5
+422	The mother prepared the gun.	-27.21195451915264	6	5
+423	The mother prepared the food.	-11.40535032749176	6	5
+424	The mother pushed the trash can.	-17.597842574119564	7	6
+425	The mother pushed the stroller.	-6.714546406874432	7	5
+426	The mover moved the horse.	-17.532090954482555	7	5
+427	The mover moved the furniture.	-6.275100350379944	7	5
+428	The musician entertained the demonstrator.	-19.981502443552014	7	5
+429	The musician entertained the crowd.	-13.55197109375149	6	5
+430	The musician held the stone.	-21.562768340110782	6	5
+431	The musician held the guitar.	-16.373353555798527	6	5
+432	The musician played the soccer.	-36.05786445736885	6	5
+433	The musician played the song.	-16.553890138864514	6	5
+434	The musician read the menu.	-21.53351910412312	6	5
+435	The musician read the music.	-20.384313553571697	6	5
+436	The musician touched the base.	-27.50130417943001	6	5
+437	The musician touched the instrument.	-15.862542845308779	6	5
+438	The nanny heard the speech.	-15.856523737311365	7	5
+439	The nanny heard the baby.	-16.080469033680856	7	5
+440	The nanny watched the landscape.	-23.01966566592455	7	5
+441	The nanny watched the child.	-10.945882226806132	7	5
+442	The nurse handed the hose.	-23.133415430784225	6	5
+443	The nurse handed the lancet.	-10.969050330051687	8	5
+444	The nurse pushed the mower.	-15.179988995194435	7	5
+445	The nurse pushed the wheelchair.	-14.87633416056633	6	5
+446	The nurse washed the car.	-21.349300727248192	6	5
+447	The nurse washed the infant.	-16.335150256752968	6	5
+448	The painter completed the race.	-28.69048544764519	6	5
+449	The painter completed the painting.	-12.522473722696304	6	5
+450	The painter decorated the cake.	-20.39319512248039	6	5
+451	The painter decorated the wall.	-18.319524675607678	6	5
+452	The painter mixed the drink.	-25.13196349143982	6	5
+453	The painter mixed the paint.	-15.306416377425196	6	5
+454	The painter painted the toenail.	-12.336295543878805	8	5
+455	The painter painted the picture.	-11.652033418416975	6	5
+456	The painter signed the agreement.	-17.423658028244972	6	5
+457	The painter signed the paint.	-20.82094343006611	6	5
+458	The parent gave the gun.	-26.119402289390568	6	5
+459	The parent gave the present.	-23.88832983374596	6	5
+460	The passenger bought the table.	-26.87830652296543	6	5
+461	The passenger bought the ticket.	-10.994667321443558	6	5
+462	The passenger passed the ball.	-21.009504631161693	6	5
+463	The passenger passed the check.	-16.149921000003815	6	5
+464	The passenger pulled the corpse.	-26.14594092965126	6	5
+465	The passenger pulled the suitcase.	-19.018356621265408	6	5
+466	The patient fought the fire.	-20.448779731988907	6	5
+467	The patient fought the cancer.	-14.748938471078873	6	5
+468	The patient reported the crime.	-18.738008558750156	6	5
+469	The patient reported the symptom.	-18.725584238767624	6	5
+470	The philologist examined the camera.	-30.48519080877304	7	5
+471	The philologist examined the book.	-13.470899879932404	7	5
+472	The photographer captured the thief.	-24.43289437890053	6	5
+473	The photographer captured the image.	-13.836434602737427	6	5
+474	The photographer examined the dog.	-23.15623674541712	6	5
+475	The photographer examined the camera.	-19.335478574037552	6	5
+476	The photographer prepared the food.	-22.22245506942272	6	5
+477	The photographer prepared the camera.	-17.14405307173729	6	5
+478	The photographer used the stethoscope.	-17.099709917743894	8	5
+479	The photographer used the camera.	-19.4297017455101	6	5
+480	The pilot began the performance.	-27.38118237815797	6	5
+481	The pilot began the race.	-21.367589697241787	6	5
+482	The pilot started the concert.	-27.433704666793343	6	5
+483	The pilot started the race.	-20.55959846079349	6	5
+484	The pilot won the lottery.	-12.81740064546466	6	5
+485	The pilot won the race.	-9.828626662492752	6	5
+486	The player began the class.	-33.52750952541828	6	5
+487	The player began the match.	-20.022366881370548	6	5
+488	The player enjoyed the beer.	-22.68468677997589	6	5
+489	The player enjoyed the game.	-13.223407328128815	6	5
+490	The player gained the degree.	-25.281237363815308	6	5
+491	The player gained the ball.	-22.90444600582123	6	5
+492	The player gathered the grass.	-29.427447021007534	6	5
+493	The player gathered the ball.	-20.31904646754265	6	5
+494	The player passed the exam.	-11.817182645201685	6	5
+495	The player passed the ball.	-19.92701926827431	6	5
+496	The player reached the moon.	-25.127793960273266	6	5
+497	The player reached the goal.	-19.357639908790592	6	5
+498	The player touched the flower.	-21.56527759134769	6	5
+499	The player touched the base.	-28.95367686450481	6	5
+500	The poet wrote the menu.	-22.519775182008747	6	5
+501	The poet wrote the sonet.	-26.394293040037155	7	5
+502	The policeman captured the image.	-20.66999614238739	6	5
+503	The policeman captured the thief.	-14.591803178191185	6	5
+504	The policeman checked the groceries.	-19.641151577234265	6	5
+505	The policeman checked the bag.	-11.578622698783875	6	5
+506	The policeman examined the patient.	-16.707568012177944	6	5
+507	The policeman examined the car.	-15.36281756311655	6	5
+508	The policeman fought the obesity.	-41.05765700340271	6	5
+509	The policeman fought the crime.	-19.821419209241867	6	5
+510	The policeman hit the ball.	-19.872873172163967	6	5
+511	The policeman hit the demonstrator.	-15.44329000916332	7	5
+512	The policeman pushed the stroller.	-13.042577743530273	7	5
+513	The policeman pushed the demonstrator.	-13.95383682451211	7	5
+514	The politician signed the paint.	-33.93321132659912	6	5
+515	The politician signed the agreement.	-16.422802329063412	6	5
+516	The porter carried the flag.	-13.395310489460824	7	5
+517	The porter carried the bag.	-9.241055563092234	7	5
+518	The porter loaded the file.	-23.93180298805237	7	5
+519	The porter loaded the luggage.	-9.52975937910378	7	5
+520	The porter stacked the wood.	-13.094332162290812	7	5
+521	The porter stacked the suitcase.	-16.039359526708722	7	5
+522	The postman delivered the punch.	-23.151572108268734	7	5
+523	The postman delivered the mail.	-5.642982982099056	7	5
+524	The president delivered the kick.	-27.657168373465534	6	5
+525	The president delivered the speech.	-8.18487405590713	6	5
+526	The president gave the book.	-26.241380404680967	6	5
+527	The president gave the speech.	-9.859494961798193	6	5
+528	The president promised the bicycle.	-31.64099634811282	6	5
+529	The president promised the reform.	-21.187491161748763	6	5
+530	The president visited the grandmother.	-26.64866352081299	6	5
+531	The president visited the school.	-15.643651746213436	6	5
+532	The priest celebrated the graduation.	-21.898560106754303	6	5
+533	The priest celebrated the marriage.	-13.254297822713852	6	5
+534	The priest promised the promotion.	-27.425087228417397	6	5
+535	The priest promised the salvation.	-21.829596266150475	6	5
+536	The priest taught the chemistry.	-27.400658071041107	6	5
+537	The priest taught the bible.	-20.86422654986381	6	5
+538	The producer released the prisoner.	-25.70266266912222	6	5
+539	The producer released the film.	-23.302065320312977	6	5
+540	The professor delivered the kick.	-26.832847580313683	6	5
+541	The professor delivered the lecture.	-10.923323333263397	6	5
+542	The professor donated the organ.	-20.853313803672787	6	5
+543	The professor donated the book.	-16.258649736642838	6	5
+544	The professor opened the jail.	-31.075150847435	6	5
+545	The professor opened the congress.	-30.793079311028123	6	5
+546	The professor taught the karate.	-15.735237385728395	7	5
+547	The professor taught the language.	-21.226091265678406	6	5
+548	The professor wore the goggles.	-20.263106405735016	6	5
+549	The professor wore the tie.	-20.208772510290142	6	5
+550	The professor wrote the magazine.	-25.8176993727684	6	5
+551	The professor wrote the book.	-21.16920393705368	6	5
+552	The programmer described the monument.	-32.15393078327179	6	5
+553	The programmer described the software.	-21.086969137191765	6	5
+554	The programmer loaded the ammunition.	-27.22485060989857	6	5
+555	The programmer loaded the file.	-16.719736993312836	6	5
+556	The programmer used the shovel.	-28.22670614719391	6	5
+557	The programmer used the computer.	-23.091069728136066	6	5
+558	The pupil drew the turbine.	-31.396464139223102	6	5
+559	The pupil drew the flower.	-25.493372529745105	6	5
+560	The pusher sold the chocolate.	-21.101466372609142	7	5
+561	The pusher sold the drug.	-9.014824315905573	7	5
+562	The pyromaniac started the computer.	-20.88014574546833	9	5
+563	The pyromaniac started the fire.	-7.483391469217167	9	5
+564	The receiver caught the wave.	-20.919459700584408	6	5
+565	The receiver caught the baseball.	-18.87311394512653	6	5
+566	The referee moved the furniture.	-21.154984824359413	6	5
+567	The referee moved the ball.	-9.541504155844448	6	5
+568	The refugee found the doll.	-27.50979894399643	6	5
+569	The refugee found the shelter.	-28.13791513442993	6	5
+570	The reporter brought the cake.	-22.494686484336853	6	5
+571	The reporter brought the news.	-14.939923226833345	6	5
+572	The reporter held the knife.	-18.849114745855328	6	5
+573	The reporter held the camera.	-11.538788110017776	6	5
+574	The roofer climbed the rock.	-23.24009408056736	7	5
+575	The roofer climbed the ladder.	-5.919402629137039	7	5
+576	The sailor faced the wall.	-16.568031400442127	6	5
+577	The sailor faced the ocean.	-15.039778034668414	6	5
+578	The sailor mopped the classroom.	-26.091233301907774	7	5
+579	The sailor mopped the deck.	-10.284870589151977	7	5
+580	The sailor tied the necktie.	-16.94049382209778	7	5
+581	The sailor tied the rope.	-13.995071351528168	6	5
+582	The salesperson sent the gun.	-22.374768659472466	7	5
+583	The salesperson sent the questionnaire.	-20.836320221424106	7	5
+584	The scientist reported the marriage.	-34.86439448595047	6	5
+585	The scientist reported the finding.	-22.644206166267395	6	5
+586	The scoutmaster assembled the sailboat.	-22.598200134932995	8	5
+587	The scoutmaster assembled the tent.	-23.306415885686874	7	5
+588	The sculptor carved the meat.	-17.203301206231114	7	5
+589	The sculptor carved the stone.	-13.337315503507853	7	5
+590	The sculptor taught the skydiving.	-24.99270451224584	9	5
+591	The sculptor taught the art.	-18.706632047891613	7	5
+592	The secretary wrote the sonet.	-34.504864543676376	7	5
+593	The secretary wrote the note.	-20.31417605280876	6	5
+594	The sergeant assigned the homework.	-22.12706941366196	6	5
+595	The sergeant assigned the mission.	-19.340733170509342	6	5
+596	The singer began the race.	-26.978828322142363	6	5
+597	The singer began the performance.	-15.480235233902931	6	5
+598	The singer held the sword.	-22.303830951452255	6	5
+599	The singer held the microphone.	-11.387146458029747	6	5
+600	The singer performed the trick.	-17.23792353272438	6	5
+601	The singer performed the music.	-19.84434014558792	6	5
+602	The singer recorded the recipe.	-23.23040075600147	6	5
+603	The singer recorded the song.	-13.603956639766693	6	5
+604	The singer started the videogame.	-20.481391951441765	7	5
+605	The singer started the concert.	-14.910102635622025	6	5
+606	The skater rode the bus.	-18.20244088768959	7	5
+607	The skater rode the skates.	-18.35213936120272	8	5
+608	The skier gained the ball.	-19.401843070983887	7	5
+609	The skier gained the speed.	-20.25357161462307	7	5
+610	The skipper assembled the bicycle.	-24.722619146108627	7	5
+611	The skipper assembled the sailboat.	-16.61944394931197	8	5
+612	The smuggler sold the flower.	-18.82882028957829	7	5
+613	The smuggler sold the weapon.	-13.478949712589385	7	5
+614	The snowboarder flipped the bike.	-16.931071981787678	8	5
+615	The snowboarder flipped the board.	-16.196050768718127	8	5
+616	The soldier carried the ball.	-22.110947996377945	6	5
+617	The soldier carried the rifle.	-17.054127871990207	6	5
+618	The soldier celebrated the graduation.	-29.434422820806503	6	5
+619	The soldier celebrated the victory.	-15.457297593355179	6	5
+620	The soldier checked the burner.	-22.125032797455788	6	5
+621	The soldier checked the rifle.	-14.863393038511276	6	5
+622	The soldier crossed the stage.	-19.66030521504581	6	5
+623	The soldier crossed the river.	-11.156329449266195	6	5
+624	The soldier dug the pool.	-24.634289473295212	6	5
+625	The soldier dug the trench.	-14.553428769111633	6	5
+626	The soldier fought the cancer.	-22.02255816757679	6	5
+627	The soldier fought the enemy.	-13.788819417357445	6	5
+628	The soldier gathered the ball.	-21.006072022020817	6	5
+629	The soldier gathered the ammunition.	-15.582638159394266	6	5
+630	The soldier gathered the grass.	-25.930312395095825	6	5
+631	The soldier gathered the flag.	-20.18640919029713	6	5
+632	The soldier heard the poem.	-25.52227544784546	6	5
+633	The soldier heard the command.	-16.94164581596851	6	5
+634	The soldier held the comb.	-23.545103527605534	6	5
+635	The soldier held the flag.	-14.275538474321365	6	5
+636	The soldier hung the picture.	-22.818945854902267	6	5
+637	The soldier hung the rifle.	-17.99858875013888	6	5
+638	The soldier reached the supermarket.	-22.40138828754425	6	5
+639	The soldier reached the trench.	-17.864527761936188	6	5
+640	The soldier released the film.	-30.91749197244644	6	5
+641	The soldier released the prisoner.	-12.420066460967064	6	5
+642	The soldier threw the ball.	-16.224396362900734	6	5
+643	The soldier threw the bomb.	-14.072346836328506	6	5
+644	The soldier threw the snowball.	-19.253127112984657	6	5
+645	The soldier threw the bomb.	-14.072346836328506	6	5
+646	The soldier used the brush.	-27.989846348762512	6	5
+647	The soldier used the knife.	-21.082360625267032	6	5
+648	The soldier wore the jeans.	-24.981042236089703	6	5
+649	The soldier wore the helmet.	-17.54293555021286	6	5
+650	The soldier wore the pajamas.	-17.509020498138852	8	5
+651	The soldier wore the uniform.	-14.483346939086914	6	5
+652	The speaker entertained the dog.	-31.12465167045593	6	5
+653	The speaker entertained the audience.	-16.79995933547616	6	5
+654	The spectator bought the car.	-24.943512976169586	6	5
+655	The spectator bought the ticket.	-14.056818693876266	6	5
+656	The spectator enjoyed the breakfast.	-25.9692764878273	6	5
+657	The spectator enjoyed the game.	-16.116127770394087	6	5
+658	The spectator heard the horn.	-21.28516238927841	6	5
+659	The spectator heard the speech.	-22.904954195022587	6	5
+660	The spectator watched the bird.	-20.3083605915308	6	5
+661	The spectator watched the game.	-17.513756468892094	6	5
+662	The speleologist examined the book.	-15.95296311751008	8	5
+663	The speleologist examined the cave.	-17.989942197687927	8	5
+664	The spy passed the frisbee.	-18.180139889894235	8	5
+665	The spy passed the information.	-22.54099541902542	6	5
+666	The student began the match.	-26.415941536426548	6	5
+667	The student began the trip.	-23.42291522026062	6	5
+668	The student celebrated the marriage.	-25.93608158826828	6	5
+669	The student celebrated the graduation.	-22.968206733465195	6	5
+670	The student completed the marathon.	-20.09021657705307	6	5
+671	The student completed the project.	-15.525292038917543	6	5
+672	The student drank the gasoline.	-19.319983534514908	6	5
+673	The student drank the beer.	-13.95673382282257	6	5
+674	The student drank the milk.	-14.495896004140375	6	5
+675	The student drank the coffee.	-14.23897261172533	6	5
+676	The student enjoyed the marriage.	-25.236170664429665	6	5
+677	The student enjoyed the beer.	-21.349586889147762	6	5
+678	The student heard the command.	-21.76535646617413	6	5
+679	The student heard the lecture.	-15.031374454498293	6	5
+680	The student passed the river.	-35.25978347659111	6	5
+681	The student passed the exam.	-5.507648602128029	6	5
+682	The student read the hand.	-26.79272237420082	6	5
+683	The student read the book.	-12.969229862093925	6	5
+684	The student sent the bomb.	-25.555373787879944	6	5
+685	The student sent the email.	-14.08261153101921	6	5
+686	The student threw the garbage.	-23.455063939094547	6	5
+687	The student threw the frisbee.	-11.51158859948373	8	5
+688	The student used the saw.	-21.756348133087158	6	5
+689	The student used the computer.	-15.323102593421936	6	5
+690	The student wore the armor.	-23.453431218862534	6	5
+691	The student wore the glasses.	-21.66431897878647	6	5
+692	The student wore the harness.	-22.75043734908104	6	5
+693	The student wore the glasses.	-21.66431897878647	6	5
+694	The surfer caught the baseball.	-14.349251845327673	7	5
+695	The surfer caught the wave.	-7.1827875190065225	7	5
+696	The surfer flipped the pancake.	-11.329104847623965	8	5
+697	The surfer flipped the board.	-15.707270352169873	7	5
+698	The surfer grabbed the frisbee.	-8.213460857296923	9	5
+699	The surfer grabbed the board.	-9.971680075628683	7	5
+700	The surfer rode the camel.	-18.64977779239416	7	5
+701	The surfer rode the wave.	-5.585680739721282	7	5
+702	The surfer wore the tie.	-21.90746823325753	7	5
+703	The surfer wore the sunglasses.	-15.300901793758385	7	5
+704	The surfer wore the tuxedo.	-13.339172413802775	9	5
+705	The surfer wore the swimsuit.	-12.079861665493807	8	5
+706	The surgeon examined the car.	-22.5360113568604	6	5
+707	The surgeon examined the patient.	-9.504367999732494	6	5
+708	The surgeon performed the dance.	-26.704045474529266	6	5
+709	The surgeon performed the surgery.	-5.793701276183128	6	5
+710	The surgeon used the rifle.	-24.55494710803032	6	5
+711	The surgeon used the lancet.	-12.386345911363607	8	5
+712	The sweeper cleaned the window.	-12.50796786157298	7	5
+713	The sweeper cleaned the street.	-8.953776430338621	7	5
+714	The swimmer wore the cloak.	-22.214491272345185	7	5
+715	The swimmer wore the goggles.	-13.771513652056456	7	5
+716	The tailor sewed the wound.	-18.840176176279787	7	5
+717	The tailor sewed the dress.	-8.598562873201445	7	5
+718	The teacher explained the tactic.	-21.12759782373905	6	5
+719	The teacher explained the exercise.	-16.74083432555199	6	5
+720	The teacher gave the drug.	-22.91428852081299	6	5
+721	The teacher gave the homework.	-16.172667518258095	6	5
+722	The teacher helped the patient.	-18.855757594108578	6	5
+723	The teacher helped the child.	-11.173209607601166	6	5
+724	The teacher lent the gun.	-26.74125936627388	6	5
+725	The teacher lent the book.	-19.066508024930954	6	5
+726	The teacher used the knife.	-21.230603903532028	6	5
+727	The teacher used the blackboard.	-11.44680842757225	7	5
+728	The teenager heard the lecture.	-19.584698855876926	6	5
+729	The teenager heard the music.	-16.515265494585034	6	5
+730	The terrorist released the book.	-28.405083805322647	6	5
+731	The terrorist released the hostage.	-16.614978350698948	6	5
+732	The thief grabbed the banana.	-16.977364778518677	6	5
+733	The thief grabbed the money.	-10.78348769247532	6	5
+734	The tourist read the bible.	-22.21045109629631	6	5
+735	The tourist read the map.	-16.411508575081825	6	5
+736	The tourist rode the skates.	-27.91916186362505	7	5
+737	The tourist rode the camel.	-19.350381523370746	6	5
+738	The tourist visited the patient.	-27.374739110469818	6	5
+739	The tourist visited the museum.	-18.018741428852078	6	5
+740	The traveller checked the groceries.	-26.946738302707672	6	5
+741	The traveller checked the bag.	-19.90411323308945	6	5
+742	The traveller checked the team.	-34.39302188158035	6	5
+743	The traveller checked the watch.	-23.06969709694385	6	5
+744	The traveller handed the screwdriver.	-17.795804737834263	7	5
+745	The traveller handed the bag.	-20.352910310029984	6	5
+746	The truck hit the bag.	-19.74501729011536	6	5
+747	The truck hit the car.	-7.440989583730698	6	5
+748	The truck plowed the garden.	-16.98126244544983	7	5
+749	The truck plowed the snow.	-13.314975921064615	7	5
+750	The undertaker dug the trench.	-8.394533608108759	7	5
+751	The undertaker dug the grave.	-3.1238060565665364	7	5
+752	The usurer lent the toy.	-29.890563368797306	7	5
+753	The usurer lent the money.	-26.031786039471626	7	5
+754	The vandal sprayed the perfume.	-29.049699366092682	6	5
+755	The vandal sprayed the paint.	-21.81726443767548	6	5
+756	The veterinarian examined the plant.	-13.996491771191359	6	5
+757	The veterinarian examined the dog.	-5.891542004887015	6	5
+758	The violinist played the trumpet.	-11.158374216407537	7	5
+759	The violinist played the violin.	-6.731085665524006	7	5
+760	The violinist wore the helmet.	-17.894891880452633	7	5
+761	The violinist wore the tuxedo.	-9.89476852607595	9	5
+762	The volunteer brought the hatchet.	-22.492767652496696	7	5
+763	The volunteer brought the food.	-17.455044448375705	6	5
+764	The waiter brought the guitar.	-21.663088105618954	6	5
+765	The waiter brought the glass.	-17.75262039154768	6	5
+766	The waiter carried the rifle.	-26.57266779243946	6	5
+767	The waiter carried the tray.	-11.628940135240555	6	5
+768	The waiter cleared the road.	-26.7161808013916	6	5
+769	The waiter cleared the bar.	-14.126975007355213	6	5
+770	The waiter cleared the tube.	-31.280904158949852	6	5
+771	The waiter cleared the table.	-4.68830644339323	6	5
+772	The waiter cut the hair.	-20.398007735610012	6	5
+773	The waiter cut the cake.	-12.019394243136047	6	5
+774	The waiter delivered the speech.	-26.329605102539066	6	5
+775	The waiter delivered the drink.	-11.536111317574976	6	5
+776	The waiter fetched the ball.	-17.124079428613186	7	5
+777	The waiter fetched the water.	-15.458650888875127	7	5
+778	The waiter held the flag.	-21.00232374668121	6	5
+779	The waiter held the bottle.	-15.666808173060415	6	5
+780	The waiter mixed the cement.	-24.90773969888687	6	5
+781	The waiter mixed the drink.	-13.722548484802244	6	5
+782	The waiter opened the sarcophagus.	-11.376875988549726	8	5
+783	The waiter opened the bottle.	-11.583300851285458	6	5
+784	The waiter poured the gasoline.	-18.863462500274178	6	5
+785	The waiter poured the wine.	-5.123525716364384	6	5
+786	The waiter prepared the bomb.	-26.761262625455856	6	5
+787	The waiter prepared the drink.	-12.84556484222412	6	5
+788	The witness explained the equation.	-25.09462322294712	6	5
+789	The witness explained the circumstances.	-16.38193916901946	6	5
+790	The witness reported the birth.	-31.164822816848755	6	5
+791	The witness reported the crime.	-16.025856167078018	6	5
+792	The woman carried the stone.	-18.382816016674038	6	5
+793	The woman carried the bag.	-13.983529686927795	6	5
+794	The woman opened the manhole.	-10.084797650575636	7	5
+795	The woman opened the bag.	-10.631374776363373	6	5
+796	The woman painted the sign.	-18.962707102298733	6	5
+797	The woman painted the toenail.	-16.83149200041953	8	5
