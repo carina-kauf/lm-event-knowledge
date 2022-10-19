@@ -38,9 +38,14 @@ options(dplyr.summarise.inform = FALSE)
 # llms_main = human + main LLMs
 # all_main = human + main LLMs + baselines
 # baselines = human + baselines
-# llms_all = human + all MLMs (excluding GPT2 here for now)
+# llms_all = human + all MLMs 
 which_models <- "all_main" 
-normalization <- "min-max" #can be "min-max", "zscore"
+
+#can be "min-max", "zscore", "none"
+normalization_type <- "min-max" 
+
+# currently can be "sentence-PLL", 
+main_LLM_metric <- "sentence-PLL"
 
 path <- paste("results/")
 ifelse(!dir.exists(path), dir.create(path), FALSE)
@@ -50,14 +55,15 @@ ifelse(!dir.exists(savedir), dir.create(savedir), FALSE)
 print(paste(savedir))
 message("Running with the following environment variables:")
 message(paste("which_models: ", which_models))
-message(paste("normalization: ", normalization))
+message(paste("normalization: ", normalization_type))
 
 #for plotting the dotted reference line
-if (grepl("min-max", normalization) == TRUE){
+if (grepl("min-max", normalization_type) == TRUE){
   reference_value = 0.5
 } else {
   reference_value = 0
 }
+normalization <- get_normalization_fn(normalization_type)
 ```
 
 # READ DATA
@@ -67,30 +73,20 @@ dat = read.csv('clean_data/clean_EventsAdapt_df.csv')
 human_dat = read.csv('clean_data/clean_EventsAdapt_human_dat.csv')
 ```
 
-```{r}
-if (grepl("min-max", normalization) == TRUE){
-  normalization <- function(x) { return(min_max(x)) }
-} else {
-  normalization <- function(x) { return(scale_this(x)) }
-}
-```
-
 # Select which models/metrics to plot
 
 ```{r, utils.choose_models, echo=FALSE}
 human <- c("human")
-llms <- c("RoBERTa","BERT","GPT2")
-llms_main <- c("RoBERTa-large.PLL.average", "BERT-large.PLL.average", "GPT-J.l2r.average", "GPT2-xl.l2r.average")
+llms_main <- c("RoBERTa-large.sentence-PLL", "BERT-large.sentence-PLL", "GPT-J.sentence-LL", "GPT2-xl.sentence-LL")
 baselines <- c("tinyLSTM.surprisal","SDM", "thematicFit.prod", "syntax.PPMI")
 
 llms_main <- c(human, llms_main)
 all_main <- c(llms_main, baselines)
 baselines <- c(human, baselines)
 
-unique_metrics = unique(dat$Metric)
-llms <- c("human","RoBERTa-large.PLL.average","RoBERTa-large.pverb.average","RoBERTa-large.plast.average", "BERT-large.PLL.average","BERT-large.pverb.average","BERT-large.plast.average")
-
-llms_all <- c(human,llms)
+all_metrics = unique(dat$Metric) 
+llm_metrics = as.character(all_metrics[str_detect(all_metrics, 'BERT|GPT')])
+llms_all <- c(human,llm_metrics)
 
 # select which to use
 chosen_models = eval(parse(text=which_models))
@@ -100,40 +96,25 @@ if (grepl("llms_all", which_models) == FALSE){
 # shorten model names
 llms_main_short <- c("RoBERTa", "BERT", "GPT-J", "GPT-2")
 baselines_short <- c("tinyLSTM","SDM", "thematicFit", "syntax-PPMI")
-models_short = c(human, llms_main_short, baselines_short)
+models_short_order = c(human, llms_main_short, baselines_short)
 
-convert_metric_names <- function(col) {
-  gsub(".surprisal|.prod|.pverb|.l2r.average|.l2r|.PLL.average|.PLL", "", col)
-}
-shorten_metric_names <- function(col) {
-  gsub("-large|-xl", "", col)
-}
+shorten_metric_names <- function(col) { gsub("-large|-xl", "", col) }
 
 dat = dat %>%
-  mutate(MetricModel = Metric) %>%
-  mutate(Metric = convert_metric_names(Metric)) %>%
-  mutate(Metric = shorten_metric_names(Metric)) %>%
-  mutate(Metric = ifelse(dat$Metric=="syntax.PPMI", "syntax-PPMI", Metric)) 
+  mutate(MetricModel = Metric, Metric=as.character(Metric)) %>%
+  mutate(Metric = ifelse(dat$Metric=="syntax.PPMI", "syntax-PPMI", Metric)) %>%
+  separate(Metric, into=c("Metric"), sep="\\.", extra="drop") %>%
+  mutate(Metric = shorten_metric_names(Metric)) 
 dat = dat %>%
   mutate(Metric = ifelse(dat$Metric=="GPT2", "GPT-2", Metric))
-
 chosen_models = unique(dat$Metric)
-mlm_order = c("human","RoBERTa", "BERT","GPT-J", "GPT-2", baselines_short)
-chosen_models = chosen_models[order(match(chosen_models,mlm_order))]
-}else{
-    convert_metric_names <- function(col) {
-    gsub(".average", "", col)
-    }
-  dat = dat %>%
-    mutate(MetricModel = Metric) %>%
-    mutate(Metric = convert_metric_names(Metric))
-  chosen_models = unique(dat$Metric)
-  mlm_order = c("human","RoBERTa-large.PLL","RoBERTa-large.l2r","RoBERTa-large.pverb","RoBERTa-large.plast", "BERT-large.PLL","BERT-large.l2r","BERT-large.pverb","BERT-large.plast")
-  chosen_models = chosen_models[order(match(chosen_models,mlm_order))]
-}
-print(paste(unique(dat$Metric)))
-message("Using these models/metrics:")
+chosen_models = chosen_models[order(match(chosen_models,models_short_order))]
 dat$Metric = factor(dat$Metric, levels = chosen_models)
+}else{
+  dat$Metric = relevel(dat$Metric, ref="human")
+  chosen_models = levels(dat$Metric)
+}
+message("Using these models/metrics:")
 print(chosen_models)
 ```
 
