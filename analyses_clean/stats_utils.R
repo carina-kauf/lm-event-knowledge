@@ -12,7 +12,7 @@ calculate_binom_pval <- function(numCorrect, numTotal) {
 plabel <- function(value) {
   plabel = ifelse(value<0.001, "***", 
                   ifelse(value<0.01, "**",
-                         ifelse(value<0.05, "*", "n.s.")))
+                         ifelse(value<0.05, "*", "")))
   return(plabel)
 }
 
@@ -97,12 +97,8 @@ get_correlation_df_tt <- function(analysis, humanMetric, trialTypes, input_dat, 
   df_correlation = df_correlation %>%
     mutate(pVal2zeroAdjusted = p.adjust(pVal2zero, method="fdr", n=length(pVal2zero)),
            pVal2humansAdjusted = p.adjust(pVal2humans, method="fdr", n=length(pVal2humans))) %>%
-    mutate(pVal2zeroLabel = ifelse(pVal2zeroAdjusted<0.001, "***",
-                                   ifelse(pVal2zeroAdjusted<0.01, "**",
-                                          ifelse(pVal2zeroAdjusted<0.05, "*", ""))),
-           pVal2humansLabel = ifelse(pVal2humansAdjusted<0.001, "***",
-                                     ifelse(pVal2humansAdjusted<0.01, "**",
-                                            ifelse(pVal2humansAdjusted<0.05, "*", ""))))
+    mutate(pVal2zeroLabel = plabel(pVal2zeroAdjusted),
+           pVal2humansLabel = plabel(pVal2humansAdjusted<0.001))
   return(df_correlation)
 }
 
@@ -158,11 +154,7 @@ df_correlation = data.frame()
   df_correlation = df_correlation %>%
     mutate(pVal2zeroAdjusted = p.adjust(pVal2zero, method="fdr", n=length(pVal2zero)),
            pVal2humansAdjusted = p.adjust(pVal2humans, method="fdr", n=length(pVal2humans))) %>%
-    mutate(pVal2zeroLabel = ifelse(pVal2zeroAdjusted<0.001, "***",
-                                   ifelse(pVal2zeroAdjusted<0.01, "**",
-                                          ifelse(pVal2zeroAdjusted<0.05, "*", ""))),
-           pVal2humansLabel = ifelse(pVal2humansAdjusted<0.001, "***",
-                                     ifelse(pVal2humansAdjusted<0.01, "**",
-                                            ifelse(pVal2humansAdjusted<0.05, "*", ""))))
+    mutate(pVal2zeroLabel = plabel(pVal2zeroAdjusted),
+           pVal2humansLabel = plabel(pVal2humansAdjusted<0.001))
   return(df_correlation)
 }

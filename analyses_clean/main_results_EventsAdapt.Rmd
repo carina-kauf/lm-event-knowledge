@@ -77,8 +77,8 @@ human_dat = read.csv('clean_data/clean_EventsAdapt_human_dat.csv')
 
 ```{r, utils.choose_models, echo=FALSE}
 human <- c("human")
-llms_main <- c("RoBERTa-large.sentence-PLL", "BERT-large.sentence-PLL", "GPT-J.sentence-LL", "GPT2-xl.sentence-LL")
-baselines <- c("tinyLSTM.surprisal","SDM", "thematicFit.prod", "syntax.PPMI")
+llms_main <- c("RoBERTa-large.sentence-PLL", "BERT-large.sentence-PLL", "GPT-J.sentence-LL", "GPT-2-xl.sentence-LL")
+baselines <- c("tinyLSTM.surprisal","SDM", "thematicFit.prod", "syntax-PPMI")
 
 llms_main <- c(human, llms_main)
 all_main <- c(llms_main, baselines)
@@ -102,11 +102,8 @@ shorten_metric_names <- function(col) { gsub("-large|-xl", "", col) }
 
 dat = dat %>%
   mutate(MetricModel = Metric, Metric=as.character(Metric)) %>%
-  mutate(Metric = ifelse(dat$Metric=="syntax.PPMI", "syntax-PPMI", Metric)) %>%
   separate(Metric, into=c("Metric"), sep="\\.", extra="drop") %>%
   mutate(Metric = shorten_metric_names(Metric)) 
-dat = dat %>%
-  mutate(Metric = ifelse(dat$Metric=="GPT2", "GPT-2", Metric))
 chosen_models = unique(dat$Metric)
 chosen_models = chosen_models[order(match(chosen_models,models_short_order))]
 dat$Metric = factor(dat$Metric, levels = chosen_models)
@@ -216,9 +213,7 @@ dat.binchoice.summary = dat.binchoice.summary %>%
   group_by(Category) %>%
   mutate(pValAdjusted = p.adjust(pVal, method="fdr", n=length(pVal)),
          ntoadjust = length(pVal)) %>%
-  mutate(pLabel = ifelse(pValAdjusted<0.001, "***", 
-                         ifelse(pValAdjusted<0.01, "**",
-                                ifelse(pValAdjusted<0.05, "*", "")))) %>%
+  mutate(pLabel= plabel(pValAdjusted)) %>%
   ungroup()
 ```
 
@@ -236,9 +231,7 @@ dat.binchoice.summary.withchisq = dat.binchoice.summary.withchisq %>%
   group_by(Category) %>%
   mutate(pVal2humansAdjusted = p.adjust(pVal2humans, method="fdr", n=length(pVal2humans)),
          ntoadjust = length(pVal2humans)) %>%
-  mutate(pLabel2humans = ifelse(pVal2humansAdjusted<0.001, "***", 
-                         ifelse(pVal2humansAdjusted<0.01, "**",
-                                ifelse(pVal2humansAdjusted<0.05, "*", "")))) 
+  mutate(pLabel2humans = plabel(pVal2humansAdjusted)) 
 
 # print the result
 for (i in seq_along(dat.binchoice.summary.withchisq$Metric)) {
@@ -320,9 +313,7 @@ dat.binchoice.summary.passive = dat.binchoice.summary.passive %>%
   group_by(Category) %>%
   mutate(pValAdjusted = p.adjust(pVal, method="fdr", n=length(pVal)),
          ntoadjust = length(pVal)) %>%
-  mutate(pLabel = ifelse(pValAdjusted<0.001, "***", 
-                         ifelse(pValAdjusted<0.01, "**",
-                                ifelse(pValAdjusted<0.05, "*", "")))) %>%
+  mutate(pLabel= plabel(pValAdjusted)) %>%
   ungroup()
 ```
 
@@ -340,9 +331,7 @@ dat.binchoice.summary.withchisq = dat.binchoice.summary.withchisq %>%
   group_by(Category) %>%
   mutate(pVal2humansAdjusted = p.adjust(pVal2humans, method="fdr", n=length(pVal2humans)),
          ntoadjust = length(pVal2humans)) %>%
-  mutate(pLabel2humans = ifelse(pVal2humansAdjusted<0.001, "***", 
-                         ifelse(pVal2humansAdjusted<0.01, "**",
-                                ifelse(pVal2humansAdjusted<0.05, "*", "")))) 
+  mutate(pLabel2humans = plabel(pVal2humansAdjusted)) 
 
 # print the result
 for (i in seq_along(dat.binchoice.summary.withchisq$Metric)) {
@@ -794,9 +783,7 @@ cor_df = acc_by_sentence %>%
   group_by(TrialType) %>%
   summarize(Correlation = cor(meanAccuracy, FinalScoreDiff),
             pVal = cor.test(meanAccuracy, FinalScoreDiff, method="pearson")$p.value) %>%
-  mutate(pLabel = ifelse(pVal<0.001, "***",
-                               ifelse(pVal<0.01, "**",
-                                      ifelse(pVal<0.05, "*", ""))))
+  mutate(pLabel= plabel(pVal))
 
 label_names <- c(
   "AI" = "animate-inanimate",
@@ -900,10 +887,13 @@ pvals_likelihoodratiotest = c()
 for(i in seq_along(metrics)){
   metric = metrics[i]
   dat.metric = dat %>% filter(Metric==metric)
-  m1 = lmer(FinalNormScore ~ Plausibility*TrialType*Voice + agent_freq_norm + patient_freq_norm + verb_freq_norm + sentence_freq_norm + (1+Plausibility|ItemNum), 
+  if (grepl("human", metric)) {
+    dat.metric = dat.metric %>% mutate(NumTokens=NumWords)
+  }
+  m1 = lmer(FinalNormScore ~ Plausibility*TrialType*Voice + agent_freq_norm + patient_freq_norm + verb_freq_norm + sentence_freq_norm + NumTokens + (1+Plausibility|ItemNum), 
            data=dat.metric, REML=FALSE, 
            control=lmerControl(optimizer="bobyqa", optCtrl=list(maxfun=2e6)))
-  m0 = lmer(FinalNormScore ~ Plausibility*TrialType*Voice + agent_freq_norm + patient_freq_norm + verb_freq_norm + sentence_freq_norm + (1|ItemNum), 
+  m0 = lmer(FinalNormScore ~ Plausibility*TrialType*Voice + agent_freq_norm + patient_freq_norm + verb_freq_norm + sentence_freq_norm + NumTokens +(1|ItemNum), 
            data=dat.metric, REML=FALSE, 
            control=lmerControl(optimizer="bobyqa", optCtrl=list(maxfun=2e6)))
   pvals_likelihoodratiotest = c(pvals_likelihoodratiotest, anova(m1, m0)[2,8])
@@ -912,7 +902,7 @@ print(pvals_likelihoodratiotest)
 print(lapply(pvals_likelihoodratiotest, function(x) {x<0.05/length(pvals_likelihoodratiotest)}))    # apply Bonferroni correction
 ```
 
-Conclusion: the model with the Plausibility x ItemNum slope is a better fit for 3/5 key metrics, so will stick to it.
+Conclusion: the model with the Plausibility x ItemNum slope is a better fit for all metrics, so will stick to it.
 
 ## Stats main
 
@@ -922,7 +912,10 @@ results = data.frame()
 for(i in seq_along(metrics)){
   metric = metrics[i]
   dat.metric = dat %>% filter(Metric==metric)
-  m = lmer(FinalNormScore ~ Plausibility*TrialType*Voice + agent_freq_norm + patient_freq_norm + verb_freq_norm + sentence_freq_norm + (1+Plausibility|ItemNum), 
+  if (grepl("human", metric)) {
+    dat.metric = dat.metric %>% mutate(NumTokens=NumWords)
+  }
+  m = lmer(FinalNormScore ~ Plausibility*TrialType*Voice + agent_freq_norm + patient_freq_norm + verb_freq_norm + sentence_freq_norm + NumTokens + (1+Plausibility|ItemNum), 
            data=dat.metric, REML=FALSE, 
            control=lmerControl(optimizer="bobyqa", optCtrl=list(maxfun=2e6)))
  d = data.frame(coef(summary(m)))
@@ -939,15 +932,13 @@ for(i in seq_along(metrics)){
 
 ```{r adjust pVals, echo=FALSE}
 results = results %>%
-  mutate(Category = ifelse(Metric%in%llms, "LLMs", "baselines")) %>%
+  mutate(Category = ifelse(Metric%in%llm_metrics, "LLMs", "baselines")) %>%
   mutate(Category = ifelse(Metric=="human", "human", Category))
 
 results = results %>%
   group_by(Category, Parameter) %>%
   mutate(pValAdjusted = p.adjust(pVal, method="fdr", n=length(pVal))) %>%
-  mutate(pLabel = ifelse(pValAdjusted<0.001, "***", 
-                         ifelse(pValAdjusted<0.01, "**",
-                                ifelse(pValAdjusted<0.05, "*", "")))) %>%
+  mutate(pLabel= plabel(pValAdjusted)) %>%
   mutate(pValFinal = ifelse(pValAdjusted<0.001, "<0.001", as.character(round(pValAdjusted,3)))) %>%
   ungroup()
 
@@ -965,10 +956,18 @@ reported_params = c("PlausibilityImplausible:TrialTypeAAR",
                     "patient_freq_norm",
                     "verb_freq_norm",
                     "sentence_freq_norm",
+                    "NumTokens",
                     "TrialTypeAAR:VoiceA>P",
                     "TrialTypeAI:VoiceA>P",
                     "PlausibilityImplausible:TrialTypeAAR:VoiceA>P",
                     "PlausibilityImplausible:TrialTypeAI:VoiceA>P")
+
+# get mean model effect size
+results.mean = results %>%
+  filter(Parameter %in% reported_params) %>%
+  filter(Metric!="human") %>%
+  group_by(Parameter) %>%
+  summarize(MeanByModel = round(mean(Estimate), 2))
 
 # restructure 
 results.clean = results %>% 
@@ -978,23 +977,25 @@ results.clean = results %>%
                         "")) %>%
   select(Metric, Parameter, Value) %>% 
   spread(Metric, Value)
+results.clean = merge(results.clean, results.mean)
 
 # order and names
 results.clean = results.clean %>%
   mutate(Category = ifelse(Parameter %in% c("PlausibilityImplausible:TrialTypeAAR",
                                             "PlausibilityImplausible:TrialTypeAI"),
                            "Core effects", "Surface-level effects")) %>%
-  select(c(Category, Parameter, metrics)) %>%
+  select(c(Category, Parameter, metrics, 'MeanByModel')) %>%
   mutate(Parameter = factor(Parameter, levels=reported_params)) %>%
   arrange(Parameter) %>%
   mutate(Parameter = recode(Parameter, 
-                    "PlausibilityImplausible:TrialTypeAAR"="Plausibility (AAN>control)",
-                    "PlausibilityImplausible:TrialTypeAI"="Plausibility (AI>AAN)",
+                    "PlausibilityImplausible:TrialTypeAAR"="Plausible AA > Implausible AA",
+                    "PlausibilityImplausible:TrialTypeAI"="Implausible AI > Implausible AA",
                     "VoiceA>P"="Voice",
                     "agent_freq_norm"="Agent frequency",
                     "patient_freq_norm"="Patient frequency",
                     "verb_freq_norm"="Verb frequency",
                     "sentence_freq_norm"="Avg. word frequency",
+                    "NumTokens"="Sentence length",
                     "TrialTypeAAR:VoiceA>P"="Voice x Sentence (AAN>control)",
                     "TrialTypeAI:VoiceA>P"="Voice x Sentence (AI>AAN)",
                     "PlausibilityImplausible:TrialTypeAAR:VoiceA>P"="Plausibility x Voice x Sentence (AAN>control)",
@@ -1110,7 +1111,12 @@ df_correlation$TrialType = factor(df_correlation$TrialType, levels=c("AI","AAN",
 df_correlation$Metric = factor(df_correlation$Metric, levels=metric_names)
 
 # text size 
-cortext_size = 3
+cortext_size = 2.5
+label_names <- c(
+  "AI" = "animate-inanimate",
+  "AAN" = "animate-animate",
+  "AAR" = "animate-animate\ncontrol"
+)
 
 plot.model2human = ggplot(dat=dat.model2human)+  
   geom_point(mapping=aes(x=ModelScore, y=HumanScore, color=Category), 
@@ -1128,7 +1134,7 @@ plot.model2human = ggplot(dat=dat.model2human)+
   facet_grid(TrialType~Metric, labeller = labeller(TrialType = as_labeller(label_names)))
 plot.model2human
 
-savename <- "model2human_byTrialType_LLMs.png"
+savename <- "model2human_byTrialType.png"
 ggsave(paste(savedir,savename,sep="/"), height=12,width=24, units='cm')
 ```
 
@@ -1237,9 +1243,7 @@ dat.binchoice.summary.aar = dat.binchoice.summary.aar %>%
   group_by(Category) %>%
   mutate(pValAdjusted = p.adjust(pVal, method="fdr", n=length(pVal)),
          ntoadjust = length(pVal)) %>%
-  mutate(pLabel = ifelse(pValAdjusted<0.001, "***", 
-                         ifelse(pValAdjusted<0.01, "**",
-                                ifelse(pValAdjusted<0.05, "*", "n.s.")))) %>%
+  mutate(pLabel= plabel(pValAdjusted)) %>%
   ungroup()
 ```
 
