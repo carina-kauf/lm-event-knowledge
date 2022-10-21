@@ -260,7 +260,7 @@ label_names <- c(
   "DTFit" = "animate-inanimate, unlikely",
   "AI" = "animate-inanimate, impossible",
   "AAN" = "animate-animate, unlikely",
-  "AAR" = "animate-animate (control)"
+  "AAR" = "animate-animate\n(control)"
 )
 ```
 
@@ -1089,9 +1089,7 @@ human_dat.sampled = human_dat.sampled %>%
   filter(Sentence %in% unique(dat.model2human$Sentence)) %>%  # make sure it's the same sents
   rename(HumanScore=MeanScoreRest, ModelScore=RandomScore)    # renaming for convenience 
 human_dat.sampled$Metric = 'singleHuman'
-```
 
-```{r}
 dat.model2human = rbind(dat.model2human, human_dat.sampled)
 ```
 
@@ -1156,69 +1154,6 @@ ggsave(paste(savedir,savename,sep="/"), height=12,width=24, units='cm')
 ```
 
 
-# SI - PLAUSIBLE VS IMPLAUSIBLE
-
-### Prep data
-```{r, echo=FALSE}
-
-dat.plaus = dat %>% 
-  dplyr::select(ItemNum, TrialType, Plausibility, Voice, Metric, FinalNormScore) %>%
-  group_by(ItemNum, TrialType, Plausibility, Voice, Metric) %>%
-  summarize(meanScore = mean(FinalNormScore, na.rm=TRUE)) %>%
-  spread(Plausibility, meanScore)  
-```
-
-### Calculate correlations
-
-```{r}
-trialTypes = c("AI", "AAN") #this is for active and passive sentences! Above is only for active sentences
-dat.plaus.sub = dat.plaus %>%
-  filter(TrialType%in%c(trialTypes))
-
-df_correlation.plaus.AIAAN = get_correlation_df("plausibility", "human", dat.plaus.sub, chosen_models)
-
-df_correlation.plaus.AI = get_correlation_df("plausibility", "human", 
-                                                 dat.plaus.sub %>% filter(TrialType=="AI"),
-                                                 chosen_models)
-df_correlation.plaus.AI$TrialType = "AI"
-df_correlation.plaus.AAN = get_correlation_df("plausibility", "human", 
-                                                 dat.plaus.sub %>% filter(TrialType=="AAN"),
-                                                 chosen_models)
-df_correlation.plaus.AAN$TrialType = "AAN"
-df_correlation.plaus.plot = rbind(df_correlation.plaus.AI, df_correlation.plaus.AAN)
-df_correlation.plaus.plot$TrialType = factor(df_correlation.plaus.plot$TrialType, levels=c("AI", "AAN"))
-```
-
-### Plot
-```{r}
-#determine plotting order
-df_correlation.plaus.plot$Metric = factor(df_correlation.plaus.plot$Metric, levels=chosen_models)
-dat.plaus.sub$Metric = factor(dat.plaus.sub$Metric, levels=chosen_models)
-dat.plaus.sub$TrialType = factor(dat.plaus.sub$TrialType, levels=c("AI", "AAN"))
-
-plot.plaus = ggplot(data=dat.plaus.sub)+
-  geom_point(mapping=aes(x=Plausible, y=Implausible), size=0.2, color=color_plaus)+
-  facet_grid(TrialType~Metric, labeller = labeller(TrialType = as_labeller(label_names)))+
-    geom_hline(yintercept=reference_value, linetype='dotted', lwd=0.2)+
-  geom_vline(xintercept=reference_value, linetype='dotted', lwd=0.2)+
-  geom_abline(slope=1, intercept=0, size=0.2)+
-  geom_point(mapping=aes(x=Plausible, y=Implausible), size=0.2, color=color_plaus)+
-  geom_text(mapping=aes(x=0, y=1.10, 
-                        label=sprintf("r = %.2f%s", round(Correlation,2), pVal2zeroLabel)), 
-            data=df_correlation.plaus.plot, size=cortext_size, hjust = 0)+
-  coord_cartesian(ylim=c(0,1.15), xlim=c(0,1))+
-  scale_x_continuous(breaks=c(0,0.5,1))+
-  scale_y_continuous(breaks=c(0,0.5,1))+
-  ggtitle('PLAUSIBILITY')+
-  theme_classic()+
-  theme(plot.title = element_text(hjust=0.5,face='bold'))
-plot.plaus
-
-savename <- "scatter_plausibility_noAAR.png"
-ggsave(paste(savedir,savename,sep="/"), height=10,width=25, units='cm')
-```
-
-
 # SI CONTROL PLOTS
 
 ```{r, fig.height=2,fig.width=5}
@@ -1245,7 +1180,7 @@ plot.plaus.density.sub.aar = ggplot()+
 plot.plaus.density.sub.aar
 ```
 
-# get p values
+## get p values
 ```{r}
 dat.binchoice.summary.aar = dat.binchoice.active %>%
   filter(TrialType %in% c("AAR")) %>%
