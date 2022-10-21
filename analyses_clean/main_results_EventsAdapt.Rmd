@@ -192,8 +192,7 @@ if (which_models=="llms_all") {
 
 ```{r}
 # leave only active sentences here (since SDM & PPMI-syntax cannot deal with passive structures, put full plot in SI)
-dat.binchoice.active = dat.binchoice %>%
-  filter(Voice=="active")
+dat.binchoice.active = dat.binchoice %>% filter(Voice=="active")
 ```
 
 ### Stats
@@ -251,7 +250,6 @@ label_names <- c(
   "AAN" = "animate-animate",
   "AAR" = "animate-animate (control)"
 )
-
 ```
 
 ```{r, echo=FALSE}
