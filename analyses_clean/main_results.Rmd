@@ -181,13 +181,17 @@ if (which_models == "llms_all") {
     mutate(Category = ifelse(Metric=="human", "human", Category)) 
 }
 
+dat.sentences = dat.binchoice %>%
+  filter(Plausibility=="Plausible") %>% 
+  select(ItemNum, TrialType, Voice, Metric, LowerBetter, Category, Sentence)
+
 dat.binchoice = dat.binchoice %>%
   group_by(ItemNum, TrialType, Voice, Metric, LowerBetter, Category) %>%
-  summarize(ScoreDiff = NormScore[Plausibility=="Plausible"]-NormScore[Plausibility=="Implausible"],
-            Sentence=Sentence) %>%
+  summarize(ScoreDiff = NormScore[Plausibility=="Plausible"]-NormScore[Plausibility=="Implausible"]) %>%
   mutate(FinalScoreDiff = ifelse(LowerBetter==TRUE, -ScoreDiff, ScoreDiff)) %>%
   mutate(Accuracy = ifelse(FinalScoreDiff>0, 1, 0)) %>%
-  ungroup()
+  ungroup() %>%
+  inner_join(dat.sentences)
 
 # specify order for plotting
 dat.binchoice$Metric = factor(dat.binchoice$Metric, levels=chosen_models)
@@ -728,7 +732,7 @@ write.csv(results.clean, paste(savedir,savename,sep="/"), row.names=FALSE)
 ```
 
 
-# Error analysis
+# ERROR ANALYSIS
 
 ## Compare performance across models
 

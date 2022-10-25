@@ -22,6 +22,7 @@ library(patchwork)
 library(gtools)
 library(cowplot)
 library(png)
+library(RColorBrewer)
 
 source('dataloader_utils.R') #includes normalizations, read_data functions
 source('stats_utils.R')
@@ -493,4 +494,30 @@ plot.binacc3 = ggplot(data=dat.binplot,
 plot.binacc3
 savename <- "1_binaryAccuracy_averagePerCategory_CategoryXAnimacy.png"
 ggsave(paste(savedir,savename,sep="/"), width=30, height=10, units='cm')
+```
+
+```{r}
+dat.mean = dat.binchoice %>%
+  filter(Voice=="active", !(TrialType=="AAR")) %>%
+  group_by(Category, TrialType) %>%
+  summarize(Accuracy=mean(Accuracy))
+
+  plot.binacc4 = ggplot(data=dat.mean,
+       mapping=aes(x=TrialType, y=Accuracy, fill=Category))+
+  facet_wrap(~Category, nrow=1)+
+  geom_hline(yintercept=1, color='gray50', linetype='dotted')+
+  stat_summary(geom='col', fun='mean',
+               color='black', width=0.8)+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               color = 'black', size = 0.5, width=0.1)+
+#  geom_text(mapping=aes(x=Metric, y=0.05, label=pLabel), data=dat.binchoice.summary)+
+  coord_cartesian(ylim=c(0,1))+
+  geom_hline(yintercept=.5, linetype='dotted')+
+  theme_classic()+
+  labs(x=NULL)+
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1),
+        axis.title = element_text(size = 9))
+  plot.binacc4
+#savename <- "1_binaryAccuracy_averagePerCategory_CategoryXAnimacy.png"
+#ggsave(paste(savedir,savename,sep="/"), width=30, height=10, units='cm')
 ```
