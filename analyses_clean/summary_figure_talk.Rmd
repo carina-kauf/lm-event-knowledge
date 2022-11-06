@@ -305,11 +305,11 @@ if (grepl("DTFit_EventsRev_EventsAdapt", experiment)) {
 
 ```{r}
 label_names <- c(
-  "AI,unlikely" = "animate-inanimate, unlikely",
-  "AA,unlikely" = "animate-animate, unlikely (easy)",
+  "AI,unlikely" = "animate-inanimate,\nunlikely",
+  "AA,unlikely" = "animate-animate,\nunlikely (easy)",
   #"DTFit" = "animate-inanimate, unlikely",
-  "AI" = "animate-inanimate, impossible",
-  "AAN" = "animate-animate, unlikely",
+  "AI" = "animate-inanimate,\nimpossible",
+  "AAN" = "animate-animate,\nunlikely",
   "AAR" = "animate-animate\n(control)"
 )
 ```
@@ -322,8 +322,8 @@ if (grepl("DTFit_EventsRev_EventsAdapt", experiment)) {
   
   label_names_cat <- c(
   "human" = "human",
-  "LLMs" = "average LLM model",
-  "baselines" = "average baseline model"
+  "LLMs" = "LLM (average)",
+  "baselines" = "baseline (average)"
   )
   
   dat.binchoice.active = dat.binchoice.active %>%
@@ -340,7 +340,7 @@ if (grepl("DTFit_EventsRev_EventsAdapt", experiment)) {
     stat_summary(geom='errorbar', fun.data='mean_se',
                  color = 'black', size = 0.5, width=0.1)+
     geom_text(mapping=aes(x=Category, y=0.05, label=pLabel), data=dat.binchoice.summary)+
-    coord_cartesian(ylim=c(0.4,1))+
+    coord_cartesian(ylim=c(0.45,1))+
     geom_hline(yintercept=.5, linetype='dotted')+
     theme_classic()+
     labs(x=NULL)+
@@ -388,15 +388,15 @@ img_aa <- get_png("./animate-animate.png")
 
 (p3 <- ggplot(mapping = aes(x = 0:1, y = 1)) +
   theme_void() +
-  annotation_custom(img_ai, xmin = 0.05, xmax = .15) +
-  annotation_custom(img_ai, xmin = .27, xmax = .37) +
-  annotation_custom(img_aa, xmin = .49, xmax = .59) +
-  annotation_custom(img_aa, xmin = .7, xmax = .8))
+  annotation_custom(img_ai, xmin = 0.055, xmax = .155) +
+  annotation_custom(img_ai, xmin = .26, xmax = .36) +
+  annotation_custom(img_aa, xmin = .46, xmax = .56) +
+  annotation_custom(img_aa, xmin = .67, xmax = .77))
 
 plot.binacc.logos <- gridExtra::grid.arrange(p3, plot.binacc, heights = c(.1, .9))
 
 savename <- "1_binaryAccuracy_averagePerCategory_logos.png"
-ggsave(paste(savedir,savename,sep="/"), width=30, height=7, units='cm', plot.binacc.logos)
+ggsave(paste(savedir,savename,sep="/"), width=20, height=8, units='cm', plot.binacc.logos)
 ```
 
 ```{r}
