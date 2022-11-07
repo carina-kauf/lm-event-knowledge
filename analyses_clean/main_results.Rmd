@@ -35,7 +35,7 @@ options(dplyr.summarise.inform = FALSE)
 #SET ENVIRONMENT VARIABLES
 
 # can be: "EventsAdapt", "DTFit_EventsRev"
-experiment <- "EventsAdapt"
+experiment <- "DTFit_EventsRev"
 
 #can be:
 # llms_main = human + main LLMs
@@ -210,7 +210,7 @@ if (which_models=="llms_all") {
 dat.binchoice.active = dat.binchoice %>% filter(Voice=="active")
 ```
 
-### Stats
+## Stats
 
 ```{r}
 # get p values
@@ -257,7 +257,7 @@ for (i in seq_along(dat.binchoice.summary.withchisq$Metric)) {
 }
 ```
 
-### Plot
+## Plot
 
 ```{r}
 label_names <- c(
@@ -312,7 +312,9 @@ savename <- "1_binaryAccuracy_split_logos.png"
 ggsave(paste(savedir,savename,sep="/"), plot.binacc.logos, width=15, height=9, units='cm')
 ```
 
-### Stats: difference between AI & AAN conditions
+## Difference between AI & AAN conditions
+
+### Stats
 
 Hypothesis test of proportions (Two proportions z test):
 prop.test(c(nr_successes1, nr_successes2), c(nr_total1, nr_total2), p = NULL, alternative = "two.sided", correct = TRUE)
@@ -325,7 +327,7 @@ The function returns:
 
 ```{r, echo=FALSE}
 dat.aivsaan = dat.binchoice.summary %>% 
-  dplyr::select(TrialType, Metric, NumCorrect, NumTotal)
+  select(TrialType, Metric, NumCorrect, NumTotal)
 
 df_ai.vs.aan = data.frame()
 
@@ -339,17 +341,43 @@ for (i in seq_along(chosen_models)) {
   
   proptest.stat = proptest$statistic
   proptest.pval = proptest$p.value
+#  print(paste(chosen_models[i], "|", proptest.stat, "|", proptest.pval, "|", plabel(proptest.pval)))
   
-  print(paste(chosen_models[i], "|", proptest.stat, "|", proptest.pval, "|", plabel(proptest.pval)))
+  # get score difference
+  score_diff = curr_data %>% 
+    mutate(Accuracy=NumCorrect/NumTotal) %>%
+    summarize(Diff = Accuracy[TrialType=="AI"]-Accuracy[TrialType=="AAN"]) 
   
-  df <- data.frame(chosen_models[i], proptest.stat, proptest.pval, plabel(proptest.pval))
+  df <- data.frame(chosen_models[i], score_diff[1,1], proptest.stat, proptest.pval)
   df_ai.vs.aan <- rbind(df_ai.vs.aan,df)
 }
 
-colnames(df_ai.vs.aan) = c("Metric", "statistic", "pVal", "pLabel")
+colnames(df_ai.vs.aan) = c("Metric", "Difference", "ChiSquared", "pVal")
 ```
 
-### Mean model results
+### Correct for MC within LLMs and baselines
+
+```{r adjust pVals, echo=FALSE}
+results = df_ai.vs.aan %>%
+  mutate(Category = ifelse(Metric%in%llms_main_short, "LLMs", "baselines")) %>%
+  mutate(Category = ifelse(Metric=="human", "human", Category))
+
+results = results %>%
+  group_by(Category) %>%
+  mutate(pValAdjusted = p.adjust(pVal, method="fdr", n=length(pVal))) %>%
+  mutate(pLabel= plabel(pValAdjusted)) %>%
+  mutate(Difference = round(Difference, 2),
+    ChiSquared = round(ChiSquared, 2),
+    pValAdjusted = ifelse(pValAdjusted<0.001, "<0.001 ***", 
+                          paste(as.character(round(pValAdjusted,3)), pLabel))) %>%
+  ungroup() %>%
+  select(Category, Metric, Difference, ChiSquared, pValAdjusted)
+
+savename <- "AI_AA_difference_stats.csv"
+write.csv(results, paste(savedir,savename,sep="/"), row.names=FALSE)
+```
+
+## Mean model results
 ```{r}
 dat.binchoice.meanbycategory = dat.binchoice.summary %>%
   group_by(Category, TrialType) %>%
