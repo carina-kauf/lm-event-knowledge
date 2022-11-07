@@ -35,7 +35,7 @@ options(dplyr.summarise.inform = FALSE)
 #SET ENVIRONMENT VARIABLES
 
 # can be: "EventsAdapt", "DTFit_EventsRev"
-experiment <- "DTFit_EventsRev"
+experiment <- "EventsAdapt"
 
 #can be:
 # llms_main = human + main LLMs
@@ -609,10 +609,10 @@ if (experiment=="EventsAdapt") {
   contrasts(dat$Voice) = c(0.5, -0.5)
   colnames(attr(dat$Voice, "contrasts")) = c("A>P")
   datasets = c("EventsAdapt")
-  f = FinalNormScore ~ Plausibility*TrialType*Voice + agent_freq_norm + patient_freq_norm + verb_freq_norm + sentence_freq_norm + NumTokens + (1+Plausibility|ItemNum)
+  f = FinalNormScore ~ Plausibility*TrialType*Voice + agent_freq_norm + patient_freq_norm + verb_freq_norm + sentence_freq_norm + cNumTokens + (1+Plausibility|ItemNum)
 } else {
   datasets = c("DTFit", "EventsRev")
-  f = FinalNormScore ~ Plausibility + agent_freq_norm + patient_freq_norm + verb_freq_norm + sentence_freq_norm + NumTokens + (1|ItemNum)
+  f = FinalNormScore ~ Plausibility + agent_freq_norm + patient_freq_norm + verb_freq_norm + sentence_freq_norm + cNumTokens + (1|ItemNum)
 }
 ```
 
@@ -624,9 +624,10 @@ if (experiment=="EventsAdapt") {
 # for(i in seq_along(metrics)){
 #   metric = metrics[i]
 #   dat.metric = dat %>% filter(Metric==metric)
-#   if (grepl("human", metric)) {
-#     dat.metric = dat.metric %>% mutate(NumTokens=NumWords)
-#   }
+    # if (!(metric %in% llms_main_short)) {
+    #   dat.metric = dat.metric %>% mutate(NumTokens=NumWords)
+    # }
+    # dat.metric = dat.metric %>% mutate(cNumTokens=scale(NumTokens, scale=FALSE))
 #   m1 = lmer(FinalNormScore ~ Plausibility*TrialType*Voice + agent_freq_norm + patient_freq_norm + verb_freq_norm + sentence_freq_norm + NumTokens + (1+Plausibility|ItemNum), 
 #            data=dat.metric, REML=FALSE, 
 #            control=lmerControl(optimizer="bobyqa", optCtrl=list(maxfun=2e6)))
@@ -645,8 +646,12 @@ Conclusion: the model with the Plausibility x ItemNum slope is a better fit for 
 ## Stats main
 
 ```{r regression, echo=FALSE}
-#metrics = c('human',llms_main_short)
-metrics = chosen_models
+if (which_models=="all_main") {
+  metrics = c('human',llms_main_short)
+} else {
+  metrics = chosen_models
+}
+
 results = data.frame()
 
 for(i in seq_along(metrics)){
@@ -657,6 +662,7 @@ for(i in seq_along(metrics)){
     if (!(metric %in% llms_main_short)) {
       dat.metric = dat.metric %>% mutate(NumTokens=NumWords)
     }
+    dat.metric = dat.metric %>% mutate(cNumTokens=scale(NumTokens, scale=FALSE))
     m = lmer(f, 
              data=dat.metric, REML=FALSE, 
              control=lmerControl(optimizer="bobyqa", optCtrl=list(maxfun=2e6)))
@@ -701,7 +707,7 @@ if (experiment=="EventsAdapt") {
                       "patient_freq_norm",
                       "verb_freq_norm",
                       "sentence_freq_norm",
-                      "NumTokens",
+                      "cNumTokens",
                       "TrialTypeAAR:VoiceA>P",
                       "TrialTypeAI:VoiceA>P",
                       "PlausibilityImplausible:TrialTypeAAR:VoiceA>P",
@@ -712,7 +718,7 @@ if (experiment=="EventsAdapt") {
                     "patient_freq_norm",
                     "verb_freq_norm",
                     "sentence_freq_norm",
-                    "NumTokens")
+                    "cNumTokens")
 }
 
 # get mean model effect size
@@ -750,7 +756,7 @@ results.clean = results.clean %>%
                     "patient_freq_norm"="Patient frequency",
                     "verb_freq_norm"="Verb frequency",
                     "sentence_freq_norm"="Avg. word frequency",
-                    "NumTokens"="Sentence length",
+                    "cNumTokens"="Sentence length",
                     "TrialTypeAAR:VoiceA>P"="Voice x Sentence (AAN>control)",
                     "TrialTypeAI:VoiceA>P"="Voice x Sentence (AI>AAN)",
                     "PlausibilityImplausible:TrialTypeAAR:VoiceA>P"="Plausibility x Voice x Sentence (AAN>control)",
