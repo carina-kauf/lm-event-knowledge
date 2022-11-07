@@ -1,0 +1,13 @@
+"Experiment","Category","Parameter","human","tinyLSTM","SDM","thematicFit","syntax-PPMI","MeanByModel"
+"EventsAdapt","Core effects","Plausible AA > Implausible AA","0.38 ***","","","0.04 *","",0.01
+"EventsAdapt","Core effects","Implausible AI > Implausible AA","-0.37 ***","-0.04 ***","","-0.04 *","",-0.02
+"EventsAdapt","Surface-level effects","Voice","","-0.18 ***","0.37 ***","0.06 *","-0.26 ***",0
+"EventsAdapt","Surface-level effects","Agent frequency","","0.02 ***","0.03 ***","","-0.03 ***",0.01
+"EventsAdapt","Surface-level effects","Patient frequency","","0.03 ***","0.04 ***","","-0.03 ***",0.01
+"EventsAdapt","Surface-level effects","Verb frequency","","0.02 *","0.04 ***","","-0.04 ***",0
+"EventsAdapt","Surface-level effects","Avg. word frequency","","","","","",0
+"EventsAdapt","Surface-level effects","Sentence length","","-0.13 ***","0.12 ***","","-0.07 ***",-0.02
+"EventsAdapt","Surface-level effects","Voice x Sentence (AAN>control)","","","0.06 *","","",0.01
+"EventsAdapt","Surface-level effects","Voice x Sentence (AI>AAN)","0.03 **","0.01 *","0.13 ***","0.12 ***","",0.07
+"EventsAdapt","Surface-level effects","Plausibility x Voice x Sentence (AAN>control)","","","","","",0
+"EventsAdapt","Surface-level effects","Plausibility x Voice x Sentence (AI>AAN)","-0.07 ***","","-0.27 ***","-0.11 ***","",-0.1

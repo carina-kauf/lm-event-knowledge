@@ -1,13 +1,13 @@
-"Experiment","Category","Parameter","human","RoBERTa","BERT","GPT-J","GPT-2","MeanByModel"
-"DTFit","Core effects","Plausible > Implausible","-0.55 ***","-0.18 ***","-0.13 ***","-0.15 ***","-0.14 ***",-0.15
-"DTFit","Surface-level effects","Agent frequency","","","","","",0.01
-"DTFit","Surface-level effects","Patient frequency","","","","","",0.01
-"DTFit","Surface-level effects","Verb frequency","","","","","",-0.01
-"DTFit","Surface-level effects","Avg. word frequency","","","","","0.04 *",0.02
-"DTFit","Surface-level effects","Sentence length","","-0.06 ***","-0.09 ***","-0.04 ***","-0.04 ***",-0.06
-"EventsRev","Core effects","Plausible > Implausible","-0.76 ***","-0.1 ***","-0.09 ***","-0.14 ***","-0.1 ***",-0.11
-"EventsRev","Surface-level effects","Agent frequency","0.05 *","0.12 ***","0.08 *","0.08 *","0.08 *",0.09
-"EventsRev","Surface-level effects","Patient frequency","","0.12 ***","0.07 *","","0.08 *",0.09
-"EventsRev","Surface-level effects","Verb frequency","","","","","",0.04
-"EventsRev","Surface-level effects","Avg. word frequency","","","","","",-0.01
-"EventsRev","Surface-level effects","Sentence length","","","-0.07 ***","-0.06 **","-0.05 **",-0.04
+"Experiment","Category","Parameter","human","RoBERTa","BERT","GPT-J","GPT-2","tinyLSTM","SDM","thematicFit","syntax-PPMI","MeanByModel"
+"DTFit","Core effects","Plausible > Implausible","-0.55 ***","-0.18 ***","-0.13 ***","-0.15 ***","-0.14 ***","-0.03 ***","-0.15 ***","-0.09 ***","-0.02 ***",-0.11
+"DTFit","Surface-level effects","Agent frequency","","","","","","","","","",0.01
+"DTFit","Surface-level effects","Patient frequency","","","","","","","0.04 ***","","0.03 **",0.02
+"DTFit","Surface-level effects","Verb frequency","","","","","","","-0.01 *","","",-0.01
+"DTFit","Surface-level effects","Avg. word frequency","","","","","0.04 *","0.06 ***","","","-0.08 ***",0
+"DTFit","Surface-level effects","Sentence length","","-0.06 ***","-0.09 ***","-0.04 ***","-0.04 ***","-0.37 ***","","","",-0.1
+"EventsRev","Core effects","Plausible > Implausible","-0.76 ***","-0.1 ***","-0.09 ***","-0.14 ***","-0.1 ***","","","-0.11 **","-0.08 ***",-0.08
+"EventsRev","Surface-level effects","Agent frequency","0.05 *","0.12 **","0.08 *","","0.08 *","","","","",0.04
+"EventsRev","Surface-level effects","Patient frequency","","0.12 ***","0.07 *","","0.08 *","","","","",0.05
+"EventsRev","Surface-level effects","Verb frequency","","","","","","","","","",0.01
+"EventsRev","Surface-level effects","Avg. word frequency","","","","","","","","0.13 *","",0.03
+"EventsRev","Surface-level effects","Sentence length","","","-0.07 ***","-0.06 **","-0.05 **","-0.14 ***","-0.06 **","","",-0.04

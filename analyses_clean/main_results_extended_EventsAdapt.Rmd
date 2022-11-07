@@ -570,14 +570,9 @@ dat.binchoice.summary.aar = dat.binchoice.summary.aar %>%
 ## Prep data
 
 ```{r, echo=FALSE}
-if (grepl("all_main", which_models) == TRUE){
-plotting_models = c('human',llms_main_short)
-}else{
-  plotting_models = chosen_models
-}
+plotting_models = chosen_models
 
 dat.sub = dat %>%
-  filter(Voice=="active") %>%
   filter(Metric%in%plotting_models)
 
 dat.plaus = dat.sub %>%
@@ -588,6 +583,8 @@ dat.plaus = dat.sub %>%
   spread(Plausibility, meanScore)
 dat.plaus$Metric = factor(dat.plaus$Metric, levels=plotting_models)
 ```
+
+## Plot
 
 ```{r, fig.height=2,fig.width=5}
 trialTypes = c("AAR")
@@ -620,7 +617,7 @@ plot.plaus.control = ggplot(data=dat.sub.aar)+
 plot.plaus.control
 
 savename <- "plausplot_AAR.png"
-ggsave(paste(savedir,savename,sep="/"), height=10,width=25, units='cm')
+ggsave(paste(savedir,savename,sep="/"), height=6,width=25, units='cm')
 ```
 
 ```{r}

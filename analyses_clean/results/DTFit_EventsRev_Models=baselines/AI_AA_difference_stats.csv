@@ -1,0 +1,6 @@
+"Category","Metric","Difference","ChiSquared","pValAdjusted"
+"human","human",NA,0,"1 "
+"baselines","tinyLSTM",NA,1.63,"0.269 "
+"baselines","SDM",NA,19.43,"<0.001 ***"
+"baselines","thematicFit",NA,0.57,"0.449 "
+"baselines","syntax-PPMI",NA,20.52,"<0.001 ***"

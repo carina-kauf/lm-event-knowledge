@@ -645,7 +645,8 @@ Conclusion: the model with the Plausibility x ItemNum slope is a better fit for 
 ## Stats main
 
 ```{r regression, echo=FALSE}
-metrics = c('human',llms_main_short)
+#metrics = c('human',llms_main_short)
+metrics = chosen_models
 results = data.frame()
 
 for(i in seq_along(metrics)){
@@ -653,7 +654,7 @@ for(i in seq_along(metrics)){
     metric = metrics[i]
     dataset = datasets[j]
     dat.metric = dat %>% filter(Metric==metric, Experiment==dataset)
-    if (grepl("human", metric)) {
+    if (!(metric %in% llms_main_short)) {
       dat.metric = dat.metric %>% mutate(NumTokens=NumWords)
     }
     m = lmer(f, 
@@ -765,11 +766,16 @@ write.csv(results.clean, paste(savedir,savename,sep="/"), row.names=FALSE)
 ## Compare performance across models
 
 ```{r}
-acc_by_sentence.LLM = dat.binchoice.active %>% 
-  filter(!(TrialType=="AAR")) %>%
-  filter(Category=='LLMs') %>%
-  group_by(TrialType,ItemNum, Voice) %>%
-  mutate(meanAccuracy=mean(Accuracy)) %>% 
+acc_by_sentence.model = dat.binchoice.active %>% 
+  filter(!(TrialType=="AAR")) 
+
+if (which_models!="baselines") {
+  acc_by_sentence.model = acc_by_sentence.model %>% filter(Category=="LLMs")
+}
+
+acc_by_sentence.model = acc_by_sentence.model %>%
+  group_by(TrialType,ItemNum, Voice) %>% 
+  mutate(meanAccuracy=mean(Accuracy)) %>%
   ungroup()
 ```
 
@@ -777,7 +783,7 @@ acc_by_sentence.LLM = dat.binchoice.active %>%
 
 ```{r}
 dat.binchoice.human = dat.binchoice %>% filter(Metric=='human')
-acc_by_sentence = inner_join(dat.binchoice.human, acc_by_sentence.LLM %>% select(ItemNum, TrialType, Voice, meanAccuracy)) %>%
+acc_by_sentence = inner_join(dat.binchoice.human, acc_by_sentence.model %>% select(ItemNum, TrialType, Voice, meanAccuracy)) %>%
   distinct()
 
 # calculate correlation
@@ -800,10 +806,10 @@ ggplot(acc_by_sentence, aes(x=meanAccuracy, y=FinalScoreDiff)) +
           data=cor_df, size=cortext_size, hjust = 0)+
   scale_x_continuous(breaks=c(0,.25,.5, .75, 1), labels=c(0,1,2,3,4))+
   scale_y_continuous(breaks=c(0,0.5,1))+
-  labs(x="# correct LLM responses", y="Human score difference")+
+  labs(x="# correct model responses", y="Human score difference")+
   theme_classic() + theme(strip.text = element_text(size=11))
 
-savename <- "LLM correct vs human score diff.png"
+savename <- "models correct vs human score diff.png"
 ggsave(paste(savedir,savename,sep="/"), width=15, height=8, units='cm')
 ```
 
@@ -814,7 +820,7 @@ threshold = 0.33
 
 hard_sents = acc_by_sentence %>%
   filter(meanAccuracy<threshold) %>%
-  select(ItemNum, Voice, meanAccuracy, FinalScoreDiff)
+  select(TrialType, ItemNum, Voice, meanAccuracy, FinalScoreDiff)
 
 hard_sents = inner_join(hard_sents, dat) %>%
   select(ItemNum, Sentence, TrialType, Plausibility, meanAccuracy, FinalScoreDiff) %>% 
@@ -827,7 +833,7 @@ hard_sents = inner_join(hard_sents, dat) %>%
 hard_sents$Index = 1:nrow(hard_sents)
 hard_sents = select(hard_sents, Index, everything())
 
-savename <- "hard_sentences_LLMs.csv"
+savename <- "hard_sentences_models.csv"
 write.csv(hard_sents, paste(savedir,savename,sep="/"), row.names=FALSE)
 ```
 
@@ -851,8 +857,8 @@ dat.human.error.sent = subset(dat, Metric=='human') %>%
   filter(Voice=='active') %>%
   inner_join(human.error.itemnum, by = c("ItemNum")) %>%
   inner_join(dat.human.error.prep, by = c("ItemNum")) %>%
-  select(ItemNum,Sentence,Plausibility,Score,FinalScoreDiff) %>%
-  select(ItemNum,Sentence,Plausibility) %>%
+  mutate(Diff = round(FinalScoreDiff, 2)) %>%
+  select(ItemNum,Sentence,Plausibility,Diff) %>%
   distinct() %>%
   spread(Plausibility, Sentence)
 
