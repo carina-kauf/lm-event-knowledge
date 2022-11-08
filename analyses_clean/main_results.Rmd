@@ -35,14 +35,14 @@ options(dplyr.summarise.inform = FALSE)
 #SET ENVIRONMENT VARIABLES
 
 # can be: "EventsAdapt", "DTFit_EventsRev"
-experiment <- "EventsAdapt"
+experiment <- "DTFit_EventsRev"
 
 #can be:
 # llms_main = human + main LLMs
 # all_main = human + main LLMs + baselines
 # baselines = human + baselines
 # llms_all = human + all MLMs 
-which_models <- "all_main" 
+which_models <- "llms_all" 
 
 #can be "min-max", "zscore", "none"
 normalization_type <- "min-max" 
@@ -288,7 +288,9 @@ plot.binacc = ggplot(data=subset(dat.binchoice.active, !(TrialType=="AAR")),
 plot.binacc
 
 savename <- "1_binaryAccuracy_split.png"
-ggsave(paste(savedir,savename,sep="/"), width=15, height=9, units='cm')
+plt_width = ifelse(which_models=="llms_all", 20, 15)
+plt_height = ifelse(which_models=="llms_all", 12, 9)
+ggsave(paste(savedir,savename,sep="/"), width=plt_width, height=plt_height, units='cm')
 ```
 ### Add logos
 ```{r}
@@ -309,7 +311,7 @@ img_aa <- get_png("./animate-animate.png")
 plot.binacc.logos <- gridExtra::grid.arrange(p3, plot.binacc, heights = c(.05, .95))
 
 savename <- "1_binaryAccuracy_split_logos.png"
-ggsave(paste(savedir,savename,sep="/"), plot.binacc.logos, width=15, height=9, units='cm')
+ggsave(paste(savedir,savename,sep="/"), plot.binacc.logos, width=plt_width, height=plt_height, units='cm')
 ```
 
 ## Difference between AI & AAN conditions

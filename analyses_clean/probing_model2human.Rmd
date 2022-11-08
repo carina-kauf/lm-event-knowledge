@@ -116,7 +116,7 @@ breaks_fun <- function(x) {
 plot_data = dat %>% filter(TrialType=="normal", VoiceType=="normal")
 plot_data$Layer = as.numeric(as.character(plot_data$Layer))
 
-ggplot(data = plot_data,
+plot.all = ggplot(data = plot_data,
        mapping = aes(x=Layer, y=Accuracy, color=Dataset, group = Dataset))+
   facet_grid(~Model, scales="free_x")+
   geom_hline(yintercept=.33, linetype='dotted')+
@@ -127,6 +127,7 @@ ggplot(data = plot_data,
   theme_classic()+
   scale_x_continuous(breaks = breaks_fun, limits = c(0, NA)) + 
   scale_y_continuous(breaks=seq(0.3,1.2,0.1))
+plot.all
 
 savename <- "model2human_all_datasets.png"
 ggsave(paste(savedir,savename,sep="/"), width=20, height=8, units='cm', device='tiff', dpi=700)
@@ -176,8 +177,9 @@ ggsave(paste(savedir,savename,sep="/"), width=16, height=8, units='cm')
 ```{r, fig.width=15, fig.height=8}
 dataset = "EventsAdapt"
 plot_data = dat %>% filter(Dataset==dataset, TrialType=="normal")
+plot_data$Layer = as.numeric(as.character(plot_data$Layer))
 
-ggplot(data = plot_data,
+plot.voice = ggplot(data = plot_data,
        mapping = aes(x=Layer, y=Accuracy, color=VoiceType, group=VoiceType))+
   facet_grid(~Model, scales="free_x")+
   geom_hline(yintercept=.33, linetype='dotted')+
@@ -186,14 +188,15 @@ ggplot(data = plot_data,
   stat_summary(geom='errorbar', fun.data='mean_se',
                size = 0.2, width=0.1)+
   theme_classic()+
-  scale_color_manual(values = c("normal" = brewer.pal(12, "Paired")[[2]],
-                                "TrainOn:active-TestOn:active" = brewer.pal(12, "Paired")[[4]],
-                                "TrainOn:passive-TestOn:passive" = brewer.pal(12, "Paired")[[3]],
+  scale_color_manual(values = c("all" = brewer.pal(12, "Paired")[[10]],
+                                "TrainOn:active-TestOn:active" = brewer.pal(12, "Paired")[[8]],
+                                "TrainOn:passive-TestOn:passive" = brewer.pal(12, "Paired")[[7]],
                                 "TrainOn:active-TestOn:passive" = brewer.pal(12, "Paired")[[6]],
                                 "TrainOn:passive-TestOn:active" = brewer.pal(12, "Paired")[[5]]
-                                ))
-  #scale_x_continuous(breaks=breaks_fun)+
+                                ))+
+  scale_x_continuous(breaks = breaks_fun, limits = c(0, NA)) 
   #scale_y_continuous(breaks=seq(0.2,1,0.1))
+plot.voice
 
 savename <- "model2human_EventsAdapt_active-passive.png"
 ggsave(paste(savedir,savename,sep="/"), width=20, height=8, units='cm', device='tiff', dpi=700)
@@ -203,8 +206,9 @@ ggsave(paste(savedir,savename,sep="/"), width=20, height=8, units='cm', device='
 ```{r, fig.width=15, fig.height=8}
 dataset = "EventsAdapt"
 plot_data = dat %>% filter(Dataset==dataset, VoiceType=="TrainOn:active-TestOn:active", !grepl('AAR', TrialType))
+plot_data$Layer = as.numeric(as.character(plot_data$Layer))
 
-ggplot(data = plot_data,
+plot.trialtype = ggplot(data = plot_data,
        mapping = aes(x=Layer, y=Accuracy, color=TrialType, group=TrialType))+
   facet_grid(~Model, scales="free_x")+
   geom_hline(yintercept=.33, linetype='dotted')+
@@ -213,13 +217,25 @@ ggplot(data = plot_data,
   stat_summary(geom='errorbar', fun.data='mean_se',
                size = 0.2, width=0.1)+
   theme_classic()+
-  scale_color_manual(values = c("normal" = brewer.pal(12, "Paired")[[2]],
-                                "TrainOn:AI-TestOn:AI" = brewer.pal(12, "Paired")[[4]],
-                                "TrainOn:AAN-TestOn:AAN" = brewer.pal(12, "Paired")[[3]],
-                                "TrainOn:AI-TestOn:AAN" = brewer.pal(12, "Paired")[[6]],
-                                "TrainOn:AAN-TestOn:AI" = brewer.pal(12, "Paired")[[5]]
-                                )) 
+  scale_x_continuous(breaks = breaks_fun, limits = c(0, NA))+
+  scale_color_manual(values = c("all" = brewer.pal(12, "Paired")[[10]],
+                                "TrainOn:AI-TestOn:AI" = brewer.pal(12, "Paired")[[2]],
+                                "TrainOn:AAN-TestOn:AAN" = brewer.pal(12, "Paired")[[1]],
+                                "TrainOn:AI-TestOn:AAN" = brewer.pal(12, "Paired")[[4]],
+                                "TrainOn:AAN-TestOn:AI" = brewer.pal(12, "Paired")[[3]]
+                                ))   
+
+plot.trialtype
 
 savename <- "model2human_EventsAdapt_AI-AAN.png"
 ggsave(paste(savedir,savename,sep="/"), width=20, height=8, units='cm', device='tiff', dpi=700)
+```
+
+```{r}
+main_plot <- plot.all / plot.trialtype / plot.voice +
+  plot_annotation(tag_levels = list(c('A', 'B', 'C'))) & 
+   theme(plot.tag.position = c(0, 0.98), plot.tag = element_text(face='bold', size=18))
+main_plot
+
+ggsave(paste(savedir,"multiclass_combined_plot.png",sep="/"), plot=main_plot, height=30, width=30, units='cm')
 ```
