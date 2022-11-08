@@ -35,14 +35,15 @@ options(dplyr.summarise.inform = FALSE)
 #SET ENVIRONMENT VARIABLES
 
 # can be: "EventsAdapt", "DTFit_EventsRev"
-experiment <- "DTFit_EventsRev"
+experiment <- "EventsAdapt"
 
 #can be:
 # llms_main = human + main LLMs
 # all_main = human + main LLMs + baselines
 # baselines = human + baselines
 # llms_all = human + all MLMs 
-which_models <- "llms_all" 
+# llms_bidirectional = human + BERT + RoBERTa, all metrics
+which_models <- "llms_bidirectional" 
 
 #can be "min-max", "zscore", "none"
 normalization_type <- "min-max" 
@@ -95,11 +96,14 @@ all_metrics = unique(dat$Metric)
 llm_metrics = as.character(all_metrics[str_detect(all_metrics, 'BERT|GPT')])
 llms_all <- c(human,llm_metrics)
 
+llm_bert_metrics = as.character(all_metrics[str_detect(all_metrics, 'BERT')])
+llms_bidirectional <- c(human,llm_bert_metrics)
+
 # select which to use
 chosen_models = eval(parse(text=which_models))
 dat = dat %>% filter(Metric %in% chosen_models)
 
-if (grepl("llms_all", which_models) == FALSE){
+if (grepl("llms_all", which_models) == FALSE && grepl("llms_bidirectional", which_models) == FALSE){
 # shorten model names
 llms_main_short <- c("RoBERTa", "BERT", "GPT-J", "GPT-2")
 baselines_short <- c("tinyLSTM","SDM", "thematicFit", "syntax-PPMI")
@@ -116,7 +120,6 @@ chosen_models = chosen_models[order(match(chosen_models,models_short_order))]
 dat$Metric = factor(dat$Metric, levels = chosen_models)
 }else{
   dat$Metric = relevel(dat$Metric, ref="human")
-  chosen_models = levels(dat$Metric)
 }
 message("Using these models/metrics:")
 print(chosen_models)
@@ -169,7 +172,7 @@ cortext_size = 4
 ```{r, echo=FALSE, fig.height=12, fig.width=15}
 
 #add Category color
-if (which_models == "llms_all") {
+if (which_models == "llms_all" || which_models == "llms_bidirectional") {
   dat.binchoice = dat %>%
     mutate(Metric = as.character(Metric)) %>%
     mutate(Category = ifelse(startsWith(Metric, "BERT"), "BERT", "RoBERTa")) %>%
@@ -197,7 +200,7 @@ dat.binchoice = dat.binchoice %>%
 dat.binchoice$Metric = factor(dat.binchoice$Metric, levels=chosen_models)
 dat.binchoice$TrialType = factor(dat.binchoice$TrialType, levels=c("DTFit", "AI", "AAN", "AAR"))
 
-if (which_models=="llms_all") {
+if (which_models=="llms_all" || which_models == "llms_bidirectional") {
   dat.binchoice$Category = factor(dat.binchoice$Category, levels=c("human", "RoBERTa", "BERT", "GPT"))
 } else {
   dat.binchoice$Category = factor(dat.binchoice$Category, levels=c("human", "LLMs", "baselines"))
