@@ -157,7 +157,7 @@ add_info <- function(dataframe, model_name) {
     mutate(Model = model_name)
 }
 
-models = unique(c(dat$Model))
+models = unique(dat$Model)
   
 dat.ceiling.full = do.call(rbind, lapply(models, function(x) add_info(dat.ceiling, x)))
 ```
@@ -328,6 +328,13 @@ for(tt in trial_types){
     mutate(MeanAccuracy = ifelse(ceil_data.tt$TrialType==tt, subset(ceil_summary.tt, TrialType == tt)$MeanAccuracy, ceil_data.tt$MeanAccuracy)) %>%
     mutate(SE = ifelse(ceil_data.tt$TrialType==tt, subset(ceil_summary.tt, TrialType == tt)$se, ceil_data.tt$SE))
 }
+ceil_data.tt = ceil_data.tt %>% select(-Iteration, -Accuracy) %>% distinct() %>%
+  mutate(Accuracy=MeanAccuracy)
+
+# avoid overlap
+ceil_data.tt = ceil_data.tt %>% 
+  mutate(Layer = ifelse(TrialType=="TrainOn:AI-TestOn:AI", Layer-0.5, 
+                        ifelse(TrialType=="TrainOn:AAN-TestOn:AI", Layer+0.5, Layer)))
 
 plot.gen.trialtype <- ggplot(data = plot_data.tt,
        mapping = aes(x=Layer, y=Accuracy, color=TrialType, group=TrialType))+
@@ -337,13 +344,9 @@ plot.gen.trialtype <- ggplot(data = plot_data.tt,
   stat_summary(geom='line', fun='mean')+
   stat_summary(geom='errorbar', fun.data='mean_se',
                size = 0.2, width=0.1)+
-  geom_point(data = ceil_data.tt, aes(x=Layer, y=MeanAccuracy, color=TrialType), size=2)+
-  geom_errorbar(data = ceil_data.tt, aes(x=Layer, ymin=MeanAccuracy-SE, ymax=MeanAccuracy+SE, color=TrialType), width = 0.1) +
-  # geom_text(data = ceil_data.tt, group=ceil_data.tt$TrialType, x =ifelse(ceil_data.tt$Model=="GPT2-xl", ceil_data.tt$Layer - 6, ceil_data.tt$Layer - 3),  y = 0.98,
-  #      size = 2.5,
-  #      label = "ceiling", 
-  #      colour = "#6d6d6d") +
-  #theme_classic()+
+  geom_point(data = ceil_data.tt,
+              mapping=aes(x=Layer, y=MeanAccuracy, color=TrialType), size=2)+
+  geom_errorbar(data = ceil_data.tt, mapping=aes(x=Layer, ymin=MeanAccuracy-SE, ymax=MeanAccuracy+SE, color=TrialType), width = 0.1)+
   scale_x_continuous(breaks=breaks_fun)+
   scale_y_continuous(breaks=seq(0.5,1,0.1))+
   scale_color_manual(values = c("all" = brewer.pal(12, "Paired")[[10]],
@@ -352,9 +355,10 @@ plot.gen.trialtype <- ggplot(data = plot_data.tt,
                                 "TrainOn:AI-TestOn:AAN" = brewer.pal(12, "Paired")[[4]],
                                 "TrainOn:AAN-TestOn:AI" = brewer.pal(12, "Paired")[[3]]
                                 )) 
+plot.gen.trialtype
 
 savename <- "model2plausibility_EventsAdapt_AI-AAN_ceiled.png"
-ggsave(paste(savedir,savename,sep="/"), width=20, height=8, units='cm', dpi=700)
+#ggsave(paste(savedir,savename,sep="/"), width=20, height=8, units='cm', dpi=700)
 ```
 
 ```{r}
