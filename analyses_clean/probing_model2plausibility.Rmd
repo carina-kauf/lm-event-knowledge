@@ -98,15 +98,6 @@ dat$Layer = as.factor(dat$Layer)
 dat$Model = factor(dat$Model, levels=c("RoBERTa","BERT", "GPT-J", "GPT-2"))
 ```
 
-# STATS
-
-```{r}
-# dat.DTFit = dat %>% filter(Dataset=="DTFit")
-# 
-# m.DTFit = lm(Accuracy~Layer:Model, data=dat.DTFit)
-# summary(m.DTFit)
-```
-
 # READ HUMAN CEILING DATA
 ```{r}
 model2human_dir = "../probing/results/model2human_ceiling"
@@ -165,6 +156,7 @@ dat.ceiling.full = do.call(rbind, lapply(models, function(x) add_info(dat.ceilin
 ```{r}
 merged <- rbind(dat, dat.ceiling.full)
 ```
+
 
 # PLOT
 
@@ -370,4 +362,157 @@ main_plot
 savename <- "generalization_combined_plot.png"
 ggsave(paste(savedir,savename,sep="/"), height=20, width=30, units='cm')
 ggsave(paste(savedir,"generalization_combined_plot.svg",sep="/"), plot=main_plot, height=20, width=30, units='cm')
+```
+# STATS
+
+## Divide layers by group
+```{r}
+merged.model = merged %>% filter(grepl("HumanCeiling",Plot)==FALSE)
+merged.human = merged %>% filter(grepl("HumanCeiling",Plot)==TRUE)
+
+merged.model.3groups = merged.model %>%
+  group_by(Model) %>% 
+  mutate(MaxLayer = max(Layer)) %>%
+  mutate(LayerGroup = ifelse(Layer<=floor(MaxLayer/3), "early",
+                             ifelse(Layer<=floor(MaxLayer/3)*2, "mid", "late"))) %>%
+  mutate(LayerWithinGroup = ifelse(LayerGroup=="mid", Layer-floor(MaxLayer/3),
+                                   ifelse(LayerGroup=="late", Layer-2*floor(MaxLayer/3),
+                                          Layer))) %>%
+  ungroup()
+
+merged.model.3groups = merged.model.3groups %>%
+  group_by(Model, LayerGroup, VoiceType, TrialType) %>% 
+  mutate(cLayerWithinGroup = scale(LayerWithinGroup, scale=FALSE)) %>% 
+  ungroup()
+
+merged.human = merged.human %>% mutate(MaxLayer=NA, LayerGroup="human", LayerWithinGroup=1, cLayerWithinGroup=0)
+merged.3groups = rbind(merged.model.3groups, merged.human)
+```
+
+## Contrasts
+```{r}
+merged.3groups$Iteration = as.factor(merged.3groups$Iteration)
+merged.3groups$LayerGroup = factor(merged.3groups$LayerGroup, levels = c("human", "early", "mid", "late"))
+```
+
+## Stats
+
+```{r}
+results = merged.3groups %>%
+  group_by(Dataset, Model, VoiceType, TrialType) %>%
+  group_modify(~ broom::tidy(lm(Accuracy ~ LayerGroup + cLayerWithinGroup:LayerGroup, data=.x))) %>%
+  filter(term!="LayerGrouphuman:cLayerWithinGroup")
+```
+
+## Group by comparison category and MC correct
+
+```{r}
+mc_correct <- function(results) {
+  results = results %>%
+    group_by(term) %>%
+    mutate(pValAdjusted = p.adjust(p.value, method="fdr", n=length(p.value))) %>%
+    mutate(pLabel= plabel(pValAdjusted)) %>%
+    mutate(pValFinal = ifelse(pValAdjusted<0.001, "<0.001", as.character(round(pValAdjusted,3)))) %>%
+    ungroup()
+  return(results)
+}
+
+prettify_results <- function(results.clean) {
+
+reported_params = c("Ceiling (human ratings)",
+                    "Early layers > human",
+                    "Middle layers > human",
+                    "Late layers > human",
+                    "Early layers, trend",
+                    "Middle layers, trend",
+                    "Late layers, trend")
+
+results.clean = results.clean %>%
+  rename(Parameter=term) %>% 
+  mutate(Parameter = recode(Parameter, 
+                            "(Intercept)"="Ceiling (human ratings)",
+                            "LayerGroupearly"="Early layers > human",
+                            "LayerGroupearly:cLayerWithinGroup"="Early layers, trend",
+                            "LayerGroupmid"="Middle layers > human",
+                            "LayerGroupmid:cLayerWithinGroup"="Middle layers, trend",
+                            "LayerGrouplate"="Late layers > human",
+                            "LayerGrouplate:cLayerWithinGroup"="Late layers, trend")) %>%
+  mutate(Parameter = factor(Parameter, levels=reported_params)) 
+return(results.clean)
+}
+```
+
+### 3 datasets
+
+```{r}
+results.3datasets = results %>% filter(VoiceType=="all", TrialType=="all") %>%
+  mc_correct()
+savename <- "probing_stats_3datasets_full.csv"
+write.csv(results.3datasets, paste(savedir,savename,sep="/"), row.names=FALSE)
+```
+
+```{r}
+# restructure 
+results.clean = results.3datasets %>% 
+  mutate(Value = ifelse(pValAdjusted<0.05, 
+                        paste(round(estimate, 2), pLabel, sep=" "),
+                        "")) %>%
+  select(Dataset, Model, term, Value) %>% 
+  spread(Model, Value) %>%
+  prettify_results() %>%
+  arrange(Dataset, Parameter)
+
+savename <- "probing_stats_3datasets_clean.csv"
+write.csv(results.clean, paste(savedir,savename,sep="/"), row.names=FALSE)
+```
+
+### Active Passive
+
+```{r}
+results.voice = results %>% filter(Dataset=="EventsAdapt", TrialType=="all") %>%
+  mc_correct() %>%
+  select(-Dataset, -TrialType)
+savename <- "probing_stats_voice_full.csv"
+write.csv(results.voice, paste(savedir,savename,sep="/"), row.names=FALSE)
+```
+
+```{r}
+# restructure 
+results.clean = results.voice %>% 
+  mutate(Value = ifelse(pValAdjusted<0.05, 
+                        paste(round(estimate, 2), pLabel, sep=" "),
+                        "")) %>%
+  select(VoiceType, Model, term, Value) %>% 
+  spread(Model, Value) %>%
+  prettify_results() %>%
+  arrange(VoiceType, Parameter)
+
+savename <- "probing_stats_voice_clean.csv"
+write.csv(results.clean, paste(savedir,savename,sep="/"), row.names=FALSE)
+```
+
+### TrialType
+
+```{r}
+results.trialtype = results %>% filter(Dataset=="EventsAdapt", 
+                                       VoiceType=="TrainOn:active-TestOn:active") %>%
+  mc_correct() %>%
+  select(-Dataset, -VoiceType)
+savename <- "probing_stats_trialtype_full.csv"
+write.csv(results.trialtype, paste(savedir,savename,sep="/"), row.names=FALSE)
+```
+
+```{r}
+# restructure 
+results.clean = results.trialtype %>% 
+  mutate(Value = ifelse(pValAdjusted<0.05, 
+                        paste(round(estimate, 2), pLabel, sep=" "),
+                        "")) %>%
+  select(TrialType, Model, term, Value) %>% 
+  spread(Model, Value) %>%
+  prettify_results() %>%
+  arrange(TrialType, Parameter)
+
+savename <- "probing_stats_trialtype_clean.csv"
+write.csv(results.clean, paste(savedir,savename,sep="/"), row.names=FALSE)
 ```
