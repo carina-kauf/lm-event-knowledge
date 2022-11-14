@@ -480,7 +480,7 @@ write.csv(results.voice, paste(savedir,savename,sep="/"), row.names=FALSE)
 # restructure 
 results.clean = results.voice %>% 
   mutate(Value = ifelse(pValAdjusted<0.05, 
-                        paste(round(estimate, 2), pLabel, sep=" "),
+                        paste(round(estimate, 3), pLabel, sep=" "),
                         "")) %>%
   select(VoiceType, Model, term, Value) %>% 
   spread(Model, Value) %>%
@@ -495,7 +495,10 @@ write.csv(results.clean, paste(savedir,savename,sep="/"), row.names=FALSE)
 
 ```{r}
 results.trialtype = results %>% filter(Dataset=="EventsAdapt", 
-                                       VoiceType=="TrainOn:active-TestOn:active") %>%
+                                       VoiceType=="TrainOn:active-TestOn:active",
+                                       !(TrialType %in% c("TrainOn:normal-TestOn:AAR",
+                                                          "TrainOn:AAN-TestOn:AAR",
+                                                          "TrainOn:AI-TestOn:AAR"))) %>%
   mc_correct() %>%
   select(-Dataset, -VoiceType)
 savename <- "probing_stats_trialtype_full.csv"
@@ -506,7 +509,7 @@ write.csv(results.trialtype, paste(savedir,savename,sep="/"), row.names=FALSE)
 # restructure 
 results.clean = results.trialtype %>% 
   mutate(Value = ifelse(pValAdjusted<0.05, 
-                        paste(round(estimate, 2), pLabel, sep=" "),
+                        paste(round(estimate, 3), pLabel, sep=" "),
                         "")) %>%
   select(TrialType, Model, term, Value) %>% 
   spread(Model, Value) %>%
