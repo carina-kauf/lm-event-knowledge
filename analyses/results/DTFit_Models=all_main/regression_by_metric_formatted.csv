@@ -1,6 +1,0 @@
-"Category","Parameter","human","RoBERTa-large","BERT-large","GPT-J","GPT2-xl","tinyLSTM","SDM","thematicFit","syntax-PPMI"
-"Core effects","Plausibility","-0.55 ***","-0.18 ***","-0.15 ***","-0.14 ***","-0.12 ***","-0.03 ***","-0.15 ***","-0.09 ***","-0.02 ***"
-"Surface-level effects","Agent frequency","","","-0.03 *","","-0.03 *","","","",""
-"Surface-level effects","Patient frequency","","","","","","0.02 *","0.04 ***","","0.03 ***"
-"Surface-level effects","Verb frequency","","","","","","","-0.01 *","",""
-"Surface-level effects","Avg. word frequency","","","","","","0.05 ***","","","-0.08 ***"
