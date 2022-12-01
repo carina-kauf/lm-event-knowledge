@@ -1,13 +1,13 @@
-Experiment,Category,Parameter,human,RoBERTa,BERT,GPT-J,GPT-2,MeanByModel
-EventsAdapt,Core effects,Plausible AA > Implausible AA,0.38 ***,0.07 ***,0.04 ***,0.07 ***,0.06 ***,0.06
-EventsAdapt,Core effects,Implausible AI > Implausible AA,-0.37 ***,-0.2 ***,-0.12 ***,-0.11 ***,-0.11 ***,-0.13
-EventsAdapt,Surface-level effects,Voice,,-0.06 ***,-0.13 ***,,,-0.05
-EventsAdapt,Surface-level effects,Agent frequency,,,-0.01 *,0.03 ***,0.02 ***,0.01
-EventsAdapt,Surface-level effects,Patient frequency,,,-0.01 *,0.03 ***,0.02 ***,0.01
-EventsAdapt,Surface-level effects,Verb frequency,,,,,,0
-EventsAdapt,Surface-level effects,Avg. word frequency,,0.03 **,,,,0.01
-EventsAdapt,Surface-level effects,Sentence length,,-0.03 ***,-0.07 ***,-0.02 ***,-0.02 ***,-0.04
-EventsAdapt,Surface-level effects,Voice x Sentence (AAN>control),,,,,,0.01
-EventsAdapt,Surface-level effects,Voice x Sentence (AI>AAN),0.03 **,0.04 ***,,,0.03 **,0.02
-EventsAdapt,Surface-level effects,Plausibility x Voice x Sentence (AAN>control),,,,,,-0.01
-EventsAdapt,Surface-level effects,Plausibility x Voice x Sentence (AI>AAN),-0.07 ***,,0.04 ***,,,0.01
+"Experiment","Category","Parameter","human","RoBERTa","BERT","GPT-J","GPT-2","MeanByModel"
+"EventsAdapt","Core effects","Plausible AA > Implausible AA","0.38 ***","0.07 ***","0.04 ***","0.07 ***","0.06 ***",0.06
+"EventsAdapt","Core effects","Implausible AI > Implausible AA","-0.37 ***","-0.2 ***","-0.12 ***","-0.11 ***","-0.11 ***",-0.13
+"EventsAdapt","Surface-level effects","Voice","","-0.06 ***","-0.13 ***","","",-0.05
+"EventsAdapt","Surface-level effects","Agent frequency","","","-0.01 *","0.03 ***","0.02 ***",0.01
+"EventsAdapt","Surface-level effects","Patient frequency","","","-0.01 *","0.03 ***","0.02 ***",0.01
+"EventsAdapt","Surface-level effects","Verb frequency","","","","","",0
+"EventsAdapt","Surface-level effects","Avg. word frequency","","0.03 **","","","",0.01
+"EventsAdapt","Surface-level effects","Sentence length","","-0.03 ***","-0.07 ***","-0.02 ***","-0.02 ***",-0.04
+"EventsAdapt","Surface-level effects","Voice x Sentence (AAN>control)","","","","","",0.01
+"EventsAdapt","Surface-level effects","Voice x Sentence (AI>AAN)","0.03 **","0.04 ***","","","0.03 **",0.02
+"EventsAdapt","Surface-level effects","Plausibility x Voice x Sentence (AAN>control)","","","","","",-0.01
+"EventsAdapt","Surface-level effects","Plausibility x Voice x Sentence (AI>AAN)","-0.07 ***","","0.04 ***","","",0.01

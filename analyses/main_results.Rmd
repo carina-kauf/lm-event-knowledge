@@ -43,7 +43,7 @@ experiment <- "EventsAdapt"
 # baselines = human + baselines
 # llms_all = human + all MLMs 
 # llms_bidirectional = human + BERT + RoBERTa, all metrics
-which_models <- "baselines" 
+which_models <- "llms_bidirectional" 
 
 #can be "min-max", "zscore", "none"
 normalization_type <- "min-max" 
