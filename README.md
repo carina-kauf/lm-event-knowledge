@@ -22,3 +22,5 @@ Dataset 1 - EventsAdapt (based on Fedorenko et al, 2020)
 Dataset 2 - DTFit (based on Vassallo et al, 2018)
 
 Dataset 3 - EventsRev (based on Ivanova et al, 2021)
+
+The final set of sentences for each dataset can be found in `analyses/clean_data/clean_ALIAS_SentenceSet.csv`
