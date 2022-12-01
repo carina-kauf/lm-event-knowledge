@@ -43,7 +43,7 @@ experiment <- "EventsAdapt"
 # baselines = human + baselines
 # llms_all = human + all MLMs 
 # llms_bidirectional = human + BERT + RoBERTa, all metrics
-which_models <- "llms_bidirectional" 
+which_models <- "baselines" 
 
 #can be "min-max", "zscore", "none"
 normalization_type <- "min-max" 
@@ -130,7 +130,7 @@ print(chosen_models)
 ```{r}
 dat.sentfreq = dat %>% 
   filter(Voice=='active') %>%
-  select(TrialType, Sentence, sentence_freq) %>%
+  dplyr::select(TrialType, Sentence, sentence_freq) %>%
   distinct() %>%
   group_by(TrialType) %>%
   summarize(avg_sent_freq = mean(sentence_freq))
@@ -186,7 +186,7 @@ if (which_models == "llms_all" || which_models == "llms_bidirectional") {
 
 dat.sentences = dat.binchoice %>%
   filter(Plausibility=="Plausible") %>% 
-  select(ItemNum, TrialType, Voice, Metric, LowerBetter, Category, Sentence)
+  dplyr::select(ItemNum, TrialType, Voice, Metric, LowerBetter, Category, Sentence)
 
 dat.binchoice = dat.binchoice %>%
   group_by(ItemNum, TrialType, Voice, Metric, LowerBetter, Category) %>%
@@ -238,7 +238,7 @@ dat.binchoice.summary = dat.binchoice.summary %>%
 # get human responses separately
 human.results = dat.binchoice.summary %>%
   filter(Metric=='human') %>%
-  select(TrialType, NumCorrect, NumTotal) %>%
+  dplyr::select(TrialType, NumCorrect, NumTotal) %>%
   rename(NumCorrectHuman=NumCorrect, NumTotalHuman=NumTotal)
 
 dat.binchoice.summary.withchisq = merge(dat.binchoice.summary, human.results)
@@ -332,7 +332,7 @@ The function returns:
 
 ```{r, echo=FALSE}
 dat.aivsaan = dat.binchoice.summary %>% 
-  select(TrialType, Metric, NumCorrect, NumTotal)
+  dplyr::select(TrialType, Metric, NumCorrect, NumTotal)
 
 df_ai.vs.aan = data.frame()
 
@@ -376,7 +376,7 @@ results = results %>%
     pValAdjusted = ifelse(pValAdjusted<0.001, "<0.001 ***", 
                           paste(as.character(round(pValAdjusted,3)), pLabel))) %>%
   ungroup() %>%
-  select(Category, Metric, Difference, ChiSquared, pValAdjusted)
+  dplyr::select(Category, Metric, Difference, ChiSquared, pValAdjusted)
 
 savename <- "AI_AA_difference_stats.csv"
 write.csv(results, paste(savedir,savename,sep="/"), row.names=FALSE)
@@ -519,7 +519,7 @@ plotting_models = c('human',llms_main_short)
 
 dat.plaus = dat.sub %>%
   filter(Metric %in% plotting_models) %>%
-  select(ItemNum, TrialType, Plausibility, Voice, Metric, FinalNormScore) %>%
+  dplyr::select(ItemNum, TrialType, Plausibility, Voice, Metric, FinalNormScore) %>%
   group_by(ItemNum, TrialType, Plausibility, Voice, Metric) %>%
   summarize(meanScore = mean(FinalNormScore, na.rm=TRUE)) %>%
   spread(Plausibility, meanScore)
@@ -739,7 +739,7 @@ results.clean = results %>%
   mutate(Value = ifelse(pValAdjusted<0.05, 
                         paste(round(Estimate, 2), pLabel, sep=" "),
                         "")) %>%
-  select(Experiment, Metric, Parameter, Value) %>% 
+  dplyr::select(Experiment, Metric, Parameter, Value) %>% 
   spread(Metric, Value)
 results.clean = merge(results.clean, results.mean)
 
@@ -749,7 +749,7 @@ results.clean = results.clean %>%
                                             "PlausibilityImplausible:TrialTypeAI",
                                             "PlausibilityImplausible"),
                            "Core effects", "Surface-level effects")) %>%
-  select(c(Experiment, Category, Parameter, metrics, 'MeanByModel')) %>%
+  dplyr::select(c(Experiment, Category, Parameter, metrics, 'MeanByModel')) %>%
   mutate(Parameter = factor(Parameter, levels=reported_params)) %>%
   arrange(Experiment, Parameter) %>%
   mutate(Parameter = recode(Parameter, 
@@ -782,6 +782,8 @@ acc_by_sentence.model = dat.binchoice.active %>%
 
 if (which_models!="baselines") {
   acc_by_sentence.model = acc_by_sentence.model %>% filter(Category=="LLMs")
+} else{
+  acc_by_sentence.model = acc_by_sentence.model %>% filter(Category=="baselines")
 }
 
 acc_by_sentence.model = acc_by_sentence.model %>%
@@ -794,7 +796,7 @@ acc_by_sentence.model = acc_by_sentence.model %>%
 
 ```{r}
 dat.binchoice.human = dat.binchoice %>% filter(Metric=='human')
-acc_by_sentence = inner_join(dat.binchoice.human, acc_by_sentence.model %>% select(ItemNum, TrialType, Voice, meanAccuracy)) %>%
+acc_by_sentence = inner_join(dat.binchoice.human, acc_by_sentence.model %>% dplyr::select(ItemNum, TrialType, Voice, meanAccuracy)) %>%
   distinct()
 
 # calculate correlation
@@ -817,7 +819,7 @@ ggplot(acc_by_sentence, aes(x=meanAccuracy, y=FinalScoreDiff)) +
           data=cor_df, size=cortext_size, hjust = 0)+
   scale_x_continuous(breaks=c(0,.25,.5, .75, 1), labels=c(0,1,2,3,4))+
   scale_y_continuous(breaks=c(0,0.5,1))+
-  labs(x="# correct model responses", y="Human score difference")+
+  labs(x="# of LLMs that evaluated sentence pair correctly", y="Human score difference")+
   theme_classic() + theme(strip.text = element_text(size=11))
 
 savename <- "models correct vs human score diff.png"
@@ -831,18 +833,18 @@ threshold = 0.33
 
 hard_sents = acc_by_sentence %>%
   filter(meanAccuracy<threshold) %>%
-  select(TrialType, ItemNum, Voice, meanAccuracy, FinalScoreDiff)
+  dplyr::select(TrialType, ItemNum, Voice, meanAccuracy, FinalScoreDiff)
 
 hard_sents = inner_join(hard_sents, dat) %>%
-  select(ItemNum, Sentence, TrialType, Plausibility, meanAccuracy, FinalScoreDiff) %>% 
+  dplyr::select(ItemNum, Sentence, TrialType, Plausibility, meanAccuracy, FinalScoreDiff) %>% 
   distinct() %>%
   spread(Plausibility, Sentence) %>%
-  select(-ItemNum) %>% 
-  arrange( meanAccuracy, desc(TrialType)) %>%
+  dplyr::select(-ItemNum) %>% 
+  arrange(meanAccuracy, desc(TrialType)) %>%
   rename(number_ANNs_correct = meanAccuracy, human_score_difference = FinalScoreDiff) %>%
   mutate(human_score_difference = round(human_score_difference, 2))
 hard_sents$Index = 1:nrow(hard_sents)
-hard_sents = select(hard_sents, Index, everything())
+hard_sents = dplyr::select(hard_sents, Index, everything())
 
 savename <- "hard_sentences_models.csv"
 write.csv(hard_sents, paste(savedir,savename,sep="/"), row.names=FALSE)
@@ -862,14 +864,14 @@ dat.human.error.prep = subset(dat, Metric=='human') %>%
   ungroup()
 
 human.error.itemnum <- subset(dat.human.error.prep, Accuracy==0) %>%
-  select(ItemNum)
+  dplyr::select(ItemNum)
 
 dat.human.error.sent = subset(dat, Metric=='human') %>% 
   filter(Voice=='active') %>%
   inner_join(human.error.itemnum, by = c("ItemNum")) %>%
   inner_join(dat.human.error.prep, by = c("ItemNum")) %>%
   mutate(Diff = round(FinalScoreDiff, 2)) %>%
-  select(ItemNum,Sentence,Plausibility,Diff) %>%
+  dplyr::select(ItemNum,Sentence,Plausibility,Diff) %>%
   distinct() %>%
   spread(Plausibility, Sentence)
 
