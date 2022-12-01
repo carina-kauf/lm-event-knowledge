@@ -41,9 +41,9 @@ experiment <- "EventsAdapt"
 # llms_main = human + main LLMs
 # all_main = human + main LLMs + baselines
 # baselines = human + baselines
-# llms_all = human + all MLMs 
+# llms_all = human + all LLMs
 # llms_bidirectional = human + BERT + RoBERTa, all metrics
-which_models <- "llms_bidirectional" 
+which_models <- "all_main" 
 
 #can be "min-max", "zscore", "none"
 normalization_type <- "min-max" 
@@ -119,7 +119,10 @@ chosen_models = unique(dat$Metric)
 chosen_models = chosen_models[order(match(chosen_models,models_short_order))]
 dat$Metric = factor(dat$Metric, levels = chosen_models)
 }else{
-  dat$Metric = relevel(dat$Metric, ref="human")
+  models_order = c("human", "RoBERTa-large.sentence-PLL", "RoBERTa-large.verb-PLL", "RoBERTa-large.last-word-PLL", "RoBERTa-large.sentence-l2r-PLL",
+                   "BERT-large.sentence-PLL", "BERT-large.verb-PLL", "BERT-large.last-word-PLL", "BERT-large.sentence-l2r-PLL")
+  chosen_models = chosen_models[order(match(chosen_models,models_order))]
+  dat$Metric = relevel(factor(dat$Metric), levels = chosen_models, ref="human")
 }
 message("Using these models/metrics:")
 print(chosen_models)
@@ -291,8 +294,8 @@ plot.binacc = ggplot(data=subset(dat.binchoice.active, !(TrialType=="AAR")),
 plot.binacc
 
 savename <- "1_binaryAccuracy_split.png"
-plt_width = ifelse(which_models=="llms_all", 20, 15)
-plt_height = ifelse(which_models=="llms_all", 12, 9)
+plt_width = ifelse(which_models%in%c("llms_all","llms_bidirectional"), 20, 15)
+plt_height = ifelse(which_models%in%c("llms_all","llms_bidirectional"), 12, 9)
 ggsave(paste(savedir,savename,sep="/"), width=plt_width, height=plt_height, units='cm')
 ```
 ### Add logos
