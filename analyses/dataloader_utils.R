@@ -55,6 +55,8 @@ clean_metric_name <- function(filename) {
   metric = str_replace(metric, "gpt2-xl", "GPT-2-xl")
   metric = str_replace(metric, "gpt-neo", "GPT-neo")
   metric = str_replace(metric, "gpt-j", "GPT-J")
+  # MPT
+  metric = str_replace(metric, "mpt", "MPT")
   # tinyLSTM
   metric = str_replace(metric, "surprisal_scores_tinylstm", "tinyLSTM.surprisal")
   metric = str_replace(metric, "vassallo_tinyLSTM", "tinyLSTM")
@@ -62,6 +64,7 @@ clean_metric_name <- function(filename) {
   # (Ro)BERT(a)
   metric = str_replace(metric, "bert-large-cased", "BERT-large")
   metric = str_replace(metric, "roberta-large", "RoBERTa-large")
+  metric = str_replace(metric, "deberta-xxlarge-v2", "deBERTa-xxlarge")
   # All
   metric = str_replace(metric, "sentence-l2r-PLL.sentence_surp", "l2r")
   metric = str_replace(metric, "sentence-PLL.sentence_surp", "PLL")
@@ -71,7 +74,7 @@ clean_metric_name <- function(filename) {
 }
 
 get_score_colnum <- function(metric) {
-  if (grepl("BERT", metric) || grepl("GPT", metric) || grepl("LSTM", metric) || grepl("thematicFit", metric)) {
+  if (grepl("BERT", metric) || grepl("GPT", metric) || grepl("MPT", metric) || grepl("LSTM", metric) || grepl("thematicFit", metric)) {
     score_colnum = 3
   } else if (grepl("PPMI", metric)) {
     score_colnum = 4
@@ -85,7 +88,7 @@ get_score_colnum <- function(metric) {
 }
 
 get_num_tokens_colnum <- function(metric) {
-  if ((grepl("BERT", metric) || grepl("GPT", metric)) && (grepl("sentence-PLL", metric) || grepl("sentence-LL", metric))) {
+  if ((grepl("BERT", metric) || grepl("GPT", metric) || grepl("MPT", metric)) && (grepl("sentence-PLL", metric) || grepl("sentence-LL", metric))) {
     num_tokens_colnum = 4
   } else {
     num_tokens_colnum = NA

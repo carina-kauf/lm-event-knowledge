@@ -85,7 +85,7 @@ if (grepl("EventsAdapt", experiment)) {
 
 ```{r, utils.choose_models, echo=FALSE}
 human <- c("human")
-llms_main <- c("RoBERTa-large.sentence-PLL", "BERT-large.sentence-PLL", "GPT-J.sentence-LL", "GPT-2-xl.sentence-LL")
+llms_main <- c("RoBERTa-large.sentence-PLL", "BERT-large.sentence-PLL", "deBERTa-xxlarge.sentence-PLL", "GPT-J.sentence-LL", "GPT-2-xl.sentence-LL", "MPT-7b.sentence-LL", "MPT-30b.sentence-LL")
 baselines <- c("tinyLSTM.surprisal","SDM", "thematicFit.prod", "syntax-PPMI")
 
 llms_main <- c(human, llms_main)
@@ -93,7 +93,7 @@ all_main <- c(llms_main, baselines)
 baselines <- c(human, baselines)
 
 all_metrics = unique(dat$Metric) 
-llm_metrics = as.character(all_metrics[str_detect(all_metrics, 'BERT|GPT')])
+llm_metrics = as.character(all_metrics[str_detect(all_metrics, 'BERT|GPT|MPT')])
 llms_all <- c(human,llm_metrics)
 
 llm_bert_metrics = as.character(all_metrics[str_detect(all_metrics, 'BERT')])
@@ -105,11 +105,11 @@ dat = dat %>% filter(Metric %in% chosen_models)
 
 if (grepl("llms_all", which_models) == FALSE && grepl("llms_bidirectional", which_models) == FALSE){
 # shorten model names
-llms_main_short <- c("RoBERTa", "BERT", "GPT-J", "GPT-2")
+llms_main_short <- c("RoBERTa", "BERT", "deBERTa", "GPT-J", "GPT-2", "MPT-7b", "MPT-30b")
 baselines_short <- c("tinyLSTM","SDM", "thematicFit", "syntax-PPMI")
 models_short_order = c(human, llms_main_short, baselines_short)
 
-shorten_metric_names <- function(col) { gsub("-large|-xl", "", col) }
+shorten_metric_names <- function(col) { gsub("-large|-xl|-xxlarge", "", col) }
 
 dat = dat %>%
   mutate(MetricModel = Metric, Metric=as.character(Metric)) %>%
@@ -119,6 +119,7 @@ chosen_models = unique(dat$Metric)
 chosen_models = chosen_models[order(match(chosen_models,models_short_order))]
 dat$Metric = factor(dat$Metric, levels = chosen_models)
 }else{
+  # TODO: update too
   models_order = c("human", "RoBERTa-large.sentence-PLL", "RoBERTa-large.verb-PLL", "RoBERTa-large.last-word-PLL", "RoBERTa-large.sentence-l2r-PLL",
                    "BERT-large.sentence-PLL", "BERT-large.verb-PLL", "BERT-large.last-word-PLL", "BERT-large.sentence-l2r-PLL")
   chosen_models = chosen_models[order(match(chosen_models,models_order))]
