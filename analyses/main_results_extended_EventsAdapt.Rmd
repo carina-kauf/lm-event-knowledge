@@ -77,7 +77,7 @@ human_dat = read.csv('clean_data/clean_EventsAdapt_human_dat.csv')
 
 ```{r, utils.choose_models, echo=FALSE}
 human <- c("human")
-llms_main <- c("RoBERTa-large.sentence-PLL", "BERT-large.sentence-PLL", "GPT-J.sentence-LL", "GPT-2-xl.sentence-LL")
+llms_main <- c("RoBERTa-large.sentence-PLL", "BERT-large.sentence-PLL", "GPT-J.sentence-LL", "GPT-2-xl.sentence-LL", "MPT-30b.sentence-LL")
 baselines <- c("tinyLSTM.surprisal","SDM", "thematicFit.prod", "syntax-PPMI")
 
 llms_main <- c(human, llms_main)
@@ -85,7 +85,7 @@ all_main <- c(llms_main, baselines)
 baselines <- c(human, baselines)
 
 all_metrics = unique(dat$Metric) 
-llm_metrics = as.character(all_metrics[str_detect(all_metrics, 'BERT|GPT')])
+llm_metrics = as.character(all_metrics[str_detect(all_metrics, 'BERT|GPT|MPT')])
 llms_all <- c(human,llm_metrics)
 
 # select which to use
@@ -94,11 +94,11 @@ dat = dat %>% filter(Metric %in% chosen_models)
 
 if (grepl("llms_all", which_models) == FALSE){
 # shorten model names
-llms_main_short <- c("RoBERTa", "BERT", "GPT-J", "GPT-2")
+llms_main_short <- c("MPT-30b", "GPT-J", "GPT-2", "RoBERTa", "BERT")
 baselines_short <- c("tinyLSTM","SDM", "thematicFit", "syntax-PPMI")
 models_short_order = c(human, llms_main_short, baselines_short)
 
-shorten_metric_names <- function(col) { gsub("-large|-xl", "", col) }
+shorten_metric_names <- function(col) { gsub("-large|-xl|-xxlarge", "", col) }
 
 dat = dat %>%
   mutate(MetricModel = Metric, Metric=as.character(Metric)) %>%
