@@ -105,7 +105,7 @@ dat = dat %>% filter(Metric %in% chosen_models)
 
 if (grepl("llms_all", which_models) == FALSE && grepl("llms_bidirectional", which_models) == FALSE){
 # shorten model names
-llms_main_short <- c("RoBERTa", "BERT", "GPT-J", "GPT-2", "MPT-30b")
+llms_main_short <- c("MPT-30b", "GPT-J", "GPT-2", "RoBERTa", "BERT")
 baselines_short <- c("tinyLSTM","SDM", "thematicFit", "syntax-PPMI")
 models_short_order = c(human, llms_main_short, baselines_short)
 
@@ -820,7 +820,7 @@ ggplot(acc_by_sentence, aes(x=meanAccuracy, y=FinalScoreDiff)) +
   geom_text(mapping=aes(x=0, y=1.10, 
                       label=sprintf("r = %.2f%s", round(Correlation,2), pLabel)), 
           data=cor_df, size=cortext_size, hjust = 0)+
-  scale_x_continuous(breaks=c(0,.25,.5, .75, 1), labels=c(0,1,2,3,4))+
+  scale_x_continuous(breaks=c(0,.2,.4,.6,.8, 1), labels=c(0,1,2,3,4,5))+
   scale_y_continuous(breaks=c(0,0.5,1))+
   labs(x="# of LLMs that evaluated sentence pair correctly", y="Human score difference")+
   theme_classic() + theme(strip.text = element_text(size=11))
@@ -832,7 +832,7 @@ ggsave(paste(savedir,savename,sep="/"), width=15, height=8, units='cm')
 ## Save hard sentences
 
 ```{r}
-threshold = 0.33
+threshold = 0.5
 
 hard_sents = acc_by_sentence %>%
   filter(meanAccuracy<threshold) %>%
