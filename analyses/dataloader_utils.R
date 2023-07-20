@@ -64,7 +64,6 @@ clean_metric_name <- function(filename) {
   # (Ro)BERT(a)
   metric = str_replace(metric, "bert-large-cased", "BERT-large")
   metric = str_replace(metric, "roberta-large", "RoBERTa-large")
-  metric = str_replace(metric, "deberta-xxlarge-v2", "deBERTa-xxlarge")
   # All
   metric = str_replace(metric, "sentence-l2r-PLL.sentence_surp", "l2r")
   metric = str_replace(metric, "sentence-PLL.sentence_surp", "PLL")
