@@ -35,7 +35,7 @@ options(dplyr.summarise.inform = FALSE)
 #SET ENVIRONMENT VARIABLES
 
 # can be: "EventsAdapt", "DTFit_EventsRev"
-experiment <- "EventsAdapt"
+experiment <- "DTFit_EventsRev"
 
 #can be:
 # llms_main = human + main LLMs

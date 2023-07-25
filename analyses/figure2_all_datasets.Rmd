@@ -99,7 +99,7 @@ if (grepl("DTFit_EventsRev_EventsAdapt", experiment)) {
 
 ```{r, utils.choose_models, echo=FALSE}
 human <- c("human")
-llms_main <- c("RoBERTa-large.sentence-PLL", "BERT-large.sentence-PLL", "GPT-J.sentence-LL", "GPT-2-xl.sentence-LL")
+llms_main <- c("RoBERTa-large.sentence-PLL", "BERT-large.sentence-PLL", "GPT-J.sentence-LL", "GPT-2-xl.sentence-LL", "MPT-30b.sentence-LL")
 baselines <- c("tinyLSTM.surprisal","SDM", "thematicFit.prod", "syntax-PPMI")
 
 llms_main <- c(human, llms_main)
@@ -107,7 +107,7 @@ all_main <- c(llms_main, baselines)
 baselines <- c(human, baselines)
 
 all_metrics = unique(dat$Metric) 
-llm_metrics = as.character(all_metrics[str_detect(all_metrics, 'BERT|GPT')])
+llm_metrics = as.character(all_metrics[str_detect(all_metrics, 'BERT|GPT|MPT')])
 llms_all <- c(human,llm_metrics)
 
 # select which to use
@@ -116,7 +116,7 @@ dat = dat %>% filter(Metric %in% chosen_models)
 
 if (grepl("llms_all", which_models) == FALSE){
 # shorten model names
-llms_main_short <- c("RoBERTa", "BERT", "GPT-J", "GPT-2")
+llms_main_short <- c("MPT-30b", "GPT-J", "GPT-2", "RoBERTa", "BERT")
 baselines_short <- c("tinyLSTM","SDM", "thematicFit", "syntax-PPMI")
 models_short_order = c(human, llms_main_short, baselines_short)
 
@@ -260,16 +260,17 @@ dat.binchoice.summary = dat.binchoice.summary %>%
 ```
 
 ```{r}
-# get human responses separately > WHY?
+# get human responses separately 
 human.results = dat.binchoice.summary %>%
   filter(Category=='human') %>%
   select(Experiment, TrialType, NumCorrect, NumTotal) %>%
   rename(NumCorrectHuman=NumCorrect, NumTotalHuman=NumTotal)
 
+n_LLMs = 5
 if (grepl("DTFit_EventsRev_EventsAdapt", experiment)) { #compared to 4 LLMs/BMs (now all grouped into one category)
   human.results = human.results %>%
-    mutate(NumCorrectHuman = 4*NumCorrectHuman) %>%
-    mutate(NumTotalHuman = 4*NumTotalHuman)
+    mutate(NumCorrectHuman = n_LLMs*NumCorrectHuman) %>%
+    mutate(NumTotalHuman = n_LLMs*NumTotalHuman)
 }
 
 dat.binchoice.summary.withchisq = merge(dat.binchoice.summary, human.results)
