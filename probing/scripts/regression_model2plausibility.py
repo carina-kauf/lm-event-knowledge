@@ -33,7 +33,7 @@ def main():
     layer_num = np.shape(hidden_states[sent_key])[0]
 
     #read dataset
-    dataset = os.path.abspath(f'../../analyses_clean/clean_data/clean_{dataset_name}_df.csv')
+    dataset = os.path.abspath(f'../../analyses/clean_data/clean_{dataset_name}_df.csv')
     df = pd.read_csv(dataset, low_memory=False)
 
     #revert random implausibility label for AAR sentences

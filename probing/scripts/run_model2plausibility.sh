@@ -2,14 +2,14 @@
 #SBATCH --job-name=run_array
 #SBATCH --output=slurm_outputs/run_array_%j.out
 #SBATCH --error=slurm_outputs/run_array_%j.err
-#SBATCH --array=0-26
+#SBATCH --array=0-13
 #SBATCH -x node[093,094,105]
-#SBATCH -t 02:00:00
-#SBATCH --mem 40G
+#SBATCH -t 04:00:00
+#SBATCH --mem 100G
 #SBATCH -n 1
 
 i=0
-for mod in "bert-large-cased" "roberta-large" ; do #"bert-large-cased" "gpt-j" "gpt2-xl" "roberta-large" ; do
+for mod in "mpt-30b" ; do #"bert-large-cased" "roberta-large" ; do #"bert-large-cased" "gpt-j" "gpt2-xl" "roberta-large" ; do
     for dat in "EventsAdapt" "EventsRev" "DTFit" ; do
         if [ $dat == "EventsAdapt" ] ; then
             for vt_st in 'normal+normal' 'active-active+AAN-AAN' 'active-active+AAN-AAR' 'active-active+AAN-AI' \

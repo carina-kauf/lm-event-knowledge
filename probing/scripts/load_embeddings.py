@@ -12,15 +12,15 @@ from tqdm import tqdm
 from transformers import BertTokenizer, RobertaTokenizer, GPT2Tokenizer, BertModel, RobertaModel, GPT2LMHeadModel, AutoModelForCausalLM, AutoTokenizer
 
 def get_vector(sentence, args, tokenizer, model):
-    if 'gpt' in args.model_name:
+    if not 'bert' in args.model_name:
         tokenized_text = tokenizer.tokenize(tokenizer.eos_token + sentence + tokenizer.eos_token)
     else:
         tokenized_text = tokenizer.tokenize(tokenizer.cls_token + sentence + tokenizer.sep_token)
     tensor_input = torch.tensor([tokenizer.convert_tokens_to_ids(tokenized_text)])
     with torch.no_grad():
-        outputs = model(tensor_input)
+        outputs = model(tensor_input, output_hidden_states=True)
         # `hidden_states` has shape [24 x 1 x 22 x 1024]
-        hidden_states = outputs[2]
+        hidden_states = outputs.hidden_states
     return hidden_states
 
     
@@ -34,14 +34,16 @@ def main():
     dic_tokenizers = {'bert-large-cased': BertTokenizer.from_pretrained('bert-large-cased'),
                   'roberta-large': RobertaTokenizer.from_pretrained('roberta-large'),
                   'gpt2-xl': GPT2Tokenizer.from_pretrained('gpt2-xl'),
-                  'gpt-j': AutoTokenizer.from_pretrained('EleutherAI/gpt-j-6B')}
+                  'gpt-j': AutoTokenizer.from_pretrained('EleutherAI/gpt-j-6B'),
+                  'mpt-30b': AutoTokenizer.from_pretrained('mosaicml/mpt-30b')}
 
     dic_models = {'bert-large-cased': BertModel.from_pretrained('bert-large-cased', output_hidden_states=True),
                   'roberta-large': RobertaModel.from_pretrained('roberta-large', output_hidden_states=True),
                   'gpt2-xl': GPT2LMHeadModel.from_pretrained('gpt2-xl', output_hidden_states=True),
-                  'gpt-j': AutoModelForCausalLM.from_pretrained('EleutherAI/gpt-j-6B', output_hidden_states=True)}
+                  'gpt-j': AutoModelForCausalLM.from_pretrained('EleutherAI/gpt-j-6B', output_hidden_states=True),
+                  'mpt-30b': AutoModelForCausalLM.from_pretrained('mosaicml/mpt-30b', trust_remote_code=True, output_hidden_states=True)}
 
-    dataset = pd.read_csv(os.path.abspath(f'../../analyses_clean/clean_data/clean_{args.dataset_name}_SentenceSet.csv'))
+    dataset = pd.read_csv(os.path.abspath(f'../../analyses/clean_data/clean_{args.dataset_name}_SentenceSet.csv'))
     
     tokenizer = dic_tokenizers[args.model_name]
     model = dic_models[args.model_name]
