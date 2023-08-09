@@ -17,10 +17,10 @@ def load_embeddings(dataset_name, model_name):
               
 
 def get_vector(hidden_states, sentence, layer, model_name):
-    if 'gpt' in model_name:
-        sentence_embedding = hidden_states[sentence][layer][0][-1]
-    else:
+    if 'bert' in model_name:
         sentence_embedding = hidden_states[sentence][layer][0][0]
+    else:
+        sentence_embedding = hidden_states[sentence][layer][0][-1]
     return sentence_embedding.numpy()
 
 
