@@ -85,7 +85,7 @@ def split_dataset_sentence(fold, dataset, voice_type, sentence_type, fold_num):
         train = train_aan
         train = train.reset_index(drop = True)
         test = test_aan
-        test = test_aan.reset_index(drop = True)
+        test = test.reset_index(drop = True)
     elif sentence_type == 'AAN-AI':
         train = train_aan
         train = train.reset_index(drop = True)
