@@ -908,5 +908,6 @@ write.csv(dat.human.error.sent, paste(savedir,savename,sep="/"), row.names=FALSE
 # Compute average score difference between plausible and implausible sentences for AI vs. AA sentences in humans
 dat.human.error.avg = dat.human.error.prep %>%
   group_by(TrialType) %>%
-  summarize(avg_diff_score = mean(ScoreDiff))
+  summarize(avg_diff_score = mean(ScoreDiff),
+            sd_diff_score = sd(ScoreDiff))
 ```
