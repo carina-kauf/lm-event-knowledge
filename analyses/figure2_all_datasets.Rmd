@@ -307,12 +307,12 @@ if (grepl("DTFit_EventsRev_EventsAdapt", experiment)) {
 
 ```{r}
 label_names <- c(
-  "AI,unlikely" = "animate-inanimate,\nunlikely",
-  "AA,unlikely" = "animate-animate,\nunlikely (easy)",
+  "AI,unlikely" = "animate-inanimate,\nunlikely\n[Dataset 2]",
+  "AA,unlikely" = "animate-animate,\nunlikely (easy)\n[Dataset 3]",
   #"DTFit" = "animate-inanimate, unlikely",
-  "AI" = "animate-inanimate,\nimpossible",
-  "AAN" = "animate-animate,\nunlikely",
-  "AAR" = "animate-animate\n(control)"
+  "AI" = "animate-inanimate,\nimpossible\n[Dataset 1]",
+  "AAN" = "animate-animate,\nunlikely\n[Dataset 1]",
+  "AAR" = "animate-animate\n(control)\n[Dataset 1]"
 )
 ```
 

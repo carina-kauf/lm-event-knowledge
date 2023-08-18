@@ -94,7 +94,7 @@ dat = dat %>% filter(Metric %in% chosen_models)
 
 if (grepl("llms_all", which_models) == FALSE){
 # shorten model names
-llms_main_short <- c("MPT-30b", "GPT-J", "GPT-2", "RoBERTa", "BERT")
+llms_main_short <- c("MPT", "GPT-J", "GPT-2", "RoBERTa", "BERT")
 baselines_short <- c("tinyLSTM","SDM", "thematicFit", "syntax-PPMI")
 models_short_order = c(human, llms_main_short, baselines_short)
 
@@ -518,7 +518,7 @@ plot.model2human = ggplot(dat=dat.model2human)+
 plot.model2human
 
 savename <- "model2human_byTrialType.png"
-ggsave(paste(savedir,savename,sep="/"), height=12,width=24, units='cm')
+ggsave(paste(savedir,savename,sep="/"), height=12,width=30, units='cm')
 ```
 
 
@@ -537,6 +537,7 @@ plot.plaus.density.sub.aar = ggplot()+
   ggtitle('PLAUSIBILITY (BOTH VERSIONS PLAUSIBLE)')+
   geom_vline(xintercept=reference_value, linetype='dotted')+
   #coord_flip()+
+  scale_x_continuous(breaks=c(0,0.5,1))+
   theme_classic()+
   xlab("Normed score") +
   ylab(" ")+

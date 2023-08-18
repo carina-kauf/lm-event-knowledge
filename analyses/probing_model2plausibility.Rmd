@@ -57,6 +57,7 @@ read_data <- function(directory, filename) {
       mutate(Model = ifelse(grepl("bert", Model), "BERT", Model)) %>%
       mutate(Model = ifelse(grepl("gpt2", Model), "GPT-2", Model)) %>%
       mutate(Model = ifelse(grepl("gpt-j", Model), "GPT-J", Model))  %>%
+      mutate(Model = ifelse(grepl("mpt-30b", Model), "MPT", Model))  %>%
       mutate(Dataset = metadata[[2]]) %>%
       mutate(VoiceType = metadata[[3]]) %>%
       mutate(VoiceType = ifelse(grepl("EventsAdapt",Dataset),
@@ -67,6 +68,7 @@ read_data <- function(directory, filename) {
       mutate(VoiceType = ifelse(VoiceType == "normal", "all", VoiceType)) %>%
       mutate(TrialType = metadata[[4]]) %>%
       mutate(TrialType = str_replace(TrialType, ".csv", "")) %>%
+      mutate(TrialType = str_replace_all(TrialType, "AAN", "AA")) %>%
       mutate(TrialType = ifelse(grepl("EventsAdapt",Dataset),
                                 ifelse(length(str_split(TrialType, "-")[[1]]) > 1,
                                        paste0("TrainOn:",str_split(TrialType, "-")[[1]][1],"-TestOn:",str_split(TrialType, "-")[[1]][2]),
@@ -95,7 +97,7 @@ dat.models = do.call(rbind, lapply(filenames, function(x) read_data(model2plausi
 dat = dat.models
 
 dat$Layer = as.factor(dat$Layer)
-dat$Model = factor(dat$Model, levels=c("RoBERTa","BERT", "GPT-J", "GPT-2"))
+dat$Model = factor(dat$Model, levels=c("MPT", "GPT-J", "GPT-2", "RoBERTa","BERT"))
 ```
 
 # READ HUMAN CEILING DATA
@@ -123,6 +125,7 @@ read_data <- function(directory, filename) {
                                 TrialType),
                         TrialType)) %>%
     mutate(TrialType = ifelse(TrialType == "normal", "all", TrialType)) %>%
+    mutate(TrialType = str_replace_all(TrialType, "AAN", "AA")) %>%
     dplyr::rename(Iteration = V1)  %>%
     dplyr::rename(Accuracy = V2)  %>%
     mutate(Model = "HumanCeiling") %>%
@@ -138,10 +141,10 @@ dat.ceiling = do.call(rbind, lapply(filenames, function(x) read_data(model2human
 dat$Layer = as.numeric(as.character(dat$Layer))
 
 add_info <- function(dataframe, model_name) {
-  if (grepl("GPT-2",model_name) == FALSE){
-    toadd = 5
-  }else{
+  if (grepl("GPT-2|MPT", model_name)) {
     toadd = 10
+  }else{
+    toadd = 5
   }
   dataframe = dataframe %>%
     mutate(Layer = max(subset(dat, Model==model_name)$Layer) + toadd) %>%
@@ -184,6 +187,14 @@ labels_fun <- function(x) {
 theme_set(theme_classic(base_size = 14)) 
 ```
 
+```{r format date for saving}
+#Get today's date
+current_date <- Sys.Date()
+
+# Format the date as 'YYYY-MM-DD' string
+formatted_date <- format(current_date, "%Y-%m-%d")
+```
+
 ## All datasets
 ```{r, fig.width=15, fig.height=8}
 plot_data = merged %>% filter(TrialType=="all", VoiceType=="all", grepl("HumanCeiling",Plot)==FALSE)
@@ -221,7 +232,7 @@ plot.alldat <- ggplot(data = plot_data,
                size = 0.2, width=0.1)+
   geom_point(data = ceil_data, aes(x=Layer, y=MeanAccuracy, color=Dataset), size=2)+
   geom_errorbar(data = ceil_data, aes(x=Layer, ymin=MeanAccuracy-SE, ymax=MeanAccuracy+SE, color=Dataset),width = 0.1) +
-  geom_text(data = ceil_data, group=ceil_data$Dataset, x =ifelse(ceil_data$Model=="GPT-2", ceil_data$Layer - 6, ceil_data$Layer - 3),  y = 0.98,
+  geom_text(data = ceil_data, group=ceil_data$Dataset, x=ifelse(grepl("GPT|MPT", ceil_data$Model), ceil_data$Layer - 6, ceil_data$Layer - 3),  y = 0.98,
             size = 2.5,
             label = "ceiling", 
             colour = "#6d6d6d") +
@@ -230,9 +241,11 @@ plot.alldat <- ggplot(data = plot_data,
   scale_y_continuous(breaks=seq(0.4,1.2,0.1))
 plot.alldat
 
-savename <- "model2plausibility_all_datasets_ceiled.png"
-ggsave(paste(savedir,savename,sep="/"), width=20, height=8, units='cm', dpi=700)
-ggsave(paste(savedir,"model2plausibility_all_datasets_ceiled.svg",sep="/"), plot=plot.alldat, height=20, width=8, units='cm')
+# Create a save string with the formatted date
+savename <- paste("model2plausibility_all_datasets_ceiled_", formatted_date, ".png", sep = "")
+ggsave(paste(savedir,savename,sep="/"), width=5*length(models), height=8, units='cm', dpi=700)
+savename <- paste("model2plausibility_all_datasets_ceiled_", formatted_date, ".svg", sep = "")
+ggsave(paste(savedir, savename, sep="/"), plot=plot.alldat, height=5*length(models), width=8, units='cm')
 ```
 
 
@@ -284,13 +297,13 @@ plot.gen.voice <- ggplot(data = plot_data.voice,
   scale_x_continuous(breaks=breaks_fun)+
   scale_y_continuous(breaks=seq(0.2,1,0.1))+
   scale_color_manual(values = c("all" = brewer.pal(12, "Paired")[[10]],
-                                "TrainOn:active-TestOn:active" = brewer.pal(12, "Paired")[[8]],
-                                "TrainOn:passive-TestOn:passive" = brewer.pal(12, "Paired")[[7]],
-                                "TrainOn:active-TestOn:passive" = brewer.pal(12, "Paired")[[6]],
-                                "TrainOn:passive-TestOn:active" = brewer.pal(12, "Paired")[[5]]
+                                "TrainOn:active-TestOn:active" = brewer.pal(12, "Paired")[[6]],
+                                "TrainOn:passive-TestOn:passive" = brewer.pal(12, "Paired")[[8]], # used to be 7
+                                "TrainOn:passive-TestOn:active" = brewer.pal(12, "Paired")[[5]],  # used to be 5
+                                "TrainOn:active-TestOn:passive" = brewer.pal(12, "Paired")[[7]] # used to be 6
                                 ))
 
-savename <- "model2plausibility_EventsAdapt_active-passive_ceiled.png"
+savename <- paste("model2plausibility_EventsAdapt_active-passive_ceiled_", formatted_date, ".png", sep = "")
 ggsave(paste(savedir,savename,sep="/"), width=20, height=8, units='cm', dpi=700)
 ```
 
@@ -326,9 +339,14 @@ ceil_data.tt = ceil_data.tt %>% select(-Iteration, -Accuracy) %>% distinct() %>%
 # avoid overlap
 ceil_data.tt = ceil_data.tt %>% 
   mutate(Layer = ifelse(TrialType=="TrainOn:AI-TestOn:AI", Layer-0.5, 
-                        ifelse(TrialType=="TrainOn:AAN-TestOn:AI", Layer+0.5, Layer)))
+                        ifelse(TrialType=="TrainOn:AA-TestOn:AI", Layer+0.5, Layer)))
 
-plot.gen.trialtype <- ggplot(data = plot_data.tt,
+trialtype_gap_data <- plot_data.tt %>%
+  filter(TrialType %in% c("TrainOn:AI-TestOn:AI", "TrainOn:AA-TestOn:AA"))
+trialtype_gap_ceil_data <- ceil_data.tt %>%
+  filter(TrialType %in% c("TrainOn:AI-TestOn:AI", "TrainOn:AA-TestOn:AA"))
+
+plot.trialtype_gap <- ggplot(data = trialtype_gap_data,
        mapping = aes(x=Layer, y=Accuracy, color=TrialType, group=TrialType))+
   facet_grid(~Model, scales="free_x")+
   geom_hline(yintercept=.5, linetype='dotted')+
@@ -336,32 +354,59 @@ plot.gen.trialtype <- ggplot(data = plot_data.tt,
   stat_summary(geom='line', fun='mean')+
   stat_summary(geom='errorbar', fun.data='mean_se',
                size = 0.2, width=0.1)+
-  geom_point(data = ceil_data.tt,
+  geom_point(data = trialtype_gap_ceil_data,
               mapping=aes(x=Layer, y=MeanAccuracy, color=TrialType), size=2)+
-  geom_errorbar(data = ceil_data.tt, mapping=aes(x=Layer, ymin=MeanAccuracy-SE, ymax=MeanAccuracy+SE, color=TrialType), width = 0.1)+
+  geom_errorbar(data = trialtype_gap_ceil_data, mapping=aes(x=Layer, ymin=MeanAccuracy-SE, ymax=MeanAccuracy+SE, color=TrialType), width = 0.1)+
+  scale_x_continuous(breaks=breaks_fun)+
+  scale_y_continuous(breaks=seq(0.5,1,0.1))+
+  scale_color_manual(values = c("TrainOn:AI-TestOn:AI" = brewer.pal(12, "Paired")[[2]],
+                                "TrainOn:AA-TestOn:AA" = brewer.pal(12, "Paired")[[4]]
+                                )) 
+plot.trialtype_gap
+
+savename <- paste("model2plausibility_EventsAdapt_AI-AAN_gap_ceiled_", formatted_date, ".png", sep = "")
+ggsave(paste(savedir,savename,sep="/"), width=5*length(models), height=8, units='cm', dpi=700)
+```
+```{r}
+# avoid overlap
+trialtype_gen_data <- plot_data.tt %>%
+  filter(!TrialType %in% c("TrainOn:AI-TestOn:AI", "TrainOn:AA-TestOn:AA"))
+trialtype_gen_ceil_data <- ceil_data.tt %>%
+  filter(!TrialType %in% c("TrainOn:AI-TestOn:AI", "TrainOn:AA-TestOn:AA"))
+
+plot.gen.trialtype <- ggplot(data = trialtype_gen_data,
+       mapping = aes(x=Layer, y=Accuracy, color=TrialType, group=TrialType))+
+  facet_grid(~Model, scales="free_x")+
+  geom_hline(yintercept=.5, linetype='dotted')+
+  geom_hline(yintercept=1, linetype='dotted')+
+  stat_summary(geom='line', fun='mean')+
+  stat_summary(geom='errorbar', fun.data='mean_se',
+               size = 0.2, width=0.1)+
+  geom_point(data = trialtype_gen_ceil_data,
+              mapping=aes(x=Layer, y=MeanAccuracy, color=TrialType), size=2)+
+  geom_errorbar(data = trialtype_gen_ceil_data, mapping=aes(x=Layer, ymin=MeanAccuracy-SE, ymax=MeanAccuracy+SE, color=TrialType), width = 0.1)+
   scale_x_continuous(breaks=breaks_fun)+
   scale_y_continuous(breaks=seq(0.5,1,0.1))+
   scale_color_manual(values = c("all" = brewer.pal(12, "Paired")[[10]],
-                                "TrainOn:AI-TestOn:AI" = brewer.pal(12, "Paired")[[2]],
-                                "TrainOn:AAN-TestOn:AAN" = brewer.pal(12, "Paired")[[1]],
-                                "TrainOn:AI-TestOn:AAN" = brewer.pal(12, "Paired")[[4]],
-                                "TrainOn:AAN-TestOn:AI" = brewer.pal(12, "Paired")[[3]]
+                                "TrainOn:AA-TestOn:AI" = brewer.pal(12, "Paired")[[1]],
+                                "TrainOn:AI-TestOn:AA" = brewer.pal(12, "Paired")[[3]]
                                 )) 
 plot.gen.trialtype
 
-savename <- "model2plausibility_EventsAdapt_AI-AAN_ceiled.png"
-#ggsave(paste(savedir,savename,sep="/"), width=20, height=8, units='cm', dpi=700)
+savename <- paste("model2plausibility_EventsAdapt_AI-AAN_gen_ceiled_", formatted_date, ".png", sep = "")
+ggsave(paste(savedir,savename,sep="/"), width=5*length(models), height=8, units='cm', dpi=700)
 ```
 
 ```{r}
-main_plot <- plot.gen.trialtype / plot.gen.voice +
-  plot_annotation(tag_levels = list(c('A', 'B'))) & 
+main_plot <- plot.trialtype_gap / plot.gen.trialtype / plot.gen.voice +
+  plot_annotation(tag_levels = list(c('A', 'B', 'C'))) & 
    theme(plot.tag.position = c(0, 0.98), plot.tag = element_text(face='bold', size=18))
 main_plot
 
-savename <- "generalization_combined_plot.png"
-ggsave(paste(savedir,savename,sep="/"), height=20, width=30, units='cm')
-ggsave(paste(savedir,"generalization_combined_plot.svg",sep="/"), plot=main_plot, height=20, width=30, units='cm')
+savename <- paste("gap_generalization_combined_plot_", formatted_date, ".png", sep = "")
+ggsave(paste(savedir,savename,sep="/"), height=25, width=7.5*length(models), units='cm')
+savename <- paste("gap_generalization_combined_plot_", formatted_date, ".svg", sep = "")
+ggsave(paste(savedir,savename,sep="/"), plot=main_plot, height=25, width=7.5*length(models), units='cm')
 ```
 # STATS
 
@@ -447,7 +492,7 @@ return(results.clean)
 ```{r}
 results.3datasets = results %>% filter(VoiceType=="all", TrialType=="all") %>%
   mc_correct()
-savename <- "probing_stats_3datasets_full.csv"
+savename <- paste("probing_stats_3datasets_full_", formatted_date, ".csv", sep="")
 write.csv(results.3datasets, paste(savedir,savename,sep="/"), row.names=FALSE)
 ```
 
@@ -462,7 +507,7 @@ results.clean = results.3datasets %>%
   prettify_results() %>%
   arrange(Dataset, Parameter)
 
-savename <- "probing_stats_3datasets_clean.csv"
+savename <- paste("probing_stats_3datasets_clean_", formatted_date, ".csv", sep="")
 write.csv(results.clean, paste(savedir,savename,sep="/"), row.names=FALSE)
 ```
 
@@ -472,7 +517,7 @@ write.csv(results.clean, paste(savedir,savename,sep="/"), row.names=FALSE)
 results.voice = results %>% filter(Dataset=="EventsAdapt", TrialType=="all") %>%
   mc_correct() %>%
   select(-Dataset, -TrialType)
-savename <- "probing_stats_voice_full.csv"
+savename <- paste("probing_stats_voice_full_", formatted_date, ".csv", sep="")
 write.csv(results.voice, paste(savedir,savename,sep="/"), row.names=FALSE)
 ```
 
@@ -487,7 +532,7 @@ results.clean = results.voice %>%
   prettify_results() %>%
   arrange(VoiceType, Parameter)
 
-savename <- "probing_stats_voice_clean.csv"
+savename <- paste("probing_stats_voice_clean_", formatted_date, ".csv", sep="")
 write.csv(results.clean, paste(savedir,savename,sep="/"), row.names=FALSE)
 ```
 
@@ -497,11 +542,11 @@ write.csv(results.clean, paste(savedir,savename,sep="/"), row.names=FALSE)
 results.trialtype = results %>% filter(Dataset=="EventsAdapt", 
                                        VoiceType=="TrainOn:active-TestOn:active",
                                        !(TrialType %in% c("TrainOn:normal-TestOn:AAR",
-                                                          "TrainOn:AAN-TestOn:AAR",
+                                                          "TrainOn:AA-TestOn:AAR",
                                                           "TrainOn:AI-TestOn:AAR"))) %>%
   mc_correct() %>%
   select(-Dataset, -VoiceType)
-savename <- "probing_stats_trialtype_full.csv"
+savename <- paste("probing_stats_trialtype_full_", formatted_date, ".csv", sep="")
 write.csv(results.trialtype, paste(savedir,savename,sep="/"), row.names=FALSE)
 ```
 
@@ -516,6 +561,6 @@ results.clean = results.trialtype %>%
   prettify_results() %>%
   arrange(TrialType, Parameter)
 
-savename <- "probing_stats_trialtype_clean.csv"
+savename <- paste("probing_stats_trialtype_clean_", formatted_date, ".csv", sep="")
 write.csv(results.clean, paste(savedir,savename,sep="/"), row.names=FALSE)
 ```

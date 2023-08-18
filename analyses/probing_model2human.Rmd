@@ -54,6 +54,7 @@ read_data <- function(directory, filename) {
       mutate(Model = ifelse(grepl("bert", Model), "BERT", Model)) %>%
       mutate(Model = ifelse(grepl("gpt2", Model), "GPT2-xl", Model)) %>%
       mutate(Model = ifelse(grepl("gpt-j", Model), "GPT-J", Model))  %>%
+      mutate(Model = ifelse(grepl("mpt-30b", Model), "MPT", Model))  %>%
       mutate(Dataset = metadata[[2]]) %>%
       mutate(VoiceType = metadata[[3]]) %>%
       mutate(VoiceType = ifelse(grepl("EventsAdapt",Dataset),
@@ -90,7 +91,7 @@ dat.models = do.call(rbind, lapply(filenames, function(x) read_data(model2human_
 dat = dat.models
 
 dat$Layer = as.factor(dat$Layer)
-dat$Model = factor(dat$Model, levels=c("RoBERTa","BERT", "GPT-J", "GPT2-xl"))
+dat$Model = factor(dat$Model, levels=c("MPT", "GPT-J", "GPT2-xl", "RoBERTa","BERT"))
 ```
 
 # STATS

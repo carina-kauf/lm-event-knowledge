@@ -1499,8 +1499,6 @@ window.initializeCodeFolding = function(show) {
   // select all R code blocks
   var rCodeBlocks = $('pre.r, pre.python, pre.bash, pre.sql, pre.cpp, pre.stan, pre.julia, pre.foldable');
   rCodeBlocks.each(function() {
-    // skip if the block has fold-none class
-    if ($(this).hasClass('fold-none')) return;
 
     // create a collapsable div to wrap the code in
     var div = $('<div class="collapse r-code-collapse"></div>');
@@ -1516,9 +1514,7 @@ window.initializeCodeFolding = function(show) {
     showCodeButton.append(showCodeText);
     showCodeButton
         .attr('data-toggle', 'collapse')
-        .attr('data-bs-toggle', 'collapse') // BS5
         .attr('data-target', '#' + id)
-        .attr('data-bs-target', '#' + id)   // BS5
         .attr('aria-expanded', showThis)
         .attr('aria-controls', id);
 
@@ -1608,7 +1604,6 @@ if (window.hljs) {
 
 
 
-
 <style type="text/css">
 #rmd-source-code {
 display: none;
@@ -1639,9 +1634,6 @@ outline: none;
 }
 summary {
 display: list-item;
-}
-details > summary > p:only-child {
-display: inline;
 }
 pre code {
 padding: 0;
@@ -1682,17 +1674,23 @@ overflow-y: auto;
 border: 1px solid #ddd;
 border-radius: 4px;
 }
-.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-content: "\e259";
+.tabset-dropdown > .nav-tabs > li.active:before {
+content: "";
 font-family: 'Glyphicons Halflings';
 display: inline-block;
 padding: 10px;
 border-right: 1px solid #ddd;
 }
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-content: "\e258";
-font-family: 'Glyphicons Halflings';
+content: "";
 border: none;
+}
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+content: "";
+font-family: 'Glyphicons Halflings';
+display: inline-block;
+padding: 10px;
+border-right: 1px solid #ddd;
 }
 .tabset-dropdown > .nav-tabs > li.active {
 display: block;
@@ -1735,7 +1733,7 @@ display: none;
 <div id="header">
 
 <div class="btn-group pull-right float-right">
-<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
 <ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
 <li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
 <li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
@@ -2268,31 +2266,15 @@ if (length(unique(item_sent_combos$SentenceCount))&gt;1) {
 
 print(paste(unique(dat$Metric)))</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBcIkJFUlQtbGFyZ2Uuc2VudGVuY2UtbDJyLVBMTFwiICAgICAgICAgICAgXG4gWzJdIFwiUm9CRVJUYS1sYXJnZS5zZW50ZW5jZS1sMnItUExMXCIgICAgICAgICBcbiBbM10gXCJNUFQtMzBiLnNlbnRlbmNlLUxMLmF2ZXJhZ2VfYnlOcldvcmRzXCIgIFxuIFs0XSBcIk1QVC0zMGIuc2VudGVuY2UtTExcIiAgICAgICAgICAgICAgICAgICAgXG4gWzVdIFwiR1BULTIteGwuc2VudGVuY2UtTExcIiAgICAgICAgICAgICAgICAgICBcbiBbNl0gXCJCRVJULWxhcmdlLmxhc3Qtd29yZC1QTExcIiAgICAgICAgICAgICAgIFxuIFs3XSBcIkJFUlQtbGFyZ2Uuc2VudGVuY2UtUExMXCIgICAgICAgICAgICAgICAgXG4gWzhdIFwiUm9CRVJUYS1sYXJnZS5sYXN0LXdvcmQtUExMXCIgICAgICAgICAgICBcbiBbOV0gXCJTRE1cIiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuWzEwXSBcIlJvQkVSVGEtbGFyZ2UudmVyYi1QTExcIiAgICAgICAgICAgICAgICAgXG5bMTFdIFwidGhlbWF0aWNGaXQucHJvZFwiICAgICAgICAgICAgICAgICAgICAgICBcblsxMl0gXCJCRVJULWxhcmdlLnZlcmItUExMXCIgICAgICAgICAgICAgICAgICAgIFxuWzEzXSBcIlJvQkVSVGEtbGFyZ2Uuc2VudGVuY2UtUExMXCIgICAgICAgICAgICAgXG5bMTRdIFwiTVBULTdiLnNlbnRlbmNlLUxMLmF2ZXJhZ2VfYnlOcldvcmRzXCIgICBcblsxNV0gXCJNUFQtN2Iuc2VudGVuY2UtTExcIiAgICAgICAgICAgICAgICAgICAgIFxuWzE2XSBcIkdQVC1KLnNlbnRlbmNlLUxMXCIgICAgICAgICAgICAgICAgICAgICAgXG5bMTddIFwidGlueUxTVE0uc3VycHJpc2FsXCIgICAgICAgICAgICAgICAgICAgICBcblsxOF0gXCJHUFQtMi14bC5zZW50ZW5jZS1MTC5hdmVyYWdlX2J5TnJUb2tlbnNcIlxuWzE5XSBcIk1QVC0zMGIuc2VudGVuY2UtTEwuYXZlcmFnZV9ieU5yVG9rZW5zXCIgXG5bMjBdIFwic3ludGF4LVBQTUlcIiAgICAgICAgICAgICAgICAgICAgICAgICAgICBcblsyMV0gXCJHUFQtSi5zZW50ZW5jZS1MTC5hdmVyYWdlX2J5TnJXb3Jkc1wiICAgIFxuWzIyXSBcIkdQVC1KLnNlbnRlbmNlLUxMLmF2ZXJhZ2VfYnlOclRva2Vuc1wiICAgXG5bMjNdIFwiTVBULTdiLnNlbnRlbmNlLUxMLmF2ZXJhZ2VfYnlOclRva2Vuc1wiICBcblsyNF0gXCJHUFQtMi14bC5zZW50ZW5jZS1MTC5hdmVyYWdlX2J5TnJXb3Jkc1wiIFxuWzI1XSBcImh1bWFuXCIgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4ifQ== -->
-<pre><code> [1] &quot;BERT-large.sentence-l2r-PLL&quot;            
- [2] &quot;RoBERTa-large.sentence-l2r-PLL&quot;         
- [3] &quot;MPT-30b.sentence-LL.average_byNrWords&quot;  
- [4] &quot;MPT-30b.sentence-LL&quot;                    
- [5] &quot;GPT-2-xl.sentence-LL&quot;                   
- [6] &quot;BERT-large.last-word-PLL&quot;               
- [7] &quot;BERT-large.sentence-PLL&quot;                
- [8] &quot;RoBERTa-large.last-word-PLL&quot;            
- [9] &quot;SDM&quot;                                    
-[10] &quot;RoBERTa-large.verb-PLL&quot;                 
-[11] &quot;thematicFit.prod&quot;                       
-[12] &quot;BERT-large.verb-PLL&quot;                    
-[13] &quot;RoBERTa-large.sentence-PLL&quot;             
-[14] &quot;MPT-7b.sentence-LL.average_byNrWords&quot;   
-[15] &quot;MPT-7b.sentence-LL&quot;                     
-[16] &quot;GPT-J.sentence-LL&quot;                      
-[17] &quot;tinyLSTM.surprisal&quot;                     
-[18] &quot;GPT-2-xl.sentence-LL.average_byNrTokens&quot;
-[19] &quot;MPT-30b.sentence-LL.average_byNrTokens&quot; 
-[20] &quot;syntax-PPMI&quot;                            
-[21] &quot;GPT-J.sentence-LL.average_byNrWords&quot;    
-[22] &quot;GPT-J.sentence-LL.average_byNrTokens&quot;   
-[23] &quot;MPT-7b.sentence-LL.average_byNrTokens&quot;  
-[24] &quot;GPT-2-xl.sentence-LL.average_byNrWords&quot; 
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBcIkJFUlQtbGFyZ2Uuc2VudGVuY2UtbDJyLVBMTFwiICAgICAgICAgICAgIFwiUm9CRVJUYS1sYXJnZS5zZW50ZW5jZS1sMnItUExMXCIgICAgICAgICAgXCJNUFQtMzBiLnNlbnRlbmNlLUxMLmF2ZXJhZ2VfYnlOcldvcmRzXCIgIFxuIFs0XSBcIk1QVC0zMGIuc2VudGVuY2UtTExcIiAgICAgICAgICAgICAgICAgICAgIFwiR1BULTIteGwuc2VudGVuY2UtTExcIiAgICAgICAgICAgICAgICAgICAgXCJCRVJULWxhcmdlLmxhc3Qtd29yZC1QTExcIiAgICAgICAgICAgICAgIFxuIFs3XSBcIkJFUlQtbGFyZ2Uuc2VudGVuY2UtUExMXCIgICAgICAgICAgICAgICAgIFwiUm9CRVJUYS1sYXJnZS5sYXN0LXdvcmQtUExMXCIgICAgICAgICAgICAgXCJTRE1cIiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFxuWzEwXSBcIlJvQkVSVGEtbGFyZ2UudmVyYi1QTExcIiAgICAgICAgICAgICAgICAgIFwidGhlbWF0aWNGaXQucHJvZFwiICAgICAgICAgICAgICAgICAgICAgICAgXCJCRVJULWxhcmdlLnZlcmItUExMXCIgICAgICAgICAgICAgICAgICAgIFxuWzEzXSBcIlJvQkVSVGEtbGFyZ2Uuc2VudGVuY2UtUExMXCIgICAgICAgICAgICAgIFwiTVBULTdiLnNlbnRlbmNlLUxMLmF2ZXJhZ2VfYnlOcldvcmRzXCIgICAgXCJNUFQtN2Iuc2VudGVuY2UtTExcIiAgICAgICAgICAgICAgICAgICAgIFxuWzE2XSBcIkdQVC1KLnNlbnRlbmNlLUxMXCIgICAgICAgICAgICAgICAgICAgICAgIFwidGlueUxTVE0uc3VycHJpc2FsXCIgICAgICAgICAgICAgICAgICAgICAgXCJHUFQtMi14bC5zZW50ZW5jZS1MTC5hdmVyYWdlX2J5TnJUb2tlbnNcIlxuWzE5XSBcIk1QVC0zMGIuc2VudGVuY2UtTEwuYXZlcmFnZV9ieU5yVG9rZW5zXCIgIFwic3ludGF4LVBQTUlcIiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXCJHUFQtSi5zZW50ZW5jZS1MTC5hdmVyYWdlX2J5TnJXb3Jkc1wiICAgIFxuWzIyXSBcIkdQVC1KLnNlbnRlbmNlLUxMLmF2ZXJhZ2VfYnlOclRva2Vuc1wiICAgIFwiTVBULTdiLnNlbnRlbmNlLUxMLmF2ZXJhZ2VfYnlOclRva2Vuc1wiICAgXCJHUFQtMi14bC5zZW50ZW5jZS1MTC5hdmVyYWdlX2J5TnJXb3Jkc1wiIFxuWzI1XSBcImh1bWFuXCIgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXG4ifQ== -->
+<pre><code> [1] &quot;BERT-large.sentence-l2r-PLL&quot;             &quot;RoBERTa-large.sentence-l2r-PLL&quot;          &quot;MPT-30b.sentence-LL.average_byNrWords&quot;  
+ [4] &quot;MPT-30b.sentence-LL&quot;                     &quot;GPT-2-xl.sentence-LL&quot;                    &quot;BERT-large.last-word-PLL&quot;               
+ [7] &quot;BERT-large.sentence-PLL&quot;                 &quot;RoBERTa-large.last-word-PLL&quot;             &quot;SDM&quot;                                    
+[10] &quot;RoBERTa-large.verb-PLL&quot;                  &quot;thematicFit.prod&quot;                        &quot;BERT-large.verb-PLL&quot;                    
+[13] &quot;RoBERTa-large.sentence-PLL&quot;              &quot;MPT-7b.sentence-LL.average_byNrWords&quot;    &quot;MPT-7b.sentence-LL&quot;                     
+[16] &quot;GPT-J.sentence-LL&quot;                       &quot;tinyLSTM.surprisal&quot;                      &quot;GPT-2-xl.sentence-LL.average_byNrTokens&quot;
+[19] &quot;MPT-30b.sentence-LL.average_byNrTokens&quot;  &quot;syntax-PPMI&quot;                             &quot;GPT-J.sentence-LL.average_byNrWords&quot;    
+[22] &quot;GPT-J.sentence-LL.average_byNrTokens&quot;    &quot;MPT-7b.sentence-LL.average_byNrTokens&quot;   &quot;GPT-2-xl.sentence-LL.average_byNrWords&quot; 
 [25] &quot;human&quot;                                  </code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->

@@ -1,6 +1,6 @@
 "Category","Metric","Difference","ChiSquared","pValAdjusted"
 "human","human",0.05,5.24,"0.022 *"
-"LLMs","MPT-30b",0.13,11.21,"<0.001 ***"
+"LLMs","MPT",0.13,11.21,"<0.001 ***"
 "LLMs","GPT-J",0.18,13.84,"<0.001 ***"
 "LLMs","GPT-2",0.22,21.34,"<0.001 ***"
 "LLMs","RoBERTa",0.19,20.92,"<0.001 ***"

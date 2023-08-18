@@ -9,6 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 rm(list=ls()) 
 library(ggplot2)
+library(ggh4x)
 library(dplyr)
 library(tidyr)
 library(stringr)
@@ -35,7 +36,7 @@ options(dplyr.summarise.inform = FALSE)
 #SET ENVIRONMENT VARIABLES
 
 # can be: "EventsAdapt", "DTFit_EventsRev"
-experiment <- "DTFit_EventsRev"
+experiment <- "EventsAdapt"
 
 #can be:
 # llms_main = human + main LLMs
@@ -105,11 +106,11 @@ dat = dat %>% filter(Metric %in% chosen_models)
 
 if (grepl("llms_all", which_models) == FALSE && grepl("llms_bidirectional", which_models) == FALSE){
 # shorten model names
-llms_main_short <- c("MPT-30b", "GPT-J", "GPT-2", "RoBERTa", "BERT")
+llms_main_short <- c("MPT", "GPT-J", "GPT-2", "RoBERTa", "BERT")
 baselines_short <- c("tinyLSTM","SDM", "thematicFit", "syntax-PPMI")
 models_short_order = c(human, llms_main_short, baselines_short)
 
-shorten_metric_names <- function(col) { gsub("-large|-xl|-xxlarge", "", col) }
+shorten_metric_names <- function(col) { gsub("-large|-xl|-xxlarge|-30b", "", col) }
 
 dat = dat %>%
   mutate(MetricModel = Metric, Metric=as.character(Metric)) %>%
@@ -311,13 +312,13 @@ img_aa <- get_png("./animate-animate.png")
 
 (p3 <- ggplot(mapping = aes(x = 0:1, y = 1)) +
   theme_void() +
-  annotation_custom(img_ai, xmin = .2, xmax = .3) +
-  annotation_custom(img_aa, xmin = .62, xmax = .72))
+  annotation_custom(img_ai, xmin = .14, xmax = .34) +
+  annotation_custom(img_aa, xmin = .57, xmax = .77))
 
-plot.binacc.logos <- gridExtra::grid.arrange(p3, plot.binacc, heights = c(.05, .95))
+plot.binacc.logos <- gridExtra::grid.arrange(p3, plot.binacc, heights = c(.09, .91))
 
 savename <- "1_binaryAccuracy_split_logos.png"
-ggsave(paste(savedir,savename,sep="/"), plot.binacc.logos, width=plt_width, height=plt_height, units='cm')
+ggsave(paste(savedir,savename,sep="/"), plot.binacc.logos, width=20, height=8, units='cm')
 ```
 
 ## Difference between AI & AAN conditions
@@ -470,7 +471,7 @@ dat.sub.AI$Plausibility = recode(dat.sub.AI$Plausibility,
 
 plot.plaus.density.AI = ggplot()+
   geom_density(data=dat.sub.AI, mapping=aes(FinalNormScore, fill = factor(Plausibility, levels=c("implausible","plausible"))), alpha = 0.2)+
-  facet_grid(~Metric, labeller = labeller(TrialType = as_labeller(label_names)))+
+  facet_nested(~TrialType + Metric, labeller = labeller(TrialType = as_labeller(label_names)))+
   geom_vline(xintercept=reference_value, linetype='dotted')+
   theme_classic()+
   scale_x_continuous(breaks=c(0,0.5,1), labels=c('0','0.5','1'))+
@@ -492,7 +493,7 @@ dat.sub.AAN$Plausibility = recode(dat.sub.AAN$Plausibility,
 
 plot.plaus.density.AAN = ggplot()+
   geom_density(data=dat.sub.AAN, mapping=aes(FinalNormScore, fill = factor(Plausibility, levels=c("implausible","plausible"))), alpha = 0.2)+
-  facet_grid(~Metric, labeller = labeller(TrialType = as_labeller(label_names)))+
+  facet_nested(~TrialType + Metric, labeller = labeller(TrialType = as_labeller(label_names)))+
   geom_vline(xintercept=reference_value, linetype='dotted')+
   theme_classic()+
   scale_x_continuous(breaks=c(0,0.5,1), labels=c('0','0.5','1'))+
@@ -580,7 +581,26 @@ plot.plaus.AAN = ggplot(data=subset(dat.plaus, TrialType=="AAN"))+
 plot.plaus.AAN
 ```
 
-## MAIN FIGURE
+## SCORE DISTRIBUTION PLOTS
+
+```{r, echo=FALSE}
+(p3 <- ggplot(mapping = aes(x = 0:1, y = 1)) +
+  theme_void() +
+  annotation_custom(img_ai, xmin = .18, xmax = .28) +
+  annotation_custom(img_aa, xmin = .73, xmax = .83))
+
+main_plot <- p3 / (plot.plaus.density.AI + plot.plaus.density.AAN ) /
+  (plot.plaus.AI + plot.plaus.AAN) /
+  plot_layout(heights=c(.15, .5, .5)) + 
+  plot_annotation(tag_levels = list(c('', 'A', '', 'B', ''))) & 
+  theme(plot.tag.position = c(0, 0.98), plot.tag = element_text(face='bold', size=18))
+main_plot 
+
+savename <- "score_distributions.png"
+ggsave(paste(savedir,savename,sep="/"), height=10, width=28, units='cm')
+```
+
+## OLD MAIN FIGURE
 
 ```{r, echo=FALSE}
 (p3 <- ggplot(mapping = aes(x = 0:1, y = 1)) +
@@ -598,6 +618,7 @@ main_plot
 savename <- "alternative_main.png"
 ggsave(paste(savedir,savename,sep="/"), height=18, width=25, units='cm')
 ```
+
 #REGRESSION 
 
 EventsAdapt:
