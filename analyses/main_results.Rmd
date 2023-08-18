@@ -444,16 +444,16 @@ plot.plaus.density.sub
 dat.meanDiff = dat.binchoice.active %>% 
   filter(!(TrialType=="AAR")) %>%
   group_by(Category, TrialType, Metric) %>% 
-  summarize(meanDiff = mean(FinalScoreDiff)) %>%
+  summarize(meanDiff = mean(FinalScoreDiff),
+            meanDiffSD = sd(FinalScoreDiff)) %>%
   ungroup() %>%
   group_by(Category, TrialType) %>%
-  summarize(meanDiff = round(mean(meanDiff), 2)) %>%
-  ungroup()
-
-dat.meanDiff = dat.meanDiff %>% 
-  spread(TrialType, meanDiff)
+  summarize(meanDiffSD = ifelse(!(Category == "human"), round(sd(meanDiff), 2), meanDiffSD),
+            meanDiff = round(mean(meanDiff), 2)) %>%
+  ungroup() %>%
+  distinct(Category, TrialType, .keep_all = TRUE) %>%
+  select(Category, TrialType,  meanDiff, meanDiffSD)
 ```
-
 
 ### Plot
 ```{r singular binacc plots}
@@ -904,10 +904,12 @@ write.csv(dat.human.error.sent, paste(savedir,savename,sep="/"), row.names=FALSE
 
 ```
 
-```{r}
-# Compute average score difference between plausible and implausible sentences for AI vs. AA sentences in humans
-dat.human.error.avg = dat.human.error.prep %>%
-  group_by(TrialType) %>%
-  summarize(avg_diff_score = mean(ScoreDiff),
-            sd_diff_score = sd(ScoreDiff))
-```
+# ```{r}
+# Compute average score difference between plausible and implausible sentences for AI vs. AA sentences in humans (& LLMs)
+# dat.avg.scorediff = dat.binchoice.active %>% 
+#   filter(!(TrialType=="AAR")) %>%
+#   group_by(Category, TrialType, Metric) %>% 
+#   summarize(meanDiffSD = round(sd(FinalScoreDiff), 2),
+#             meanDiff = round(mean(FinalScoreDiff), 2)) %>%
+#   ungroup()
+# ```
