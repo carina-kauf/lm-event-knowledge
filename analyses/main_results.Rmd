@@ -591,13 +591,13 @@ plot.plaus.AAN
 
 main_plot <- p3 / (plot.plaus.density.AI + plot.plaus.density.AAN ) /
   (plot.plaus.AI + plot.plaus.AAN) /
-  plot_layout(heights=c(.15, .5, .5)) + 
+  plot_layout(heights=c(.2, .5, .5)) + 
   plot_annotation(tag_levels = list(c('', 'A', '', 'B', ''))) & 
   theme(plot.tag.position = c(0, 0.98), plot.tag = element_text(face='bold', size=18))
 main_plot 
 
 savename <- "score_distributions.png"
-ggsave(paste(savedir,savename,sep="/"), height=10, width=28, units='cm')
+ggsave(paste(savedir,savename,sep="/"), height=11, width=28, units='cm')
 ```
 
 ## OLD MAIN FIGURE
@@ -902,4 +902,11 @@ dat.human.error.sent = subset(dat, Metric=='human') %>%
 savename <- "human_wrong_binacc_sentences_AAN.csv"
 write.csv(dat.human.error.sent, paste(savedir,savename,sep="/"), row.names=FALSE)
 
+```
+
+```{r}
+# Compute average score difference between plausible and implausible sentences for AI vs. AA sentences in humans
+dat.human.error.avg = dat.human.error.prep %>%
+  group_by(TrialType) %>%
+  summarize(avg_diff_score = mean(ScoreDiff))
 ```
