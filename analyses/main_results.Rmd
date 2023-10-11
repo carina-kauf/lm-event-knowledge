@@ -44,7 +44,7 @@ experiment <- "EventsAdapt"
 # baselines = human + baselines
 # llms_all = human + all LLMs
 # llms_bidirectional = human + BERT + RoBERTa, all metrics
-which_models <- "all_main" 
+which_models <- "llms_main" 
 
 #can be "min-max", "zscore", "none"
 normalization_type <- "min-max" 
@@ -273,6 +273,14 @@ label_names <- c(
   "AAN" = "animate-animate, unlikely",
   "AAR" = "animate-animate\n(control)"
 )
+
+facet_names <- setNames(
+  ifelse(!(chosen_models == "human"), paste(chosen_models, "\nprobability", sep=""), paste(chosen_models, "\nplausibility", sep="")),
+  chosen_models
+)
+
+# Facet names are used to indicate the metric relative to a system (i.e., plausibility vs. probability)
+paste(facet_names)
 ```
 
 ```{r, echo=FALSE}
@@ -318,7 +326,9 @@ img_aa <- get_png("./animate-animate.png")
 plot.binacc.logos <- gridExtra::grid.arrange(p3, plot.binacc, heights = c(.09, .91))
 
 savename <- "1_binaryAccuracy_split_logos.png"
-ggsave(paste(savedir,savename,sep="/"), plot.binacc.logos, width=20, height=8, units='cm')
+plt_width = ifelse(which_models%in%c("llms_all","llms_bidirectional"), 20, 15)
+plt_height = ifelse(which_models%in%c("llms_all","llms_bidirectional"), 12, 9)
+ggsave(paste(savedir,savename,sep="/"), plot.binacc.logos, width=plt_width, height=plt_height, units='cm')
 ```
 
 ## Difference between AI & AAN conditions
@@ -418,14 +428,16 @@ plotting_models = c('human',llms_main_short)
 dat.sub = dat %>%
   filter(Voice=="active") %>%
   filter(!TrialType=="AAR") %>%
-  filter(Metric%in%plotting_models)
+  filter(Metric%in%plotting_models) %>%
+  mutate(ScoreType = ifelse(!(Metric == "human"), "probability", "plausibility"))
 
 dat.sub$Metric = factor(dat.sub$Metric, levels=chosen_models)
 dat.sub$TrialType = factor(dat.sub$TrialType, levels=c("DTFit", "AI", "AAN", "AAR"))
 
+
 plot.plaus.density.sub = ggplot()+
   geom_density(data=dat.sub, mapping=aes(FinalNormScore, fill = factor(Plausibility, levels=c("Implausible","Plausible"))), alpha = 0.2)+
-  facet_grid(TrialType~Metric, labeller = labeller(TrialType = as_labeller(label_names)))+
+  facet_grid(TrialType~Metric, labeller = labeller(TrialType = as_labeller(label_names), Metric = as_labeller(facet_names)))+
   geom_vline(xintercept=reference_value, linetype='dotted')+
   theme_classic()+
   scale_x_continuous(breaks=c(0,0.5,1))+
@@ -471,13 +483,15 @@ dat.sub.AI$Plausibility = recode(dat.sub.AI$Plausibility,
 
 plot.plaus.density.AI = ggplot()+
   geom_density(data=dat.sub.AI, mapping=aes(FinalNormScore, fill = factor(Plausibility, levels=c("implausible","plausible"))), alpha = 0.2)+
-  facet_nested(~TrialType + Metric, labeller = labeller(TrialType = as_labeller(label_names)))+
+  facet_nested(~ScoreType + Metric) +
+  #facet_nested(~TrialType + Metric, labeller = labeller(TrialType = as_labeller(label_names), Metric = as_labeller(facet_names)))+
   geom_vline(xintercept=reference_value, linetype='dotted')+
   theme_classic()+
   scale_x_continuous(breaks=c(0,0.5,1), labels=c('0','0.5','1'))+
   scale_y_continuous(breaks=c(0,0.5,1))+
   xlab("Normalized score") +
   ylab("Density")+
+  labs(title = "animate-inanimate, impossible") + 
   theme(plot.title = element_text(hjust=0.5,face='bold'))+
   theme(axis.ticks.y = element_blank(),
         axis.text.y = element_blank(),
@@ -486,6 +500,7 @@ plot.plaus.density.AI = ggplot()+
         axis.title = element_text(size=9))
 plot.plaus.density.AI
 
+
 dat.sub.AAN = dat.sub %>%
   filter(TrialType%in%c("AAN"))
 dat.sub.AAN$Plausibility = recode(dat.sub.AAN$Plausibility, 
@@ -493,7 +508,8 @@ dat.sub.AAN$Plausibility = recode(dat.sub.AAN$Plausibility,
 
 plot.plaus.density.AAN = ggplot()+
   geom_density(data=dat.sub.AAN, mapping=aes(FinalNormScore, fill = factor(Plausibility, levels=c("implausible","plausible"))), alpha = 0.2)+
-  facet_nested(~TrialType + Metric, labeller = labeller(TrialType = as_labeller(label_names)))+
+  facet_nested(~ScoreType + Metric) + 
+  #facet_nested(~TrialType + Metric, labeller = labeller(TrialType = as_labeller(label_names), Metric = as_labeller(facet_names)))+
   geom_vline(xintercept=reference_value, linetype='dotted')+
   theme_classic()+
   scale_x_continuous(breaks=c(0,0.5,1), labels=c('0','0.5','1'))+
@@ -501,6 +517,7 @@ plot.plaus.density.AAN = ggplot()+
   xlab("Normalized score") +
   ylab("")+
   labs(fill="Distribution")+
+  labs(title = "animate-animate, unlikely") + 
   theme(plot.title = element_text(hjust=0.5,face='bold'))+
   theme(axis.ticks.y = element_blank(),
         axis.text.y = element_blank(),
@@ -523,8 +540,8 @@ plotting_models = c('human',llms_main_short)
 
 dat.plaus = dat.sub %>%
   filter(Metric %in% plotting_models) %>%
-  dplyr::select(ItemNum, TrialType, Plausibility, Voice, Metric, FinalNormScore) %>%
-  group_by(ItemNum, TrialType, Plausibility, Voice, Metric) %>%
+  dplyr::select(ItemNum, TrialType, Plausibility, Voice, Metric, FinalNormScore, ScoreType) %>%
+  group_by(ItemNum, TrialType, Plausibility, Voice, Metric, ScoreType) %>%
   summarize(meanScore = mean(FinalNormScore, na.rm=TRUE)) %>%
   spread(Plausibility, meanScore)
 dat.plaus$Metric = factor(dat.plaus$Metric, levels=plotting_models)
@@ -535,6 +552,10 @@ dat.plaus$Metric = factor(dat.plaus$Metric, levels=plotting_models)
 ```{r}
 df_correlation.plaus.AI = get_correlation_df("plausibility", "human", subset(dat.plaus, TrialType==AI_TrialType), plotting_models)
 df_correlation.plaus.AAN = get_correlation_df("plausibility", "human", subset(dat.plaus, TrialType=="AAN"), plotting_models)
+df_correlation.plaus.AAN = df_correlation.plaus.AAN %>%
+  mutate(ScoreType = ifelse(!(Metric == "human"), "probability", "plausibility"))
+df_correlation.plaus.AI = df_correlation.plaus.AI %>%
+  mutate(ScoreType = ifelse(!(Metric == "human"), "probability", "plausibility"))
 ```
 
 ### Plot 
@@ -543,9 +564,9 @@ df_correlation.plaus.AAN = get_correlation_df("plausibility", "human", subset(da
 df_correlation.plaus.AI$Metric = factor(df_correlation.plaus.AI$Metric, levels=plotting_models)
 df_correlation.plaus.AAN$Metric = factor(df_correlation.plaus.AAN$Metric, levels=plotting_models)
 dat.plaus$Metric = factor(dat.plaus$Metric, levels=plotting_models)
+dat.plaus$ScoreType = factor(dat.plaus$ScoreType)
 
 plot.plaus.AI = ggplot(data=subset(dat.plaus, TrialType==AI_TrialType))+
-  facet_wrap(~Metric, ncol=ncols, nrow=nrows)+
   geom_abline(slope=1, intercept=0, size=0.2)+
   geom_point(mapping=aes(x=Plausible, y=Implausible), size=0.2, color=color_plaus)+
   geom_text(mapping=aes(x=0, y=1.10, 
@@ -555,7 +576,8 @@ plot.plaus.AI = ggplot(data=subset(dat.plaus, TrialType==AI_TrialType))+
   scale_x_continuous(breaks=c(0,0.5,1), labels=c('0','0.5','1'))+
   scale_y_continuous(breaks=c(0,0.5,1), labels=c('0','0.5','1'))+
   theme_classic()+
-  facet_grid(~Metric)+
+  facet_nested(~ScoreType + Metric) +
+  #facet_grid(~Metric, labeller = labeller(Metric = as_labeller(facet_names)))+
   xlab("Plausible score")+
   ylab("Implausible score")+
   theme(plot.title = element_text(hjust=0.5,face='bold'),
@@ -563,7 +585,6 @@ plot.plaus.AI = ggplot(data=subset(dat.plaus, TrialType==AI_TrialType))+
 plot.plaus.AI
 
 plot.plaus.AAN = ggplot(data=subset(dat.plaus, TrialType=="AAN"))+
-  facet_wrap(~Metric, ncol=ncols, nrow=nrows)+
   geom_abline(slope=1, intercept=0, size=0.2)+
   geom_point(mapping=aes(x=Plausible, y=Implausible), size=0.2, color=color_plaus)+
   geom_text(mapping=aes(x=0, y=1.10, 
@@ -573,7 +594,8 @@ plot.plaus.AAN = ggplot(data=subset(dat.plaus, TrialType=="AAN"))+
   scale_x_continuous(breaks=c(0,0.5,1), labels=c('0','0.5','1'))+
   scale_y_continuous(breaks=c(2))+
   theme_classic()+
-  facet_grid(~Metric)+
+  facet_nested(~ScoreType + Metric) +
+  #facet_grid(~Metric, labeller = labeller(Metric = as_labeller(facet_names)))+
   xlab("Plausible score")+
   ylab(" ")+
   theme(plot.title = element_text(hjust=0.5,face='bold'),
@@ -904,12 +926,12 @@ write.csv(dat.human.error.sent, paste(savedir,savename,sep="/"), row.names=FALSE
 
 ```
 
-# ```{r}
+```{r}
 # Compute average score difference between plausible and implausible sentences for AI vs. AA sentences in humans (& LLMs)
-# dat.avg.scorediff = dat.binchoice.active %>% 
-#   filter(!(TrialType=="AAR")) %>%
-#   group_by(Category, TrialType, Metric) %>% 
-#   summarize(meanDiffSD = round(sd(FinalScoreDiff), 2),
-#             meanDiff = round(mean(FinalScoreDiff), 2)) %>%
-#   ungroup()
-# ```
+dat.avg.scorediff = dat.binchoice.active %>% 
+  filter(!(TrialType=="AAR")) %>%
+  group_by(Category, TrialType, Metric) %>% 
+  summarize(meanDiffSD = round(sd(FinalScoreDiff), 2),
+            meanDiff = round(mean(FinalScoreDiff), 2)) %>%
+  ungroup()
+```
